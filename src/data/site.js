@@ -73,7 +73,7 @@ export const siteData = {
       level: "Primary School (Grades 1–5)",
       age: "Ages 6–11",
       desc: "Strong foundation in core subjects with activity-based pedagogy, art integration, and life-skills curriculum.",
-      color: "from-green-400 to-teal-400",
+      color: "from-accent-200 to-accent-400",
     },
     {
       level: "Middle School (Grades 6–8)",

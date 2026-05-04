@@ -1,25 +1,9 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Section from '../components/Section'
 import { siteData } from '../data/site'
 
 const { galleryImages } = siteData
 const categories = ['All', ...Array.from(new Set(galleryImages.map(i => i.category)))]
-
-function PageBanner({ title, subtitle }) {
-  return (
-    <div className="relative bg-charcoal-900 pt-32 pb-20 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/90 to-primary-900/70" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <p className="section-subheading text-primary-400">{subtitle}</p>
-        <h1 className="font-display font-black text-4xl md:text-5xl text-white">{title}</h1>
-      </div>
-    </div>
-  )
-}
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState('All')
@@ -29,29 +13,72 @@ export default function GalleryPage() {
 
   return (
     <>
-      <PageBanner title="Photo Gallery" subtitle="Campus Life & Events" />
+      {/* Hero Section */}
+      <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&q=80)'
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="font-display font-bold text-4xl md:text-5xl mb-4"
+          >
+            Photo Gallery
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="font-body text-lg text-gray-200"
+          >
+            Explore our vibrant campus life, events, and community activities
+          </motion.p>
+        </div>
+      </section>
 
-      <Section className="bg-white">
+      {/* Gallery Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Filter pills */}
-          <div className="flex flex-wrap gap-2 justify-center mb-10">
+          {/* Filter Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-wrap gap-3 justify-center mb-12"
+          >
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full font-body text-sm font-medium transition-all duration-200 ${
+                className={`px-6 py-3 rounded-full font-body font-medium text-sm transition-all duration-300 ${
                   filter === cat
-                    ? 'bg-primary-600 text-white shadow-sm'
-                    : 'bg-gray-100 text-gray-600 hover:bg-primary-50 hover:text-primary-700'
+                    ? 'bg-primary-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-primary-50 hover:text-primary-600'
                 }`}
               >
                 {cat}
               </button>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Grid */}
-          <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Masonry Grid */}
+          <motion.div
+            layout
+            className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
+          >
             <AnimatePresence>
               {filtered.map((img, i) => (
                 <motion.div
@@ -60,32 +87,29 @@ export default function GalleryPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.35 }}
-                  className="relative overflow-hidden rounded-2xl group cursor-pointer aspect-[4/3]"
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="relative overflow-hidden rounded-2xl group cursor-pointer break-inside-avoid"
                   onClick={() => setLightbox(img)}
                 >
                   <img
                     src={img.src}
                     alt={img.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-start justify-end p-4">
-                    <span className="text-xs text-primary-300 font-body font-medium uppercase tracking-wider">{img.category}</span>
-                    <span className="text-white font-body text-sm">{img.alt}</span>
-                  </div>
-                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-gray-700">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                      </svg>
-                    </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span className="text-xs text-gold-300 font-body font-medium uppercase tracking-wider mb-2">
+                      {img.category}
+                    </span>
+                    <span className="text-white font-body text-lg font-semibold">
+                      {img.alt}
+                    </span>
                   </div>
                 </motion.div>
               ))}
             </AnimatePresence>
           </motion.div>
         </div>
-      </Section>
+      </motion.section>
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -94,28 +118,34 @@ export default function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
             onClick={() => setLightbox(null)}
           >
             <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="relative max-w-4xl w-full"
-              onClick={e => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-4xl max-h-full"
+              onClick={(e) => e.stopPropagation()}
             >
-              <img src={lightbox.src} alt={lightbox.alt} className="w-full rounded-2xl max-h-[80vh] object-contain" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <div>
-                  <p className="text-white font-body font-medium">{lightbox.alt}</p>
-                  <p className="text-primary-400 text-sm font-body">{lightbox.category}</p>
+              <img
+                src={lightbox.src}
+                alt={lightbox.alt}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
+              >
+                ✕
+              </button>
+              <div className="absolute bottom-4 left-4 text-white">
+                <div className="text-sm font-medium text-gold-400 uppercase tracking-wider">
+                  {lightbox.category}
                 </div>
-                <button
-                  onClick={() => setLightbox(null)}
-                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors"
-                >
-                  ✕
-                </button>
+                <div className="text-lg font-semibold">
+                  {lightbox.alt}
+                </div>
               </div>
             </motion.div>
           </motion.div>

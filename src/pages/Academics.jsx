@@ -1,141 +1,312 @@
 import { motion } from 'framer-motion'
-import Section from '../components/Section'
-import Card from '../components/Card'
+import { Link } from 'react-router-dom'
+import PageHero from '../components/PageHero'
 import { siteData } from '../data/site'
 
 const { programs } = siteData
 
-function PageBanner({ title, subtitle }) {
-  return (
-    <div className="relative bg-charcoal-900 pt-32 pb-20 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/90 to-primary-900/70" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <p className="section-subheading text-primary-400">{subtitle}</p>
-        <h1 className="font-display font-black text-4xl md:text-5xl text-white">{title}</h1>
-      </div>
-    </div>
-  )
-}
-
-const activities = [
-  { icon: '🏏', name: 'Cricket' }, { icon: '🏀', name: 'Basketball' },
-  { icon: '🎭', name: 'Drama & Theatre' }, { icon: '🎵', name: 'Music' },
-  { icon: '🎨', name: 'Fine Arts' }, { icon: '🤖', name: 'Robotics Club' },
-  { icon: '📸', name: 'Photography' }, { icon: '🌿', name: 'Eco Club' },
-  { icon: '💬', name: 'Debate' }, { icon: '🔭', name: 'Astronomy' },
-  { icon: '📚', name: 'Book Club' }, { icon: '💃', name: 'Classical Dance' },
-]
-
 export default function Academics() {
   return (
     <>
-      <PageBanner title="Academics at Brundavan" subtitle="Curriculum & Programmes" />
-
+      {/* Hero Section */}
+      <PageHero
+        title="Academics"
+        subtitle="Empowering students through innovative learning methodologies and comprehensive educational programs."
+        image="https://images.unsplash.com/photo-1588072432836-e10032774350"
+        breadcrumbs="Home / Academics"
+      />
       {/* Curriculum Overview */}
-      <Section className="bg-white">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="section-subheading">Our Approach</p>
-              <h2 className="section-heading">A Curriculum Built for Tomorrow</h2>
-              <p className="font-body text-gray-600 leading-relaxed mb-4">
-                Brundavan School follows a comprehensive English Medium curriculum designed to provide quality education. Our approach integrates concept-based learning, practical activities, and experiential learning to ensure students develop strong academic fundamentals.
-              </p>
-              <p className="font-body text-gray-600 leading-relaxed mb-4">
-                We go beyond textbooks. Our students engage in cross-disciplinary projects, STEM challenges, social outreach, and leadership programmes that build real-world competence alongside board-exam readiness.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                {[
-                  { label: 'NEP 2020 Aligned', icon: '✅' },
-                  { label: 'Activity-Based Learning', icon: '🔬' },
-                  { label: 'Digital Classrooms', icon: '💻' },
-                  { label: 'Bilingual Support', icon: '🌐' },
-                ].map(item => (
-                  <div key={item.label} className="flex items-center gap-3 bg-primary-50 rounded-xl p-3">
-                    <span>{item.icon}</span>
-                    <span className="font-body text-sm font-medium text-charcoal-800">{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=85"
-                alt="Library"
-                className="w-full h-96 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Programs */}
-      <Section className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
-            <p className="section-subheading">Grade-Wise</p>
-            <h2 className="section-heading">Academic Programmes</h2>
-            <p className="text-gray-500 font-body max-w-xl mx-auto">
-              Tailored learning journeys for every stage of a child's development.
-            </p>
-          </div>
-          <div className="flex flex-col gap-5">
-            {programs.map((prog, i) => (
               <motion.div
-                key={prog.level}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-white rounded-2xl shadow-card p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6"
+                transition={{ duration: 0.6 }}
               >
-                <div className={`shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${prog.color} flex items-center justify-center text-white font-display font-black text-xl shadow-md`}>
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-3 mb-1">
-                    <h3 className="font-display font-bold text-xl text-charcoal-900">{prog.level}</h3>
-                    <span className="text-xs font-body font-medium bg-primary-100 text-primary-700 px-3 py-1 rounded-full">{prog.age}</span>
+                <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-6">
+                  CBSE Curriculum Excellence
+                </h2>
+                <p className="font-body text-gray-600 leading-relaxed mb-6">
+                  Brundavan School follows the Central Board of Secondary Education (CBSE) curriculum, recognized for its comprehensive approach to education. Our implementation goes beyond traditional teaching, incorporating modern methodologies that prepare students for global challenges.
+                </p>
+                <p className="font-body text-gray-600 leading-relaxed mb-8">
+                  We emphasize conceptual understanding, critical thinking, and practical application of knowledge. Our experienced faculty uses innovative teaching methods including project-based learning, digital tools, and real-world problem-solving activities.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">📚</span>
+                    <span className="font-body font-medium text-gray-800">CBSE Affiliated</span>
                   </div>
-                  <p className="font-body text-gray-500 text-sm leading-relaxed">{prog.desc}</p>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🎯</span>
+                    <span className="font-body font-medium text-gray-800">NEP 2020 Aligned</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">💻</span>
+                    <span className="font-body font-medium text-gray-800">Digital Learning</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🌟</span>
+                    <span className="font-body font-medium text-gray-800">Holistic Development</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=85"
+                alt="Academic Excellence"
+                className="rounded-2xl shadow-xl w-full h-96 object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Academic Programmes */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-gray-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+              Academic Programmes
+            </h2>
+            <p className="font-body text-gray-600 max-w-2xl mx-auto">
+              Comprehensive educational pathways designed for every stage of development, from early childhood to senior secondary education.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {programs.map((program, index) => (
+              <motion.div
+                key={program.level}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group"
+              >
+                <div className={`h-2 bg-gradient-to-r ${program.color}`} />
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-display font-bold text-gray-300">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-xs font-body font-medium bg-primary-100 text-primary-700 px-3 py-1 rounded-full">
+                      {program.age}
+                    </span>
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                    {program.level}
+                  </h3>
+                  <p className="font-body text-gray-600 leading-relaxed">
+                    {program.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </Section>
+      </motion.section>
 
-      {/* Co-curricular */}
-      <Section className="bg-white">
+      {/* Teaching Approach */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <p className="section-subheading">Beyond the Classroom</p>
-            <h2 className="section-heading">Co-Curricular Activities</h2>
-            <p className="text-gray-500 font-body max-w-xl mx-auto">
-              We believe a well-rounded education goes far beyond academics. Explore 30+ clubs and activity programmes.
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+              Our Teaching Approach
+            </h2>
+            <p className="font-body text-gray-600 max-w-2xl mx-auto">
+              Innovative methodologies that engage, inspire, and empower every student to reach their full potential.
             </p>
-          </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
-            {activities.map((act, i) => (
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '🧠',
+                title: 'Concept-Based Learning',
+                desc: 'Focus on understanding core concepts rather than rote memorization, building strong foundations for lifelong learning.'
+              },
+              {
+                icon: '🔬',
+                title: 'Hands-On Experimentation',
+                desc: 'Practical learning through science labs, projects, and real-world applications that make education engaging and memorable.'
+              },
+              {
+                icon: '🤝',
+                title: 'Collaborative Learning',
+                desc: 'Group activities and peer learning that develop communication skills, teamwork, and social responsibility.'
+              }
+            ].map((approach, index) => (
               <motion.div
-                key={act.name}
-                initial={{ opacity: 0, scale: 0.85 }}
+                key={approach.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gray-50 rounded-2xl p-8 text-center hover:bg-white hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {approach.icon}
+                </div>
+                <h3 className="font-display font-bold text-xl text-gray-900 mb-4">
+                  {approach.title}
+                </h3>
+                <p className="font-body text-gray-600 leading-relaxed">
+                  {approach.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Core Subjects */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-gray-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+              Core Subjects
+            </h2>
+            <p className="font-body text-gray-600 max-w-2xl mx-auto">
+              Comprehensive curriculum covering essential knowledge areas with modern teaching methodologies.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { icon: '🔢', name: 'Mathematics', desc: 'Problem-solving & logical thinking' },
+              { icon: '🧪', name: 'Science', desc: 'Physics, Chemistry & Biology' },
+              { icon: '📖', name: 'English', desc: 'Language & Literature' },
+              { icon: '🌍', name: 'Social Studies', desc: 'History, Geography & Civics' },
+              { icon: '🎨', name: 'Arts', desc: 'Visual & Performing Arts' },
+              { icon: '🎵', name: 'Music', desc: 'Classical & Contemporary' },
+              { icon: '⚽', name: 'Physical Education', desc: 'Sports & Fitness' },
+              { icon: '💻', name: 'Computer Science', desc: 'Digital Literacy & Coding' }
+            ].map((subject, index) => (
+              <motion.div
+                key={subject.name}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.08, y: -4 }}
-                className="bg-primary-50 hover:bg-primary-100 rounded-2xl p-4 text-center transition-colors cursor-default"
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300 group"
               >
-                <div className="text-3xl mb-2">{act.icon}</div>
-                <div className="font-body text-xs font-medium text-charcoal-800">{act.name}</div>
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {subject.icon}
+                </div>
+                <h3 className="font-display font-bold text-lg text-gray-900 mb-2">
+                  {subject.name}
+                </h3>
+                <p className="font-body text-sm text-gray-600">
+                  {subject.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
-      </Section>
+      </motion.section>
+
+      {/* CTA Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white"
+      >
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-display font-bold text-3xl md:text-4xl mb-6"
+          >
+            Ready to Explore Academic Excellence?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-lg text-gray-200 mb-8 max-w-2xl mx-auto"
+          >
+            Join our community of learners where academic achievement meets personal growth. Discover how our comprehensive curriculum and dedicated faculty can help your child thrive.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link
+              to="/admissions"
+              className="btn-primary bg-white text-primary-700 hover:bg-gray-50 px-8 py-3 rounded-full font-body font-semibold shadow-lg"
+            >
+              Apply Now
+            </Link>
+            <Link
+              to="/contact"
+              className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary-700 px-8 py-3 rounded-full font-body font-semibold transition-all duration-300"
+            >
+              Schedule a Visit
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
     </>
   )
 }

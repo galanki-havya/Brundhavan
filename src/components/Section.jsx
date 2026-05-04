@@ -13,7 +13,7 @@ export default function Section({ children, className = '', id = '' }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.65, ease: 'easeOut' }}
-      className={`py-16 md:py-24 ${className}`}
+      className={`py-20 md:py-28 ${className}`}
     >
       {children}
     </motion.section>

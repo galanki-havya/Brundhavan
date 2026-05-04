@@ -1,142 +1,194 @@
 import { motion } from 'framer-motion'
 import Section from '../components/Section'
-import Card from '../components/Card'
 import { siteData } from '../data/site'
+import { Link } from 'react-router-dom'
 
 const { school, vision, mission, chairman, principal } = siteData
 
-function PageBanner({ title, subtitle }) {
-  return (
-    <div className="relative bg-charcoal-900 pt-32 pb-20 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/90 to-primary-900/70" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          className="section-subheading text-primary-400"
-        >
-          {subtitle}
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display font-black text-4xl md:text-5xl text-white"
-        >
-          {title}
-        </motion.h1>
-      </div>
-    </div>
-  )
-}
-
 export default function About() {
   return (
-    <>
-      <PageBanner title="About Brundavan School" subtitle="Our Story" />
+    <div>
+      {/* Hero */}
+      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=90"
+          alt="School campus"
+          className="absolute w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative text-center text-white"
+        >
+          <h1 className="text-5xl md:text-6xl font-display font-bold">About Brundavan</h1>
+          <p className="mt-3 text-xl text-white/90">Our Heritage & Vision</p>
+        </motion.div>
+      </section>
 
-      {/* Overview */}
+      {/* Our Story */}
       <Section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="section-subheading">Who We Are</p>
-              <h2 className="section-heading">20+ Years of Quality Education</h2>
-              <p className="font-body text-gray-600 leading-relaxed mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=85"
+                alt="Brundavan students"
+                className="rounded-xl shadow-lg"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div>
+                <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-2">Our Story</p>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight">
+                  20+ Years of Quality Education
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed">
                 Founded in {school.established}, Brundavan School has been a trusted name in education for over 20 years. Today, we are home to over 1,500 students and a dedicated team of 85+ experienced educators committed to academic excellence and holistic development.
               </p>
-              <p className="font-body text-gray-600 leading-relaxed mb-4">
-                As an English Medium school, we offer a comprehensive curriculum with a focus on academics, sports, and extracurricular activities. Our commitment is to provide quality education with a personal touch, ensuring every student reaches their full potential.
+              <p className="text-lg text-gray-700 leading-relaxed">
+                As a CBSE-affiliated school, we offer a comprehensive curriculum with a focus on academics, sports, and extracurricular activities. Our commitment is to provide quality education with a personal touch, ensuring every student reaches their full potential.
               </p>
-              <p className="font-body text-gray-600 leading-relaxed">
-                With modern facilities and a supportive learning environment, Brundavan School is dedicated to building confident, capable learners ready for the challenges of tomorrow.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden shadow-card row-span-2">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="Students learning" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-card">
-                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400&q=80" alt="Science lab" className="w-full h-48 object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-card">
-                <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=400&q=80" alt="Sports" className="w-full h-48 object-cover" />
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </Section>
 
       {/* Vision & Mission */}
-      <Section className="bg-primary-50">
+      <Section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <p className="section-subheading">Our Purpose</p>
-            <h2 className="section-heading">Vision & Mission</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="p-8">
-              <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-2xl">🌟</div>
-              <h3 className="font-display font-bold text-2xl text-charcoal-900 mb-4">Our Vision</h3>
-              <p className="font-body text-gray-600 leading-relaxed">{vision}</p>
-            </Card>
-            <Card className="p-8">
-              <div className="w-14 h-14 bg-gold-400/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">🎯</div>
-              <h3 className="font-display font-bold text-2xl text-charcoal-900 mb-4">Our Mission</h3>
-              <p className="font-body text-gray-600 leading-relaxed">{mission}</p>
-            </Card>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-3">Our Purpose</p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Vision & Mission</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl mb-4">🌟</div>
+              <h3 className="text-2xl font-display font-bold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-700 leading-relaxed">{vision}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-2xl font-display font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p className="text-gray-700 leading-relaxed">{mission}</p>
+            </motion.div>
           </div>
 
-          {/* Values */}
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {/* Core Values */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
               { icon: '🏆', label: 'Excellence' },
               { icon: '🤝', label: 'Integrity' },
               { icon: '💡', label: 'Innovation' },
               { icon: '🌱', label: 'Growth' },
-            ].map((v, i) => (
+            ].map((value, i) => (
               <motion.div
-                key={v.label}
-                initial={{ opacity: 0, y: 16 }}
+                key={value.label}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-5 text-center shadow-card"
+                className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="text-3xl mb-2">{v.icon}</div>
-                <div className="font-display font-semibold text-charcoal-900">{v.label}</div>
+                <div className="text-4xl mb-3">{value.icon}</div>
+                <div className="font-display font-bold text-gray-900">{value.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </Section>
 
-      {/* Leadership Messages */}
+      {/* Leadership */}
       <Section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <p className="section-subheading">Leadership</p>
-            <h2 className="section-heading">Messages from Our Leaders</h2>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-3">Leadership</p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Messages from Our Leaders</h2>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[chairman, principal].map((leader, i) => (
-              <Card key={leader.name} delay={i * 0.15} className="p-8 flex flex-col gap-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-primary-600 flex items-center justify-center text-white font-display font-bold text-xl">
-                    {leader.name.split(' ').slice(-1)[0][0]}
+            {[
+              { ...chairman, color: 'primary' },
+              { ...principal, color: 'gold' },
+            ].map((leader, i) => (
+              <motion.div
+                key={leader.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-16 h-16 rounded-full bg-${leader.color}-600 flex items-center justify-center text-white font-display font-bold text-xl flex-shrink-0`}>
+                    {leader.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <div className="font-display font-bold text-charcoal-900 text-lg">{leader.name}</div>
-                    <div className="text-primary-600 font-body text-sm font-medium">{leader.title}</div>
+                    <h3 className="text-lg font-display font-bold text-gray-900">{leader.name}</h3>
+                    <p className={`text-${leader.color}-600 font-semibold text-sm`}>{leader.title}</p>
                   </div>
                 </div>
-                <div className="text-3xl text-primary-200 font-display leading-none">"</div>
-                <p className="font-body text-gray-600 leading-relaxed -mt-4">{leader.message}</p>
-              </Card>
+                <p className="text-gray-700 leading-relaxed italic">{leader.message}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </Section>
-    </>
+
+      {/* CTA */}
+      <section className="bg-gradient-to-r from-primary-700 to-primary-900 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">
+            Ready to Join Brundavan?
+          </h2>
+          <p className="text-white/90 mb-8 max-w-xl mx-auto">
+            Experience education that transforms lives and builds futures.
+          </p>
+          <Link
+            to="/admissions"
+            className="inline-flex items-center gap-2 bg-white text-primary-700 hover:bg-gray-100 font-display font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-lg"
+          >
+            Explore Admissions
+          </Link>
+        </div>
+      </section>
+    </div>
   )
 }
