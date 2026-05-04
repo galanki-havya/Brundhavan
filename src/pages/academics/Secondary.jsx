@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import PageHero from '../../components/PageHero'
-import { BookOpen, Trophy, Users, Target, GraduationCap, Code } from 'lucide-react'
+import { BookOpen, Trophy, Users, Target, GraduationCap, Code, Beaker } from 'lucide-react'
 
 export default function Secondary() {
   return (
