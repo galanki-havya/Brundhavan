@@ -1,25 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
+import PageHero from '../components/PageHero'
 import Section from '../components/Section'
 import Card from '../components/Card'
 import { siteData } from '../data/site'
 
 const { admissionSteps, programs, school } = siteData
 
-function PageBanner({ title, subtitle }) {
-  return (
-    <div className="relative bg-charcoal-900 pt-32 pb-20 text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=1200&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/90 to-primary-900/70" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <p className="section-subheading text-primary-400">{subtitle}</p>
-        <h1 className="font-display font-black text-4xl md:text-5xl text-white">{title}</h1>
-      </div>
-    </div>
-  )
-}
 
 export default function Admissions() {
   const [submitted, setSubmitted] = useState(false)
@@ -31,12 +19,28 @@ export default function Admissions() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    
+    // Basic validation
+    if (!form.name || !form.phone || !form.email) {
+      alert('Please fill in all required fields')
+      return
+    }
+    
     setSubmitted(true)
   }
 
   return (
-    <>
-      <PageBanner title="Join Brundavan School" subtitle="Admissions" />
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+      <Helmet>
+        <title>Admissions - Brundavan Schools</title>
+        <meta name="description" content="Apply for admission to Brundavan School - quality education with modern facilities and holistic development." />
+      </Helmet>
+      <PageHero 
+        title="Join Brundavan School" 
+        subtitle="Admissions" 
+        image="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=1200&q=80"
+        breadcrumbs="Home / Admissions"
+      />
 
       {/* Process */}
       <Section className="bg-white">
@@ -120,33 +124,38 @@ export default function Admissions() {
             <h2 className="section-heading">Apply Now</h2>
           </div>
 
-          {submitted ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="bg-primary-50 border border-primary-200 rounded-3xl p-10 text-center"
-            >
-              <div className="text-5xl mb-4">🎉</div>
-              <h3 className="font-display font-bold text-2xl text-primary-700 mb-2">
-                Enquiry Received!
-              </h3>
-              <p className="font-body text-gray-600">
-                Thank you for your interest in Brundavan School. We'll get in touch with you soon.
-              </p>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleSubmit} className="bg-gray-50 rounded-3xl p-8 shadow-card flex flex-col gap-5">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="w-full"
+          >
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="bg-primary-50 border border-primary-200 rounded-3xl p-10 text-center"
+              >
+                <div className="text-5xl mb-4">🎉</div>
+                <h3 className="font-display font-bold text-2xl text-primary-700 mb-2">
+                  Enquiry Received!
+                </h3>
+                <p className="font-body text-gray-600">
+                  Thank you for your interest in Brundavan School. We'll get in touch with you soon.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-gray-50 rounded-3xl p-8 shadow-card flex flex-col gap-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-body font-medium text-charcoal-800 mb-1">Student's Full Name *</label>
-                  <input name="name" value={form.name} onChange={handleChange} required
+                  <label htmlFor="name" className="block text-sm font-body font-medium text-charcoal-800 mb-1">Student's Full Name *</label>
+                  <input id="name" name="name" value={form.name} onChange={handleChange} required
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 bg-white"
                     placeholder="Enter student's name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-body font-medium text-charcoal-800 mb-1">Applying for Grade *</label>
-                  <select name="grade" value={form.grade} onChange={handleChange} required
+                  <label htmlFor="grade" className="block text-sm font-body font-medium text-charcoal-800 mb-1">Grade Applying For *</label>
+                  <select id="grade" name="grade" value={form.grade} onChange={handleChange} required
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 bg-white"
                   >
                     <option value="">Select Grade</option>
@@ -158,30 +167,30 @@ export default function Admissions() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-body font-medium text-charcoal-800 mb-1">Parent / Guardian Name *</label>
-                  <input name="parent" value={form.parent} onChange={handleChange} required
+                  <label htmlFor="parent" className="block text-sm font-body font-medium text-charcoal-800 mb-1">Parent / Guardian Name *</label>
+                  <input id="parent" name="parent" value={form.parent} onChange={handleChange} required
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 bg-white"
                     placeholder="Parent's name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-body font-medium text-charcoal-800 mb-1">Phone Number *</label>
-                  <input name="phone" value={form.phone} onChange={handleChange} required type="tel"
+                  <label htmlFor="phone" className="block text-sm font-body font-medium text-charcoal-800 mb-1">Phone Number *</label>
+                  <input id="phone" name="phone" value={form.phone} onChange={handleChange} required type="tel"
                     className="w-full border border-gray-200 rounded-xl px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 bg-white"
                     placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-body font-medium text-charcoal-800 mb-1">Email Address *</label>
-                <input name="email" value={form.email} onChange={handleChange} required type="email"
+                <label htmlFor="email" className="block text-sm font-body font-medium text-charcoal-800 mb-1">Email Address *</label>
+                <input id="email" name="email" value={form.email} onChange={handleChange} required type="email"
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 bg-white"
                   placeholder="your@email.com"
                 />
               </div>
               <div>
-                <label className="block text-sm font-body font-medium text-charcoal-800 mb-1">Additional Message</label>
-                <textarea name="message" value={form.message} onChange={handleChange} rows={3}
+                <label htmlFor="message" className="block text-sm font-body font-medium text-charcoal-800 mb-1">Additional Message</label>
+                <textarea id="message" name="message" value={form.message} onChange={handleChange} rows={3}
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 bg-white resize-none"
                   placeholder="Any specific queries or information you'd like to share..."
                 />
@@ -190,12 +199,51 @@ export default function Admissions() {
                 Submit Admission Enquiry
               </button>
               <p className="text-xs text-center text-gray-400 font-body">
-                By submitting, you agree to be contacted by our admissions team. We respect your privacy.
+                We'll get back to you within 24 hours
               </p>
             </form>
-          )}
+            )}
+          </motion.div>
         </div>
       </Section>
-    </>
+
+      {/* CTA Section */}
+      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold mb-4"
+          >
+            Start Your Child's Educational Journey
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 text-white/80"
+          >
+            Apply now for quality education with modern facilities and holistic development.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+              Apply Now
+            </a>
+            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+              Schedule Visit
+            </a>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   )
 }

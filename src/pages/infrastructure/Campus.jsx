@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Building, Trees, ParkingSquare, Wifi } from 'lucide-react'
 
@@ -6,6 +7,10 @@ export default function Campus() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
       {/* Hero Section */}
+      <Helmet>
+        <title>Campus Overview - Brundavan Schools</title>
+        <meta name="description" content="A modern, well-planned campus designed for an optimal learning environment." />
+      </Helmet>
       <PageHero
         title="Campus Overview"
         subtitle="A modern, well-planned campus designed for an optimal learning environment."
@@ -136,7 +141,7 @@ export default function Campus() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "50,000", label: "Sq. Ft. Campus Area", suffix: "sq ft" },
+              { number: "50,000 sq ft", label: "Campus Area", suffix: "" },
               { number: "25", label: "Classrooms", suffix: "" },
               { number: "8", label: "Specialized Labs", suffix: "" },
               { number: "5", label: "Sports Facilities", suffix: "" }
@@ -159,6 +164,44 @@ export default function Campus() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold mb-4"
+          >
+            Visit Our Modern Campus
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 text-white/80"
+          >
+            Experience world-class infrastructure and learning environment in person.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+              Apply Now
+            </a>
+            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+              Schedule Tour
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>

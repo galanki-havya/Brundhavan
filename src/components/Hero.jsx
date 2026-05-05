@@ -5,18 +5,18 @@ import { motion, AnimatePresence } from "framer-motion"
 const slides = [
   {
     image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=90",
-    title: "Shaping Future Leaders",
-    subtitle: "Inspiring young minds for tomorrow"
+    title: "A New Era of Education",
+    subtitle: "Founded 2025 - Modern learning for future leaders"
   },
   {
     image: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=1600&q=90",
     title: "Excellence in Education",
-    subtitle: "Building strong academic foundations"
+    subtitle: "Expert faculty, smart classrooms, proven results"
   },
   {
     image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=90",
-    title: "Holistic Development",
-    subtitle: "Academics, sports & creativity combined"
+    title: "Future-Ready Learning",
+    subtitle: "Modern campus, innovative teaching, holistic growth"
   }
 ]
 
@@ -31,24 +31,28 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section 
+      className="relative w-full h-screen overflow-hidden bg-cover bg-center bg-black"
+      style={{ backgroundImage: "url('/images/hero-poster.jpg')" }}
+    >
 
-      {/* Background Slider */}
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={index}
-          src={slides[index].image}
-          alt="hero"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1.05 }}
-          exit={{ opacity: 0, scale: 1.1 }}
-          transition={{ duration: 2 }}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      </AnimatePresence>
+      {/* VIDEO BACKGROUND */}
+      <motion.video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/images/hero-poster.jpg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </motion.video>
 
-      {/* Cinematic Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent z-0"></div>
 
       {/* Left Content (Netflix Style) */}
       <div className="relative z-10 h-full flex items-center">
@@ -59,9 +63,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-4 leading-tight"
+            className="text-5xl md:text-7xl font-display font-bold mb-4 leading-tight tracking-tight text-white"
           >
-            {slides[index].title}
+            {slides[index].title.includes('Future') ? (
+              <>
+                Shaping Future <span className="text-gold">Leaders</span>
+              </>
+            ) : slides[index].title.includes('Excellence') ? (
+              <>
+                Excellence in <span className="text-gold">Education</span>
+              </>
+            ) : (
+              <>
+                Holistic <span className="text-gold">Development</span>
+              </>
+            )}
           </motion.h1>
 
           <motion.p
@@ -74,20 +90,36 @@ export default function Hero() {
             {slides[index].subtitle}
           </motion.p>
 
-          {/* Buttons */}
-          <div className="flex gap-4">
+          {/* School Stats */}
+          <div className="flex gap-8 mt-8 text-white animate-fade-in">
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-gold-400">2025</p>
+              <p className="text-sm text-gray-300 font-body">Founded</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-gold-400">1000+</p>
+              <p className="text-sm text-gray-300 font-body">Student Capacity</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-display font-bold text-gold-400">100%</p>
+              <p className="text-sm text-gray-300 font-body">Result Focus</p>
+            </div>
+          </div>
+
+          {/* Premium Buttons */}
+          <div className="mt-12 flex gap-4">
             <Link
               to="/admissions"
-              className="bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition"
+              className="btn-primary bg-gold-400 text-black font-body font-semibold px-8 py-4 rounded-full shadow-xl hover:bg-gold-500 hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               ▶ Apply Now
             </Link>
 
             <Link
               to="/about/overview"
-              className="bg-gray-600/70 px-6 py-3 rounded-md font-semibold hover:bg-gray-500 transition"
+              className="btn-outline border-2 border-white/50 text-white backdrop-blur-md font-body font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300"
             >
-              More Info
+              Learn More
             </Link>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Shield, Eye, AlertTriangle, Heart } from 'lucide-react'
 
@@ -6,6 +7,10 @@ export default function Safety() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
       {/* Hero Section */}
+      <Helmet>
+        <title>Safety & Security - Brundavan Schools</title>
+        <meta name="description" content="Comprehensive safety measures ensuring a secure learning environment for all students." />
+      </Helmet>
       <PageHero
         title="Safety & Security"
         subtitle="Comprehensive safety measures ensuring a secure learning environment for all students."
@@ -20,8 +25,8 @@ export default function Safety() {
             {[
               {
                 icon: Shield,
-                title: "24/7 Security",
-                description: "Round-the-clock security personnel and surveillance systems"
+                title: "AI-Assisted 24/7 Security",
+                description: "AI-powered surveillance system with real-time monitoring and intelligent threat detection"
               },
               {
                 icon: Eye,
@@ -171,6 +176,44 @@ export default function Safety() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold mb-4"
+          >
+            Experience Our Advanced Safety Systems
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 text-white/80"
+          >
+            AI-powered security and comprehensive safety protocols for complete peace of mind.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+              Secure Your Child's Safety
+            </a>
+            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+              Schedule Safety Tour
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>

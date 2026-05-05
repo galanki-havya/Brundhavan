@@ -8,9 +8,10 @@ export default function Card({ children, className = '', delay = 0, glassmorphis
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
       whileHover={{
-        y: -8,
-        scale: 1.02,
-        transition: { duration: 0.2 }
+        y: -12,
+        scale: 1.03,
+        boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+        transition: { duration: 0.3, ease: 'easeOut' }
       }}
       className={`card overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ${
         glassmorphism

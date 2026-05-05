@@ -1,11 +1,13 @@
+import { TrendingUp, Users, Award, BookOpen } from 'lucide-react'
+
 export const siteData = {
   school: {
     name: "Brundavan School",
     tagline: "Quality Education for Holistic Development",
     shortTagline: "Building Bright Futures",
     description:
-      "Brundavan School is a well-established educational institution in Palamaner, Chittoor, dedicated to providing high-quality education with a focus on academic excellence and holistic student development. We offer modern facilities, experienced faculty, and a supportive learning environment.",
-    established: "2000",
+      "Brundavan School, founded in 2025, is a modern educational institution in Palamaner, Chittoor, dedicated to providing high-quality education with a focus on academic excellence and holistic student development. We offer modern facilities, experienced faculty, and a supportive learning environment.",
+    established: "2025",
     affiliation: "English Medium School",
     rating: "4.9",
     phone: "+91 88920 04394",
@@ -23,10 +25,10 @@ export const siteData = {
   },
 
   stats: [
-    { value: "1,500+", label: "Students Enrolled" },
-    { value: "85+", label: "Experienced Faculty" },
-    { value: "20+", label: "Years of Excellence" },
-    { value: "95%", label: "Pass Rate" },
+    { value: "CBSE", label: "Curriculum Framework", icon: Award },
+    { value: "Personalized", label: "Learning Approach", icon: Users },
+    { value: "Modern", label: "Smart Classrooms", icon: TrendingUp },
+    { value: "Holistic", label: "Student Development", icon: BookOpen },
   ],
 
   facilities: [
@@ -73,7 +75,7 @@ export const siteData = {
       level: "Primary School (Grades 1–5)",
       age: "Ages 6–11",
       desc: "Strong foundation in core subjects with activity-based pedagogy, art integration, and life-skills curriculum.",
-      color: "from-accent-200 to-accent-400",
+      color: "from-gold-200 to-gold-400",
     },
     {
       level: "Middle School (Grades 6–8)",
@@ -170,12 +172,12 @@ export const siteData = {
     name: "Sri K. Venkateshwar Rao",
     title: "Founder & Chairman",
     message:
-      "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brundavan, we have spent over two decades nurturing that flame in every child who walks through our doors. Our commitment to excellence, rooted in Indian values and global perspectives, has shaped thousands of lives. I invite you to be part of this extraordinary journey.",
+      "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brundavan School, founded in 2025, we are building a modern educational institution focused on academic excellence, innovation, and holistic development. Our commitment to quality education, rooted in Indian values and global perspectives, will shape future generations. I invite you to be part of this extraordinary journey.",
   },
   principal: {
     name: "Dr. Lakshmi Prasanna",
     title: "Principal",
     message:
-      "At Brundavan School, every day is an opportunity for our students to discover, learn, and grow. Our dedicated team of educators is committed to providing quality education in a supportive environment. We believe in nurturing both the academic and personal development of every child. We look forward to partnering with families to help our students achieve their best.",
+      "At Brundavan School, every day is an opportunity for our students to discover, learn, and grow. As an experienced educator dedicated to modern education excellence, I lead our team in providing quality education in a supportive environment. We believe in nurturing both the academic and personal development of every child through innovative teaching methods and personalized attention. We look forward to partnering with families to help our students achieve their best.",
   },
 };

@@ -9,7 +9,7 @@ export default function AboutOverview() {
       <PageHero
         title="About Brundavan School"
         subtitle="Discover our rich heritage, values, and commitment to educational excellence."
-        image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80"
+        image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=90&auto=format&fit=crop"
         breadcrumbs="Home / About / Overview"
       />
       {/* Main Content */}
@@ -37,7 +37,7 @@ export default function AboutOverview() {
                 className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-body font-semibold"
               >
                 <GraduationCap className="w-4 h-4" />
-                Established 2003
+                Founded 2025
               </motion.div>
 
               <motion.h2
@@ -47,7 +47,7 @@ export default function AboutOverview() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="font-display font-bold text-3xl md:text-4xl text-charcoal-900"
               >
-                Nurturing Excellence Since 2003
+                Excellence in Education Since 2025
               </motion.h2>
 
               <motion.p
@@ -57,7 +57,7 @@ export default function AboutOverview() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="font-body text-charcoal-600 leading-relaxed"
               >
-                Brundavan School has been a cornerstone of quality education in Palamaner, Chittoor district. Founded with a vision to provide holistic education, we have grown from a small institution to one of the most respected schools in Andhra Pradesh.
+                Brundavan School, established on May 22, 2025, was founded with a vision to redefine education in Palamaner. Built with modern infrastructure, innovative teaching methods, and a strong academic focus, the school aims to create confident, future-ready students.
               </motion.p>
 
               <motion.p
@@ -93,11 +93,15 @@ export default function AboutOverview() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative">
+              <div className="relative h-[400px] sm:h-[450px] md:h-[500px]">
                 <img
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=85"
+                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=90&auto=format&fit=crop"
                   alt="Brundavan School campus"
-                  className="w-full rounded-2xl shadow-2xl"
+                  className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/hero-poster.jpg';
+                  }}
                 />
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
                   <div className="flex items-center gap-3">
@@ -136,7 +140,7 @@ export default function AboutOverview() {
               Our Impact in Numbers
             </h2>
             <p className="font-body text-charcoal-600 max-w-2xl mx-auto">
-              Two decades of excellence reflected in our achievements and community impact
+              Excellence in education since our founding in 2025, with modern infrastructure and innovative teaching methods
             </p>
           </motion.div>
 
@@ -144,7 +148,7 @@ export default function AboutOverview() {
             {[
               { icon: Users, label: 'Students', value: '1000+', desc: 'Enrolled students' },
               { icon: GraduationCap, label: 'Teachers', value: '50+', desc: 'Qualified faculty' },
-              { icon: Award, label: 'Years', value: '20+', desc: 'Years of excellence' },
+              { icon: Award, label: 'Founded', value: '2025', desc: 'Modern education start' },
               { icon: Heart, label: 'Families', value: '2000+', desc: 'Happy families' }
             ].map((stat, index) => (
               <motion.div

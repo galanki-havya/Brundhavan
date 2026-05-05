@@ -11,7 +11,7 @@ const mainLinks = [
     submenu: [
       { to: '/about/overview', label: 'Overview' },
       { to: '/about/vision-mission', label: 'Vision & Mission' },
-      { to: '/about/chairman', label: 'Chairman Message' },
+      { to: '/about/founder', label: 'Founder Message' },
       { to: '/about/principal', label: 'Principal Message' },
       { to: '/about/achievements', label: 'Achievements' },
     ]
@@ -74,11 +74,13 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-white/20 py-3'
-          : 'bg-transparent py-6'
+          ? 'bg-white/90 backdrop-blur-md shadow-xl border-b border-gray-200 py-3'
+          : 'bg-black/60 backdrop-blur-lg border-b border-white/10 py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      {/* Gradient overlay for better contrast over video */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-0"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <motion.img
@@ -89,12 +91,12 @@ export default function Navbar() {
           />
           <div>
             <div className={`font-display font-bold text-lg leading-tight transition-colors ${
-              scrolled ? 'text-charcoal-900' : 'text-white'
+              scrolled ? 'text-charcoal-900' : 'text-white drop-shadow-md'
             }`}>
               Brundavan
             </div>
             <div className={`text-xs font-body transition-colors ${
-              scrolled ? 'text-charcoal-500' : 'text-white/80'
+              scrolled ? 'text-charcoal-500' : 'text-white/80 drop-shadow-sm'
             }`}>
               School
             </div>
@@ -117,7 +119,7 @@ export default function Navbar() {
                   <button className={`relative px-4 py-2 rounded-full font-body font-medium text-sm transition-all duration-300 flex items-center gap-1 ${
                     scrolled
                       ? 'text-charcoal-800 hover:text-gold-500 hover:bg-gold-50/50'
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                      : 'text-white drop-shadow-lg hover:text-white hover:bg-white/10'
                   }`}>
                     {link.label}
                     <ChevronDown className="w-3 h-3" />
@@ -168,7 +170,7 @@ export default function Navbar() {
                       ? scrolled ? 'text-gold-500 bg-gold-50/50' : 'text-gold-400 bg-white/10'
                       : scrolled
                       ? 'text-charcoal-800 hover:text-gold-500 hover:bg-gold-50/50'
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                      : 'text-white drop-shadow-lg hover:text-white hover:bg-white/10'
                   }`
                 }
               >

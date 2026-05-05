@@ -14,6 +14,10 @@ export default function About() {
           src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=90"
           alt="School campus"
           className="absolute w-full h-full object-cover"
+          loading="eager"
+          onError={(e) => {
+            e.target.src = '/images/hero-poster.jpg';
+          }}
         />
         <div className="absolute inset-0 bg-black/60"></div>
         <motion.div
@@ -40,7 +44,11 @@ export default function About() {
               <img
                 src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=85"
                 alt="Brundavan students"
-                className="rounded-xl shadow-lg"
+                className="rounded-xl shadow-lg w-full h-auto object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.src = '/images/hero-poster.jpg';
+                }}
               />
             </motion.div>
             <motion.div

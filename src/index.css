@@ -18,19 +18,19 @@
 
 @layer components {
   .section-heading {
-    @apply text-4xl md:text-5xl font-display font-bold text-gray-900 mb-3 leading-tight;
+    @apply text-4xl md:text-5xl font-display font-bold text-charcoal-900 mb-3 leading-tight tracking-tight;
   }
   .section-subheading {
-    @apply text-secondary-600 font-body font-semibold uppercase tracking-widest text-sm mb-2;
+    @apply text-primary-600 font-body font-semibold uppercase tracking-widest text-sm mb-2;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-gradient-to-r from-accent-400 to-accent-500 text-white font-body font-semibold px-6 py-3 rounded-full transition-transform duration-300 shadow-xl hover:-translate-y-0.5 hover:shadow-2xl;
+    @apply bg-gold-400 text-black font-semibold px-8 py-4 rounded-full shadow-xl hover:bg-gold-500 hover:scale-105 transition-all duration-300;
   }
   .btn-outline {
-    @apply inline-flex items-center gap-2 border-2 border-gray-200 text-gray-900 hover:border-accent-400 hover:bg-accent-50 hover:text-gray-900 font-body font-semibold px-6 py-3 rounded-full transition-all duration-300;
+    @apply border-2 border-white/50 text-white backdrop-blur-md px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300;
   }
   .card {
-    @apply bg-white rounded-3xl shadow-card hover:shadow-card-hover transition-all duration-300;
+    @apply bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300;
   }
   .glass-panel {
     @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl;

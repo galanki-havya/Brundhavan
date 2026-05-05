@@ -15,6 +15,7 @@ import Overview from './pages/about/Overview'
 import VisionMission from './pages/about/VisionMission'
 import ChairmanMessage from './pages/about/ChairmanMessage'
 import PrincipalMessage from './pages/about/PrincipalMessage'
+import FounderMessage from './pages/about/FounderMessage'
 import Achievements from './pages/about/Achievements'
 
 // Academics subpages
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/about/overview" element={<Overview />} />
           <Route path="/about/vision-mission" element={<VisionMission />} />
+          <Route path="/about/founder" element={<FounderMessage />} />
           <Route path="/about/chairman" element={<ChairmanMessage />} />
           <Route path="/about/principal" element={<PrincipalMessage />} />
           <Route path="/about/achievements" element={<Achievements />} />

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Newspaper, TrendingUp, Award, Users } from 'lucide-react'
 
@@ -6,6 +7,10 @@ export default function News() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
       {/* Hero Section */}
+      <Helmet>
+        <title>Brundavan School News</title>
+        <meta name="description" content="Stay updated with the latest happenings, achievements, and announcements from Brundavan School." />
+      </Helmet>
       <PageHero
         title="School News"
         subtitle="Stay updated with the latest happenings, achievements, and announcements from Brundavan School."
@@ -177,6 +182,44 @@ export default function News() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold mb-4"
+          >
+            Stay Updated With Our News
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 text-white/80"
+          >
+            Get the latest updates, achievements, and announcements from our vibrant school community.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+              Apply Now
+            </a>
+            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+              Contact Us
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -10,10 +10,10 @@ const icons = [BookOpen, Users, Trophy, Microscope, Music, Gamepad2]
 
 export default function Facilities() {
   return (
-    <Section className="bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <Section className="bg-gradient-to-br from-background to-white relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary-100 rounded-full -translate-y-32 translate-x-32 opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold-100 rounded-full translate-y-24 -translate-x-24 opacity-50"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full -translate-y-32 translate-x-32 opacity-60 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-900/5 rounded-full translate-y-24 -translate-x-24 opacity-60 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
@@ -43,7 +43,7 @@ export default function Facilities() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.3, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 group-hover:from-primary-600 group-hover:to-primary-700 rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 shadow-lg group-hover:shadow-xl"
+                  className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 group-hover:from-gold-400 group-hover:to-gold-400/80 rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 shadow-lg group-hover:shadow-2xl"
                 >
                   <Icon className="w-8 h-8" />
                 </motion.div>
@@ -53,7 +53,7 @@ export default function Facilities() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.4, duration: 0.5 }}
-                  className="font-display font-bold text-xl text-charcoal-900 mb-3 group-hover:text-primary-700 transition-colors"
+                  className="font-display font-bold text-xl text-charcoal-900 mb-3 group-hover:text-primary-600 transition-colors"
                 >
                   {f.title}
                 </motion.h3>

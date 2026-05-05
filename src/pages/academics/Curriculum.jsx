@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { BookOpen, Target, Users, Award } from 'lucide-react'
 
 export default function Curriculum() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+      <Helmet>
+        <title>Curriculum - Brundavan Schools</title>
+        <meta name="description" content="Comprehensive CBSE curriculum with modern teaching methodologies and practical applications." />
+      </Helmet>
+
       {/* Hero Section */}
       <PageHero
         title="Curriculum"
@@ -12,26 +18,6 @@ export default function Curriculum() {
         image="https://images.unsplash.com/photo-1427504494785-cdda0e4d9700?w=1200&q=80"
         breadcrumbs="Home / Academics / Curriculum"
       />
-      <motion.section className="hidden" style={{ display: 'none' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-4xl md:text-6xl font-display font-bold mb-6"
-          >
-            Our Curriculum
-          </motion.h1>
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl text-primary-100 max-w-3xl mx-auto"
-          >
-            Comprehensive educational framework designed to nurture young minds and prepare them for future success
-          </motion.p>
-        </div>
-      </motion.section>
 
       {/* Curriculum Overview */}
       <section className="py-16">
@@ -134,6 +120,44 @@ export default function Curriculum() {
               </ul>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-display font-bold mb-4"
+          >
+            Ready to Join Our Learning Community?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 text-white/80"
+          >
+            Admissions are open for the upcoming academic year.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <button className="bg-gold-500 text-primary-900 hover:bg-gold-400 font-body font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg">
+              Apply Now
+            </button>
+            <button className="border border-white px-8 py-4 rounded-lg hover:bg-white/10 font-body font-semibold transition-all duration-300">
+              Book a Visit
+            </button>
+          </motion.div>
         </div>
       </section>
     </div>
