@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { MapPin, Phone, Mail, Globe } from 'lucide-react'
+import { MapPin, Phone, Mail, Globe, ArrowRight } from 'lucide-react'
 import { siteData } from '../data/site'
 
 const { school } = siteData
@@ -12,69 +12,58 @@ export default function Footer() {
     twitter: Globe
   }
 
-  return (
-    <footer className="relative bg-gradient-to-b from-orange-50 via-amber-50 to-white text-gray-700 border-t border-orange-100">
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Academics', path: '/academics' },
+    { name: 'Admissions', path: '/admissions' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Contact', path: '/contact' }
+  ]
 
-      {/* CURVED TOP */}
+  return (
+    <footer className="relative bg-gradient-to-b from-charcoal-50 via-primary-50 to-white text-charcoal-700 border-t border-gold-200">
+
+      {/* TOP CURVE */}
       <div className="absolute -top-1 left-0 w-full overflow-hidden leading-none">
-        <svg
-          viewBox="0 0 1440 120"
-          className="w-full h-16 md:h-24 block"
-          preserveAspectRatio="none"
-        >
+        <svg viewBox="0 0 1440 120" className="w-full h-16 md:h-24">
           <path
             d="M0,80 C240,0 480,140 720,80 C960,20 1200,120 1440,60 L1440,0 L0,0 Z"
-            fill="#fff7ed"
+            fill="#f9f7f3"
           />
         </svg>
       </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-18 pb-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-10 md:pt-14 pb-8 md:pb-10">
 
-        {/* Newsletter (SMALLER) */}
-        <div className="bg-white rounded-xl shadow-sm border border-orange-100 p-4 mb-6 text-center">
-          <h3 className="text-gray-900 font-bold text-base mb-1">
-            Stay Updated
-          </h3>
-          <p className="text-xs text-gray-500 mb-3">
-            Get school news & admission alerts
-          </p>
+        {/* ================= TOP GRID ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
 
-          <div className="flex max-w-sm mx-auto gap-2">
-            <input
-              className="flex-1 px-3 py-2 rounded-lg border border-orange-200 text-xs outline-none focus:ring-2 focus:ring-orange-300"
-              placeholder="Enter email"
-            />
-            <button className="bg-orange-500 px-3 py-2 rounded-lg text-white text-xs hover:bg-orange-600 transition">
-              Subscribe
-            </button>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          {/* BRAND */}
+          {/* BRAND SECTION */}
           <div>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-9 h-9 bg-orange-500 rounded-lg flex items-center justify-center">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-primary-700 rounded-xl flex items-center justify-center shadow-md">
                 <span className="text-white font-bold">B</span>
               </div>
               <div>
-                <div className="font-bold text-gray-900 text-sm">
+                <h3 className="text-charcoal-900 font-bold text-base leading-tight">
                   {school.name}
-                </div>
-                <div className="text-orange-600 text-xs">
+                </h3>
+                <p className="text-gold-600 text-xs font-medium">
                   {school.affiliation}
-                </div>
+                </p>
               </div>
             </div>
 
-            <p className="text-xs text-gray-600 mb-3 max-w-sm leading-relaxed">
-              {school.description.split(' ').slice(0, 18).join(' ')}…
+            <p className="text-sm text-charcoal-600 leading-relaxed mb-3">
+              {school.description.split(' ').slice(0, 22).join(' ')}…
             </p>
 
-            {/* Social */}
+            <p className="text-xs text-charcoal-500 mb-5">
+              Empowering students with discipline, knowledge, and values for a better future.
+            </p>
+
+            {/* SOCIAL */}
             <div className="flex gap-2">
               {Object.entries(school.socials).map(([name, href]) => {
                 const Icon = icons[name] || Globe
@@ -85,32 +74,36 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-7 h-7 rounded-full bg-orange-100 hover:bg-orange-200 flex items-center justify-center transition"
+                    className="w-8 h-8 rounded-full bg-gold-50 hover:bg-gold-100 flex items-center justify-center transition"
                   >
-                    <Icon className="w-3 h-3 text-orange-600" />
+                    <Icon className="w-4 h-4 text-gold-600" />
                   </a>
                 )
               })}
             </div>
           </div>
 
-          {/* LINKS */}
+          {/* QUICK LINKS */}
           <div>
-            <h4 className="text-gray-900 font-semibold mb-2 text-sm">
+<h4 className="text-charcoal-900 font-semibold mb-4 text-sm md:text-base">
               Quick Links
             </h4>
-            <ul className="space-y-1 text-xs">
-              {['Home', 'About', 'Academics', 'Admissions', 'Gallery', 'Contact'].map(p => (
-                <li key={p}>
+
+            <ul className="space-y-2">
+              {quickLinks.map(link => (
+                <li key={link.name}>
                   <NavLink
-                    to={p === 'Home' ? '/' : `/${p.toLowerCase()}`}
+                    to={link.path}
                     className={({ isActive }) =>
-                      isActive
-                        ? "text-orange-600 font-medium"
-                        : "hover:text-orange-500 transition"
+                      `flex items-center gap-2 text-sm transition group ${
+                        isActive
+                          ? 'text-primary-700 font-semibold'
+                          : 'text-charcoal-600 hover:text-gold-600'
+                      }`
                     }
                   >
-                    {p}
+                    {link.name}
+                    <ArrowRight className="w-3 h-3 opacity-60 group-hover:translate-x-1 transition-transform" />
                   </NavLink>
                 </li>
               ))}
@@ -119,36 +112,72 @@ export default function Footer() {
 
           {/* CONTACT */}
           <div>
-            <h4 className="text-gray-900 font-semibold mb-2 text-sm">
-              Contact
+<h4 className="text-charcoal-900 font-semibold mb-4 text-sm md:text-base">
+              Contact Information
             </h4>
 
-            <ul className="space-y-2 text-xs text-gray-600">
-              <li className="flex gap-2">
-                <MapPin className="w-4 h-4 text-orange-500 shrink-0" />
-                {school.address}
+            <ul className="space-y-4 text-sm text-charcoal-600">
+
+              <li className="flex gap-3">
+                <MapPin className="w-4 h-4 text-gold-600 shrink-0 mt-1" />
+                <span>{school.address}</span>
               </li>
 
-              <li className="flex gap-2">
-                <Phone className="w-4 h-4 text-orange-500 shrink-0" />
-                {school.phone}
+              <li className="flex gap-3">
+                <Phone className="w-4 h-4 text-gold-600 shrink-0" />
+                <a href={`tel:${school.phone}`} className="hover:text-gold-600">
+                  {school.phone}
+                </a>
               </li>
 
-              <li className="flex gap-2">
-                <Mail className="w-4 h-4 text-orange-500 shrink-0" />
-                {school.email}
+              <li className="flex gap-3">
+                <Mail className="w-4 h-4 text-gold-600 shrink-0" />
+                <a href={`mailto:${school.email}`} className="hover:text-gold-600">
+                  {school.email}
+                </a>
               </li>
+
             </ul>
+          </div>
+        </div>
+
+        {/* ================= NEWSLETTER CTA ================= */}
+        <div className="mt-8 bg-white border border-gold-100 rounded-2xl p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <div>
+            <h4 className="text-charcoal-900 font-bold">
+              Stay Connected with Us
+            </h4>
+            <p className="text-sm text-charcoal-500">
+              Get admission updates, events, and school news
+            </p>
+          </div>
+
+          <div className="flex w-full md:w-auto gap-2">
+            <input
+              placeholder="Enter email address"
+              className="flex-1 md:w-64 px-4 py-2 rounded-lg border border-gold-100 text-sm focus:ring-2 focus:ring-gold-400 outline-none"
+            />
+            <button className="bg-primary-700 hover:bg-primary-800 text-white px-5 py-2 rounded-lg text-sm transition">
+              Subscribe
+            </button>
           </div>
 
         </div>
       </div>
 
-      {/* BOTTOM */}
-      <div className="border-t border-orange-100 bg-white relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 text-[11px] text-gray-500 flex flex-col sm:flex-row justify-between">
-          <span>© {new Date().getFullYear()} {school.name}</span>
-          <span>Established {school.established}</span>
+      {/* ================= BOTTOM BAR ================= */}
+      <div className="border-t border-gold-100 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-5 flex flex-col sm:flex-row justify-between text-xs md:text-sm text-charcoal-500">
+
+          <span>
+            © {new Date().getFullYear()} {school.name}. All rights reserved.
+          </span>
+
+          <span className="mt-1 sm:mt-0">
+            Designed for excellence in education
+          </span>
+
         </div>
       </div>
     </footer>

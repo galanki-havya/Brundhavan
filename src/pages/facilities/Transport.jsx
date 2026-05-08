@@ -5,7 +5,7 @@ import { Bus, Shield, Clock, MapPin } from 'lucide-react'
 
 export default function Transport() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
         <title>Transport - Brundavan Schools</title>

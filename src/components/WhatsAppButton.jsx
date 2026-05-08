@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppButton() {
-  const phoneNumber = "918919498070" // Real WhatsApp number from website
+  const phoneNumber = "918892004394" // Updated school WhatsApp number
   
   return (
     <motion.a
@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300"
+      className="group fixed bottom-6 right-6 z-50 inline-flex items-center justify-center bg-[#25D366] hover:bg-[#1ebd55] text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300"
       aria-label="Contact us on WhatsApp"
     >
       <MessageCircle className="w-6 h-6" />

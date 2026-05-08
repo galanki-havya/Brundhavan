@@ -81,6 +81,15 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-lg md:text-xl text-gold-200 mb-6"
+          >
+            Leading State Board School in Palamaneru
+          </motion.p>
+
+          <motion.p
             key={slides[index].subtitle}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

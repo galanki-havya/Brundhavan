@@ -74,7 +74,7 @@ export default function Infrastructure() {
       </section>
 
       {/* Infrastructure Overview */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 30, opacity: 0 }}

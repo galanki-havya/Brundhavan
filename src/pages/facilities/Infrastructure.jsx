@@ -38,7 +38,7 @@ export default function Infrastructure() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-white"
+        className="py-20 bg-background"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -48,10 +48,10 @@ export default function Infrastructure() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-charcoal-900 mb-4">
               State-of-the-Art Facilities
             </h2>
-            <p className="font-body text-gray-600 max-w-3xl mx-auto">
+            <p className="font-body text-charcoal-600 max-w-3xl mx-auto">
               Brundavan School provides a modern and student-friendly campus designed to support academic excellence and holistic development. Our infrastructure combines safety, innovation, and comfort to create an ideal learning environment.
             </p>
           </motion.div>
@@ -95,7 +95,7 @@ export default function Infrastructure() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-charcoal-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 group"
               >
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   {facility.icon}

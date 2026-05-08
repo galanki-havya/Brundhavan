@@ -5,16 +5,16 @@ import { BookOpen, Target, Users, Award } from 'lucide-react'
 
 export default function Curriculum() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-primary-50">
       <Helmet>
-        <title>Curriculum - Brundavan Schools</title>
-        <meta name="description" content="Comprehensive CBSE curriculum with modern teaching methodologies and practical applications." />
+        <title>Curriculum - Brindavan Schools</title>
+        <meta name="description" content="Comprehensive State Board curriculum with modern teaching methodologies and practical applications." />
       </Helmet>
 
       {/* Hero Section */}
       <PageHero
         title="Curriculum"
-        subtitle="Comprehensive CBSE curriculum with modern teaching methodologies and practical applications."
+        subtitle="Comprehensive State Board curriculum with modern teaching methodologies and practical applications."
         image="https://images.unsplash.com/photo-1427504494785-cdda0e4d9700?w=1200&q=80"
         breadcrumbs="Home / Academics / Curriculum"
       />
@@ -53,8 +53,8 @@ export default function Curriculum() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-gold-600" />
+                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-primary-700" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-charcoal-900 mb-3">
                   {item.title}
@@ -69,7 +69,7 @@ export default function Curriculum() {
       </section>
 
       {/* Curriculum Details */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -124,7 +124,7 @@ export default function Curriculum() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
+      <section className="py-16 text-center bg-primary-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -151,7 +151,7 @@ export default function Curriculum() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button className="bg-gold-500 text-primary-900 hover:bg-gold-400 font-body font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg">
+            <button className="bg-gold-500 text-charcoal-900 hover:bg-gold-400 font-body font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg">
               Apply Now
             </button>
             <button className="border border-white px-8 py-4 rounded-lg hover:bg-white/10 font-body font-semibold transition-all duration-300">

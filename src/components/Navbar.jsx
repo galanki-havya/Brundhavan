@@ -11,8 +11,7 @@ const mainLinks = [
     submenu: [
       { to: '/about/overview', label: 'Overview' },
       { to: '/about/vision-mission', label: 'Vision & Mission' },
-      { to: '/about/founder', label: 'Founder Message' },
-      { to: '/about/principal', label: 'Principal Message' },
+      { to: '/about/chairman', label: 'Management Message' },
       { to: '/about/achievements', label: 'Achievements' },
     ]
   },
@@ -54,6 +53,7 @@ const mainLinks = [
   },
   { to: '/admissions', label: 'ADMISSIONS' },
   { to: '/contact', label: 'CONTACT' },
+  { to: 'https://educampus360.com/', label: 'ERP LOGIN' },
 ]
 
 export default function Navbar() {
@@ -72,15 +72,15 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-[40px] left-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-xl border-b border-gray-200 py-3'
-          : 'bg-black/60 backdrop-blur-lg border-b border-white/10 py-6'
-      }`}
+          ? 'bg-white/90 backdrop-blur-md shadow-lg'
+          : 'bg-black/60 backdrop-blur-lg'
+      } h-[var(--top-navbar-mobile)] md:h-[var(--top-navbar-desktop)]`}
     >
       {/* Gradient overlay for better contrast over video */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-0"></div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <motion.img
@@ -116,9 +116,9 @@ export default function Navbar() {
                   onMouseEnter={() => setOpenDropdown(link.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <button className={`relative px-4 py-2 rounded-full font-body font-medium text-sm transition-all duration-300 flex items-center gap-1 ${
+                  <button className={`relative px-3 md:px-4 py-2 rounded-full font-body font-medium text-sm md:text-base transition-all duration-300 flex items-center gap-1 ${
                     scrolled
-                      ? 'text-charcoal-800 hover:text-gold-500 hover:bg-gold-50/50'
+                      ? 'text-charcoal-800 hover:text-[#8B5E3C] hover:bg-[#F7F3EE]'
                       : 'text-white drop-shadow-lg hover:text-white hover:bg-white/10'
                   }`}>
                     {link.label}
@@ -145,7 +145,7 @@ export default function Navbar() {
                             >
                               <Link
                                 to={item.to}
-                                className="block px-4 py-3 text-charcoal-800 hover:bg-gold-50 hover:text-gold-600 font-body text-sm transition-all duration-300 rounded-lg hover:shadow-md"
+                                className="block px-4 py-3 text-charcoal-800 hover:bg-[#F7F3EE] hover:text-[#8B5E3C] font-body text-sm transition-all duration-300 rounded-lg hover:shadow-md"
                               >
                                 {item.label}
                               </Link>
@@ -159,17 +159,31 @@ export default function Navbar() {
               )
             }
 
+            if (link.external) {
+              return (
+                <a
+                  key={link.label}
+                  href={link.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-4 py-2 rounded-full font-body font-medium text-sm transition-all duration-300 text-white bg-red-600 hover:bg-red-700 shadow-md"
+                >
+                  {link.label}
+                </a>
+              )
+            }
+
             return (
               <NavLink
                 key={link.to}
                 to={link.to}
                 end={link.to === '/'}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 rounded-full font-body font-medium text-sm transition-all duration-300 ${
+                  `relative px-3 md:px-4 py-2 rounded-full font-body font-medium text-sm md:text-base transition-all duration-300 ${
                     isActive
-                      ? scrolled ? 'text-gold-500 bg-gold-50/50' : 'text-gold-400 bg-white/10'
+                      ? scrolled ? 'text-[#8B5E3C] bg-[#F7F3EE]' : 'text-gold-400 bg-white/10'
                       : scrolled
-                      ? 'text-charcoal-800 hover:text-gold-500 hover:bg-gold-50/50'
+                      ? 'text-charcoal-800 hover:text-[#8B5E3C] hover:bg-[#F7F3EE]'
                       : 'text-white drop-shadow-lg hover:text-white hover:bg-white/10'
                   }`
                 }
@@ -221,25 +235,41 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto', y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`lg:hidden ${scrolled ? 'bg-white/95 text-charcoal-800 border-t border-charcoal-200' : 'bg-primary-900/95 text-white border-t border-primary-800/50'} backdrop-blur-xl shadow-2xl`}
+            className={`lg:hidden max-h-[85vh] overflow-y-auto ${
+              scrolled
+                ? 'bg-white/95 text-charcoal-800 border-t border-charcoal-200'
+                : 'bg-primary-900/95 text-white border-t border-primary-800/50'
+            } backdrop-blur-xl shadow-2xl`}
           >
             <nav className="flex flex-col px-4 py-4 gap-1">
-              {mainLinks.map((link, index) => {
+              {mainLinks.map((link) => {
                 const hasSubmenu = 'submenu' in link
                 const isOpen = openDropdown === link.label
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileOpen(false)}
+                      className="py-3 font-body font-semibold text-sm text-red-500 border-b border-current/10 hover:text-red-600 transition"
+                    >
+                      {link.label}
+                    </a>
+                  )
+                }
 
                 if (hasSubmenu) {
                   return (
                     <div key={link.label} className="border-b border-current/10 last:border-b-0">
                       <button
                         onClick={() => setOpenDropdown(isOpen ? null : link.label)}
-                        className="w-full flex items-center justify-between py-3 font-body font-medium text-sm transition-colors hover:text-gold-500"
+                        className="w-full flex items-center justify-between py-3 font-medium text-sm"
                       >
                         {link.label}
-                        <motion.div
-                          animate={{ rotate: isOpen ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
+                        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
                           <ChevronDown className="w-4 h-4" />
                         </motion.div>
                       </button>
@@ -247,30 +277,22 @@ export default function Navbar() {
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
+                            className="overflow-hidden pl-4 pb-2 space-y-1"
                           >
-                            <div className="pl-4 pb-3 space-y-1">
-                              {link.submenu.map((item, i) => (
-                                <motion.div
-                                  key={item.label}
-                                  initial={{ opacity: 0, x: -10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: i * 0.05 }}
-                                >
-                                  <Link
-                                    to={item.to}
-                                    onClick={() => setMobileOpen(false)}
-                                    className="block py-2 text-sm text-current/70 hover:text-gold-500 font-body transition-colors"
-                                  >
-                                    {item.label}
-                                  </Link>
-                                </motion.div>
-                              ))}
-                            </div>
+                            {link.submenu.map((item) => (
+                              <Link
+                                key={item.to}
+                                to={item.to}
+                                onClick={() => setMobileOpen(false)}
+                                className="block py-2 text-sm text-current/70 hover:text-gold-500"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -285,10 +307,8 @@ export default function Navbar() {
                     end={link.to === '/'}
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
-                      `py-3 font-body font-medium text-sm transition-colors border-b border-current/10 last:border-b-0 ${
-                        isActive
-                          ? 'text-gold-500'
-                          : 'text-current/90 hover:text-gold-500'
+                      `py-3 font-medium text-sm border-b border-current/10 last:border-b-0 ${
+                        isActive ? 'text-gold-500' : 'text-current/90'
                       }`
                     }
                   >

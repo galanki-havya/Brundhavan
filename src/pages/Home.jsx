@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import Hero from '../components/Hero'
+import LogoMeaning from '../components/LogoMeaning'
+import ManagementMessage from '../components/ManagementMessage'
 import Facilities from '../components/Facilities'
 import Gallery from '../components/Gallery'
 import Testimonials from '../components/Testimonials'
 import Section from '../components/Section'
-import WhatsAppButton from '../components/WhatsAppButton'
 import { siteData } from '../data/site'
 
 const { school } = siteData
@@ -16,26 +17,26 @@ export default function Home() {
     <>
       <Helmet>
         {/* Primary SEO */}
-        <title>Best CBSE School in Palamaner, Chittoor | Brindavan School Admissions 2026</title>
+        <title>Brindavan School | Best State Board School in Palamaneru</title>
         <meta 
           name="description" 
-          content="Brundavan School - Best CBSE school in Palamaner, Andhra Pradesh. Modern campus, expert faculty, quality education. Admissions open 2026-27." 
+          content="Brindavan School is the leading State Board school in Palamaneru, offering modern facilities, caring faculty, and admissions open for 2026-27." 
         />
         <meta 
           name="keywords" 
-          content="best school in Palamaner, top school in Palamaner, CBSE school Palamaner, best school in Chittoor, Brundavan School Palamaner, CBSE schools Andhra Pradesh, modern school Palamaner, admissions open 2026" 
+          content="Best School in Palamaneru, State Board School Palamaneru, admissions open 2026, top school in Palamaneru, Brindavan School" 
         />
 
         {/* Open Graph (for WhatsApp, Facebook) */}
-        <meta property="og:title" content="Brundavan School - Best CBSE School in Palamaner" />
-        <meta property="og:description" content="Join Brundavan School for academic excellence, modern campus, and holistic growth." />
+        <meta property="og:title" content="Brindavan School - Best State Board School in Palamaneru" />
+        <meta property="og:description" content="Join Brindavan School for strong State Board education, modern campus, and holistic growth." />
         <meta property="og:image" content="/images/hero-poster.jpg" />
         <meta property="og:type" content="website" />
 
         {/* Twitter SEO */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Brundavan School - CBSE Excellence" />
-        <meta name="twitter:description" content="Top CBSE school in Palamaner with modern education and facilities." />
+        <meta name="twitter:title" content="Brindavan School - State Board Excellence" />
+        <meta name="twitter:description" content="Top State Board school in Palamaner with modern education and facilities." />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://brindavanschool.in/" />
@@ -66,16 +67,11 @@ export default function Home() {
         </script>
       </Helmet>
 
-      <Hero
-        title="Best CBSE School in Palamaner"
-        subtitle="Admissions Open 2026–27 | Limited Seats Available"
-        ctaText="Apply Now"
-        ctaLink="/admissions"
-      />
+      <Hero />
 
 
       {/* Results Section (HIGH CONVERSION) */}
-      <Section className="bg-white">
+      <Section className="bg-[#FAF7F2] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           
           <motion.p
@@ -103,7 +99,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-500 mb-12"
+            className="text-gray-500 mb-8"
           >
             Building a strong foundation for top ranks, success, and bright futures.
           </motion.p>
@@ -130,7 +126,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-gray-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition"
+                className="bg-white border border-[#E7D3BF] p-8 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <h3 className="font-bold text-xl mb-3 text-primary-700">{item.name}</h3>
                 <p className="text-gray-600">{item.desc}</p>
@@ -139,15 +135,15 @@ export default function Home() {
             
           </div>
 
-          <div className="mt-12 text-sm text-gray-500">
-            CBSE Curriculum • Limited Seats • Individual Attention • Result-Oriented Learning
+          <div className="mt-12 text-sm text-[#5C3A21]">
+            State Board Curriculum • Limited Seats • Individual Attention • Result-Oriented Learning
           </div>
 
         </div>
       </Section>
 
       {/* Why Choose Us */}
-      <Section className="bg-primary-50">
+      <Section className="bg-[#FAF7F2] py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
 
           <motion.h2
@@ -157,7 +153,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="section-heading"
           >
-            Why Choose Brundavan School?
+            Why Choose Brindavan School?
           </motion.h2>
 
           <div className="grid md:grid-cols-4 gap-6 mt-12">
@@ -173,7 +169,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+                className="bg-white border border-[#E7D3BF] p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <p className="font-semibold text-primary-700">{item}</p>
               </motion.div>
@@ -184,8 +180,8 @@ export default function Home() {
       </Section>
 
       {/* About Preview */}
-      <Section className="bg-gradient-to-br from-background to-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100/30 rounded-full -translate-y-32 translate-x-32 opacity-50 blur-3xl"></div>
+      <Section className="bg-[#FAF7F2] relative overflow-hidden py-16">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100/20 rounded-full -translate-y-32 translate-x-32 opacity-40 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <motion.div
@@ -291,11 +287,20 @@ export default function Home() {
         </div>
       </Section>
 
+      <LogoMeaning />
+      <ManagementMessage />
       <Facilities />
-      <Gallery />
+
+      {/* Gallery + Testimonials unified section */}
+      <div className="bg-[#FAF7F2]">
+        <Gallery />
+        <div className="-mt-6">
+          <Testimonials />
+        </div>
+      </div>
 
       {/* Events Section */}
-      <Section className="bg-gradient-to-br from-background to-white relative overflow-hidden">
+      <Section className="bg-[#FAF7F2] relative overflow-hidden py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -339,7 +344,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-white/80 backdrop-blur-md rounded-2xl p-8 text-center hover:shadow-xl hover:bg-white transition-all duration-300 group border border-white/20"
+                className="bg-white backdrop-blur-md rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 group border border-[#E7D3BF]"
               >
                 <div className="text-5xl mb-6 group-hover:scale-125 transition-transform duration-300">
                   {event.icon}
@@ -383,11 +388,9 @@ export default function Home() {
         </div>
       </Section>
 
-      <Testimonials />
-
       {/* CTA Band */}
-      <section className="bg-primary-900 text-white py-24 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900 via-secondary-800 to-primary-900 opacity-50"></div>
+      <section className="bg-[#5C3A21] text-white py-24 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#5C3A21] via-[#8B5E3C] to-[#5C3A21] opacity-70"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -412,33 +415,52 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-5 justify-center items-center"
           >
+
+            {/* PRIMARY CTA */}
             <Link
               to="/admissions"
-              className="inline-flex items-center justify-center gap-2 bg-gold text-black hover:scale-105 hover:shadow-2xl font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-xl"
+              className="group relative inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full 
+              bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 
+              text-black font-semibold shadow-lg
+              hover:shadow-2xl hover:scale-[1.05] active:scale-[0.98]
+              transition-all duration-300 overflow-hidden"
             >
-              Apply Now
+              <span className="relative z-10">Apply Now</span>
+
+              {/* shine effect */}
+              <span className="absolute inset-0 bg-white/20 translate-x-[-120%] group-hover:translate-x-[120%] transition-transform duration-700" />
             </Link>
+
+            {/* SECONDARY CTA */}
             <a
-              href="https://wa.me/918919498070?text=Hi%20I%20want%20admission%20details%20for%202026-27"
+              href="https://wa.me/918892004394?text=Hi%20I%20want%20admission%20details%20for%202026-27"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-green-500 text-white hover:bg-green-600 hover:scale-105 hover:shadow-2xl font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg"
+              className="group inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full
+              bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold
+              hover:bg-white hover:text-black hover:scale-[1.05]
+              transition-all duration-300 shadow-md"
             >
               Chat on WhatsApp
             </a>
+
+            {/* TERTIARY CTA */}
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-black hover:scale-105 hover:shadow-2xl font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full
+              border border-white/40 text-white font-semibold
+              hover:bg-white hover:text-black hover:scale-[1.05]
+              transition-all duration-300"
             >
               Book Campus Visit
             </Link>
+
           </motion.div>
         </div>
       </section>
 
-      <WhatsAppButton />
     </>
   )
 }

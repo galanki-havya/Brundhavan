@@ -48,7 +48,7 @@ export default function GalleryPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-white"
+        className="py-20 bg-background"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Filter Buttons */}
@@ -66,7 +66,7 @@ export default function GalleryPage() {
                 className={`px-6 py-3 rounded-full font-body font-medium text-sm transition-all duration-300 ${
                   filter === cat
                     ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-primary-50 hover:text-primary-600'
+                    : 'bg-charcoal-100 text-charcoal-700 hover:bg-primary-50 hover:text-primary-600'
                 }`}
               >
                 {cat}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Section from '../components/Section'
+import ManagementMessage from '../components/ManagementMessage'
 import { siteData } from '../data/site'
 import { Link } from 'react-router-dom'
 
@@ -60,15 +61,15 @@ export default function About() {
             >
               <div>
                 <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-2">Our Story</p>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-charcoal-900 leading-tight">
                   20+ Years of Quality Education
                 </h2>
               </div>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-charcoal-700 leading-relaxed">
                 Founded in {school.established}, Brundavan School has been a trusted name in education for over 20 years. Today, we are home to over 1,500 students and a dedicated team of 85+ experienced educators committed to academic excellence and holistic development.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                As a CBSE-affiliated school, we offer a comprehensive curriculum with a focus on academics, sports, and extracurricular activities. Our commitment is to provide quality education with a personal touch, ensuring every student reaches their full potential.
+              <p className="text-lg text-charcoal-700 leading-relaxed">
+                As a State Board school, we offer a comprehensive curriculum with a focus on academics, sports, and extracurricular activities. Our commitment is to provide quality education with a personal touch, ensuring every student reaches their full potential.
               </p>
             </motion.div>
           </div>
@@ -76,7 +77,7 @@ export default function About() {
       </Section>
 
       {/* Vision & Mission */}
-      <Section className="bg-gray-50">
+      <Section className="bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -85,7 +86,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-3">Our Purpose</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Vision & Mission</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-charcoal-900">Vision & Mission</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -138,47 +139,7 @@ export default function About() {
         </div>
       </Section>
 
-      {/* Leadership */}
-      <Section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-3">Leadership</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Messages from Our Leaders</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { ...chairman, color: 'primary' },
-              { ...principal, color: 'gold' },
-            ].map((leader, i) => (
-              <motion.div
-                key={leader.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-16 h-16 rounded-full bg-${leader.color}-600 flex items-center justify-center text-white font-display font-bold text-xl flex-shrink-0`}>
-                    {leader.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-display font-bold text-gray-900">{leader.name}</h3>
-                    <p className={`text-${leader.color}-600 font-semibold text-sm`}>{leader.title}</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed italic">{leader.message}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <ManagementMessage />
 
       {/* CTA */}
       <section className="bg-gradient-to-r from-primary-700 to-primary-900 py-16">

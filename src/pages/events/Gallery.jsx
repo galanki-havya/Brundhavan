@@ -5,7 +5,7 @@ import { Camera, Users, Award, Calendar } from 'lucide-react'
 
 export default function Gallery() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
         <title>Brundavan School - Photo Gallery</title>
@@ -50,12 +50,12 @@ export default function Gallery() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#FFF8EF] border border-[#E8D8C3] rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-gold-600" />
+                <div className="w-12 h-12 bg-[#F3E4D4] rounded-2xl flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-[#8B5E3C]" />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-charcoal-900 mb-3">
+                <h3 className="text-xl font-display font-semibold text-[#5C3A21] mb-3">
                   {item.title}
                 </h3>
                 <p className="text-charcoal-600">
@@ -68,7 +68,7 @@ export default function Gallery() {
       </section>
 
       {/* Featured Photos */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -117,12 +117,12 @@ export default function Gallery() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-primary-50 to-gold-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#FFF8EF] border border-[#E8D8C3] rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-full h-48 bg-gradient-to-br from-primary-200 to-gold-200 rounded-lg mb-4 flex items-center justify-center">
-                  <Camera className="w-12 h-12 text-primary-400" />
+                <div className="w-full h-48 bg-[#F3E4D4] rounded-2xl mb-4 flex items-center justify-center">
+                  <Camera className="w-12 h-12 text-[#8B5E3C]" />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-charcoal-900 mb-2">
+                <h3 className="text-xl font-display font-semibold text-[#5C3A21] mb-2">
                   {photo.title}
                 </h3>
                 <p className="text-charcoal-600 text-sm">
@@ -164,11 +164,11 @@ export default function Gallery() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg text-center"
+                className="bg-[#FFF8EF] border border-[#E8D8C3] rounded-3xl p-8 shadow-md text-center hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gold-600 mb-2">
+                <div className="text-3xl md:text-4xl font-display font-bold text-[#8B5E3C] mb-2">
                   {stat.number}
-                  {stat.suffix && <span className="text-lg text-charcoal-600">{stat.suffix}</span>}
+                  {stat.suffix && <span className="text-lg text-[#5C3A21]">{stat.suffix}</span>}
                 </div>
                 <div className="text-charcoal-700 font-medium">
                   {stat.label}
@@ -180,8 +180,9 @@ export default function Gallery() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="py-16 text-center bg-[#5C3A21] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#5C3A21] via-[#8B5E3C] to-[#5C3A21] opacity-70"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -207,10 +208,10 @@ export default function Gallery() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+            <a href="/admissions" className="bg-white text-[#5C3A21] hover:bg-[#FFF8EF] font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
               Apply Now
             </a>
-            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-[#5C3A21] font-body font-semibold transition-all duration-300">
               Schedule Visit
             </a>
           </motion.div>

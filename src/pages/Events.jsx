@@ -57,7 +57,7 @@ export default function Events() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-white"
+        className="py-20 bg-background"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -67,10 +67,10 @@ export default function Events() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-charcoal-900 mb-4">
               Annual Events Calendar
             </h2>
-            <p className="font-body text-gray-600 max-w-3xl mx-auto">
+            <p className="font-body text-charcoal-600 max-w-3xl mx-auto">
               At Brundavan School, events play a vital role in nurturing creativity, confidence, and leadership among students. Our annual calendar features a variety of celebrations that bring our community together.
             </p>
           </motion.div>

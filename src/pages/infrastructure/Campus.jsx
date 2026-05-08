@@ -5,7 +5,7 @@ import { Building, Trees, ParkingSquare, Wifi } from 'lucide-react'
 
 export default function Campus() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
         <title>Campus Overview - Brundavan Schools</title>

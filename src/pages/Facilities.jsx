@@ -18,7 +18,7 @@ export default function Facilities() {
       />
 
       {/* Facilities Grid */}
-      <Section className="bg-white">
+      <Section className="bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -27,10 +27,10 @@ export default function Facilities() {
             className="text-center mb-16"
           >
             <p className="text-gold-500 font-semibold text-sm tracking-wide uppercase mb-3">Infrastructure</p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-charcoal-900 leading-tight">
               Designed for Excellence
             </h2>
-            <p className="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="mt-6 text-lg text-charcoal-700 max-w-3xl mx-auto">
               Brundavan School is equipped with state-of-the-art facilities to support academic excellence, physical development, and creative expression.
             </p>
           </motion.div>
@@ -45,12 +45,12 @@ export default function Facilities() {
                 transition={{ delay: i * 0.1 }}
                 className="group bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition-all duration-300"
               >
-                <div className="bg-gradient-to-r from-primary-100 to-gold-100 h-32 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-primary-50 h-32 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300">
                   {facility.icon}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-display font-bold text-gray-900 mb-3">{facility.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{facility.desc}</p>
+                  <h3 className="text-xl font-display font-bold text-charcoal-900 mb-3">{facility.title}</h3>
+                  <p className="text-charcoal-700 leading-relaxed">{facility.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -59,9 +59,9 @@ export default function Facilities() {
       </Section>
 
       {/* Highlights */}
-      <Section className="bg-gray-50">
+      <Section className="bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-charcoal-900 text-center mb-16">
             Campus Highlights
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -93,8 +93,8 @@ export default function Facilities() {
                   transition={{ delay: i * 0.1 }}
                   className="bg-white p-6 rounded-xl shadow-md"
                 >
-                  <h3 className="text-lg font-display font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-700">{item.desc}</p>
+                  <h3 className="text-lg font-display font-bold text-charcoal-900 mb-2">{item.title}</h3>
+                  <p className="text-charcoal-700">{item.desc}</p>
                 </motion.div>
               ))}
             </motion.div>

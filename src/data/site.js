@@ -2,13 +2,13 @@ import { TrendingUp, Users, Award, BookOpen } from 'lucide-react'
 
 export const siteData = {
   school: {
-    name: "Brundavan School",
-    tagline: "Quality Education for Holistic Development",
+    name: "Brindavan School",
+    tagline: "Best State Board School in Palamaneru",
     shortTagline: "Building Bright Futures",
     description:
-      "Brundavan School, founded in 2025, is a modern educational institution in Palamaner, Chittoor, dedicated to providing high-quality education with a focus on academic excellence and holistic student development. We offer modern facilities, experienced faculty, and a supportive learning environment.",
+      "Brundavan School, founded in 2025 in Palamaner, is a modern State Board school dedicated to academic excellence, holistic growth, and strong values. We offer contemporary facilities, experienced faculty, and a nurturing environment for every child.",
     established: "2025",
-    affiliation: "English Medium School",
+    affiliation: "State Board School",
     rating: "4.9",
     phone: "+91 88920 04394",
     email: "contact@brundavanschool.com",
@@ -25,7 +25,7 @@ export const siteData = {
   },
 
   stats: [
-    { value: "CBSE", label: "Curriculum Framework", icon: Award },
+    { value: "State Curriculum", label: "Curriculum Framework", icon: Award },
     { value: "Personalized", label: "Learning Approach", icon: Users },
     { value: "Modern", label: "Smart Classrooms", icon: TrendingUp },
     { value: "Holistic", label: "Student Development", icon: BookOpen },
@@ -75,25 +75,19 @@ export const siteData = {
       level: "Primary School (Grades 1–5)",
       age: "Ages 6–11",
       desc: "Strong foundation in core subjects with activity-based pedagogy, art integration, and life-skills curriculum.",
-      color: "from-gold-200 to-gold-400",
+      color: "from-[#C89B3C] to-[#8B5E3C]",
     },
     {
       level: "Middle School (Grades 6–8)",
       age: "Ages 11–14",
       desc: "Concept-based learning, critical thinking projects, and exploration of co-curricular interests.",
-      color: "from-blue-400 to-indigo-400",
+      color: "from-[#8B5E3C] to-[#5C3A21]",
     },
     {
       level: "Secondary School (Grades 9–10)",
       age: "Ages 14–16",
-      desc: "CBSE curriculum with expert mentorship, board exam preparation, and skill enhancement programmes.",
-      color: "from-purple-400 to-pink-400",
-    },
-    {
-      level: "Senior Secondary (Grades 11–12)",
-      age: "Ages 16–18",
-      desc: "Streams: Science, Commerce, Humanities. Career counselling and competitive exam coaching included.",
-      color: "from-red-400 to-rose-400",
+      desc: "State Board curriculum with expert mentorship, exam preparation, and skill enhancement programmes.",
+      color: "from-[#5C3A21] to-[#C89B3C]",
     },
   ],
 
@@ -152,15 +146,16 @@ export const siteData = {
   ],
 
   galleryImages: [
-    { src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80", alt: "Students in classroom", category: "Academics" },
-    { src: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80", alt: "Science lab session", category: "Science" },
-    { src: "https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=600&q=80", alt: "Sports day event", category: "Sports" },
-    { src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80", alt: "Annual cultural fest", category: "Events" },
-    { src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80", alt: "School library", category: "Facilities" },
-    { src: "https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=600&q=80", alt: "Art class", category: "Arts" },
-    { src: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80", alt: "Graduation ceremony", category: "Events" },
-    { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80", alt: "Basketball match", category: "Sports" },
-    { src: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=600&q=80", alt: "Music class", category: "Arts" },
+    { src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80", alt: "Classroom teaching session", category: "Classrooms" },
+    { src: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80", alt: "Students exploring science lab experiments", category: "Labs" },
+    { src: "https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=600&q=80", alt: "School sports day activities", category: "Sports" },
+    { src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80", alt: "Annual day performance and awards", category: "Annual Day" },
+    { src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80", alt: "Students using library resources", category: "Library" },
+    { src: "https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=600&q=80", alt: "Students engaged in a science fair", category: "Science Fair" },
+    { src: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80", alt: "Festival celebration with students", category: "Festivals" },
+    { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80", alt: "Outdoor school outing and campus tour", category: "Outings" },
+    { src: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=600&q=80", alt: "Faculty mentoring students", category: "Faculty" },
+    { src: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80", alt: "School campus aerial view", category: "Campus" },
   ],
 
   vision:

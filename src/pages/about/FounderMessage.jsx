@@ -20,7 +20,7 @@ export default function FounderMessage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-white"
+        className="py-20 bg-charcoal-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
 

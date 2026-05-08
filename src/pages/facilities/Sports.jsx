@@ -4,11 +4,11 @@ import { Trophy, Target, Users, Heart } from 'lucide-react'
 
 export default function Sports() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
         title="Sports Facilities"
-        subtitle="Comprehensive sports infrastructure promoting physical fitness and teamwork."
+        subtitle="Comprehensive sports infrastructure promoting fitness, teamwork and healthy competition."
         image="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80"
         breadcrumbs="Home / Facilities / Sports"
       />

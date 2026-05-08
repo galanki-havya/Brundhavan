@@ -4,7 +4,7 @@ import { Monitor, BookOpen, Users, Zap } from 'lucide-react'
 
 export default function SmartClassrooms() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
         title="Smart Classrooms"

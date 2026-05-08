@@ -4,7 +4,7 @@ import { BookOpen, Trophy, Users, Target, GraduationCap, Code, Beaker } from 'lu
 
 export default function Secondary() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
         title="Secondary"
@@ -81,8 +81,8 @@ export default function Secondary() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-gold-600" />
+                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-primary-700" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-charcoal-900 mb-3">
                   {item.title}
@@ -97,7 +97,7 @@ export default function Secondary() {
       </section>
 
       {/* Subject Streams */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -279,7 +279,7 @@ export default function Secondary() {
               Board Examination Preparation
             </h2>
             <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-              Comprehensive preparation for CBSE/ICSE board examinations with focus on conceptual clarity
+              Comprehensive preparation for State Board examinations with a strong focus on conceptual clarity and confidence.
             </p>
           </motion.div>
 

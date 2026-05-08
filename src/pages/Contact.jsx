@@ -68,7 +68,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-primary-50">
       <Helmet>
         <title>Contact Us - Brundavan Schools</title>
         <meta
@@ -89,13 +89,13 @@ export default function Contact() {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="py-20 bg-gray-50"
+        className="py-20 bg-primary-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-16">
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-charcoal-900 mb-4">
             Contact Information
           </h2>
-          <p className="font-body text-gray-600 max-w-2xl mx-auto">
+          <p className="font-body text-charcoal-600 max-w-2xl mx-auto">
             Reach out to us through any of these channels.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg"
+              className="bg-white rounded-2xl p-6 shadow-md border border-gold-100 hover:shadow-lg transition"
             >
               <item.icon className="w-6 h-6 text-gold-600 mb-3" />
               <h3 className="font-bold text-lg mb-2">{item.label}</h3>
@@ -131,13 +131,13 @@ export default function Contact() {
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="py-20 bg-white"
+        className="py-20 bg-gradient-to-br from-white to-primary-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12">
           
           {/* FORM */}
           <div>
-            <h2 className="font-bold text-3xl mb-6">Send us a Message</h2>
+            <h2 className="font-bold text-3xl mb-6 text-charcoal-900">Send us a Message</h2>
 
             {submitted ? (
               <div className="bg-green-50 p-6 rounded-2xl text-center">
@@ -153,7 +153,7 @@ export default function Contact() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="w-full border p-3 rounded-xl"
+                  className="w-full px-4 py-3 rounded-xl border border-gold-100 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 text-charcoal-800 placeholder-gray-400 transition"
                 />
 
                 <input
@@ -161,7 +161,7 @@ export default function Contact() {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="Phone"
-                  className="w-full border p-3 rounded-xl"
+                  className="w-full px-4 py-3 rounded-xl border border-gold-100 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 text-charcoal-800 placeholder-gray-400 transition"
                 />
 
                 <input
@@ -169,7 +169,7 @@ export default function Contact() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Email"
-                  className="w-full border p-3 rounded-xl"
+                  className="w-full px-4 py-3 rounded-xl border border-gold-100 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 text-charcoal-800 placeholder-gray-400 transition"
                 />
 
                 <input
@@ -177,7 +177,7 @@ export default function Contact() {
                   value={form.subject}
                   onChange={handleChange}
                   placeholder="Subject"
-                  className="w-full border p-3 rounded-xl"
+                  className="w-full px-4 py-3 rounded-xl border border-gold-100 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 text-charcoal-800 placeholder-gray-400 transition"
                 />
 
                 <textarea
@@ -186,10 +186,10 @@ export default function Contact() {
                   onChange={handleChange}
                   rows={5}
                   placeholder="Message"
-                  className="w-full border p-3 rounded-xl"
+                  className="w-full px-4 py-3 rounded-xl border border-gold-100 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 text-charcoal-800 placeholder-gray-400 transition"
                 />
 
-                <button className="w-full bg-primary-600 text-white py-3 rounded-xl">
+                <button className="w-full bg-gradient-to-r from-primary-700 to-primary-900 text-white py-3 rounded-xl hover:from-primary-800 hover:to-primary-950 shadow-md hover:shadow-lg transition">
                   Send Message
                 </button>
               </form>
@@ -210,13 +210,13 @@ export default function Contact() {
                   loading="lazy"
                 />
               ) : (
-                <div className="h-full flex items-center justify-center bg-gray-100">
+                <div className="h-full flex items-center justify-center bg-primary-50">
                   <p>No map configured</p>
                 </div>
               )}
             </div>
 
-            <div className="mt-6 text-sm text-gray-600">
+            <div className="mt-6 text-sm text-charcoal-600">
               <p><strong>By Road:</strong> NH 42</p>
               <p><strong>By Train:</strong> Palamaner Junction</p>
               <p><strong>By Air:</strong> Tirupati Airport</p>
@@ -229,7 +229,7 @@ export default function Contact() {
       <div className="fixed bottom-6 right-6 z-50">
         <a
           href={`tel:${school.phone}`}
-          className="bg-primary-600 text-white px-5 py-3 rounded-xl shadow-xl"
+          className="bg-gradient-to-r from-gold-500 to-gold-600 text-primary-900 font-semibold px-5 py-3 rounded-xl shadow-lg hover:shadow-xl transition"
         >
           Call Now
         </a>

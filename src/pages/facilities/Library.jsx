@@ -4,11 +4,11 @@ import { Book, Search, Users, Clock } from 'lucide-react'
 
 export default function Library() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
         title="Library"
-        subtitle="Comprehensive collection of books, digital resources, and research materials for learning."
+        subtitle="A rich library hub supporting State Board study material, reading habits, and research projects."
         image="https://images.unsplash.com/photo-1507842217343-583f20270319?w=1200&q=80"
         breadcrumbs="Home / Facilities / Library"
       />

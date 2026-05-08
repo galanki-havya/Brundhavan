@@ -33,10 +33,10 @@ export default function Academics() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 mb-6">
-                  CBSE Curriculum Excellence
+                  State Board Curriculum Excellence
                 </h2>
                 <p className="font-body text-gray-600 leading-relaxed mb-6">
-                  Brundavan School follows the Central Board of Secondary Education (CBSE) curriculum, recognized for its comprehensive approach to education. Our implementation goes beyond traditional teaching, incorporating modern methodologies that prepare students for global challenges.
+                  Brundavan School follows the State Board curriculum, recognized for its balanced emphasis on academics, values, and practical learning. Our program combines strong foundations with modern methodology tailored for local students.
                 </p>
                 <p className="font-body text-gray-600 leading-relaxed mb-8">
                   We emphasize conceptual understanding, critical thinking, and practical application of knowledge. Our experienced faculty uses innovative teaching methods including project-based learning, digital tools, and real-world problem-solving activities.
@@ -44,7 +44,7 @@ export default function Academics() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">📚</span>
-                    <span className="font-body font-medium text-gray-800">CBSE Affiliated</span>
+                    <span className="font-body font-medium text-gray-800">State Board Accredited</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🎯</span>
@@ -98,7 +98,7 @@ export default function Academics() {
               Academic Programmes
             </h2>
             <p className="font-body text-gray-600 max-w-2xl mx-auto">
-              Comprehensive educational pathways designed for every stage of development, from early childhood to senior secondary education.
+              Comprehensive educational pathways designed for every stage of development, from early childhood to strong secondary school preparation.
             </p>
           </motion.div>
 

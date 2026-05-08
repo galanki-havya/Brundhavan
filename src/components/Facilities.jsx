@@ -10,10 +10,10 @@ const icons = [BookOpen, Users, Trophy, Microscope, Music, Gamepad2]
 
 export default function Facilities() {
   return (
-    <Section className="bg-gradient-to-br from-background to-white relative overflow-hidden">
+    <Section className="bg-gradient-to-br from-[#fffaf5] to-[#fdf6ee] relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full -translate-y-32 translate-x-32 opacity-60 blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary-900/5 rounded-full translate-y-24 -translate-x-24 opacity-60 blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C89B3C]/10 rounded-full -translate-y-32 translate-x-32 opacity-60 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#8B5E3C]/10 rounded-full translate-y-24 -translate-x-24 opacity-60 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
@@ -36,14 +36,14 @@ export default function Facilities() {
             return (
               <Card key={f.title} delay={i * 0.1} className="p-8 group relative">
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gray-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-[#fffdf9] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.3, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 group-hover:from-gold-400 group-hover:to-gold-400/80 rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 shadow-lg group-hover:shadow-2xl"
+                  className="w-16 h-16 bg-gradient-to-br from-[#8B5E3C] to-[#6F452B] group-hover:from-[#C89B3C] group-hover:to-[#B8862F] rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 shadow-md group-hover:shadow-xl"
                 >
                   <Icon className="w-8 h-8" />
                 </motion.div>
@@ -53,7 +53,7 @@ export default function Facilities() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.4, duration: 0.5 }}
-                  className="font-display font-bold text-xl text-charcoal-900 mb-3 group-hover:text-primary-600 transition-colors"
+                  className="font-display font-bold text-xl text-[#5C3A21] mb-3 group-hover:text-[#8B5E3C] transition-colors"
                 >
                   {f.title}
                 </motion.h3>

@@ -31,7 +31,7 @@ export default function ChairmanMessage() {
               className="lg:col-span-1"
             >
               <div className="sticky top-8">
-                <div className="bg-gradient-to-br from-charcoal-100 to-charcoal-200 rounded-2xl p-8 text-center">
+                <div className="bg-gold-50 rounded-2xl p-8 text-center">
                   <div className="w-48 h-48 bg-charcoal-300 rounded-full mx-auto mb-6 flex items-center justify-center">
                     <Users className="w-24 h-24 text-charcoal-500" />
                   </div>

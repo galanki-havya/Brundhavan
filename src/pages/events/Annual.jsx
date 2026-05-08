@@ -5,7 +5,7 @@ import { Calendar, Music, Trophy, Users } from 'lucide-react'
 
 export default function Annual() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       <Helmet>
         <title>Annual Events - Brundavan Schools</title>
         <meta name="description" content="Explore annual events, cultural programs, sports meets, and celebrations at Brundavan School." />

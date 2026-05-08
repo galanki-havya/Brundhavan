@@ -4,11 +4,11 @@ import { FlaskConical, Microscope, Atom, TestTube } from 'lucide-react'
 
 export default function Labs() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-gold-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
         title="Laboratories"
-        subtitle="Fully equipped state-of-the-art science laboratories for hands-on experiential learning."
+        subtitle="Science labs designed for practical learning aligned with the State Board curriculum."
         image="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&q=80"
         breadcrumbs="Home / Facilities / Laboratories"
       />
@@ -67,8 +67,8 @@ export default function Labs() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-gold-600" />
+                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-primary-700" />
                 </div>
                 <h3 className="text-xl font-display font-semibold text-charcoal-900 mb-3">
                   {item.title}
@@ -83,7 +83,7 @@ export default function Labs() {
       </section>
 
       {/* Equipment & Safety */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
