@@ -78,7 +78,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-[48px] left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-[var(--top-banner)] left-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-white shadow-xl py-2'
           : 'bg-black/30 backdrop-blur-xl border-b border-white/10 py-4'

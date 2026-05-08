@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function AdmissionsBanner() {
   return (
-    <div className="fixed top-0 left-0 w-full z-[100] bg-gradient-to-r from-[#5C3A21] via-[#6B4427] to-[#5C3A21] text-white shadow-md h-[40px]">
+    <div className="fixed top-0 left-0 w-full z-[100] bg-gradient-to-r from-[#5C3A21] via-[#6B4427] to-[#5C3A21] text-white shadow-md h-[var(--top-banner)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-3">
 
         <p className="text-xs sm:text-sm md:text-base font-medium text-center sm:text-left truncate">
