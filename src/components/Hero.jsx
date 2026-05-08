@@ -86,7 +86,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-lg md:text-xl text-gold-200 mb-6"
           >
-            Leading State Board School in Palamaneru
+            Leading State Board School in Palamaner
           </motion.p>
 
           <motion.p

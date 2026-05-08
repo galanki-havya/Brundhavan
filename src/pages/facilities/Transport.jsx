@@ -8,7 +8,7 @@ export default function Transport() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
-        <title>Transport - Brundavan Schools</title>
+        <title>Transport - Brindavan Schools</title>
         <meta name="description" content="Safe and reliable school transport services with GPS tracking and professional drivers." />
       </Helmet>
       <PageHero

@@ -7,8 +7,8 @@ export default function Annual() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Annual Events - Brundavan Schools</title>
-        <meta name="description" content="Explore annual events, cultural programs, sports meets, and celebrations at Brundavan School." />
+        <title>Annual Events - Brindavan Schools</title>
+        <meta name="description" content="Explore annual events, cultural programs, sports meets, and celebrations at Brindavan School." />
       </Helmet>
       <PageHero
         title="Annual Events"

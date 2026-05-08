@@ -31,7 +31,7 @@ export default function Facilities() {
               Designed for Excellence
             </h2>
             <p className="mt-6 text-lg text-charcoal-700 max-w-3xl mx-auto">
-              Brundavan School is equipped with state-of-the-art facilities to support academic excellence, physical development, and creative expression.
+              Brindavan School is equipped with state-of-the-art facilities to support academic excellence, physical development, and creative expression.
             </p>
           </motion.div>
 

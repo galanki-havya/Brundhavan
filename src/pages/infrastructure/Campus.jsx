@@ -8,7 +8,7 @@ export default function Campus() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
-        <title>Campus Overview - Brundavan Schools</title>
+        <title>Campus Overview - Brindavan Schools</title>
         <meta name="description" content="A modern, well-planned campus designed for an optimal learning environment." />
       </Helmet>
       <PageHero

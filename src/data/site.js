@@ -3,17 +3,17 @@ import { TrendingUp, Users, Award, BookOpen } from 'lucide-react'
 export const siteData = {
   school: {
     name: "Brindavan School",
-    tagline: "Best State Board School in Palamaneru",
+    tagline: "Best State Board School in Palamaner",
     shortTagline: "Building Bright Futures",
     description:
-      "Brundavan School, founded in 2025 in Palamaner, is a modern State Board school dedicated to academic excellence, holistic growth, and strong values. We offer contemporary facilities, experienced faculty, and a nurturing environment for every child.",
+      "Brindavan School, founded in 2025 in Palamaner, is a modern State Board school dedicated to academic excellence, holistic growth, and strong values. We offer contemporary facilities, experienced faculty, and a nurturing environment for every child.",
     established: "2025",
     affiliation: "State Board School",
     rating: "4.9",
     phone: "+91 88920 04394",
-    email: "contact@brundavanschool.com",
+    email: "contact@brindavanschool.com",
     address: "Bazaar Street, Palamaner, Chittoor, Andhra Pradesh – 517004, India",
-    website: "www.brundavanschool.com",
+    website: "www.brindavanschool.in",
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.2!2d79.15!3d13.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d4a!2sPalamaner%2C%20Chittoor!5e0!3m2!1sen!2sin!4v1619608000000!5m2!1sen!2sin",
     socials: {
@@ -100,7 +100,7 @@ export const siteData = {
     {
       step: "02",
       title: "Campus Visit",
-      desc: "Schedule a school tour. Meet our faculty, explore facilities, and understand the Brundavan learning environment.",
+      desc: "Schedule a school tour. Meet our faculty, explore facilities, and understand the Brindavan learning environment.",
     },
     {
       step: "03",
@@ -119,7 +119,7 @@ export const siteData = {
       name: "Ramesh Kumar",
       role: "Parent of Grade 7 student",
       quote:
-        "Brundavan School has given my child a strong foundation. The faculty is dedicated and truly cares about each student's progress. The campus is clean and well-maintained.",
+        "Brindavan School has given my child a strong foundation. The faculty is dedicated and truly cares about each student's progress. The campus is clean and well-maintained.",
       avatar: "RK",
     },
     {
@@ -133,14 +133,14 @@ export const siteData = {
       name: "Sriram",
       role: "Alumni – Batch of 2020",
       quote:
-        "Brundavan prepared me well for my board exams and my competitive entrance tests. The teachers here go the extra mile to help students succeed.",
+        "Brindavan prepared me well for my board exams and my competitive entrance tests. The teachers here go the extra mile to help students succeed.",
       avatar: "SR",
     },
     {
       name: "Lakshmi Devi",
       role: "Parent of Grade 3 student",
       quote:
-        "The student-friendly environment at Brundavan is what sets it apart. My son looks forward to school every day. Highly recommended for families in Palamaner.",
+        "The student-friendly environment at Brindavan is what sets it apart. My son looks forward to school every day. Highly recommended for families in Palamaner.",
       avatar: "LD",
     },
   ],
@@ -167,12 +167,12 @@ export const siteData = {
     name: "Sri K. Venkateshwar Rao",
     title: "Founder & Chairman",
     message:
-      "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brundavan School, founded in 2025, we are building a modern educational institution focused on academic excellence, innovation, and holistic development. Our commitment to quality education, rooted in Indian values and global perspectives, will shape future generations. I invite you to be part of this extraordinary journey.",
+      "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brindavan School, founded in 2025, we are building a modern educational institution focused on academic excellence, innovation, and holistic development. Our commitment to quality education, rooted in Indian values and global perspectives, will shape future generations. I invite you to be part of this extraordinary journey.",
   },
   principal: {
     name: "Dr. Lakshmi Prasanna",
     title: "Principal",
     message:
-      "At Brundavan School, every day is an opportunity for our students to discover, learn, and grow. As an experienced educator dedicated to modern education excellence, I lead our team in providing quality education in a supportive environment. We believe in nurturing both the academic and personal development of every child through innovative teaching methods and personalized attention. We look forward to partnering with families to help our students achieve their best.",
+      "At Brindavan School, every day is an opportunity for our students to discover, learn, and grow. As an experienced educator dedicated to modern education excellence, I lead our team in providing quality education in a supportive environment. We believe in nurturing both the academic and personal development of every child through innovative teaching methods and personalized attention. We look forward to partnering with families to help our students achieve their best.",
   },
 };

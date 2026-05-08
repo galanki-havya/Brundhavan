@@ -38,7 +38,7 @@ export default function PrincipalMessage() {
                   <h3 className="font-display font-bold text-2xl text-charcoal-900 mb-2">
                     Dr. Principal Name
                   </h3>
-                  <p className="font-body text-charcoal-600 mb-4">Principal, Brundavan School</p>
+                  <p className="font-body text-charcoal-600 mb-4">Principal, Brindavan School</p>
                   <div className="space-y-2 text-sm font-body text-charcoal-500">
                     <div>M.Ed., M.Phil.</div>
                     <div>15+ Years Experience</div>
@@ -64,10 +64,10 @@ export default function PrincipalMessage() {
                     Dear Students, Parents, and Esteemed Colleagues,
                   </p>
                   <p>
-                    It is my privilege to serve as the Principal of Brundavan School, an institution that has become synonymous with educational excellence in our region. Every day, I witness the incredible potential of our students and the dedication of our faculty, and it fills me with immense pride and optimism for the future.
+                    It is my privilege to serve as the Principal of Brindavan School, an institution that has become synonymous with educational excellence in our region. Every day, I witness the incredible potential of our students and the dedication of our faculty, and it fills me with immense pride and optimism for the future.
                   </p>
                   <p>
-                    At Brundavan School, we believe that education is not just about academic achievement, but about developing well-rounded individuals who are prepared to face the challenges of the modern world. Our comprehensive curriculum, combined with our focus on character development and extracurricular activities, ensures that our students receive a holistic education.
+                    At Brindavan School, we believe that education is not just about academic achievement, but about developing well-rounded individuals who are prepared to face the challenges of the modern world. Our comprehensive curriculum, combined with our focus on character development and extracurricular activities, ensures that our students receive a holistic education.
                   </p>
                   <p>
                     Our teachers are not just educators; they are mentors, guides, and role models who inspire our students to dream big and work hard to achieve their goals. The success of our alumni in various fields stands as a testament to the quality of education we provide.
@@ -154,7 +154,7 @@ export default function PrincipalMessage() {
               Key Achievements & Initiatives
             </h2>
             <p className="font-body text-charcoal-600 max-w-3xl mx-auto">
-              Under the leadership of our Principal, Brundavan School has achieved remarkable milestones
+              Under the leadership of our Principal, Brindavan School has achieved remarkable milestones
             </p>
           </motion.div>
 
@@ -245,7 +245,7 @@ export default function PrincipalMessage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-body text-charcoal-600 mb-12 text-lg leading-relaxed"
           >
-            As we continue our journey of educational excellence, we remain committed to adapting to the evolving needs of our students while preserving the values that have made Brundavan School a trusted name in education.
+            As we continue our journey of educational excellence, we remain committed to adapting to the evolving needs of our students while preserving the values that have made Brindavan School a trusted name in education.
           </motion.p>
 
           <motion.div

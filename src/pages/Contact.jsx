@@ -70,10 +70,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-primary-50">
       <Helmet>
-        <title>Contact Us - Brundavan Schools</title>
+        <title>Contact Us - Brindavan Schools</title>
         <meta
           name="description"
-          content="Get in touch with Brundavan School. We're here to answer your questions."
+          content="Get in touch with Brindavan School. We're here to answer your questions."
         />
       </Helmet>
 

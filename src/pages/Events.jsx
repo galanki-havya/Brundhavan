@@ -71,7 +71,7 @@ export default function Events() {
               Annual Events Calendar
             </h2>
             <p className="font-body text-charcoal-600 max-w-3xl mx-auto">
-              At Brundavan School, events play a vital role in nurturing creativity, confidence, and leadership among students. Our annual calendar features a variety of celebrations that bring our community together.
+              At Brindavan School, events play a vital role in nurturing creativity, confidence, and leadership among students. Our annual calendar features a variety of celebrations that bring our community together.
             </p>
           </motion.div>
 

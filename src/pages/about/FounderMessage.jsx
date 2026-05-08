@@ -8,7 +8,7 @@ export default function FounderMessage() {
     <>
       {/* HERO */}
       <PageHero
-        title="Founder’s Message - Brundavan School Palamaner"
+        title="Founder’s Message - Brindavan School Palamaner"
         subtitle="A vision to create future leaders with discipline, excellence, and values"
         image="https://images.unsplash.com/photo-1573417039-2095-b2a3f6e6a3?w=1200&q=90&auto=format&fit=crop"
         breadcrumbs="Home / About / Founder Message"
@@ -36,7 +36,7 @@ export default function FounderMessage() {
               <div className="relative h-[500px] w-full max-w-md">
                 <img
                   src="https://images.unsplash.com/photo-1507003211162-0f4da02e1734?w=800&q=90"
-                  alt="Founder of Brundavan School Palamaner"
+                  alt="Founder of Brindavan School Palamaner"
                   className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   loading="lazy"
                   onError={(e) => {
@@ -82,7 +82,7 @@ export default function FounderMessage() {
               </p>
 
               <p className="text-charcoal-600 leading-relaxed">
-                Brundavan School, established on May 22, 2025, was founded with a
+                Brindavan School, established on May 22, 2025, was founded with a
                 strong vision to bring world-class education to Palamaner.
                 Our mission is to provide students with the same quality education
                 found in top cities, right here in our local community.
@@ -149,7 +149,7 @@ export default function FounderMessage() {
           </h2>
 
           <p className="text-lg text-primary-700 mb-8 max-w-2xl mx-auto">
-            Join Brundavan School – one of the fastest growing schools in Palamaner,
+            Join Brindavan School – one of the fastest growing schools in Palamaner,
             committed to excellence in education, discipline, and student success.
           </p>
 

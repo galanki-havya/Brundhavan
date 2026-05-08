@@ -8,14 +8,14 @@ export default function AboutOverview() {
   return (
     <>
       <Helmet>
-        <title>Best School in Palamaner | About Brundavan School</title>
+        <title>Best School in Palamaner | About Brindavan School</title>
         <meta
           name="description"
-          content="Learn about Brundavan School, Palamaner — a modern educational institution focused on academic excellence, discipline, innovation, and holistic student development with experienced faculty and safe learning environment."
+          content="Learn about Brindavan School, Palamaner — a modern educational institution focused on academic excellence, discipline, innovation, and holistic student development with experienced faculty and safe learning environment."
         />
       </Helmet>
       <PageHero
-        title="About Brundavan School"
+        title="About Brindavan School"
         subtitle="Discover our rich heritage, values, and commitment to educational excellence."
         image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=90&auto=format&fit=crop"
         breadcrumbs="Home / About / Overview"
@@ -65,7 +65,7 @@ export default function AboutOverview() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="font-body text-[#5F5147] leading-relaxed"
               >
-                Brundavan School, established on May 22, 2025, was founded with a vision to redefine quality education in Palamaner. Built with modern infrastructure, experienced faculty, and a commitment to academic excellence, the school creates a safe, disciplined, and innovative learning environment for every child.
+                Brindavan School, established on May 22, 2025, was founded with a vision to redefine quality education in Palamaner. Built with modern infrastructure, experienced faculty, and a commitment to academic excellence, the school creates a safe, disciplined, and innovative learning environment for every child.
               </motion.p>
 
               <motion.p
@@ -104,7 +104,7 @@ export default function AboutOverview() {
               <div className="relative h-[400px] sm:h-[450px] md:h-[500px]">
                 <img
                   src="/images/about-campus.webp"
-                  alt="Brundavan School Palamaner — modern campus with classrooms and learning facilities"
+                  alt="Brindavan School Palamaner — modern campus with classrooms and learning facilities"
                   className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   loading="lazy"
                   onError={(e) => {
@@ -145,7 +145,7 @@ export default function AboutOverview() {
             className="text-center mb-16"
           >
             <h2 className="font-display font-bold text-3xl md:text-4xl text-[#3A2618] mb-4">
-              Why Parents Choose Brundavan
+              Why Parents Choose Brindavan
             </h2>
             <p className="font-body text-[#5F5147] max-w-2xl mx-auto">
               A trusted choice for quality education, safety, discipline, and holistic development
@@ -196,7 +196,7 @@ export default function AboutOverview() {
               Our Core Values
             </h2>
             <p className="font-body text-[#5F5147] max-w-3xl mx-auto">
-              These principles guide everything we do at Brundavan School, shaping the character and future of our students
+              These principles guide everything we do at Brindavan School, shaping the character and future of our students
             </p>
           </motion.div>
 

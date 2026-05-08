@@ -8,7 +8,7 @@ export default function Safety() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
-        <title>Safety & Security - Brundavan Schools</title>
+        <title>Safety & Security - Brindavan Schools</title>
         <meta name="description" content="Comprehensive safety measures ensuring a secure learning environment for all students." />
       </Helmet>
       <PageHero

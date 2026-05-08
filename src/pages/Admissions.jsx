@@ -15,10 +15,10 @@ export default function Admissions() {
     <div className="min-h-screen bg-primary-50">
       <Helmet>
         <title>Admissions - Brindavan School | State Board Admissions 2026</title>
-        <meta name="description" content="Apply for admission to Brindavan School, the leading State Board school in Palamaneru. Admissions open for 2026-27 with modern facilities and holistic education." />
+        <meta name="description" content="Apply for admission to Brindavan School, the leading State Board school in Palamaner. Admissions open for 2026-27 with modern facilities and holistic education." />
       </Helmet>
       <PageHero 
-        title="Join Brundavan School" 
+        title="Join Brindavan School" 
         subtitle="Admissions" 
         image="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=1200&q=80"
         breadcrumbs="Home / Admissions"

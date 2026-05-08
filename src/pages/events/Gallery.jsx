@@ -8,12 +8,12 @@ export default function Gallery() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
-        <title>Brundavan School - Photo Gallery</title>
-        <meta name="description" content="Capturing memorable moments and showcasing the vibrant life at Brundavan School." />
+        <title>Brindavan School - Photo Gallery</title>
+        <meta name="description" content="Capturing memorable moments and showcasing the vibrant life at Brindavan School." />
       </Helmet>
       <PageHero
         title="Photo Gallery"
-        subtitle="Capturing memorable moments and showcasing the vibrant life at Brundavan School."
+        subtitle="Capturing memorable moments and showcasing the vibrant life at Brindavan School."
         image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80"
         breadcrumbs="Home / Events / Gallery"
       />

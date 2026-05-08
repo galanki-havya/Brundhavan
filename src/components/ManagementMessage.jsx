@@ -15,7 +15,7 @@ export default function ManagementMessage() {
           </p>
 
           <h2 className="mt-4 text-4xl font-display font-bold text-charcoal-900">
-            Leadership Message from Brundavan Management
+            Leadership Message from Brindavan Management
           </h2>
 
           <p className="mt-4 max-w-3xl mx-auto text-charcoal-600 leading-relaxed">

@@ -27,7 +27,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="relative text-center text-white"
         >
-          <h1 className="text-5xl md:text-6xl font-display font-bold">About Brundavan</h1>
+          <h1 className="text-5xl md:text-6xl font-display font-bold">About Brindavan</h1>
           <p className="mt-3 text-xl text-white/90">Our Heritage & Vision</p>
         </motion.div>
       </section>
@@ -44,7 +44,7 @@ export default function About() {
             >
               <img
                 src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=85"
-                alt="Brundavan students"
+                alt="Brindavan students"
                 className="rounded-xl shadow-lg w-full h-auto object-cover"
                 loading="lazy"
                 onError={(e) => {
@@ -66,7 +66,7 @@ export default function About() {
                 </h2>
               </div>
               <p className="text-lg text-charcoal-700 leading-relaxed">
-                Founded in {school.established}, Brundavan School has been a trusted name in education for over 20 years. Today, we are home to over 1,500 students and a dedicated team of 85+ experienced educators committed to academic excellence and holistic development.
+                Founded in {school.established}, Brindavan School has been a trusted name in education for over 20 years. Today, we are home to over 1,500 students and a dedicated team of 85+ experienced educators committed to academic excellence and holistic development.
               </p>
               <p className="text-lg text-charcoal-700 leading-relaxed">
                 As a State Board school, we offer a comprehensive curriculum with a focus on academics, sports, and extracurricular activities. Our commitment is to provide quality education with a personal touch, ensuring every student reaches their full potential.
@@ -145,7 +145,7 @@ export default function About() {
       <section className="bg-gradient-to-r from-primary-700 to-primary-900 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">
-            Ready to Join Brundavan?
+            Ready to Join Brindavan?
           </h2>
           <p className="text-white/90 mb-8 max-w-xl mx-auto">
             Experience education that transforms lives and builds futures.

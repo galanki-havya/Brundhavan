@@ -8,12 +8,12 @@ export default function News() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
-        <title>Brundavan School News</title>
-        <meta name="description" content="Stay updated with the latest happenings, achievements, and announcements from Brundavan School." />
+        <title>Brindavan School News</title>
+        <meta name="description" content="Stay updated with the latest happenings, achievements, and announcements from Brindavan School." />
       </Helmet>
       <PageHero
         title="School News"
-        subtitle="Stay updated with the latest happenings, achievements, and announcements from Brundavan School."
+        subtitle="Stay updated with the latest happenings, achievements, and announcements from Brindavan School."
         image="https://images.unsplash.com/photo-1444027714806-8a027fb24d77?w=1200&q=80"
         breadcrumbs="Home / Events / News"
       />

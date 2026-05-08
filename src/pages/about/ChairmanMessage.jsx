@@ -38,7 +38,7 @@ export default function ChairmanMessage() {
                   <h3 className="font-display font-bold text-2xl text-charcoal-900 mb-2">
                     Mr. Chairman Name
                   </h3>
-                  <p className="font-body text-charcoal-600 mb-4">Chairman, Brundavan School</p>
+                  <p className="font-body text-charcoal-600 mb-4">Chairman, Brindavan School</p>
                   <div className="flex justify-center gap-2">
                     <Award className="w-5 h-5 text-gold-500" />
                     <span className="text-sm font-body text-charcoal-500">20+ Years Experience</span>
@@ -58,26 +58,26 @@ export default function ChairmanMessage() {
               <div className="bg-charcoal-50 rounded-2xl p-8 border-l-4 border-gold-500">
                 <Quote className="w-12 h-12 text-gold-500 mb-6" />
                 <h2 className="font-display font-bold text-3xl text-charcoal-900 mb-6">
-                  A Message to Our Brundavan Family
+                  A Message to Our Brindavan Family
                 </h2>
                 <div className="space-y-6 text-lg font-body text-charcoal-700 leading-relaxed">
                   <p>
                     Dear Parents, Teachers, and Students,
                   </p>
                   <p>
-                    It is with great pride and humility that I welcome you to Brundavan School. Over the past two decades, we have built not just an educational institution, but a community dedicated to nurturing young minds and shaping future leaders.
+                    It is with great pride and humility that I welcome you to Brindavan School. Over the past two decades, we have built not just an educational institution, but a community dedicated to nurturing young minds and shaping future leaders.
                   </p>
                   <p>
-                    Education is not merely about acquiring knowledge; it is about developing character, fostering creativity, and instilling values that will guide our students throughout their lives. At Brundavan School, we believe in providing a holistic education that addresses the intellectual, emotional, physical, and spiritual needs of every child.
+                    Education is not merely about acquiring knowledge; it is about developing character, fostering creativity, and instilling values that will guide our students throughout their lives. At Brindavan School, we believe in providing a holistic education that addresses the intellectual, emotional, physical, and spiritual needs of every child.
                   </p>
                   <p>
                     Our commitment to excellence is unwavering. We continuously strive to create an environment where learning is engaging, teachers are inspired, and students are empowered to reach their full potential. The success stories of our alumni stand as testament to the quality of education we provide.
                   </p>
                   <p>
-                    As we look to the future, I am confident that Brundavan School will continue to be a beacon of educational excellence in Andhra Pradesh. Together, we will shape a brighter future for our children and contribute to the development of our society.
+                    As we look to the future, I am confident that Brindavan School will continue to be a beacon of educational excellence in Andhra Pradesh. Together, we will shape a brighter future for our children and contribute to the development of our society.
                   </p>
                   <p className="font-semibold">
-                    Thank you for choosing Brundavan School. Your trust inspires us to do better every day.
+                    Thank you for choosing Brindavan School. Your trust inspires us to do better every day.
                   </p>
                 </div>
                 <div className="mt-8 pt-6 border-t border-charcoal-200">
@@ -154,7 +154,7 @@ export default function ChairmanMessage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-body text-charcoal-600 mb-12 text-lg leading-relaxed"
           >
-            Under the guidance of our Chairman, Brundavan School continues to evolve and adapt to meet the changing needs of education while maintaining our core values of excellence, integrity, and innovation.
+            Under the guidance of our Chairman, Brindavan School continues to evolve and adapt to meet the changing needs of education while maintaining our core values of excellence, integrity, and innovation.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -216,7 +216,7 @@ export default function ChairmanMessage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-body text-primary-100 mb-8 text-lg"
           >
-            Join thousands of families who have entrusted their children's future to Brundavan School
+            Join thousands of families who have entrusted their children's future to Brindavan School
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}

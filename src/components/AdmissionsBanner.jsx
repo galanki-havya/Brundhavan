@@ -7,7 +7,7 @@ export default function AdmissionsBanner() {
 
         <p className="text-xs sm:text-sm md:text-base font-medium text-center sm:text-left truncate">
           Admissions Open 2026–27
-          <span className="hidden sm:inline"> | State Board School in Palamaneru</span>
+          <span className="hidden sm:inline"> | State Board School in Palamaner</span>
         </p>
 
         <Link

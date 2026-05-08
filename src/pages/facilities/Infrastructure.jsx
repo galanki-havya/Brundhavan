@@ -52,7 +52,7 @@ export default function Infrastructure() {
               State-of-the-Art Facilities
             </h2>
             <p className="font-body text-charcoal-600 max-w-3xl mx-auto">
-              Brundavan School provides a modern and student-friendly campus designed to support academic excellence and holistic development. Our infrastructure combines safety, innovation, and comfort to create an ideal learning environment.
+              Brindavan School provides a modern and student-friendly campus designed to support academic excellence and holistic development. Our infrastructure combines safety, innovation, and comfort to create an ideal learning environment.
             </p>
           </motion.div>
 
@@ -137,7 +137,7 @@ export default function Infrastructure() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-body text-lg text-gray-200 mb-8 max-w-2xl mx-auto"
           >
-            Schedule a campus tour to see our world-class facilities in person and discover why Brundavan School is the perfect choice for your child's education.
+            Schedule a campus tour to see our world-class facilities in person and discover why Brindavan School is the perfect choice for your child's education.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}

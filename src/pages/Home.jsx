@@ -17,18 +17,18 @@ export default function Home() {
     <>
       <Helmet>
         {/* Primary SEO */}
-        <title>Brindavan School | Best State Board School in Palamaneru</title>
+        <title>Brindavan School | Best State Board School in Palamaner</title>
         <meta 
           name="description" 
-          content="Brindavan School is the leading State Board school in Palamaneru, offering modern facilities, caring faculty, and admissions open for 2026-27." 
+          content="Brindavan School is the leading State Board school in Palamaner, offering modern facilities, caring faculty, and admissions open for 2026-27." 
         />
         <meta 
           name="keywords" 
-          content="Best School in Palamaneru, State Board School Palamaneru, admissions open 2026, top school in Palamaneru, Brindavan School" 
+          content="Best School in Palamaner, State Board School Palamaner, admissions open 2026, top school in Palamaner, Brindavan School" 
         />
 
         {/* Open Graph (for WhatsApp, Facebook) */}
-        <meta property="og:title" content="Brindavan School - Best State Board School in Palamaneru" />
+        <meta property="og:title" content="Brindavan School - Best State Board School in Palamaner" />
         <meta property="og:description" content="Join Brindavan School for strong State Board education, modern campus, and holistic growth." />
         <meta property="og:image" content="/images/hero-poster.jpg" />
         <meta property="og:type" content="website" />
@@ -194,7 +194,7 @@ export default function Home() {
               <div className="group relative overflow-hidden rounded-2xl shadow-xl h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] hover:shadow-2xl transition-all duration-500">
                 <img
                   src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=90&auto=format&fit=crop"
-                  alt="Brundavan students"
+                  alt="Brindavan students"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                   onError={(e) => {
@@ -223,7 +223,7 @@ export default function Home() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="section-subheading"
               >
-                Welcome to Brundavan
+                Welcome to Brindavan
               </motion.p>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}

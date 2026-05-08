@@ -51,7 +51,7 @@ export default function Gallery() {
         >
           <div>
             <p className="section-subheading">Campus Life</p>
-            <h2 className="section-heading mb-0">Life at Brundavan</h2>
+            <h2 className="section-heading mb-0">Life at Brindavan</h2>
           </div>
           <Link to="/gallery" className="inline-flex items-center gap-2 border border-[#C89B3C] text-[#5C3A21] hover:bg-[#FFF3E6] px-6 py-3 rounded-full font-medium transition-all duration-300 self-start md:self-auto group">
             View Full Gallery
