@@ -36,7 +36,7 @@ export default function Academics() {
                   State Board Curriculum Excellence
                 </h2>
                 <p className="font-body text-gray-600 leading-relaxed mb-6">
-                  Brundavan School follows the State Board curriculum, recognized for its balanced emphasis on academics, values, and practical learning. Our program combines strong foundations with modern methodology tailored for local students.
+                  Brindavan School follows the State Board curriculum, recognized for its balanced emphasis on academics, values, and practical learning. Our program combines strong foundations with modern methodology tailored for local students.
                 </p>
                 <p className="font-body text-gray-600 leading-relaxed mb-8">
                   We emphasize conceptual understanding, critical thinking, and practical application of knowledge. Our experienced faculty uses innovative teaching methods including project-based learning, digital tools, and real-world problem-solving activities.

@@ -38,7 +38,7 @@ export default function AdmissionForm() {
   return (
     <div className="min-h-screen bg-primary-50 pt-28 pb-10 px-4">
       <Helmet>
-        <title>Online Admission Form - Brundavan School</title>
+        <title>Online Admission Form - Brindavan School</title>
       </Helmet>
 
       <div className="max-w-4xl mx-auto">
