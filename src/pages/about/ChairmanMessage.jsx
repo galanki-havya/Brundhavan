@@ -9,7 +9,7 @@ export default function ChairmanMessage() {
       <PageHero
         title="Chairman's Message"
         subtitle="Visionary guidance and leadership shaping our institutional future."
-        image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / About / Chairman's Message"
       />
       {/* Chairman Message */}
@@ -36,9 +36,9 @@ export default function ChairmanMessage() {
                     <Users className="w-24 h-24 text-charcoal-500" />
                   </div>
                   <h3 className="font-display font-bold text-2xl text-charcoal-900 mb-2">
-                    Mr. Chairman Name
+                    M Mahesh Babu
                   </h3>
-                  <p className="font-body text-charcoal-600 mb-4">Chairman, Brindavan School</p>
+                  <p className="font-body text-charcoal-600 mb-4">Founder & CEO, Brindavan School</p>
                   <div className="flex justify-center gap-2">
                     <Award className="w-5 h-5 text-gold-500" />
                     <span className="text-sm font-body text-charcoal-500">20+ Years Experience</span>
@@ -81,8 +81,8 @@ export default function ChairmanMessage() {
                   </p>
                 </div>
                 <div className="mt-8 pt-6 border-t border-charcoal-200">
-                  <p className="font-display font-bold text-charcoal-900">Mr. Chairman Name</p>
-                  <p className="font-body text-charcoal-600">Chairman</p>
+                  <p className="font-display font-bold text-charcoal-900">M Mahesh Babu</p>
+                  <p className="font-body text-charcoal-600">Founder & CEO</p>
                 </div>
               </div>
 

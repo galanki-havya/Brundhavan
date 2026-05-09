@@ -52,7 +52,7 @@ export default function Achievements() {
       <PageHero
         title="Our Achievements"
         subtitle="Building excellence through innovation, discipline, and modern education."
-        image="https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / About / Achievements"
       />
 

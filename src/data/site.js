@@ -146,16 +146,56 @@ export const siteData = {
   ],
 
   galleryImages: [
-    { src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80", alt: "Classroom teaching session", category: "Classrooms" },
-    { src: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80", alt: "Students exploring science lab experiments", category: "Labs" },
-    { src: "https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=600&q=80", alt: "School sports day activities", category: "Sports" },
-    { src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80", alt: "Annual day performance and awards", category: "Annual Day" },
-    { src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80", alt: "Students using library resources", category: "Library" },
-    { src: "https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=600&q=80", alt: "Students engaged in a science fair", category: "Science Fair" },
-    { src: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&q=80", alt: "Festival celebration with students", category: "Festivals" },
-    { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&q=80", alt: "Outdoor school outing and campus tour", category: "Outings" },
-    { src: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=600&q=80", alt: "Faculty mentoring students", category: "Faculty" },
-    { src: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=600&q=80", alt: "School campus aerial view", category: "Campus" },
+    {
+      src: new URL('../assets/gallery/Infrastructure/1.jpg', import.meta.url).href,
+      alt: 'Classroom teaching session',
+      category: 'Classrooms',
+    },
+    {
+      src: new URL('../assets/gallery/Infrastructure/2.jpg', import.meta.url).href,
+      alt: 'Students exploring science lab experiments',
+      category: 'Labs',
+    },
+    {
+      src: new URL('../assets/gallery/Sports/1.jpg', import.meta.url).href,
+      alt: 'School sports day activities',
+      category: 'Sports',
+    },
+    {
+      src: new URL('../assets/gallery/AnnualDay/1.jpg', import.meta.url).href,
+      alt: 'Annual day performance and awards',
+      category: 'Annual Day',
+    },
+    {
+      src: new URL('../assets/gallery/Library/1.jpg', import.meta.url).href,
+      alt: 'Students using library resources',
+      category: 'Library',
+    },
+    {
+      src: new URL('../assets/gallery/ScienceDay/1.jpg', import.meta.url).href,
+      alt: 'Students engaged in a science fair',
+      category: 'Science Fair',
+    },
+    {
+      src: new URL('../assets/gallery/ChildrensDay/1.jpg', import.meta.url).href,
+      alt: 'Festival celebration with students',
+      category: 'Festivals',
+    },
+    {
+      src: new URL('../assets/gallery/HouseVisit/1.jpg', import.meta.url).href,
+      alt: 'Outdoor school outing and campus tour',
+      category: 'Outings',
+    },
+    {
+      src: new URL('../assets/gallery/Infrastructure/3.jpg', import.meta.url).href,
+      alt: 'Faculty mentoring students',
+      category: 'Faculty',
+    },
+    {
+      src: new URL('../assets/gallery/Infrastructure/4.jpg', import.meta.url).href,
+      alt: 'School campus aerial view',
+      category: 'Campus',
+    },
   ],
 
   vision:
@@ -164,8 +204,8 @@ export const siteData = {
     "To provide a stimulating, inclusive, and values-driven educational environment where every learner is inspired to achieve their fullest potential through academic rigour, creative expression, and character development.",
 
   chairman: {
-    name: "Sri K. Venkateshwar Rao",
-    title: "Founder & Chairman",
+    name: "M Mahesh Babu",
+    title: "Founder & CEO",
     message:
       "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brindavan School, founded in 2025, we are building a modern educational institution focused on academic excellence, innovation, and holistic development. Our commitment to quality education, rooted in Indian values and global perspectives, will shape future generations. I invite you to be part of this extraordinary journey.",
   },

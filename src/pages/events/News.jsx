@@ -14,7 +14,7 @@ export default function News() {
       <PageHero
         title="School News"
         subtitle="Stay updated with the latest happenings, achievements, and announcements from Brindavan School."
-        image="https://images.unsplash.com/photo-1444027714806-8a027fb24d77?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / Events / News"
       />
 

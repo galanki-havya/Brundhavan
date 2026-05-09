@@ -1,20 +1,110 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
-import { Camera, Users, Award, Calendar } from 'lucide-react'
+import { Users, Award, Calendar, Camera } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+
+const asset = (path) => new URL(path, import.meta.url).href
+
+const galleryData = [
+  {
+    title: 'Annual Day',
+    folder: 'AnnualDay',
+    cover: asset('../../assets/gallery/AnnualDay/1.jpg'),
+    images: [
+      asset('../../assets/gallery/AnnualDay/1.jpg'),
+      asset('../../assets/gallery/AnnualDay/2.jpg'),
+      asset('../../assets/gallery/AnnualDay/3.jpg'),
+      asset('../../assets/gallery/AnnualDay/5.jpg'),
+      asset('../../assets/gallery/AnnualDay/7.jpg'),
+      asset('../../assets/gallery/AnnualDay/10.jpg'),
+      asset('../../assets/gallery/AnnualDay/11.jpg'),
+      asset('../../assets/gallery/AnnualDay/12.jpg'),
+      asset('../../assets/gallery/AnnualDay/14.jpg'),
+      asset('../../assets/gallery/AnnualDay/16.jpg'),
+      asset('../../assets/gallery/AnnualDay/17.jpg'),
+      asset('../../assets/gallery/AnnualDay/18.jpg'),
+      asset('../../assets/gallery/AnnualDay/19.jpg'),
+      asset('../../assets/gallery/AnnualDay/22.jpg'),
+      asset('../../assets/gallery/AnnualDay/24.jpg'),
+      asset('../../assets/gallery/AnnualDay/26.jpg'),
+      asset('../../assets/gallery/AnnualDay/27.jpg'),
+      asset('../../assets/gallery/AnnualDay/28.jpg'),
+      asset('../../assets/gallery/AnnualDay/29.jpg'),
+    ]
+  },
+  {
+    title: 'Science Day',
+    folder: 'ScienceDay',
+    cover: asset('../../assets/gallery/ScienceDay/1.jpg'),
+    images: [
+      asset('../../assets/gallery/ScienceDay/1.jpg'),
+      asset('../../assets/gallery/ScienceDay/2.jpg')
+    ]
+  },
+  {
+    title: 'Academic Achievers',
+    folder: 'AcademicAchivers',
+    cover: asset('../../assets/gallery/AcademicAchivers/1.jpg'),
+    images: [
+      asset('../../assets/gallery/AcademicAchivers/1.jpg'),
+      asset('../../assets/gallery/AcademicAchivers/2.jpg')
+    ]
+  },
+  {
+    title: "Children's Day",
+    folder: 'ChildrensDay',
+    cover: asset('../../assets/gallery/ChildrensDay/1.jpg'),
+    images: [
+      asset('../../assets/gallery/ChildrensDay/1.jpg'),
+      asset('../../assets/gallery/ChildrensDay/2.jpg')
+    ]
+  },
+  {
+    title: 'Graduation Day',
+    folder: 'GraduationDay',
+    cover: asset('../../assets/gallery/GraduationDay/1.jpg'),
+    images: [
+      asset('../../assets/gallery/GraduationDay/1.jpg'),
+      asset('../../assets/gallery/GraduationDay/2.jpg')
+    ]
+  },
+  {
+    title: 'House Visit',
+    folder: 'HouseVisit',
+    cover: asset('../../assets/gallery/HouseVisit/1.jpg'),
+    images: [
+      asset('../../assets/gallery/HouseVisit/1.jpg'),
+      asset('../../assets/gallery/HouseVisit/2.jpg')
+    ]
+  },
+  {
+    title: 'Infrastructure',
+    folder: 'Infrastructure',
+    cover: asset('../../assets/gallery/Infrastructure/1.jpg'),
+    images: [
+      asset('../../assets/gallery/Infrastructure/1.jpg'),
+      asset('../../assets/gallery/Infrastructure/2.jpg')
+    ]
+  }
+]
 
 export default function Gallery() {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <Helmet>
-        <title>Brindavan School - Photo Gallery</title>
-        <meta name="description" content="Capturing memorable moments and showcasing the vibrant life at Brindavan School." />
+        <title>Brindavan School Palamaner | Photo Gallery & Campus Life</title>
+        <meta
+          name="description"
+          content="Explore real moments from Brindavan School Palamaner including annual day celebrations, sports events, science exhibitions, classroom activities, and student achievements."
+        />
       </Helmet>
       <PageHero
         title="Photo Gallery"
         subtitle="Capturing memorable moments and showcasing the vibrant life at Brindavan School."
-        image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80"
+        image={asset('../../assets/gallery/Infrastructure/hero.jpg')}
         breadcrumbs="Home / Events / Gallery"
       />
 
@@ -68,7 +158,7 @@ export default function Gallery() {
       </section>
 
       {/* Featured Photos */}
-      <section className="py-16 bg-charcoal-50">
+      <section className="py-16 bg-gradient-to-b from-[#FFFDF9] to-[#F7F1EA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -77,60 +167,45 @@ export default function Gallery() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal-900 mb-4">
-              Featured Moments
+              Explore Gallery Collections
             </h2>
             <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-              Highlights from our most memorable school events and activities
+              Click a category to view the full photo set from each school event.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Annual Day Celebration",
-                description: "Students showcasing cultural performances and talents"
-              },
-              {
-                title: "Science Exhibition",
-                description: "Innovative projects and scientific discoveries by students"
-              },
-              {
-                title: "Sports Day",
-                description: "Athletic competitions and team spirit demonstrations"
-              },
-              {
-                title: "Art & Craft Exhibition",
-                description: "Creative expressions and artistic achievements"
-              },
-              {
-                title: "Graduation Ceremony",
-                description: "Celebrating academic milestones and future beginnings"
-              },
-              {
-                title: "Community Service",
-                description: "Students engaged in social welfare activities"
-              }
-            ].map((photo, index) => (
+            {galleryData.map((gallery, index) => (
               <motion.div
-                key={photo.title}
+                key={gallery.title}
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-[#FFF8EF] border border-[#E8D8C3] rounded-3xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                onClick={() => navigate(`/gallery/${gallery.folder}`)}
+                className="cursor-pointer group bg-[#FFF8EF] border border-[#E8D8C3] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
               >
-                <div className="w-full h-48 bg-[#F3E4D4] rounded-2xl mb-4 flex items-center justify-center">
-                  <Camera className="w-12 h-12 text-[#8B5E3C]" />
+                <div className="overflow-hidden">
+                  <img
+                    src={gallery.cover}
+                    alt={gallery.title}
+                    loading="lazy"
+                    className="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-[#5C3A21] mb-2">
-                  {photo.title}
-                </h3>
-                <p className="text-charcoal-600 text-sm">
-                  {photo.description}
-                </p>
+
+                <div className="p-5">
+                  <h3 className="text-2xl font-bold text-[#5C3A21]">
+                    {gallery.title}
+                  </h3>
+                  <p className="text-charcoal-600 mt-2">
+                    Click to explore photos
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -153,9 +228,9 @@ export default function Gallery() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "5,000+", label: "Photos", suffix: "" },
-              { number: "50+", label: "Events Covered", suffix: "" },
-              { number: "10+", label: "Years of Memories", suffix: "years" },
+              { number: "500+", label: "Photos", suffix: "" },
+              { number: "25+", label: "Events Covered", suffix: "" },
+              { number: "1+", label: "Year of Memories", suffix: "year" },
               { number: "100%", label: "Digital Archive", suffix: "" }
             ].map((stat, index) => (
               <motion.div
@@ -208,7 +283,7 @@ export default function Gallery() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="/admissions" className="bg-white text-[#5C3A21] hover:bg-[#FFF8EF] font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+            <a href="/admissions" className="bg-white/95 backdrop-blur-md text-[#5C3A21] hover:bg-[#FFF8EF] font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
               Apply Now
             </a>
             <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-[#5C3A21] font-body font-semibold transition-all duration-300">

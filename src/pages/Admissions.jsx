@@ -20,9 +20,23 @@ export default function Admissions() {
       <PageHero 
         title="Join Brindavan School" 
         subtitle="Admissions" 
-        image="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / Admissions"
       />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <div className="absolute -mt-16 right-6 z-30">
+          <Link
+            to="/admission-form"
+            className="inline-flex items-center gap-2 
+            bg-gradient-to-r from-primary-700 to-primary-900
+            text-white px-6 py-4 rounded-full font-semibold
+            shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            Apply Now →
+          </Link>
+        </div>
+      </div>
 
       {/* Process */}
       <Section className="bg-white">

@@ -6,7 +6,10 @@ import Academics from './pages/Academics'
 import Facilities from './pages/Facilities'
 import Admissions from './pages/Admissions'
 import AdmissionForm from './pages/AdmissionForm'
-import GalleryPage from './pages/GalleryPage'
+import Gallery from './pages/events/Gallery'
+import GalleryDetail from './pages/events/GalleryDetail'
+import AlbumPage from './pages/gallery/AlbumPage'
+import GalleryDetails from './pages/gallery/GalleryDetails'
 import Contact from './pages/Contact'
 import Events from './pages/Events'
 import Infrastructure from './pages/Infrastructure'
@@ -38,7 +41,7 @@ import Safety from './pages/infrastructure/Safety'
 import Digital from './pages/infrastructure/Digital'
 
 // Events subpages
-import Gallery from './pages/events/Gallery'
+import EventsGallery from './pages/events/Gallery'
 import Annual from './pages/events/Annual'
 import News from './pages/events/News'
 
@@ -71,12 +74,15 @@ export default function App() {
           <Route path="/infrastructure/safety" element={<Safety />} />
           <Route path="/infrastructure/digital" element={<Digital />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/events/gallery" element={<Gallery />} />
+          <Route path="/events/gallery" element={<EventsGallery />} />
           <Route path="/events/annual" element={<Annual />} />
           <Route path="/events/news" element={<News />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/admission-form" element={<AdmissionForm />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery/:folder" element={<GalleryDetail />} />
+          <Route path="/gallery/:slug" element={<AlbumPage />} />
+          <Route path="/gallery/:category" element={<GalleryDetails />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

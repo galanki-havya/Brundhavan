@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { siteData } from '../data/site'
+import academicsHero from '../assets/gallery/Infrastructure/2.jpg'
 
 const { programs } = siteData
 
@@ -12,7 +13,7 @@ export default function Academics() {
       <PageHero
         title="Academics"
         subtitle="Empowering students through innovative learning methodologies and comprehensive educational programs."
-        image="https://images.unsplash.com/photo-1588072432836-e10032774350"
+        image={academicsHero}
         breadcrumbs="Home / Academics"
       />
       {/* Curriculum Overview */}
@@ -69,7 +70,7 @@ export default function Academics() {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=700&q=85"
+                src={new URL('../assets/home/academics-learning.jpg', import.meta.url).href}
                 alt="Academic Excellence"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

@@ -80,7 +80,7 @@ export default function Contact() {
       <PageHero
         title="Get In Touch"
         subtitle="We're here to answer your questions and help you connect with our community"
-        image="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / Contact"
       />
 

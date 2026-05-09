@@ -9,7 +9,7 @@ export default function Labs() {
       <PageHero
         title="Laboratories"
         subtitle="Science labs designed for practical learning aligned with the State Board curriculum."
-        image="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / Facilities / Laboratories"
       />
       <motion.section className="hidden">

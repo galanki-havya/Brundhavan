@@ -43,18 +43,38 @@ export default function LogoMeaning() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-[#E7D3BF] bg-[#fff8f1] p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-            <h3 className="text-2xl font-semibold text-[#5C3A21] mb-6">Nine Intelligences We Nurture</h3>
+          <div className="rounded-3xl border border-[#E7D3BF] bg-[#fff8f1] p-6 shadow-sm">
+            <h3 className="text-2xl font-semibold text-[#5C3A21] mb-6">
+              Nine Intelligences We Nurture
+            </h3>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {intelligences.map((item) => (
+              {intelligences.map((item, index) => (
                 <motion.div
                   key={item}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="rounded-2xl border border-[#E7D3BF] bg-[#fffdf9] p-4 hover:bg-white transition-all duration-300"
+                  transition={{ duration: 0.35, delay: index * 0.04 }}
+                  whileHover={{ y: -2 }}
+                  className="flex items-center gap-3 rounded-xl 
+                  border border-[#E7D3BF] bg-white
+                  px-4 py-4 shadow-sm hover:shadow-md
+                  transition-all duration-300"
                 >
-                  <p className="font-semibold text-[#5C3A21]">{item}</p>
+                  {/* Number Badge */}
+                  <div
+                    className="flex h-8 w-8 items-center justify-center 
+                    rounded-full bg-[#C89B3C] text-white 
+                    text-xs font-semibold shrink-0"
+                  >
+                    {index + 1}
+                  </div>
+
+                  {/* Intelligence Name */}
+                  <p className="text-[15px] font-medium text-[#5C3A21] leading-snug">
+                    {item}
+                  </p>
                 </motion.div>
               ))}
             </div>

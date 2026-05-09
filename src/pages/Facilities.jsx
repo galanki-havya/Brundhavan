@@ -13,7 +13,7 @@ export default function Facilities() {
       <PageHero
         title="Facilities"
         subtitle="World-class infrastructure designed for holistic development and modern learning."
-        image="https://images.unsplash.com/photo-1596495578065-6e0763fa1178"
+        image={new URL('../assets/facilities/facilities-hero.jpg', import.meta.url).href}
         breadcrumbs="Home / Facilities"
       />
 
@@ -69,7 +69,7 @@ export default function Facilities() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=85"
+              src={new URL('../assets/campus/campus-highlights.jpg', import.meta.url).href}
               alt="Campus"
               className="rounded-xl shadow-lg"
             />

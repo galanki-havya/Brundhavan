@@ -2,6 +2,11 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Calendar, Music, Trophy, Users } from 'lucide-react'
+import annualHero from '../../assets/gallery/AnnualDay/2.jpg'
+import annualDayImg from '../../assets/gallery/AnnualDay/1.jpg'
+import culturalImg from '../../assets/gallery/ChildrensDay/1.jpg'
+import sportsImg from '../../assets/gallery/ScienceDay/1.jpg'
+import ptmImg from '../../assets/gallery/HouseVisit/1.jpg'
 
 export default function Annual() {
   return (
@@ -13,7 +18,7 @@ export default function Annual() {
       <PageHero
         title="Annual Events"
         subtitle="Celebrating achievements, culture, and community through memorable annual traditions"
-        image="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80"
+        image={annualHero}
         breadcrumbs="Home / Events / Annual"
       />
 
@@ -62,6 +67,79 @@ export default function Annual() {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Event Gallery Preview */}
+      <section className="py-16 bg-[#FFFDF9]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal-900 mb-4">
+              Moments From Our Annual Events
+            </h2>
+            <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
+              Glimpses of celebrations, competitions, performances, and memorable school experiences.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: 'Annual Day',
+                image: annualDayImg
+              },
+              {
+                title: 'Cultural Activities',
+                image: culturalImg
+              },
+              {
+                title: 'Sports Meet',
+                image: sportsImg
+              },
+              {
+                title: 'Parent Teacher Meeting',
+                image: ptmImg
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group overflow-hidden rounded-3xl shadow-lg bg-white"
+              >
+                <div className="overflow-hidden relative">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-72 object-cover brightness-[0.92] transition duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 p-5">
+                    <h3 className="text-white text-xl font-bold">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href="/gallery"
+              className="inline-flex items-center gap-2 bg-[#5C3A21] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#8B5E3C] transition-all duration-300 shadow-lg"
+            >
+              View Full Gallery
+            </a>
           </div>
         </div>
       </section>

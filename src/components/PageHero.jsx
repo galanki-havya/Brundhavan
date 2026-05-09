@@ -20,7 +20,7 @@ export default function PageHero({ title, subtitle, image, images = [], breadcru
   }, [heroImages.length])
 
   return (
-    <div className="relative h-[60vh] w-full overflow-hidden">
+    <div className="relative h-[300px] sm:h-[350px] md:h-[420px] w-full overflow-hidden -mt-24 md:-mt-28">
 
       {/* Background Images with Scrolling Effect */}
       <AnimatePresence mode="wait">

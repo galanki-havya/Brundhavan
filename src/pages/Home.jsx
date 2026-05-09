@@ -30,7 +30,7 @@ export default function Home() {
         {/* Open Graph (for WhatsApp, Facebook) */}
         <meta property="og:title" content="Brindavan School - Best State Board School in Palamaner" />
         <meta property="og:description" content="Join Brindavan School for strong State Board education, modern campus, and holistic growth." />
-        <meta property="og:image" content="/images/hero-poster.jpg" />
+        <meta property="og:image" content={new URL('../assets/gallery/Infrastructure/1.jpg', import.meta.url).href} />
         <meta property="og:type" content="website" />
 
         {/* Twitter SEO */}
@@ -193,12 +193,12 @@ export default function Home() {
             >
               <div className="group relative overflow-hidden rounded-2xl shadow-xl h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] hover:shadow-2xl transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=90&auto=format&fit=crop"
+                  src={new URL('../assets/home/about-students.jpg', import.meta.url).href}
                   alt="Brindavan students"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.src = '/images/hero-poster.jpg';
+                    e.currentTarget.src = new URL('../assets/gallery/Infrastructure/7.jpg', import.meta.url).href;
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
@@ -252,36 +252,53 @@ export default function Home() {
               >
                 Brindavan School is designed to deliver metro-city level education in Palamaner, combining discipline, innovation, and academic excellence.
               </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="flex flex-wrap gap-4"
-              >
-                <Link to="/about" className="btn-primary group">
-                  Our Story
+              <div className="flex flex-wrap gap-4">
+                
+                {/* Our Story Button */}
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 bg-[#C89B3C] hover:bg-[#B8862F] text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
+                >
+                  <span>Our Story</span>
+
                   <motion.svg
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    className="w-4 h-4 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </motion.svg>
                 </Link>
-                <Link to="/academics" className="btn-outline group">
-                  Explore Academics
+
+                {/* Explore Academics Button */}
+                <Link
+                  to="/academics"
+                  className="inline-flex items-center gap-2 bg-[#5C3A21] hover:bg-[#4A2F1A] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
+                >
+                  <span>Explore Academics</span>
+
                   <motion.svg
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    className="w-4 h-4 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </motion.svg>
                 </Link>
-              </motion.div>
+
+              </div>
             </motion.div>
           </div>
         </div>

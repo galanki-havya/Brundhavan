@@ -3,6 +3,8 @@ import Section from '../components/Section'
 import ManagementMessage from '../components/ManagementMessage'
 import { siteData } from '../data/site'
 import { Link } from 'react-router-dom'
+import aboutCampus from '../assets/gallery/Infrastructure/4.jpg'
+import aboutStudents from '../assets/gallery/Infrastructure/5.jpg'
 
 const { school, vision, mission, chairman, principal } = siteData
 
@@ -12,12 +14,12 @@ export default function About() {
       {/* Hero */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=90"
+          src={aboutCampus}
           alt="School campus"
           className="absolute w-full h-full object-cover"
           loading="eager"
           onError={(e) => {
-            e.target.src = '/images/hero-poster.jpg';
+            e.target.src = '/gallery/Infrastructure/7.jpg';
           }}
         />
         <div className="absolute inset-0 bg-black/60"></div>
@@ -43,13 +45,10 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=85"
+                src={aboutStudents}
                 alt="Brindavan students"
                 className="rounded-xl shadow-lg w-full h-auto object-cover"
                 loading="lazy"
-                onError={(e) => {
-                  e.target.src = '/images/hero-poster.jpg';
-                }}
               />
             </motion.div>
             <motion.div

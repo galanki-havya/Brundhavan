@@ -9,7 +9,7 @@ export default function Primary() {
       <PageHero
         title="Primary"
         subtitle="Building strong foundations in core subjects and developing essential life skills."
-        image="https://images.unsplash.com/photo-1427504494785-cdda0e4d9700?w=1200&q=80"
+        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
         breadcrumbs="Home / Academics / Primary"
       />
       <motion.section className="hidden" style={{ display: 'none' }}>
