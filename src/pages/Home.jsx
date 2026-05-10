@@ -30,7 +30,7 @@ export default function Home() {
         {/* Open Graph (for WhatsApp, Facebook) */}
         <meta property="og:title" content="Brindavan School - Best State Board School in Palamaner" />
         <meta property="og:description" content="Join Brindavan School for strong State Board education, modern campus, and holistic growth." />
-        <meta property="og:image" content={new URL('../assets/gallery/Infrastructure/1.jpg', import.meta.url).href} />
+        <meta property="og:image" content="/images/gallery/Infrastructure/1.jpg" />
         <meta property="og:type" content="website" />
 
         {/* Twitter SEO */}
@@ -193,12 +193,12 @@ export default function Home() {
             >
               <div className="group relative overflow-hidden rounded-2xl shadow-xl h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] hover:shadow-2xl transition-all duration-500">
                 <img
-                  src={new URL('../assets/home/about-students.jpg', import.meta.url).href}
+                  src="/images/gallery/Infrastructure/2.jpg"
                   alt="Brindavan students"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.src = new URL('../assets/gallery/Infrastructure/7.jpg', import.meta.url).href;
+                    e.currentTarget.src = '/images/gallery/Infrastructure/7.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />

@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { GraduationCap, Users, Award, Heart } from 'lucide-react'
-import heroImage from '../../assets/gallery/Infrastructure/1.jpg'
-import campusImage from '../../assets/gallery/Infrastructure/4.jpg'
-import fallbackImage from '../../assets/gallery/Infrastructure/8.jpg'
-
 export default function AboutOverview() {
   return (
     <>
@@ -20,7 +16,7 @@ export default function AboutOverview() {
       <PageHero
         title="About Brindavan School"
         subtitle="Discover our rich heritage, values, and commitment to educational excellence."
-        image={heroImage}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / About / Overview"
       />
       {/* Main Content */}
@@ -106,12 +102,12 @@ export default function AboutOverview() {
             >
               <div className="relative h-[400px] sm:h-[450px] md:h-[500px]">
                 <img
-                  src={campusImage}
+                  src="/images/gallery/Infrastructure/4.jpg"
                   alt="Brindavan School Palamaner — modern campus with classrooms and learning facilities"
                   className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.src = fallbackImage
+                    e.currentTarget.src = '/images/gallery/Infrastructure/8.jpg'
                   }}
                 />
                 <div className="absolute -bottom-6 -left-6 bg-[#FAF7F2] border border-[#E7D9C7] rounded-2xl p-6 shadow-xl">

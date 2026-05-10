@@ -5,17 +5,17 @@ import { motion, AnimatePresence } from "framer-motion"
 // Hero slide images - Replace these with actual school photos
 const slides = [
   {
-    image: new URL('../../assets/hero/hero-slide-1.jpg', import.meta.url).href,
+    image: "/images/gallery/Infrastructure/1.jpg",
     title: "A New Era of Education",
     subtitle: "Founded 2025 - Modern learning for future leaders"
   },
   {
-    image: new URL('../../assets/hero/hero-slide-2.jpg', import.meta.url).href,
+    image: "/images/gallery/Infrastructure/2.jpg",
     title: "Excellence in Education",
     subtitle: "Expert faculty, smart classrooms, proven results"
   },
   {
-    image: new URL('../../assets/hero/hero-slide-3.jpg', import.meta.url).href,
+    image: "/images/gallery/Infrastructure/3.jpg",
     title: "Future-Ready Learning",
     subtitle: "Modern campus, innovative teaching, holistic growth"
   }
@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <section 
       className="relative w-full h-screen overflow-hidden bg-cover bg-center bg-black -mt-24 md:-mt-28"
-      style={{ backgroundImage: `url('${new URL('../assets/gallery/Infrastructure/1.jpg', import.meta.url).href}')` }}
+      style={{ backgroundImage: `url('/images/gallery/Infrastructure/1.jpg')` }}
     >
 
       {/* VIDEO BACKGROUND */}
@@ -43,7 +43,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        poster={new URL('../assets/gallery/Infrastructure/1.jpg', import.meta.url).href}
+        poster="/images/gallery/Infrastructure/1.jpg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}

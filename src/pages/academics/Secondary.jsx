@@ -9,7 +9,7 @@ export default function Secondary() {
       <PageHero
         title="Secondary"
         subtitle="Preparing students for board examinations and fostering academic excellence."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Academics / Secondary"
       />
       <motion.section className="hidden" style={{ display: 'none' }}>

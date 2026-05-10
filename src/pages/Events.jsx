@@ -47,7 +47,7 @@ export default function Events() {
       <PageHero
         title="Events & Activities"
         subtitle="Celebrating creativity, sports, and innovation through memorable school events."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Events"
       />
 

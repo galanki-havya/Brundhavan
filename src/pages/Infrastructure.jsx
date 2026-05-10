@@ -33,7 +33,7 @@ export default function Infrastructure() {
       <PageHero
         title="Infrastructure"
         subtitle="A safe, modern and inspiring campus environment designed for excellence in education."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Infrastructure"
       />
 

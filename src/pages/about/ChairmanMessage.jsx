@@ -9,7 +9,7 @@ export default function ChairmanMessage() {
       <PageHero
         title="Chairman's Message"
         subtitle="Visionary guidance and leadership shaping our institutional future."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / About / Chairman's Message"
       />
       {/* Chairman Message */}

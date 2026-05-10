@@ -9,7 +9,7 @@ export default function VisionMission() {
       <PageHero
         title="Vision & Mission"
         subtitle="Guiding principles that shape our educational philosophy and institutional purpose."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / About / Vision & Mission"
       />
 

@@ -2,11 +2,6 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Calendar, Music, Trophy, Users } from 'lucide-react'
-import annualHero from '../../assets/gallery/AnnualDay/2.jpg'
-import annualDayImg from '../../assets/gallery/AnnualDay/1.jpg'
-import culturalImg from '../../assets/gallery/ChildrensDay/1.jpg'
-import sportsImg from '../../assets/gallery/ScienceDay/1.jpg'
-import ptmImg from '../../assets/gallery/HouseVisit/1.jpg'
 
 export default function Annual() {
   return (
@@ -18,7 +13,7 @@ export default function Annual() {
       <PageHero
         title="Annual Events"
         subtitle="Celebrating achievements, culture, and community through memorable annual traditions"
-        image={annualHero}
+        image="/images/gallery/AnnualDay/2.jpg"
         breadcrumbs="Home / Events / Annual"
       />
 
@@ -92,19 +87,19 @@ export default function Annual() {
             {[
               {
                 title: 'Annual Day',
-                image: annualDayImg
+                image: '/images/gallery/AnnualDay/1.jpg'
               },
               {
                 title: 'Cultural Activities',
-                image: culturalImg
+                image: '/images/gallery/ChildrensDay/1.jpg'
               },
               {
                 title: 'Sports Meet',
-                image: sportsImg
+                image: '/images/gallery/ScienceDay/1.jpg'
               },
               {
                 title: 'Parent Teacher Meeting',
-                image: ptmImg
+                image: '/images/gallery/HouseVisit/1.jpg'
               }
             ].map((item, index) => (
               <motion.div

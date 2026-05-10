@@ -14,7 +14,7 @@ export default function Safety() {
       <PageHero
         title="Safety & Security"
         subtitle="Comprehensive safety measures ensuring a secure learning environment for all students."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Infrastructure / Safety"
       />
 

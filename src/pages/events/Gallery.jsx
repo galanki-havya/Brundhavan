@@ -4,87 +4,87 @@ import PageHero from '../../components/PageHero'
 import { Users, Award, Calendar, Camera } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-const asset = (path) => new URL(path, import.meta.url).href
+const asset = (path) => path.replace('../assets', '/images')
 
 const galleryData = [
   {
     title: 'Annual Day',
     folder: 'AnnualDay',
-    cover: asset('../../assets/gallery/AnnualDay/1.jpg'),
+    cover: asset('/images/gallery/AnnualDay/1.jpg'),
     images: [
-      asset('../../assets/gallery/AnnualDay/1.jpg'),
-      asset('../../assets/gallery/AnnualDay/2.jpg'),
-      asset('../../assets/gallery/AnnualDay/3.jpg'),
-      asset('../../assets/gallery/AnnualDay/5.jpg'),
-      asset('../../assets/gallery/AnnualDay/7.jpg'),
-      asset('../../assets/gallery/AnnualDay/10.jpg'),
-      asset('../../assets/gallery/AnnualDay/11.jpg'),
-      asset('../../assets/gallery/AnnualDay/12.jpg'),
-      asset('../../assets/gallery/AnnualDay/14.jpg'),
-      asset('../../assets/gallery/AnnualDay/16.jpg'),
-      asset('../../assets/gallery/AnnualDay/17.jpg'),
-      asset('../../assets/gallery/AnnualDay/18.jpg'),
-      asset('../../assets/gallery/AnnualDay/19.jpg'),
-      asset('../../assets/gallery/AnnualDay/22.jpg'),
-      asset('../../assets/gallery/AnnualDay/24.jpg'),
-      asset('../../assets/gallery/AnnualDay/26.jpg'),
-      asset('../../assets/gallery/AnnualDay/27.jpg'),
-      asset('../../assets/gallery/AnnualDay/28.jpg'),
-      asset('../../assets/gallery/AnnualDay/29.jpg'),
+      asset('/images/gallery/AnnualDay/1.jpg'),
+      asset('/images/gallery/AnnualDay/2.jpg'),
+      asset('/images/gallery/AnnualDay/3.jpg'),
+      asset('/images/gallery/AnnualDay/5.jpg'),
+      asset('/images/gallery/AnnualDay/7.jpg'),
+      asset('/images/gallery/AnnualDay/10.jpg'),
+      asset('/images/gallery/AnnualDay/11.jpg'),
+      asset('/images/gallery/AnnualDay/12.jpg'),
+      asset('/images/gallery/AnnualDay/14.jpg'),
+      asset('/images/gallery/AnnualDay/16.jpg'),
+      asset('/images/gallery/AnnualDay/17.jpg'),
+      asset('/images/gallery/AnnualDay/18.jpg'),
+      asset('/images/gallery/AnnualDay/19.jpg'),
+      asset('/images/gallery/AnnualDay/22.jpg'),
+      asset('/images/gallery/AnnualDay/24.jpg'),
+      asset('/images/gallery/AnnualDay/26.jpg'),
+      asset('/images/gallery/AnnualDay/27.jpg'),
+      asset('/images/gallery/AnnualDay/28.jpg'),
+      asset('/images/gallery/AnnualDay/29.jpg'),
     ]
   },
   {
     title: 'Science Day',
     folder: 'ScienceDay',
-    cover: asset('../../assets/gallery/ScienceDay/1.jpg'),
+    cover: asset('/images/gallery/ScienceDay/1.jpg'),
     images: [
-      asset('../../assets/gallery/ScienceDay/1.jpg'),
-      asset('../../assets/gallery/ScienceDay/2.jpg')
+      asset('/images/gallery/ScienceDay/1.jpg'),
+      asset('/images/gallery/ScienceDay/2.jpg')
     ]
   },
   {
     title: 'Academic Achievers',
     folder: 'AcademicAchivers',
-    cover: asset('../../assets/gallery/AcademicAchivers/1.jpg'),
+    cover: asset('/images/gallery/AcademicAchivers/1.jpg'),
     images: [
-      asset('../../assets/gallery/AcademicAchivers/1.jpg'),
-      asset('../../assets/gallery/AcademicAchivers/2.jpg')
+      asset('/images/gallery/AcademicAchivers/1.jpg'),
+      asset('/images/gallery/AcademicAchivers/2.jpg')
     ]
   },
   {
     title: "Children's Day",
     folder: 'ChildrensDay',
-    cover: asset('../../assets/gallery/ChildrensDay/1.jpg'),
+    cover: asset('/images/gallery/ChildrensDay/1.jpg'),
     images: [
-      asset('../../assets/gallery/ChildrensDay/1.jpg'),
-      asset('../../assets/gallery/ChildrensDay/2.jpg')
+      asset('/images/gallery/ChildrensDay/1.jpg'),
+      asset('/images/gallery/ChildrensDay/2.jpg')
     ]
   },
   {
     title: 'Graduation Day',
     folder: 'GraduationDay',
-    cover: asset('../../assets/gallery/GraduationDay/1.jpg'),
+    cover: asset('/images/gallery/GraduationDay/1.jpg'),
     images: [
-      asset('../../assets/gallery/GraduationDay/1.jpg'),
-      asset('../../assets/gallery/GraduationDay/2.jpg')
+      asset('/images/gallery/GraduationDay/1.jpg'),
+      asset('/images/gallery/GraduationDay/2.jpg')
     ]
   },
   {
     title: 'House Visit',
     folder: 'HouseVisit',
-    cover: asset('../../assets/gallery/HouseVisit/1.jpg'),
+    cover: asset('/images/gallery/HouseVisit/1.jpg'),
     images: [
-      asset('../../assets/gallery/HouseVisit/1.jpg'),
-      asset('../../assets/gallery/HouseVisit/2.jpg')
+      asset('/images/gallery/HouseVisit/1.jpg'),
+      asset('/images/gallery/HouseVisit/2.jpg')
     ]
   },
   {
     title: 'Infrastructure',
     folder: 'Infrastructure',
-    cover: asset('../../assets/gallery/Infrastructure/1.jpg'),
+    cover: asset('/images/gallery/Infrastructure/1.jpg'),
     images: [
-      asset('../../assets/gallery/Infrastructure/1.jpg'),
-      asset('../../assets/gallery/Infrastructure/2.jpg')
+      asset('/images/gallery/Infrastructure/1.jpg'),
+      asset('/images/gallery/Infrastructure/2.jpg')
     ]
   }
 ]
@@ -104,7 +104,7 @@ export default function Gallery() {
       <PageHero
         title="Photo Gallery"
         subtitle="Capturing memorable moments and showcasing the vibrant life at Brindavan School."
-        image={asset('../../assets/gallery/Infrastructure/hero.jpg')}
+        image={asset('/images/gallery/Infrastructure/hero.jpg')}
         breadcrumbs="Home / Events / Gallery"
       />
 

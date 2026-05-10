@@ -9,7 +9,7 @@ export default function Sports() {
       <PageHero
         title="Sports Facilities"
         subtitle="Comprehensive sports infrastructure promoting fitness, teamwork and healthy competition."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Facilities / Sports"
       />
       <motion.section className="hidden">

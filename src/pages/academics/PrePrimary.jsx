@@ -10,7 +10,7 @@ export default function PrePrimary() {
       <PageHero
         title="Pre-Primary"
         subtitle="Nurturing early childhood development and creating a strong learning foundation."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Academics / Pre-Primary"
       />
       

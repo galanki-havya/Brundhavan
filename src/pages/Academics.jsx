@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { siteData } from '../data/site'
-import academicsHero from '../assets/gallery/Infrastructure/2.jpg'
 
 const { programs } = siteData
 
@@ -70,7 +69,7 @@ export default function Academics() {
               className="relative"
             >
               <img
-                src={new URL('../assets/home/academics-learning.jpg', import.meta.url).href}
+                src="/images/gallery/Infrastructure/2.jpg"
                 alt="Academic Excellence"
                 className="rounded-2xl shadow-xl w-full h-96 object-cover"
               />

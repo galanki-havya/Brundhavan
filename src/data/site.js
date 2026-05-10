@@ -147,52 +147,52 @@ export const siteData = {
 
   galleryImages: [
     {
-      src: new URL('../assets/gallery/Infrastructure/1.jpg', import.meta.url).href,
+      src: '/images/gallery/Infrastructure/1.jpg',
       alt: 'Classroom teaching session',
       category: 'Classrooms',
     },
     {
-      src: new URL('../assets/gallery/Infrastructure/2.jpg', import.meta.url).href,
+      src: '/images/gallery/Infrastructure/2.jpg',
       alt: 'Students exploring science lab experiments',
       category: 'Labs',
     },
     {
-      src: new URL('../assets/gallery/Sports/1.jpg', import.meta.url).href,
+      src: '/images/gallery/Sports/1.jpg',
       alt: 'School sports day activities',
       category: 'Sports',
     },
     {
-      src: new URL('../assets/gallery/AnnualDay/1.jpg', import.meta.url).href,
+      src: '/images/gallery/AnnualDay/1.jpg',
       alt: 'Annual day performance and awards',
       category: 'Annual Day',
     },
     {
-      src: new URL('../assets/gallery/Library/1.jpg', import.meta.url).href,
+      src: '/images/gallery/Library/1.jpg',
       alt: 'Students using library resources',
       category: 'Library',
     },
     {
-      src: new URL('../assets/gallery/ScienceDay/1.jpg', import.meta.url).href,
+      src: '/images/gallery/ScienceDay/1.jpg',
       alt: 'Students engaged in a science fair',
       category: 'Science Fair',
     },
     {
-      src: new URL('../assets/gallery/ChildrensDay/1.jpg', import.meta.url).href,
+      src: '/images/gallery/ChildrensDay/1.jpg',
       alt: 'Festival celebration with students',
       category: 'Festivals',
     },
     {
-      src: new URL('../assets/gallery/HouseVisit/1.jpg', import.meta.url).href,
+      src: '/images/gallery/HouseVisit/1.jpg',
       alt: 'Outdoor school outing and campus tour',
       category: 'Outings',
     },
     {
-      src: new URL('../assets/gallery/Infrastructure/3.jpg', import.meta.url).href,
+      src: '/images/gallery/Infrastructure/3.jpg',
       alt: 'Faculty mentoring students',
       category: 'Faculty',
     },
     {
-      src: new URL('../assets/gallery/Infrastructure/4.jpg', import.meta.url).href,
+      src: '/images/gallery/Infrastructure/4.jpg',
       alt: 'School campus aerial view',
       category: 'Campus',
     },

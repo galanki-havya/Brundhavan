@@ -163,7 +163,7 @@ export default function Navbar() {
               )
             }
 
-            if (link.external || !link.to.startsWith('/')) {
+            if (link.external || (link.to && !link.to.startsWith('/'))) {
               return (
                 <a
                   key={link.label}

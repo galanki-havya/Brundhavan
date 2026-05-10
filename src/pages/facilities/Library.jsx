@@ -9,7 +9,7 @@ export default function Library() {
       <PageHero
         title="Library"
         subtitle="A rich library hub supporting State Board study material, reading habits, and research projects."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Facilities / Library"
       />
       <motion.section className="hidden">

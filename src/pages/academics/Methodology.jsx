@@ -10,7 +10,7 @@ export default function Methodology() {
       <PageHero
         title="Teaching Methodology"
         subtitle="Modern educational approaches and innovative strategies for student success."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Academics / Methodology"
       />
       

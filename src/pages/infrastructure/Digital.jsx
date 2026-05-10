@@ -9,7 +9,7 @@ export default function Digital() {
       <PageHero
         title="Digital Learning"
         subtitle="Cutting-edge digital infrastructure supporting modern education and future-ready skills."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Infrastructure / Digital Learning"
       />
 

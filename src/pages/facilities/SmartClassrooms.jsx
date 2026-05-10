@@ -9,7 +9,7 @@ export default function SmartClassrooms() {
       <PageHero
         title="Smart Classrooms"
         subtitle="Technology-enabled learning environments with interactive teaching tools and digital resources."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Facilities / Smart Classrooms"
       />
       <motion.section className="hidden">

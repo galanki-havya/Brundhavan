@@ -14,7 +14,7 @@ export default function Transport() {
       <PageHero
         title="Transport"
         subtitle="Safe and reliable school transport services with GPS tracking and professional drivers."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Facilities / Transport"
       />
       

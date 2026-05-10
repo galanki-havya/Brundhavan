@@ -14,7 +14,7 @@ export default function Campus() {
       <PageHero
         title="Campus Overview"
         subtitle="A modern, well-planned campus designed for an optimal learning environment."
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Infrastructure / Campus"
       />
 

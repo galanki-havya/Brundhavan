@@ -20,7 +20,7 @@ export default function Admissions() {
       <PageHero 
         title="Join Brindavan School" 
         subtitle="Admissions" 
-        image={new URL("../../assets/gallery/Infrastructure/1.jpg", import.meta.url).href}
+        image="/images/gallery/Infrastructure/1.jpg"
         breadcrumbs="Home / Admissions"
       />
 
