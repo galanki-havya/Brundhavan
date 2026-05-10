@@ -239,7 +239,7 @@ export default function Navbar() {
                 const hasSubmenu = 'submenu' in link
                 const isOpen = openDropdown === link.label
 
-                if (link.external || !link.to.startsWith('/')) {
+                if (link.external || (link.to && !link.to.startsWith('/'))) {
                   return (
                     <a
                       key={link.label}
