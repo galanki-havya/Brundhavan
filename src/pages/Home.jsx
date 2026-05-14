@@ -277,12 +277,12 @@ export default function Home() {
                   </motion.svg>
                 </Link>
 
-                {/* Explore Academics Button */}
+                {/* Explore Activities Button */}
                 <Link
-                  to="/academics"
+                  to="/activities"
                   className="inline-flex items-center gap-2 bg-[#5C3A21] hover:bg-[#4A2F1A] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap"
                 >
-                  <span>Explore Academics</span>
+                  <span>Explore Activities</span>
 
                   <motion.svg
                     className="w-4 h-4 flex-shrink-0"
