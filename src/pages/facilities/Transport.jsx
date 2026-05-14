@@ -181,42 +181,7 @@ export default function Transport() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 text-center bg-gradient-to-r from-primary-900 to-secondary-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-display font-bold mb-4"
-          >
-            Secure Your Child's Daily Transport
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 text-white/80"
-          >
-            Safe, reliable, and comfortable transportation for your peace of mind.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <button className="bg-gold-500 text-primary-900 hover:bg-gold-400 font-body font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg">
-              Apply Now
-            </button>
-            <button className="border border-white px-8 py-4 rounded-lg hover:bg-white/10 font-body font-semibold transition-all duration-300">
-              Book Transport
-            </button>
-          </motion.div>
-        </div>
-      </section>
+ 
     </div>
   )
 }
