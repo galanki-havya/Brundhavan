@@ -1,11 +1,22 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
+import { heroImages as HERO_MAP } from "../data/heroImages"
 
-export default function PageHero({ title, subtitle, image, images = [], breadcrumbs }) {
+export default function PageHero({ pageKey, title, subtitle, image, images = [], breadcrumbs }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Use single image or array of images
-  const heroImages = images.length > 0 ? images : [image]
+  const pageImages = pageKey ? HERO_MAP[pageKey] : []
+  const heroImages = images.length > 0
+    ? images
+    : pageImages.length > 0
+      ? pageImages
+      : image
+        ? [image]
+        : ["/images/gallery/Infrastructure/1.jpg"]
+
+  useEffect(() => {
+    setCurrentImageIndex(0)
+  }, [heroImages.length])
 
   useEffect(() => {
     if (heroImages.length > 1) {
@@ -13,7 +24,7 @@ export default function PageHero({ title, subtitle, image, images = [], breadcru
         setCurrentImageIndex((prevIndex) =>
           prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
         )
-      }, 4000) // Change image every 4 seconds
+      }, 4000)
 
       return () => clearInterval(interval)
     }

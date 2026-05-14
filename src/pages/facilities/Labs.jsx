@@ -7,6 +7,7 @@ export default function Labs() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
+        pageKey="labs"
         title="Laboratories"
         subtitle="Science labs designed for practical learning aligned with the State Board curriculum."
         image="/images/gallery/Infrastructure/1.jpg"

@@ -14,6 +14,7 @@ export default function AboutOverview() {
         />
       </Helmet>
       <PageHero
+        pageKey="overview"
         title="About Brindavan School"
         subtitle="Discover our rich heritage, values, and commitment to educational excellence."
         image="/images/gallery/Infrastructure/1.jpg"
@@ -87,7 +88,7 @@ export default function AboutOverview() {
                 <Link to="/about/vision-mission" className="bg-[#C89B3C] text-black hover:bg-[#B8862F] font-body font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center gap-2">
                   Our Vision & Mission
                 </Link>
-                <Link to="/about/leadership" className="border border-[#C89B3C] text-[#5C3A21] hover:bg-[#FFF3E6] px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center gap-2">
+                <Link to="/about/chairman" className="border border-[#C89B3C] text-[#5C3A21] hover:bg-[#FFF3E6] px-6 py-3 rounded-full font-medium transition-all duration-300 inline-flex items-center gap-2">
                   Meet Our Leaders
                 </Link>
               </motion.div>

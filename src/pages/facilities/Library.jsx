@@ -7,6 +7,7 @@ export default function Library() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
+        pageKey="library"
         title="Library"
         subtitle="A rich library hub supporting State Board study material, reading habits, and research projects."
         image="/images/gallery/Infrastructure/1.jpg"

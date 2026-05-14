@@ -142,3 +142,18 @@
 ::-webkit-scrollbar-track { background: #f7f3ee; }
 ::-webkit-scrollbar-thumb { background: #8B5E3C; border-radius: 3px; }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 18s linear infinite;
+}
+

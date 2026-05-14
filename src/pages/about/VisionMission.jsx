@@ -7,6 +7,7 @@ export default function VisionMission() {
   return (
     <>
       <PageHero
+        pageKey="vision-mission"
         title="Vision & Mission"
         subtitle="Guiding principles that shape our educational philosophy and institutional purpose."
         image="/images/gallery/Infrastructure/1.jpg"

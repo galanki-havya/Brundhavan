@@ -8,6 +8,7 @@ export default function PrePrimary() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
+        pageKey="preprimary"
         title="Pre-Primary"
         subtitle="Nurturing early childhood development and creating a strong learning foundation."
         image="/images/gallery/Infrastructure/1.jpg"

@@ -12,6 +12,7 @@ export default function Transport() {
         <meta name="description" content="Safe and reliable school transport services with GPS tracking and professional drivers." />
       </Helmet>
       <PageHero
+        pageKey="transport"
         title="Transport"
         subtitle="Safe and reliable school transport services with GPS tracking and professional drivers."
         image="/images/gallery/Infrastructure/1.jpg"

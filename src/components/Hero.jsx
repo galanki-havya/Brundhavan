@@ -1,41 +1,10 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { motion, AnimatePresence } from "framer-motion"
-
-// Hero slide images - Replace these with actual school photos
-const slides = [
-  {
-    image: "/images/gallery/Infrastructure/1.jpg",
-    title: "A New Era of Education",
-    subtitle: "Founded 2025 - Modern learning for future leaders"
-  },
-  {
-    image: "/images/gallery/Infrastructure/2.jpg",
-    title: "Excellence in Education",
-    subtitle: "Expert faculty, smart classrooms, proven results"
-  },
-  {
-    image: "/images/gallery/Infrastructure/3.jpg",
-    title: "Future-Ready Learning",
-    subtitle: "Modern campus, innovative teaching, holistic growth"
-  }
-]
+﻿import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { siteData } from '../data/site'
 
 export default function Hero() {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
-    <section 
-      className="relative w-full h-screen overflow-hidden bg-cover bg-center bg-black -mt-24 md:-mt-28"
-      style={{ backgroundImage: `url('/images/gallery/Infrastructure/1.jpg')` }}
-    >
+    <section className="relative w-full h-screen overflow-hidden bg-black -mt-24 md:-mt-28">
 
       {/* VIDEO BACKGROUND */}
       <motion.video
@@ -43,113 +12,71 @@ export default function Hero() {
         muted
         loop
         playsInline
+        preload="metadata"
         poster="/images/gallery/Infrastructure/1.jpg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </motion.video>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent z-0"></div>
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/70" />
 
-      {/* Left Content (Netflix Style) */}
+      {/* CONTENT */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-3xl px-6 md:px-16 text-white">
+        <div className="max-w-2xl px-6 md:px-16 text-white">
 
+          {/* SMALL TAG */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-sm tracking-widest uppercase text-[#8B5E3C] mb-4"
+          >
+            Since 2025 • Palamaner
+          </motion.p>
+
+          {/* TITLE */}
           <motion.h1
-            key={slides[index].title}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-display font-bold mb-4 leading-tight tracking-tight text-white"
+            className="text-4xl md:text-6xl font-bold leading-tight"
           >
-            {slides[index].title.includes('Future') ? (
-              <>
-                Shaping Future <span className="text-gold">Leaders</span>
-              </>
-            ) : slides[index].title.includes('Excellence') ? (
-              <>
-                Excellence in <span className="text-gold">Education</span>
-              </>
-            ) : (
-              <>
-                Holistic <span className="text-gold">Development</span>
-              </>
-            )}
+            Shaping Future <span className="text-[#8B5E3C]">Leaders</span>
           </motion.h1>
 
-          <motion.p
+          {/* SUBTITLE */}
+          <motion.h2
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="text-lg md:text-xl text-gold-200 mb-6"
+            className="text-lg md:text-xl text-gray-300 mt-4"
           >
-            Leading State Board School in Palamaner
-          </motion.p>
+            Best State Board School in Palamaner
+          </motion.h2>
 
-          <motion.p
-            key={slides[index].subtitle}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-lg md:text-xl text-gray-300 mb-8"
-          >
-            {slides[index].subtitle}
-          </motion.p>
+          {/* CTA BUTTONS */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
 
-          {/* School Stats */}
-          <div className="flex gap-8 mt-8 text-white animate-fade-in">
-            <div className="text-center">
-              <p className="text-4xl font-display font-bold text-gold-400">2025</p>
-              <p className="text-sm text-gray-300 font-body">Founded</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-display font-bold text-gold-400">1000+</p>
-              <p className="text-sm text-gray-300 font-body">Student Capacity</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-display font-bold text-gold-400">100%</p>
-              <p className="text-sm text-gray-300 font-body">Result Focus</p>
-            </div>
-          </div>
-
-          {/* Premium Buttons */}
-          <div className="mt-12 flex gap-4">
             <Link
               to="/admissions"
-              className="btn-primary bg-gold-400 text-black font-body font-semibold px-8 py-4 rounded-full shadow-xl hover:bg-gold-500 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+              className="px-7 py-3 bg-[#8B5E3C] text-white font-semibold rounded-full hover:opacity-90 transition shadow-lg"
             >
-              ▶ Apply Now
+              Apply Now
             </Link>
 
             <Link
               to="/about/overview"
-              className="btn-outline border-2 border-white/50 text-white backdrop-blur-md font-body font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+              className="px-7 py-3 border border-white/40 text-white rounded-full hover:bg-white hover:text-black transition"
             >
-              Learn More
+              Explore School
             </Link>
+
           </div>
+
         </div>
       </div>
 
-      {/* Bottom Gradient (Netflix feel) */}
+      {/* BOTTOM FADE */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent" />
-
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 right-10 flex gap-2 z-10">
-        {slides.map((_, i) => (
-          <div
-            key={i}
-            onClick={() => setIndex(i)}
-            className={`h-1 w-8 cursor-pointer transition-all duration-300 ${
-              i === index ? "bg-white" : "bg-white/40"
-            }`}
-          />
-        ))}
-      </div>
     </section>
   )
 }

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 
-const asset = (path) => path.replace('../assets', '/images')
+const asset = (path) => path
 
 const galleries = {
   'annual-day': [

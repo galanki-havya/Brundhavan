@@ -78,6 +78,7 @@ export default function Contact() {
       </Helmet>
 
       <PageHero
+        pageKey="contact"
         title="Get In Touch"
         subtitle="We're here to answer your questions and help you connect with our community"
         image="/images/gallery/Infrastructure/1.jpg"

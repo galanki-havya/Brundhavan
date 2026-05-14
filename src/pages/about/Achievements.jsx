@@ -50,6 +50,7 @@ export default function Achievements() {
   return (
     <>
       <PageHero
+        pageKey="achievements"
         title="Our Achievements"
         subtitle="Building excellence through innovation, discipline, and modern education."
         image="/images/gallery/Infrastructure/1.jpg"

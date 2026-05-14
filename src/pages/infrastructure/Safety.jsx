@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Shield, Eye, AlertTriangle, Heart } from 'lucide-react'
@@ -12,6 +13,7 @@ export default function Safety() {
         <meta name="description" content="Comprehensive safety measures ensuring a secure learning environment for all students." />
       </Helmet>
       <PageHero
+        pageKey="safety"
         title="Safety & Security"
         subtitle="Comprehensive safety measures ensuring a secure learning environment for all students."
         image="/images/gallery/Infrastructure/1.jpg"
@@ -207,12 +209,12 @@ export default function Safety() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+            <Link to="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
               Secure Your Child's Safety
-            </a>
-            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+            </Link>
+            <Link to="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
               Schedule Safety Tour
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

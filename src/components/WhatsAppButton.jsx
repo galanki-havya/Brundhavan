@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppButton() {
-  const phoneNumber = "918892004394" // Updated school WhatsApp number
+  const phoneNumber = "919121914631" // Updated school WhatsApp number
   
   return (
     <motion.a

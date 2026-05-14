@@ -16,13 +16,11 @@ const mainLinks = [
     ]
   },
   {
-    label: 'ACADEMICS',
+    label: 'SCHOOL LIFE',
     submenu: [
-      { to: '/academics/curriculum', label: 'Curriculum' },
-      { to: '/academics/methodology', label: 'Teaching Methodology' },
-      { to: '/academics/pre-primary', label: 'Pre-Primary' },
-      { to: '/academics/primary', label: 'Primary' },
-      { to: '/academics/secondary', label: 'Secondary' },
+      { to: '/activities', label: 'Activities' },
+      { to: '/events/gallery', label: 'Events Gallery' },
+      { to: '/events/annual', label: 'Annual Day' },
     ]
   },
   {
@@ -43,14 +41,6 @@ const mainLinks = [
       { to: '/infrastructure/digital', label: 'Digital Learning' },
     ]
   },
-  {
-    label: 'EVENTS',
-    submenu: [
-      { to: '/events/gallery', label: 'Gallery' },
-      { to: '/events/annual', label: 'Annual Events' },
-      { to: '/events/news', label: 'News & Updates' },
-    ]
-  },
   { to: '/admissions', label: 'ADMISSIONS' },
   { to: '/contact', label: 'CONTACT' },
   { to: 'https://educampus360.com/', label: 'ERP LOGIN', external: true },
@@ -68,51 +58,43 @@ export default function Navbar() {
   }, [])
 
   // Styles defined here so they are accessible throughout the entire component
-  const baseStyles = `px-2 xl:px-3 py-2 rounded-full font-body font-bold text-[12px] xl:text-[13px] tracking-wide transition-all duration-200 ease-out`
-  const stateStyles = scrolled
-    ? 'text-gray-700 hover:bg-gray-100'
-    : 'text-white hover:bg-white/10'
+  const baseStyles = `px-3 py-2 h-10 flex items-center rounded-full font-body font-bold text-[12px] xl:text-[13px] tracking-wide transition-all duration-200 ease-out`
+  const stateStyles = 'text-gray-700 hover:bg-[#EDE3D8]'
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-[var(--top-banner)] left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white shadow-xl py-2'
-          : 'bg-black/30 backdrop-blur-xl border-b border-white/10 py-4'
-      }`}
+      className={`fixed top-[var(--top-banner)] left-0 w-full z-50 transition-all duration-500 bg-[#F9F6F1]/80 backdrop-blur-xl border-b border-[#E6D9CC]/60 shadow-[0_8px_30px_rgba(0,0,0,0.08)] ${scrolled ? 'py-2' : 'py-4'}`}
     >
-      {/* Gradient overlay for better contrast over video */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-2">
-            {/* Logo */}
-            <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
+          <div className="flex items-center justify-between w-full">
+
+            {/* Logo (LEFT SIDE - expanded) */}
+            <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <motion.img
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.06 }}
                 src={logo}
                 alt="Brindavan School Logo"
-                className="h-10 w-auto"
+                className="h-20 w-auto object-contain"
               />
-              <div className="hidden sm:block">
-                <div className={`font-display font-bold text-lg leading-tight transition-colors ${
-                  scrolled ? 'text-charcoal-900' : 'text-white'
-                }`}>
+
+              <div className="hidden sm:block leading-tight">
+                <div className="text-lg font-bold text-[#6B4226] leading-tight">
                   Brindavan
                 </div>
-                <div className={`text-[10px] uppercase tracking-widest font-body transition-colors ${
-                  scrolled ? 'text-charcoal-500' : 'text-white/80'
-                }`}>
-                  School
+
+                <div className="text-[12px] text-gray-600 font-medium tracking-wide">
+                  School Palamaner
                 </div>
               </div>
             </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center justify-end flex-1 gap-x-1 xl:gap-x-2">
+          {/* Desktop Nav (RIGHT SIDE - fills remaining space) */}
+          <nav className="hidden lg:flex items-center gap-x-2 ml-auto h-10">
           {mainLinks.map(link => {
             const hasSubmenu = 'submenu' in link
 
@@ -124,9 +106,9 @@ export default function Navbar() {
                   onMouseEnter={() => setOpenDropdown(link.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <button className={`${baseStyles} ${stateStyles} flex items-center gap-1`}>
+                  <button className={`${baseStyles} ${stateStyles} flex items-center gap-1 leading-none`}>
                     {link.label}
-                    <ChevronDown className="w-3 h-3" />
+                    <ChevronDown className="w-3 h-3 shrink-0" />
                   </button>
 
                   {/* Mega Dropdown Menu */}
@@ -137,7 +119,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -10, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 z-50 mt-2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden min-w-max"
+                        className="absolute top-full left-0 z-50 mt-2 bg-[#FDF9F4]/95 backdrop-blur-md rounded-2xl shadow-xl border border-[#E6DED5] overflow-hidden min-w-max"
                       >
                         <div className="p-2">
                           {link.submenu.map((item, i) => (
@@ -163,14 +145,14 @@ export default function Navbar() {
               )
             }
 
-            if (link.external || (link.to && !link.to.startsWith('/'))) {
+            if (link.external || (link.to && !link.to?.startsWith('/'))) {
               return (
                 <a
                   key={link.label}
                   href={link.to}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${baseStyles} ${stateStyles}`}
+                  className={`${baseStyles} ${stateStyles} whitespace-nowrap`}
                 >
                   {link.label}
                 </a>
@@ -185,7 +167,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${baseStyles} ${
                     isActive
-                      ? 'bg-orange-100 text-orange-700'
+                      ? 'bg-[#EADBC8] text-[#6B4226]'
                       : stateStyles
                   }`
                 }
@@ -200,9 +182,7 @@ export default function Navbar() {
         <motion.button
           whileTap={{ scale: 0.95 }}
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
-            scrolled ? 'text-charcoal-800' : 'text-white'
-          }`}
+          className="lg:hidden p-2 rounded-lg transition-colors text-charcoal-800"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -228,18 +208,14 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto', y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className={`lg:hidden max-h-[85vh] overflow-y-auto ${
-              scrolled
-                ? 'bg-white text-gray-800 border-t border-gray-200'
-                : 'bg-gray-900 text-white border-t border-white/10'
-            } shadow-2xl`}
+            className="lg:hidden max-h-[85vh] overflow-y-auto bg-white text-gray-800 border-t border-gray-200 shadow-2xl"
           >
             <nav className="flex flex-col px-4 py-4 gap-2">
               {mainLinks.map((link) => {
                 const hasSubmenu = 'submenu' in link
                 const isOpen = openDropdown === link.label
 
-                if (link.external || (link.to && !link.to.startsWith('/'))) {
+                if (link.external || (link.to && !link.to?.startsWith('/'))) {
                   return (
                     <a
                       key={link.label}
@@ -316,4 +292,3 @@ export default function Navbar() {
     </motion.header>
   )
 }
-

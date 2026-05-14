@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Users, Award, Calendar, Camera } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-const asset = (path) => path.replace('../assets', '/images')
+const asset = (path) => path
 
 const galleryData = [
   {
@@ -86,6 +87,19 @@ const galleryData = [
       asset('/images/gallery/Infrastructure/1.jpg'),
       asset('/images/gallery/Infrastructure/2.jpg')
     ]
+  },
+  {
+    title: 'Campus Activities',
+    folder: 'campus-activities',
+    cover: asset('/images/gallery/campus-activities/1.jpg'),
+    images: [
+      asset('/images/gallery/campus-activities/2.jpg'),
+      asset('/images/gallery/campus-activities/3.jpg'),
+      asset('/images/gallery/campus-activities/4.jpg'),
+      asset('/images/gallery/campus-activities/5.jpg'),
+      asset('/images/gallery/campus-activities/6.jpg'),
+      asset('/images/gallery/campus-activities/7.jpg'),
+    ]
   }
 ]
 
@@ -102,6 +116,7 @@ export default function Gallery() {
         />
       </Helmet>
       <PageHero
+        pageKey="gallery"
         title="Photo Gallery"
         subtitle="Capturing memorable moments and showcasing the vibrant life at Brindavan School."
         image={asset('/images/gallery/Infrastructure/hero.jpg')}
@@ -132,6 +147,11 @@ export default function Gallery() {
                 icon: Camera,
                 title: "Campus Life",
                 description: "Daily activities, classroom moments, and student interactions"
+              },
+              {
+                icon: Camera,
+                title: "Digital Media Archive",
+                description: "External Google Drive photo collection and school media archive"
               }
             ].map((item, index) => (
               <motion.div
@@ -164,13 +184,16 @@ export default function Gallery() {
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal-900 mb-4">
-              Explore Gallery Collections
+            <span className="text-[#8B5E3C] uppercase tracking-[0.25em] text-xs font-semibold">
+              School Life
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#3A2618] mt-3">
+              Moments That Define Us
             </h2>
-            <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-              Click a category to view the full photo set from each school event.
+            <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+              Explore curated collections of events, achievements, and campus life captured over time.
             </p>
           </motion.div>
 
@@ -182,7 +205,13 @@ export default function Gallery() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                onClick={() => navigate(`/gallery/${gallery.folder}`)}
+                onClick={() => {
+                  if (gallery.external) {
+                    window.open(gallery.link, '_blank')
+                  } else {
+                    navigate(`/gallery/${gallery.folder}`)
+                  }
+                }}
                 className="cursor-pointer group bg-[#FFF8EF] border border-[#E8D8C3] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300"
               >
                 <div className="overflow-hidden">
@@ -195,9 +224,16 @@ export default function Gallery() {
                 </div>
 
                 <div className="p-5">
-                  <h3 className="text-2xl font-bold text-[#5C3A21]">
-                    {gallery.title}
-                  </h3>
+                  <div className="flex items-center justify-between gap-3 mb-3">
+                    <h3 className="text-2xl font-bold text-[#5C3A21]">
+                      {gallery.title}
+                    </h3>
+                    {gallery.external && (
+                      <span className="text-xs bg-[#8B5E3C] text-white px-2 py-1 rounded-full">
+                        External
+                      </span>
+                    )}
+                  </div>
                   <p className="text-charcoal-600 mt-2">
                     Click to explore photos
                   </p>
@@ -218,11 +254,14 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal-900 mb-4">
-              Gallery Statistics
+            <span className="text-[#8B5E3C] uppercase tracking-[0.25em] text-xs font-semibold">
+              Insights
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#3A2618] mt-3">
+              Visual Archive Overview
             </h2>
-            <p className="text-xl text-charcoal-600">
-              Our visual journey through the years
+            <p className="text-gray-600 text-lg mt-4">
+              A snapshot of our growing digital memory collection
             </p>
           </motion.div>
 
@@ -258,14 +297,17 @@ export default function Gallery() {
       <section className="py-16 text-center bg-[#5C3A21] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#5C3A21] via-[#8B5E3C] to-[#5C3A21] opacity-70"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <span className="text-white/80 uppercase tracking-[0.25em] text-xs font-semibold">
+            Admissions
+          </span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-display font-bold mb-4"
+            className="text-4xl md:text-5xl font-display font-bold mt-3 mb-4"
           >
-            Explore Our Photo Gallery
+            Join Our Learning Journey
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -283,12 +325,12 @@ export default function Gallery() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="/admissions" className="bg-white/95 backdrop-blur-md text-[#5C3A21] hover:bg-[#FFF8EF] font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+            <Link to="/admissions" className="bg-white/95 backdrop-blur-md text-[#5C3A21] hover:bg-[#FFF8EF] font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
               Apply Now
-            </a>
-            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-[#5C3A21] font-body font-semibold transition-all duration-300">
+            </Link>
+            <Link to="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-[#5C3A21] font-body font-semibold transition-all duration-300">
               Schedule Visit
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

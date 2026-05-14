@@ -1,35 +1,34 @@
 import { NavLink } from 'react-router-dom'
-import { MapPin, Phone, Mail, Globe, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
+import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import { siteData } from '../data/site'
 
 const { school } = siteData
 
 export default function Footer() {
   const icons = {
-    facebook: Globe,
-    instagram: Globe,
-    youtube: Globe,
-    twitter: Globe
+    instagram: FaInstagram,
+    youtube: FaYoutube,
   }
 
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Academics', path: '/academics' },
     { name: 'Admissions', path: '/admissions' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' }
   ]
 
   return (
-    <footer className="relative bg-gradient-to-b from-charcoal-50 via-primary-50 to-white text-charcoal-700 border-t border-gold-200">
+    <footer className="relative bg-gradient-to-b from-[#3B2416] via-[#5C3A21] to-[#2A1A12] text-white border-t border-[#8B5E3C]/40">
 
       {/* TOP CURVE */}
       <div className="absolute -top-1 left-0 w-full overflow-hidden leading-none">
         <svg viewBox="0 0 1440 120" className="w-full h-16 md:h-24">
           <path
             d="M0,80 C240,0 480,140 720,80 C960,20 1200,120 1440,60 L1440,0 L0,0 Z"
-            fill="#f9f7f3"
+            fill="#3B2416"
+            opacity="0.9"
           />
         </svg>
       </div>
@@ -42,31 +41,32 @@ export default function Footer() {
           {/* BRAND SECTION */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary-700 rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-white font-bold">B</span>
+              <div className="w-10 h-10 bg-[#5C3A21] rounded-xl flex items-center justify-center shadow-xl">
+                <span className="text-[#EAD7C5] font-bold">B</span>
               </div>
               <div>
-                <h3 className="text-charcoal-900 font-bold text-base leading-tight">
+                <h3 className="text-white font-bold text-base leading-tight">
                   {school.name}
                 </h3>
-                <p className="text-gold-600 text-xs font-medium">
+                <p className="text-[#EAD7C5] text-xs font-medium">
                   {school.affiliation}
                 </p>
               </div>
             </div>
 
-            <p className="text-sm text-charcoal-600 leading-relaxed mb-3">
+            <p className="text-[#D8C2AF] leading-relaxed mb-3 text-sm">
               {school.description.split(' ').slice(0, 22).join(' ')}…
             </p>
 
-            <p className="text-xs text-charcoal-500 mb-5">
+            <p className="text-[#CBB3A0] mb-5 text-xs">
               Empowering students with discipline, knowledge, and values for a better future.
             </p>
 
             {/* SOCIAL */}
             <div className="flex gap-2">
               {Object.entries(school.socials).map(([name, href]) => {
-                const Icon = icons[name] || Globe
+                const Icon = icons[name]
+                if (!Icon) return null
 
                 return (
                   <a
@@ -74,9 +74,9 @@ export default function Footer() {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-8 h-8 rounded-full bg-gold-50 hover:bg-gold-100 flex items-center justify-center transition"
+                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition backdrop-blur-md"
                   >
-                    <Icon className="w-4 h-4 text-gold-600" />
+                    <Icon className="w-4 h-4 text-[#F3E4D4]" />
                   </a>
                 )
               })}
@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* QUICK LINKS */}
           <div>
-<h4 className="text-charcoal-900 font-semibold mb-4 text-sm md:text-base">
+            <h4 className="text-[#EAD7C5] font-semibold mb-4 text-sm md:text-base">
               Quick Links
             </h4>
 
@@ -97,8 +97,8 @@ export default function Footer() {
                     className={({ isActive }) =>
                       `flex items-center gap-2 text-sm transition group ${
                         isActive
-                          ? 'text-primary-700 font-semibold'
-                          : 'text-charcoal-600 hover:text-gold-600'
+                          ? 'text-[#F3E4D4] font-semibold'
+                          : 'text-[#D8C2AF] hover:text-[#EAD7C5]'
                       }`
                     }
                   >
@@ -112,27 +112,26 @@ export default function Footer() {
 
           {/* CONTACT */}
           <div>
-<h4 className="text-charcoal-900 font-semibold mb-4 text-sm md:text-base">
+            <h4 className="text-[#EAD7C5] font-semibold mb-4 text-sm md:text-base">
               Contact Information
             </h4>
 
-            <ul className="space-y-4 text-sm text-charcoal-600">
-
+            <ul className="space-y-4 text-sm text-[#D8C2AF]">
               <li className="flex gap-3">
-                <MapPin className="w-4 h-4 text-gold-600 shrink-0 mt-1" />
+                <MapPin className="w-4 h-4 text-[#EAD7C5] shrink-0 mt-1" />
                 <span>{school.address}</span>
               </li>
 
               <li className="flex gap-3">
-                <Phone className="w-4 h-4 text-gold-600 shrink-0" />
-                <a href={`tel:${school.phone}`} className="hover:text-gold-600">
+                <Phone className="w-4 h-4 text-[#EAD7C5] shrink-0" />
+                <a href={`tel:${school.phone}`} className="hover:text-[#EAD7C5]">
                   {school.phone}
                 </a>
               </li>
 
               <li className="flex gap-3">
-                <Mail className="w-4 h-4 text-gold-600 shrink-0" />
-                <a href={`mailto:${school.email}`} className="hover:text-gold-600">
+                <Mail className="w-4 h-4 text-[#EAD7C5] shrink-0" />
+                <a href={`mailto:${school.email}`} className="hover:text-[#EAD7C5]">
                   {school.email}
                 </a>
               </li>
@@ -166,15 +165,15 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ================= BOTTOM BAR ================= */}
-      <div className="border-t border-gold-100 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-5 flex flex-col sm:flex-row justify-between text-xs md:text-sm text-charcoal-500">
+      {/* ================= BOTTOM BAR (DARK PREMIUM) ================= */}
+      <div className="border-t border-white/10 bg-[#2A1A12]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-5 flex flex-col sm:flex-row justify-between text-xs md:text-sm text-[#CBB3A0]">
 
           <span>
             © {new Date().getFullYear()} {school.name}. All rights reserved.
           </span>
 
-          <span className="mt-1 sm:mt-0">
+          <span className="mt-1 sm:mt-0 text-[#A88974]">
             Designed for excellence in education
           </span>
 

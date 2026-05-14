@@ -86,6 +86,16 @@ const galleries = {
     '/images/gallery/Infrastructure/7.jpg',
     '/images/gallery/Infrastructure/8.jpg',
   ],
+
+  'campus-activities': [
+    '/images/gallery/campus-activities/1.jpg',
+    '/images/gallery/campus-activities/2.jpg',
+    '/images/gallery/campus-activities/3.jpg',
+    '/images/gallery/campus-activities/4.jpg',
+    '/images/gallery/campus-activities/5.jpg',
+    '/images/gallery/campus-activities/6.jpg',
+    '/images/gallery/campus-activities/7.jpg',
+  ],
 }
 
 export default function GalleryDetail() {
@@ -99,29 +109,37 @@ export default function GalleryDetail() {
 
         <Link
           to="/gallery"
-          className="inline-flex items-center text-[#8B5E3C] font-semibold mb-8 hover:underline"
+          className="inline-flex items-center text-[#8B5E3C] font-semibold mb-10 hover:underline"
         >
           ← Back to Gallery
         </Link>
 
-        <h1 className="text-5xl font-bold text-[#3A2618] mb-12">
-          {folder?.replace(/([A-Z])/g, ' $1').trim()}
-        </h1>
+        <div className="mb-14 text-center">
+          <span className="text-[#8B5E3C] uppercase tracking-[0.25em] text-xs font-semibold">
+            Photo Collection
+          </span>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#3A2618] mt-4">
+            {folder?.replace(/[-_]/g, ' ')}
+          </h1>
+          <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
+            A curated visual story of school moments, achievements, and celebrations.
+          </p>
+        </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 
           {images.map((img, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08 }}
-              className="overflow-hidden rounded-3xl shadow-lg break-inside-avoid"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.03 }}
+              className="overflow-hidden rounded-2xl shadow-md bg-white group"
             >
               <img
                 src={img}
                 alt={`Gallery ${index + 1}`}
-                className="w-full object-cover hover:scale-105 transition duration-500"
+                className="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
               />
             </motion.div>
           ))}

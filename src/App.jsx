@@ -1,8 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from './components/layout/MainLayout'
 import Home from './pages/Home'
 import About from './pages/About'
-import Academics from './pages/Academics'
+import SchoolActivities from './pages/SchoolActivities'
+import ActivityDetail from './pages/ActivityDetail'
 import Facilities from './pages/Facilities'
 import Admissions from './pages/Admissions'
 import AdmissionForm from './pages/AdmissionForm'
@@ -11,7 +12,6 @@ import GalleryDetail from './pages/events/GalleryDetail'
 import AlbumPage from './pages/gallery/AlbumPage'
 import GalleryDetails from './pages/gallery/GalleryDetails'
 import Contact from './pages/Contact'
-import Events from './pages/Events'
 import Infrastructure from './pages/Infrastructure'
 import WhatsAppButton from './components/WhatsAppButton'
 
@@ -47,7 +47,7 @@ import News from './pages/events/News'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <WhatsAppButton />
       <Routes>
         <Route element={<MainLayout />}>
@@ -57,12 +57,9 @@ export default function App() {
           <Route path="/about/vision-mission" element={<VisionMission />} />
           <Route path="/about/chairman" element={<ChairmanMessage />} />
           <Route path="/about/achievements" element={<Achievements />} />
-          <Route path="/academics" element={<Academics />} />
-          <Route path="/academics/curriculum" element={<Curriculum />} />
-          <Route path="/academics/methodology" element={<Methodology />} />
-          <Route path="/academics/pre-primary" element={<PrePrimary />} />
-          <Route path="/academics/primary" element={<Primary />} />
-          <Route path="/academics/secondary" element={<Secondary />} />
+          <Route path="/school-life" element={<SchoolActivities />} />
+          <Route path="/activities" element={<SchoolActivities />} />
+          <Route path="/activity/:id" element={<ActivityDetail />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/facilities/smart-classrooms" element={<SmartClassrooms />} />
           <Route path="/facilities/labs" element={<Labs />} />
@@ -73,7 +70,7 @@ export default function App() {
           <Route path="/infrastructure/campus" element={<Campus />} />
           <Route path="/infrastructure/safety" element={<Safety />} />
           <Route path="/infrastructure/digital" element={<Digital />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/events" element={<Navigate to="/activities" replace />} />
           <Route path="/events/gallery" element={<EventsGallery />} />
           <Route path="/events/annual" element={<Annual />} />
           <Route path="/events/news" element={<News />} />
@@ -86,6 +83,6 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

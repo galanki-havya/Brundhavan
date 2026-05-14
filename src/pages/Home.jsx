@@ -31,6 +31,7 @@ export default function Home() {
         <meta property="og:title" content="Brindavan School - Best State Board School in Palamaner" />
         <meta property="og:description" content="Join Brindavan School for strong State Board education, modern campus, and holistic growth." />
         <meta property="og:image" content="/images/gallery/Infrastructure/1.jpg" />
+        <meta property="og:url" content="https://brindavanschool.in/" />
         <meta property="og:type" content="website" />
 
         {/* Twitter SEO */}
@@ -48,7 +49,7 @@ export default function Home() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
+            "@type": "School",
             "name": "Brindavan School",
             "url": "https://brindavanschool.in",
             "logo": "https://brindavanschool.in/logo.png",
@@ -60,7 +61,7 @@ export default function Home() {
             },
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+91-8919498070",
+              "telephone": "+91 91219 14631",
               "contactType": "Admissions"
             }
           })}
@@ -339,19 +340,19 @@ export default function Home() {
                 icon: '🎭',
                 title: 'Annual Day',
                 desc: 'Celebrating talent and creativity through cultural performances and achievements.',
-                link: '/events'
+                link: '/school-life'
               },
               {
                 icon: '🏃',
                 title: 'Sports Meet',
                 desc: 'Encouraging fitness and teamwork through exciting athletic competitions.',
-                link: '/events'
+                link: '/school-life'
               },
               {
                 icon: '🧪',
                 title: 'Science Fair',
                 desc: 'Innovation and discovery through student-led science projects and experiments.',
-                link: '/events'
+                link: '/school-life'
               }
             ].map((event, index) => (
               <motion.div
@@ -393,10 +394,10 @@ export default function Home() {
             className="text-center mt-12"
           >
             <Link
-              to="/events"
+              to="/school-life"
               className="btn-primary inline-flex items-center gap-2"
             >
-              View All Events
+              View School Life
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -452,7 +453,7 @@ export default function Home() {
 
             {/* SECONDARY CTA */}
             <a
-              href="https://wa.me/918892004394?text=Hi%20I%20want%20admission%20details%20for%202026-27"
+              href="https://wa.me/919121914631?text=Hi%20I%20want%20admission%20details%20for%202026-27"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full

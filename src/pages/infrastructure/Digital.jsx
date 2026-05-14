@@ -7,6 +7,7 @@ export default function Digital() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
+        pageKey="digital"
         title="Digital Learning"
         subtitle="Cutting-edge digital infrastructure supporting modern education and future-ready skills."
         image="/images/gallery/Infrastructure/1.jpg"

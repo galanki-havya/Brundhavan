@@ -7,6 +7,7 @@ export default function Primary() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
+        pageKey="primary"
         title="Primary"
         subtitle="Building strong foundations in core subjects and developing essential life skills."
         image="/images/gallery/Infrastructure/1.jpg"

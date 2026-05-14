@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-const asset = (path) => path.replace('../assets', '/images')
+const asset = (path) => path
 
 const galleryData = {
   AnnualDay: [

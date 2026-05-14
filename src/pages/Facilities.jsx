@@ -11,6 +11,7 @@ export default function Facilities() {
     <div>
       {/* Hero */}
       <PageHero
+        pageKey="facilities"
         title="Facilities"
         subtitle="World-class infrastructure designed for holistic development and modern learning."
         image="/images/gallery/Infrastructure/1.jpg"

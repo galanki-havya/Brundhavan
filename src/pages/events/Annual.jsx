@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
 import { Calendar, Music, Trophy, Users } from 'lucide-react'
@@ -11,6 +12,7 @@ export default function Annual() {
         <meta name="description" content="Explore annual events, cultural programs, sports meets, and celebrations at Brindavan School." />
       </Helmet>
       <PageHero
+        pageKey="annual"
         title="Annual Events"
         subtitle="Celebrating achievements, culture, and community through memorable annual traditions"
         image="/images/gallery/AnnualDay/2.jpg"
@@ -279,12 +281,12 @@ export default function Annual() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
+            <Link to="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg">
               Apply Now
-            </a>
-            <a href="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
+            </Link>
+            <Link to="/contact" className="border border-white px-8 py-4 rounded-full hover:bg-white/10 font-body font-semibold transition-all duration-300">
               Contact Us
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

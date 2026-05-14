@@ -1,68 +1,105 @@
 import { motion } from 'framer-motion'
 import { siteData } from '../data/site'
+const founderPhoto = '/images/gallery/founder.png'
 
-const { chairman, principal } = siteData
+const { chairman } = siteData
 
 export default function ManagementMessage() {
   return (
-    <section className="py-20 bg-primary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-16 bg-[#f4ede4]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold tracking-widest uppercase text-gold-700">
-            Management Message
-          </p>
-
-          <h2 className="mt-4 text-4xl font-display font-bold text-charcoal-900">
-            Leadership Message from Brindavan Management
+        {/* HEADER */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900">
+            Message from Our Founder
           </h2>
-
-          <p className="mt-4 max-w-3xl mx-auto text-charcoal-600 leading-relaxed">
-            A shared vision for value-driven education, safety, and strong academic foundations for every student.
+          <p className="mt-2 text-charcoal-600">
+            Leadership built on discipline, excellence, and holistic education.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-8 lg:grid-cols-2">
+        {/* CARD */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
 
-          {[chairman, principal].map((leader) => (
-            <motion.div
-              key={leader.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              viewport={{ once: true }}
-              className="rounded-3xl border border-gold-200 bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
+          {/* PROFILE */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-4"
+          >
+            <img
+              src={chairman.image || founderPhoto}
+              alt={chairman.name}
+              className="w-20 h-20 rounded-full object-cover border border-gray-200"
+            />
 
-                {/* Avatar */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-gold-500 to-gold-700 text-white text-xl font-bold shadow-md">
-                  {leader.name
-                    .split(' ')
-                    .map((word) => word[0])
-                    .join('')}
-                </div>
-
-                {/* Info */}
-                <div>
-                  <h3 className="text-2xl font-semibold text-charcoal-900">
-                    {leader.name}
-                  </h3>
-                  <p className="text-sm font-medium text-gold-700">
-                    {leader.title}
-                  </p>
-                </div>
-
-              </div>
-
-              {/* Message */}
-              <p className="mt-6 text-charcoal-600 leading-relaxed">
-                {leader.message}
+            <div>
+              <h3 className="text-xl font-bold text-charcoal-900">
+                {chairman.name}
+              </h3>
+              <p className="text-sm text-gold-700 font-medium">
+                {chairman.title}
               </p>
-            </motion.div>
-          ))}
+              <p className="text-xs text-charcoal-500">
+                Founder & Correspondent
+              </p>
+            </div>
+          </motion.div>
+
+          {/* QUOTE */}
+          <div className="mt-5 border-l-4 border-gold-400 pl-3 text-sm italic text-charcoal-600">
+            “Education is not just preparation for life — it is life itself.”
+          </div>
+
+          {/* MESSAGE WITH READING EFFECT */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.18
+                }
+              }
+            }}
+            className="mt-5 text-charcoal-700 text-base leading-relaxed space-y-3"
+          >
+            {(chairman.message || '').split('. ').map((line, i) => (
+              <motion.p
+                key={i}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 18,
+                    filter: "blur(4px)"
+                  },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    transition: {
+                      duration: 0.6,
+                      ease: "easeOut"
+                    }
+                  }
+                }}
+              >
+                {line.trim()}{line.trim().endsWith('.') ? '' : '.'}
+              </motion.p>
+            ))}
+          </motion.div>
+
+          {/* SIGNATURE */}
+          <div className="mt-6 pt-4 border-t border-gray-200 text-sm text-charcoal-800">
+            <p className="font-semibold">{chairman.name}</p>
+            <p className="text-charcoal-500 text-xs">
+              Founder & Correspondent
+            </p>
+          </div>
 
         </div>
       </div>

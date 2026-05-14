@@ -18,6 +18,7 @@ export default function Admissions() {
         <meta name="description" content="Apply for admission to Brindavan School, the leading State Board school in Palamaner. Admissions open for 2026-27 with modern facilities and holistic education." />
       </Helmet>
       <PageHero 
+        pageKey="admissions"
         title="Join Brindavan School" 
         subtitle="Admissions" 
         image="/images/gallery/Infrastructure/1.jpg"

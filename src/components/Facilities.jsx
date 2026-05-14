@@ -34,16 +34,16 @@ export default function Facilities() {
           {facilities.map((f, i) => {
             const Icon = icons[i] || BookOpen
             return (
-              <Card key={f.title} delay={i * 0.1} className="p-8 group relative">
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-[#fffdf9] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Card key={f.title} delay={i * 0.1} className="p-8 group relative overflow-hidden">
+                {/* Soft glow background (does NOT cover content) */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/40 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.3, type: "spring", stiffness: 200 }}
-                  className="w-16 h-16 bg-gradient-to-br from-[#8B5E3C] to-[#6F452B] group-hover:from-[#C89B3C] group-hover:to-[#B8862F] rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 shadow-md group-hover:shadow-xl"
+                  className="relative z-10 w-16 h-16 bg-gradient-to-br from-[#8B5E3C] to-[#6F452B] group-hover:from-[#C89B3C] group-hover:to-[#B8862F] rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 shadow-md group-hover:shadow-xl"
                 >
                   <Icon className="w-8 h-8" />
                 </motion.div>

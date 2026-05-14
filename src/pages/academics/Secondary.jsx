@@ -7,6 +7,7 @@ export default function Secondary() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
+        pageKey="secondary"
         title="Secondary"
         subtitle="Preparing students for board examinations and fostering academic excellence."
         image="/images/gallery/Infrastructure/1.jpg"
