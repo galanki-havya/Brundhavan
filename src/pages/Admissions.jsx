@@ -22,23 +22,11 @@ export default function Admissions() {
         subtitle="Admissions" 
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
-        <div className="absolute -mt-16 right-6 z-30">
-          <Link
-            to="/admission-form"
-            className="inline-flex items-center gap-2 
-            bg-gradient-to-r from-primary-700 to-primary-900
-            text-white px-6 py-4 rounded-full font-semibold
-            shadow-xl hover:scale-105 transition-all duration-300"
-          >
-            Apply Now →
-          </Link>
-        </div>
-      </div>
+      
 
       {/* Process */}
       <Section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-16">
           <div className="text-center mb-14">
             <p className="section-subheading">How to Apply</p>
             <h2 className="section-heading">Simple 4-Step Process</h2>
@@ -48,6 +36,7 @@ export default function Admissions() {
               <Card key={step.step} delay={i * 0.1} className="p-6 relative overflow-visible">
                 <div className="absolute -top-5 left-6 w-10 h-10 rounded-full bg-gradient-to-r from-primary-700 to-primary-900 text-white flex items-center justify-center font-display font-bold shadow-md">
                   {step.step}
+                
                 </div>
                 <div className="pt-6">
                   <h3 className="font-display font-bold text-lg text-charcoal-900 mb-2">{step.title}</h3>
