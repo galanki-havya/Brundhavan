@@ -7,11 +7,8 @@ export default function SmartClassrooms() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
-        pageKey="smart-classrooms"
         title="Smart Classrooms"
         subtitle="Technology-enabled learning environments with interactive teaching tools and digital resources."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Facilities / Smart Classrooms"
       />
       <motion.section className="hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

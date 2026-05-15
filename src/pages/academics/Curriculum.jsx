@@ -15,8 +15,6 @@ export default function Curriculum() {
       <PageHero
         title="Curriculum"
         subtitle="Comprehensive State Board curriculum with modern teaching methodologies and practical applications."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Academics / Curriculum"
       />
 
       {/* Curriculum Overview */}

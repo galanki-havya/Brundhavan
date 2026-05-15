@@ -20,11 +20,8 @@ export default function SchoolActivities() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <PageHero
-        pageKey="school-life"
         title="School Activities & Events"
         subtitle="Exploring beyond academics with enriching cultural, sports, and community activities."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / School Activities"
       />
 
       {/* Activities Section */}

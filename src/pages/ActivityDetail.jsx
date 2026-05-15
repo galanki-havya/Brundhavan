@@ -31,8 +31,6 @@ export default function ActivityDetail() {
       <PageHero
         title={activity.title}
         subtitle={activity.description}
-        images={[activity.image]}
-        breadcrumbs={`Home / Activities / ${activity.title}`}
       />
 
       <section className="py-16 bg-[#f7f3ee]">

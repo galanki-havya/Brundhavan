@@ -10,11 +10,8 @@ export default function Academics() {
     <>
       {/* Hero Section */}
       <PageHero
-        pageKey="academics"
         title="Academics"
         subtitle="Empowering students through innovative learning methodologies and comprehensive educational programs."
-        image="/images/gallery/AcademicAchivers/1.jpg"
-        breadcrumbs="Home / Academics"
       />
       {/* Curriculum Overview */}
       <motion.section

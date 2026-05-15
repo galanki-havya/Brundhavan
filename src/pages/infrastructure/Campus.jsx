@@ -13,11 +13,8 @@ export default function Campus() {
         <meta name="description" content="A modern, well-planned campus designed for an optimal learning environment." />
       </Helmet>
       <PageHero
-        pageKey="campus"
         title="Campus Overview"
         subtitle="A modern, well-planned campus designed for an optimal learning environment."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Infrastructure / Campus"
       />
 
       {/* Campus Features */}

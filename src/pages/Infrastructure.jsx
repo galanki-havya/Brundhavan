@@ -31,11 +31,8 @@ export default function Infrastructure() {
   return (
     <div>
       <PageHero
-        pageKey="infrastructure"
         title="Infrastructure"
         subtitle="A safe, modern and inspiring campus environment designed for excellence in education."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Infrastructure"
       />
 
       {/* Infrastructure Categories */}

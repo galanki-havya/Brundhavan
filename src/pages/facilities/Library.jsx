@@ -7,11 +7,8 @@ export default function Library() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
-        pageKey="library"
         title="Library"
         subtitle="A rich library hub supporting State Board study material, reading habits, and research projects."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Facilities / Library"
       />
       <motion.section className="hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -7,11 +7,8 @@ export default function Labs() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
-        pageKey="labs"
         title="Laboratories"
         subtitle="Science labs designed for practical learning aligned with the State Board curriculum."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Facilities / Laboratories"
       />
       <motion.section className="hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

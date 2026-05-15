@@ -14,11 +14,8 @@ export default function AboutOverview() {
         />
       </Helmet>
       <PageHero
-        pageKey="overview"
         title="About Brindavan School"
         subtitle="Discover our rich heritage, values, and commitment to educational excellence."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / About / Overview"
       />
       {/* Main Content */}
       <motion.section

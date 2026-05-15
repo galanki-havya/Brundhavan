@@ -9,11 +9,8 @@ export default function ChairmanMessage() {
   return (
     <>
       <PageHero
-        pageKey="chairman"
         title="Chairman's Message"
         subtitle="Visionary guidance and leadership shaping our institutional future."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / About / Chairman's Message"
       />
       {/* Chairman Message */}
       <motion.section

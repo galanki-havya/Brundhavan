@@ -13,11 +13,8 @@ export default function Safety() {
         <meta name="description" content="Comprehensive safety measures ensuring a secure learning environment for all students." />
       </Helmet>
       <PageHero
-        pageKey="safety"
         title="Safety & Security"
         subtitle="Comprehensive safety measures ensuring a secure learning environment for all students."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Infrastructure / Safety"
       />
 
       {/* Safety Features */}

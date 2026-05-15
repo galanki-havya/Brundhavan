@@ -7,11 +7,8 @@ export default function Secondary() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
-        pageKey="secondary"
         title="Secondary"
         subtitle="Preparing students for board examinations and fostering academic excellence."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Academics / Secondary"
       />
       <motion.section className="hidden" style={{ display: 'none' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

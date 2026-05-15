@@ -12,11 +12,8 @@ export default function Annual() {
         <meta name="description" content="Explore annual events, cultural programs, sports meets, and celebrations at Brindavan School." />
       </Helmet>
       <PageHero
-        pageKey="annual"
         title="Annual Events"
         subtitle="Celebrating achievements, culture, and community through memorable annual traditions"
-        image="/images/gallery/AnnualDay/2.jpg"
-        breadcrumbs="Home / Events / Annual"
       />
 
       {/* Annual Events */}

@@ -13,11 +13,8 @@ export default function News() {
         <meta name="description" content="Stay updated with the latest happenings, achievements, and announcements from Brindavan School." />
       </Helmet>
       <PageHero
-        pageKey="news"
         title="School News"
         subtitle="Stay updated with the latest happenings, achievements, and announcements from Brindavan School."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Events / News"
       />
 
       {/* News Categories */}

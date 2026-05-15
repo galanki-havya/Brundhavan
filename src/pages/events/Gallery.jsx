@@ -116,11 +116,8 @@ export default function Gallery() {
         />
       </Helmet>
       <PageHero
-        pageKey="gallery"
         title="Photo Gallery"
         subtitle="Capturing memorable moments and showcasing the vibrant life at Brindavan School."
-        image={asset('/images/gallery/Infrastructure/hero.jpg')}
-        breadcrumbs="Home / Events / Gallery"
       />
 
       {/* Gallery Categories */}

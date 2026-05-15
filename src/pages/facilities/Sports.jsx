@@ -7,11 +7,8 @@ export default function Sports() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
-        pageKey="sports"
         title="Sports Facilities"
         subtitle="Comprehensive sports infrastructure promoting fitness, teamwork and healthy competition."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Facilities / Sports"
       />
       <motion.section className="hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

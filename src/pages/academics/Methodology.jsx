@@ -8,11 +8,8 @@ export default function Methodology() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <PageHero
-        pageKey="methodology"
         title="Teaching Methodology"
         subtitle="Modern educational approaches and innovative strategies for student success."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / Academics / Methodology"
       />
       
       {/* Methodology Overview */}

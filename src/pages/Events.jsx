@@ -43,13 +43,9 @@ const events = [
 export default function SchoolLife() {
   return (
     <>
-      {/* Hero Section */}
       <PageHero
-        pageKey="events"
         title="School Life"
         subtitle="Celebrating learning, culture, achievements, and student experiences."
-        image="/images/gallery/Infrastructure/1.jpg"
-        breadcrumbs="Home / School Life"
       />
 
       {/* Events Content */}
