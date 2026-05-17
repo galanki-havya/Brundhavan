@@ -203,16 +203,20 @@ export const siteData = {
   mission:
     "To provide a stimulating, inclusive, and values-driven educational environment where every learner is inspired to achieve their fullest potential through academic rigour, creative expression, and character development.",
 
-  chairman: {
+  // ... inside siteData
+  Correspondent: {
     name: "M Mahesh Babu",
-    title: "Founder & CEO",
+    title: "Correspondent, Brindavan School",
+    image: "/images/gallery/founder.png", // Ensure this path exists or update it
     message:
       "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brindavan School, founded in 2025, we are building a modern educational institution focused on academic excellence, innovation, and holistic development. Our commitment to quality education, rooted in Indian values and global perspectives, will shape future generations. I invite you to be part of this extraordinary journey.",
   },
-  principal: {
-    name: "Dr. Lakshmi Prasanna",
-    title: "Principal",
-    message:
-      "At Brindavan School, every day is an opportunity for our students to discover, learn, and grow. As an experienced educator dedicated to modern education excellence, I lead our team in providing quality education in a supportive environment. We believe in nurturing both the academic and personal development of every child through innovative teaching methods and personalized attention. We look forward to partnering with families to help our students achieve their best.",
-  },
+// ...
+  chairman: {
+  name: 'S. Chandra Sekhar',
+  title: 'Chairman, Brindavan School',
+  image: '/images/gallery/Chairman.png',
+  credentials: 'M.Sc. Physics (S.V. University)',
+  message: `S. Chandra Sekhar is the Chairman of Brindavan School, bringing over eight years of extensive experience in the education sector. He holds an M.Sc. in Physics from S.V. University and has served in a variety of educational roles, including Physical Science Teacher, IIT Physics Faculty, High School In-Charge, and Vice Principal. Throughout his career, Mr. Sekhar has demonstrated a commitment to academic excellence, innovative teaching methods, and holistic student development. His leadership at Brindavan School is driven by a vision to cultivate both intellectual growth and personal character in students.`
+}
 };

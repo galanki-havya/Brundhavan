@@ -1,28 +1,31 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageHero from '../../components/PageHero'
-import { Quote, Award, Users, Heart } from 'lucide-react'
-
-const founderPhoto = '/images/gallery/founder.png'
+import { siteData } from '../../data/site' // Import your siteData
+import { Award, Users, BookOpen, GraduationCap } from 'lucide-react'
 
 export default function ChairmanMessage() {
+  const { chairman } = siteData;
+
   return (
     <>
       <PageHero
         title="Chairman's Message"
         subtitle="Visionary guidance and leadership shaping our institutional future."
       />
-      {/* Chairman Message */}
+      
+      {/* Chairman Message Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-white"
+        className="py-20 bg-[#FDFDFD]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Chairman Photo */}
+            
+            {/* Left Column: Chairman Profile Card */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -31,273 +34,163 @@ export default function ChairmanMessage() {
               className="lg:col-span-1"
             >
               <div className="sticky top-8">
-                <div className="bg-gold-50 rounded-2xl p-8 text-center">
-                  <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold-300 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <div className="bg-white rounded-3xl p-8 text-center border border-slate-200 shadow-xl shadow-slate-100/50">
+                  <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden border-4 border-white shadow-xl transform transition duration-300 hover:scale-105">
                     <img
-                      src={founderPhoto}
-                      alt="M Mahesh Babu"
+                      src={chairman.image}
+                      alt={chairman.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="font-display font-bold text-2xl text-charcoal-900 mb-2">
-                    M Mahesh Babu
+                  <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
+                    {chairman.name}
                   </h3>
-                  <p className="font-body text-charcoal-600 mb-4">Founder & CEO, Brindavan School</p>
-                  <div className="flex justify-center gap-2">
-                    <Award className="w-5 h-5 text-gold-500" />
-                    <span className="text-sm font-body text-charcoal-500">20+ Years Experience</span>
+                  <p className="font-body text-secondary-600 font-bold mb-4 italic">
+                    {chairman.title}
+                  </p>
+                  
+                  <div className="space-y-3 pt-6 border-t border-slate-100">
+                    <div className="flex items-center justify-center gap-3">
+                      <GraduationCap className="w-5 h-5 text-primary-600" />
+                      <span className="text-sm font-semibold text-slate-700">{chairman.credentials}</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-3">
+                      <Award className="w-5 h-5 text-primary-600" />
+                      <span className="text-sm font-semibold text-slate-700">8+ Years Excellence</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Message Content */}
+            {/* Right Column: Detailed Biography & Message */}
             <motion.div
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              variants={{
-                hidden: {},
-                show: {
-                  transition: {
-                    staggerChildren: 0.12,
-                  },
-                },
-              }}
               className="lg:col-span-2"
             >
+              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-100">
+                
+                {/* Header Section */}
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                  className="flex items-center gap-4 mb-8"
+                >
+                  <div className="w-2 h-10 bg-secondary-500 rounded-full"></div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
+                    About the Chairman
+                  </h2>
+                </motion.div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-md border border-gray-100">
+                {/* Split Biography Message */}
+                <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
+                  {chairman.message.split('\n\n').map((para, i) => (
+                    <motion.p
+                      key={i}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.1 } },
+                      }}
+                    >
+                      {para}
+                    </motion.p>
+                  ))}
+                </div>
 
-                {/* Header */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 },
-                }}
-                className="flex items-center gap-3 mb-6"
-              >
-                <div className="w-1.5 h-8 bg-gold-500 rounded-full"></div>
-                <h2 className="text-2xl md:text-3xl font-bold text-charcoal-900">
-                  About the Chairman
-                </h2>
-              </motion.div>
-
-              {/* Paragraphs with reading effect */}
-              <motion.div
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={{
-                  hidden: {},
-                  show: {
-                    transition: {
-                      staggerChildren: 0.18,
-                    },
-                  },
-                }}
-                className="space-y-5 text-base md:text-lg text-charcoal-700 leading-relaxed"
-              >
-
-                {[
-                  `Mr. M. Mahesh Babu, M.Sc.Ed (Physics), B.Ed, is a passionate educationist, visionary leader, and dedicated academic administrator with rich experience in teaching, school leadership, curriculum planning, and institutional development.`,
-
-                  `He completed his integrated M.Sc.Ed in Physics from the prestigious Regional Institute of Education (NCERT), Mysore, securing an impressive CGPA of 8.2. He completed his Higher Secondary Education at Madhu Junior College, Palamaner.`,
-
-                  `Since 2019, he has served in the field of education starting as PGT Physics Faculty at SR Vidyanikethan International School, where he contributed to conceptual learning, classroom innovation, and student mentoring.`,
-
-                  `He later served as Vice Principal (2022–2024) and Principal (2024 onwards), strengthening academic systems, discipline frameworks, and teacher development programs.`,
-
-                  `He has contributed to CBSE examination management and organized 50+ teacher training programs and 25+ workshops.`,
-
-                  `He has held multiple roles including Chrysalis Coordinator, CCA Coordinator, NAS Observer, and Science Fair Coordinator.`,
-
-                  `His achievements include top academic ranks, CTET qualification, leadership roles, and strong involvement in sports.`,
-
-                  `Fluent in English, Hindi, Telugu, and Kannada, he continues to inspire students and educators through value-based education.`,
-                ].map((text, i) => (
-                  <motion.p
-                    key={i}
-                    variants={{
-                      hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        filter: "blur(0px)",
-                        transition: {
-                          duration: 0.6,
-                          ease: "easeOut",
-                        },
-                      },
-                    }}
-                    className="transition-colors duration-300 hover:text-charcoal-900"
-                  >
-                    {text}
-                  </motion.p>
-                ))}
-
-              </motion.div>
-
-              {/* Signature */}
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 15 },
-                  show: { opacity: 1, y: 0 },
-                }}
-                className="mt-8 pt-6 border-t border-gray-200"
-              >
-                <p className="font-bold text-charcoal-900">M. Mahesh Babu</p>
-                <p className="text-sm text-charcoal-600">Founder & Correspondent</p>
-              </motion.div>
-
+                {/* Final Signature */}
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: { opacity: 1 },
+                  }}
+                  className="mt-12 pt-8 border-t border-slate-100"
+                >
+                  <p className="font-display text-2xl font-bold text-slate-900">{chairman.name}</p>
+                  <p className="text-secondary-600 font-bold uppercase tracking-widest text-xs mt-2">
+                    {chairman.title}
+                  </p>
+                </motion.div>
               </div>
 
-              {/* Key Achievements */}
-              <div className="mt-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                >
-                  {[
-                    {
-                      icon: Award,
-                      title: 'Excellence Awards',
-                      value: '15+',
-                      desc: 'Regional & State Awards'
-                    },
-                    {
-                      icon: Users,
-                      title: 'Alumni Network',
-                      value: '5000+',
-                      desc: 'Successful Graduates'
-                    },
-                    {
-                      icon: Heart,
-                      title: 'Community Impact',
-                      value: '20+',
-                      desc: 'Years of Service'
-                    }
-                  ].map((achievement, index) => (
-                    <div key={achievement.title} className="bg-white rounded-xl p-6 shadow-lg text-center">
-                      <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <achievement.icon className="w-6 h-6 text-gold-600" />
-                      </div>
-                      <div className="text-2xl font-display font-bold text-charcoal-900 mb-1">{achievement.value}</div>
-                      <div className="text-sm font-body font-semibold text-charcoal-800 mb-1">{achievement.title}</div>
-                      <div className="text-xs font-body text-charcoal-500">{achievement.desc}</div>
+              {/* Functional Highlights */}
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  {
+                    icon: BookOpen,
+                    title: 'Academic Oversight',
+                    value: 'Physics Expert',
+                    desc: 'Specialized IIT Coaching'
+                  },
+                  {
+                    icon: Users,
+                    title: 'Leadership Roles',
+                    value: 'Vice Principal',
+                    desc: 'Former High School In-Charge'
+                  },
+                  {
+                    icon: GraduationCap,
+                    title: 'Educational Vision',
+                    value: 'Holistic Dev.',
+                    desc: 'Character & Intellect'
+                  }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={item.title} 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + (index * 0.1) }}
+                    className="bg-white rounded-xl p-6 text-center border border-slate-100 hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-12 h-12 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm border border-slate-100">
+                      <item.icon className="w-6 h-6 text-secondary-500" />
                     </div>
-                  ))}
-                </motion.div>
+                    <div className="text-xl font-bold text-slate-800 mb-1">{item.value}</div>
+                    <div className="text-sm font-bold text-secondary-600 mb-1">{item.title}</div>
+                    <div className="text-xs text-slate-500">{item.desc}</div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Vision for Future */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="py-20 bg-charcoal-50"
-      >
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+      {/* Vision Section - Updated to Light Colors */}
+      <section className="py-24 bg-slate-50 border-y border-slate-100 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary-100/40 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-primary-100/30 blur-[100px] rounded-full" />
+        
+        <div className="max-w-4xl mx-auto text-center px-4 relative z-10">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-display font-bold text-3xl md:text-4xl text-charcoal-900 mb-6"
+            className="font-display font-bold text-3xl md:text-5xl mb-8 italic text-slate-800 leading-tight"
           >
-            Our Vision for the Future
+            "Cultivating both intellectual growth and personal character."
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-charcoal-600 mb-12 text-lg leading-relaxed"
-          >
-            Under the guidance of our Chairman, Brindavan School continues to evolve and adapt to meet the changing needs of education while maintaining our core values of excellence, integrity, and innovation.
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Digital Learning Revolution',
-                desc: 'Integrating cutting-edge technology with traditional teaching methods to create immersive learning experiences.',
-                icon: '💻'
-              },
-              {
-                title: 'Global Citizenship',
-                desc: 'Preparing students to be responsible global citizens with cultural awareness and environmental consciousness.',
-                icon: '🌍'
-              }
-            ].map((vision, index) => (
-              <motion.div
-                key={vision.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
-              >
-                <div className="text-4xl mb-4">{vision.icon}</div>
-                <h3 className="font-display font-bold text-xl text-charcoal-900 mb-3">
-                  {vision.title}
-                </h3>
-                <p className="font-body text-charcoal-600 leading-relaxed">
-                  {vision.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <div className="w-20 h-1 bg-secondary-500 mx-auto mb-8 rounded-full"></div>
+          <p className="text-slate-600 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+            Under the leadership of S. Chandra Sekhar, we are committed to innovative teaching methods and excellence in high-school education.
+          </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* CTA Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="py-20 bg-gradient-to-r from-primary-600 to-primary-800"
-      >
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-display font-bold text-3xl md:text-4xl text-white mb-6"
-          >
-            Be Part of Our Legacy
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-primary-100 mb-8 text-lg"
-          >
-            Join thousands of families who have entrusted their children's future to Brindavan School
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Link to="/admissions" className="bg-white text-primary-700 hover:bg-primary-50 font-body font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg inline-block">
-              Apply for Admission
-            </Link>
-          </motion.div>
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="font-display font-bold text-4xl text-slate-900 mb-8">
+            Join the Brindavan Legacy
+          </h2>
+          <Link to="/admissions" className="bg-primary-700 text-white hover:bg-primary-800 px-12 py-5 rounded-full font-bold transition-all shadow-xl shadow-primary-100 inline-block">
+            Start Your Child's Journey
+          </Link>
         </div>
-      </motion.section>
+      </section>
     </>
   )
 }

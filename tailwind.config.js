@@ -7,89 +7,120 @@ export default {
   theme: {
     extend: {
       colors: {
+          cream: '#fdfcf0',
+        // ───────────────── PRIMARY BRAND (Royal Blue)
         primary: {
-          DEFAULT: '#ba6c3c',
-          50: '#fff3ea',
-          100: '#f8dcc7',
-          200: '#efc39f',
-          300: '#e6a97a',
-          400: '#d48356',
-          500: '#ba6c3c',
-          600: '#9b572f',
-          700: '#7d4328',
-          800: '#5c3220',
-          900: '#3f2317',
+          DEFAULT: '#1E4FA3',
+          50:  '#EEF4FF',
+          100: '#DCE8FF',
+          200: '#B8D0FF',
+          300: '#8CB2FF',
+          400: '#5D8EFF',
+          500: '#1E4FA3',
+          600: '#183F84',
+          700: '#123166',
+          800: '#0D2348',
+          900: '#07152C',
         },
 
+        // ───────────────── SECONDARY (Gold / Bronze)
         secondary: {
-          DEFAULT: '#9f5d41',
-          50: '#f7f1e8',
-          100: '#edd9c9',
-          200: '#e2bea7',
-          300: '#d49a7b',
-          400: '#ba7455',
-          500: '#9f5d41',
-          600: '#7e4935',
-          700: '#60372e',
-          800: '#45281f',
-          900: '#2f1913',
-        },
-
-        background: '#fffaf5',
-
-        charcoal: {
-          50: '#FAF7F2',
-          100: '#F4EEE6',
-          200: '#E7D9C7',
-          300: '#DAC4AB',
-          400: '#CDB094',
-          500: '#5F5147',
-          600: '#4A3D36',
-          700: '#3A2618',
-          800: '#2B1A12',
-          900: '#1F120A',
-        },
-
-        gold: {
-          50: '#FBF7EF',
-          100: '#F3E4D4',
-          200: '#EDD1B8',
-          300: '#E5BD9C',
-          400: '#D9A876',
+          DEFAULT: '#C89B3C',
+          50:  '#FCF8EE',
+          100: '#F6E7C6',
+          200: '#EDD39A',
+          300: '#E2BE6E',
+          400: '#D4A94E',
           500: '#C89B3C',
-          600: '#B8862F',
-          700: '#8B5E3C',
-          800: '#6B4829',
-          900: '#4F3418',
+          600: '#A57D2D',
+          700: '#7F5E24',
+          800: '#5B4218',
+          900: '#3A2A0D',
         },
+
+        // ───────────────── BACKGROUND
+        background: '#FAF8F4',
+
+        // ───────────────── NEUTRALS
+        charcoal: {
+          50:  '#F8F9FB',
+          100: '#EEF1F5',
+          200: '#DCE2EA',
+          300: '#C2CBD8',
+          400: '#95A3B8',
+          500: '#5B6575',
+          600: '#444D5A',
+          700: '#313844',
+          800: '#1F242D',
+          900: '#11151B',
+        },
+
+        // ───────────────── GOLD ACCENTS
+        gold: {
+          50:  '#FFFBEF',
+          100: '#FDF1C8',
+          200: '#F8E08F',
+          300: '#F0CB57',
+          400: '#DDB03A',
+          500: '#C89B3C',
+          600: '#B58A1F',
+          700: '#8A6818',
+          800: '#614712',
+          900: '#3D2B08',
+        },
+
+        // ───────────────── LOGO PETAL COLORS
+        petals: {
+          orange: '#F28C28',
+          purple: '#7C4DFF',
+          sky:    '#42A5F5',
+          pink:   '#EC4899',
+          yellow: '#F4C430',
+          green:  '#22C55E',
+          teal:   '#14B8A6',
+          lime:   '#84CC16',
+        },
+
+        // ───────────────── UTILITY COLORS
+        success: '#22C55E',
+        warning: '#F59E0B',
+        danger:  '#E63946',
+        info:    '#0EA5E9',
       },
+
       fontFamily: {
         display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        body:    ['"DM Sans"', 'sans-serif'],
       },
+
       boxShadow: {
-        'card': '0 4px 24px rgba(0,0,0,0.08)',
-        'card-hover': '0 12px 40px rgba(0,0,0,0.14)',
+        card:        '0 6px 24px rgba(17, 21, 27, 0.06)',
+        'card-hover':'0 14px 40px rgba(17, 21, 27, 0.12)',
+        soft:        '0 2px 10px rgba(17, 21, 27, 0.04)',
+        gold:        '0 8px 24px rgba(200, 155, 60, 0.18)',
+        blue:        '0 8px 24px rgba(30, 79, 163, 0.16)',
       },
+
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-in-out',
+        'fade-in':  'fadeIn 0.6s ease-in-out',
         'slide-up': 'slideUp 0.8s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
       },
+
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
+          '0%':   { opacity: '0' },
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%':   { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '0%':   { opacity: '0', transform: 'scale(0.9)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
-      }
+      },
     },
   },
   plugins: [],

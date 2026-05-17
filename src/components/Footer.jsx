@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, Mail, ArrowRight, GraduationCap } from 'lucide-react'
 import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import { siteData } from '../data/site'
 
@@ -8,75 +8,113 @@ const { school } = siteData
 export default function Footer() {
   const icons = {
     instagram: FaInstagram,
-    youtube: FaYoutube,
+    youtube:   FaYoutube,
   }
 
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    { name: 'Home',       path: '/' },
+    { name: 'About',      path: '/about' },
     { name: 'Admissions', path: '/admissions' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Gallery',    path: '/gallery' },
+    { name: 'Contact',    path: '/contact' },
+  ]
+
+  const programmes = [
+    { name: 'Pre-Primary',    path: '/academics/pre-primary' },
+    { name: 'Primary School', path: '/academics/primary' },
+    { name: 'Middle School',  path: '/academics/middle' },
+    { name: 'High School',    path: '/academics/high' },
+    { name: 'Activities',     path: '/activities' },
   ]
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#3B2416] via-[#5C3A21] to-[#2A1A12] text-white border-t border-[#8B5E3C]/40">
+    <footer className="relative bg-gradient-to-b from-[#0D1B3E] via-[#142252] to-[#0A1328] text-white">
 
-      {/* TOP CURVE */}
-      <div className="absolute -top-1 left-0 w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 1440 120" className="w-full h-16 md:h-24">
+      {/* ── TOP WAVE ── */}
+      <div className="absolute -top-1 left-0 w-full overflow-hidden leading-none pointer-events-none">
+        <svg viewBox="0 0 1440 60" className="w-full h-8 md:h-12" preserveAspectRatio="none">
           <path
-            d="M0,80 C240,0 480,140 720,80 C960,20 1200,120 1440,60 L1440,0 L0,0 Z"
-            fill="#3B2416"
-            opacity="0.9"
+            d="M0,40 C360,0 720,60 1080,20 C1260,5 1380,35 1440,25 L1440,0 L0,0 Z"
+            fill="#0D1B3E"
           />
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-10 md:pt-14 pb-8 md:pb-10">
+      {/* ── NEWSLETTER BAND (top of footer, above columns) ── */}
+      <div className="relative z-10 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-sm text-blue-100/70 font-medium">
+            📬 Stay updated — admissions, events &amp; school news
+          </p>
+          <div className="flex gap-2 w-full sm:w-auto">
+            <input
+              placeholder="Enter your email"
+              className="
+                flex-1 sm:w-56 px-3 py-2
+                rounded-lg border border-white/20
+                bg-white text-slate-800 placeholder:text-slate-400
+                text-xs focus:ring-2 focus:ring-[#E8A0B0]/50 outline-none
+                transition
+              "
+            />
+            <button className="
+              bg-[#E8A0B0] hover:bg-[#D94680]
+              text-white font-semibold
+              px-4 py-2 rounded-lg text-xs
+              transition-all duration-300
+              flex-shrink-0
+            ">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
 
-        {/* ================= TOP GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+      {/* ── MAIN GRID ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-8 pb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-6">
 
-          {/* BRAND SECTION */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-[#5C3A21] rounded-xl flex items-center justify-center shadow-xl">
-                <span className="text-[#EAD7C5] font-bold">B</span>
+          {/* BRAND */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="w-9 h-9 bg-white/10 border border-white/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                <GraduationCap className="w-4.5 h-4.5 text-[#E8A0B0]" />
               </div>
               <div>
-                <h3 className="text-white font-bold text-base leading-tight">
+                <h3 className="text-white font-bold text-sm leading-tight">
                   {school.name}
                 </h3>
-                <p className="text-[#EAD7C5] text-xs font-medium">
+                <p className="text-blue-200/60 text-[10px] font-medium tracking-wide">
                   {school.affiliation}
                 </p>
               </div>
             </div>
 
-            <p className="text-[#D8C2AF] leading-relaxed mb-3 text-sm">
-              {school.description.split(' ').slice(0, 22).join(' ')}…
+            <p className="text-blue-100/55 leading-relaxed mb-4 text-xs">
+              {school.description.split(' ').slice(0, 20).join(' ')}…
             </p>
 
-            <p className="text-[#CBB3A0] mb-5 text-xs">
-              Empowering students with discipline, knowledge, and values for a better future.
-            </p>
-
-            {/* SOCIAL */}
+            {/* Social icons */}
             <div className="flex gap-2">
               {Object.entries(school.socials).map(([name, href]) => {
                 const Icon = icons[name]
                 if (!Icon) return null
-
                 return (
                   <a
                     key={name}
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition backdrop-blur-md"
+                    aria-label={name}
+                    className="
+                      w-8 h-8 rounded-full
+                      bg-white/10 border border-white/10
+                      hover:bg-[#E8A0B0] hover:border-[#E8A0B0]
+                      flex items-center justify-center
+                      transition-all duration-300
+                    "
                   >
-                    <Icon className="w-4 h-4 text-[#F3E4D4]" />
+                    <Icon className="w-3.5 h-3.5 text-white" />
                   </a>
                 )
               })}
@@ -85,25 +123,50 @@ export default function Footer() {
 
           {/* QUICK LINKS */}
           <div>
-            <h4 className="text-[#EAD7C5] font-semibold mb-4 text-sm md:text-base">
+            <h4 className="text-white/90 font-semibold mb-3 text-xs uppercase tracking-[0.18em]">
               Quick Links
             </h4>
-
             <ul className="space-y-2">
               {quickLinks.map(link => (
                 <li key={link.name}>
                   <NavLink
                     to={link.path}
                     className={({ isActive }) =>
-                      `flex items-center gap-2 text-sm transition group ${
+                      `flex items-center gap-1.5 text-xs transition-all duration-200 group ${
                         isActive
-                          ? 'text-[#F3E4D4] font-semibold'
-                          : 'text-[#D8C2AF] hover:text-[#EAD7C5]'
+                          ? 'text-[#E8A0B0] font-semibold'
+                          : 'text-blue-100/55 hover:text-white'
                       }`
                     }
                   >
+                    <ArrowRight className="w-2.5 h-2.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" />
                     {link.name}
-                    <ArrowRight className="w-3 h-3 opacity-60 group-hover:translate-x-1 transition-transform" />
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* PROGRAMMES */}
+          <div>
+            <h4 className="text-white/90 font-semibold mb-3 text-xs uppercase tracking-[0.18em]">
+              Programmes
+            </h4>
+            <ul className="space-y-2">
+              {programmes.map(link => (
+                <li key={link.name}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1.5 text-xs transition-all duration-200 group ${
+                        isActive
+                          ? 'text-[#E8A0B0] font-semibold'
+                          : 'text-blue-100/55 hover:text-white'
+                      }`
+                    }
+                  >
+                    <ArrowRight className="w-2.5 h-2.5 opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200" />
+                    {link.name}
                   </NavLink>
                 </li>
               ))}
@@ -112,72 +175,47 @@ export default function Footer() {
 
           {/* CONTACT */}
           <div>
-            <h4 className="text-[#EAD7C5] font-semibold mb-4 text-sm md:text-base">
-              Contact Information
+            <h4 className="text-white/90 font-semibold mb-3 text-xs uppercase tracking-[0.18em]">
+              Contact Us
             </h4>
-
-            <ul className="space-y-4 text-sm text-[#D8C2AF]">
-              <li className="flex gap-3">
-                <MapPin className="w-4 h-4 text-[#EAD7C5] shrink-0 mt-1" />
-                <span>{school.address}</span>
+            <ul className="space-y-3 text-xs text-blue-100/55">
+              <li className="flex gap-2.5">
+                <div className="w-6 h-6 bg-white/10 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="w-3 h-3 text-[#E8A0B0]" />
+                </div>
+                <span className="leading-relaxed">{school.address}</span>
               </li>
-
-              <li className="flex gap-3">
-                <Phone className="w-4 h-4 text-[#EAD7C5] shrink-0" />
-                <a href={`tel:${school.phone}`} className="hover:text-[#EAD7C5]">
+              <li className="flex gap-2.5 items-center">
+                <div className="w-6 h-6 bg-white/10 rounded-md flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-3 h-3 text-[#E8A0B0]" />
+                </div>
+                <a href={`tel:${school.phone}`} className="hover:text-white transition-colors duration-200">
                   {school.phone}
                 </a>
               </li>
-
-              <li className="flex gap-3">
-                <Mail className="w-4 h-4 text-[#EAD7C5] shrink-0" />
-                <a href={`mailto:${school.email}`} className="hover:text-[#EAD7C5]">
+              <li className="flex gap-2.5 items-center">
+                <div className="w-6 h-6 bg-white/10 rounded-md flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-3 h-3 text-[#E8A0B0]" />
+                </div>
+                <a href={`mailto:${school.email}`} className="hover:text-white transition-colors duration-200 break-all">
                   {school.email}
                 </a>
               </li>
-
             </ul>
           </div>
-        </div>
-
-        {/* ================= NEWSLETTER CTA ================= */}
-        <div className="mt-8 bg-white border border-gold-100 rounded-2xl p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          <div>
-            <h4 className="text-charcoal-900 font-bold">
-              Stay Connected with Us
-            </h4>
-            <p className="text-sm text-charcoal-500">
-              Get admission updates, events, and school news
-            </p>
-          </div>
-
-          <div className="flex w-full md:w-auto gap-2">
-            <input
-              placeholder="Enter email address"
-              className="flex-1 md:w-64 px-4 py-2 rounded-lg border border-gold-100 text-sm focus:ring-2 focus:ring-gold-400 outline-none"
-            />
-            <button className="bg-primary-700 hover:bg-primary-800 text-white px-5 py-2 rounded-lg text-sm transition">
-              Subscribe
-            </button>
-          </div>
 
         </div>
-      </div>
 
-      {/* ================= BOTTOM BAR (DARK PREMIUM) ================= */}
-      <div className="border-t border-white/10 bg-[#2A1A12]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-5 flex flex-col sm:flex-row justify-between text-xs md:text-sm text-[#CBB3A0]">
-
+        {/* ── BOTTOM BAR ── */}
+        <div className="mt-7 pt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-1.5 text-[11px] text-blue-100/35">
           <span>
             © {new Date().getFullYear()} {school.name}. All rights reserved.
           </span>
-
-          <span className="mt-1 sm:mt-0 text-[#A88974]">
+          <span className="text-blue-100/25">
             Designed for excellence in education
           </span>
-
         </div>
+
       </div>
     </footer>
   )

@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import AdmissionsBanner from '../AdmissionsBanner'
+import GlobalBackground from '../GlobalBackground'
 
 export default function MainLayout() {
   const { pathname } = useLocation()
@@ -15,17 +16,19 @@ export default function MainLayout() {
   }, [pathname])
 
   return (
-    <div className="flex flex-col min-h-screen w-full overflow-x-hidden bg-white">
-      <header>
-        <AdmissionsBanner />
-        <Navbar />
-      </header>
+    <GlobalBackground>
+      <div className="flex flex-col min-h-screen w-full overflow-x-hidden bg-transparent">
+        <header>
+          <AdmissionsBanner />
+          <Navbar />
+        </header>
 
-      <main id="main-content" role="main" className="page-offset flex-grow w-full">
-        <Outlet />
-      </main>
+        <main id="main-content" role="main" className="page-offset flex-grow w-full">
+          <Outlet />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </GlobalBackground>
   )
 }

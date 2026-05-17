@@ -4,16 +4,22 @@
 
 @layer base {
   :root {
-    --brand-dark: #5C3A21;
-    --brand-medium: #8B5E3C;
-    --brand-light: #fffaf5;
-    --brand-gold: #C89B3C;
-    --brand-muted: #A17A5D;
-    --border: #e7d3bf;
-    --text-h: #5C3A21;
-    --social-bg: #F7F3EE;
-    --accent: #8B5E3C;
-    --shadow: 0 10px 30px rgba(92, 58, 33, 0.12);
+    /* PRIMARY BRAND COLORS (From Logo) */
+    --brand-dark: #002b5c;      /* Royal Navy Blue */
+    --brand-medium: #1a365d;    /* Deep Blue Accent */
+    --brand-light: #fdfcf0;     /* Ivory/Cream Background */
+    --brand-gold: #d4af37;      /* Metallic Gold */
+    --brand-muted: #64748b;     /* Slate for secondary text */
+    
+    /* UI ELEMENTS */
+    --border: #e2e8f0;          /* Clean light border */
+    --text-h: #002b5c;          /* Heading color */
+    --social-bg: #f8fafc;
+    --accent: #d4af37;
+    
+    /* SHADOWS (Shifted from brown to subtle navy/neutral) */
+    --shadow: 0 10px 30px rgba(0, 43, 92, 0.08);
+    
     --top-banner: 40px;
     --top-navbar-mobile: 64px;
     --top-navbar-desktop: 72px;
@@ -41,8 +47,9 @@
     margin: 0;
     padding: 0;
     font-family: 'DM Sans', sans-serif;
-    @apply text-[#5C3A21];
-    background-color: #fffaf5;
+    /* Primary body text color */
+    @apply text-slate-700;
+    background-color: var(--brand-light);
     overflow-x: hidden;
   }
 
@@ -51,23 +58,26 @@
     height: 100%;
   }
 
-  img,
-  video {
+  img, video {
     max-width: 100%;
     height: auto;
     display: block;
   }
+
   h1, h2, h3, h4 {
     font-family: 'Playfair Display', Georgia, serif;
+    color: var(--brand-dark);
   }
 }
 
 @layer components {
   .section-heading {
-    @apply text-4xl md:text-5xl font-display font-bold text-[#5C3A21] mb-3 leading-tight tracking-tight;
+    /* Using brand navy for a more formal look */
+    @apply text-4xl md:text-5xl font-display font-bold text-[#002b5c] mb-3 leading-tight tracking-tight;
   }
+
   .section-subheading {
-    color: var(--brand-medium);
+    color: var(--brand-gold); /* Gold subheadings look very premium */
     font-family: var(--font-body);
     font-weight: 700;
     text-transform: uppercase;
@@ -75,6 +85,7 @@
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
+
   .page-offset {
     padding-top: var(--page-offset);
   }
@@ -85,70 +96,73 @@
     }
   }
 
+  /* UPDATED PRIMARY BUTTON (Navy & Gold) */
   .btn-primary {
     background-color: var(--brand-gold);
-    color: #1f1f1f;
+    color: #002b5c; /* Dark navy text on gold background */
     font-weight: 700;
     padding: 1rem 2rem;
     border-radius: 9999px;
-    box-shadow: 0 18px 40px rgba(92, 58, 33, 0.16);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
   }
+
   .btn-primary:hover {
-    background-color: #b48a2f;
-    transform: translateY(-1px);
+    background-color: #b8860b; /* Deep gold */
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
   }
+
   .btn-outline {
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    color: white;
+    border: 2px solid var(--brand-gold);
+    color: var(--brand-dark);
     padding: 1rem 2rem;
     border-radius: 9999px;
-    backdrop-filter: blur(12px);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
   }
+
   .btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #1f1f1f;
+    background-color: var(--brand-dark);
+    color: white;
+    border-color: var(--brand-dark);
   }
+
   .card {
     background: white;
-    border-radius: 32px;
-    box-shadow: 0 20px 60px rgba(92, 58, 33, 0.08);
-    transition: box-shadow 0.3s ease;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 43, 92, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 43, 92, 0.04);
+    transition: all 0.3s ease;
   }
+
   .card:hover {
-    box-shadow: 0 24px 70px rgba(92, 58, 33, 0.12);
+    box-shadow: 0 24px 70px rgba(0, 43, 92, 0.08);
+    transform: translateY(-4px);
   }
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(92, 58, 33, 0.08);
-  }
+
   .input {
-    @apply w-full border border-gold-100 rounded-xl px-4 py-3 text-sm focus:outline-none bg-white placeholder-gray-400 transition;
+    @apply w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none bg-white placeholder-slate-400 transition;
     color: var(--brand-dark);
-    box-shadow: inset 0 0 0 0 transparent;
   }
 
   .input:focus {
     outline: none;
-    box-shadow: 0 0 0 1px rgba(200, 155, 60, 0.35), 0 0 0 3px rgba(200, 155, 60, 0.18);
+    border-color: var(--brand-gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
   }
 }
 
-/* Custom scrollbar */
+/* Custom Navy scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f7f3ee; }
-::-webkit-scrollbar-thumb { background: #8B5E3C; border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(--brand-light); }
+::-webkit-scrollbar-thumb { 
+  background: var(--brand-dark); 
+  border-radius: 3px; 
+}
 
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .animate-marquee {
@@ -156,4 +170,3 @@
   min-width: 100%;
   animation: marquee 18s linear infinite;
 }
-

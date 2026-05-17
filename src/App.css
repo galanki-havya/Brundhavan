@@ -1,3 +1,8 @@
+/*
+  bg-cream: Custom Tailwind utility for a soft cream background.
+  Add this to tailwind.config.js if not present:
+  theme: { extend: { colors: { cream: '#fdfcf0' } } }
+*/
 .counter {
   font-size: 16px;
   padding: 5px 10px;
