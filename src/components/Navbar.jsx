@@ -18,9 +18,10 @@ const mainLinks = [
   {
     label: 'SCHOOL LIFE',
     submenu: [
-      { to: '/activities', label: 'Activities' },
-      { to: '/events/gallery', label: 'Events Gallery' },
-      { to: '/events/annual', label: 'Annual Day' },
+     { to: '/academic-approaches', label: 'Academic Approaches' },
+      { to: '/events/gallery', label: 'Co-Curricular' },
+      { to: '/events/annual', label: 'Communication and Public Speaking' },
+      { to: '/events/sports', label: 'Festival Fun' },
     ]
   },
   {
@@ -47,7 +48,6 @@ const mainLinks = [
 ]
 
 // Shared base for non-NavLink items (dropdowns, external, ERP)
-// NavLinks get their own className for the underline pattern
 const baseStyles = `px-3 py-2 h-10 flex items-center rounded-full font-body font-bold text-[12px] xl:text-[13px] tracking-wide transition-all duration-200 ease-out`
 const stateStyles = 'text-primary-700 hover:bg-primary-50'
 
@@ -56,8 +56,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
 
-  // useLocation causes NavLink re-render on route change,
-  // ensuring layoutId animation triggers on every navigation
   const location = useLocation()
 
   useEffect(() => {
@@ -71,8 +69,6 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      // Upgrade 1: scroll shrink + stronger blur/opacity when scrolled
-      // py shrinks, bg becomes slightly more opaque for readability
       className={`
         fixed top-[var(--top-banner)] left-0 w-full z-50
         transition-all duration-500 ease-out
@@ -81,11 +77,11 @@ export default function Navbar() {
         shadow-[0_10px_40px_rgba(0,0,0,0.08)]
         ${scrolled
           ? 'py-1.5 bg-background/85'   // scrolled: tighter + more opaque
-          : 'py-4   bg-background/70'   // resting: airy floating glass
+          : 'py-4   bg-background/70'   // resting: airy floating glass
         }
       `}
     >
-      {/* Upgrade 6: top accent line — Royal Blue → Gold → Royal Blue, opacity-90 */}
+      {/* Top accent line — Royal Blue → Gold → Royal Blue, opacity-90 */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary-600 via-secondary-400 to-primary-600 opacity-90" />
 
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
@@ -94,7 +90,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between w-full">
 
-            {/* Logo — Upgrade 5: blue drop-shadow glow on hover */}
+            {/* Logo — Blue drop-shadow glow on hover */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <motion.img
                 src={logo}
@@ -140,7 +136,7 @@ export default function Navbar() {
                         </motion.span>
                       </button>
 
-                      {/* Upgrade 3: premium dropdown — deeper y entry, scale, stronger shadow */}
+                      {/* Premium dropdown — deeper y entry, scale, stronger shadow */}
                       <AnimatePresence>
                         {openDropdown === link.label && (
                           <motion.div
@@ -164,7 +160,6 @@ export default function Navbar() {
                                   animate={{ opacity: 1, x: 0  }}
                                   transition={{ delay: i * 0.05 }}
                                 >
-                                  {/* Upgrade 4: dropdown item hover */}
                                   <Link
                                     to={item.to}
                                     className="
@@ -205,14 +200,6 @@ export default function Navbar() {
                 }
 
                 // ── NavLink — Marigold-style sliding pill indicator ──────
-                // layoutId="navbar-indicator" is the key:
-                //   Framer Motion tracks ONE shared element across all NavLinks.
-                //   When the active route changes, the pill smoothly springs
-                //   from the old active item to the new one — no JS position
-                //   math needed, the layout engine handles it automatically.
-                //
-                // Hover: gold underline still grows (non-active items)
-                // Active: pill slides in via spring, label lifts to z-10
                 return (
                   <NavLink
                     key={link.to}
@@ -284,7 +271,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu — unchanged from previous version */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
