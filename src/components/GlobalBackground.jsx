@@ -3,7 +3,7 @@ import bgImage from "../assets/backgrounds/bg-premium.jpg";
 
 export default function GlobalBackground({ children }) {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f8f6f1]">
+    <div className="relative min-h-screen overflow-hidden bg-[#FFFFFF]">
 
       {/* Fixed Background Layer */}
       <div
@@ -14,10 +14,10 @@ export default function GlobalBackground({ children }) {
       />
 
       {/* Soft Premium Overlay */}
-      <div className="fixed inset-0 -z-10 bg-white/82 backdrop-blur-[1px]" />
+      <div className="fixed inset-0 -z-10 bg-white/92 backdrop-blur-[1px]" />
 
-      {/* Optional Luxury Gradient */}
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-[#fffdf8]/70 via-transparent to-[#f3efe6]/60" />
+      {/* Luxury Gradient */}
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-white/40 via-transparent to-[#f8f8f8]/30" />
 
       {/* Website Content */}
       <div className="relative z-10">

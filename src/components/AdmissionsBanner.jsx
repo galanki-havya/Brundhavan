@@ -6,73 +6,93 @@ export default function AdmissionsBanner() {
     <div
       className="
         fixed top-0 left-0 w-full z-[100]
-        bg-gradient-to-r
-        from-primary-800
-        via-primary-700
-        to-primary-900
-        text-white
-        shadow-[0_4px_20px_rgba(13,35,72,0.25)]
+        bg-white/95
+        backdrop-blur-xl
+        border-b border-pink-100
+        shadow-[0_4px_25px_rgba(236,72,153,0.08)]
         overflow-hidden
-        border-b border-secondary-400/20
       "
     >
-      {/* Gold Accent Line */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-secondary-400 via-yellow-300 to-secondary-400 opacity-90" />
+      {/* Premium Pink Gradient Line */}
+      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#EC4899] via-[#F472B6] to-[#FB7185]" />
 
-      {/* Soft Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+      {/* Soft Pink Glow */}
+      <div className="absolute inset-0 bg-gradient-to-r from-pink-50/70 via-white to-rose-50/60 pointer-events-none" />
+
+      {/* Decorative Blur Orbs */}
+      <div className="absolute -top-10 left-10 w-32 h-32 bg-pink-300/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -right-10 top-0 w-40 h-40 bg-rose-300/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[var(--top-banner)] flex items-center justify-between gap-6 relative z-10">
 
-        {/* LEFT: Marquee */}
+        {/* LEFT SIDE */}
         <div className="flex items-center gap-4 flex-1 overflow-hidden">
 
-          <div className="whitespace-nowrap animate-marquee text-[11px] sm:text-xs md:text-sm tracking-wide font-medium text-primary-100">
+          <div className="whitespace-nowrap animate-marquee text-[11px] sm:text-xs md:text-sm tracking-wide font-semibold text-slate-700">
 
-            <span className="text-secondary-300 font-semibold">
+            <span className="text-[#EC4899] font-bold">
               🎓 Admissions Open 2026–27
             </span>
 
-            <span className="mx-3 text-white/30">•</span>
+            <span className="mx-3 text-pink-200">•</span>
 
-            State Board School in Palamaner
+            <span className="text-slate-600">
+              Best State Board School in Palamaner
+            </span>
 
-            <span className="mx-3 text-white/30">•</span>
+            <span className="mx-3 text-pink-200">•</span>
 
-            Smart Classrooms • Labs • Sports Facilities
+            <span className="text-slate-600">
+              Smart Classrooms • Labs • Sports Facilities
+            </span>
 
-            <span className="mx-3 text-white/30">•</span>
+            <span className="mx-3 text-pink-200">•</span>
 
-            Transport Available
+            <span className="text-slate-600">
+              Transport Available
+            </span>
 
-            <span className="mx-3 text-white/30">•</span>
+            <span className="mx-3 text-pink-200">•</span>
 
-            Limited Seats — Apply Early
+            <span className="text-[#F43F5E] font-bold">
+              Limited Seats — Apply Early
+            </span>
+
           </div>
 
         </div>
 
-        {/* RIGHT: Contact + CTA */}
+        {/* RIGHT SIDE */}
         <div className="flex items-center gap-5 shrink-0">
 
-          {/* Contact */}
-          <div className="hidden md:flex items-center gap-3 text-[11px] sm:text-xs text-primary-100/90">
+          {/* Contact Info */}
+          <div className="hidden md:flex items-center gap-4 text-[11px] sm:text-xs">
 
             <a
               href="tel:+919121914631"
-              className="flex items-center gap-1 hover:text-secondary-300 transition-colors duration-300"
+              className="
+                flex items-center gap-1.5
+                text-slate-600
+                hover:text-pink-500
+                transition-colors duration-300
+              "
             >
-              <Phone className="w-3 h-3" />
+              <Phone className="w-3.5 h-3.5" />
               +91 91219 14631
             </a>
 
-            <span className="text-white/20">|</span>
+            <span className="text-pink-200">|</span>
 
             <a
-              href="mailto:brindavanschool334@gmai.com"
-              className="flex items-center gap-1 hover:text-secondary-300 transition-colors duration-300"
+              href="mailto:brindavanschool334@gmail.com"
+              className="
+                flex items-center gap-1.5
+                text-slate-600
+                hover:text-pink-500
+                transition-colors duration-300
+              "
             >
-              <Mail className="w-3 h-3" />
+              <Mail className="w-3.5 h-3.5" />
               brindavanschool334@gmail.com
             </a>
 
@@ -82,21 +102,31 @@ export default function AdmissionsBanner() {
           <Link
             to="/admissions"
             className="
-              bg-secondary-400
-              hover:bg-secondary-300
+              group
+              relative
+              overflow-hidden
+              bg-gradient-to-r
+              from-[#EC4899]
+              via-[#F472B6]
+              to-[#FB7185]
+              hover:scale-105
               active:scale-95
-              text-primary-900
+              text-white
               text-xs sm:text-sm
               font-bold
-              px-5 py-1.5
+              px-5 py-2
               rounded-full
               transition-all duration-300
-              shadow-lg
-              hover:shadow-secondary-400/30
+              shadow-[0_10px_30px_rgba(236,72,153,0.35)]
               whitespace-nowrap
             "
           >
-            Apply Now →
+            <span className="relative z-10 flex items-center gap-1">
+              Apply Now →
+            </span>
+
+            {/* Shine Animation */}
+            <div className="absolute inset-0 translate-x-[-120%] group-hover:translate-x-[120%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
           </Link>
 
         </div>
