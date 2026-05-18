@@ -28,7 +28,6 @@ const mainLinks = [
     submenu: [
       { to: '/facilities/smart-classrooms', label: 'Smart Classrooms' },
       { to: '/facilities/labs', label: 'Labs' },
-      { to: '/facilities/library', label: 'Library' },
       { to: '/facilities/transport', label: 'Transport' },
       { to: '/facilities/sports', label: 'Sports' },
     ]

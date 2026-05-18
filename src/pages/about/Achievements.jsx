@@ -52,6 +52,7 @@ export default function Achievements() {
       <PageHero
         title="Our Achievements"
         subtitle="Building excellence through innovation, discipline, and modern education."
+        backgroundImage="/images/gallery/AcademicAchivers/2.jpg"
       />
 
       {/* STATS */}

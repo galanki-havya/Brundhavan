@@ -11,6 +11,8 @@ import {
   Globe,
   ShieldCheck,
 } from 'lucide-react'
+import ScienceDay from '/images/gallery/ScienceDay/1.jpg'
+
 
 const missionCards = [
   { icon: '📚', title: 'Academic Excellence',    desc: 'Strong conceptual learning with modern teaching methodologies and practical understanding.', from: '#FFF4DE', to: '#FFE1B5', accent: '#D97706' },
@@ -34,6 +36,7 @@ export default function VisionMission() {
       <PageHero
         title="Vision & Mission"
         subtitle="The values, purpose, and aspirations that guide Brindavan School toward educational excellence."
+        backgroundImage="/images/gallery/ScienceDay/1.jpg"
       />
 
       {/* ───────────────── VISION SECTION ───────────────── */}
