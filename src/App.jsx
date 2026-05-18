@@ -15,6 +15,9 @@ import Contact from './pages/Contact'
 import Infrastructure from './pages/Infrastructure'
 import WhatsAppButton from './components/WhatsAppButton'
 
+// NEW IMPORT
+import AcademicApproaches from './pages/AcademicApproaches'
+
 // About subpages
 import Overview from './pages/about/Overview'
 import VisionMission from './pages/about/VisionMission'
@@ -44,6 +47,7 @@ import Digital from './pages/infrastructure/Digital'
 import EventsGallery from './pages/events/Gallery'
 import Annual from './pages/events/Annual'
 import News from './pages/events/News'
+
 import GlobalBackground from './components/GlobalBackground'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -53,38 +57,136 @@ export default function App() {
       <HashRouter>
         <ScrollToTop />
         <WhatsAppButton />
+
         <Routes>
           <Route element={<MainLayout />}>
+
+            {/* HOME */}
             <Route path="/" element={<Home />} />
+
+            {/* ABOUT */}
             <Route path="/about" element={<About />} />
             <Route path="/about/overview" element={<Overview />} />
             <Route path="/about/vision-mission" element={<VisionMission />} />
             <Route path="/about/chairman" element={<ChairmanMessage />} />
             <Route path="/about/achievements" element={<Achievements />} />
+
+            {/* SCHOOL LIFE */}
             <Route path="/school-life" element={<SchoolActivities />} />
-            <Route path="/activities" element={<SchoolActivities />} />
-            <Route path="/activity/:id" element={<ActivityDetail />} />
+
+            {/* NEW ACADEMIC APPROACHES PAGE */}
+            <Route
+              path="/activities"
+              element={<AcademicApproaches />}
+            />
+
+            <Route
+              path="/academic-approaches"
+              element={<AcademicApproaches />}
+            />
+
+            <Route
+              path="/activity/:id"
+              element={<ActivityDetail />}
+            />
+
+            {/* FACILITIES */}
             <Route path="/facilities" element={<Facilities />} />
-            <Route path="/facilities/smart-classrooms" element={<SmartClassrooms />} />
-            <Route path="/facilities/labs" element={<Labs />} />
-            <Route path="/facilities/library" element={<Library />} />
-            <Route path="/facilities/transport" element={<Transport />} />
-            <Route path="/facilities/sports" element={<Sports />} />
+            <Route
+              path="/facilities/smart-classrooms"
+              element={<SmartClassrooms />}
+            />
+            <Route
+              path="/facilities/labs"
+              element={<Labs />}
+            />
+            <Route
+              path="/facilities/library"
+              element={<Library />}
+            />
+            <Route
+              path="/facilities/transport"
+              element={<Transport />}
+            />
+            <Route
+              path="/facilities/sports"
+              element={<Sports />}
+            />
+
+            {/* INFRASTRUCTURE */}
             <Route path="/infrastructure" element={<Infrastructure />} />
-            <Route path="/infrastructure/campus" element={<Campus />} />
-            <Route path="/infrastructure/safety" element={<Safety />} />
-            <Route path="/infrastructure/digital" element={<Digital />} />
-            <Route path="/events" element={<Navigate to="/activities" replace />} />
-            <Route path="/events/gallery" element={<EventsGallery />} />
-            <Route path="/events/annual" element={<Annual />} />
-            <Route path="/events/news" element={<News />} />
-            <Route path="/admissions" element={<Admissions />} />
-            <Route path="/admission-form" element={<AdmissionForm />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/gallery/:folder" element={<GalleryDetail />} />
-            <Route path="/gallery/:slug" element={<AlbumPage />} />
-            <Route path="/gallery/:category" element={<GalleryDetails />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/infrastructure/campus"
+              element={<Campus />}
+            />
+            <Route
+              path="/infrastructure/safety"
+              element={<Safety />}
+            />
+            <Route
+              path="/infrastructure/digital"
+              element={<Digital />}
+            />
+
+            {/* EVENTS */}
+            <Route
+              path="/events"
+              element={<Navigate to="/activities" replace />}
+            />
+
+            <Route
+              path="/events/gallery"
+              element={<EventsGallery />}
+            />
+
+            <Route
+              path="/events/annual"
+              element={<Annual />}
+            />
+
+            <Route
+              path="/events/news"
+              element={<News />}
+            />
+
+            {/* ADMISSIONS */}
+            <Route
+              path="/admissions"
+              element={<Admissions />}
+            />
+
+            <Route
+              path="/admission-form"
+              element={<AdmissionForm />}
+            />
+
+            {/* GALLERY */}
+            <Route
+              path="/gallery"
+              element={<Gallery />}
+            />
+
+            <Route
+              path="/gallery/:folder"
+              element={<GalleryDetail />}
+            />
+
+            <Route
+              path="/gallery/:slug"
+              element={<AlbumPage />}
+            />
+
+            <Route
+              path="/gallery/:category"
+              element={<GalleryDetails />}
+            />
+
+            {/* CONTACT */}
+            <Route
+              path="/contact"
+              element={<Contact />}
+            />
+
           </Route>
         </Routes>
       </HashRouter>
