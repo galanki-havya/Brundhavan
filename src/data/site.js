@@ -11,7 +11,7 @@ export const siteData = {
     affiliation: "State Board School",
     rating: "4.9",
     phone: "+91 91219 14631",
-    email: "brindavanschool334@gmai.com",
+    email: "brindavanschool334@gmail.com",
     address: "Bazaar Street, Palamaner, Chittoor, Andhra Pradesh – 517004, India",
     website: "www.brindavanschool.in",
     mapSrc:

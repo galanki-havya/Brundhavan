@@ -69,7 +69,7 @@ export default function AdmissionsBanner() {
             <span className="text-white/20">|</span>
 
             <a
-              href="mailto:brindavanschool334@gmai.com"
+              href="mailto:brindavanschool334@gmail.com"
               className="flex items-center gap-1 hover:text-secondary-300 transition-colors duration-300"
             >
               <Mail className="w-3 h-3" />

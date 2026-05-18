@@ -13,6 +13,9 @@ export default function Facilities() {
       <PageHero
         title="Facilities"
         subtitle="World-class infrastructure designed for holistic development and modern learning."
+        backgroundImage="/images/gallery/overview.png"
+        fullOpacity={true}
+        showOverlay={false}
       />
 
       {/* Facilities Grid */}
