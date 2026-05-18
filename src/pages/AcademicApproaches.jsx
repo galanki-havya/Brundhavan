@@ -20,18 +20,22 @@ const THEME = {
 const GLOBAL_CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght=600;700;800&family=DM+Sans:wght=400;500;600;700&display=swap');
 
+:root {
+  --e-global-color-10113fb: #FFFFFF;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background-color: ${THEME.colors.white} !important; }
+html { scroll-behavior: smooth; background-color: var(--e-global-color-10113fb) !important; }
 
 body { 
-  background: ${THEME.colors.white} !important; 
+  background: var(--e-global-color-10113fb) !important; 
   font-family: ${THEME.fonts.body}; 
   color: ${THEME.colors.navy}; 
   -webkit-font-smoothing: antialiased;
 }
 
 .aa-display { font-family: ${THEME.fonts.display}; }
-.aa-body    { font-family: ${THEME.fonts.body}; background: ${THEME.colors.white}; }
+.aa-body    { font-family: ${THEME.fonts.body}; background: var(--e-global-color-10113fb); }
 
 /* ── BUTTONS ── */
 .aa-btn {
@@ -42,14 +46,14 @@ body {
 }
 .aa-btn-primary {
   background: ${THEME.colors.gold};
-  color: ${THEME.colors.white};
+  color: var(--e-global-color-10113fb);
   padding: 12px 26px; border-radius: 50px;
   font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
 }
 .aa-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
 .aa-btn-ghost {
-  background: ${THEME.colors.white}; color: ${THEME.colors.navy};
+  background: var(--e-global-color-10113fb); color: ${THEME.colors.navy};
   padding: 12px 26px; border-radius: 50px;
   font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
   border: 1px solid ${THEME.colors.navy};
@@ -57,7 +61,7 @@ body {
 .aa-btn-ghost:hover { background: #F8FAFC; }
 
 .aa-btn-back {
-  background: ${THEME.colors.white}; color: ${THEME.colors.navy};
+  background: var(--e-global-color-10113fb); color: ${THEME.colors.navy};
   padding: 10px 20px; border-radius: 50px;
   font-size: 13px; font-weight: 600;
   border: 1px solid ${THEME.colors.borderLight};
@@ -68,7 +72,7 @@ body {
 .aa-hero {
   width: 100%;
   padding: 5rem 3rem 3rem;
-  background: ${THEME.colors.white} !important;
+  background: var(--e-global-color-10113fb) !important;
   border-bottom: 1px solid ${THEME.colors.borderLight};
 }
 .aa-hero-content { max-width: 680px; }
@@ -79,42 +83,35 @@ body {
   font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
 }
 
-/* ── COLOR DOWN CARD GRIDS ── */
+/* ── CARDS GRID ── */
 .aa-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  background: ${THEME.colors.white};
+  background: var(--e-global-color-10113fb);
 }
 
 .aa-card {
-  background: ${THEME.colors.white} !important;
-  border: 1px solid ${THEME.colors.borderLight};
+  background: var(--e-global-color-10113fb) !important;
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), outline 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
   display: flex; 
   flex-direction: column;
   position: relative;
-  box-shadow: 0 4px 14px rgba(7, 26, 47, 0.03);
-  outline: 4px solid transparent;
+  
+  border: 1px solid transparent;
+  outline: 4px solid var(--card-accent-dark);
+  box-shadow: 0 12px 24px rgba(7, 26, 47, 0.06);
+  
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .aa-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 30px rgba(7, 26, 47, 0.08);
+  box-shadow: 0 20px 32px rgba(7, 26, 47, 0.12);
 }
 
-/* ── ACTIVE/SELECTED STATE MATCHERS ── */
-.aa-card.is-active {
-  outline: 4px solid var(--card-accent-dark) !important;
-  border-color: transparent !important;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(7, 26, 47, 0.12);
-}
-
-/* Image framing area */
 .aa-card-img-wrap {
   position: relative;
   width: 100%;
@@ -134,7 +131,6 @@ body {
   transform: scale(1.04);
 }
 
-/* Category Badge Pills Overlays */
 .aa-badge-pill {
   position: absolute;
   top: 14px; left: 14px;
@@ -150,7 +146,6 @@ body {
   z-index: 2;
 }
 
-/* Dynamic Solid Footer down block system */
 .aa-card-footer {
   padding: 26px 24px;
   display: flex; 
@@ -158,15 +153,8 @@ body {
   flex-grow: 1;
   background-color: var(--card-bg-down) !important;
   position: relative;
-  transition: background-color 0.2s ease;
 }
 
-/* Alternate highlighted card background when active */
-.aa-card.is-active .aa-card-footer {
-  background-color: var(--card-bg-down) !important;
-}
-
-/* Horizontal accent line separating footer sections */
 .aa-accent-line {
   width: 40px;
   height: 3px;
@@ -176,8 +164,7 @@ body {
   margin-bottom: 16px;
   transition: width 0.3s ease;
 }
-.aa-card:hover .aa-accent-line,
-.aa-card.is-active .aa-accent-line {
+.aa-card:hover .aa-accent-line {
   width: 60px;
 }
 
@@ -192,8 +179,7 @@ body {
   color: var(--card-accent-dark);
   transition: gap 0.2s ease;
 }
-.aa-card:hover .aa-card-arrow,
-.aa-card.is-active .aa-card-arrow { gap: 10px; }
+.aa-card:hover .aa-card-arrow { gap: 10px; }
 
 /* ── MASONRY GALLERY ── */
 .aa-masonry { columns: 3 300px; column-gap: 1.5rem; }
@@ -211,10 +197,10 @@ body {
   display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 2rem;
 }
 .aa-lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.aa-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: white; font-size: 36px; cursor: pointer; }
+.aa-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--e-global-color-10113fb); font-size: 36px; cursor: pointer; }
 
 .aa-section-eyebrow { color: ${THEME.colors.gold}; text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
-.aa-gallery-header { background: ${THEME.colors.white} !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid ${THEME.colors.borderLight}; }
+.aa-gallery-header { background: var(--e-global-color-10113fb) !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid ${THEME.colors.borderLight}; }
 
 @media (max-width: 768px) {
   .aa-hero, .aa-gallery-header { padding: 4rem 1.5rem 2rem; }
@@ -259,11 +245,17 @@ const ACADEMICS = [
     id: "science-lab",
     title: "Science Lab",
     subtitle: "Practical Experiments",
-    image: "/src/assets/D) SCIENCE LAB/SLHero.png",
+    image: "/src/assets/ScienceLab/S1.png",
     accentDark: "#5B21B6", 
     bgDown: "#F3E8FF", 
     description: "Hands-on chemical, physical, and bio experiments transforming dry theory into physical realizations.",
-    gallery: ["/src/assets/D) SCIENCE LAB/SL1.jpeg", "/src/assets/D) SCIENCE LAB/SL2.jpeg"]
+    gallery: [
+      "/src/assets/ScienceLab/S1.png", 
+      "/src/assets/ScienceLab/S2.png",
+      "/src/assets/ScienceLab/S3.png",
+      "/src/assets/ScienceLab/S4.png",
+      "/src/assets/ScienceLab/S5.png"
+    ]
   },
   {
     id: "omr",
@@ -379,10 +371,10 @@ function Lightbox({ image, onClose }) {
   );
 }
 
-function AcademicCard({ item, isActive, onClick, onViewGallery }) {
+function AcademicCard({ item, onClick }) {
   return (
     <article 
-      className={`aa-card ${isActive ? 'is-active' : ''}`}
+      className="aa-card" 
       onClick={onClick}
       style={{ 
         "--card-accent-dark": item.accentDark, 
@@ -415,14 +407,7 @@ function AcademicCard({ item, isActive, onClick, onViewGallery }) {
 
         <div className="aa-accent-line"></div>
 
-        {/* Clicking this area explicitly forwards users into the full view */}
-        <div 
-          className="aa-card-arrow" 
-          onClick={(e) => {
-            e.stopPropagation(); // Prevents double click layout issues
-            onViewGallery();
-          }}
-        >
+        <div className="aa-card-arrow">
           <span>View Gallery</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -439,7 +424,7 @@ function GalleryView({ item, onBack, onLightbox }) {
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
 
   return (
-    <div style={{ background: THEME.colors.white }}>
+    <div style={{ background: "var(--e-global-color-10113fb)" }}>
       <div className="aa-gallery-header">
         <button className="aa-btn aa-btn-back" onClick={onBack} style={{ marginBottom: "1.5rem", gap: 8 }}>
           ← Back to Frameworks
@@ -456,7 +441,7 @@ function GalleryView({ item, onBack, onLightbox }) {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: THEME.colors.white }}>
+      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: "var(--e-global-color-10113fb)" }}>
         {item.gallery.length > 0 ? (
           <div className="aa-masonry">
             {item.gallery.map((src, i) => (
@@ -477,14 +462,13 @@ function GalleryView({ item, onBack, onLightbox }) {
 
 export default function AcademicApproach() {
   const [selected, setSelected] = useState(null);
-  const [activeCardId, setActiveCardId] = useState(null);
   const [lightbox, setLightbox] = useState(null);
 
   return (
     <>
       <style>{GLOBAL_CSS}</style>
 
-      <div className="aa-body" style={{ background: THEME.colors.white }}>
+      <div className="aa-body" style={{ background: "var(--e-global-color-10113fb)" }}>
         {selected ? (
           <GalleryView
             item={selected}
@@ -492,7 +476,7 @@ export default function AcademicApproach() {
             onLightbox={setLightbox}
           />
         ) : (
-          <div style={{ background: THEME.colors.white }}>
+          <div style={{ background: "var(--e-global-color-10113fb)" }}>
             {/* ── HERO DISPLAY ── */}
             <section className="aa-hero">
               <div className="aa-hero-content">
@@ -523,7 +507,7 @@ export default function AcademicApproach() {
             </section>
 
             {/* ── CARDS GRID CONTAINER ── */}
-            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: THEME.colors.white }}>
+            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: "var(--e-global-color-10113fb)" }}>
               <div style={{ marginBottom: "2.5rem" }}>
                 <p className="aa-section-eyebrow">Curricular Models</p>
                 <h2 className="aa-display" style={{ fontSize: "clamp(26px, 3.5vw, 34px)", color: THEME.colors.navy, fontWeight: 700 }}>
@@ -536,9 +520,7 @@ export default function AcademicApproach() {
                   <AcademicCard
                     key={item.id}
                     item={item}
-                    isActive={activeCardId === item.id}
-                    onClick={() => setActiveCardId(item.id)}
-                    onViewGallery={() => setSelected(item)}
+                    onClick={() => setSelected(item)}
                   />
                 ))}
               </div>
