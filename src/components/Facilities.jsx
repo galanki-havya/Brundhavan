@@ -10,17 +10,17 @@ const icons = [BookOpen, Users, Trophy, Microscope, Music, Gamepad2]
 // Pink-family card gradients — consistent with site's pink theme
 const cardGradients = [
   { from: '#fff0f7', to: '#ffe4f2' },  // deep pink
-  { from: '#FFF8F6', to: '#FFD8CC' },  // soft pink
+  { from: '#FFFFFF', to: '#FFD8CC' },  // soft pink
   { from: '#fff4ed', to: '#ffe8d6' },  // peach/orange
   { from: '#fff0f7', to: '#ffd6eb' },  // hot pink
-  { from: '#FFF8F6', to: '#FFD8CC' },  // soft pink
+  { from: '#FFFFFF', to: '#FFD8CC' },  // soft pink
   { from: '#fff4ed', to: '#ffe0cc' },  // warm peach
 ]
 
 export default function Facilities() {
   return (
     <Section style={{
-      background: 'linear-gradient(135deg, #FFF8F6 0%, #fff 50%, #FFF8F6 100%)',
+      background: 'linear-gradient(135deg, #FFFFFF 0%, #fff 50%, #FFFFFF 100%)',
       position: 'relative',
       overflow: 'hidden',
     }}>

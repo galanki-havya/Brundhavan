@@ -44,9 +44,7 @@ export default function SmartClassrooms() {
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', color: '#6b5c6e', lineHeight: 1.8, marginBottom: '12px' }}>
               Brindavan School integrates cutting-edge technology directly into the core learning experience. Our interactive classrooms replace traditional blackboards with dynamic digital displays that bring complex concepts to life.
             </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', color: '#6b5c6e', lineHeight: 1.8, marginBottom: '28px' }}>
-              By combining video animations, audio tutorials, and real-time interactive exercises, students learn actively, absorb information faster, and participate in an engaging collaborative environment.
-            </p>
+            
             {['Smart interactive whiteboards in every classroom', 'Video animations & audio-visual tutorials', 'Real-time student engagement tools', 'Digital assessments & instant feedback', 'Seamlessly integrated with the curriculum'].map((point, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 + 0.2 }} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontFamily: "'DM Sans', sans-serif", fontSize: '0.95rem', color: '#3d2c40' }}>
                 <CheckCircle2 size={20} style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }} /><span>{point}</span>

@@ -273,7 +273,7 @@ export default function Home() {
         <PinkDivider />
 
         {/* ── YOUTUBE SECTION ─────────────────────────── */}
-        <Section className="py-24 bg-gradient-to-b from-white to-[#FFF5FA] backdrop-blur-sm">
+        <Section className="py-24 bg-gradient-to-b from-white to-[#FFFFFF] backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-14">
               <div>
@@ -329,7 +329,7 @@ export default function Home() {
         <PinkDivider />
 
         {/* ── ACTIVITIES ───────────────────────────────── */}
-        <Section className="py-24 bg-gradient-to-b from-[#FFF8F6] to-white backdrop-blur-sm">
+        <Section className="py-24 bg-gradient-to-b from-[#FFFFFF] to-white backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-14">
               <div>

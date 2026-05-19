@@ -47,6 +47,10 @@ import Digital from './pages/infrastructure/Digital'
 import EventsGallery from './pages/events/Gallery'
 import Annual from './pages/events/Annual'
 import News from './pages/events/News'
+import AcademicApproach from './pages/AcademicApproaches'
+import CoCurricular from './pages/events/CoCurricular'
+import CommunicationPublicSpeaking from './pages/events/CommunicationPublicSpeaking'
+import FestivalFun from './pages/events/FestivalFun'
 
 import GlobalBackground from './components/GlobalBackground'
 import ScrollToTop from './components/ScrollToTop'
@@ -149,6 +153,26 @@ export default function App() {
               element={<News />}
             />
 
+            <Route
+              path="/events/academic-approach"
+              element={<AcademicApproach />}
+            />
+
+            <Route
+              path="/events/co-curricular"
+              element={<CoCurricular />}
+            />
+            
+            <Route
+              path="/events/communication-public-speaking"
+              element={<CommunicationPublicSpeaking />}
+            />
+
+            <Route
+              path="/events/festival-fun"
+              element={<FestivalFun />}
+            />
+            
             {/* ADMISSIONS */}
             <Route
               path="/admissions"
