@@ -76,8 +76,8 @@ export default function Annual() {
                   border border-[#F6D6E6]
                   rounded-[32px]
                   p-7
-                  shadow-[0_10px_40px_rgba(236,72,153,0.08)]
-                  hover:shadow-[0_18px_50px_rgba(236,72,153,0.18)]
+                  shadow-[0_10px_40px_rgba(255,99,71,0.08)]
+                  hover:shadow-[0_18px_50px_rgba(255,99,71,0.18)]
                   hover:-translate-y-2
                   transition-all duration-500
                 "
@@ -103,7 +103,7 @@ export default function Annual() {
       {/* ── GALLERY PREVIEW ── */}
       <section className="py-24 bg-gradient-to-b from-[#FFF8FC] via-[#FFFDFE] to-[#FFF1F7] relative overflow-hidden">
 
-        <div className="absolute top-0 left-0 w-96 h-96 bg-pink-200/30 blur-3xl rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#FFBDAA]/30 blur-3xl rounded-full pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-rose-200/20 blur-3xl rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -142,8 +142,8 @@ export default function Annual() {
                   overflow-hidden rounded-[28px]
                   bg-white/70 backdrop-blur-xl
                   border border-[#F7D9E6]
-                  shadow-[0_10px_35px_rgba(236,72,153,0.08)]
-                  hover:shadow-[0_20px_55px_rgba(236,72,153,0.18)]
+                  shadow-[0_10px_35px_rgba(255,99,71,0.08)]
+                  hover:shadow-[0_20px_55px_rgba(255,99,71,0.18)]
                   hover:-translate-y-3
                   transition-all duration-500
                 "
@@ -321,8 +321,8 @@ export default function Annual() {
                   bg-white/80 backdrop-blur-xl
                   border border-[#F6D6E6]
                   rounded-[30px] p-8
-                  shadow-[0_10px_35px_rgba(236,72,153,0.08)]
-                  hover:shadow-[0_18px_45px_rgba(236,72,153,0.15)]
+                  shadow-[0_10px_35px_rgba(255,99,71,0.08)]
+                  hover:shadow-[0_18px_45px_rgba(255,99,71,0.15)]
                   hover:-translate-y-2
                   transition-all duration-500
                 "

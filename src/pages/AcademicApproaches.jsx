@@ -283,8 +283,8 @@ const ACADEMICS = [
     title: "CSP",
     subtitle: "Community Activity",
     image: "/src/assets/I) CSP/CSPHero.png",
-    accentDark: "#9D174D",
-    bgDown: "#FCE7F3",
+    accentDark: "#9C2D15",
+    bgDown: "#FFD8CC",
     description: "Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.",
     gallery: ["/src/assets/I) CSP/CSP1.jpeg", "/src/assets/I) CSP/CSP2.jpeg"]
   },

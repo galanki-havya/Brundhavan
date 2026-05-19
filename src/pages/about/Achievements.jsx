@@ -33,17 +33,17 @@ export default function Achievements() {
       <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
-            <span style={{ display: 'inline-block', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Our Journey</span>
+            <span style={{ display: 'inline-block', color: '#FF6347', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Our Journey</span>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Achievement Highlights</h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem' }}>Key milestones that define our journey of excellence</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
             {stats.map((item, i) => (
-              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 24px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.08)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
+              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 24px', border: '1px solid #FFD8CC', boxShadow: '0 4px 24px rgba(255,99,71,0.08)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #FF6347, #FFBDAA)' }} />
                 <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{item.emoji}</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', fontWeight: 700, color: '#ec4899', marginBottom: '6px' }}>{item.value}</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', fontWeight: 700, color: '#FF6347', marginBottom: '6px' }}>{item.value}</div>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.88rem', color: '#6b5c6e', fontWeight: 500 }}>{item.label}</div>
               </motion.div>
             ))}
@@ -70,15 +70,15 @@ export default function Achievements() {
                 style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '24px', alignItems: 'flex-start' }}
               >
                 {/* Icon */}
-                <div style={{ width: '64px', height: '64px', borderRadius: '18px', background: 'linear-gradient(135deg, #ec4899, #f472b6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 8px 24px rgba(236,72,153,0.25)' }}>
+                <div style={{ width: '64px', height: '64px', borderRadius: '18px', background: 'linear-gradient(135deg, #FF6347, #FF8C6B)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 8px 24px rgba(255,99,71,0.25)' }}>
                   <a.icon size={28} style={{ color: '#fff' }} />
                 </div>
 
                 {/* Card */}
-                <div style={{ background: '#fff', borderRadius: '20px', padding: '28px 32px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', position: 'relative', overflow: 'hidden' }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
+                <div style={{ background: '#fff', borderRadius: '20px', padding: '28px 32px', border: '1px solid #FFD8CC', boxShadow: '0 4px 24px rgba(255,99,71,0.07)', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #FFBDAA)' }} />
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <span style={{ background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)', color: '#ec4899', border: '1px solid #f9a8d4', padding: '4px 14px', borderRadius: '50px', fontFamily: "'DM Sans', sans-serif", fontSize: '0.8rem', fontWeight: 700 }}>{a.year}</span>
+                    <span style={{ background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)', color: '#FF6347', border: '1px solid #FFBDAA', padding: '4px 14px', borderRadius: '50px', fontFamily: "'DM Sans', sans-serif", fontSize: '0.8rem', fontWeight: 700 }}>{a.year}</span>
                     <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#6b5c6e', fontWeight: 500 }}>{a.category}</span>
                   </div>
                   <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '8px' }}>{a.title}</h3>
@@ -103,12 +103,12 @@ export default function Achievements() {
               { title: 'Infrastructure Growth', items: ['Expanded digital classrooms', 'New sports facilities', 'Enhanced science labs', 'Library expansion'] },
               { title: 'Community Impact', items: ['Parent engagement programs', 'Alumni network', 'Community outreach', 'Teacher development'] },
             ].map((cat, i) => (
-              <motion.div key={cat.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.15 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
+              <motion.div key={cat.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.15 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1px solid #FFD8CC', boxShadow: '0 4px 24px rgba(255,99,71,0.07)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #FF6347, #FFBDAA)' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '20px' }}>{cat.title}</h3>
                 {cat.items.map(item => (
-                  <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid #fce7f3', fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#3d2c40' }}>
-                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ec4899', flexShrink: 0 }} />{item}
+                  <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid #FFD8CC', fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#3d2c40' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />{item}
                   </div>
                 ))}
               </motion.div>
@@ -118,14 +118,14 @@ export default function Achievements() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '280px', height: '280px', borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
         <div style={{ position: 'absolute', bottom: '-40px', left: '10%', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
         <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: 800, color: '#fff', marginBottom: '16px', lineHeight: 1.2 }}>Be Part of Our Journey</motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.85)', fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.7 }}>Every achievement starts with a single step. Join Brindavan School and be part of a growing legacy of excellence.</motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/admissions" style={{ background: '#fff', color: '#be185d', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 8px 30px rgba(0,0,0,0.15)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Join Now <ArrowRight size={17} /></Link>
+            <Link to="/admissions" style={{ background: '#fff', color: '#C4391E', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 8px 30px rgba(0,0,0,0.15)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Join Now <ArrowRight size={17} /></Link>
             <Link to="/about/overview" style={{ border: '2px solid rgba(255,255,255,0.8)', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Learn More</Link>
           </motion.div>
         </div>

@@ -10,17 +10,17 @@ const icons = [BookOpen, Users, Trophy, Microscope, Music, Gamepad2]
 // Pink-family card gradients — consistent with site's pink theme
 const cardGradients = [
   { from: '#fff0f7', to: '#ffe4f2' },  // deep pink
-  { from: '#fdf6f9', to: '#fce7f3' },  // soft pink
+  { from: '#FFF8F6', to: '#FFD8CC' },  // soft pink
   { from: '#fff4ed', to: '#ffe8d6' },  // peach/orange
   { from: '#fff0f7', to: '#ffd6eb' },  // hot pink
-  { from: '#fdf6f9', to: '#fce7f3' },  // soft pink
+  { from: '#FFF8F6', to: '#FFD8CC' },  // soft pink
   { from: '#fff4ed', to: '#ffe0cc' },  // warm peach
 ]
 
 export default function Facilities() {
   return (
     <Section style={{
-      background: 'linear-gradient(135deg, #fdf6f9 0%, #fff 50%, #fdf6f9 100%)',
+      background: 'linear-gradient(135deg, #FFF8F6 0%, #fff 50%, #FFF8F6 100%)',
       position: 'relative',
       overflow: 'hidden',
     }}>
@@ -28,7 +28,7 @@ export default function Facilities() {
       <div style={{
         position: 'absolute', top: 0, right: 0,
         width: 384, height: 384,
-        background: 'rgba(236,72,153,0.07)',
+        background: 'rgba(255,99,71,0.07)',
         borderRadius: '50%',
         transform: 'translate(128px, -128px)',
         filter: 'blur(70px)',
@@ -53,11 +53,11 @@ export default function Facilities() {
           border: 1px solid rgba(255,255,255,0.6);
           padding: 32px;
           transition: box-shadow 0.4s, transform 0.4s;
-          box-shadow: 0 10px 40px rgba(236,72,153,0.07);
+          box-shadow: 0 10px 40px rgba(255,99,71,0.07);
         }
         .fac-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 52px rgba(236,72,153,0.14);
+          box-shadow: 0 20px 52px rgba(255,99,71,0.14);
         }
         .fac-card-icon {
           position: relative;
@@ -67,7 +67,7 @@ export default function Facilities() {
           background: rgba(255,255,255,0.8);
           backdrop-filter: blur(8px);
           display: flex; align-items: center; justify-content: center;
-          box-shadow: 0 4px 16px rgba(236,72,153,0.15);
+          box-shadow: 0 4px 16px rgba(255,99,71,0.15);
           margin-bottom: 24px;
           transition: transform 0.3s;
         }
@@ -86,7 +86,7 @@ export default function Facilities() {
         >
           <span style={{
             display: 'inline-block',
-            color: '#ec4899',
+            color: '#FF6347',
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 600,
             fontSize: 12,
@@ -158,7 +158,7 @@ export default function Facilities() {
                   position: 'absolute',
                   top: 0, left: 0, right: 0,
                   height: 3,
-                  background: 'linear-gradient(90deg, #ec4899, #f97316)',
+                  background: 'linear-gradient(90deg, #FF6347, #f97316)',
                   opacity: 0,
                   transition: 'opacity 0.3s',
                 }}
@@ -167,7 +167,7 @@ export default function Facilities() {
                 <style>{`.fac-card:hover .fac-top-line { opacity: 1 !important; }`}</style>
 
                 <div className="fac-card-icon">
-                  <Icon style={{ width: 28, height: 28, color: '#ec4899' }} />
+                  <Icon style={{ width: 28, height: 28, color: '#FF6347' }} />
                 </div>
 
                 <h3 style={{

@@ -46,7 +46,7 @@ const mainLinks = [
 ]
 
 const NAVY = '#1B3A8A'
-const PINK = '#E91E8C'
+const PINK = '#FF6347'
 const ORANGE = '#F97316'
 
 export default function Navbar() {
@@ -209,7 +209,7 @@ export default function Navbar() {
 
         .divider-line {
           height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(233,30,140,0.25) 20%, rgba(249,115,22,0.25) 80%, transparent);
+          background: linear-gradient(90deg, transparent, rgba(255,99,71,0.25) 20%, rgba(249,115,22,0.25) 80%, transparent);
           margin: 0 8px;
         }
 
@@ -220,7 +220,7 @@ export default function Navbar() {
           color: ${NAVY};
           padding: 13px 20px;
           display: block;
-          border-bottom: 1px solid rgba(233,30,140,0.08);
+          border-bottom: 1px solid rgba(255,99,71,0.08);
           text-decoration: none;
           transition: color 0.2s, background 0.2s;
         }
@@ -233,7 +233,7 @@ export default function Navbar() {
           color: ${NAVY};
           padding: 13px 20px;
           display: block;
-          border-bottom: 1px solid rgba(233,30,140,0.08);
+          border-bottom: 1px solid rgba(255,99,71,0.08);
           text-decoration: none;
           transition: color 0.2s, background 0.2s;
         }
@@ -246,7 +246,7 @@ export default function Navbar() {
           padding: 10px 20px 10px 36px;
           display: block;
           text-decoration: none;
-          border-bottom: 1px solid rgba(233,30,140,0.05);
+          border-bottom: 1px solid rgba(255,99,71,0.05);
           transition: color 0.2s;
         }
         .mobile-sub-link:hover { color: ${PINK}; }
@@ -261,7 +261,7 @@ export default function Navbar() {
           text-align: left;
           background: none;
           border: none;
-          border-bottom: 1px solid rgba(233,30,140,0.08);
+          border-bottom: 1px solid rgba(255,99,71,0.08);
           cursor: pointer;
           display: flex;
           justify-content: space-between;
@@ -290,8 +290,8 @@ export default function Navbar() {
           backdropFilter: 'blur(14px)',
           WebkitBackdropFilter: 'blur(14px)',
           boxShadow: scrolled
-            ? '0 2px 24px rgba(27,58,138,0.10), 0 1px 0 rgba(233,30,140,0.08)'
-            : '0 1px 0 rgba(233,30,140,0.07)',
+            ? '0 2px 24px rgba(27,58,138,0.10), 0 1px 0 rgba(255,99,71,0.08)'
+            : '0 1px 0 rgba(255,99,71,0.07)',
           transition: 'box-shadow 0.4s, background 0.4s',
         }}
       >
@@ -366,7 +366,7 @@ export default function Navbar() {
                             background: '#fff',
                             borderRadius: 10,
                             boxShadow: '0 8px 40px rgba(27,58,138,0.13), 0 2px 8px rgba(0,0,0,0.06)',
-                            border: '1px solid rgba(233,30,140,0.1)',
+                            border: '1px solid rgba(255,99,71,0.1)',
                             minWidth: 220,
                             overflow: 'hidden',
                             zIndex: 100,
@@ -427,7 +427,7 @@ export default function Navbar() {
               width: 40,
               height: 40,
               background: 'none',
-              border: `1.5px solid rgba(233,30,140,0.25)`,
+              border: `1.5px solid rgba(255,99,71,0.25)`,
               borderRadius: 8,
               cursor: 'pointer',
               color: PINK,
@@ -455,7 +455,7 @@ export default function Navbar() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              style={{ overflow: 'hidden', borderTop: `1px solid rgba(233,30,140,0.1)`, background: '#fff' }}
+              style={{ overflow: 'hidden', borderTop: `1px solid rgba(255,99,71,0.1)`, background: '#fff' }}
             >
               {mainLinks.map((link) => {
                 if (link.external) {

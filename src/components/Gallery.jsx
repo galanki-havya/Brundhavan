@@ -31,16 +31,16 @@ export default function Gallery() {
 
       {/* Decorative background circles — pink themed */}
       <div style={{ position: 'absolute', inset: 0, opacity: 0.12, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', top: 40,  left: 40,  width: 80, height: 80, border: '2px solid #ec4899', borderRadius: '50%' }} />
+        <div style={{ position: 'absolute', top: 40,  left: 40,  width: 80, height: 80, border: '2px solid #FF6347', borderRadius: '50%' }} />
         <div style={{ position: 'absolute', top: 160, right: 80, width: 64, height: 64, border: '2px solid #f97316', borderRadius: '50%' }} />
-        <div style={{ position: 'absolute', bottom: 80, left: '33%', width: 48, height: 48, border: '2px solid #ec4899', borderRadius: '50%' }} />
+        <div style={{ position: 'absolute', bottom: 80, left: '33%', width: 48, height: 48, border: '2px solid #FF6347', borderRadius: '50%' }} />
       </div>
 
       {/* Pink ambient glow */}
       <div style={{
         position: 'absolute', top: 0, right: 0,
         width: 300, height: 300,
-        background: 'rgba(236,72,153,0.07)',
+        background: 'rgba(255,99,71,0.07)',
         borderRadius: '50%',
         transform: 'translate(80px, -80px)',
         filter: 'blur(60px)',
@@ -76,7 +76,7 @@ export default function Gallery() {
           <div>
             <span style={{
               display: 'inline-block',
-              color: '#ec4899',
+              color: '#FF6347',
               fontFamily: "'DM Sans', sans-serif",
               fontWeight: 600,
               fontSize: 12,
@@ -104,8 +104,8 @@ export default function Gallery() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 8,
-              border: '1.5px solid rgba(236,72,153,0.4)',
-              color: '#ec4899',
+              border: '1.5px solid rgba(255,99,71,0.4)',
+              color: '#FF6347',
               background: 'transparent',
               padding: '10px 22px',
               borderRadius: 50,
@@ -117,7 +117,7 @@ export default function Gallery() {
               alignSelf: 'flex-start',
               whiteSpace: 'nowrap',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#fff0f7'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(236,72,153,0.15)' }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#fff0f7'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(255,99,71,0.15)' }}
             onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.boxShadow = 'none' }}
           >
             View Full Gallery
@@ -147,14 +147,14 @@ export default function Gallery() {
                 marginBottom: 16,
                 cursor: 'pointer',
                 breakInside: 'avoid',
-                border: '1px solid rgba(236,72,153,0.12)',
+                border: '1px solid rgba(255,99,71,0.12)',
                 background: '#fff',
-                boxShadow: '0 4px 20px rgba(236,72,153,0.07)',
+                boxShadow: '0 4px 20px rgba(255,99,71,0.07)',
                 transition: 'box-shadow 0.3s, transform 0.3s',
               }}
               onClick={() => openLightbox(i)}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(236,72,153,0.18)'; e.currentTarget.style.transform = 'scale(1.02)' }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(236,72,153,0.07)'; e.currentTarget.style.transform = 'scale(1)' }}
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,99,71,0.18)'; e.currentTarget.style.transform = 'scale(1.02)' }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 4px 20px rgba(255,99,71,0.07)'; e.currentTarget.style.transform = 'scale(1)' }}
             >
               <img
                 src={img.src}
@@ -166,7 +166,7 @@ export default function Gallery() {
               {/* Hover overlay */}
               <div style={{
                 position: 'absolute', inset: 0,
-                background: 'linear-gradient(to top, rgba(190,24,93,0.75) 0%, transparent 60%)',
+                background: 'linear-gradient(to top, rgba(196,57,30,0.75) 0%, transparent 60%)',
                 opacity: 0,
                 transition: 'opacity 0.3s',
                 display: 'flex', flexDirection: 'column',
@@ -179,7 +179,7 @@ export default function Gallery() {
                   fontSize: 13,
                   fontWeight: 600,
                   color: '#fff',
-                  background: 'rgba(236,72,153,0.7)',
+                  background: 'rgba(255,99,71,0.7)',
                   backdropFilter: 'blur(4px)',
                   padding: '4px 12px',
                   borderRadius: 50,
@@ -202,11 +202,11 @@ export default function Gallery() {
               >
                 <div style={{
                   width: 52, height: 52,
-                  background: 'rgba(236,72,153,0.85)',
+                  background: 'rgba(255,99,71,0.85)',
                   backdropFilter: 'blur(8px)',
                   borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  boxShadow: '0 4px 20px rgba(236,72,153,0.4)',
+                  boxShadow: '0 4px 20px rgba(255,99,71,0.4)',
                 }}>
                   <svg style={{ width: 22, height: 22, color: '#fff' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -251,7 +251,7 @@ export default function Gallery() {
                   maxHeight: '80vh', objectFit: 'contain',
                   borderRadius: 24,
                   boxShadow: '0 24px 80px rgba(0,0,0,0.5)',
-                  border: '1px solid rgba(236,72,153,0.2)',
+                  border: '1px solid rgba(255,99,71,0.2)',
                 }}
               />
 
@@ -261,14 +261,14 @@ export default function Gallery() {
                 style={{
                   position: 'absolute', top: 12, right: 12,
                   width: 40, height: 40,
-                  background: 'rgba(236,72,153,0.85)',
+                  background: 'rgba(255,99,71,0.85)',
                   border: 'none', borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   cursor: 'pointer', color: '#fff',
                   transition: 'background 0.2s, transform 0.2s',
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = '#be185d'}
-                onMouseLeave={e => e.currentTarget.style.background = 'rgba(236,72,153,0.85)'}
+                onMouseEnter={e => e.currentTarget.style.background = '#C4391E'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,99,71,0.85)'}
               >
                 <X style={{ width: 18, height: 18 }} />
               </button>
@@ -279,14 +279,14 @@ export default function Gallery() {
                 style={{
                   position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)',
                   width: 40, height: 40,
-                  background: 'rgba(236,72,153,0.85)',
+                  background: 'rgba(255,99,71,0.85)',
                   border: 'none', borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   cursor: 'pointer', color: '#fff',
                   transition: 'background 0.2s',
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = '#be185d'}
-                onMouseLeave={e => e.currentTarget.style.background = 'rgba(236,72,153,0.85)'}
+                onMouseEnter={e => e.currentTarget.style.background = '#C4391E'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,99,71,0.85)'}
               >
                 <ChevronLeft style={{ width: 18, height: 18 }} />
               </button>
@@ -297,14 +297,14 @@ export default function Gallery() {
                 style={{
                   position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)',
                   width: 40, height: 40,
-                  background: 'rgba(236,72,153,0.85)',
+                  background: 'rgba(255,99,71,0.85)',
                   border: 'none', borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   cursor: 'pointer', color: '#fff',
                   transition: 'background 0.2s',
                 }}
-                onMouseEnter={e => e.currentTarget.style.background = '#be185d'}
-                onMouseLeave={e => e.currentTarget.style.background = 'rgba(236,72,153,0.85)'}
+                onMouseEnter={e => e.currentTarget.style.background = '#C4391E'}
+                onMouseLeave={e => e.currentTarget.style.background = 'rgba(255,99,71,0.85)'}
               >
                 <ChevronRight style={{ width: 18, height: 18 }} />
               </button>
@@ -316,7 +316,7 @@ export default function Gallery() {
                   fontSize: 13,
                   fontWeight: 600,
                   color: '#fff',
-                  background: 'rgba(236,72,153,0.85)',
+                  background: 'rgba(255,99,71,0.85)',
                   backdropFilter: 'blur(8px)',
                   padding: '6px 18px',
                   borderRadius: 50,

@@ -75,7 +75,7 @@ export default {
           orange: '#F28C28',
           purple: '#7C4DFF',
           sky:    '#42A5F5',
-          pink:   '#EC4899',
+          pink:   '#FF6347',
           yellow: '#F4C430',
           green:  '#22C55E',
           teal:   '#14B8A6',

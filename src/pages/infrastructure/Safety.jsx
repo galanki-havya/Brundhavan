@@ -74,7 +74,7 @@ export default function Safety() {
                 width: '100%',
                 height: '100%',
                 borderRadius: '20px',
-                background: 'linear-gradient(135deg, #ec4899, #f9a8d4)',
+                background: 'linear-gradient(135deg, #FF6347, #FFBDAA)',
                 zIndex: 0
               }}
             />
@@ -89,7 +89,7 @@ export default function Safety() {
                 objectFit: 'cover',
                 borderRadius: '20px',
                 display: 'block',
-                boxShadow: '0 24px 60px rgba(236,72,153,0.2)'
+                boxShadow: '0 24px 60px rgba(255,99,71,0.2)'
               }}
             />
             {/* Floating badge */}
@@ -114,7 +114,7 @@ export default function Safety() {
                 style={{
                   fontSize: '28px',
                   fontWeight: 700,
-                  color: '#ec4899',
+                  color: '#FF6347',
                   fontFamily: "'Playfair Display', serif"
                 }}
               >
@@ -136,7 +136,7 @@ export default function Safety() {
             <span
               style={{
                 display: 'inline-block',
-                color: '#ec4899',
+                color: '#FF6347',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 fontSize: '13px',
@@ -159,7 +159,7 @@ export default function Safety() {
               }}
             >
               Your Child's Safety is Our{' '}
-              <span style={{ color: '#ec4899' }}>Top Priority</span>
+              <span style={{ color: '#FF6347' }}>Top Priority</span>
             </h2>
 
             <p
@@ -202,7 +202,7 @@ export default function Safety() {
               >
                 <CheckCircle2
                   size={20}
-                  style={{ color: '#ec4899', flexShrink: 0, marginTop: '2px' }}
+                  style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }}
                 />
                 <span>{point}</span>
               </motion.div>
@@ -221,7 +221,7 @@ export default function Safety() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  background: '#ec4899',
+                  background: '#FF6347',
                   color: '#fff',
                   fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 600,
@@ -229,7 +229,7 @@ export default function Safety() {
                   padding: '14px 28px',
                   borderRadius: '50px',
                   textDecoration: 'none',
-                  boxShadow: '0 6px 24px rgba(236,72,153,0.35)',
+                  boxShadow: '0 6px 24px rgba(255,99,71,0.35)',
                   transition: 'all 0.3s ease'
                 }}
               >
@@ -304,24 +304,24 @@ export default function Safety() {
                   background: '#fff',
                   borderRadius: '20px',
                   padding: '32px 28px',
-                  boxShadow: '0 4px 24px rgba(236,72,153,0.08)',
-                  border: '1px solid #fce7f3'
+                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
+                  border: '1px solid #FFD8CC'
                 }}
               >
                 <div
                   style={{
                     width: '52px',
                     height: '52px',
-                    background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)',
+                    background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)',
                     borderRadius: '14px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '20px',
-                    border: '1.5px solid #f9a8d4'
+                    border: '1.5px solid #FFBDAA'
                   }}
                 >
-                  <item.icon size={24} style={{ color: '#ec4899' }} />
+                  <item.icon size={24} style={{ color: '#FF6347' }} />
                 </div>
                 <h3
                   style={{
@@ -386,7 +386,7 @@ export default function Safety() {
                 background: '#fff',
                 borderRadius: '20px',
                 padding: '36px 32px',
-                border: '1.5px solid #fce7f3'
+                border: '1.5px solid #FFD8CC'
               }}
             >
               <h3
@@ -397,7 +397,7 @@ export default function Safety() {
                   color: '#1a1a2e',
                   marginBottom: '24px',
                   paddingBottom: '16px',
-                  borderBottom: '2px solid #ec4899',
+                  borderBottom: '2px solid #FF6347',
                   display: 'inline-block'
                 }}
               >
@@ -419,13 +419,13 @@ export default function Safety() {
                       alignItems: 'center',
                       gap: '12px',
                       padding: '10px 0',
-                      borderBottom: '1px solid #fce7f3',
+                      borderBottom: '1px solid #FFD8CC',
                       fontFamily: "'DM Sans', sans-serif",
                       color: '#3d2c40',
                       fontSize: '0.95rem'
                     }}
                   >
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ec4899', flexShrink: 0 }} />
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
                     {item}
                   </div>
                 ))}
@@ -441,7 +441,7 @@ export default function Safety() {
                 background: '#fff',
                 borderRadius: '20px',
                 padding: '36px 32px',
-                border: '1.5px solid #fce7f3'
+                border: '1.5px solid #FFD8CC'
               }}
             >
               <h3
@@ -452,7 +452,7 @@ export default function Safety() {
                   color: '#1a1a2e',
                   marginBottom: '24px',
                   paddingBottom: '16px',
-                  borderBottom: '2px solid #f472b6',
+                  borderBottom: '2px solid #FF8C6B',
                   display: 'inline-block'
                 }}
               >
@@ -474,13 +474,13 @@ export default function Safety() {
                       alignItems: 'center',
                       gap: '12px',
                       padding: '10px 0',
-                      borderBottom: '1px solid #fce7f3',
+                      borderBottom: '1px solid #FFD8CC',
                       fontFamily: "'DM Sans', sans-serif",
                       color: '#3d2c40',
                       fontSize: '0.95rem'
                     }}
                   >
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f472b6', flexShrink: 0 }} />
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FF8C6B', flexShrink: 0 }} />
                     {item}
                   </div>
                 ))}
@@ -546,8 +546,8 @@ export default function Safety() {
                   background: '#fff',
                   borderRadius: '20px',
                   padding: '32px 28px',
-                  border: '1px solid #fce7f3',
-                  boxShadow: '0 4px 24px rgba(236,72,153,0.08)',
+                  border: '1px solid #FFD8CC',
+                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
@@ -558,7 +558,7 @@ export default function Safety() {
                     position: 'absolute',
                     top: 0, left: 0, right: 0,
                     height: '4px',
-                    background: 'linear-gradient(90deg, #ec4899, #f9a8d4)'
+                    background: 'linear-gradient(90deg, #FF6347, #FFBDAA)'
                   }}
                 />
                 <h3
@@ -581,13 +581,13 @@ export default function Safety() {
                         alignItems: 'center',
                         gap: '10px',
                         padding: '8px 0',
-                        borderBottom: '1px solid #fce7f3',
+                        borderBottom: '1px solid #FFD8CC',
                         fontFamily: "'DM Sans', sans-serif",
                         fontSize: '0.9rem',
                         color: '#3d2c40'
                       }}
                     >
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ec4899', flexShrink: 0 }} />
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
                       {program}
                     </div>
                   ))}
@@ -602,7 +602,7 @@ export default function Safety() {
       <section
         style={{
           padding: '80px 24px',
-          background: 'linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)',
+          background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden'
@@ -653,7 +653,7 @@ export default function Safety() {
               to="/admissions"
               style={{
                 background: '#fff',
-                color: '#be185d',
+                color: '#C4391E',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: '0.97rem',

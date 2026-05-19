@@ -28,7 +28,7 @@ export default function ManagementMessage() {
       <div style={{
         position: 'absolute', top: '25%', left: '-80px',
         width: 256, height: 256,
-        background: 'rgba(236,72,153,0.07)',
+        background: 'rgba(255,99,71,0.07)',
         borderRadius: '50%',
         filter: 'blur(60px)',
         pointerEvents: 'none',
@@ -69,7 +69,7 @@ export default function ManagementMessage() {
             <div style={{
               position: 'absolute',
               inset: -16,
-              border: '1.5px solid rgba(236,72,153,0.2)',
+              border: '1.5px solid rgba(255,99,71,0.2)',
               borderRadius: 20,
               transform: 'translate(8px, 8px)',
               zIndex: 0,
@@ -81,7 +81,7 @@ export default function ManagementMessage() {
               top: 20, left: 20,
               width: '100%', height: '100%',
               borderRadius: 20,
-              background: 'linear-gradient(135deg, rgba(236,72,153,0.15), rgba(249,115,22,0.1))',
+              background: 'linear-gradient(135deg, rgba(255,99,71,0.15), rgba(249,115,22,0.1))',
               zIndex: 0,
             }} />
 
@@ -91,8 +91,8 @@ export default function ManagementMessage() {
               aspectRatio: '4/5',
               overflow: 'hidden',
               borderRadius: 20,
-              boxShadow: '0 24px 60px rgba(236,72,153,0.14)',
-              background: '#fce7f3',
+              boxShadow: '0 24px 60px rgba(255,99,71,0.14)',
+              background: '#FFD8CC',
             }}>
               <img
                 src={Correspondent.image || fallbackPhoto}
@@ -115,11 +115,11 @@ export default function ManagementMessage() {
               bottom: 24,
               right: -24,
               zIndex: 2,
-              background: 'linear-gradient(135deg, #ec4899, #be185d)',
+              background: 'linear-gradient(135deg, #FF6347, #C4391E)',
               color: '#fff',
               padding: '16px 24px',
               borderRadius: 16,
-              boxShadow: '0 8px 28px rgba(236,72,153,0.35)',
+              boxShadow: '0 8px 28px rgba(255,99,71,0.35)',
               display: 'none',
             }}
               className="mgmt-badge"
@@ -142,14 +142,14 @@ export default function ManagementMessage() {
           >
             {/* Eyebrow */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
-              <div style={{ height: 1, width: 48, background: 'linear-gradient(90deg, #ec4899, #f97316)' }} />
+              <div style={{ height: 1, width: 48, background: 'linear-gradient(90deg, #FF6347, #f97316)' }} />
               <span style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: 11,
                 fontWeight: 700,
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
-                color: '#ec4899',
+                color: '#FF6347',
               }}>
                 Correspondent's Message
               </span>
@@ -166,7 +166,7 @@ export default function ManagementMessage() {
             }}>
               Message from Our<br />
               <span style={{
-                background: 'linear-gradient(135deg, #ec4899, #f97316)',
+                background: 'linear-gradient(135deg, #FF6347, #f97316)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}>
@@ -179,12 +179,12 @@ export default function ManagementMessage() {
               <Quote style={{
                 position: 'absolute', top: -12, left: -28,
                 width: 48, height: 48,
-                color: '#fce7f3',
+                color: '#FFD8CC',
                 opacity: 0.8,
               }} />
               <div style={{
                 borderLeft: '3px solid',
-                borderImage: 'linear-gradient(180deg, #ec4899, #f97316) 1',
+                borderImage: 'linear-gradient(180deg, #FF6347, #f97316) 1',
                 paddingLeft: 24,
               }}>
                 <p style={{
@@ -207,7 +207,7 @@ export default function ManagementMessage() {
               transition={{ delay: 0.3 }}
               style={{
                 paddingTop: 28,
-                borderTop: '1px solid #fce7f3',
+                borderTop: '1px solid #FFD8CC',
               }}
             >
               <p style={{
@@ -219,7 +219,7 @@ export default function ManagementMessage() {
                 {Correspondent.name}
               </p>
               <p style={{
-                color: '#ec4899',
+                color: '#FF6347',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 letterSpacing: '0.1em',
@@ -236,15 +236,15 @@ export default function ManagementMessage() {
                   <span key={tag} style={{
                     padding: '7px 16px',
                     background: '#fff',
-                    border: '1px solid #fce7f3',
+                    border: '1px solid #FFD8CC',
                     borderRadius: 50,
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: 10,
                     fontWeight: 700,
-                    color: '#ec4899',
+                    color: '#FF6347',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    boxShadow: '0 2px 10px rgba(236,72,153,0.08)',
+                    boxShadow: '0 2px 10px rgba(255,99,71,0.08)',
                   }}>
                     {tag}
                   </span>
