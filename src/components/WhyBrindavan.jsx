@@ -42,7 +42,7 @@ export default function WhyBrindavan() {
   return (
     <section
       style={{
-        background: '#fdf6f9',
+        background: '#fff',
         padding: '60px 16px 20px',
         overflow: 'hidden',
         position: 'relative',

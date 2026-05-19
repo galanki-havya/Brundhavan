@@ -16,7 +16,7 @@ export default function Campus() {
     <div
       className="min-h-screen"
       style={{
-        background: '#fdf6f9',
+        background: '#fff',
         fontFamily: "'Playfair Display', 'Georgia', serif"
       }}
     >
@@ -235,7 +235,7 @@ export default function Campus() {
       </section>
 
       {/* ── Campus Features Cards ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -374,7 +374,7 @@ export default function Campus() {
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 style={{
-                  background: '#fdf6f9',
+                  background: '#fff',
                   borderRadius: '20px',
                   padding: '36px 24px',
                   textAlign: 'center',

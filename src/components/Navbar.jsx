@@ -36,7 +36,6 @@ const mainLinks = [
   {
     label: 'Infrastructure',
     submenu: [
-      { to: '/infrastructure/campus', label: 'Campus Overview' },
       { to: '/infrastructure/safety', label: 'Safety & Security' },
       { to: '/infrastructure/digital', label: 'Digital Learning' },
     ],

@@ -17,7 +17,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <Section className="relative overflow-hidden" style={{ background: '#fdf6f9', padding: '80px 0' }}>
+    <Section className="relative overflow-hidden" style={{ background: '#fff', padding: '80px 0' }}>
 
       {/* Ambient background glows — matching other pink-themed sections */}
       <div style={{
