@@ -20,7 +20,7 @@ export default function Safety() {
     <div
       className="min-h-screen"
       style={{
-        background: '#fdf6f9',
+        background: '#fff',
         fontFamily: "'Playfair Display', 'Georgia', serif"
       }}
     >
@@ -241,7 +241,7 @@ export default function Safety() {
       </section>
 
       {/* ── Safety Feature Cards ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -383,7 +383,7 @@ export default function Safety() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               style={{
-                background: '#fdf6f9',
+                background: '#fff',
                 borderRadius: '20px',
                 padding: '36px 32px',
                 border: '1.5px solid #fce7f3'
@@ -438,7 +438,7 @@ export default function Safety() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               style={{
-                background: '#fdf6f9',
+                background: '#fff',
                 borderRadius: '20px',
                 padding: '36px 32px',
                 border: '1.5px solid #fce7f3'
@@ -491,7 +491,7 @@ export default function Safety() {
       </section>
 
       {/* ── Safety Education Programs ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -19,7 +19,7 @@ const stats = [
 
 export default function Achievements() {
   return (
-    <div style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
+    <div style={{ background: '#fff', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <PageHero
@@ -40,7 +40,7 @@ export default function Achievements() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
             {stats.map((item, i) => (
-              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '32px 24px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.08)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 24px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.08)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
                 <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{item.emoji}</div>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', fontWeight: 700, color: '#ec4899', marginBottom: '6px' }}>{item.value}</div>
@@ -52,7 +52,7 @@ export default function Achievements() {
       </section>
 
       {/* ── Timeline Milestones ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Our Milestones</h2>
@@ -103,7 +103,7 @@ export default function Achievements() {
               { title: 'Infrastructure Growth', items: ['Expanded digital classrooms', 'New sports facilities', 'Enhanced science labs', 'Library expansion'] },
               { title: 'Community Impact', items: ['Parent engagement programs', 'Alumni network', 'Community outreach', 'Teacher development'] },
             ].map((cat, i) => (
-              <motion.div key={cat.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.15 }} viewport={{ once: true }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', position: 'relative', overflow: 'hidden' }}>
+              <motion.div key={cat.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.15 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '20px' }}>{cat.title}</h3>
                 {cat.items.map(item => (

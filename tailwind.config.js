@@ -39,7 +39,8 @@ export default {
         },
 
         // ───────────────── BACKGROUND
-        background: '#FAF8F4',
+        background: '#ffffff',
+
 
         // ───────────────── NEUTRALS
         charcoal: {

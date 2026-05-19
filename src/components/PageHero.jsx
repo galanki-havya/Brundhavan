@@ -16,7 +16,7 @@ export default function PageHero({
     <section
       className={`
         relative overflow-hidden
-        min-h-[85vh]
+        min-h-[38vh]
         flex items-center
         pt-36 md:pt-44
         pb-20

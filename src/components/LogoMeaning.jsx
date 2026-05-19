@@ -44,7 +44,7 @@ const fadeRight = { hidden: { opacity: 0, x:  20 }, visible: { opacity: 1, x: 0 
 export default function LogoMeaning() {
   return (
     <section style={{
-      background: '#FDFAF5',
+      background: '#fff',
       padding: '80px 24px 100px',
       fontFamily: "'Outfit', sans-serif",
       position: 'relative',
@@ -142,7 +142,7 @@ export default function LogoMeaning() {
           gap: 10px;
           padding: 9px 14px;
           border-radius: 10px;
-          background: #FDFAF5;
+          background: #fff
           border: 1px solid rgba(0,0,0,0.06);
         }
       `}</style>

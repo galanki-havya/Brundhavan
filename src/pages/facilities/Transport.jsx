@@ -10,7 +10,7 @@ export default function Transport() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}
+      style={{ background: '#fff', fontFamily: "'Playfair Display', 'Georgia', serif" }}
     >
       <Helmet>
         <title>Transport - Brindavan Schools</title>
@@ -66,7 +66,7 @@ export default function Transport() {
       </section>
 
       {/* ── Feature Cards ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Transport at a Glance</h2>
@@ -103,7 +103,7 @@ export default function Transport() {
               { title: 'Safety Measures', items: ['GPS Tracking System', 'Speed Governors', 'Emergency Communication', 'First Aid Kits', 'Fire Extinguishers', 'Seat Belts'], accent: '#ec4899' },
               { title: 'Comfort Features', items: ['Air-conditioned Buses', 'Comfortable Seating', 'Audio Entertainment', 'Reading Lights', 'Clean Interiors', 'Temperature Control'], accent: '#f472b6' }
             ].map((col, ci) => (
-              <motion.div key={col.title} initial={{ opacity: 0, x: ci === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '36px 32px', border: '1.5px solid #fce7f3' }}>
+              <motion.div key={col.title} initial={{ opacity: 0, x: ci === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '36px 32px', border: '1.5px solid #fce7f3' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '24px', paddingBottom: '16px', borderBottom: `2px solid ${col.accent}`, display: 'inline-block' }}>{col.title}</h3>
                 <div style={{ marginTop: '8px' }}>
                   {col.items.map(item => (
@@ -119,7 +119,7 @@ export default function Transport() {
       </section>
 
       {/* ── Route Info ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Route Information</h2>

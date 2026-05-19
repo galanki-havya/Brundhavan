@@ -21,7 +21,7 @@ const principles = [
 
 export default function VisionMission() {
   return (
-    <div style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
+    <div style={{ background: '#fff', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <PageHero
@@ -63,7 +63,7 @@ export default function VisionMission() {
             </p>
 
             {/* Highlight card */}
-            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ background: '#fdf6f9', borderRadius: '16px', padding: '24px', border: '1.5px solid #fce7f3', marginBottom: '28px', position: 'relative', overflow: 'hidden' }}>
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1.5px solid #fce7f3', marginBottom: '28px', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
               <h4 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#1a1a2e', fontSize: '1rem', marginBottom: '8px' }}>Our Long-Term Goal</h4>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#6b5c6e', lineHeight: 1.6, margin: 0 }}>To build a generation of knowledgeable, ethical, innovative, and socially responsible individuals ready to thrive in a rapidly evolving world.</p>
@@ -77,7 +77,7 @@ export default function VisionMission() {
       </section>
 
       {/* ── Mission Cards ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
             <span style={{ display: 'inline-block', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Our Mission</span>
@@ -106,7 +106,7 @@ export default function VisionMission() {
           </motion.div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             {principles.map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '32px 28px', border: '1.5px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)' }}>
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1.5px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)' }}>
                 <div style={{ width: '52px', height: '52px', background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '1.5px solid #f9a8d4' }}>
                   <item.icon size={24} style={{ color: '#ec4899' }} />
                 </div>

@@ -6,7 +6,7 @@ import { GraduationCap, Users, Target, ShieldCheck, Lightbulb, Heart, Sprout, Ch
 
 export default function AboutOverview() {
   return (
-    <div style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
+    <div style={{background: '#fff' , fontFamily: "'Playfair Display', 'Georgia', serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <Helmet>
@@ -66,7 +66,7 @@ export default function AboutOverview() {
       </section>
 
       {/* ── Why Parents Choose Us ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
             <span style={{ display: 'inline-block', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Why Brindavan</span>
@@ -107,7 +107,7 @@ export default function AboutOverview() {
               { title: 'Respect', icon: Heart, desc: 'Respect for self, others, and the world around us.' },
               { title: 'Growth', icon: Sprout, desc: 'Fostering lifelong learners, thinkers, and achievers.' },
             ].map((value, i) => (
-              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                 <div style={{ width: '56px', height: '56px', background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '1.5px solid #f9a8d4' }}>
                   <value.icon size={26} style={{ color: '#ec4899' }} />
                 </div>

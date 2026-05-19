@@ -14,7 +14,7 @@ export default function Admissions() {
     <div
       className="min-h-screen"
       style={{
-        background: '#fdf6f9',
+        background: '#fff',
         fontFamily: "'Playfair Display', 'Georgia', serif"
       }}
     >
@@ -219,7 +219,7 @@ export default function Admissions() {
       </section>
 
       {/* ── Trust Stats ── */}
-      <section style={{ padding: '64px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '64px 0', background: '#fff'}}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
             {[
@@ -319,7 +319,7 @@ export default function Admissions() {
                   transition={{ delay: i * 0.12 }}
                   viewport={{ once: true }}
                   style={{
-                    background: '#fdf6f9',
+                    background: '#fff',
                     borderRadius: '20px',
                     padding: '32px 24px 28px',
                     border: '1.5px solid #fce7f3',
@@ -383,7 +383,7 @@ export default function Admissions() {
       </section>
 
       {/* ── Eligibility Criteria ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -8,7 +8,7 @@ export default function ChairmanMessage() {
   const { chairman } = siteData
 
   return (
-    <div style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
+    <div style={{ background: '#fff', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <PageHero
@@ -24,7 +24,7 @@ export default function ChairmanMessage() {
 
           {/* Chairman Profile Card */}
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ position: 'sticky', top: '32px' }}>
-            <div style={{ background: '#fdf6f9', borderRadius: '24px', padding: '32px 24px', textAlign: 'center', border: '1.5px solid #fce7f3', boxShadow: '0 8px 32px rgba(236,72,153,0.1)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '32px 24px', textAlign: 'center', border: '1.5px solid #fce7f3', boxShadow: '0 8px 32px rgba(236,72,153,0.1)', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
 
               <div style={{ width: '160px', height: '160px', borderRadius: '20px', overflow: 'hidden', margin: '0 auto 20px', border: '3px solid #fce7f3', boxShadow: '0 8px 24px rgba(236,72,153,0.15)' }}>
@@ -76,7 +76,7 @@ export default function ChairmanMessage() {
             </div>
 
             {/* Quote accent */}
-            <div style={{ background: '#fdf6f9', borderRadius: '16px', padding: '24px 28px', border: '1.5px solid #fce7f3', marginBottom: '32px', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ background: '#fff', borderRadius: '16px', padding: '24px 28px', border: '1.5px solid #fce7f3', marginBottom: '32px', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
               <Quote size={32} style={{ color: '#f9a8d4', marginBottom: '12px' }} />
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontStyle: 'italic', color: '#3d2c40', lineHeight: 1.7, margin: 0 }}>
@@ -103,7 +103,7 @@ export default function ChairmanMessage() {
       </section>
 
       {/* ── Vision Quote ── */}
-      <section style={{ padding: '80px 24px', background: '#fdf6f9', textAlign: 'center' }}>
+      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <motion.h2 initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontStyle: 'italic', color: '#1a1a2e', lineHeight: 1.4, marginBottom: '24px' }}>
             "Cultivating both intellectual growth and personal character."

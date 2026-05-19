@@ -420,7 +420,7 @@ export default function Home() {
         <PinkDivider />
 
         <div
-          className="bg-gradient-to-b from-white to-[#FFF5FA]"
+          className="bg-white"
         >
           <Gallery />
           <Testimonials />

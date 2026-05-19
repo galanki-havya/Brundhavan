@@ -49,7 +49,7 @@ export default function Contact() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}
+      style={{ background: '#fff', fontFamily: "'Playfair Display', 'Georgia', serif" }}
     >
       <Helmet>
         <title>Contact Us - Brindavan Schools</title>
@@ -74,7 +74,7 @@ export default function Contact() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
             {contactItems.map((item, index) => (
-              <motion.div key={item.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '28px 24px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', position: 'relative', overflow: 'hidden' }}>
+              <motion.div key={item.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} style={{ background: '#fff', borderRadius: '20px', padding: '28px 24px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
                 <div style={{ width: '44px', height: '44px', background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', border: '1.5px solid #f9a8d4' }}>
                   <item.icon size={20} style={{ color: '#ec4899' }} />
@@ -92,7 +92,7 @@ export default function Contact() {
       </section>
 
       {/* ── Form + Map ── */}
-      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+      <section style={{ padding: '80px 0', background: '#fff'}}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
 
           {/* Form */}
@@ -155,7 +155,7 @@ export default function Contact() {
               {school?.mapSrc ? (
                 <iframe src={school.mapSrc} width="100%" height="380" style={{ border: 0, display: 'block' }} loading="lazy" />
               ) : (
-                <div style={{ height: '380px', background: '#fdf6f9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e' }}>No map configured</div>
+                <div style={{ height: '380px', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e' }}>No map configured</div>
               )}
             </div>
 

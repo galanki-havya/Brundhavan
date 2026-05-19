@@ -22,7 +22,7 @@ export default function ManagementMessage() {
       <div style={{
         position: 'absolute', top: 0, right: 0,
         width: '33%', height: '100%',
-        background: '#fdf6f9',
+        background: '#fff',
         pointerEvents: 'none',
       }} />
       <div style={{
