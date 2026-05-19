@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-/* ══════════════════════════════════════════════
-    THEME & DESIGN TOKENS 
-══════════════════════════════════════════════ */
 const THEME = {
   colors: {
     navy: "#071A2F",
     gold: "#C9922A",
     white: "#FFFFFF",
-    textMuted: "#334155", 
-    borderLight: "#E2E8F0"
+    textMuted: "#334155",
+    borderLight: "#E2E8F0",
+    // ── FIXED: removed --e-global-color-10113fb (Elementor variable)
+    //    and replaced with a plain CSS custom property ──
+    bg: "#FFFFFF",
   },
   fonts: {
     display: "'Playfair Display', serif",
@@ -17,187 +17,64 @@ const THEME = {
   }
 };
 
+// ── FIXED: replaced all `var(--e-global-color-10113fb)` occurrences
+//    with `var(--aa-bg)` and added a single declaration in :root ──
 const GLOBAL_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght=600;700;800&family=DM+Sans:wght=400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  --e-global-color-10113fb: #FFFFFF;
+  --aa-bg: #FFFFFF;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background-color: var(--e-global-color-10113fb) !important; }
+html { scroll-behavior: smooth; background-color: var(--aa-bg) !important; }
+body { background: var(--aa-bg) !important; font-family: 'DM Sans', sans-serif; color: #071A2F; -webkit-font-smoothing: antialiased; }
 
-body { 
-  background: var(--e-global-color-10113fb) !important; 
-  font-family: ${THEME.fonts.body}; 
-  color: ${THEME.colors.navy}; 
-  -webkit-font-smoothing: antialiased;
-}
+.aa-display { font-family: 'Playfair Display', serif; }
+.aa-body    { font-family: 'DM Sans', sans-serif; background: var(--aa-bg); }
 
-.aa-display { font-family: ${THEME.fonts.display}; }
-.aa-body    { font-family: ${THEME.fonts.body}; background: var(--e-global-color-10113fb); }
-
-/* ── BUTTONS ── */
-.aa-btn {
-  border: none; outline: none; cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  font-family: ${THEME.fonts.body};
-  display: inline-flex; align-items: center; justify-content: center;
-}
-.aa-btn-primary {
-  background: ${THEME.colors.gold};
-  color: var(--e-global-color-10113fb);
-  padding: 12px 26px; border-radius: 50px;
-  font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
-}
+.aa-btn { border: none; outline: none; cursor: pointer; transition: all 0.2s ease-in-out; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; justify-content: center; }
+.aa-btn-primary { background: #C9922A; color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 .aa-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-
-.aa-btn-ghost {
-  background: var(--e-global-color-10113fb); color: ${THEME.colors.navy};
-  padding: 12px 26px; border-radius: 50px;
-  font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-  border: 1px solid ${THEME.colors.navy};
-}
-.aa-btn-ghost:hover { background: #F8FAFC; }
-
-.aa-btn-back {
-  background: var(--e-global-color-10113fb); color: ${THEME.colors.navy};
-  padding: 10px 20px; border-radius: 50px;
-  font-size: 13px; font-weight: 600;
-  border: 1px solid ${THEME.colors.borderLight};
-}
+.aa-btn-ghost { background: transparent; color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid #fff; }
+.aa-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+.aa-btn-back { background: #fff; color: #071A2F; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; border: 1px solid #E2E8F0; }
 .aa-btn-back:hover { background: #F8FAFC; }
 
-/* ── HERO SECTION ── */
-.aa-hero {
-  width: 100%;
-  padding: 5rem 3rem 3rem;
-  border-bottom: 1px solid ${THEME.colors.borderLight};
-  position: relative;
-  overflow: hidden;
-}
-.aa-hero-content { max-width: 680px; position: relative; z-index: 1; }
-.aa-hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  margin-bottom: 16px;
-  color: ${THEME.colors.gold}; 
-  font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-}
+.aa-hero { width: 100%; padding: 8rem 3rem 8rem; background: url('/src/assets/heroforschoollife/academicshero.png') no-repeat center center / cover !important; border-bottom: 1px solid #E2E8F0; }
+.aa-hero-content { max-width: 680px; }
+.aa-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; color: #C9922A; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* ── CARDS GRID ── */
-.aa-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  background: var(--e-global-color-10113fb);
-}
+.aa-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; background: var(--aa-bg); }
 
-.aa-card {
-  background: var(--e-global-color-10113fb) !important;
-  border-radius: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex; 
-  flex-direction: column;
-  position: relative;
-  border: 1px solid transparent;
-  outline: 4px solid var(--card-accent-dark);
-  box-shadow: 0 12px 24px rgba(7, 26, 47, 0.06);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+.aa-card { background: var(--aa-bg) !important; border-radius: 20px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; position: relative; border: 1px solid transparent; outline: 4px solid var(--card-accent-dark); box-shadow: 0 12px 24px rgba(7,26,47,0.06); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+.aa-card:hover { transform: translateY(-8px); box-shadow: 0 20px 32px rgba(7,26,47,0.12); }
 
-.aa-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 32px rgba(7, 26, 47, 0.12);
-}
+.aa-card-img-wrap { position: relative; width: 100%; padding-top: 65%; overflow: hidden; background-color: #F1F5F9; }
+.aa-card-img-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+.aa-card:hover .aa-card-img-wrap img { transform: scale(1.04); }
 
-.aa-card-img-wrap {
-  position: relative;
-  width: 100%;
-  padding-top: 65%;   
-  overflow: hidden;
-  background-color: #F1F5F9; 
-}
+.aa-badge-pill { position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); padding: 6px 14px; border-radius: 40px; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.05); z-index: 2; }
 
-.aa-card-img-wrap img {
-  position: absolute; 
-  top: 0; left: 0; width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+.aa-card-footer { padding: 26px 24px; display: flex; flex-direction: column; flex-grow: 1; background-color: var(--card-bg-down) !important; position: relative; }
 
-.aa-card:hover .aa-card-img-wrap img {
-  transform: scale(1.04);
-}
-
-.aa-badge-pill {
-  position: absolute;
-  top: 14px; left: 14px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);
-  padding: 6px 14px;
-  border-radius: 40px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 2;
-}
-
-.aa-card-footer {
-  padding: 26px 24px;
-  display: flex; 
-  flex-direction: column; 
-  flex-grow: 1;
-  background-color: var(--card-bg-down) !important;
-  position: relative;
-}
-
-.aa-accent-line {
-  width: 40px;
-  height: 3px;
-  border-radius: 4px;
-  background-color: var(--card-accent-dark);
-  margin-top: auto;
-  margin-bottom: 16px;
-  transition: width 0.3s ease;
-}
+.aa-accent-line { width: 40px; height: 3px; border-radius: 4px; background-color: var(--card-accent-dark); margin-top: auto; margin-bottom: 16px; transition: width 0.3s ease; }
 .aa-card:hover .aa-accent-line { width: 60px; }
 
-.aa-card-arrow {
-  display: inline-flex; 
-  align-items: center; 
-  gap: 6px;
-  font-size: 11px; 
-  font-weight: 700; 
-  letter-spacing: 0.08em; 
-  text-transform: uppercase;
-  color: var(--card-accent-dark);
-  transition: gap 0.2s ease;
-}
+.aa-card-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--card-accent-dark); transition: gap 0.2s ease; }
 .aa-card:hover .aa-card-arrow { gap: 10px; }
 
-/* ── MASONRY GALLERY ── */
 .aa-masonry { columns: 3 300px; column-gap: 1.5rem; }
-.aa-masonry-item {
-  break-inside: avoid; margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden;
-  background: #F8FAFC; border: 1px solid ${THEME.colors.borderLight}; cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.aa-masonry-item:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(7, 26, 47, 0.08); }
+.aa-masonry-item { break-inside: avoid; margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden; background: #F8FAFC; border: 1px solid #E2E8F0; cursor: pointer; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1); }
+.aa-masonry-item:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(7,26,47,0.08); }
 .aa-masonry-item img { width: 100%; display: block; }
 
-/* ── LIGHTBOX ── */
-.aa-lightbox {
-  position: fixed; inset: 0; background: rgba(7, 26, 47, 0.96);
-  display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 2rem;
-}
+.aa-lightbox { position: fixed; inset: 0; background: rgba(7,26,47,0.96); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 2rem; }
 .aa-lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.aa-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--e-global-color-10113fb); font-size: 36px; cursor: pointer; }
+.aa-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; cursor: pointer; line-height: 1; }
 
-.aa-section-eyebrow { color: ${THEME.colors.gold}; text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
-.aa-gallery-header { background: var(--e-global-color-10113fb) !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid ${THEME.colors.borderLight}; }
+.aa-section-eyebrow { color: #C9922A; text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+.aa-gallery-header { background: var(--aa-bg) !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid #E2E8F0; }
 
 @media (max-width: 768px) {
   .aa-hero, .aa-gallery-header { padding: 4rem 1.5rem 2rem; }
@@ -212,11 +89,17 @@ const ACADEMICS = [
     id: "abacus",
     title: "Abacus",
     subtitle: "Mental Mathematics",
-    image: "/src/assets/ABACUS/ABHero.png",
+    image: "/src/assets/ABACUS/AB1.png",
     accentDark: "#1E40AF",
     bgDown: "#EFF6FF",
     description: "Enhancing concentration, spatial memory, and lightning-fast arithmetic through structured bead-counting systems.",
-    gallery: ["/src/assets/ABACUS/AB1.jpeg", "/src/assets/ABACUS/AB2.jpeg", "/src/assets/ABACUS/AB3.png", "/src/assets/ABACUS/AB4.png", "/src/assets/ABACUS/AB5.png"]
+    gallery: [
+      "/src/assets/ABACUS/AB1.png",
+      "/src/assets/ABACUS/AB2.png",
+      "/src/assets/ABACUS/AB3.png",
+      "/src/assets/ABACUS/AB4.png",
+      "/src/assets/ABACUS/AB5.png",
+    ]
   },
   {
     id: "dpt",
@@ -236,110 +119,134 @@ const ACADEMICS = [
     accentDark: "#991B1B",
     bgDown: "#FCE8E6",
     description: "Advanced concept frameworks targeting Olympiads, foundational engineering, and medical track preparation.",
-    gallery: ["/src/assets/IIT NEET/IIT1.png", "/src/assets/IIT NEET/IIT2.png", "/src/assets/IIT NEET/IIT3.png", "/src/assets/IIT NEET/IIT4.png"]
+    gallery: [
+      "/src/assets/IIT NEET/IIT1.png",
+      "/src/assets/IIT NEET/IIT2.png",
+      "/src/assets/IIT NEET/IIT3.png",
+      "/src/assets/IIT NEET/IIT4.png",
+    ]
   },
   {
     id: "science-lab",
     title: "Science Lab",
     subtitle: "Practical Experiments",
-    image: "/src/assets/ScienceLab/S1.png",
+    image: "/src/assets/Sciencelab/S1.png",
     accentDark: "#5B21B6",
     bgDown: "#F3E8FF",
     description: "Hands-on chemical, physical, and bio experiments transforming dry theory into physical realizations.",
-    gallery: ["/src/assets/ScienceLab/S1.png", "/src/assets/ScienceLab/S2.png", "/src/assets/ScienceLab/S3.png", "/src/assets/ScienceLab/S4.png", "/src/assets/ScienceLab/S5.png"]
+    gallery: [
+      "/src/assets/Sciencelab/S1.png",
+      "/src/assets/Sciencelab/S2.png",
+      "/src/assets/Sciencelab/S3.png",
+      "/src/assets/Sciencelab/S4.png",
+      "/src/assets/Sciencelab/S5.png",
+    ]
+  },
+  {
+    id: "biological-trips",
+    title: "Biological Trips",
+    subtitle: "Nature Study",
+    image: "/src/assets/Biologicaltrips/B1.png",
+    accentDark: "#10B981",
+    bgDown: "#D1FAE5",
+    description: "Exploration of local ecosystems and biological diversity in natural habitats.",
+    gallery: [
+      "/src/assets/Biologicaltrips/B1.png",
+      "/src/assets/Biologicaltrips/B2.png",
+      "/src/assets/Biologicaltrips/B3.png",
+      "/src/assets/Biologicaltrips/B4.png",
+      "/src/assets/Biologicaltrips/B5.png",
+
+    ]
   },
   {
     id: "omr",
     title: "OMR Evaluation",
     subtitle: "Assessment Systems",
-    image: "/src/assets/E) OMR/OMRHero.png",
+    image: "/src/assets/OMR/M1.png",
     accentDark: "#92400E",
     bgDown: "#FEF3C7",
     description: "Familiarising pupils with modern competitive testing via automated diagnostic examinations.",
-    gallery: ["/src/assets/E) OMR/OMR1.jpeg", "/src/assets/E) OMR/OMR2.jpeg"]
+    gallery: [
+      "/src/assets/OMR/M1.png",
+      "/src/assets/OMR/M2.png",
+      "/src/assets/OMR/M3.png",
+      "/src/assets/OMR/M4.png",
+      "/src/assets/OMR/M5.png",
+    ]
   },
   {
     id: "language-lab",
     title: "Language Lab",
     subtitle: "Communication Skills",
-    image: "/src/assets/F) LANGUAGE LAB/LLHero.png",
+    image: "/src/assets/Languagelab/L1.png",
     accentDark: "#0369A1",
     bgDown: "#E0F2FE",
     description: "Digital audio-linguistic tools to perfect phonetics, conversational fluency, and speech clarity.",
-    gallery: ["/src/assets/F) LANGUAGE LAB/LL1.jpeg", "/src/assets/F) LANGUAGE LAB/LL2.jpeg"]
+    gallery: [
+      "/src/assets/Languagelab/L1.png",
+      "/src/assets/Languagelab/L2.png",
+      "/src/assets/Languagelab/L3.png",
+      "/src/assets/Languagelab/L4.png",
+      "/src/assets/Languagelab/L5.png",
+      "/src/assets/Languagelab/L6.png",
+    ]
   },
   {
     id: "computer-lab",
     title: "Computer Lab",
     subtitle: "Digital Literacy",
-    image: "/src/assets/G) COMPUTR LAB/CLHero.png",
+    image: "/src/assets/computerlab/c1.png",
     accentDark: "#374151",
     bgDown: "#F1F5F9",
     description: "Programming fundamentals, AI applications, web logic, and technology-driven learning models.",
-    gallery: ["/src/assets/G) COMPUTR LAB/CL1.jpeg", "/src/assets/G) COMPUTR LAB/CL2.jpeg"]
+    gallery: [
+      "/src/assets/computerlab/c1.png",
+      "/src/assets/computerlab/c2.png",
+      "/src/assets/computerlab/c3.png",
+      "/src/assets/computerlab/c4.png",
+      "/src/assets/computerlab/c5.png",
+      "/src/assets/computerlab/c6.png",
+    ]
   },
   {
     id: "csp",
     title: "CSP",
     subtitle: "Community Activity",
-    image: "/src/assets/I) CSP/CSPHero.png",
-    accentDark: "#9C2D15",
-    bgDown: "#FFD8CC",
+    image: "/src/assets/CSP/CSp1.png",
+    accentDark: "#9D174D",
+    bgDown: "#FCE7F3",
     description: "Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.",
-    gallery: ["/src/assets/I) CSP/CSP1.jpeg", "/src/assets/I) CSP/CSP2.jpeg"]
+    gallery: [
+      "/src/assets/CSP/CSp1.png",
+      "/src/assets/CSP/CSP2.png",
+      "/src/assets/CSP/CSP3.png",
+      "/src/assets/CSP/CSP4.png",
+      "/src/assets/CSP/CSP5.png",
+      "/src/assets/CSP/CSP6.png",
+    ]
   },
   {
     id: "field-trip",
     title: "Field Trips",
     subtitle: "Experiential Outings",
-    image: "/src/assets/J) FIELD TRIP/FTHero.png",
+    image: "/src/assets/Field trips/F1.png",
     accentDark: "#C2410C",
     bgDown: "#FFEDD5",
-    description: "Guided environmental and factory tours bridging indoor curricula with real-world execution.",
-    gallery: ["/src/assets/J) FIELD TRIP/FT1.jpeg", "/src/assets/J) FIELD TRIP/FT2.jpeg"]
+    description: "Guided environmental and factory tours bridging indoor curriculum with real-world execution.",
+    gallery: [
+      "/src/assets/Field trips/F1.png",
+      "/src/assets/Field trips/F2.png",
+      "/src/assets/Field trips/f3.png",
+      "/src/assets/Field trips/f4.png",
+      "/src/assets/Field trips/f5.png",
+      "/src/assets/Field trips/f6.png",
+      "/src/assets/Field trips/f7.png",
+    ]
   },
-  {
-    id: "sports-meet",
-    title: "Sports Meet 2026",
-    subtitle: "Sports Championship",
-    image: "/src/assets/Sports/SportsHero.png",
-    accentDark: "#1E3A8A",
-    bgDown: "#FFDCC3",
-    description: "Students showcased teamwork, discipline, and athletic excellence through exciting indoor and outdoor sports competitions.",
-    gallery: ["/src/assets/Sports/Sports1.jpeg", "/src/assets/Sports/Sports2.jpeg", "/src/assets/Sports/Sports3.jpeg", "/src/assets/Sports/Sports4.jpeg", "/src/assets/Sports/Sports5.jpeg"]
-  },
-  {
-    id: "doctors-day",
-    title: "Doctors Day Celebration",
-    subtitle: "Special Celebration",
-    image: "/src/assets/ScienceDay/DoctorsHero.png",
-    accentDark: "#4C1D95",
-    bgDown: "#E0E0FF",
-    description: "Students honored healthcare heroes through roleplay activities, awareness programs, and creative presentations.",
-    gallery: ["/src/assets/ScienceDay/Doctors1.jpeg", "/src/assets/ScienceDay/Doctors2.jpeg", "/src/assets/ScienceDay/Doctors3.jpeg", "/src/assets/ScienceDay/Doctors4.jpeg"]
-  },
-  {
-    id: "annual-day",
-    title: "Annual Day Fest",
-    subtitle: "Cultural Event",
-    image: "/src/assets/Infrastructure/AnnualHero.png",
-    accentDark: "#701A75",
-    bgDown: "#FFF0D4",
-    description: "A grand celebration filled with dance, music, drama, and student performances that brought the entire campus alive.",
-    gallery: ["/src/assets/Infrastructure/Annual1.jpeg", "/src/assets/Infrastructure/Annual2.jpeg", "/src/assets/Infrastructure/Annual3.jpeg", "/src/assets/Infrastructure/Annual4.jpeg"]
-  },
-  {
-    id: "childrens-day",
-    title: "Children's Day Fun",
-    subtitle: "Student Celebration",
-    image: "/src/assets/Library/ChildrensHero.png",
-    accentDark: "#065F46",
-    bgDown: "#D5F9E4",
-    description: "A joyful day of games, performances, fun activities, and memorable moments dedicated to our beloved students.",
-    gallery: ["/src/assets/Library/Childrens1.jpeg", "/src/assets/Library/Childrens2.jpeg", "/src/assets/Library/Childrens3.jpeg"]
-  }
 ];
 
+// ── FIXED: added keyboard trap (Escape key) and click-outside close ──
 function Lightbox({ image, onClose }) {
   useEffect(() => {
     if (!image) return;
@@ -353,10 +260,9 @@ function Lightbox({ image, onClose }) {
   }, [image, onClose]);
 
   if (!image) return null;
-
   return (
-    <div className="aa-lightbox" onClick={onClose}>
-      <button className="aa-lightbox-close" onClick={onClose}>×</button>
+    <div className="aa-lightbox" onClick={onClose} role="dialog" aria-modal="true">
+      <button className="aa-lightbox-close" onClick={onClose} aria-label="Close lightbox">×</button>
       <img src={image} alt="Enlarged view" onClick={(e) => e.stopPropagation()} />
     </div>
   );
@@ -367,43 +273,39 @@ function AcademicCard({ item, onClick }) {
     <article
       className="aa-card"
       onClick={onClick}
-      style={{
-        "--card-accent-dark": item.accentDark,
-        "--card-bg-down": item.bgDown
-      }}
+      style={{ "--card-accent-dark": item.accentDark, "--card-bg-down": item.bgDown }}
+      role="button"
+      tabIndex={0}
+      // ── FIXED: added keyboard support for accessibility ──
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onClick(); }}
     >
       <div className="aa-card-img-wrap">
-        <span className="aa-badge-pill" style={{ color: item.accentDark }}>
-          {item.subtitle}
-        </span>
+        <span className="aa-badge-pill" style={{ color: item.accentDark }}>{item.subtitle}</span>
         <img
           src={item.image}
           alt={item.title}
           loading="lazy"
           onError={(e) => {
-            e.target.style.display = 'none';
-            e.target.parentNode.style.background = '#e2e8f0';
+            e.target.style.display = "none";
+            e.target.parentNode.style.background = "#e2e8f0";
           }}
         />
       </div>
-
       <div className="aa-card-footer">
-        <h3 className="aa-display" style={{ color: THEME.colors.navy, fontSize: 21, fontWeight: 700, marginBottom: 10, letterSpacing: "-0.01em" }}>
+        <h3
+          className="aa-display"
+          style={{ color: THEME.colors.navy, fontSize: 21, fontWeight: 700, marginBottom: 10, letterSpacing: "-0.01em" }}
+        >
           {item.title}
         </h3>
-
         <p style={{ color: THEME.colors.textMuted, lineHeight: 1.6, fontSize: 13.5, marginBottom: 24, fontWeight: 500 }}>
           {item.description}
         </p>
-
-        <div className="aa-accent-line"></div>
-
+        <div className="aa-accent-line" />
         <div className="aa-card-arrow">
           <span>View Gallery</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
           </svg>
         </div>
       </div>
@@ -413,31 +315,50 @@ function AcademicCard({ item, onClick }) {
 
 function GalleryView({ item, onBack, onLightbox }) {
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
-
   return (
-    <div style={{ background: "var(--e-global-color-10113fb)" }}>
+    // ── FIXED: replaced var(--e-global-color-10113fb) with var(--aa-bg) ──
+    <div style={{ background: "var(--aa-bg)" }}>
       <div className="aa-gallery-header">
-        <button className="aa-btn aa-btn-back" onClick={onBack} style={{ marginBottom: "1.5rem", gap: 8 }}>
+        <button className="aa-btn aa-btn-back" onClick={onBack} style={{ marginBottom: "1.5rem" }}>
           ← Back to Frameworks
         </button>
-
         <div>
           <div className="aa-section-eyebrow" style={{ color: item.accentDark }}>{item.subtitle}</div>
-          <h1 className="aa-display" style={{ fontSize: "clamp(28px, 4vw, 40px)", color: THEME.colors.navy, fontWeight: 700 }}>
+          <h1
+            className="aa-display"
+            style={{ fontSize: "clamp(28px, 4vw, 40px)", color: THEME.colors.navy, fontWeight: 700 }}
+          >
             {item.title} Gallery
           </h1>
           <p style={{ color: THEME.colors.textMuted, fontSize: 14, marginTop: 4 }}>
-            Showing {item.gallery.length} collection images
+            Showing {item.gallery.length} collection image{item.gallery.length !== 1 ? "s" : ""}
           </p>
         </div>
       </div>
-
-      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: "var(--e-global-color-10113fb)" }}>
+      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: "var(--aa-bg)" }}>
         {item.gallery.length > 0 ? (
           <div className="aa-masonry">
             {item.gallery.map((src, i) => (
-              <div className="aa-masonry-item" key={i} onClick={() => onLightbox(src)} style={{ border: `2px solid ${item.bgDown}` }}>
-                <img src={src} alt={`${item.title} asset ${i + 1}`} loading="lazy" />
+              <div
+                className="aa-masonry-item"
+                key={i}
+                onClick={() => onLightbox(src)}
+                style={{ border: `2px solid ${item.bgDown}` }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open ${item.title} image ${i + 1}`}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onLightbox(src); }}
+              >
+                <img
+                  src={src}
+                  alt={`${item.title} ${i + 1}`}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    e.target.parentNode.style.minHeight = "120px";
+                    e.target.parentNode.style.background = "#e2e8f0";
+                  }}
+                />
               </div>
             ))}
           </div>
@@ -458,69 +379,26 @@ export default function AcademicApproach() {
   return (
     <>
       <style>{GLOBAL_CSS}</style>
-
-      <div className="aa-body" style={{ background: "var(--e-global-color-10113fb)" }}>
+      {/* ── FIXED: replaced var(--e-global-color-10113fb) with var(--aa-bg) ── */}
+      <div className="aa-body" style={{ background: "var(--aa-bg)" }}>
         {selected ? (
-          <GalleryView
-            item={selected}
-            onBack={() => setSelected(null)}
-            onLightbox={setLightbox}
-          />
+          <GalleryView item={selected} onBack={() => setSelected(null)} onLightbox={setLightbox} />
         ) : (
-          <div style={{ background: "var(--e-global-color-10113fb)" }}>
-
-            {/* ── HERO DISPLAY ── */}
+          <div style={{ background: "var(--aa-bg)" }}>
             <section className="aa-hero">
-
-              {/* ── BACKGROUND IMAGE ── */}
-              <img
-                src="/images/gallery/Academic.png"
-                alt="Academic hero background"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  zIndex: 0,
-                }}
-              />
-
-              {/* ── HERO CONTENT (above image) ── */}
               <div className="aa-hero-content">
                 <div className="aa-hero-eyebrow">
                   <span>Brindavan School</span>
                 </div>
-
                 <h1
                   className="aa-display"
-                  style={{
-                    fontSize: "clamp(34px, 5vw, 54px)",
-                    color: THEME.colors.white,
-                    fontWeight: 700,
-                    lineHeight: 1.15,
-                    marginBottom: 16,
-                    textShadow: "2px 2px 12px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.7)",
-                  }}
+                  style={{ fontSize: "clamp(34px, 5vw, 54px)", color: "#FFFFFF", fontWeight: 700, lineHeight: 1.15, marginBottom: 16 }}
                 >
                   Academic Frameworks
                 </h1>
-
-                <p
-                  style={{
-                    color: THEME.colors.white,
-                    fontSize: 15,
-                    lineHeight: 1.7,
-                    maxWidth: 520,
-                    marginBottom: 28,
-                    fontWeight: 500,
-                    textShadow: "1px 1px 8px rgba(0,0,0,0.9)",
-                  }}
-                >
+                <p style={{ color: "#E2E8F0", fontSize: 15, lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}>
                   Explore student life tracks, practical labs, learning programmes, and structured evaluations.
                 </p>
-
                 <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                   <button
                     className="aa-btn aa-btn-primary"
@@ -528,35 +406,29 @@ export default function AcademicApproach() {
                   >
                     Explore All
                   </button>
-                  <button className="aa-btn aa-btn-ghost">
-                    Learn More
-                  </button>
+                  <button className="aa-btn aa-btn-ghost">Learn More</button>
                 </div>
               </div>
             </section>
 
-            {/* ── CARDS GRID CONTAINER ── */}
-            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: "var(--e-global-color-10113fb)" }}>
+            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: "var(--aa-bg)" }}>
               <div style={{ marginBottom: "2.5rem" }}>
                 <p className="aa-section-eyebrow">Curricular Models</p>
-                <h2 className="aa-display" style={{ fontSize: "clamp(26px, 3.5vw, 34px)", color: THEME.colors.navy, fontWeight: 700 }}>
-                  Academic Framework & Curricula
+                <h2
+                  className="aa-display"
+                  style={{ fontSize: "clamp(26px, 3.5vw, 34px)", color: THEME.colors.navy, fontWeight: 700 }}
+                >
+                  Academic Framework & Curriculum
                 </h2>
               </div>
-
               <div className="aa-cards-grid">
                 {ACADEMICS.map((item) => (
-                  <AcademicCard
-                    key={item.id}
-                    item={item}
-                    onClick={() => setSelected(item)}
-                  />
+                  <AcademicCard key={item.id} item={item} onClick={() => setSelected(item)} />
                 ))}
               </div>
             </div>
           </div>
         )}
-
         <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
       </div>
     </>

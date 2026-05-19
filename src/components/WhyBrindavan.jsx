@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const logo = '/logo.png'
 
 const features = [
-  { lines: ['Academic', 'Excellence'], icon: '🎓', arcColor: '#FF6347' },
+  { lines: ['Academic', 'Excellence'], icon: '🎓', arcColor: '#47c8ff9e' },
   { lines: ['Pastoral', 'Care'], icon: '💛', arcColor: '#f97316' },
   { lines: ['International', 'Standard Sports'], icon: '⚽', arcColor: '#FF6347' },
   { lines: ['Career', 'Readiness'], icon: '🚀', arcColor: '#f97316' },

@@ -18,10 +18,11 @@ const mainLinks = [
   {
     label: 'School Life',
     submenu: [
-      { to: '/academic-approaches', label: 'Academic Approaches' },
-      { to: '/events/gallery', label: 'Co-Curricular' },
-      { to: '/events/annual', label: 'Communication & Public Speaking' },
-      { to: '/events/annual', label: 'Festival Fun' },
+      { to: '/events/academic-approach', label: 'Academic Approaches' },
+      { to: '/events/co-curricular', label: 'Co-Curricular' },
+      { to: '/events/communication-public-speaking', label: 'Communication & Public Speaking' },
+      { to: '/events/festival-fun', label: 'Festival Fun' },
+
     ],
   },
   {
@@ -315,7 +316,7 @@ export default function Navbar() {
               transition={{ duration: 0.22 }}
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span className="school-name">Brindavan</span>
+              <span className="school-name">BRINDAVAN</span>
               <span className="school-tagline">School Palamaner</span>
             </div>
           </Link>
