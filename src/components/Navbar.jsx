@@ -18,10 +18,10 @@ const mainLinks = [
   {
     label: 'SCHOOL LIFE',
     submenu: [
-     { to: '/academic-approaches', label: 'Academic Approaches' },
-      { to: '/events/gallery', label: 'Co-Curricular' },
-      { to: '/events/annual', label: 'Communication and Public Speaking' },
-      { to: '/events/sports', label: 'Festival Fun' },
+      { to: '/academic-approaches', label: 'Academic Approaches' },
+      { to: '/co-curricular', label: 'Co-Curricular' },
+      { to: '/communication', label: 'Communication & Public Speaking' },
+      { to: '/festival-fun', label: 'Festival Fun' },
     ]
   },
   {
@@ -76,12 +76,12 @@ export default function Navbar() {
         border-b border-primary-100/60
         shadow-[0_10px_40px_rgba(0,0,0,0.08)]
         ${scrolled
-          ? 'py-1.5 bg-background/85'   // scrolled: tighter + more opaque
-          : 'py-4   bg-background/70'   // resting: airy floating glass
+          ? 'py-1.5 bg-background/85'
+          : 'py-4   bg-background/70'
         }
       `}
     >
-      {/* Top accent line — Royal Blue → Gold → Royal Blue, opacity-90 */}
+      {/* Top accent line */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary-600 via-secondary-400 to-primary-600 opacity-90" />
 
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
@@ -90,7 +90,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between w-full">
 
-            {/* Logo — Blue drop-shadow glow on hover */}
+            {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
               <motion.img
                 src={logo}
@@ -136,7 +136,6 @@ export default function Navbar() {
                         </motion.span>
                       </button>
 
-                      {/* Premium dropdown — deeper y entry, scale, stronger shadow */}
                       <AnimatePresence>
                         {openDropdown === link.label && (
                           <motion.div
@@ -184,7 +183,7 @@ export default function Navbar() {
                   )
                 }
 
-                // ── External link (ERP LOGIN etc.) ────────────────────────
+                // ── External link ────────────────────────────────────────
                 if (link.external || (link.to && !link.to?.startsWith('/'))) {
                   return (
                     <a
@@ -199,7 +198,7 @@ export default function Navbar() {
                   )
                 }
 
-                // ── NavLink — Marigold-style sliding pill indicator ──────
+                // ── NavLink ──────────────────────────────────────────────
                 return (
                   <NavLink
                     key={link.to}
@@ -209,12 +208,10 @@ export default function Navbar() {
                   >
                     {({ isActive }) => (
                       <>
-                        {/* Label — z-10 so it sits above the pill */}
                         <span className={`relative z-10 ${isActive ? 'text-primary-800' : 'text-primary-700'}`}>
                           {link.label}
                         </span>
 
-                        {/* Sliding pill — shared layoutId, springs between active links */}
                         {isActive && (
                           <motion.span
                             layoutId="navbar-indicator"
@@ -231,7 +228,6 @@ export default function Navbar() {
                           />
                         )}
 
-                        {/* Hover underline — gold, only on inactive items */}
                         {!isActive && (
                           <span className="
                             absolute left-3 bottom-0.5 h-[2px] w-0
