@@ -8,9 +8,16 @@ export default function PageHero({
   fullOpacity = false,
   objectPosition = 'object-center',
   showOverlay = true,
+  imageStyle = {},
+  zoomOut = false,
 }) {
   const isPink = variant === 'pink'
+  const isGold = variant === 'gold'
   const overlayOpacity = fullOpacity ? 'bg-black/1' : 'bg-black/2'
+
+  let bgColor = 'bg-primary-900'
+  if (isPink) bgColor = 'bg-[#7A284B]'
+  if (isGold) bgColor = 'bg-[#7C6218]' // Rich Deep Gold
 
   return (
     <section
@@ -20,17 +27,36 @@ export default function PageHero({
         flex items-center
         pt-36 md:pt-44
         pb-20
-        ${isPink ? 'bg-[#7A284B]' : 'bg-primary-900'}
+        ${bgColor}
       `}
     >
       {/* Background Image */}
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
-          <img
-            src={backgroundImage}
-            alt={title}
-            className={`w-full h-full object-cover ${objectPosition}`}
-          />
+          {zoomOut ? (
+            <>
+              {/* Blurred background backdrop */}
+              <img
+                src={backgroundImage}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40"
+              />
+              {/* Fully zoomed-out uncropped main image */}
+              <img
+                src={backgroundImage}
+                alt={title}
+                className={`absolute inset-0 w-full h-full object-contain ${objectPosition}`}
+                style={imageStyle}
+              />
+            </>
+          ) : (
+            <img
+              src={backgroundImage}
+              alt={title}
+              className={`w-full h-full object-cover ${objectPosition}`}
+              style={imageStyle}
+            />
+          )}
 
           {/* Dark Overlay */}
           {showOverlay && (
@@ -38,30 +64,6 @@ export default function PageHero({
           )}
         </div>
       )}
-
-      {/* Glow Effects */}
-      <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden">
-        <div
-          className={`
-            absolute top-[-120px] left-[8%]
-            w-[28rem] h-[28rem]
-            rounded-full blur-3xl opacity-20
-            ${isPink ? 'bg-pink-300' : 'bg-secondary-400'}
-          `}
-        />
-
-        <div
-          className={`
-            absolute bottom-[-150px] right-[5%]
-            w-[30rem] h-[30rem]
-            rounded-full blur-3xl opacity-20
-            ${isPink ? 'bg-rose-300' : 'bg-primary-400'}
-          `}
-        />
-      </div>
-
-      {/* Grid Texture */}
-      <div className="absolute inset-0 z-[1] opacity-[0.05] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:24px_24px]" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,10 +85,6 @@ export default function PageHero({
                 leading-tight
                 text-white
               "
-              style={{
-                textShadow:
-                  '0 4px 20px rgba(0,0,0,0.9)',
-              }}
             >
               {title}
             </h1>
@@ -97,14 +95,11 @@ export default function PageHero({
                 className="
                   mt-6
                   text-lg md:text-xl
-                  text-gray-200
+                  text-white
                   leading-relaxed
                   max-w-2xl
                 "
-                style={{
-                  textShadow:
-                    '0 2px 12px rgba(0,0,0,0.9)',
-                }}
+                style={{ opacity: 0.8 }}
               >
                 {subtitle}
               </p>
@@ -126,10 +121,11 @@ export default function PageHero({
                 shadow-2xl
                 hover:scale-105
                 hover:shadow-white/20
-                ${
-                  isPink
-                    ? 'bg-white text-[#C2417A] hover:bg-pink-50'
-                    : 'bg-white text-primary-900 hover:bg-gray-100'
+                ${isPink
+                  ? 'bg-white text-[#C2417A] hover:bg-pink-50'
+                  : isGold
+                  ? 'bg-white text-[#7C6218] hover:bg-amber-50'
+                  : 'bg-white text-primary-900 hover:bg-gray-100'
                 }
               `}
             >
@@ -143,8 +139,6 @@ export default function PageHero({
         </div>
       </div>
 
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/30 to-transparent z-[2]" />
     </section>
   )
 }
