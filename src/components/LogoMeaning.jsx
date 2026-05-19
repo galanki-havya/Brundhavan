@@ -8,12 +8,12 @@ const intelligences = [
   { short: 'Words & Language',   icon: '📚', color: '#C9A84C' },
   { short: 'Numbers & Logic',    icon: '🔢', color: '#3B82F6' },
   { short: 'Space & Sight',      icon: '🧭', color: '#22C55E' },
-  { short: 'Body & Movement',    icon: '🤸', color: '#EC4899' },
+  { short: 'Body & Movement',    icon: '🤸', color: '#FF6347' },
   { short: 'Sound & Rhythm',     icon: '🎵', color: '#F59E0B' },
   { short: 'People & Empathy',   icon: '🤝', color: '#0EA5E9' },
   { short: 'Self & Reflection',  icon: '🪞', color: '#8B5CF6' },
   { short: 'Nature & Patterns',  icon: '🌿', color: '#10B981' },
-  { short: 'Meaning & Purpose',  icon: '✨', color: '#EC4899' },
+  { short: 'Meaning & Purpose',  icon: '✨', color: '#FF6347' },
 ]
 
 const logoElements = [
@@ -23,7 +23,7 @@ const logoElements = [
     desc: 'Represents academic excellence, intellectual curiosity, and a lifelong love of learning that extends beyond the classroom.' },
   { color: '#22C55E', icon: '🌳', label: 'The Banyan Tree',
     desc: 'Rooted in rich Indian heritage, it stands for enduring strength, shelter, and a deeply nurturing school community.' },
-  { color: '#EC4899', icon: '🌸', label: 'The Nine Petals',
+  { color: '#FF6347', icon: '🌸', label: 'The Nine Petals',
     desc: "Nine petals mirror Howard Gardner's nine intelligences — every child's unique genius recognised and celebrated." },
   { color: '#C9A84C', icon: '⭕', label: 'The Gold Ring',
     desc: 'A circle of unity, wholeness, and the unbreakable bond between school, student, family, and community.' },
@@ -32,7 +32,7 @@ const logoElements = [
 const coreValues = [
   { color: '#E63946', text: 'Discipline with compassion' },
   { color: '#C9A84C', text: 'Academic rigour with creativity' },
-  { color: '#EC4899', text: 'Community, character, and confidence' },
+  { color: '#FF6347', text: 'Community, character, and confidence' },
 ]
 
 const fadeUp    = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }
@@ -149,7 +149,7 @@ export default function LogoMeaning() {
 
       {/* subtle ambient orbs */}
       <div className="lm-orb" style={{ width:340, height:340, top:-80,  left:-60,  background:'rgba(201,168,76,0.06)' }} />
-      <div className="lm-orb" style={{ width:280, height:280, bottom:-60, right:-40, background:'rgba(236,72,153,0.05)' }} />
+      <div className="lm-orb" style={{ width:280, height:280, bottom:-60, right:-40, background:'rgba(255,99,71,0.05)' }} />
 
       {/* ══ HEADING ══ */}
       <motion.div
@@ -158,12 +158,12 @@ export default function LogoMeaning() {
         style={{ textAlign:'center', marginBottom:52, position:'relative', zIndex:1 }}
       >
         <div style={{ display:'inline-flex', alignItems:'center', gap:8, marginBottom:12 }}>
-          <div style={{ width:24, height:1, background:'#EC4899', opacity:.5 }} />
+          <div style={{ width:24, height:1, background:'#FF6347', opacity:.5 }} />
           <span style={{
             fontSize:10, fontWeight:600, letterSpacing:'3px',
-            textTransform:'uppercase', color:'#EC4899',
+            textTransform:'uppercase', color:'#FF6347',
           }}>Our Identity</span>
-          <div style={{ width:24, height:1, background:'#EC4899', opacity:.5 }} />
+          <div style={{ width:24, height:1, background:'#FF6347', opacity:.5 }} />
         </div>
 
         <h2 style={{
@@ -198,7 +198,7 @@ export default function LogoMeaning() {
           {/* pink + gold top stripe */}
           <div style={{
             position:'absolute', top:0, left:0, right:0, height:3,
-            background:'linear-gradient(90deg, #EC4899, #C9A84C)',
+            background:'linear-gradient(90deg, #FF6347, #C9A84C)',
             borderRadius:'24px 24px 0 0',
           }} />
 
@@ -213,7 +213,7 @@ export default function LogoMeaning() {
             <div style={{
               position:'absolute', inset:-4,
               borderRadius:'50%',
-              border:'1px solid rgba(236,72,153,0.15)',
+              border:'1px solid rgba(255,99,71,0.15)',
               animation:'spinCCW 20s linear infinite',
             }} />
 
@@ -258,9 +258,9 @@ export default function LogoMeaning() {
           <div style={{ textAlign:'center', marginBottom:14 }}>
             <span style={{
               display:'inline-block',
-              background:'rgba(236,72,153,0.07)',
-              color:'#EC4899',
-              border:'1px solid rgba(236,72,153,0.18)',
+              background:'rgba(255,99,71,0.07)',
+              color:'#FF6347',
+              border:'1px solid rgba(255,99,71,0.18)',
               borderRadius:100,
               fontSize:9, fontWeight:600,
               letterSpacing:'2px', textTransform:'uppercase',
@@ -306,7 +306,7 @@ export default function LogoMeaning() {
 
           {/* Gardner quote — pink left border */}
           <blockquote style={{
-            borderLeft:'2px solid #EC4899',
+            borderLeft:'2px solid #FF6347',
             paddingLeft:14,
             fontFamily:"'Cormorant Garamond', serif",
             fontStyle:'italic',
@@ -329,15 +329,15 @@ export default function LogoMeaning() {
             <div style={{ display:'inline-flex', alignItems:'center', gap:7, marginBottom:10 }}>
               <div style={{
                 width:18, height:18, borderRadius:6,
-                background:'rgba(236,72,153,0.09)',
-                border:'1px solid rgba(236,72,153,0.22)',
+                background:'rgba(255,99,71,0.09)',
+                border:'1px solid rgba(255,99,71,0.22)',
                 display:'flex', alignItems:'center', justifyContent:'center',
               }}>
-                <div style={{ width:6, height:6, borderRadius:'50%', background:'#EC4899' }} />
+                <div style={{ width:6, height:6, borderRadius:'50%', background:'#FF6347' }} />
               </div>
               <span style={{
                 fontSize:10, fontWeight:600, letterSpacing:'2.5px',
-                textTransform:'uppercase', color:'#EC4899',
+                textTransform:'uppercase', color:'#FF6347',
               }}>Symbol Decoded</span>
             </div>
 
@@ -466,7 +466,7 @@ export default function LogoMeaning() {
             <div style={{
               position:'absolute', bottom:-24, left:-24,
               width:100, height:100, borderRadius:'50%',
-              background:'rgba(236,72,153,0.10)', filter:'blur(28px)',
+              background:'rgba(255,99,71,0.10)', filter:'blur(28px)',
               pointerEvents:'none',
             }} />
 
@@ -476,7 +476,7 @@ export default function LogoMeaning() {
             }}>
               <div style={{
                 width:20, height:1,
-                background:'linear-gradient(90deg,#EC4899,#C9A84C)',
+                background:'linear-gradient(90deg,#FF6347,#C9A84C)',
               }} />
               <span style={{
                 fontSize:9, fontWeight:600, letterSpacing:'2.5px',
@@ -500,7 +500,7 @@ export default function LogoMeaning() {
             {/* pink + gold bottom accent */}
             <div style={{
               marginTop:16, height:1,
-              background:'linear-gradient(90deg, rgba(236,72,153,0.4), rgba(201,168,76,0.4), transparent)',
+              background:'linear-gradient(90deg, rgba(255,99,71,0.4), rgba(201,168,76,0.4), transparent)',
               position:'relative', zIndex:1,
             }} />
           </motion.div>

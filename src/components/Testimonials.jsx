@@ -23,7 +23,7 @@ export default function Testimonials() {
       <div style={{
         position: 'absolute', top: 0, right: 0,
         width: 320, height: 320,
-        background: 'rgba(236,72,153,0.07)',
+        background: 'rgba(255,99,71,0.07)',
         borderRadius: '50%',
         transform: 'translate(100px, -100px)',
         filter: 'blur(60px)',
@@ -52,7 +52,7 @@ export default function Testimonials() {
           {/* Eyebrow */}
           <span style={{
             display: 'inline-block',
-            color: '#ec4899',
+            color: '#FF6347',
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 600,
             fontSize: 13,
@@ -97,8 +97,8 @@ export default function Testimonials() {
           style={{
             background: '#fff',
             borderRadius: 24,
-            border: '1px solid #fce7f3',
-            boxShadow: '0 10px 40px rgba(236,72,153,0.08), 0 2px 12px rgba(0,0,0,0.04)',
+            border: '1px solid #FFD8CC',
+            boxShadow: '0 10px 40px rgba(255,99,71,0.08), 0 2px 12px rgba(0,0,0,0.04)',
             overflow: 'hidden',
             position: 'relative',
           }}
@@ -106,7 +106,7 @@ export default function Testimonials() {
           {/* Top pink accent bar */}
           <div style={{
             height: 3,
-            background: 'linear-gradient(90deg, #ec4899 0%, #f97316 50%, #ec4899 100%)',
+            background: 'linear-gradient(90deg, #FF6347 0%, #f97316 50%, #FF6347 100%)',
           }} />
 
           <div style={{ padding: '24px', height: 480 }}>
@@ -136,14 +136,14 @@ export default function Testimonials() {
               display: 'inline-block',
               padding: '8px 18px',
               background: '#fff',
-              border: '1px solid #fce7f3',
+              border: '1px solid #FFD8CC',
               borderRadius: 50,
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 12,
               fontWeight: 600,
-              color: '#ec4899',
+              color: '#FF6347',
               letterSpacing: '0.5px',
-              boxShadow: '0 2px 10px rgba(236,72,153,0.07)',
+              boxShadow: '0 2px 10px rgba(255,99,71,0.07)',
             }}>
               {badge}
             </span>

@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 const logo = '/logo.png'
 
 const features = [
-  { lines: ['Academic', 'Excellence'], icon: '🎓', arcColor: '#ec4899' },
+  { lines: ['Academic', 'Excellence'], icon: '🎓', arcColor: '#FF6347' },
   { lines: ['Pastoral', 'Care'], icon: '💛', arcColor: '#f97316' },
-  { lines: ['International', 'Standard Sports'], icon: '⚽', arcColor: '#ec4899' },
+  { lines: ['International', 'Standard Sports'], icon: '⚽', arcColor: '#FF6347' },
   { lines: ['Career', 'Readiness'], icon: '🚀', arcColor: '#f97316' },
-  { lines: ['Quest for', 'Excellence'], icon: '🏆', arcColor: '#ec4899' },
+  { lines: ['Quest for', 'Excellence'], icon: '🏆', arcColor: '#FF6347' },
   { lines: ['Value', 'System'], icon: '🌱', arcColor: '#f97316' },
-  { lines: ['Benchmarked', 'Curriculum'], icon: '📚', arcColor: '#ec4899' },
+  { lines: ['Benchmarked', 'Curriculum'], icon: '📚', arcColor: '#FF6347' },
   { lines: ['Shaping the', 'Personality'], icon: '🌟', arcColor: '#f97316' },
 ]
 
@@ -56,7 +56,7 @@ export default function WhyBrindavan() {
           right: 0,
           width: 320,
           height: 320,
-          background: 'rgba(236,72,153,0.07)',
+          background: 'rgba(255,99,71,0.07)',
           borderRadius: '50%',
           transform: 'translate(100px, -80px)',
           filter: 'blur(70px)',
@@ -110,13 +110,13 @@ export default function WhyBrindavan() {
           background: #fff;
           border-radius: 16px;
           padding: 18px;
-          box-shadow: 0 2px 12px rgba(236,72,153,0.08);
-          border: 1px solid #f9a8d4;
+          box-shadow: 0 2px 12px rgba(255,99,71,0.08);
+          border: 1px solid #FFBDAA;
           transition: box-shadow .25s, transform .25s;
         }
 
         .wb-card:hover {
-          box-shadow: 0 8px 24px rgba(236,72,153,0.16);
+          box-shadow: 0 8px 24px rgba(255,99,71,0.16);
           transform: translateY(-3px);
         }
 
@@ -163,7 +163,7 @@ export default function WhyBrindavan() {
           <span
             style={{
               display: 'inline-block',
-              color: '#ec4899',
+              color: '#FF6347',
               fontWeight: 600,
               fontSize: 12,
               letterSpacing: '2px',
@@ -188,7 +188,7 @@ export default function WhyBrindavan() {
             <span
               style={{
                 background:
-                  'linear-gradient(135deg, #ec4899, #f97316)',
+                  'linear-gradient(135deg, #FF6347, #f97316)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
@@ -244,13 +244,13 @@ export default function WhyBrindavan() {
               >
                 <stop
                   offset="0%"
-                  stopColor="#ec4899"
+                  stopColor="#FF6347"
                   stopOpacity="0.12"
                 />
 
                 <stop
                   offset="100%"
-                  stopColor="#ec4899"
+                  stopColor="#FF6347"
                   stopOpacity="0"
                 />
               </radialGradient>
@@ -269,7 +269,7 @@ export default function WhyBrindavan() {
               cx={CX}
               cy={CY}
               r={ORBIT_R}
-              stroke="#be185d"
+              stroke="#C4391E"
               strokeWidth="2"
               strokeDasharray="5 6"
               fill="none"
@@ -288,7 +288,7 @@ export default function WhyBrindavan() {
                   y1={CY}
                   x2={tip.x}
                   y2={tip.y}
-                  stroke="#9d174d"
+                  stroke="#9C2D15"
                   strokeWidth="1.8"
                   strokeDasharray="4 5"
                   opacity="0.55"
@@ -309,7 +309,7 @@ export default function WhyBrindavan() {
               cy={CY}
               r={LOGO_R + 3}
               fill="none"
-              stroke="#ec4899"
+              stroke="#FF6347"
               strokeWidth="3"
               opacity="0.7"
             />
@@ -369,7 +369,7 @@ export default function WhyBrindavan() {
                     cy={ny}
                     r={NODE_R}
                     fill="white"
-                    stroke="#f9a8d4"
+                    stroke="#FFBDAA"
                     strokeWidth="2.5"
                   />
 

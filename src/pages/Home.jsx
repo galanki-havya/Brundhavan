@@ -33,9 +33,9 @@ import Section from '../components/Section'
 import GlobalBackground from '../components/GlobalBackground'
 
 // ── COLOR TOKENS ─────────────────────────────────────────────────────────
-// Primary Pink:   #E91E8C  (hot pink — hero highlight, CTAs, badges)
-// Pink Light:     #F472B6  (soft pink — backgrounds, tints)
-// Pink Deep:      #BE185D  (deep rose — hover states)
+// Primary Pink:   #FF6347  (hot pink — hero highlight, CTAs, badges)
+// Pink Light:     #FF8C6B  (soft pink — backgrounds, tints)
+// Pink Deep:      #C4391E  (deep rose — hover states)
 // Coral/Orange:   #F97316  (warm accent)
 // Navy:           #1B3A8A  (text, headings)
 // Gold:           #C89B3C  (dividers, subtle accents)
@@ -81,9 +81,9 @@ const featuredActivities = [
     label: 'Sports Meet 2026',
     tag: 'Sports Championship',
     desc: 'Students showcased teamwork, discipline, and athletic excellence through exciting indoor and outdoor sports competitions.',
-    accent: 'from-[#FFF0F7] to-[#FFD6EC]',
-    iconColor: '#E91E8C',
-    tagBg: 'bg-[#E91E8C]',
+    accent: 'from-[#FFF3F0] to-[#FFD6EC]',
+    iconColor: '#FF6347',
+    tagBg: 'bg-[#FF6347]',
     image: sportsImg,
   },
   {
@@ -101,9 +101,9 @@ const featuredActivities = [
     label: 'Annual Day Fest',
     tag: 'Cultural Event',
     desc: 'A grand celebration filled with dance, music, drama, and student performances that brought the entire campus alive.',
-    accent: 'from-[#FFF0F7] to-[#F9C8E3]',
-    iconColor: '#E91E8C',
-    tagBg: 'bg-[#E91E8C]',
+    accent: 'from-[#FFF3F0] to-[#F9C8E3]',
+    iconColor: '#FF6347',
+    tagBg: 'bg-[#FF6347]',
     image: musicImg,
   },
   {
@@ -152,14 +152,14 @@ function StatCard({ raw, suffix, label, icon: Icon, delay }) {
       className="flex flex-col items-center text-center"
     >
       {/* Icon circle with pink gradient ring */}
-      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FFF0F7] to-[#FFD6EC] flex items-center justify-center mb-4 shadow-md ring-2 ring-[#F472B6]/30">
-        <Icon size={26} style={{ color: '#E91E8C' }} />
+      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FFF3F0] to-[#FFD6EC] flex items-center justify-center mb-4 shadow-md ring-2 ring-[#FF8C6B]/30">
+        <Icon size={26} style={{ color: '#FF6347' }} />
       </div>
 
       <div
         className="text-3xl md:text-4xl font-display font-bold"
         style={{
-          background: 'linear-gradient(135deg, #E91E8C 0%, #F97316 60%, #C89B3C 100%)',
+          background: 'linear-gradient(135deg, #FF6347 0%, #F97316 60%, #C89B3C 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
         }}
@@ -178,13 +178,13 @@ function StatCard({ raw, suffix, label, icon: Icon, delay }) {
 function PinkDivider() {
   return (
     <div className="relative h-[2px] w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#E91E8C]/35 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF6347]/35 to-transparent" />
     </div>
   )
 }
 
 // ── Section Label ───────────────────────────────────────────────────────
-function SectionLabel({ color = '#E91E8C', children }) {
+function SectionLabel({ color = '#FF6347', children }) {
   return (
     <p
       className="uppercase tracking-[0.28em] text-sm font-bold mb-2 flex items-center gap-2"
@@ -213,18 +213,18 @@ export default function Home() {
           <meta property="og:title" content="Brindavan School | Palamaner" />
           <meta property="og:description" content="Admissions open for 2026–27. Join Brindavan School." />
           <meta property="og:type" content="website" />
-          <meta name="theme-color" content="#E91E8C" />
+          <meta name="theme-color" content="#FF6347" />
         </Helmet>
 
         {/* ── ANNOUNCEMENT TICKER ───────────────────────── */}
         <div
           className="relative overflow-hidden py-2 z-40"
-          style={{ background: 'linear-gradient(90deg, #BE185D 0%, #E91E8C 50%, #F97316 100%)' }}
+          style={{ background: 'linear-gradient(90deg, #C4391E 0%, #FF6347 50%, #F97316 100%)' }}
         >
           {/* Fade edges */}
           <div
             className="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, #BE185D, transparent)' }}
+            style={{ background: 'linear-gradient(to right, #C4391E, transparent)' }}
           />
           <div
             className="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none"
@@ -249,11 +249,11 @@ export default function Home() {
         <Hero />
 
         {/* ── STATS ────────────────────────────────────── */}
-        <section className="relative py-14 bg-white border-y border-[#FFD6EC]/60">
+        <section className="relative py-14 bg-white border-y border-[#FFD8CC]/60">
           {/* Subtle pink blob top-left */}
           <div
             className="absolute -top-10 -left-10 w-64 h-64 rounded-full pointer-events-none opacity-10"
-            style={{ background: 'radial-gradient(circle, #E91E8C, transparent 70%)' }}
+            style={{ background: 'radial-gradient(circle, #FF6347, transparent 70%)' }}
           />
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -277,7 +277,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-14">
               <div>
-                <SectionLabel color="#E91E8C">Watch Us In Action</SectionLabel>
+                <SectionLabel color="#FF6347">Watch Us In Action</SectionLabel>
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0F172A]">
                   Life at Brindavan
                 </h2>
@@ -287,9 +287,9 @@ export default function Home() {
                 href="https://www.youtube.com/@brindavanschool-p7m"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group text-white px-7 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-pink-200 flex items-center gap-3"
+                className="group text-white px-7 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-orange-200 flex items-center gap-3"
                 style={{
-                  background: 'linear-gradient(135deg, #E91E8C 0%, #F97316 100%)',
+                  background: 'linear-gradient(135deg, #FF6347 0%, #F97316 100%)',
                 }}
               >
                 <Play size={16} />
@@ -307,7 +307,7 @@ export default function Home() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="aspect-video overflow-hidden rounded-[28px] bg-white border-2 border-[#FFD6EC] shadow-xl shadow-pink-100">
+                  <div className="aspect-video overflow-hidden rounded-[28px] bg-white border-2 border-[#FFD8CC] shadow-xl shadow-red-100">
                     <iframe
                       className="w-full h-full"
                       src={`https://www.youtube.com/embed/${video.id}`}
@@ -317,7 +317,7 @@ export default function Home() {
                   </div>
 
                   <div className="mt-4 flex items-center gap-2 px-2">
-                    <Play size={16} style={{ color: '#E91E8C' }} />
+                    <Play size={16} style={{ color: '#FF6347' }} />
                     <h3 className="font-bold text-[#1B3A8A]">{video.title}</h3>
                   </div>
                 </motion.div>
@@ -329,11 +329,11 @@ export default function Home() {
         <PinkDivider />
 
         {/* ── ACTIVITIES ───────────────────────────────── */}
-        <Section className="py-24 bg-gradient-to-b from-[#FFF5FA] to-white backdrop-blur-sm">
+        <Section className="py-24 bg-gradient-to-b from-[#FFF8F6] to-white backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-14">
               <div>
-                <SectionLabel color="#E91E8C">Beyond the Classroom</SectionLabel>
+                <SectionLabel color="#FF6347">Beyond the Classroom</SectionLabel>
                 <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0F172A]">
                   Celebrating Learning & Growth
                 </h2>
@@ -344,8 +344,8 @@ export default function Home() {
 
               <Link
                 to="/activities"
-                className="group text-white px-7 py-3 rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg shadow-pink-200"
-                style={{ background: 'linear-gradient(135deg, #E91E8C 0%, #BE185D 100%)' }}
+                className="group text-white px-7 py-3 rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg shadow-orange-200"
+                style={{ background: 'linear-gradient(135deg, #FF6347 0%, #C4391E 100%)' }}
               >
                 All Activities
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -363,7 +363,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                     whileHover={{ y: -10 }}
-                    className={`group relative overflow-hidden rounded-[32px] bg-gradient-to-br ${activity.accent} border-2 border-[#FFD6EC]/60 shadow-[0_15px_40px_rgba(233,30,140,0.10)]`}
+                    className={`group relative overflow-hidden rounded-[32px] bg-gradient-to-br ${activity.accent} border-2 border-[#FFD8CC]/60 shadow-[0_15px_40px_rgba(255,99,71,0.10)]`}
                   >
                     <div className="relative h-56 overflow-hidden">
                       <img
@@ -395,7 +395,7 @@ export default function Home() {
                       {/* Pink animated underline bar */}
                       <div
                         className="mt-6 h-[3px] w-14 rounded-full group-hover:w-24 transition-all duration-500"
-                        style={{ background: 'linear-gradient(90deg, #E91E8C, #F97316)' }}
+                        style={{ background: 'linear-gradient(90deg, #FF6347, #F97316)' }}
                       />
                     </div>
                   </motion.div>

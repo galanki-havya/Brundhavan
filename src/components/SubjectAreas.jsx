@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const PINK  = '#ec4899'
+const PINK  = '#FF6347'
 const NAVY  = '#1a237e'
 
 const subjects = [
@@ -151,7 +151,7 @@ export default function SubjectAreas() {
       <div style={{
         position: 'absolute', top: 0, right: 0,
         width: 280, height: 280,
-        background: 'rgba(236,72,153,0.06)',
+        background: 'rgba(255,99,71,0.06)',
         borderRadius: '50%',
         transform: 'translate(80px, -80px)',
         filter: 'blur(60px)',
@@ -169,7 +169,7 @@ export default function SubjectAreas() {
           align-items: center;
           padding: 28px 16px 20px;
           border-radius: 20px;
-          border: 1.5px solid #fce7f3;
+          border: 1.5px solid #FFD8CC;
           background: #fff;
           cursor: default;
           transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
@@ -180,15 +180,15 @@ export default function SubjectAreas() {
           content: '';
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, #fdf2f8 0%, #fff 60%);
+          background: linear-gradient(135deg, #FFF3F0 0%, #fff 60%);
           opacity: 0;
           transition: opacity 0.3s;
           border-radius: 20px;
         }
         .sa-card:hover::before { opacity: 1; }
         .sa-card:hover {
-          border-color: rgba(236,72,153,0.35);
-          box-shadow: 0 12px 36px rgba(236,72,153,0.13);
+          border-color: rgba(255,99,71,0.35);
+          box-shadow: 0 12px 36px rgba(255,99,71,0.13);
           transform: translateY(-5px);
         }
 
@@ -212,7 +212,7 @@ export default function SubjectAreas() {
       >
         <span style={{
           display: 'inline-block',
-          color: '#ec4899',
+          color: '#FF6347',
           fontFamily: "'DM Sans', sans-serif",
           fontWeight: 600,
           fontSize: 12,

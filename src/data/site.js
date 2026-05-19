@@ -162,7 +162,7 @@ export const siteData = {
       category: 'Sports',
     },
     {
-      src: '/images/gallery/AnnualDay/1.jpg',
+      src: '/images/gallery/AnnualDay/7.jpg',
       alt: 'Annual day performance and awards',
       category: 'Annual Day',
     },
@@ -172,7 +172,7 @@ export const siteData = {
       category: 'Library',
     },
     {
-      src: '/images/gallery/ScienceDay/1.jpg',
+      src: '/images/gallery/ScienceDay/7.jpg',
       alt: 'Students engaged in a science fair',
       category: 'Science Fair',
     },

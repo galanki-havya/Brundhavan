@@ -70,7 +70,7 @@ export default function Campus() {
                 width: '100%',
                 height: '100%',
                 borderRadius: '20px',
-                background: 'linear-gradient(135deg, #ec4899, #f9a8d4)',
+                background: 'linear-gradient(135deg, #FF6347, #FFBDAA)',
                 zIndex: 0
               }}
             />
@@ -85,7 +85,7 @@ export default function Campus() {
                 objectFit: 'cover',
                 borderRadius: '20px',
                 display: 'block',
-                boxShadow: '0 24px 60px rgba(236,72,153,0.2)'
+                boxShadow: '0 24px 60px rgba(255,99,71,0.2)'
               }}
             />
             <motion.div
@@ -109,7 +109,7 @@ export default function Campus() {
                 style={{
                   fontSize: '28px',
                   fontWeight: 700,
-                  color: '#ec4899',
+                  color: '#FF6347',
                   fontFamily: "'Playfair Display', serif"
                 }}
               >
@@ -131,7 +131,7 @@ export default function Campus() {
             <span
               style={{
                 display: 'inline-block',
-                color: '#ec4899',
+                color: '#FF6347',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 fontSize: '13px',
@@ -154,7 +154,7 @@ export default function Campus() {
               }}
             >
               Built for the{' '}
-              <span style={{ color: '#ec4899' }}>Future</span>{' '}
+              <span style={{ color: '#FF6347' }}>Future</span>{' '}
               of Education
             </h2>
 
@@ -196,7 +196,7 @@ export default function Campus() {
               >
                 <CheckCircle2
                   size={20}
-                  style={{ color: '#ec4899', flexShrink: 0, marginTop: '2px' }}
+                  style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }}
                 />
                 <span>{point}</span>
               </motion.div>
@@ -215,7 +215,7 @@ export default function Campus() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  background: '#ec4899',
+                  background: '#FF6347',
                   color: '#fff',
                   fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 600,
@@ -223,7 +223,7 @@ export default function Campus() {
                   padding: '14px 28px',
                   borderRadius: '50px',
                   textDecoration: 'none',
-                  boxShadow: '0 6px 24px rgba(236,72,153,0.35)',
+                  boxShadow: '0 6px 24px rgba(255,99,71,0.35)',
                   transition: 'all 0.3s ease'
                 }}
               >
@@ -282,24 +282,24 @@ export default function Campus() {
                   background: '#fff',
                   borderRadius: '20px',
                   padding: '32px 28px',
-                  boxShadow: '0 4px 24px rgba(236,72,153,0.08)',
-                  border: '1px solid #fce7f3'
+                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
+                  border: '1px solid #FFD8CC'
                 }}
               >
                 <div
                   style={{
                     width: '52px',
                     height: '52px',
-                    background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)',
+                    background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)',
                     borderRadius: '14px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '20px',
-                    border: '1.5px solid #f9a8d4'
+                    border: '1.5px solid #FFBDAA'
                   }}
                 >
-                  <item.icon size={24} style={{ color: '#ec4899' }} />
+                  <item.icon size={24} style={{ color: '#FF6347' }} />
                 </div>
                 <h3
                   style={{
@@ -378,7 +378,7 @@ export default function Campus() {
                   borderRadius: '20px',
                   padding: '36px 24px',
                   textAlign: 'center',
-                  border: '1.5px solid #fce7f3',
+                  border: '1.5px solid #FFD8CC',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
@@ -390,7 +390,7 @@ export default function Campus() {
                     left: 0,
                     right: 0,
                     height: '4px',
-                    background: 'linear-gradient(90deg, #ec4899, #f9a8d4)'
+                    background: 'linear-gradient(90deg, #FF6347, #FFBDAA)'
                   }}
                 />
                 <div
@@ -398,7 +398,7 @@ export default function Campus() {
                     fontFamily: "'Playfair Display', serif",
                     fontSize: '2rem',
                     fontWeight: 800,
-                    color: '#ec4899',
+                    color: '#FF6347',
                     marginBottom: '8px'
                   }}
                 >
@@ -424,7 +424,7 @@ export default function Campus() {
       <section
         style={{
           padding: '80px 24px',
-          background: 'linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)',
+          background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden'
@@ -495,7 +495,7 @@ export default function Campus() {
               to="/admissions"
               style={{
                 background: '#fff',
-                color: '#be185d',
+                color: '#C4391E',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: '0.97rem',

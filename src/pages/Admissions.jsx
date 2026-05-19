@@ -64,7 +64,7 @@ export default function Admissions() {
                 width: '100%',
                 height: '100%',
                 borderRadius: '20px',
-                background: 'linear-gradient(135deg, #ec4899, #f9a8d4)',
+                background: 'linear-gradient(135deg, #FF6347, #FFBDAA)',
                 zIndex: 0
               }}
             />
@@ -79,7 +79,7 @@ export default function Admissions() {
                 objectFit: 'cover',
                 borderRadius: '20px',
                 display: 'block',
-                boxShadow: '0 24px 60px rgba(236,72,153,0.2)'
+                boxShadow: '0 24px 60px rgba(255,99,71,0.2)'
               }}
             />
             <motion.div
@@ -99,7 +99,7 @@ export default function Admissions() {
                 fontFamily: "'DM Sans', sans-serif"
               }}
             >
-              <div style={{ fontSize: '28px', fontWeight: 700, color: '#ec4899', fontFamily: "'Playfair Display', serif" }}>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>
                 2026–27
               </div>
               <div style={{ fontSize: '13px', color: '#6b5c6e', fontWeight: 500 }}>
@@ -118,7 +118,7 @@ export default function Admissions() {
             <span
               style={{
                 display: 'inline-block',
-                color: '#ec4899',
+                color: '#FF6347',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 fontSize: '13px',
@@ -141,7 +141,7 @@ export default function Admissions() {
               }}
             >
               A School That{' '}
-              <span style={{ color: '#ec4899' }}>Shapes Futures</span>
+              <span style={{ color: '#FF6347' }}>Shapes Futures</span>
             </h2>
 
             <p
@@ -181,7 +181,7 @@ export default function Admissions() {
                   color: '#3d2c40'
                 }}
               >
-                <CheckCircle2 size={20} style={{ color: '#ec4899', flexShrink: 0, marginTop: '2px' }} />
+                <CheckCircle2 size={20} style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }} />
                 <span>{point}</span>
               </motion.div>
             ))}
@@ -199,7 +199,7 @@ export default function Admissions() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  background: '#ec4899',
+                  background: '#FF6347',
                   color: '#fff',
                   fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 600,
@@ -207,7 +207,7 @@ export default function Admissions() {
                   padding: '14px 28px',
                   borderRadius: '50px',
                   textDecoration: 'none',
-                  boxShadow: '0 6px 24px rgba(236,72,153,0.35)',
+                  boxShadow: '0 6px 24px rgba(255,99,71,0.35)',
                   transition: 'all 0.3s ease'
                 }}
               >
@@ -237,21 +237,21 @@ export default function Admissions() {
                   background: '#fff',
                   borderRadius: '20px',
                   padding: '32px 28px',
-                  border: '1px solid #fce7f3',
-                  boxShadow: '0 4px 24px rgba(236,72,153,0.08)',
+                  border: '1px solid #FFD8CC',
+                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
               >
                 <div style={{
                   position: 'absolute', top: 0, left: 0, right: 0, height: '4px',
-                  background: 'linear-gradient(90deg, #ec4899, #f9a8d4)'
+                  background: 'linear-gradient(90deg, #FF6347, #FFBDAA)'
                 }} />
                 <div style={{
                   fontFamily: "'Playfair Display', serif",
                   fontSize: '2.2rem',
                   fontWeight: 700,
-                  color: '#ec4899',
+                  color: '#FF6347',
                   marginBottom: '6px'
                 }}>
                   {item.value}
@@ -290,7 +290,7 @@ export default function Admissions() {
             style={{ textAlign: 'center', marginBottom: '52px' }}
           >
             <span style={{
-              display: 'inline-block', color: '#ec4899',
+              display: 'inline-block', color: '#FF6347',
               fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
               fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px'
             }}>
@@ -322,7 +322,7 @@ export default function Admissions() {
                     background: '#fff',
                     borderRadius: '20px',
                     padding: '32px 24px 28px',
-                    border: '1.5px solid #fce7f3',
+                    border: '1.5px solid #FFD8CC',
                     position: 'relative',
                     overflow: 'hidden'
                   }}
@@ -331,7 +331,7 @@ export default function Admissions() {
                   <div style={{
                     position: 'absolute', top: '20px', right: '20px',
                     width: '32px', height: '32px', borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #ec4899, #f472b6)',
+                    background: 'linear-gradient(135deg, #FF6347, #FF8C6B)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: '#fff', fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 700, fontSize: '0.85rem'
@@ -341,13 +341,13 @@ export default function Admissions() {
 
                   <div style={{
                     width: '52px', height: '52px',
-                    background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)',
+                    background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)',
                     borderRadius: '14px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: '20px',
-                    border: '1.5px solid #f9a8d4'
+                    border: '1.5px solid #FFBDAA'
                   }}>
-                    <Icon size={24} style={{ color: '#ec4899' }} />
+                    <Icon size={24} style={{ color: '#FF6347' }} />
                   </div>
 
                   <h3 style={{
@@ -370,7 +370,7 @@ export default function Admissions() {
                       display: 'none',
                       position: 'absolute', top: '50%', right: '-14px',
                       transform: 'translateY(-50%)',
-                      color: '#ec4899', fontSize: '1.4rem', zIndex: 10
+                      color: '#FF6347', fontSize: '1.4rem', zIndex: 10
                     }}
                       className="lg-arrow"
                     >→</div>
@@ -392,7 +392,7 @@ export default function Admissions() {
             style={{ textAlign: 'center', marginBottom: '52px' }}
           >
             <span style={{
-              display: 'inline-block', color: '#ec4899',
+              display: 'inline-block', color: '#FF6347',
               fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
               fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px'
             }}>
@@ -419,15 +419,15 @@ export default function Admissions() {
                   background: '#fff',
                   borderRadius: '16px',
                   padding: '20px 22px',
-                  border: '1px solid #fce7f3',
-                  boxShadow: '0 4px 16px rgba(236,72,153,0.07)',
+                  border: '1px solid #FFD8CC',
+                  boxShadow: '0 4px 16px rgba(255,99,71,0.07)',
                   display: 'flex', gap: '16px', alignItems: 'flex-start'
                 }}
               >
                 <div style={{
                   flexShrink: 0, width: '42px', height: '42px',
                   borderRadius: '12px',
-                  background: 'linear-gradient(135deg, #ec4899, #f472b6)',
+                  background: 'linear-gradient(135deg, #FF6347, #FF8C6B)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: '#fff', fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 700, fontSize: '0.9rem'
@@ -438,7 +438,7 @@ export default function Admissions() {
                   <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#1a1a2e', marginBottom: '4px' }}>
                     {prog.level}
                   </div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#ec4899', fontWeight: 600, marginBottom: '6px' }}>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#FF6347', fontWeight: 600, marginBottom: '6px' }}>
                     {prog.age}
                   </div>
                   <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#6b5c6e', lineHeight: 1.5 }}>
@@ -458,8 +458,8 @@ export default function Admissions() {
               background: '#fff',
               borderRadius: '20px',
               padding: '36px 32px',
-              border: '1.5px solid #fce7f3',
-              boxShadow: '0 4px 24px rgba(236,72,153,0.08)'
+              border: '1.5px solid #FFD8CC',
+              boxShadow: '0 4px 24px rgba(255,99,71,0.08)'
             }}
           >
             <h4 style={{
@@ -467,7 +467,7 @@ export default function Admissions() {
               fontSize: '1.3rem', fontWeight: 700,
               color: '#1a1a2e', marginBottom: '24px',
               paddingBottom: '14px',
-              borderBottom: '2px solid #ec4899',
+              borderBottom: '2px solid #FF6347',
               display: 'inline-block'
             }}>
               Documents Required
@@ -491,10 +491,10 @@ export default function Admissions() {
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: '0.9rem', color: '#3d2c40',
                     padding: '8px 0',
-                    borderBottom: '1px solid #fce7f3'
+                    borderBottom: '1px solid #FFD8CC'
                   }}
                 >
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ec4899', flexShrink: 0 }} />
+                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
                   {doc}
                 </div>
               ))}
@@ -507,7 +507,7 @@ export default function Admissions() {
       <section
         style={{
           padding: '80px 24px',
-          background: 'linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)',
+          background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden'
@@ -553,7 +553,7 @@ export default function Admissions() {
             <Link
               to="/admission-form"
               style={{
-                background: '#fff', color: '#be185d',
+                background: '#fff', color: '#C4391E',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700, fontSize: '0.97rem',
                 padding: '14px 32px', borderRadius: '50px',
