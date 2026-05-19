@@ -7,7 +7,7 @@ export default function ManagementMessage() {
   const fallbackPhoto = '/images/gallery/founder.png'
 
   return (
-    <section className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
+    <section className="relative bg-[#F9FAFB] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
 
       {/* Soft ambient glows */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-[#FF6347]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-[80px] pointer-events-none" />

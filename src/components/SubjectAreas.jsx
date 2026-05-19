@@ -141,7 +141,7 @@ const subjects = [
 export default function SubjectAreas() {
   return (
     <section style={{
-      background: '#ffffff',
+      background: '#F9FAFB',
       padding: '64px 16px 72px',
       fontFamily: "'DM Sans', sans-serif",
       position: 'relative',

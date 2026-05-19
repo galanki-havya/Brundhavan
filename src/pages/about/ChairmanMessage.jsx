@@ -18,7 +18,7 @@ export default function ChairmanMessage() {
   const { chairman } = siteData
 
   return (
-    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <PageHero
@@ -29,7 +29,7 @@ export default function ChairmanMessage() {
       />
 
       {/* ── Main Section ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div
           style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'start' }}
           className="chair-grid"
@@ -116,7 +116,7 @@ export default function ChairmanMessage() {
 
             {/* Quote card */}
             <div style={{
-              background: '#fff', borderRadius: '14px', padding: '22px 26px',
+              background: '#F9FAFB', borderRadius: '14px', padding: '22px 26px',
               border: '1px solid #f0f0f0', borderLeft: '3px solid #FF6347',
               marginBottom: '28px',
               boxShadow: '0 2px 16px rgba(0,0,0,0.04)'
@@ -151,7 +151,7 @@ export default function ChairmanMessage() {
       </section>
 
       {/* ── Vision Quote ── */}
-      <section style={{ padding: '60px 24px', background: '#fff', textAlign: 'center' }}>
+      <section style={{ padding: '60px 24px', background: '#F9FAFB', textAlign: 'center' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <motion.h2
             initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }}
@@ -168,7 +168,7 @@ export default function ChairmanMessage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+      <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
           <SectionLabel>Get Started</SectionLabel>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>

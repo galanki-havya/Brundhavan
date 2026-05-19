@@ -9,7 +9,7 @@ import PageHero from '../../components/PageHero'
 
 export default function Safety() {
   return (
-    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <Helmet>
@@ -25,7 +25,7 @@ export default function Safety() {
       />
 
       {/* ── Split Section ── */}
-      <section style={{ background: '#fff', padding: '80px 0' }}>
+      <section style={{ background: '#F9FAFB', padding: '80px 0' }}>
         <div style={{
           maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
           display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center'
@@ -122,7 +122,7 @@ export default function Safety() {
       </section>
 
       {/* ── Safety at a Glance Cards ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export default function Safety() {
       </section>
 
       {/* ── Security Infrastructure ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ export default function Safety() {
                 initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.1 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 28px',
+                  background: '#F9FAFB', borderRadius: '18px', padding: '32px 28px',
                   border: '1px solid #f0f0f0',
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                 }}
@@ -233,7 +233,7 @@ export default function Safety() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+      <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
             <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />

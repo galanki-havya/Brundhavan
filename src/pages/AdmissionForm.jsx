@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 
 export default function AdmissionForm() {
   const [form, setForm] = useState({
-    studentName: '',
-    dob: '',
-    gender: '',
-    classApplying: '',
-    fatherName: '',
-    motherName: '',
-    phone: '',
-    email: '',
-    address: '',
-    previousSchool: '',
-    message: ''
+    studentName: '', dob: '', gender: '', classApplying: '',
+    fatherName: '', motherName: '', phone: '', email: '',
+    address: '', previousSchool: '', message: ''
   })
-
   const [submitted, setSubmitted] = useState(false)
+
+  const inputStyle = {
+    padding: '12px 16px',
+    borderRadius: '10px',
+    border: '1px solid #e0e0e0',
+    fontSize: '0.95rem',
+    width: '100%',
+    outline: 'none'
+  }
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -26,111 +26,63 @@ export default function AdmissionForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
     if (!form.studentName || !form.phone || !form.classApplying) {
-      alert("Please fill required fields")
+      alert("Please fill all required fields marked with *")
       return
     }
-
     setSubmitted(true)
   }
 
   return (
-    <div className="min-h-screen bg-primary-50 pt-28 pb-10 px-4">
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '120px 24px 80px', fontFamily: "'DM Sans', sans-serif" }}>
       <Helmet>
-        <title>Online Admission Form - Brindavan School</title>
+        <title>Online Admission Form - Brindavan Schools</title>
       </Helmet>
 
-      <div className="max-w-4xl mx-auto">
-
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-charcoal-900">
-            Online Admission Form
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', color: '#011E3A', marginBottom: '12px' }}>
+            Online Admission
           </h1>
-          <p className="text-charcoal-600 mt-2">
-            Fill in the details carefully to apply for admission
-          </p>
+          <p style={{ color: '#666' }}>Begin your journey with us by filling out the details below.</p>
         </div>
 
         {submitted ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="bg-green-50 border border-green-200 p-8 rounded-2xl text-center"
-          >
-            <h2 className="text-2xl font-bold text-green-700">Application Submitted!</h2>
-            <p className="text-charcoal-600 mt-2">
-              We will contact you shortly regarding admission.
-            </p>
-
-            <Link
-              to="/"
-              className="inline-block mt-6 bg-gradient-to-r from-primary-700 to-primary-900 text-white px-6 py-3 rounded-full font-semibold hover:from-primary-800 hover:to-primary-950 transition"
-            >
-              Back to Home
-            </Link>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ background: '#fff', padding: '60px', borderRadius: '24px', textAlign: 'center', border: '1px solid #f0f0f0' }}>
+            <h2 style={{ color: '#011E3A', marginBottom: '16px' }}>Application Received!</h2>
+            <p style={{ color: '#666', marginBottom: '24px' }}>Our team will reach out to you shortly regarding the next steps.</p>
+            <Link to="/" style={{ background: '#FF6347', color: '#fff', padding: '12px 30px', borderRadius: '50px', textDecoration: 'none', fontWeight: 600 }}>Back to Home</Link>
           </motion.div>
         ) : (
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white shadow-md border border-gold-100 rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-5"
-          >
-
-            {/* Student Info */}
-            <input name="studentName" onChange={handleChange} placeholder="Student Name *" className="input" />
-
-            <input type="date" name="dob" onChange={handleChange} className="input" />
-
-            <select name="gender" onChange={handleChange} className="input">
+          <motion.form onSubmit={handleSubmit} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
+            style={{ background: '#fff', padding: '40px', borderRadius: '24px', border: '1px solid #f0f0f0', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            
+            <input name="studentName" onChange={handleChange} placeholder="Student Name *" style={inputStyle} />
+            <input type="date" name="dob" onChange={handleChange} style={inputStyle} />
+            <select name="gender" onChange={handleChange} style={inputStyle}>
               <option value="">Select Gender</option>
               <option>Male</option>
               <option>Female</option>
-              <option>Other</option>
             </select>
-
-            <select name="classApplying" onChange={handleChange} className="input">
+            <select name="classApplying" onChange={handleChange} style={inputStyle}>
               <option value="">Class Applying For *</option>
-              {["Nursery","LKG","UKG","1","2","3","4","5","6","7","8","9","10"].map(c => (
-                <option key={c}>{c}</option>
-              ))}
+              {["Nursery","LKG","UKG","1","2","3","4","5","6","7","8","9","10"].map(c => <option key={c}>{c}</option>)}
             </select>
 
-            {/* Parent Info */}
-            <input name="fatherName" onChange={handleChange} placeholder="Father Name" className="input" />
-            <input name="motherName" onChange={handleChange} placeholder="Mother Name" className="input" />
+            <input name="fatherName" onChange={handleChange} placeholder="Father Name" style={inputStyle} />
+            <input name="motherName" onChange={handleChange} placeholder="Mother Name" style={inputStyle} />
+            <input name="phone" onChange={handleChange} placeholder="Phone Number *" style={inputStyle} />
+            <input name="email" onChange={handleChange} placeholder="Email Address" style={inputStyle} />
+            <input name="previousSchool" onChange={handleChange} placeholder="Previous School" style={{ ...inputStyle, gridColumn: 'span 2' }} />
+            <textarea name="address" onChange={handleChange} placeholder="Address" style={{ ...inputStyle, gridColumn: 'span 2' }} rows={2} />
+            <textarea name="message" onChange={handleChange} placeholder="Additional Message" style={{ ...inputStyle, gridColumn: 'span 2' }} rows={3} />
 
-            <input name="phone" onChange={handleChange} placeholder="Phone *" className="input" />
-            <input name="email" onChange={handleChange} placeholder="Email" className="input" />
-
-            <input name="previousSchool" onChange={handleChange} placeholder="Previous School" className="input md:col-span-2" />
-
-            <textarea
-              name="address"
-              onChange={handleChange}
-              placeholder="Address"
-              className="input md:col-span-2"
-              rows={2}
-            />
-
-            <textarea
-              name="message"
-              onChange={handleChange}
-              placeholder="Additional Message"
-              className="input md:col-span-2"
-              rows={3}
-            />
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="md:col-span-2 bg-gradient-to-r from-primary-700 to-primary-900 text-white py-3 rounded-xl font-semibold hover:from-primary-800 hover:to-primary-950 shadow-md transition"
-            >
+            <button type="submit" style={{ 
+              gridColumn: 'span 2', background: '#011E3A', color: '#fff', padding: '16px', 
+              borderRadius: '12px', fontWeight: 700, border: 'none', cursor: 'pointer', marginTop: '10px' 
+            }}>
               Submit Application
             </button>
-
           </motion.form>
         )}
       </div>

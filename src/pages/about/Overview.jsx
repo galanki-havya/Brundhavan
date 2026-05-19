@@ -6,7 +6,7 @@ import { Target, ShieldCheck, Lightbulb, Heart, Sprout, Users, CheckCircle2, Arr
 
 export default function AboutOverview() {
   return (
-    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <Helmet>
@@ -21,7 +21,7 @@ export default function AboutOverview() {
       />
 
       {/* ── Split Section ── */}
-      <section style={{ background: '#fff', padding: '80px 0' }}>
+      <section style={{ background: '#F9FAFB', padding: '80px 0' }}>
         <div style={{
           maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
           display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center'
@@ -115,7 +115,7 @@ export default function AboutOverview() {
       </section>
 
       {/* ── Why Parents Choose Us ── */}
-      <section style={{ padding: '80px 0', background: '#fcfaf6' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
 
           <motion.div
@@ -162,7 +162,7 @@ export default function AboutOverview() {
       </section>
 
       {/* ── Core Values ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
 
           <motion.div
@@ -210,7 +210,7 @@ export default function AboutOverview() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+      <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
             <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
