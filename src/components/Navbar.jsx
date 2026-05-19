@@ -22,7 +22,6 @@ const mainLinks = [
       { to: '/events/co-curricular', label: 'Co-Curricular' },
       { to: '/events/communication-public-speaking', label: 'Communication & Public Speaking' },
       { to: '/events/festival-fun', label: 'Festival Fun' },
-      { to: '/events/gallery', label: 'Events Gallery' },
 
     ],
   },
