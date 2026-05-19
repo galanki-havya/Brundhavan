@@ -14,16 +14,18 @@ const THEME = {
   }
 };
 
+// ── FIXED: replaced all `var(--e-global-color-10113fb)` with `var(--ff-bg)`
+//    and declared it in :root so it works in plain React/Vite apps ──
 const GLOBAL_CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-:root { --e-global-color-10113fb: #FFFFFF; }
+:root { --ff-bg: #FFFFFF; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background-color: var(--e-global-color-10113fb) !important; }
-body { background: var(--e-global-color-10113fb) !important; font-family: 'DM Sans', sans-serif; color: #071A2F; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; background-color: var(--ff-bg) !important; }
+body { background: var(--ff-bg) !important; font-family: 'DM Sans', sans-serif; color: #071A2F; -webkit-font-smoothing: antialiased; }
 
 .ff-display { font-family: 'Playfair Display', serif; }
-.ff-body    { font-family: 'DM Sans', sans-serif; background: var(--e-global-color-10113fb); }
+.ff-body    { font-family: 'DM Sans', sans-serif; background: var(--ff-bg); }
 
 .ff-btn { border: none; outline: none; cursor: pointer; transition: all 0.2s ease-in-out; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; justify-content: center; }
 .ff-btn-primary { background: #C9922A; color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -33,13 +35,13 @@ body { background: var(--e-global-color-10113fb) !important; font-family: 'DM Sa
 .ff-btn-back { background: #fff; color: #071A2F; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; border: 1px solid #E2E8F0; }
 .ff-btn-back:hover { background: #F8FAFC; }
 
-.ff-hero { width: 100%; padding: 5rem 3rem 3rem; background: var(--e-global-color-10113fb) !important; border-bottom: 1px solid #E2E8F0; }
+.ff-hero { width: 100%; padding: 5rem 3rem 3rem; background: var(--ff-bg) !important; border-bottom: 1px solid #E2E8F0; }
 .ff-hero-content { max-width: 680px; }
 .ff-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; color: #C9922A; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-.ff-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; background: var(--e-global-color-10113fb); }
+.ff-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; background: var(--ff-bg); }
 
-.ff-card { background: var(--e-global-color-10113fb) !important; border-radius: 20px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; position: relative; border: 1px solid transparent; outline: 4px solid var(--card-accent-dark); box-shadow: 0 12px 24px rgba(7,26,47,0.06); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+.ff-card { background: var(--ff-bg) !important; border-radius: 20px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; position: relative; border: 1px solid transparent; outline: 4px solid var(--card-accent-dark); box-shadow: 0 12px 24px rgba(7,26,47,0.06); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
 .ff-card:hover { transform: translateY(-8px); box-shadow: 0 20px 32px rgba(7,26,47,0.12); }
 
 .ff-card-img-wrap { position: relative; width: 100%; padding-top: 65%; overflow: hidden; background-color: #F1F5F9; }
@@ -63,10 +65,10 @@ body { background: var(--e-global-color-10113fb) !important; font-family: 'DM Sa
 
 .ff-lightbox { position: fixed; inset: 0; background: rgba(7,26,47,0.96); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 2rem; }
 .ff-lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.ff-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; cursor: pointer; }
+.ff-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; cursor: pointer; line-height: 1; }
 
 .ff-section-eyebrow { color: #C9922A; text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
-.ff-gallery-header { background: var(--e-global-color-10113fb) !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid #E2E8F0; }
+.ff-gallery-header { background: var(--ff-bg) !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid #E2E8F0; }
 
 @media (max-width: 768px) {
   .ff-hero, .ff-gallery-header { padding: 4rem 1.5rem 2rem; }
@@ -217,8 +219,8 @@ function Lightbox({ image, onClose }) {
 
   if (!image) return null;
   return (
-    <div className="ff-lightbox" onClick={onClose}>
-      <button className="ff-lightbox-close" onClick={onClose}>×</button>
+    <div className="ff-lightbox" onClick={onClose} role="dialog" aria-modal="true">
+      <button className="ff-lightbox-close" onClick={onClose} aria-label="Close lightbox">×</button>
       <img src={image} alt="Enlarged view" onClick={(e) => e.stopPropagation()} />
     </div>
   );
@@ -230,6 +232,9 @@ function FestivalCard({ item, onClick }) {
       className="ff-card"
       onClick={onClick}
       style={{ "--card-accent-dark": item.accentDark, "--card-bg-down": item.bgDown }}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onClick(); }}
     >
       <div className="ff-card-img-wrap">
         <span className="ff-badge-pill" style={{ color: item.accentDark }}>{item.subtitle}</span>
@@ -253,7 +258,7 @@ function FestivalCard({ item, onClick }) {
         <p style={{ color: THEME.colors.textMuted, lineHeight: 1.6, fontSize: 13.5, marginBottom: 24, fontWeight: 500 }}>
           {item.description}
         </p>
-        <div className="ff-accent-line"></div>
+        <div className="ff-accent-line" />
         <div className="ff-card-arrow">
           <span>View Gallery</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -268,9 +273,9 @@ function FestivalCard({ item, onClick }) {
 function GalleryView({ item, onBack, onLightbox }) {
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
   return (
-    <div style={{ background: "var(--e-global-color-10113fb)" }}>
+    <div style={{ background: "var(--ff-bg)" }}>
       <div className="ff-gallery-header">
-        <button className="ff-btn ff-btn-back" onClick={onBack} style={{ marginBottom: "1.5rem", gap: 8 }}>
+        <button className="ff-btn ff-btn-back" onClick={onBack} style={{ marginBottom: "1.5rem" }}>
           ← Back to Festivals
         </button>
         <div>
@@ -282,11 +287,11 @@ function GalleryView({ item, onBack, onLightbox }) {
             {item.title} Gallery
           </h1>
           <p style={{ color: THEME.colors.textMuted, fontSize: 14, marginTop: 4 }}>
-            Showing {item.gallery.length} collection images
+            Showing {item.gallery.length} collection image{item.gallery.length !== 1 ? "s" : ""}
           </p>
         </div>
       </div>
-      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: "var(--e-global-color-10113fb)" }}>
+      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: "var(--ff-bg)" }}>
         {item.gallery.length > 0 ? (
           <div className="ff-masonry">
             {item.gallery.map((src, i) => (
@@ -295,6 +300,10 @@ function GalleryView({ item, onBack, onLightbox }) {
                 key={i}
                 onClick={() => onLightbox(src)}
                 style={{ border: `2px solid ${item.bgDown}` }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Open ${item.title} image ${i + 1}`}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onLightbox(src); }}
               >
                 <img
                   src={src}
@@ -326,11 +335,11 @@ export default function FestivalFun() {
   return (
     <>
       <style>{GLOBAL_CSS}</style>
-      <div className="ff-body" style={{ background: "var(--e-global-color-10113fb)" }}>
+      <div className="ff-body" style={{ background: "var(--ff-bg)" }}>
         {selected ? (
           <GalleryView item={selected} onBack={() => setSelected(null)} onLightbox={setLightbox} />
         ) : (
-          <div style={{ background: "var(--e-global-color-10113fb)" }}>
+          <div style={{ background: "var(--ff-bg)" }}>
             <section className="ff-hero">
               <div className="ff-hero-content">
                 <div className="ff-hero-eyebrow">
@@ -357,7 +366,7 @@ export default function FestivalFun() {
               </div>
             </section>
 
-            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: "var(--e-global-color-10113fb)" }}>
+            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: "var(--ff-bg)" }}>
               <div style={{ marginBottom: "2.5rem" }}>
                 <p className="ff-section-eyebrow">Celebrating Together</p>
                 <h2
