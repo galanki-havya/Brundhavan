@@ -1,106 +1,210 @@
 import { Link } from 'react-router-dom'
-import { Phone, Mail } from 'lucide-react'
+import { Phone, Mail, Sparkles } from 'lucide-react'
 
 export default function AdmissionsBanner() {
   return (
     <div
       className="
         fixed top-0 left-0 w-full z-[100]
-        bg-gradient-to-r
-        from-primary-800
-        via-primary-700
-        to-primary-900
-        text-white
-        shadow-[0_4px_20px_rgba(13,35,72,0.25)]
         overflow-hidden
-        border-b border-secondary-400/20
       "
+      style={{
+        background: 'linear-gradient(90deg, #fff0f7 0%, #ffffff 40%, #fff0f7 100%)',
+        borderBottom: '1px solid rgba(236,72,153,0.2)',
+        boxShadow: '0 4px 32px rgba(236,72,153,0.13)',
+        backdropFilter: 'blur(16px)',
+      }}
     >
-      {/* Gold Accent Line */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-secondary-400 via-yellow-300 to-secondary-400 opacity-90" />
+      {/* ── Top gradient stripe — bolder pink ── */}
+      <div style={{
+        position: 'absolute', top: 0, left: 0, width: '100%', height: 4,
+        background: 'linear-gradient(90deg, #be185d 0%, #EC4899 35%, #f472b6 60%, #EC4899 80%, #be185d 100%)',
+      }} />
 
-      {/* Soft Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+      {/* ── Pink glow wash across the whole bar ── */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'linear-gradient(90deg, rgba(236,72,153,0.06) 0%, rgba(255,255,255,0) 50%, rgba(236,72,153,0.06) 100%)',
+        pointerEvents: 'none',
+      }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[var(--top-banner)] flex items-center justify-between gap-6 relative z-10">
+      {/* ── Orb left ── */}
+      <div style={{
+        position: 'absolute', top: -20, left: -10,
+        width: 120, height: 120, borderRadius: '50%',
+        background: 'rgba(236,72,153,0.18)',
+        filter: 'blur(36px)', pointerEvents: 'none',
+      }} />
 
-        {/* LEFT: Marquee */}
-        <div className="flex items-center gap-4 flex-1 overflow-hidden">
+      {/* ── Orb right ── */}
+      <div style={{
+        position: 'absolute', top: -16, right: -10,
+        width: 140, height: 140, borderRadius: '50%',
+        background: 'rgba(190,24,93,0.13)',
+        filter: 'blur(40px)', pointerEvents: 'none',
+      }} />
 
-          <div className="whitespace-nowrap animate-marquee text-[11px] sm:text-xs md:text-sm tracking-wide font-medium text-primary-100">
+      <style>{`
+        @keyframes marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .banner-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 28s linear infinite;
+          white-space: nowrap;
+        }
+        .banner-marquee:hover { animation-play-state: paused; }
 
-            <span className="text-secondary-300 font-semibold">
-              🎓 Admissions Open 2026–27
-            </span>
+        .banner-sep {
+          margin: 0 14px;
+          color: rgba(236,72,153,0.45);
+          font-size: 11px;
+        }
 
-            <span className="mx-3 text-white/30">•</span>
+        .apply-btn {
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, #be185d 0%, #EC4899 50%, #f472b6 100%);
+          color: #fff;
+          font-size: 12px;
+          font-weight: 700;
+          padding: 7px 20px;
+          border-radius: 100px;
+          border: none;
+          cursor: pointer;
+          transition: transform .2s ease, box-shadow .2s ease;
+          box-shadow: 0 6px 20px rgba(236,72,153,0.45), 0 2px 8px rgba(190,24,93,0.3);
+          letter-spacing: 0.02em;
+          white-space: nowrap;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+        }
+        .apply-btn:hover {
+          transform: scale(1.06);
+          box-shadow: 0 10px 28px rgba(236,72,153,0.55), 0 4px 12px rgba(190,24,93,0.35);
+        }
+        .apply-btn:active { transform: scale(0.97); }
+        .apply-btn .shine {
+          position: absolute; inset: 0;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transform: translateX(-120%);
+          transition: transform 1s ease;
+        }
+        .apply-btn:hover .shine { transform: translateX(120%); }
 
-            State Board School in Palamaner
+        .contact-link {
+          display: flex; align-items: center; gap: 5px;
+          font-size: 11px; font-weight: 500;
+          color: #6b5c6e;
+          text-decoration: none;
+          transition: color .2s ease;
+        }
+        .contact-link:hover { color: #EC4899; }
+        .contact-link svg { width: 13px; height: 13px; }
 
-            <span className="mx-3 text-white/30">•</span>
+        @media (max-width: 640px) {
+          .banner-contacts { display: none !important; }
+        }
+      `}</style>
 
-            Smart Classrooms • Labs • Sports Facilities
+      {/* ── INNER ROW ── */}
+      <div style={{
+        maxWidth: 1280, margin: '0 auto',
+        padding: '0 16px',
+        height: 'var(--top-banner, 44px)',
+        display: 'flex', alignItems: 'center',
+        justifyContent: 'space-between', gap: 16,
+        position: 'relative', zIndex: 10,
+      }}>
 
-            <span className="mx-3 text-white/30">•</span>
+        {/* ── LEFT: scrolling marquee ── */}
+        <div style={{ flex: 1, overflow: 'hidden', minWidth: 0 }}>
+          <div className="banner-marquee" style={{
+            fontSize: 12, fontWeight: 500,
+            fontFamily: "'DM Sans', sans-serif",
+          }}>
+            {/* duplicate for seamless loop */}
+            {[0, 1].map(dupe => (
+              <span key={dupe} style={{ display: 'inline-flex', alignItems: 'center' }}>
 
-            Transport Available
+                <span style={{
+                  color: '#EC4899', fontWeight: 800, fontSize: 12.5,
+                  background: 'rgba(236,72,153,0.09)',
+                  border: '1px solid rgba(236,72,153,0.25)',
+                  borderRadius: 100,
+                  padding: '1px 10px',
+                  marginRight: 6,
+                }}>🎓 Admissions Open 2026–27</span>
 
-            <span className="mx-3 text-white/30">•</span>
+                <span className="banner-sep">◆</span>
 
-            Limited Seats — Apply Early
+                <span style={{ color: '#3D332A' }}>Best State Board School in Palamaner</span>
+
+                <span className="banner-sep">◆</span>
+
+                <span style={{ color: '#3D332A' }}>Smart Classrooms · Labs · Sports Facilities</span>
+
+                <span className="banner-sep">◆</span>
+
+                <span style={{ color: '#3D332A' }}>Transport Available</span>
+
+                <span className="banner-sep">◆</span>
+
+                <span style={{
+                  color: '#be185d', fontWeight: 700, fontSize: 12.5,
+                  background: 'rgba(190,24,93,0.07)',
+                  border: '1px solid rgba(190,24,93,0.2)',
+                  borderRadius: 100,
+                  padding: '1px 10px',
+                  marginRight: 6,
+                }}>⚡ Limited Seats — Apply Early</span>
+
+                <span className="banner-sep">◆</span>
+
+              </span>
+            ))}
           </div>
-
         </div>
 
-        {/* RIGHT: Contact + CTA */}
-        <div className="flex items-center gap-5 shrink-0">
+        {/* ── RIGHT: contacts + CTA ── */}
+        <div style={{
+          display: 'flex', alignItems: 'center',
+          gap: 16, flexShrink: 0,
+        }}>
 
-          {/* Contact */}
-          <div className="hidden md:flex items-center gap-3 text-[11px] sm:text-xs text-primary-100/90">
-
-            <a
-              href="tel:+919121914631"
-              className="flex items-center gap-1 hover:text-secondary-300 transition-colors duration-300"
-            >
-              <Phone className="w-3 h-3" />
+          {/* contact links */}
+          <div className="banner-contacts" style={{
+            display: 'flex', alignItems: 'center', gap: 12,
+          }}>
+            <a href="tel:+919121914631" className="contact-link">
+              <Phone />
               +91 91219 14631
             </a>
-
-            <span className="text-white/20">|</span>
-
-            <a
-              href="mailto:brindavanschool334@gmail.com"
-              className="flex items-center gap-1 hover:text-secondary-300 transition-colors duration-300"
-            >
-              <Mail className="w-3 h-3" />
+            <div style={{ width: 1, height: 14, background: 'rgba(236,72,153,0.3)' }} />
+            <a href="mailto:brindavanschool334@gmail.com" className="contact-link">
+              <Mail />
               brindavanschool334@gmail.com
             </a>
-
           </div>
 
-          {/* CTA Button */}
-          <Link
-            to="/admissions"
-            className="
-              bg-secondary-400
-              hover:bg-secondary-300
-              active:scale-95
-              text-primary-900
-              text-xs sm:text-sm
-              font-bold
-              px-5 py-1.5
-              rounded-full
-              transition-all duration-300
-              shadow-lg
-              hover:shadow-secondary-400/30
-              whitespace-nowrap
-            "
-          >
-            Apply Now →
+          {/* CTA */}
+          <Link to="/admissions" className="apply-btn">
+            <div className="shine" />
+            <span style={{ position: 'relative', zIndex: 1 }}>Apply Now →</span>
           </Link>
 
         </div>
       </div>
+
+      {/* ── Bottom pink hairline ── */}
+      <div style={{
+        position: 'absolute', bottom: 0, left: 0, width: '100%', height: 1,
+        background: 'linear-gradient(90deg, transparent, rgba(236,72,153,0.35), transparent)',
+      }} />
     </div>
   )
 }

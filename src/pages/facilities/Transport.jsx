@@ -2,286 +2,162 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
-import { Bus, Shield, Clock, MapPin } from 'lucide-react'
+import { Bus, Shield, Clock, MapPin, CheckCircle2, ArrowRight } from 'lucide-react'
 import transportImg from '../../assets/Facilties/1.jpg'
 import transportRightImg from '../../assets/rightimages/1.jpg'
 
 export default function Transport() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+    <div
+      className="min-h-screen"
+      style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}
+    >
       <Helmet>
         <title>Transport - Brindavan Schools</title>
         <meta name="description" content="Safe and reliable school transport services with GPS tracking and professional drivers." />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Helmet>
+
       <PageHero
         title="Transport"
         subtitle="Safe and reliable school transport services with GPS tracking and professional drivers."
         backgroundImage={transportImg}
+        variant="pink"
         fullOpacity={true}
         objectPosition="object-top"
         showOverlay={false}
       />
 
-      {/* ── MAIN INTRODUCTION SECTION ── */}
-      <section 
-        className="py-24 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #EEF6FF 0%, #FFF8EE 50%, #F0FFF4 100%)' }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      {/* ── Split Section ── */}
+      <section style={{ background: '#fff', padding: '80px 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
 
-            {/* Left: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm"
-                style={{ background: '#DBEAFE', color: '#1D4ED8' }}
-              >
-                <Bus className="w-4 h-4" />
-                Safe Commute
-              </div>
-
-              <h2 className="font-display font-bold text-4xl md:text-5xl leading-tight" style={{ color: '#0D1B3E' }}>
-                Reliable & Safe <br />
-                School <span className="text-[#C89B3C]">Transportation</span>
-              </h2>
-
-              <div className="space-y-5 text-lg font-body leading-relaxed text-slate-600">
-                <p>
-                  We understand that safety is the highest priority for parents. Brindavan School offers a highly secure and reliable school transport network covering Palamaner and adjacent rural areas.
-                </p>
-                <p>
-                  Our modern fleet of school buses is equipped with GPS real-time tracking, speed governors, and first-aid kits. Each bus is staffed by certified, professional drivers and attentive helpers to ensure a smooth, worry-free commute daily.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-5 pt-4">
-                <Link
-                  to="/contact"
-                  className="font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-xl shadow-[#C89B3C]/20 hover:scale-105 inline-flex items-center gap-2"
-                  style={{ background: '#C89B3C', color: '#0D1B3E' }}
-                >
-                  Request Route Info
-                </Link>
-                <Link
-                  to="/facilities"
-                  className="px-8 py-4 rounded-full font-bold border-2 transition-all duration-300 hover:bg-[#1D4ED8] hover:text-white inline-flex items-center gap-2"
-                  style={{ borderColor: '#1D4ED8', color: '#1D4ED8' }}
-                >
-                  All Facilities
-                </Link>
-              </div>
+          <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '20px', left: '20px', width: '100%', height: '100%', borderRadius: '20px', background: 'linear-gradient(135deg, #ec4899, #f9a8d4)', zIndex: 0 }} />
+            <img src={transportRightImg} alt="School Transport" style={{ position: 'relative', zIndex: 1, width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block', boxShadow: '0 24px 60px rgba(236,72,153,0.2)' }} />
+            <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2, background: '#fff', borderRadius: '16px', padding: '16px 24px', boxShadow: '0 8px 32px rgba(0,0,0,0.12)', fontFamily: "'DM Sans', sans-serif" }}>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: '#ec4899', fontFamily: "'Playfair Display', serif" }}>100%</div>
+              <div style={{ fontSize: '13px', color: '#6b5c6e', fontWeight: 500 }}>Safe Commutes</div>
             </motion.div>
+          </motion.div>
 
-            {/* Right: Interactive Image Stack */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="relative h-[500px] group">
-                <div className="absolute inset-0 bg-[#C89B3C] rounded-[2rem] rotate-3 group-hover:rotate-1 transition-transform duration-500" />
-                <img
-                  src={transportRightImg}
-                  alt="School Transport"
-                  className="relative z-10 w-full h-full object-cover rounded-[2rem] shadow-2xl transition-transform duration-500 group-hover:-translate-x-2 group-hover:-translate-y-2"
-                />
-                
-                {/* Floating Stat Card */}
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="absolute -bottom-8 -left-8 z-20 bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-[#DBEAFE] flex items-center justify-center">
-                      <Bus className="w-7 h-7 text-[#1D4ED8]" />
-                    </div>
-                    <div>
-                      <div className="text-3xl font-display font-bold text-[#0D1B3E]">100%</div>
-                      <div className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Safe Commutes</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+          <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <span style={{ display: 'inline-block', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Safe Commute</span>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', lineHeight: 1.2, marginBottom: '20px' }}>
+              Reliable & Safe{' '}<span style={{ color: '#ec4899' }}>School Transportation</span>
+            </h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', color: '#6b5c6e', lineHeight: 1.8, marginBottom: '12px' }}>
+              We understand that safety is the highest priority for parents. Brindavan School offers a highly secure and reliable transport network covering Palamaner and surrounding areas.
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', color: '#6b5c6e', lineHeight: 1.8, marginBottom: '28px' }}>
+              Our modern fleet is equipped with GPS real-time tracking, speed governors, and first-aid kits. Each bus is staffed by certified drivers and attentive helpers for a worry-free daily commute.
+            </p>
+            {['GPS real-time tracking on all buses', 'Certified, professional drivers & helpers', 'Speed governors for controlled, safe travel', 'First aid kits & emergency communication', 'Wide route coverage across Palamaner area'].map((point, i) => (
+              <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 + 0.2 }} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontFamily: "'DM Sans', sans-serif", fontSize: '0.95rem', color: '#3d2c40' }}>
+                <CheckCircle2 size={20} style={{ color: '#ec4899', flexShrink: 0, marginTop: '2px' }} /><span>{point}</span>
+              </motion.div>
+            ))}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 }} style={{ marginTop: '32px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#ec4899', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.95rem', padding: '14px 28px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 6px 24px rgba(236,72,153,0.35)' }}>Request Route Info <ArrowRight size={18} /></Link>
+              <Link to="/facilities" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', border: '2px solid #ec4899', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.95rem', padding: '14px 28px', borderRadius: '50px', textDecoration: 'none' }}>All Facilities</Link>
             </motion.div>
-
-          </div>
+          </motion.div>
         </div>
       </section>
-      
-      {/* Transport Features */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      {/* ── Feature Cards ── */}
+      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Transport at a Glance</h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem' }}>Every journey designed with your child's safety in mind</p>
+          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
             {[
-              {
-                icon: Bus,
-                title: "Modern Fleet",
-                description: "Well-maintained buses with latest safety features and comfortable seating"
-              },
-              {
-                icon: Shield,
-                title: "Safety First",
-                description: "GPS tracking, trained drivers, and comprehensive safety protocols"
-              },
-              {
-                icon: Clock,
-                title: "Punctual Service",
-                description: "Reliable pickup and drop-off timings with minimal delays"
-              },
-              {
-                icon: MapPin,
-                title: "Wide Coverage",
-                description: "Extensive route network covering the entire Palamaner area"
-              }
+              { icon: Bus, title: 'Modern Fleet', description: 'Well-maintained buses with latest safety features and comfortable seating arrangements.' },
+              { icon: Shield, title: 'Safety First', description: 'GPS tracking, trained drivers, and comprehensive safety protocols on every route.' },
+              { icon: Clock, title: 'Punctual Service', description: 'Reliable pickup and drop-off timings with minimal delays and consistent scheduling.' },
+              { icon: MapPin, title: 'Wide Coverage', description: 'Extensive route network covering Palamaner town and all surrounding villages.' }
             ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-gold-600" />
+              <motion.div key={item.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', boxShadow: '0 4px 24px rgba(236,72,153,0.08)', border: '1px solid #fce7f3' }}>
+                <div style={{ width: '52px', height: '52px', background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '1.5px solid #f9a8d4' }}>
+                  <item.icon size={24} style={{ color: '#ec4899' }} />
                 </div>
-                <h3 className="text-xl font-display font-semibold text-charcoal-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-charcoal-600">
-                  {item.description}
-                </p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '10px' }}>{item.title}</h3>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '0.93rem', lineHeight: 1.7, margin: 0 }}>{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Safety & Comfort */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal-900 mb-4">
-              Safety & Comfort Features
-            </h2>
-            <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-              Comprehensive measures ensuring the highest standards of student safety and comfort
-            </p>
+      {/* ── Safety & Comfort Two-Col ── */}
+      <section style={{ padding: '80px 0', background: '#fff' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Safety & Comfort Features</h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem', maxWidth: '500px', margin: '0 auto' }}>Comprehensive measures ensuring the highest standards of student safety and comfort</p>
           </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ x: -30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h3 className="text-2xl font-display font-semibold text-charcoal-900">Safety Measures</h3>
-              <ul className="space-y-3">
-                {["GPS Tracking System", "Speed Governors", "Emergency Communication", "First Aid Kits", "Fire Extinguishers", "Seat Belts"].map(feature => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-charcoal-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ x: 30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h3 className="text-2xl font-display font-semibold text-charcoal-900">Comfort Features</h3>
-              <ul className="space-y-3">
-                {["Air-conditioned Buses", "Comfortable Seating", "Audio Entertainment", "Reading Lights", "Clean Interiors", "Temperature Control"].map(feature => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-charcoal-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Routes & Timings */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-charcoal-900 mb-4">
-              Route Information
-            </h2>
-            <p className="text-xl text-charcoal-600">
-              Comprehensive coverage with multiple routes and flexible timings
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
             {[
-              {
-                title: "Route Coverage",
-                details: ["Palamaner Town", "Nearby Villages", "Residential Areas", "Commercial Zones", "Industrial Areas"]
-              },
-              {
-                title: "Timings",
-                details: ["Morning Pickup: 7:00 AM - 8:30 AM", "Evening Drop-off: 2:00 PM - 4:00 PM", "Flexible Scheduling", "Holiday Services"]
-              },
-              {
-                title: "Additional Services",
-                details: ["Special Needs Transport", "Medical Emergency Support", "Weather Contingency", "Route Optimization"]
-              }
-            ].map((info, index) => (
-              <motion.div
-                key={info.title}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
-              >
-                <h3 className="text-2xl font-display font-semibold text-charcoal-900 mb-6">
-                  {info.title}
-                </h3>
-                <ul className="space-y-2">
-                  {info.details.map(detail => (
-                    <li key={detail} className="flex items-center gap-2 text-sm text-charcoal-700">
-                      <div className="w-1.5 h-1.5 bg-gold-500 rounded-full"></div>
-                      {detail}
-                    </li>
+              { title: 'Safety Measures', items: ['GPS Tracking System', 'Speed Governors', 'Emergency Communication', 'First Aid Kits', 'Fire Extinguishers', 'Seat Belts'], accent: '#ec4899' },
+              { title: 'Comfort Features', items: ['Air-conditioned Buses', 'Comfortable Seating', 'Audio Entertainment', 'Reading Lights', 'Clean Interiors', 'Temperature Control'], accent: '#f472b6' }
+            ].map((col, ci) => (
+              <motion.div key={col.title} initial={{ opacity: 0, x: ci === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '36px 32px', border: '1.5px solid #fce7f3' }}>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '24px', paddingBottom: '16px', borderBottom: `2px solid ${col.accent}`, display: 'inline-block' }}>{col.title}</h3>
+                <div style={{ marginTop: '8px' }}>
+                  {col.items.map(item => (
+                    <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 0', borderBottom: '1px solid #fce7f3', fontFamily: "'DM Sans', sans-serif", color: '#3d2c40', fontSize: '0.95rem' }}>
+                      <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: col.accent, flexShrink: 0 }} />{item}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
- 
+      {/* ── Route Info ── */}
+      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Route Information</h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem' }}>Comprehensive coverage with multiple routes and flexible timings</p>
+          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            {[
+              { title: 'Route Coverage', details: ['Palamaner Town', 'Nearby Villages', 'Residential Areas', 'Commercial Zones', 'Industrial Areas'] },
+              { title: 'Timings', details: ['Morning Pickup: 7:00 AM – 8:30 AM', 'Evening Drop-off: 2:00 PM – 4:00 PM', 'Flexible Scheduling', 'Holiday Services'] },
+              { title: 'Additional Services', details: ['Special Needs Transport', 'Medical Emergency Support', 'Weather Contingency', 'Route Optimization'] }
+            ].map((info, i) => (
+              <motion.div key={info.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.15 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.08)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '20px' }}>{info.title}</h3>
+                {info.details.map(d => (
+                  <div key={d} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 0', borderBottom: '1px solid #fce7f3', fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#3d2c40' }}>
+                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#ec4899', flexShrink: 0 }} />{d}
+                  </div>
+                ))}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '280px', height: '280px', borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
+        <div style={{ position: 'absolute', bottom: '-40px', left: '10%', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
+        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: 800, color: '#fff', marginBottom: '16px', lineHeight: 1.2 }}>Safe, Reliable Transport Every Day</motion.h2>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.85)', fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.7 }}>GPS-tracked, professionally staffed school buses ensuring your child travels safely every single day.</motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/contact" style={{ background: '#fff', color: '#be185d', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 8px 30px rgba(0,0,0,0.15)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Request Route Info <ArrowRight size={17} /></Link>
+            <Link to="/admission-form" style={{ border: '2px solid rgba(255,255,255,0.8)', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Enrol Today</Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   )
 }

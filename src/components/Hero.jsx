@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-slate-950 -mt-24 md:-mt-28">
+    <section className="relative w-full h-screen overflow-hidden">
 
       {/* RAW HD VIDEO */}
-      <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
+      <div className="absolute inset-0 z-0 w-full h-full select-none pointer-events-none">
         <video
           autoPlay
           muted
@@ -21,31 +21,31 @@ export default function Hero() {
 
       {/* CONTENT BOTTOM-RIGHT ALIGNED */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex items-end justify-end pb-16 md:pb-24">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl text-right flex flex-col items-end"
         >
-          
-          {/* ROYAL BLUE BADGE */}
-          <div className="inline-flex items-center gap-2 mb-4 bg-[#002b5c]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#c5a059]/30 shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]"></span>
-            <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-[#fdfcf0] font-bold">
+
+          {/* PINK BADGE */}
+          <div className="inline-flex items-center gap-2 mb-4 bg-pink-600/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-pink-300/40 shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-pink-200"></span>
+            <span className="text-[10px] md:text-xs tracking-[0.15em] uppercase text-white font-bold">
               Brindavan School &bull; Palamaner
             </span>
           </div>
 
-          {/* HEADLINE - IVORY CREAM & METALLIC GOLD */}
+          {/* HEADLINE - IVORY & PINK GRADIENT */}
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[#fdfcf0]">
             Learning Today,{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#c5a059] to-[#b8860b]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-pink-300 to-rose-300">
               Leading Tomorrow.
             </span>
           </h1>
 
-          {/* SUBTEXT - MUTED IVORY */}
-          <p className="mt-2 text-xs md:text-sm text-[#fdfcf0]/80 font-medium tracking-wide">
+          {/* SUBTEXT - PINK TINTED */}
+          <p className="mt-2 text-xs md:text-sm text-pink-200 font-medium tracking-wide">
             Education with Ethics & Traditions
           </p>
 
@@ -53,14 +53,14 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center justify-end gap-3">
             <Link
               to="/about/overview"
-              className="px-5 py-2 text-xs md:text-sm rounded-full border border-[#fdfcf0]/30 bg-white/5 backdrop-blur-md text-[#fdfcf0] font-semibold hover:bg-[#fdfcf0] hover:text-[#002b5c] transition-all duration-300"
+              className="px-5 py-2 text-xs md:text-sm rounded-full border border-pink-400/60 bg-pink-500/10 backdrop-blur-md text-pink-100 font-semibold hover:bg-pink-500 hover:text-white hover:border-pink-500 transition-all duration-300"
             >
               Explore Campus
             </Link>
 
             <Link
               to="/admissions"
-              className="px-6 py-2 text-xs md:text-sm rounded-full bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-[#002b5c] font-bold tracking-wide transition-all duration-300 shadow-lg hover:brightness-110"
+              className="px-6 py-2 text-xs md:text-sm rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold tracking-wide transition-all duration-300 shadow-lg shadow-pink-500/30 hover:brightness-110 hover:shadow-pink-500/50"
             >
               Apply Online
             </Link>

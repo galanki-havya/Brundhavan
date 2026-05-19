@@ -1,320 +1,136 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageHero from '../../components/PageHero'
-import {
-  Target,
-  Eye,
-  Heart,
-  Lightbulb,
-  ArrowRight,
-  Sparkles,
-  Globe,
-  ShieldCheck,
-} from 'lucide-react'
-import ScienceDay from '/images/gallery/ScienceDay/1.jpg'
-
+import { Target, Eye, Heart, Lightbulb, ArrowRight, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react'
 
 const missionCards = [
-  { icon: '📚', title: 'Academic Excellence',    desc: 'Strong conceptual learning with modern teaching methodologies and practical understanding.', from: '#FFF4DE', to: '#FFE1B5', accent: '#D97706' },
-  { icon: '💪', title: 'Character Building',     desc: 'Instilling discipline, responsibility, leadership, and moral values in every student.',       from: '#E8FFF1', to: '#C9F7D8', accent: '#15803D' },
-  { icon: '🎯', title: 'Holistic Development',   desc: 'Encouraging excellence in academics, sports, arts, communication, and creativity.',           from: '#F1EBFF', to: '#DDD0FF', accent: '#6D28D9' },
-  { icon: '🤝', title: 'Inclusive Learning',     desc: 'Creating equal opportunities and a supportive learning environment for all students.',         from: '#FFF7E8', to: '#FCE7B7', accent: '#A16207' },
-  { icon: '🔬', title: 'Innovation & Technology',desc: 'Smart classrooms and future-ready learning experiences for modern education.',                 from: '#FFE8F1', to: '#FFD0E4', accent: '#BE185D' },
-  { icon: '🌍', title: 'Global Perspective',     desc: 'Preparing students to become confident and responsible global citizens.',                      from: '#E7F8FF', to: '#C9F1FF', accent: '#0369A1' },
+  { icon: '📚', title: 'Academic Excellence',     desc: 'Strong conceptual learning with modern teaching methodologies and practical understanding.' },
+  { icon: '💪', title: 'Character Building',      desc: 'Instilling discipline, responsibility, leadership, and moral values in every student.' },
+  { icon: '🎯', title: 'Holistic Development',    desc: 'Encouraging excellence in academics, sports, arts, communication, and creativity.' },
+  { icon: '🤝', title: 'Inclusive Learning',      desc: 'Creating equal opportunities and a supportive learning environment for all students.' },
+  { icon: '🔬', title: 'Innovation & Technology', desc: 'Smart classrooms and future-ready learning experiences for modern education.' },
+  { icon: '🌍', title: 'Global Perspective',      desc: 'Preparing students to become confident and responsible global citizens.' },
 ]
 
 const principles = [
-  { icon: Heart,      title: 'Student First',          desc: 'Every decision at Brindavan is centered around the growth, happiness, and success of our students.',              bg: 'from-[#FFF1F2] to-[#FFE4E6]', color: '#E11D48' },
-  { icon: ShieldCheck,title: 'Safe Environment',        desc: 'A secure and disciplined campus that gives students the confidence to learn and grow freely.',                    bg: 'from-[#EEF2FF] to-[#E0E7FF]', color: '#4338CA' },
-  { icon: Globe,      title: 'Future Readiness',        desc: 'Helping students adapt to the changing world with creativity, confidence, and communication skills.',             bg: 'from-[#ECFDF5] to-[#D1FAE5]', color: '#059669' },
-  { icon: Lightbulb, title: 'Continuous Innovation',   desc: 'Enhancing learning experiences with creative teaching methods and technology integration.',                       bg: 'from-[#FFF8E7] to-[#FDE68A]', color: '#B45309' },
+  { icon: Heart,       title: 'Student First',       desc: 'Every decision at Brindavan is centered around the growth, happiness, and success of our students.' },
+  { icon: ShieldCheck, title: 'Safe Environment',    desc: 'A secure and disciplined campus that gives students the confidence to learn and grow freely.' },
+  { icon: Globe,       title: 'Future Readiness',    desc: 'Helping students adapt to the changing world with creativity, confidence, and communication skills.' },
+  { icon: Lightbulb,  title: 'Continuous Innovation',desc: 'Enhancing learning experiences with creative teaching methods and technology integration.' },
 ]
 
 export default function VisionMission() {
   return (
-    <>
+    <div style={{ background: '#fdf6f9', fontFamily: "'Playfair Display', 'Georgia', serif" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
+
       <PageHero
         title="Vision & Mission"
         subtitle="The values, purpose, and aspirations that guide Brindavan School toward educational excellence."
         backgroundImage="/images/gallery/ScienceDay/1.jpg"
+        variant="pink"
       />
 
-      {/* ───────────────── VISION SECTION ───────────────── */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #FFFDF8 0%, #F5F9FF 50%, #FFF8EC 100%)' }}
-      >
-        {/* Background Orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#1B3A8A] opacity-[0.08] blur-3xl" />
-          <div className="absolute -bottom-32 -right-32 w-[420px] h-[420px] rounded-full bg-[#D4A843] opacity-[0.12] blur-3xl" />
-        </div>
+      {/* ── Vision Split Section ── */}
+      <section style={{ background: '#fff', padding: '80px 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
 
-        {/* Dot Grid */}
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'radial-gradient(circle, #1B3A8A 1px, transparent 1px)', backgroundSize: '34px 34px' }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            {/* LEFT */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="space-y-7"
-            >
-              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#FFF1D6] border border-[#F6D488] text-[#A36B00] text-sm font-semibold shadow-sm">
-                <Eye className="w-4 h-4" />
-                Our Vision
-              </div>
-
-              <h2 className="font-display font-bold text-4xl md:text-5xl leading-tight text-[#0F2560]">
-                Inspiring Students to Become{' '}
-                <span style={{ background: 'linear-gradient(135deg, #D4A843 0%, #C89B3C 50%, #A36B00 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                  Future Leaders
-                </span>
-              </h2>
-
-              <p className="text-[#475569] leading-relaxed text-lg">
-                At Brindavan School, our vision is to nurture confident, compassionate, and capable learners who excel academically, embrace strong values, and contribute positively to society.
-              </p>
-
-              <p className="text-[#64748B] leading-relaxed">
-                We aim to create an inspiring educational environment where students discover their true potential through innovation, creativity, discipline, and holistic development.
-              </p>
-
-              {/* Highlight Card */}
-              <div className="relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur-md border border-[#E8D4A2] p-7 shadow-[0_10px_40px_rgba(15,37,96,0.08)]">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D4A843] via-[#F0C75E] to-[#C89B3C]" />
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#FFF4D8] flex items-center justify-center shrink-0">
-                    <Sparkles className="w-7 h-7 text-[#C89B3C]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#0F2560] mb-2">Our Long-Term Goal</h3>
-                    <p className="text-[#475569] leading-relaxed">
-                      To build a generation of knowledgeable, ethical, innovative, and socially responsible individuals ready to thrive in a rapidly evolving world.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          {/* Image / Vision Card Side */}
+          <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '20px', left: '20px', width: '100%', height: '100%', borderRadius: '20px', background: 'linear-gradient(135deg, #ec4899, #f9a8d4)', zIndex: 0 }} />
+            <img
+              src="/images/gallery/ScienceDay/1.jpg"
+              alt="Vision at Brindavan"
+              style={{ position: 'relative', zIndex: 1, width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block', boxShadow: '0 24px 60px rgba(236,72,153,0.2)' }}
+            />
+            <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2, background: '#fff', borderRadius: '16px', padding: '16px 24px', boxShadow: '0 8px 32px rgba(0,0,0,0.12)', fontFamily: "'DM Sans', sans-serif" }}>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: '#ec4899', fontFamily: "'Playfair Display', serif" }}>2025</div>
+              <div style={{ fontSize: '13px', color: '#6b5c6e', fontWeight: 500 }}>Founded</div>
             </motion.div>
+          </motion.div>
 
-            {/* RIGHT */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative"
-            >
-              <div className="relative overflow-hidden rounded-[36px] p-10 bg-gradient-to-br from-[#1B3A8A] via-[#153070] to-[#0F2560] text-white shadow-[0_25px_60px_rgba(15,37,96,0.35)]">
-                <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#D4A843] opacity-20 blur-3xl" />
-                <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-[#60A5FA] opacity-20 blur-3xl" />
-
-                <div className="relative z-10">
-                  <div className="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 mb-8">
-                    <Eye className="w-10 h-10 text-[#F0C75E]" />
-                  </div>
-                  <div className="w-16 h-1 rounded-full bg-gradient-to-r from-[#D4A843] to-[#F0C75E] mb-6" />
-
-                  {/* ✅ FIX 1: "Looking Beyond Academics" — bright gold so it's clearly visible on dark blue */}
-                  <h3
-                    className="text-3xl font-bold mb-5"
-                    style={{
-                      color: '#FFE082',
-                      textShadow: '0 2px 14px rgba(255,224,130,0.35)',
-                    }}
-                  >
-                    Looking Beyond Academics
-                  </h3>
-
-                  <p className="text-white/80 leading-relaxed text-lg">
-                    Our educational philosophy goes beyond textbooks. We focus on nurturing creativity, leadership, communication skills, emotional intelligence, and confidence in every child.
-                  </p>
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-2 gap-5 mt-10">
-                    {[
-                      ['Founded', '2025'],
-                      ['Modern Campus', 'Smart Learning'],
-                      ['Focus', 'Holistic Growth'],
-                      ['Environment', 'Safe & Caring'],
-                    ].map((item, i) => (
-                      <div key={i} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4">
-                        <div className="text-[#F0C75E] text-sm font-semibold mb-1">{item[0]}</div>
-                        <div className="text-white text-sm">{item[1]}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-      </motion.section>
-
-      {/* ───────────────── MISSION SECTION ───────────────── */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #10224D 0%, #0F2560 40%, #1B3A8A 100%)' }}
-      >
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-[#D4A843] opacity-[0.12] blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#60A5FA] opacity-[0.10] blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#D4A843]/10 border border-[#D4A843]/30 text-[#F0C75E] text-sm font-semibold mb-6">
-              <Target className="w-4 h-4" />
-              Our Mission
-            </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-5">
-              Empowering Every Child to Succeed
+          {/* Text Side */}
+          <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+            <span style={{ display: 'inline-block', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Our Vision</span>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', lineHeight: 1.2, marginBottom: '20px' }}>
+              Inspiring Students to Become{' '}<span style={{ color: '#ec4899' }}>Future Leaders</span>
             </h2>
-            <p className="max-w-3xl mx-auto text-white/70 text-lg leading-relaxed">
-              We strive to provide a nurturing and innovative environment where every student develops academically, emotionally, socially, and ethically.
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', color: '#6b5c6e', lineHeight: 1.8, marginBottom: '12px' }}>
+              At Brindavan School, our vision is to nurture confident, compassionate, and capable learners who excel academically, embrace strong values, and contribute positively to society.
             </p>
-          </div>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', color: '#6b5c6e', lineHeight: 1.8, marginBottom: '28px' }}>
+              We aim to create an inspiring educational environment where students discover their true potential through innovation, creativity, discipline, and holistic development.
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Highlight card */}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} style={{ background: '#fdf6f9', borderRadius: '16px', padding: '24px', border: '1.5px solid #fce7f3', marginBottom: '28px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
+              <h4 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#1a1a2e', fontSize: '1rem', marginBottom: '8px' }}>Our Long-Term Goal</h4>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#6b5c6e', lineHeight: 1.6, margin: 0 }}>To build a generation of knowledgeable, ethical, innovative, and socially responsible individuals ready to thrive in a rapidly evolving world.</p>
+            </motion.div>
+
+            <Link to="/admissions" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#ec4899', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.95rem', padding: '14px 28px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 6px 24px rgba(236,72,153,0.35)' }}>
+              Apply Now <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Mission Cards ── */}
+      <section style={{ padding: '80px 0', background: '#fdf6f9' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <span style={{ display: 'inline-block', color: '#ec4899', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Our Mission</span>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Empowering Every Child to Succeed</h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>We strive to provide a nurturing and innovative environment where every student develops academically, emotionally, socially, and ethically.</p>
+          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
             {missionCards.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -8 }}
-                className="relative overflow-hidden rounded-[28px] p-7 border border-white/40 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.10)]"
-                style={{ background: `linear-gradient(135deg, ${item.from} 0%, ${item.to} 100%)` }}
-              >
-                <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-white/30 blur-3xl" />
-                <div className="relative z-10">
-                  <div className="text-4xl mb-5">{item.icon}</div>
-                  <h3 className="text-xl font-bold mb-3" style={{ color: item.accent }}>{item.title}</h3>
-                  <p className="text-[#475569] leading-relaxed">{item.desc}</p>
-                </div>
+              <motion.div key={i} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '20px', padding: '32px 28px', border: '1px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.08)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #ec4899, #f9a8d4)' }} />
+                <div style={{ fontSize: '2.4rem', marginBottom: '16px' }}>{item.icon}</div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '10px' }}>{item.title}</h3>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* ───────────────── CORE PRINCIPLES ───────────────── */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #FFFDF7 0%, #F6F9FF 50%, #FFF6E8 100%)' }}
-      >
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'radial-gradient(circle, #1B3A8A 1px, transparent 1px)', backgroundSize: '36px 36px' }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <div className="inline-block w-20 h-1 rounded-full bg-gradient-to-r from-[#D4A843] via-[#F0C75E] to-[#C89B3C] mb-6" />
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0F2560] mb-4">Core Principles</h2>
-            <p className="max-w-2xl mx-auto text-[#64748B] text-lg">
-              The values that shape our educational culture and guide every learning experience at Brindavan School.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {principles.map((item, i) => {
-              const Icon = item.icon
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className={`relative overflow-hidden rounded-[30px] bg-gradient-to-br ${item.bg} p-8 border border-white/60 shadow-[0_10px_40px_rgba(0,0,0,0.06)]`}
-                >
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/40 rounded-full blur-3xl" />
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur-md flex items-center justify-center mb-6 shadow-md">
-                      <Icon size={30} style={{ color: item.color }} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-[#0F2560] mb-3">{item.title}</h3>
-                    <p className="text-[#475569] leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* ───────────────── CTA SECTION ───────────────── */}
-      <section className="relative overflow-hidden py-24 bg-gradient-to-br from-[#0F2560] via-[#153070] to-[#1B3A8A] text-white">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-20 left-0 w-[320px] h-[320px] rounded-full bg-[#D4A843] opacity-[0.18] blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-[320px] h-[320px] rounded-full bg-[#60A5FA] opacity-[0.12] blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#F0C75E]" />
-            <p className="uppercase tracking-[0.28em] text-[#F0C75E] text-[11px] font-bold">
-              Vidya Dadathi Vinayam
-            </p>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#F0C75E]" />
-          </div>
-
-          {/* ✅ FIX 2: "Join Our Educational Mission" — bright white instead of default white (which was blending) */}
-          <h2
-            className="text-4xl md:text-5xl font-display font-bold mb-6"
-            style={{
-              color: '#FFF8E1',
-              textShadow: '0 2px 20px rgba(255,248,225,0.25)',
-            }}
-          >
-            Join Our Educational Mission
-          </h2>
-
-          <p className="text-white/75 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            Become a part of Brindavan School and help your child grow in an environment built on excellence, values, innovation, and holistic learning.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-5">
-            <Link
-              to="/admissions"
-              className="group inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105"
-              style={{ background: 'linear-gradient(135deg, #D4A843 0%, #C89B3C 100%)', color: '#0F2560', boxShadow: '0 10px 30px rgba(212,168,67,0.35)' }}
-            >
-              Apply Now
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-semibold border border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 hover:scale-105"
-            >
-              Contact Us
-            </Link>
+      {/* ── Core Principles Two-Col ── */}
+      <section style={{ padding: '80px 0', background: '#fff' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Core Principles</h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem', maxWidth: '500px', margin: '0 auto' }}>The values that shape our educational culture and guide every learning experience.</p>
+          </motion.div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+            {principles.map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ background: '#fdf6f9', borderRadius: '20px', padding: '32px 28px', border: '1.5px solid #fce7f3', boxShadow: '0 4px 24px rgba(236,72,153,0.07)' }}>
+                <div style={{ width: '52px', height: '52px', background: 'linear-gradient(135deg, #fce7f3, #fdf2f8)', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '1.5px solid #f9a8d4' }}>
+                  <item.icon size={24} style={{ color: '#ec4899' }} />
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '10px' }}>{item.title}</h3>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-    </>
+
+      {/* ── CTA ── */}
+      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #be185d 0%, #ec4899 50%, #f472b6 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '280px', height: '280px', borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
+        <div style={{ position: 'absolute', bottom: '-40px', left: '10%', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
+        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: 800, color: '#fff', marginBottom: '16px', lineHeight: 1.2 }}>Join Our Educational Mission</motion.h2>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.85)', fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.7 }}>Become part of Brindavan School and help your child grow in an environment built on excellence, values, innovation, and holistic learning.</motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/admissions" style={{ background: '#fff', color: '#be185d', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 8px 30px rgba(0,0,0,0.15)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Apply Now <ArrowRight size={17} /></Link>
+            <Link to="/contact" style={{ border: '2px solid rgba(255,255,255,0.8)', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Contact Us</Link>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   )
 }

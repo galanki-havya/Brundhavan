@@ -2,391 +2,509 @@ import { motion } from 'framer-motion'
 
 const logo = '/logo.png'
 
-const intelligences = [
-  { label: 'Linguistic',             icon: '📖' },
-  { label: 'Logical-Mathematical',   icon: '🔢' },
-  { label: 'Spatial',                icon: '🧭' },
-  { label: 'Bodily-Kinesthetic',     icon: '🤸' },
-  { label: 'Musical',                icon: '🎵' },
-  { label: 'Interpersonal',          icon: '🤝' },
-  { label: 'Intrapersonal',          icon: '🪞' },
-  { label: 'Naturalistic',           icon: '🌿' },
-  { label: 'Emotional Intelligence', icon: '💛' },
-]
+// ── DATA ─────────────────────────────────────────────────────────────────────
 
-// Fix 4: Petal-spectrum pastels — maps to your logo flower colors
-const intelligencePastels = [
-  'rgba(239,68,68,0.08)',    // red
-  'rgba(30,64,175,0.08)',    // royal blue
-  'rgba(16,185,129,0.08)',   // green
-  'rgba(236,72,153,0.08)',   // pink
-  'rgba(234,179,8,0.08)',    // yellow
-  'rgba(14,165,233,0.08)',   // sky
-  'rgba(139,92,246,0.08)',   // purple
-  'rgba(34,197,94,0.08)',    // lime
-  'rgba(245,158,11,0.08)',   // amber
+const intelligences = [
+  { short: 'Words & Language',   icon: '📚', color: '#C9A84C' },
+  { short: 'Numbers & Logic',    icon: '🔢', color: '#3B82F6' },
+  { short: 'Space & Sight',      icon: '🧭', color: '#22C55E' },
+  { short: 'Body & Movement',    icon: '🤸', color: '#EC4899' },
+  { short: 'Sound & Rhythm',     icon: '🎵', color: '#F59E0B' },
+  { short: 'People & Empathy',   icon: '🤝', color: '#0EA5E9' },
+  { short: 'Self & Reflection',  icon: '🪞', color: '#8B5CF6' },
+  { short: 'Nature & Patterns',  icon: '🌿', color: '#10B981' },
+  { short: 'Meaning & Purpose',  icon: '✨', color: '#EC4899' },
 ]
 
 const logoElements = [
-  {
-    color: '#E63946',
-    label: 'The Flame',
-    desc: 'Symbolises the eternal pursuit of knowledge and the burning spirit of inquiry in every child.',
-  },
-  {
-    color: '#C89B3C',
-    label: 'The Open Book',
-    desc: 'Represents academic excellence, curiosity, and a lifelong love of learning.',
-  },
-  {
-    color: '#22C55E',
-    label: 'The Banyan Tree',
-    desc: 'Rooted in Indian heritage, it stands for strength, shelter, and a nurturing community.',
-  },
-  {
-    color: '#0EA5E9',
-    label: 'The Nine Petals',
-    desc: "Nine petals mirror Howard Gardner's nine intelligences — every child's unique genius celebrated.",
-  },
-  {
-    color: '#8B5CF6',
-    label: 'The Gold Ring',
-    desc: 'A circle of unity, wholeness, and the unbreakable bond between school, student, and family.',
-  },
+  { color: '#E63946', icon: '🔥', label: 'The Flame',
+    desc: 'Symbolises the eternal pursuit of knowledge and the burning spirit of inquiry — igniting curiosity in every child.' },
+  { color: '#C9A84C', icon: '📖', label: 'The Open Book',
+    desc: 'Represents academic excellence, intellectual curiosity, and a lifelong love of learning that extends beyond the classroom.' },
+  { color: '#22C55E', icon: '🌳', label: 'The Banyan Tree',
+    desc: 'Rooted in rich Indian heritage, it stands for enduring strength, shelter, and a deeply nurturing school community.' },
+  { color: '#EC4899', icon: '🌸', label: 'The Nine Petals',
+    desc: "Nine petals mirror Howard Gardner's nine intelligences — every child's unique genius recognised and celebrated." },
+  { color: '#C9A84C', icon: '⭕', label: 'The Gold Ring',
+    desc: 'A circle of unity, wholeness, and the unbreakable bond between school, student, family, and community.' },
 ]
+
+const coreValues = [
+  { color: '#E63946', text: 'Discipline with compassion' },
+  { color: '#C9A84C', text: 'Academic rigour with creativity' },
+  { color: '#EC4899', text: 'Community, character, and confidence' },
+]
+
+const fadeUp    = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }
+const fadeLeft  = { hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }
+const fadeRight = { hidden: { opacity: 0, x:  20 }, visible: { opacity: 1, x: 0 } }
+
+// ── COMPONENT ─────────────────────────────────────────────────────────────────
 
 export default function LogoMeaning() {
   return (
-    <section
-      style={{
-        // Fix 1: Remove old beige gradient → clean white + subtle royal blue radial glow
-        background: `
-          radial-gradient(circle at top, rgba(30,64,175,0.06) 0%, transparent 45%),
-          linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)
-        `,
-        padding: '36px 18px 42px',
-        fontFamily: "'Lora', Georgia, serif",
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
+    <section style={{
+      background: '#FDFAF5',
+      padding: '80px 24px 100px',
+      fontFamily: "'Outfit', sans-serif",
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap');
 
-        .lm-sans  { font-family: 'DM Sans', sans-serif; }
-        .lm-serif { font-family: 'Lora', Georgia, serif; }
+        .lm-orb {
+          position: absolute;
+          border-radius: 50%;
+          pointer-events: none;
+          filter: blur(90px);
+        }
 
-        .single-layout {
+        .lm-grid {
           display: grid;
-          grid-template-columns: 0.9fr 1.1fr;
-          gap: 24px;
+          grid-template-columns: 380px 1fr;
+          gap: 28px;
           align-items: start;
-          max-width: 1120px;
+          max-width: 1060px;
           margin: 0 auto;
         }
-
-        /* Fix 2: Remove old-paper feel → modern glass-light card */
-        .premium-card {
-          background: rgba(255,255,255,0.95);
-          border: 1px solid rgba(226,232,240,0.8);
-          box-shadow:
-            0 10px 30px rgba(2,6,23,0.06),
-            0 2px 10px rgba(2,6,23,0.04);
-          transition:
-            transform .35s ease,
-            box-shadow .35s ease,
-            border-color .35s ease;
+        @media (max-width: 920px) {
+          .lm-grid { grid-template-columns: 1fr; }
         }
 
-        .premium-hover:hover {
-          transform: translateY(-3px);
-          box-shadow:
-            0 14px 28px rgba(30,64,175,0.10),
-            0 6px 14px rgba(0,0,0,0.04);
-          border-color: rgba(30,64,175,0.18);
+        .lm-left-card {
+          background: #fff;
+          border: 1px solid rgba(0,0,0,0.07);
+          border-radius: 24px;
+          padding: 32px 24px 28px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+          position: relative;
+          overflow: hidden;
         }
 
-        @media (max-width: 900px) {
-          .single-layout { grid-template-columns: 1fr !important; }
+        .intel-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+          width: 100%;
+        }
+
+        .intel-pill {
+          border-radius: 14px;
+          padding: 12px 8px;
+          border: 1px solid rgba(0,0,0,0.06);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 84px;
+          text-align: center;
+          transition: transform .25s ease, box-shadow .25s ease;
+          cursor: default;
+        }
+        .intel-pill:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .el-card {
+          background: #fff;
+          border: 1px solid rgba(0,0,0,0.07);
+          border-radius: 16px;
+          display: flex;
+          gap: 14px;
+          align-items: flex-start;
+          padding: 16px 18px;
+          transition: transform .25s ease, box-shadow .25s ease;
+          cursor: default;
+        }
+        .el-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+        }
+
+        .lm-rule {
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+          margin: 18px 0;
+        }
+
+        @keyframes spinCW  { to { transform: rotate( 360deg); } }
+        @keyframes spinCCW { to { transform: rotate(-360deg); } }
+
+        .cv-row {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 9px 14px;
+          border-radius: 10px;
+          background: #FDFAF5;
+          border: 1px solid rgba(0,0,0,0.06);
         }
       `}</style>
 
-      {/* ── HEADING ── */}
+      {/* subtle ambient orbs */}
+      <div className="lm-orb" style={{ width:340, height:340, top:-80,  left:-60,  background:'rgba(201,168,76,0.06)' }} />
+      <div className="lm-orb" style={{ width:280, height:280, bottom:-60, right:-40, background:'rgba(236,72,153,0.05)' }} />
+
+      {/* ══ HEADING ══ */}
       <motion.div
-        className="lm-sans"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        style={{ textAlign: 'center', marginBottom: 28, position: 'relative', zIndex: 1 }}
+        variants={fadeUp} initial="hidden" whileInView="visible"
+        viewport={{ once: true }} transition={{ duration: 0.55 }}
+        style={{ textAlign:'center', marginBottom:52, position:'relative', zIndex:1 }}
       >
-        {/* Glow halo — now royal blue instead of gold */}
-        <div style={{
-          position: 'absolute', width: 160, height: 160,
-          background: 'rgba(30,64,175,0.07)', filter: 'blur(60px)', borderRadius: '50%',
-          top: -30, left: '50%', transform: 'translateX(-50%)', zIndex: 0,
-        }} />
-        <p style={{
-          fontSize: 10, fontWeight: 700, letterSpacing: '0.2em',
-          textTransform: 'uppercase',
-          // Eyebrow: royal blue instead of bronze
-          color: '#1E3A8A',
-          marginBottom: 6,
-          position: 'relative', zIndex: 1,
-        }}>Our Identity</p>
-        <h2 className="lm-serif" style={{
-          fontSize: 'clamp(22px, 2.8vw, 32px)', fontWeight: 700,
-          // Heading: deep navy instead of warm brown
-          color: '#0F172A',
-          lineHeight: 1.2, margin: '0 auto 8px',
-          position: 'relative', zIndex: 1,
-          letterSpacing: '-0.03em',
+        <div style={{ display:'inline-flex', alignItems:'center', gap:8, marginBottom:12 }}>
+          <div style={{ width:24, height:1, background:'#EC4899', opacity:.5 }} />
+          <span style={{
+            fontSize:10, fontWeight:600, letterSpacing:'3px',
+            textTransform:'uppercase', color:'#EC4899',
+          }}>Our Identity</span>
+          <div style={{ width:24, height:1, background:'#EC4899', opacity:.5 }} />
+        </div>
+
+        <h2 style={{
+          fontFamily:"'Cormorant Garamond', serif",
+          fontSize:'clamp(1.9rem,3.5vw,2.8rem)',
+          fontWeight:700, color:'#1A1612',
+          lineHeight:1.12, letterSpacing:'-0.02em',
+          margin:'0 0 12px',
         }}>
-          Meaning Behind the Logo
+          Meaning Behind the{' '}
+          <em style={{ fontStyle:'italic', color:'#C9A84C' }}>Logo</em>
         </h2>
+
         <p style={{
-          // Subtext: neutral slate, not warm beige
-          color: '#475569', fontSize: 13, maxWidth: 460,
-          margin: '0 auto', lineHeight: 1.6, position: 'relative', zIndex: 1,
+          fontSize:14, fontWeight:300, color:'#7A6A5A',
+          maxWidth:480, margin:'0 auto', lineHeight:1.8,
         }}>
-          Every element in the Brindavan School logo tells a story of values,
-          learning, and the future we build for each child.
+          Every element in the Brindavan School logo tells a story — of values, vision,
+          and the future we shape for each extraordinary child.
         </p>
       </motion.div>
 
-      {/* ── SINGLE SCREEN LAYOUT ── */}
-      <div className="single-layout" style={{ position: 'relative', zIndex: 1 }}>
+      {/* ══ MAIN GRID ══ */}
+      <div className="lm-grid" style={{ position:'relative', zIndex:1 }}>
 
-        {/* ── LEFT: Logo + Nine Intelligences ── */}
+        {/* ── LEFT: Logo + Intelligences ── */}
         <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="premium-card"
-          style={{
-            borderRadius: 32,
-            // Fix 3: Left card top border → royal blue (was gold)
-            borderTop: '4px solid #1E3A8A',
-            padding: '28px 24px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'relative',
-          }}
+          variants={fadeLeft} initial="hidden" whileInView="visible"
+          viewport={{ once: true }} transition={{ duration: 0.55 }}
+          className="lm-left-card"
         >
-          {/* Logo circle with float animation */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ position: 'relative', display: 'inline-flex', marginBottom: 14 }}
-          >
-            {/* Dashed ring stays gold — correct brand accent */}
+          {/* pink + gold top stripe */}
+          <div style={{
+            position:'absolute', top:0, left:0, right:0, height:3,
+            background:'linear-gradient(90deg, #EC4899, #C9A84C)',
+            borderRadius:'24px 24px 0 0',
+          }} />
+
+          {/* Logo orbit */}
+          <div style={{ position:'relative', marginBottom:18, marginTop:8 }}>
             <div style={{
-              position: 'absolute', inset: -10, borderRadius: '50%',
-              border: '2px dashed #C89B3C', opacity: 0.45,
+              position:'absolute', inset:-16,
+              borderRadius:'50%',
+              border:'1.5px dashed rgba(201,168,76,0.28)',
+              animation:'spinCW 28s linear infinite',
             }} />
             <div style={{
-              width: 175,
-              height: 175,
-              borderRadius: '50%',
-              // Inner circle: clean white, remove warm cream gradient
-              background: 'linear-gradient(145deg, #ffffff 0%, #EEF4FF 100%)',
-              border: '4px solid rgba(255,255,255,0.95)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              overflow: 'hidden',
-              // Shadow: blue tint instead of gold
-              boxShadow: '0 14px 40px rgba(30,64,175,0.14)',
-              position: 'relative',
-            }}>
-              <img
-                src={logo}
-                alt="Brindavan School Logo"
-                style={{
-                  width: 148, height: 148, objectFit: 'contain',
-                  filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.10))',
-                }}
-              />
-            </div>
-          </motion.div>
+              position:'absolute', inset:-4,
+              borderRadius:'50%',
+              border:'1px solid rgba(236,72,153,0.15)',
+              animation:'spinCCW 20s linear infinite',
+            }} />
 
-          {/* School name */}
-          <div style={{ textAlign: 'center', marginBottom: 18 }}>
-            <p className="lm-serif" style={{
-              fontSize: 22, fontWeight: 700,
-              color: '#0F172A',
-              letterSpacing: '-0.02em', marginBottom: 4,
+            <motion.div
+              animate={{ y:[0,-6,0] }}
+              transition={{ duration:4, repeat:Infinity, ease:'easeInOut' }}
+              style={{
+                width:160, height:160,
+                borderRadius:'50%',
+                background:'#fff',
+                border:'2px solid rgba(255,255,255,0.9)',
+                display:'flex', alignItems:'center', justifyContent:'center',
+                overflow:'hidden',
+                boxShadow:'0 10px 36px rgba(0,0,0,0.09), 0 0 0 1px rgba(201,168,76,0.1)',
+              }}
+            >
+              <img
+                src={logo} alt="Brindavan School Logo"
+                style={{ width:136, height:136, objectFit:'contain',
+                  filter:'drop-shadow(0 3px 8px rgba(0,0,0,0.10))' }}
+              />
+            </motion.div>
+          </div>
+
+          {/* Name plate */}
+          <div style={{ textAlign:'center', marginBottom:4 }}>
+            <p style={{
+              fontFamily:"'Cormorant Garamond', serif",
+              fontSize:20, fontWeight:700,
+              color:'#1A1612', letterSpacing:'-0.01em',
+              margin:'0 0 3px',
             }}>Brindavan School</p>
-            <p className="lm-sans" style={{
-              fontSize: 10,
-              // Gold accent — kept for "excellence" label
-              color: '#C89B3C',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase', fontWeight: 700,
+            <p style={{
+              fontSize:9, fontWeight:600, color:'#C9A84C',
+              letterSpacing:'0.22em', textTransform:'uppercase',
             }}>Est. in Excellence</p>
           </div>
 
-          {/* Nine Intelligences */}
-          <div style={{ width: '100%' }}>
-            <div style={{ textAlign: 'center', marginBottom: 12 }}>
-              <p className="lm-sans" style={{
-                fontSize: 9, fontWeight: 700, letterSpacing: '0.16em',
-                textTransform: 'uppercase',
-                // Royal blue label instead of gold
-                color: '#1E3A8A',
-                marginBottom: 3,
-              }}>Howard Gardner's Framework</p>
-              <h3 className="lm-serif" style={{
-                fontSize: 16, fontWeight: 700,
-                color: '#0F172A',
-                margin: 0,
-              }}>Nine Intelligences We Nurture</h3>
-            </div>
+          <div className="lm-rule" />
 
-            {/* Fix 4: Each intelligence card gets its own petal pastel background */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
-              {intelligences.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.03 }}
-                  className="premium-hover"
-                  style={{
-                    // Petal-spectrum pastel bg per card
-                    background: intelligencePastels[index],
-                    borderRadius: 16,
-                    border: '1px solid rgba(148,163,184,0.25)',
-                    padding: '11px 8px',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: 82,
-                    cursor: 'default',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
-                  }}
-                >
-                  <div style={{ fontSize: 16, marginBottom: 3 }}>{item.icon}</div>
-                  <p className="lm-sans" style={{
-                    fontSize: 9, fontWeight: 700,
-                    // Number badge: royal blue instead of gold
-                    color: '#1E3A8A',
-                    marginBottom: 2,
-                  }}>#{index + 1}</p>
-                  <p className="lm-sans" style={{
-                    fontSize: 10, fontWeight: 600,
-                    color: '#0F172A',
-                    lineHeight: 1.2,
-                  }}>{item.label}</p>
-                </motion.div>
-              ))}
-            </div>
+          {/* Intelligences header */}
+          <div style={{ textAlign:'center', marginBottom:14 }}>
+            <span style={{
+              display:'inline-block',
+              background:'rgba(236,72,153,0.07)',
+              color:'#EC4899',
+              border:'1px solid rgba(236,72,153,0.18)',
+              borderRadius:100,
+              fontSize:9, fontWeight:600,
+              letterSpacing:'2px', textTransform:'uppercase',
+              padding:'4px 12px', marginBottom:8,
+            }}>Howard Gardner's Framework</span>
+            <h3 style={{
+              fontFamily:"'Cormorant Garamond', serif",
+              fontSize:16, fontWeight:700,
+              color:'#1A1612', margin:0,
+            }}>Nine Intelligences We Nurture</h3>
           </div>
+
+          {/* 3×3 grid */}
+          <div className="intel-grid">
+            {intelligences.map((item, i) => (
+              <motion.div
+                key={i}
+                className="intel-pill"
+                initial={{ opacity:0, y:8 }}
+                whileInView={{ opacity:1, y:0 }}
+                viewport={{ once:true }}
+                transition={{ delay: i * 0.04, duration:0.4 }}
+                style={{
+                  background: `${item.color}09`,
+                  borderColor: `${item.color}20`,
+                }}
+              >
+                <div style={{ fontSize:18, marginBottom:4 }}>{item.icon}</div>
+                <p style={{
+                  fontSize:9, fontWeight:600, color:item.color,
+                  letterSpacing:'0.1em', textTransform:'uppercase',
+                  marginBottom:2,
+                }}>0{i+1}</p>
+                <p style={{
+                  fontSize:9.5, fontWeight:600,
+                  color:'#1A1612', lineHeight:1.3,
+                }}>{item.short}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="lm-rule" />
+
+          {/* Gardner quote — pink left border */}
+          <blockquote style={{
+            borderLeft:'2px solid #EC4899',
+            paddingLeft:14,
+            fontFamily:"'Cormorant Garamond', serif",
+            fontStyle:'italic',
+            fontSize:'0.97rem', color:'#3D332A',
+            lineHeight:1.6, margin:0, width:'100%',
+          }}>
+            "Intelligence is not a static capacity — it is a rich set of abilities
+            to solve problems and create products valued within a culture."
+          </blockquote>
         </motion.div>
 
-        {/* ── RIGHT: Logo Element Meanings ── */}
+        {/* ── RIGHT: Logo elements + Values + Promise ── */}
         <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          style={{ display: 'flex', flexDirection: 'column', gap: 10 }}
+          variants={fadeRight} initial="hidden" whileInView="visible"
+          viewport={{ once: true }} transition={{ duration: 0.55 }}
+          style={{ display:'flex', flexDirection:'column', gap:12 }}
         >
-          <h3 className="lm-serif" style={{
-            fontSize: 24, letterSpacing: '-0.02em',
-            fontWeight: 700,
-            color: '#0F172A',
-            marginBottom: 2,
-          }}>What Every Element Means</h3>
+          {/* Right heading */}
+          <div style={{ marginBottom:6 }}>
+            <div style={{ display:'inline-flex', alignItems:'center', gap:7, marginBottom:10 }}>
+              <div style={{
+                width:18, height:18, borderRadius:6,
+                background:'rgba(236,72,153,0.09)',
+                border:'1px solid rgba(236,72,153,0.22)',
+                display:'flex', alignItems:'center', justifyContent:'center',
+              }}>
+                <div style={{ width:6, height:6, borderRadius:'50%', background:'#EC4899' }} />
+              </div>
+              <span style={{
+                fontSize:10, fontWeight:600, letterSpacing:'2.5px',
+                textTransform:'uppercase', color:'#EC4899',
+              }}>Symbol Decoded</span>
+            </div>
 
-          {/* Fix 5: Right-side cards — royal blue left border, color dot only for identity */}
+            <h3 style={{
+              fontFamily:"'Cormorant Garamond', serif",
+              fontSize:'clamp(1.4rem,2.2vw,1.9rem)',
+              fontWeight:700, color:'#1A1612',
+              letterSpacing:'-0.02em', lineHeight:1.15, margin:'0 0 10px',
+            }}>
+              What Every Element{' '}
+              <em style={{ fontStyle:'italic', color:'#C9A84C' }}>Truly Means</em>
+            </h3>
+            <p style={{
+              fontSize:13, fontWeight:300, color:'#7A6A5A',
+              lineHeight:1.75, maxWidth:400,
+            }}>
+              Five deliberate symbols chosen to reflect the school's deepest
+              commitments to knowledge, heritage, and individual potential.
+            </p>
+          </div>
+
+          {/* Logo element cards */}
           {logoElements.map((el, i) => (
             <motion.div
               key={el.label}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="premium-card premium-hover"
-              style={{
-                display: 'flex',
-                gap: 14,
-                alignItems: 'flex-start',
-                borderRadius: 18,
-                // Unified royal blue left border — avoids rainbow-card chaos
-                borderLeft: '4px solid #1E3A8A',
-                padding: '16px 18px',
-                cursor: 'default',
-              }}
+              className="el-card"
+              initial={{ opacity:0, y:10 }}
+              whileInView={{ opacity:1, y:0 }}
+              viewport={{ once:true }}
+              transition={{ delay: i * 0.06, duration:0.4 }}
+              style={{ borderLeft:`3px solid ${el.color}` }}
             >
-              {/* Color dot retains element-specific color for identity recognition */}
               <div style={{
-                width: 10, height: 10, borderRadius: '50%',
-                background: el.color, flexShrink: 0,
-                marginTop: 5,
-                // Softer glow so it reads as an accent, not dominant
-                boxShadow: `0 2px 8px ${el.color}33`,
-              }} />
-              <div>
-                <p className="lm-sans" style={{
-                  fontSize: 13, fontWeight: 700,
-                  color: '#0F172A',
-                  marginBottom: 3,
+                width:40, height:40, borderRadius:12,
+                background:`${el.color}10`,
+                border:`1px solid ${el.color}28`,
+                display:'flex', alignItems:'center', justifyContent:'center',
+                fontSize:18, flexShrink:0,
+              }}>
+                {el.icon}
+              </div>
+
+              <div style={{ flex:1 }}>
+                <p style={{
+                  fontSize:13, fontWeight:600, color:'#1A1612',
+                  marginBottom:4, letterSpacing:'-0.01em',
                 }}>{el.label}</p>
-                <p className="lm-sans" style={{
-                  fontSize: 12.5,
-                  color: '#475569',
-                  lineHeight: 1.6,
+                <p style={{
+                  fontSize:12.5, color:'#7A6A5A', lineHeight:1.65,
                 }}>{el.desc}</p>
               </div>
+
+              <div style={{
+                width:7, height:7, borderRadius:'50%',
+                background:el.color, flexShrink:0,
+                marginTop:4, alignSelf:'flex-start', opacity:.65,
+              }} />
             </motion.div>
           ))}
 
-          {/* Core Values card — white + clean border, gold dots kept */}
+          {/* Core values */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.35 }}
+            initial={{ opacity:0, y:10 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ delay:0.38, duration:0.45 }}
             style={{
-              background: 'linear-gradient(135deg, rgba(238,244,255,0.95) 0%, rgba(255,248,230,0.92) 100%)',
-              borderRadius: 22,
-              // Royal blue + gold gradient border via box-shadow trick
-              border: '1px solid rgba(30,64,175,0.15)',
-              borderTop: '3px solid #C89B3C',
-              padding: '18px 18px',
-              boxShadow: '0 10px 30px rgba(30,64,175,0.07)',
+              background:'#fff',
+              border:'1px solid rgba(201,168,76,0.18)',
+              borderTop:'2px solid #C9A84C',
+              borderRadius:18,
+              padding:'18px 20px',
+              boxShadow:'0 4px 16px rgba(201,168,76,0.06)',
             }}
           >
-            <p className="lm-serif" style={{
-              fontSize: 14, fontWeight: 700,
-              color: '#0F172A',
-              marginBottom: 8,
-            }}>Core Values</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-              {[
-                { dot: '#E63946', text: 'Discipline with compassion' },
-                { dot: '#C89B3C', text: 'Academic rigour with creativity' },
-                { dot: '#22C55E', text: 'Community, character, and confidence' },
-              ].map(v => (
-                <div key={v.text} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ display:'flex', alignItems:'center', gap:9, marginBottom:14 }}>
+              <div style={{
+                width:26, height:26, borderRadius:8,
+                background:'rgba(201,168,76,0.1)',
+                display:'flex', alignItems:'center', justifyContent:'center',
+                fontSize:13,
+              }}>⭐</div>
+              <p style={{
+                fontFamily:"'Cormorant Garamond', serif",
+                fontSize:16, fontWeight:700,
+                color:'#1A1612', margin:0,
+              }}>Core Values</p>
+            </div>
+
+            <div style={{ display:'flex', flexDirection:'column', gap:7 }}>
+              {coreValues.map(v => (
+                <div key={v.text} className="cv-row">
                   <div style={{
-                    width: 7, height: 7, borderRadius: '50%',
-                    background: v.dot, flexShrink: 0,
+                    width:8, height:8, borderRadius:'50%',
+                    background:v.color, flexShrink:0,
                   }} />
-                  <p className="lm-sans" style={{
-                    fontSize: 12,
-                    color: '#334155',
-                    lineHeight: 1.4,
+                  <p style={{
+                    fontSize:12.5, fontWeight:500, color:'#3D332A',
                   }}>{v.text}</p>
                 </div>
               ))}
             </div>
           </motion.div>
+
+          {/* Brindavan Promise — dark card */}
+          <motion.div
+            initial={{ opacity:0, y:10 }}
+            whileInView={{ opacity:1, y:0 }}
+            viewport={{ once:true }}
+            transition={{ delay:0.46, duration:0.45 }}
+            style={{
+              background:'#1A1612',
+              borderRadius:18,
+              padding:'22px 22px',
+              position:'relative', overflow:'hidden',
+            }}
+          >
+            {/* gold glow */}
+            <div style={{
+              position:'absolute', top:-30, right:-30,
+              width:130, height:130, borderRadius:'50%',
+              background:'rgba(201,168,76,0.12)', filter:'blur(36px)',
+              pointerEvents:'none',
+            }} />
+            {/* pink glow */}
+            <div style={{
+              position:'absolute', bottom:-24, left:-24,
+              width:100, height:100, borderRadius:'50%',
+              background:'rgba(236,72,153,0.10)', filter:'blur(28px)',
+              pointerEvents:'none',
+            }} />
+
+            <div style={{
+              display:'inline-flex', alignItems:'center', gap:6, marginBottom:10,
+              position:'relative', zIndex:1,
+            }}>
+              <div style={{
+                width:20, height:1,
+                background:'linear-gradient(90deg,#EC4899,#C9A84C)',
+              }} />
+              <span style={{
+                fontSize:9, fontWeight:600, letterSpacing:'2.5px',
+                textTransform:'uppercase', color:'#C9A84C',
+              }}>The Brindavan Promise</span>
+            </div>
+
+            <p style={{
+              fontFamily:"'Cormorant Garamond', serif",
+              fontStyle:'italic',
+              fontSize:'1.05rem', fontWeight:500,
+              color:'rgba(255,255,255,0.88)',
+              lineHeight:1.6, margin:0,
+              position:'relative', zIndex:1,
+            }}>
+              "This logo is not just a design — it represents our commitment to shaping
+              responsible individuals with strong character and{' '}
+              <span style={{ color:'#E8C97A' }}>modern skills</span>."
+            </p>
+
+            {/* pink + gold bottom accent */}
+            <div style={{
+              marginTop:16, height:1,
+              background:'linear-gradient(90deg, rgba(236,72,153,0.4), rgba(201,168,76,0.4), transparent)',
+              position:'relative', zIndex:1,
+            }} />
+          </motion.div>
+
         </motion.div>
       </div>
     </section>
