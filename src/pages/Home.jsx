@@ -69,9 +69,9 @@ function useCounter(target, duration = 1800, inView = false) {
 
 // ── Featured Videos ──────────────────────────────────────────────────────
 const featuredVideos = [
-  { id: 'dQw4w9WgXcQ', title: 'Annual Day Highlights' },
-  { id: 'dQw4w9WgXcQ', title: 'Campus Tour 2026' },
-  { id: 'dQw4w9WgXcQ', title: 'Student Achievements' },
+  { id: 'AlEJrXOaJgA', title: 'Annual Day Highlights' },
+  { id: 'rk4-FFGeTeQ', title: 'Campus Tour 2026' },
+  { id: 'TyVtsefUtRc', title: 'Student Achievements' },
 ]
 
 // ── Activities ───────────────────────────────────────────────────────────

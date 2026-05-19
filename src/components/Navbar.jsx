@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import logo from '../assets/logo.png'
 
 const mainLinks = [
-  { to: '/', label: 'HOME' },
-
+  { to: '/', label: 'Home' },
   {
-    label: 'ABOUT US',
+    label: 'About Us',
     submenu: [
       { to: '/about/overview', label: 'Overview' },
       { to: '/about/vision-mission', label: 'Vision & Mission' },
@@ -16,9 +15,8 @@ const mainLinks = [
       { to: '/about/achievements', label: 'Achievements' },
     ],
   },
-
   {
-    label: 'SCHOOL LIFE',
+    label: 'School Life',
     submenu: [
       { to: '/academic-approaches', label: 'Academic Approaches' },
       { to: '/events/gallery', label: 'Co-Curricular' },
@@ -26,9 +24,8 @@ const mainLinks = [
       { to: '/events/sports', label: 'Festival Fun' },
     ],
   },
-
   {
-    label: 'FACILITIES',
+    label: 'Facilities',
     submenu: [
       { to: '/facilities/smart-classrooms', label: 'Smart Classrooms' },
       { to: '/facilities/labs', label: 'Labs' },
@@ -36,228 +33,472 @@ const mainLinks = [
       { to: '/facilities/sports', label: 'Sports' },
     ],
   },
-
   {
-    label: 'INFRASTRUCTURE',
+    label: 'Infrastructure',
     submenu: [
       { to: '/infrastructure/campus', label: 'Campus Overview' },
       { to: '/infrastructure/safety', label: 'Safety & Security' },
       { to: '/infrastructure/digital', label: 'Digital Learning' },
     ],
   },
-
-  { to: '/admissions', label: 'ADMISSIONS' },
-  { to: '/contact', label: 'CONTACT' },
-
-  {
-    to: 'https://educampus360.com/',
-    label: 'ERP LOGIN',
-    external: true,
-  },
+  { to: '/admissions', label: 'Admissions' },
+  { to: '/contact', label: 'Contact' },
+  { to: 'https://educampus360.com/', label: 'ERP Login', external: true },
 ]
 
-const navText = '#1B3A8A'
-const pink = '#E91E8C'
-const pinkDark = '#BE185D'
-const orange = '#F97316'
+const NAVY = '#1B3A8A'
+const PINK = '#E91E8C'
+const ORANGE = '#F97316'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [mobileExpanded, setMobileExpanded] = useState(null)
+  const closeTimer = useRef(null)
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-
+    const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
-
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const handleMouseEnter = (label) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setOpenDropdown(label)
+  }
+
+  const handleMouseLeave = () => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 120)
+  }
+
   return (
     <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap');
+
+        .nav-link-item {
+          position: relative;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13.5px;
+          font-weight: 500;
+          letter-spacing: 0.3px;
+          color: ${NAVY};
+          padding: 6px 14px;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: color 0.25s;
+        }
+        .nav-link-item::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 14px;
+          right: 14px;
+          height: 2px;
+          background: linear-gradient(90deg, ${PINK}, ${ORANGE});
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+          border-radius: 2px;
+        }
+        .nav-link-item:hover { color: ${PINK}; }
+        .nav-link-item:hover::after,
+        .nav-link-item.active-link::after { transform: scaleX(1); }
+        .nav-link-item.active-link { color: ${PINK}; }
+
+        .erp-link {
+          position: relative;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13.5px;
+          font-weight: 500;
+          letter-spacing: 0.3px;
+          color: ${NAVY};
+          padding: 6px 14px;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: color 0.25s;
+        }
+        .erp-link::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 14px;
+          right: 14px;
+          height: 2px;
+          background: linear-gradient(90deg, ${PINK}, ${ORANGE});
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+          border-radius: 2px;
+        }
+        .erp-link:hover { color: ${PINK}; }
+        .erp-link:hover::after { transform: scaleX(1); }
+
+        .dropdown-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13.5px;
+          font-weight: 500;
+          letter-spacing: 0.3px;
+          color: ${NAVY};
+          padding: 6px 14px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          position: relative;
+          white-space: nowrap;
+          transition: color 0.25s;
+        }
+        .dropdown-btn::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 14px;
+          right: 14px;
+          height: 2px;
+          background: linear-gradient(90deg, ${PINK}, ${ORANGE});
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+          border-radius: 2px;
+        }
+        .dropdown-btn.open,
+        .dropdown-btn:hover { color: ${PINK}; }
+        .dropdown-btn.open::after,
+        .dropdown-btn:hover::after { transform: scaleX(1); }
+
+        .dropdown-item {
+          display: block;
+          padding: 10px 20px;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13.5px;
+          font-weight: 400;
+          color: #374151;
+          text-decoration: none;
+          border-radius: 6px;
+          transition: background 0.18s, color 0.18s, padding-left 0.22s;
+          border-left: 2px solid transparent;
+          white-space: nowrap;
+        }
+        .dropdown-item:hover {
+          background: #FFF4F9;
+          color: ${PINK};
+          padding-left: 24px;
+          border-left-color: ${PINK};
+        }
+
+        .school-name {
+          font-family: 'Playfair Display', serif;
+          font-weight: 600;
+          font-size: 17px;
+          color: ${NAVY};
+          line-height: 1.1;
+          letter-spacing: 0.2px;
+        }
+        .school-tagline {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 10.5px;
+          font-weight: 500;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+          color: ${PINK};
+          margin-top: 2px;
+        }
+
+        .divider-line {
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(233,30,140,0.25) 20%, rgba(249,115,22,0.25) 80%, transparent);
+          margin: 0 8px;
+        }
+
+        .mobile-link {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          color: ${NAVY};
+          padding: 13px 20px;
+          display: block;
+          border-bottom: 1px solid rgba(233,30,140,0.08);
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+        }
+        .mobile-link:hover { color: ${PINK}; background: #FFF4F9; }
+
+        .mobile-erp-link {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          color: ${NAVY};
+          padding: 13px 20px;
+          display: block;
+          border-bottom: 1px solid rgba(233,30,140,0.08);
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+        }
+        .mobile-erp-link:hover { color: ${PINK}; background: #FFF4F9; }
+
+        .mobile-sub-link {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13px;
+          color: #6B7280;
+          padding: 10px 20px 10px 36px;
+          display: block;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(233,30,140,0.05);
+          transition: color 0.2s;
+        }
+        .mobile-sub-link:hover { color: ${PINK}; }
+
+        .mobile-section-btn {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          color: ${NAVY};
+          padding: 13px 20px;
+          width: 100%;
+          text-align: left;
+          background: none;
+          border: none;
+          border-bottom: 1px solid rgba(233,30,140,0.08);
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: color 0.2s;
+        }
+        .mobile-section-btn.open { color: ${PINK}; }
+
+        @media (max-width: 1024px) {
+          .desktop-nav { display: none !important; }
+          .hamburger-btn { display: flex !important; }
+        }
+      `}</style>
+
       <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`
-          fixed top-[var(--top-banner)] left-0 w-full z-50
-          backdrop-blur-xl
-          border-b
-          transition-all duration-500
-          ${
-            scrolled
-              ? 'py-2 bg-white/92 shadow-[0_10px_40px_rgba(233,30,140,0.12)]'
-              : 'py-4 bg-white/75 shadow-[0_8px_30px_rgba(233,30,140,0.08)]'
-          }
-        `}
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         style={{
-          borderColor: 'rgba(233,30,140,0.12)',
+          position: 'fixed',
+          top: 'var(--top-banner, 0)',
+          left: 0,
+          width: '100%',
+          zIndex: 50,
+          background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.92)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
+          boxShadow: scrolled
+            ? '0 2px 24px rgba(27,58,138,0.10), 0 1px 0 rgba(233,30,140,0.08)'
+            : '0 1px 0 rgba(233,30,140,0.07)',
+          transition: 'box-shadow 0.4s, background 0.4s',
         }}
       >
-        {/* Top Accent */}
-        <div
-          className="absolute top-0 left-0 w-full h-[2px]"
-          style={{
-            background:
-              'linear-gradient(to right, #E91E8C, #F97316, #E91E8C)',
-          }}
-        />
+        <div style={{ height: 3, background: `linear-gradient(90deg, ${PINK} 0%, ${ORANGE} 50%, ${PINK} 100%)` }} />
 
-        {/* Soft Glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none" />
+        <div style={{
+          maxWidth: 1280,
+          margin: '0 auto',
+          padding: '0 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: 80,
+        }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', flexShrink: 0 }}>
+            <motion.img
+              src={logo}
+              alt="Brindavan School"
+              style={{ height: 62, width: 'auto', objectFit: 'contain' }}
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.22 }}
+            />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span className="school-name">Brindavan</span>
+              <span className="school-tagline">School Palamaner</span>
+            </div>
+          </Link>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 0, marginLeft: 'auto' }} className="desktop-nav">
+            {mainLinks.map((link) => {
+              if (link.external) {
+                return (
+                  <a key={link.label} href={link.to} target="_blank" rel="noopener noreferrer" className="erp-link">
+                    {link.label}
+                  </a>
+                )
+              }
 
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 shrink-0">
-              <motion.img
-                src={logo}
-                alt="Brindavan School Logo"
-                className="h-20 w-auto object-contain"
-                whileHover={{
-                  scale: 1.05,
-                  filter:
-                    'drop-shadow(0px 8px 18px rgba(233,30,140,0.35))',
-                }}
-                transition={{ duration: 0.25 }}
-              />
+              if (link.submenu) {
+                const isOpen = openDropdown === link.label
+                return (
+                  <div
+                    key={link.label}
+                    style={{ position: 'relative' }}
+                    onMouseEnter={() => handleMouseEnter(link.label)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <button className={`dropdown-btn${isOpen ? ' open' : ''}`}>
+                      {link.label}
+                      <motion.span
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.22 }}
+                        style={{ display: 'flex', alignItems: 'center' }}
+                      >
+                        <ChevronDown size={14} />
+                      </motion.span>
+                    </button>
 
-              <div className="hidden sm:block leading-tight">
-                <h2
-                  className="text-lg font-bold"
-                  style={{ color: navText }}
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scaleY: 0.94 }}
+                          animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                          exit={{ opacity: 0, y: 6, scaleY: 0.96 }}
+                          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                          style={{
+                            position: 'absolute',
+                            top: 'calc(100% + 10px)',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            transformOrigin: 'top center',
+                            background: '#fff',
+                            borderRadius: 10,
+                            boxShadow: '0 8px 40px rgba(27,58,138,0.13), 0 2px 8px rgba(0,0,0,0.06)',
+                            border: '1px solid rgba(233,30,140,0.1)',
+                            minWidth: 220,
+                            overflow: 'hidden',
+                            zIndex: 100,
+                          }}
+                        >
+                          <div style={{ height: 2, background: `linear-gradient(90deg, ${PINK}, ${ORANGE})` }} />
+                          <div style={{
+                            padding: '10px 20px 6px',
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontSize: 10,
+                            fontWeight: 600,
+                            letterSpacing: '1.6px',
+                            textTransform: 'uppercase',
+                            color: '#9CA3AF',
+                          }}>
+                            {link.label}
+                          </div>
+                          <div className="divider-line" style={{ marginBottom: 4 }} />
+                          <div style={{ padding: '4px 8px 10px' }}>
+                            {link.submenu.map((item, i) => (
+                              <motion.div
+                                key={item.to}
+                                initial={{ opacity: 0, x: -6 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.04, duration: 0.18 }}
+                              >
+                                <Link to={item.to} className="dropdown-item">{item.label}</Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )
+              }
+
+              return (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === '/'}
+                  className={({ isActive }) => `nav-link-item${isActive ? ' active-link' : ''}`}
                 >
-                  Brindavan
-                </h2>
+                  {link.label}
+                </NavLink>
+              )
+            })}
+          </nav>
 
-                <p
-                  className="text-[12px] font-semibold tracking-wide"
-                  style={{ color: pink }}
-                >
-                  School Palamaner
-                </p>
-              </div>
-            </Link>
+          <motion.button
+            whileTap={{ scale: 0.92 }}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            style={{
+              display: 'none',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 40,
+              height: 40,
+              background: 'none',
+              border: `1.5px solid rgba(233,30,140,0.25)`,
+              borderRadius: 8,
+              cursor: 'pointer',
+              color: PINK,
+            }}
+            className="hamburger-btn"
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={mobileOpen ? 'close' : 'open'}
+                initial={{ rotate: -45, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 45, opacity: 0 }}
+                transition={{ duration: 0.18 }}
+              >
+                {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              </motion.div>
+            </AnimatePresence>
+          </motion.button>
+        </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 ml-auto">
-
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              style={{ overflow: 'hidden', borderTop: `1px solid rgba(233,30,140,0.1)`, background: '#fff' }}
+            >
               {mainLinks.map((link) => {
-                const hasSubmenu = !!link.submenu
-
-                /* -----------------------------------------
-                   DROPDOWN MENU
-                ----------------------------------------- */
-                if (hasSubmenu) {
+                if (link.external) {
                   return (
-                    <div
-                      key={link.label}
-                      className="relative"
-                      onMouseEnter={() => setOpenDropdown(link.label)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
+                    <a key={link.label} href={link.to} target="_blank" rel="noopener noreferrer" className="mobile-erp-link">
+                      {link.label}
+                    </a>
+                  )
+                }
+
+                if (link.submenu) {
+                  const isOpen = mobileExpanded === link.label
+                  return (
+                    <div key={link.label}>
                       <button
-                        className="relative px-4 py-2 rounded-full flex items-center gap-1 text-[13px] font-bold transition-all duration-300"
-                        style={{
-                          color:
-                            openDropdown === link.label
-                              ? pink
-                              : navText,
-                        }}
+                        className={`mobile-section-btn${isOpen ? ' open' : ''}`}
+                        onClick={() => setMobileExpanded(isOpen ? null : link.label)}
                       >
                         {link.label}
-
-                        <motion.div
-                          animate={{
-                            rotate:
-                              openDropdown === link.label ? 180 : 0,
-                          }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <ChevronDown className="w-4 h-4" />
-                        </motion.div>
-
-                        {openDropdown === link.label && (
-                          <motion.span
-                            layoutId="navbar-pill"
-                            className="absolute inset-0 rounded-full -z-10"
-                            style={{
-                              background:
-                                'linear-gradient(135deg, #FFF0F7, #FFF7ED)',
-                              border:
-                                '1px solid rgba(233,30,140,0.18)',
-                            }}
-                          />
-                        )}
+                        <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.22 }} style={{ display: 'flex' }}>
+                          <ChevronDown size={15} color={isOpen ? PINK : '#9CA3AF'} />
+                        </motion.span>
                       </button>
-
                       <AnimatePresence>
-                        {openDropdown === link.label && (
+                        {isOpen && (
                           <motion.div
-                            initial={{
-                              opacity: 0,
-                              y: 12,
-                              scale: 0.96,
-                            }}
-                            animate={{
-                              opacity: 1,
-                              y: 0,
-                              scale: 1,
-                            }}
-                            exit={{
-                              opacity: 0,
-                              y: 8,
-                              scale: 0.96,
-                            }}
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.22 }}
-                            className="absolute top-full left-0 mt-3 min-w-[240px] overflow-hidden rounded-2xl bg-white/95 backdrop-blur-xl shadow-2xl"
-                            style={{
-                              border:
-                                '1px solid rgba(233,30,140,0.12)',
-                            }}
+                            style={{ overflow: 'hidden', background: '#FAFAFA' }}
                           >
-                            <div
-                              className="h-[2px]"
-                              style={{
-                                background:
-                                  'linear-gradient(90deg, #E91E8C, #F97316)',
-                              }}
-                            />
-
-                            <div className="p-2">
-                              {link.submenu.map((item, index) => (
-                                <motion.div
-                                  key={item.to}
-                                  initial={{ opacity: 0, x: -8 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  transition={{
-                                    delay: index * 0.04,
-                                  }}
-                                >
-                                  <Link
-                                    to={item.to}
-                                    className="block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200"
-                                    style={{ color: navText }}
-                                    onMouseEnter={(e) => {
-                                      e.currentTarget.style.background =
-                                        'linear-gradient(135deg, #FFF0F7, #FFF7ED)'
-                                      e.currentTarget.style.color = pink
-                                    }}
-                                    onMouseLeave={(e) => {
-                                      e.currentTarget.style.background =
-                                        'transparent'
-                                      e.currentTarget.style.color = navText
-                                    }}
-                                  >
-                                    {item.label}
-                                  </Link>
-                                </motion.div>
-                              ))}
-                            </div>
+                            {link.submenu.map((item) => (
+                              <Link
+                                key={item.to}
+                                to={item.to}
+                                className="mobile-sub-link"
+                                onClick={() => { setMobileOpen(false); setMobileExpanded(null) }}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -265,243 +506,18 @@ export default function Navbar() {
                   )
                 }
 
-                /* -----------------------------------------
-                   ERP LOGIN BUTTON
-                ----------------------------------------- */
-                if (link.external) {
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.to}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-2 px-5 py-2 rounded-full text-white text-[13px] font-bold transition-all duration-300 hover:scale-105"
-                      style={{
-                        background:
-                          'linear-gradient(135deg, #E91E8C, #F97316)',
-                        boxShadow:
-                          '0 6px 20px rgba(233,30,140,0.28)',
-                      }}
-                    >
-                      {link.label}
-                    </a>
-                  )
-                }
-
-                /* -----------------------------------------
-                   NORMAL NAV LINKS
-                ----------------------------------------- */
                 return (
                   <NavLink
                     key={link.to}
                     to={link.to}
                     end={link.to === '/'}
-                    className="relative px-4 py-2 text-[13px] font-bold"
+                    className="mobile-link"
+                    onClick={() => setMobileOpen(false)}
                   >
-                    {({ isActive }) => (
-                      <>
-                        <span
-                          className="relative z-10 transition-colors duration-300"
-                          style={{
-                            color: isActive ? pink : navText,
-                          }}
-                        >
-                          {link.label}
-                        </span>
-
-                        {isActive && (
-                          <motion.span
-                            layoutId="navbar-pill"
-                            className="absolute inset-0 rounded-full"
-                            style={{
-                              background:
-                                'linear-gradient(135deg, #FFF0F7, #FFF7ED)',
-                              border:
-                                '1px solid rgba(233,30,140,0.18)',
-                            }}
-                            transition={{
-                              type: 'spring',
-                              stiffness: 500,
-                              damping: 35,
-                            }}
-                          />
-                        )}
-
-                        {!isActive && (
-                          <span
-                            className="absolute left-4 bottom-1 h-[2px] w-0 group-hover:w-[calc(100%-2rem)] transition-all duration-300"
-                            style={{
-                              background:
-                                'linear-gradient(90deg, #E91E8C, #F97316)',
-                            }}
-                          />
-                        )}
-                      </>
-                    )}
+                    {link.label}
                   </NavLink>
                 )
               })}
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-xl"
-              style={{ color: pink }}
-            >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={mobileOpen ? 'close' : 'menu'}
-                  initial={{ opacity: 0, rotate: -90 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 90 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {mobileOpen ? (
-                    <X className="w-6 h-6" />
-                  ) : (
-                    <Menu className="w-6 h-6" />
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </motion.button>
-          </div>
-        </div>
-
-        {/* MOBILE MENU */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden bg-white border-t"
-              style={{
-                borderColor: 'rgba(233,30,140,0.12)',
-              }}
-            >
-              <div
-                className="h-[2px]"
-                style={{
-                  background:
-                    'linear-gradient(90deg, #E91E8C, #F97316)',
-                }}
-              />
-
-              <nav className="px-4 py-4 flex flex-col gap-2">
-
-                {mainLinks.map((link) => {
-                  const hasSubmenu = !!link.submenu
-                  const isOpen = openDropdown === link.label
-
-                  if (link.external) {
-                    return (
-                      <a
-                        key={link.label}
-                        href={link.to}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-3 rounded-xl text-white font-bold text-sm"
-                        style={{
-                          background:
-                            'linear-gradient(135deg, #E91E8C, #F97316)',
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    )
-                  }
-
-                  if (hasSubmenu) {
-                    return (
-                      <div
-                        key={link.label}
-                        className="border-b pb-2"
-                        style={{
-                          borderColor:
-                            'rgba(233,30,140,0.10)',
-                        }}
-                      >
-                        <button
-                          onClick={() =>
-                            setOpenDropdown(
-                              isOpen ? null : link.label
-                            )
-                          }
-                          className="w-full flex items-center justify-between py-3 text-sm font-bold"
-                          style={{
-                            color: isOpen ? pink : navText,
-                          }}
-                        >
-                          {link.label}
-
-                          <motion.div
-                            animate={{
-                              rotate: isOpen ? 180 : 0,
-                            }}
-                          >
-                            <ChevronDown className="w-4 h-4" />
-                          </motion.div>
-                        </button>
-
-                        <AnimatePresence>
-                          {isOpen && (
-                            <motion.div
-                              initial={{
-                                opacity: 0,
-                                height: 0,
-                              }}
-                              animate={{
-                                opacity: 1,
-                                height: 'auto',
-                              }}
-                              exit={{
-                                opacity: 0,
-                                height: 0,
-                              }}
-                              className="overflow-hidden pl-4 space-y-1"
-                            >
-                              {link.submenu.map((item) => (
-                                <Link
-                                  key={item.to}
-                                  to={item.to}
-                                  onClick={() => {
-                                    setMobileOpen(false)
-                                    setOpenDropdown(null)
-                                  }}
-                                  className="block py-2 text-sm transition-colors duration-200"
-                                  style={{ color: pink }}
-                                >
-                                  {item.label}
-                                </Link>
-                              ))}
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    )
-                  }
-
-                  return (
-                    <NavLink
-                      key={link.to}
-                      to={link.to}
-                      end={link.to === '/'}
-                      onClick={() => setMobileOpen(false)}
-                      className="py-3 text-sm font-bold border-b"
-                      style={({ isActive }) => ({
-                        color: isActive ? pink : navText,
-                        borderColor:
-                          'rgba(233,30,140,0.10)',
-                      })}
-                    >
-                      {link.label}
-                    </NavLink>
-                  )
-                })}
-              </nav>
             </motion.div>
           )}
         </AnimatePresence>
