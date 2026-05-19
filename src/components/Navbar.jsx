@@ -23,7 +23,7 @@ const mainLinks = [
       { to: '/academic-approaches', label: 'Academic Approaches' },
       { to: '/events/gallery', label: 'Co-Curricular' },
       { to: '/events/annual', label: 'Communication & Public Speaking' },
-      { to: '/events/sports', label: 'Festival Fun' },
+      { to: '/events/annual', label: 'Festival Fun' },
     ],
   },
 
@@ -83,14 +83,14 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`
-          fixed top-[var(--top-banner)] left-0 w-full z-50
-          backdrop-blur-xl
-          border-b
+          fixed top-[var(--top-banner)] left-0 w-full z-[9999]
+          border-b border-slate-200
+          bg-white
           transition-all duration-500
           ${
             scrolled
-              ? 'py-2 bg-white/92 shadow-[0_10px_40px_rgba(233,30,140,0.12)]'
-              : 'py-4 bg-white/75 shadow-[0_8px_30px_rgba(233,30,140,0.08)]'
+              ? 'py-2 shadow-[0_10px_40px_rgba(233,30,140,0.12)]'
+              : 'py-4 shadow-[0_8px_30px_rgba(233,30,140,0.08)]'
           }
         `}
         style={{
@@ -214,10 +214,9 @@ export default function Navbar() {
                               scale: 0.96,
                             }}
                             transition={{ duration: 0.22 }}
-                            className="absolute top-full left-0 mt-3 min-w-[240px] overflow-hidden rounded-2xl bg-white/95 backdrop-blur-xl shadow-2xl"
+                            className="absolute top-full left-0 mt-3 min-w-[240px] overflow-hidden rounded-2xl bg-white shadow-2xl"
                             style={{
-                              border:
-                                '1px solid rgba(233,30,140,0.12)',
+                              border: '1px solid rgba(233,30,140,0.12)',
                             }}
                           >
                             <div
@@ -238,23 +237,18 @@ export default function Navbar() {
                                     delay: index * 0.04,
                                   }}
                                 >
-                                  <Link
+                                  <NavLink
                                     to={item.to}
-                                    className="block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200"
-                                    style={{ color: navText }}
-                                    onMouseEnter={(e) => {
-                                      e.currentTarget.style.background =
-                                        'linear-gradient(135deg, #FFF0F7, #FFF7ED)'
-                                      e.currentTarget.style.color = pink
-                                    }}
-                                    onMouseLeave={(e) => {
-                                      e.currentTarget.style.background =
-                                        'transparent'
-                                      e.currentTarget.style.color = navText
-                                    }}
+                                    className={({ isActive }) =>
+                                      `block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                                        isActive
+                                          ? 'bg-orange-50 text-[#F97316]'
+                                          : 'text-[#1B3A8A] hover:bg-orange-50 hover:text-[#F97316]'
+                                      }`
+                                    }
                                   >
                                     {item.label}
-                                  </Link>
+                                  </NavLink>
                                 </motion.div>
                               ))}
                             </div>
@@ -296,47 +290,16 @@ export default function Navbar() {
                     key={link.to}
                     to={link.to}
                     end={link.to === '/'}
-                    className="relative px-4 py-2 text-[13px] font-bold"
+                    className={({ isActive }) =>
+                      `relative px-4 py-2 text-[13px] font-bold rounded-full transition-all duration-300 ${
+                        isActive
+                          ? 'text-[#F97316] bg-orange-50 shadow-sm'
+                          : 'text-[#1B3A8A] hover:text-[#F97316] hover:bg-orange-50'
+                      }`
+                    }
                   >
                     {({ isActive }) => (
-                      <>
-                        <span
-                          className="relative z-10 transition-colors duration-300"
-                          style={{
-                            color: isActive ? pink : navText,
-                          }}
-                        >
-                          {link.label}
-                        </span>
-
-                        {isActive && (
-                          <motion.span
-                            layoutId="navbar-pill"
-                            className="absolute inset-0 rounded-full"
-                            style={{
-                              background:
-                                'linear-gradient(135deg, #FFF0F7, #FFF7ED)',
-                              border:
-                                '1px solid rgba(233,30,140,0.18)',
-                            }}
-                            transition={{
-                              type: 'spring',
-                              stiffness: 500,
-                              damping: 35,
-                            }}
-                          />
-                        )}
-
-                        {!isActive && (
-                          <span
-                            className="absolute left-4 bottom-1 h-[2px] w-0 group-hover:w-[calc(100%-2rem)] transition-all duration-300"
-                            style={{
-                              background:
-                                'linear-gradient(90deg, #E91E8C, #F97316)',
-                            }}
-                          />
-                        )}
-                      </>
+                      <span className="relative z-10">{link.label}</span>
                     )}
                   </NavLink>
                 )
@@ -464,18 +427,23 @@ export default function Navbar() {
                               className="overflow-hidden pl-4 space-y-1"
                             >
                               {link.submenu.map((item) => (
-                                <Link
+                                <NavLink
                                   key={item.to}
                                   to={item.to}
                                   onClick={() => {
                                     setMobileOpen(false)
                                     setOpenDropdown(null)
                                   }}
-                                  className="block py-2 text-sm transition-colors duration-200"
-                                  style={{ color: pink }}
+                                  className={({ isActive }) =>
+                                    `block py-2 text-sm rounded-xl transition-all duration-200 ${
+                                      isActive
+                                        ? 'bg-orange-50 text-[#F97316]'
+                                        : 'text-[#1B3A8A] hover:bg-orange-50 hover:text-[#F97316]'
+                                    }`
+                                  }
                                 >
                                   {item.label}
-                                </Link>
+                                </NavLink>
                               ))}
                             </motion.div>
                           )}
@@ -490,11 +458,13 @@ export default function Navbar() {
                       to={link.to}
                       end={link.to === '/'}
                       onClick={() => setMobileOpen(false)}
-                      className="py-3 text-sm font-bold border-b"
+                      className={({ isActive }) =>
+                        `py-3 text-sm font-bold border-b rounded-xl transition-all duration-200 ${
+                          isActive ? 'text-[#F97316] bg-orange-50' : 'text-[#1B3A8A] hover:text-[#F97316] hover:bg-orange-50'
+                        }`
+                      }
                       style={({ isActive }) => ({
-                        color: isActive ? pink : navText,
-                        borderColor:
-                          'rgba(233,30,140,0.10)',
+                        borderColor: 'rgba(233,30,140,0.10)',
                       })}
                     >
                       {link.label}

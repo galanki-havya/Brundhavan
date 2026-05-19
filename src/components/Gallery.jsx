@@ -33,14 +33,7 @@ export default function Gallery() {
   }
 
   return (
-    <Section className="bg-[#FFFAF5] relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-20 h-20 border-2 border-[#D9B38C] rounded-full"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 border-2 border-[#D9B38C] rounded-full"></div>
-        <div className="absolute bottom-20 left-1/3 w-12 h-12 border-2 border-[#D9B38C] rounded-full"></div>
-      </div>
-
+    <Section className="bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

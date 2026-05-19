@@ -18,7 +18,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <Section className="bg-[#FAF7F2] py-8 relative overflow-hidden">
+    <Section className="bg-white py-8 relative overflow-hidden">
 
       {/* Header */}
       <motion.div
