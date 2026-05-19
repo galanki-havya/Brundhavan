@@ -121,6 +121,7 @@ export default function Gallery() {
         variant="pink"
         title="Photo Gallery"
         subtitle="Capturing memorable moments and showcasing the vibrant life at Brindavan School."
+        backgroundImage="/images/gallery/AnnualDay/1.jpg"
       />
 
       {/* ── GALLERY CATEGORIES ── */}

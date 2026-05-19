@@ -12,6 +12,8 @@ export default function ChairmanMessage() {
       <PageHero
         title="Chairman's Message"
         subtitle="Visionary guidance and leadership shaping our institutional future."
+        backgroundImage="/images/gallery/Chairman2.png"
+
       />
       
       {/* Chairman Message Section */}

@@ -17,6 +17,7 @@ export default function Annual() {
         variant="pink"
         title="Annual Events"
         subtitle="Celebrating achievements, culture, and community through memorable annual traditions."
+        backgroundImage="/images/gallery/Assembly.png"
       />
 
       {/* ── EVENT CATEGORY CARDS ── */}

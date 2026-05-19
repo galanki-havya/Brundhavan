@@ -72,10 +72,11 @@ body {
 .aa-hero {
   width: 100%;
   padding: 5rem 3rem 3rem;
-  background: var(--e-global-color-10113fb) !important;
   border-bottom: 1px solid ${THEME.colors.borderLight};
+  position: relative;
+  overflow: hidden;
 }
-.aa-hero-content { max-width: 680px; }
+.aa-hero-content { max-width: 680px; position: relative; z-index: 1; }
 .aa-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   margin-bottom: 16px;
@@ -99,11 +100,9 @@ body {
   display: flex; 
   flex-direction: column;
   position: relative;
-  
   border: 1px solid transparent;
   outline: 4px solid var(--card-accent-dark);
   box-shadow: 0 12px 24px rgba(7, 26, 47, 0.06);
-  
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -164,9 +163,7 @@ body {
   margin-bottom: 16px;
   transition: width 0.3s ease;
 }
-.aa-card:hover .aa-accent-line {
-  width: 60px;
-}
+.aa-card:hover .aa-accent-line { width: 60px; }
 
 .aa-card-arrow {
   display: inline-flex; 
@@ -216,8 +213,8 @@ const ACADEMICS = [
     title: "Abacus",
     subtitle: "Mental Mathematics",
     image: "/src/assets/ABACUS/ABHero.png",
-    accentDark: "#1E40AF", 
-    bgDown: "#EFF6FF", 
+    accentDark: "#1E40AF",
+    bgDown: "#EFF6FF",
     description: "Enhancing concentration, spatial memory, and lightning-fast arithmetic through structured bead-counting systems.",
     gallery: ["/src/assets/ABACUS/AB1.jpeg", "/src/assets/ABACUS/AB2.jpeg", "/src/assets/ABACUS/AB3.png", "/src/assets/ABACUS/AB4.png", "/src/assets/ABACUS/AB5.png"]
   },
@@ -226,8 +223,8 @@ const ACADEMICS = [
     title: "DPT",
     subtitle: "Development Programme",
     image: "/src/assets/DPT.jpeg",
-    accentDark: "#065F46", 
-    bgDown: "#E6F4EA", 
+    accentDark: "#065F46",
+    bgDown: "#E6F4EA",
     description: "Building cognitive abilities, logical analysis, personality development, and public confidence frameworks.",
     gallery: []
   },
@@ -236,8 +233,8 @@ const ACADEMICS = [
     title: "IIT – NEET",
     subtitle: "Competitive Foundation",
     image: "/src/assets/IIT NEET/IITHERO.png",
-    accentDark: "#991B1B", 
-    bgDown: "#FCE8E6", 
+    accentDark: "#991B1B",
+    bgDown: "#FCE8E6",
     description: "Advanced concept frameworks targeting Olympiads, foundational engineering, and medical track preparation.",
     gallery: ["/src/assets/IIT NEET/IIT1.png", "/src/assets/IIT NEET/IIT2.png", "/src/assets/IIT NEET/IIT3.png", "/src/assets/IIT NEET/IIT4.png"]
   },
@@ -246,24 +243,18 @@ const ACADEMICS = [
     title: "Science Lab",
     subtitle: "Practical Experiments",
     image: "/src/assets/ScienceLab/S1.png",
-    accentDark: "#5B21B6", 
-    bgDown: "#F3E8FF", 
+    accentDark: "#5B21B6",
+    bgDown: "#F3E8FF",
     description: "Hands-on chemical, physical, and bio experiments transforming dry theory into physical realizations.",
-    gallery: [
-      "/src/assets/ScienceLab/S1.png", 
-      "/src/assets/ScienceLab/S2.png",
-      "/src/assets/ScienceLab/S3.png",
-      "/src/assets/ScienceLab/S4.png",
-      "/src/assets/ScienceLab/S5.png"
-    ]
+    gallery: ["/src/assets/ScienceLab/S1.png", "/src/assets/ScienceLab/S2.png", "/src/assets/ScienceLab/S3.png", "/src/assets/ScienceLab/S4.png", "/src/assets/ScienceLab/S5.png"]
   },
   {
     id: "omr",
     title: "OMR Evaluation",
     subtitle: "Assessment Systems",
     image: "/src/assets/E) OMR/OMRHero.png",
-    accentDark: "#92400E", 
-    bgDown: "#FEF3C7", 
+    accentDark: "#92400E",
+    bgDown: "#FEF3C7",
     description: "Familiarising pupils with modern competitive testing via automated diagnostic examinations.",
     gallery: ["/src/assets/E) OMR/OMR1.jpeg", "/src/assets/E) OMR/OMR2.jpeg"]
   },
@@ -272,8 +263,8 @@ const ACADEMICS = [
     title: "Language Lab",
     subtitle: "Communication Skills",
     image: "/src/assets/F) LANGUAGE LAB/LLHero.png",
-    accentDark: "#0369A1", 
-    bgDown: "#E0F2FE", 
+    accentDark: "#0369A1",
+    bgDown: "#E0F2FE",
     description: "Digital audio-linguistic tools to perfect phonetics, conversational fluency, and speech clarity.",
     gallery: ["/src/assets/F) LANGUAGE LAB/LL1.jpeg", "/src/assets/F) LANGUAGE LAB/LL2.jpeg"]
   },
@@ -282,8 +273,8 @@ const ACADEMICS = [
     title: "Computer Lab",
     subtitle: "Digital Literacy",
     image: "/src/assets/G) COMPUTR LAB/CLHero.png",
-    accentDark: "#374151", 
-    bgDown: "#F1F5F9", 
+    accentDark: "#374151",
+    bgDown: "#F1F5F9",
     description: "Programming fundamentals, AI applications, web logic, and technology-driven learning models.",
     gallery: ["/src/assets/G) COMPUTR LAB/CL1.jpeg", "/src/assets/G) COMPUTR LAB/CL2.jpeg"]
   },
@@ -292,8 +283,8 @@ const ACADEMICS = [
     title: "CSP",
     subtitle: "Community Activity",
     image: "/src/assets/I) CSP/CSPHero.png",
-    accentDark: "#9D174D", 
-    bgDown: "#FCE7F3", 
+    accentDark: "#9D174D",
+    bgDown: "#FCE7F3",
     description: "Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.",
     gallery: ["/src/assets/I) CSP/CSP1.jpeg", "/src/assets/I) CSP/CSP2.jpeg"]
   },
@@ -302,8 +293,8 @@ const ACADEMICS = [
     title: "Field Trips",
     subtitle: "Experiential Outings",
     image: "/src/assets/J) FIELD TRIP/FTHero.png",
-    accentDark: "#C2410C", 
-    bgDown: "#FFEDD5", 
+    accentDark: "#C2410C",
+    bgDown: "#FFEDD5",
     description: "Guided environmental and factory tours bridging indoor curricula with real-world execution.",
     gallery: ["/src/assets/J) FIELD TRIP/FT1.jpeg", "/src/assets/J) FIELD TRIP/FT2.jpeg"]
   },
@@ -312,8 +303,8 @@ const ACADEMICS = [
     title: "Sports Meet 2026",
     subtitle: "Sports Championship",
     image: "/src/assets/Sports/SportsHero.png",
-    accentDark: "#1E3A8A", 
-    bgDown: "#FFDCC3", 
+    accentDark: "#1E3A8A",
+    bgDown: "#FFDCC3",
     description: "Students showcased teamwork, discipline, and athletic excellence through exciting indoor and outdoor sports competitions.",
     gallery: ["/src/assets/Sports/Sports1.jpeg", "/src/assets/Sports/Sports2.jpeg", "/src/assets/Sports/Sports3.jpeg", "/src/assets/Sports/Sports4.jpeg", "/src/assets/Sports/Sports5.jpeg"]
   },
@@ -322,8 +313,8 @@ const ACADEMICS = [
     title: "Doctors Day Celebration",
     subtitle: "Special Celebration",
     image: "/src/assets/ScienceDay/DoctorsHero.png",
-    accentDark: "#4C1D95", 
-    bgDown: "#E0E0FF", 
+    accentDark: "#4C1D95",
+    bgDown: "#E0E0FF",
     description: "Students honored healthcare heroes through roleplay activities, awareness programs, and creative presentations.",
     gallery: ["/src/assets/ScienceDay/Doctors1.jpeg", "/src/assets/ScienceDay/Doctors2.jpeg", "/src/assets/ScienceDay/Doctors3.jpeg", "/src/assets/ScienceDay/Doctors4.jpeg"]
   },
@@ -332,8 +323,8 @@ const ACADEMICS = [
     title: "Annual Day Fest",
     subtitle: "Cultural Event",
     image: "/src/assets/Infrastructure/AnnualHero.png",
-    accentDark: "#701A75", 
-    bgDown: "#FFF0D4", 
+    accentDark: "#701A75",
+    bgDown: "#FFF0D4",
     description: "A grand celebration filled with dance, music, drama, and student performances that brought the entire campus alive.",
     gallery: ["/src/assets/Infrastructure/Annual1.jpeg", "/src/assets/Infrastructure/Annual2.jpeg", "/src/assets/Infrastructure/Annual3.jpeg", "/src/assets/Infrastructure/Annual4.jpeg"]
   },
@@ -342,8 +333,8 @@ const ACADEMICS = [
     title: "Children's Day Fun",
     subtitle: "Student Celebration",
     image: "/src/assets/Library/ChildrensHero.png",
-    accentDark: "#065F46", 
-    bgDown: "#D5F9E4", 
+    accentDark: "#065F46",
+    bgDown: "#D5F9E4",
     description: "A joyful day of games, performances, fun activities, and memorable moments dedicated to our beloved students.",
     gallery: ["/src/assets/Library/Childrens1.jpeg", "/src/assets/Library/Childrens2.jpeg", "/src/assets/Library/Childrens3.jpeg"]
   }
@@ -373,11 +364,11 @@ function Lightbox({ image, onClose }) {
 
 function AcademicCard({ item, onClick }) {
   return (
-    <article 
-      className="aa-card" 
+    <article
+      className="aa-card"
       onClick={onClick}
-      style={{ 
-        "--card-accent-dark": item.accentDark, 
+      style={{
+        "--card-accent-dark": item.accentDark,
         "--card-bg-down": item.bgDown
       }}
     >
@@ -385,10 +376,10 @@ function AcademicCard({ item, onClick }) {
         <span className="aa-badge-pill" style={{ color: item.accentDark }}>
           {item.subtitle}
         </span>
-        <img 
-          src={item.image} 
-          alt={item.title} 
-          loading="lazy" 
+        <img
+          src={item.image}
+          alt={item.title}
+          loading="lazy"
           onError={(e) => {
             e.target.style.display = 'none';
             e.target.parentNode.style.background = '#e2e8f0';
@@ -477,18 +468,56 @@ export default function AcademicApproach() {
           />
         ) : (
           <div style={{ background: "var(--e-global-color-10113fb)" }}>
+
             {/* ── HERO DISPLAY ── */}
             <section className="aa-hero">
+
+              {/* ── BACKGROUND IMAGE ── */}
+              <img
+                src="/images/gallery/Academic.png"
+                alt="Academic hero background"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  zIndex: 0,
+                }}
+              />
+
+              {/* ── HERO CONTENT (above image) ── */}
               <div className="aa-hero-content">
                 <div className="aa-hero-eyebrow">
                   <span>Brindavan School</span>
                 </div>
 
-                <h1 className="aa-display" style={{ fontSize: "clamp(34px, 5vw, 54px)", color: THEME.colors.navy, fontWeight: 700, lineHeight: 1.15, marginBottom: 16 }}>
+                <h1
+                  className="aa-display"
+                  style={{
+                    fontSize: "clamp(34px, 5vw, 54px)",
+                    color: THEME.colors.white,
+                    fontWeight: 700,
+                    lineHeight: 1.15,
+                    marginBottom: 16,
+                    textShadow: "2px 2px 12px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.7)",
+                  }}
+                >
                   Academic Frameworks
                 </h1>
 
-                <p style={{ color: THEME.colors.textMuted, fontSize: 15, lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}>
+                <p
+                  style={{
+                    color: THEME.colors.white,
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                    maxWidth: 520,
+                    marginBottom: 28,
+                    fontWeight: 500,
+                    textShadow: "1px 1px 8px rgba(0,0,0,0.9)",
+                  }}
+                >
                   Explore student life tracks, practical labs, learning programmes, and structured evaluations.
                 </p>
 

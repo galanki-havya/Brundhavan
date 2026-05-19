@@ -4,18 +4,14 @@ export default function PageHero({
   title,
   subtitle,
   variant = 'blue',
-  backgroundImage, // New prop added here
+  backgroundImage,
 }) {
   const isPink = variant === 'pink'
 
   return (
     <section
       className={`relative overflow-hidden pt-28 pb-16 md:pt-32 md:pb-20
-      ${
-        isPink
-          ? 'bg-[#7A284B]' // Solid fallback
-          : 'bg-primary-900' // Solid fallback
-      }`}
+      ${isPink ? 'bg-[#7A284B]' : 'bg-primary-900'}`}
     >
       {/* ── IMAGE BACKGROUND LAYER ── */}
       {backgroundImage && (
@@ -23,20 +19,12 @@ export default function PageHero({
           <img
             src={backgroundImage}
             alt={title}
-            className="w-full h-full object-cover opacity-60" // Opacity lets gradients shine through
-          />
-          {/* Overlay to ensure text readability */}
-          <div 
-            className={`absolute inset-0 
-            ${isPink 
-              ? 'bg-gradient-to-r from-[#7A284B]/90 via-[#A3376B]/80 to-transparent' 
-              : 'bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-transparent'
-            }`} 
+            className="w-full h-full object-cover opacity-100"
           />
         </div>
       )}
 
-      {/* Decorative Glow Background - Lowered opacity slightly to favor the image */}
+      {/* Decorative Glow Background */}
       <div className="absolute inset-0 pointer-events-none opacity-20 z-1">
         <div
           className={`absolute top-[-80px] left-[10%] w-[26rem] h-[26rem] blur-3xl rounded-full
@@ -54,7 +42,7 @@ export default function PageHero({
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-          
+
           {/* Left Content */}
           <div className="max-w-3xl">
             <div
@@ -65,22 +53,26 @@ export default function PageHero({
                 font-semibold mb-5
                 backdrop-blur-md border
                 ${isPink
-                    ? 'bg-white/10 border-white/20 text-[#FFE4EF]'
-                    : 'bg-white/10 border-white/20 text-primary-100'
+                  ? 'bg-black/40 border-white/20 text-white'
+                  : 'bg-black/40 border-white/20 text-white'
                 }
               `}
             >
               Brindavan School
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight drop-shadow-md">
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight"
+              style={{ textShadow: '2px 2px 12px rgba(0,0,0,0.95), 0px 0px 30px rgba(0,0,0,0.8)' }}
+            >
               {title}
             </h1>
 
             {subtitle && (
               <p
-                className={`mt-5 text-lg md:text-xl leading-relaxed max-w-2xl drop-shadow-sm
-                ${isPink ? 'text-[#FFE4EF]/90' : 'text-primary-100'}`}
+                className={`mt-5 text-lg md:text-xl leading-relaxed max-w-2xl font-medium
+                ${isPink ? 'text-white' : 'text-white'}`}
+                style={{ textShadow: '1px 1px 8px rgba(0,0,0,0.95), 0px 0px 20px rgba(0,0,0,0.8)' }}
               >
                 {subtitle}
               </p>
@@ -99,8 +91,8 @@ export default function PageHero({
                 shadow-2xl hover:scale-105
                 backdrop-blur-xl border
                 ${isPink
-                    ? 'bg-white/15 border-white/20 text-white hover:bg-white hover:text-[#C2417A]'
-                    : 'bg-white/10 border-white/20 text-white hover:bg-white hover:text-primary-800'
+                  ? 'bg-white/15 border-white/20 text-white hover:bg-white hover:text-[#C2417A]'
+                  : 'bg-white/10 border-white/20 text-white hover:bg-white hover:text-primary-800'
                 }
               `}
             >
