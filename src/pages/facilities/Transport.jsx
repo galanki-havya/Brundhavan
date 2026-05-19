@@ -150,15 +150,71 @@ export default function Transport() {
               { icon: Shield, title: 'Safety First', description: 'GPS tracking, trained drivers, and comprehensive safety protocols on every route.' },
               { icon: Clock, title: 'Punctual Service', description: 'Reliable pickup and drop-off timings with minimal delays and consistent scheduling.' },
               { icon: MapPin, title: 'Wide Coverage', description: 'Extensive route network covering Palamaner town and all surrounding villages.' }
-            ].map((item, index) => (
-              <motion.div key={item.title} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: index * 0.1 }} viewport={{ once: true }} style={{ background: '#fff', borderRadius: '24px', padding: '32px 28px', boxShadow: '0 15px 35px rgba(124, 98, 24, 0.05)', border: '1px solid rgba(212, 175, 55, 0.12)' }}>
-                <div style={{ width: '52px', height: '52px', background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.02))', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '1.5px solid rgba(212, 175, 55, 0.15)' }}>
-                  <item.icon size={24} style={{ color: '#7C6218' }} />
-                </div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#7C6218', marginBottom: '10px' }}>{item.title}</h3>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#64748b', fontSize: '0.93rem', lineHeight: 1.7, margin: 0 }}>{item.description}</p>
-              </motion.div>
-            ))}
+            ].map((item, index) => {
+              const colors = [
+                {
+                  bg: '#e6f5f5', // Soft Crisp Teal
+                  border: '1.5px solid rgba(0, 128, 128, 0.35)',
+                  iconBg: 'linear-gradient(135deg, rgba(0, 128, 128, 0.12), rgba(0, 128, 128, 0.03))',
+                  iconBorder: '1.5px solid rgba(0, 128, 128, 0.25)',
+                  iconColor: '#008080'
+                },
+                {
+                  bg: '#f4effa', // Soft Lavender Purple
+                  border: '1.5px solid rgba(138, 43, 226, 0.35)',
+                  iconBg: 'linear-gradient(135deg, rgba(138, 43, 226, 0.12), rgba(138, 43, 226, 0.03))',
+                  iconBorder: '1.5px solid rgba(138, 43, 226, 0.25)',
+                  iconColor: '#8A2BE2'
+                },
+                {
+                  bg: '#e8f7ee', // Soft Mint Green
+                  border: '1.5px solid rgba(30, 130, 76, 0.35)',
+                  iconBg: 'linear-gradient(135deg, rgba(30, 130, 76, 0.12), rgba(30, 130, 76, 0.03))',
+                  iconBorder: '1.5px solid rgba(30, 130, 76, 0.25)',
+                  iconColor: '#1E824C'
+                },
+                {
+                  bg: '#fdf3e7', // Soft Peach Orange
+                  border: '1.5px solid rgba(230, 126, 34, 0.35)',
+                  iconBg: 'linear-gradient(135deg, rgba(230, 126, 34, 0.12), rgba(230, 126, 34, 0.03))',
+                  iconBorder: '1.5px solid rgba(230, 126, 34, 0.25)',
+                  iconColor: '#E67E22'
+                }
+              ][index % 4]
+
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  style={{
+                    background: colors.bg,
+                    borderRadius: '24px',
+                    padding: '32px 28px',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
+                    border: colors.border
+                  }}
+                >
+                  <div
+                    className="flex items-center justify-center"
+                    style={{
+                      width: '52px',
+                      height: '52px',
+                      background: colors.iconBg,
+                      borderRadius: '16px',
+                      marginBottom: '20px',
+                      border: colors.iconBorder
+                    }}
+                  >
+                    <item.icon size={24} style={{ color: colors.iconColor }} />
+                  </div>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#7C6218', marginBottom: '10px' }}>{item.title}</h3>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#64748b', fontSize: '0.93rem', lineHeight: 1.7, margin: 0 }}>{item.description}</p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

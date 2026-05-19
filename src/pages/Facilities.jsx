@@ -22,42 +22,42 @@ const themes = [
   {
     accent: '#008080',
     bgColor: '#f2f9f9',
-    border: '1px solid rgba(0, 128, 128, 0.15)',
+    border: '1.5px solid rgba(0, 128, 128, 0.3)',
     shadowColor: 'rgba(0, 128, 128, 0.12)'
   },
   // 💻 Digital Learning Center (Bronze / Main Logo)
   {
     accent: '#7C6218',
     bgColor: '#faf8f2',
-    border: '1px solid rgba(124, 98, 24, 0.15)',
+    border: '1.5px solid rgba(124, 98, 24, 0.3)',
     shadowColor: 'rgba(124, 98, 24, 0.12)'
   },
   // 📚 Resource Library (Emerald Green)
   {
     accent: '#1E824C',
     bgColor: '#f3faf5',
-    border: '1px solid rgba(30, 130, 76, 0.15)',
+    border: '1.5px solid rgba(30, 130, 76, 0.3)',
     shadowColor: 'rgba(30, 130, 76, 0.12)'
   },
   // 🏊 Aquatic Complex (Vibrant Amber / Gold)
   {
     accent: '#d4af37',
     bgColor: '#fdfbf2',
-    border: '1px solid rgba(212, 175, 55, 0.15)',
+    border: '1.5px solid rgba(212, 175, 55, 0.3)',
     shadowColor: 'rgba(212, 175, 55, 0.12)'
   },
   // 🎨 Arts & Creativity Studio (Crimson Red)
   {
     accent: '#A82424',
     bgColor: '#faf3f3',
-    border: '1px solid rgba(168, 36, 36, 0.15)',
+    border: '1.5px solid rgba(168, 36, 36, 0.3)',
     shadowColor: 'rgba(168, 36, 36, 0.12)'
   },
   // ⚽ Sports Complex (Warm Orange)
   {
     accent: '#E67E22',
     bgColor: '#fdf7f2',
-    border: '1px solid rgba(230, 126, 34, 0.15)',
+    border: '1.5px solid rgba(230, 126, 34, 0.3)',
     shadowColor: 'rgba(230, 126, 34, 0.12)'
   }
 ]
