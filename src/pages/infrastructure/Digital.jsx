@@ -2,37 +2,21 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import {
-  Laptop,
-  Globe,
-  Database,
-  Smartphone,
-  CheckCircle2,
-  ArrowRight
+  Laptop, Globe, Database, Smartphone,
+  CheckCircle2, ArrowRight, Code2, BookOpen, Cpu, Wifi
 } from 'lucide-react'
 import PageHero from '../../components/PageHero'
 
 export default function Digital() {
   return (
-    <div
-      className="min-h-screen"
-      style={{
-        background: '#fff',
-        fontFamily: "'Playfair Display', 'Georgia', serif"
-      }}
-    >
+    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
+
       <Helmet>
-        <title>Digital Learning - Brindavan Schools</title>
-        <meta
-          name="description"
-          content="Cutting-edge digital infrastructure supporting modern education and future-ready skills."
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
+        <title>Digital Learning - Brindavan School</title>
+        <meta name="description" content="Cutting-edge digital infrastructure supporting modern education and future-ready skills at Brindavan School, Palamaner." />
       </Helmet>
 
-      {/* ── Hero ── */}
       <PageHero
         title="Digital Learning"
         subtitle="Cutting-edge digital infrastructure supporting modern education and future-ready skills."
@@ -40,136 +24,66 @@ export default function Digital() {
         backgroundImage="/images/gallery/Academic.png"
       />
 
-      {/* ── Split Section: Image Left, Text Right ── */}
+      {/* ── Split Section ── */}
       <section style={{ background: '#fff', padding: '80px 0' }}>
-        <div
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: '0 24px',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '60px',
-            alignItems: 'center'
-          }}
-        >
+        <div style={{
+          maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
+          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center'
+        }} className="about-grid">
+          <style>{`@media(max-width:768px){.about-grid{grid-template-columns:1fr!important;}}`}</style>
+
           {/* Image Side */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7 }}
             style={{ position: 'relative' }}
           >
-            {/* Pink accent frame */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '20px',
-                left: '20px',
-                width: '100%',
-                height: '100%',
-                borderRadius: '20px',
-                background: 'linear-gradient(135deg, #FF6347, #FFBDAA)',
-                zIndex: 0
-              }}
-            />
             <img
               src="/images/gallery/computer.jpg"
               alt="Digital Learning at Brindavan"
               style={{
-                position: 'relative',
-                zIndex: 1,
-                width: '100%',
-                height: '420px',
-                objectFit: 'cover',
-                borderRadius: '20px',
-                display: 'block',
-                boxShadow: '0 24px 60px rgba(255,99,71,0.2)'
+                width: '100%', height: '420px', objectFit: 'cover',
+                borderRadius: '20px', display: 'block',
+                border: '1px solid #f0f0f0',
+                boxShadow: '0 16px 48px rgba(0,0,0,0.08)'
               }}
             />
-            {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              style={{
-                position: 'absolute',
-                bottom: '-20px',
-                right: '-20px',
-                zIndex: 2,
-                background: '#fff',
-                borderRadius: '16px',
-                padding: '16px 24px',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-                fontFamily: "'DM Sans', sans-serif"
-              }}
-            >
-              <div
-                style={{
-                  fontSize: '28px',
-                  fontWeight: 700,
-                  color: '#FF6347',
-                  fontFamily: "'Playfair Display', serif"
-                }}
-              >
-                100+
-              </div>
-              <div style={{ fontSize: '13px', color: '#6b5c6e', fontWeight: 500 }}>
-                Digital Devices
-              </div>
-            </motion.div>
+            <div style={{
+              position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2,
+              background: '#fff', borderRadius: '16px', padding: '16px 24px',
+              border: '1px solid #f0f0f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+            }}>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>100+</div>
+              <div style={{ fontSize: '13px', color: '#555', fontWeight: 500 }}>Digital Devices</div>
+            </div>
           </motion.div>
 
           {/* Text Side */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.7 }}
           >
-            <span
-              style={{
-                display: 'inline-block',
-                color: '#FF6347',
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: '13px',
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                marginBottom: '16px'
-              }}
-            >
-              Our Technology
-            </span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+              <span style={{ height: 1, width: 28, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>
+                Our Technology
+              </span>
+            </div>
 
-            <h2
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-                fontWeight: 700,
-                color: '#1a1a2e',
-                lineHeight: 1.2,
-                marginBottom: '20px'
-              }}
-            >
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700,
+              color: '#011E3A', lineHeight: 1.2, marginBottom: '20px'
+            }}>
               Learning Powered by{' '}
-              <span style={{ color: '#FF6347' }}>Technology</span>
+              <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Technology</span>
             </h2>
 
-            <p
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: '1rem',
-                color: '#6b5c6e',
-                lineHeight: 1.8,
-                marginBottom: '28px'
-              }}
-            >
-              At Brindavan, we believe the future belongs to those who are digitally fluent.
-              Our smart classrooms, computer labs, and connected ecosystem equip every
-              student with the tools and mindset to thrive in a technology-driven world.
+            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
+              At Brindavan, we believe the future belongs to those who are digitally fluent. Our smart classrooms, computer labs, and connected ecosystem equip every student with the tools and mindset to thrive.
+            </p>
+            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
+              From coding workshops to digital libraries, every resource is designed to spark curiosity and build skills that go far beyond the classroom.
             </p>
 
             {[
@@ -179,414 +93,139 @@ export default function Digital() {
               'Digital library and e-learning platforms',
               'BYOD-friendly learning environment'
             ].map((point, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 + 0.2 }}
-                style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '12px',
-                  marginBottom: '14px',
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: '0.95rem',
-                  color: '#3d2c40'
-                }}
-              >
-                <CheckCircle2
-                  size={20}
-                  style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }}
-                />
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontSize: '0.95rem', color: '#222' }}>
+                <CheckCircle2 size={19} style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }} />
                 <span>{point}</span>
-              </motion.div>
+              </div>
             ))}
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              style={{ marginTop: '32px' }}
-            >
-              <Link
-                to="/admissions"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: '#FF6347',
-                  color: '#fff',
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  padding: '14px 28px',
-                  borderRadius: '50px',
-                  textDecoration: 'none',
-                  boxShadow: '0 6px 24px rgba(255,99,71,0.35)',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                Explore Admissions <ArrowRight size={18} />
+            <div style={{ marginTop: '32px', display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+              <Link to="/admissions" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: '#FF6347', color: '#fff',
+                fontWeight: 600, fontSize: '0.95rem',
+                padding: '13px 28px', borderRadius: '50px', textDecoration: 'none'
+              }}>
+                Explore Admissions <ArrowRight size={17} />
               </Link>
-            </motion.div>
+              <Link to="/contact" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                border: '1.5px solid #e0e0e0', color: '#011E3A',
+                fontWeight: 600, fontSize: '0.95rem',
+                padding: '13px 28px', borderRadius: '50px', textDecoration: 'none'
+              }}>
+                Contact Us
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Digital Features Cards ── */}
+      {/* ── Digital Capabilities Cards ── */}
       <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '52px' }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}
           >
-            <h2
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-                fontWeight: 700,
-                color: '#1a1a2e',
-                marginBottom: '12px'
-              }}
-            >
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>What We Offer</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>
               Digital Capabilities
             </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem' }}>
-              Every tool built to empower the next generation of leaders
-            </p>
+            <p style={{ color: '#666', fontSize: '1rem' }}>Every tool built to empower the next generation of leaders</p>
           </motion.div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
             {[
-              {
-                icon: Laptop,
-                title: 'Computer Labs',
-                description: 'State-of-the-art computer laboratories with the latest hardware and software for hands-on learning.'
-              },
-              {
-                icon: Globe,
-                title: 'Internet Connectivity',
-                description: 'High-speed broadband internet enabling online learning, research, and global collaboration.'
-              },
-              {
-                icon: Database,
-                title: 'Digital Resources',
-                description: 'Access to online libraries, educational platforms, and curated digital content for every subject.'
-              },
-              {
-                icon: Smartphone,
-                title: 'Mobile Learning',
-                description: 'BYOD programs and mobile applications for flexible, on-the-go enhanced learning experiences.'
-              }
-            ].map((item, index) => (
+              { emoji: '💻', label: 'Computer Labs', desc: 'State-of-the-art labs with the latest hardware and software for hands-on learning.' },
+              { emoji: '🌐', label: 'Internet Access', desc: 'High-speed broadband enabling online learning, research, and global collaboration.' },
+              { emoji: '📚', label: 'Digital Resources', desc: 'Access to online libraries, educational platforms, and curated content for every subject.' },
+              { emoji: '📱', label: 'Mobile Learning', desc: 'BYOD programs and mobile apps for flexible, on-the-go enhanced learning experiences.' },
+            ].map((item, i) => (
               <motion.div
-                key={item.title}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
+                key={i}
+                initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff',
-                  borderRadius: '20px',
-                  padding: '32px 28px',
-                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
-                  border: '1px solid #FFD8CC'
+                  background: '#fff', borderRadius: '18px', padding: '32px 24px',
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+                  textAlign: 'center', position: 'relative', overflow: 'hidden'
                 }}
               >
-                <div
-                  style={{
-                    width: '52px',
-                    height: '52px',
-                    background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)',
-                    borderRadius: '14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '20px',
-                    border: '1.5px solid #FFBDAA'
-                  }}
-                >
-                  <item.icon size={24} style={{ color: '#FF6347' }} />
-                </div>
-                <h3
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: '1.2rem',
-                    fontWeight: 700,
-                    color: '#1a1a2e',
-                    marginBottom: '10px'
-                  }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    color: '#6b5c6e',
-                    fontSize: '0.93rem',
-                    lineHeight: 1.7,
-                    margin: 0
-                  }}
-                >
-                  {item.description}
-                </p>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
+                <div style={{ fontSize: '2.4rem', marginBottom: '14px' }}>{item.emoji}</div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
+                <p style={{ color: '#666', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Technology Infrastructure: Two Column Lists ── */}
+      {/* ── Technology Infrastructure ── */}
       <section style={{ padding: '80px 0', background: '#fff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '52px' }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}
           >
-            <h2
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-                fontWeight: 700,
-                color: '#1a1a2e',
-                marginBottom: '12px'
-              }}
-            >
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Infrastructure</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A' }}>
               Technology Infrastructure
             </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem', maxWidth: '500px', margin: '0 auto' }}>
-              Modern digital infrastructure supporting 21st-century learning methodologies
-            </p>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-            {/* Hardware */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              style={{
-                background: '#fff',
-                borderRadius: '20px',
-                padding: '36px 32px',
-                border: '1.5px solid #FFD8CC'
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: '1.4rem',
-                  fontWeight: 700,
-                  color: '#1a1a2e',
-                  marginBottom: '24px',
-                  paddingBottom: '16px',
-                  borderBottom: '2px solid #FF6347',
-                  display: 'inline-block'
-                }}
-              >
-                Hardware
-              </h3>
-              <div style={{ marginTop: '8px' }}>
-                {[
-                  'High-performance Computers',
-                  'Interactive Whiteboards',
-                  'Student Tablets',
-                  'Audio-Visual Equipment',
-                  'Printers & Scanners',
-                  'Networking Infrastructure'
-                ].map(item => (
-                  <div
-                    key={item}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      padding: '10px 0',
-                      borderBottom: '1px solid #FFD8CC',
-                      fontFamily: "'DM Sans', sans-serif",
-                      color: '#3d2c40',
-                      fontSize: '0.95rem'
-                    }}
-                  >
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Software */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              style={{
-                background: '#fff',
-                borderRadius: '20px',
-                padding: '36px 32px',
-                border: '1.5px solid #FFD8CC'
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: '1.4rem',
-                  fontWeight: 700,
-                  color: '#1a1a2e',
-                  marginBottom: '24px',
-                  paddingBottom: '16px',
-                  borderBottom: '2px solid #FF8C6B',
-                  display: 'inline-block'
-                }}
-              >
-                Software & Platforms
-              </h3>
-              <div style={{ marginTop: '8px' }}>
-                {[
-                  'Educational Software',
-                  'Learning Management System',
-                  'Digital Assessment Tools',
-                  'Creative Applications',
-                  'Programming Environments',
-                  'Online Collaboration Tools'
-                ].map(item => (
-                  <div
-                    key={item}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      padding: '10px 0',
-                      borderBottom: '1px solid #FFD8CC',
-                      fontFamily: "'DM Sans', sans-serif",
-                      color: '#3d2c40',
-                      fontSize: '0.95rem'
-                    }}
-                  >
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FF8C6B', flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Digital Learning Programs ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '52px' }}
-          >
-            <h2
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-                fontWeight: 700,
-                color: '#1a1a2e',
-                marginBottom: '12px'
-              }}
-            >
-              Digital Learning Initiatives
-            </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem' }}>
-              Innovative programs leveraging technology for enhanced learning outcomes
-            </p>
-          </motion.div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px'
-            }}
-          >
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
             {[
               {
-                title: 'STEM Education',
-                initiatives: ['Coding & Programming', 'Robotics Workshops', '3D Design & Printing', 'Virtual Science Labs']
+                title: 'Hardware',
+                icon: Cpu,
+                items: ['High-performance Computers', 'Interactive Whiteboards', 'Student Tablets', 'Audio-Visual Equipment', 'Printers & Scanners', 'Networking Infrastructure']
               },
               {
-                title: 'Digital Literacy',
-                initiatives: ['Internet Safety', 'Digital Citizenship', 'Information Research', 'Online Communication']
+                title: 'Software & Platforms',
+                icon: Code2,
+                items: ['Educational Software', 'Learning Management System', 'Digital Assessment Tools', 'Creative Applications', 'Programming Environments', 'Online Collaboration Tools']
               },
               {
-                title: 'Future Skills',
-                initiatives: ['AI & Machine Learning', 'Data Analysis', 'Digital Design', 'Entrepreneurship Tools']
-              }
-            ].map((category, index) => (
+                title: 'STEM Programs',
+                icon: BookOpen,
+                items: ['Coding & Programming', 'Robotics Workshops', '3D Design & Printing', 'Virtual Science Labs', 'AI & Machine Learning', 'Data Analysis Basics']
+              },
+            ].map((col, i) => (
               <motion.div
-                key={category.title}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
+                key={i}
+                initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: i * 0.1 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff',
-                  borderRadius: '20px',
-                  padding: '32px 28px',
-                  border: '1px solid #FFD8CC',
-                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
-                  position: 'relative',
-                  overflow: 'hidden'
+                  background: '#fff', borderRadius: '18px', padding: '32px 28px',
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                 }}
               >
-                {/* Top accent bar */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0, left: 0, right: 0,
-                    height: '4px',
-                    background: 'linear-gradient(90deg, #FF6347, #FFBDAA)'
-                  }}
-                />
-                <h3
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: '1.3rem',
-                    fontWeight: 700,
-                    color: '#1a1a2e',
-                    marginBottom: '20px'
-                  }}
-                >
-                  {category.title}
-                </h3>
-                <div>
-                  {category.initiatives.map(initiative => (
-                    <div
-                      key={initiative}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '10px',
-                        padding: '8px 0',
-                        borderBottom: '1px solid #FFD8CC',
-                        fontFamily: "'DM Sans', sans-serif",
-                        fontSize: '0.9rem',
-                        color: '#3d2c40'
-                      }}
-                    >
-                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
-                      {initiative}
-                    </div>
-                  ))}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '2px solid #FF6347' }}>
+                  <col.icon size={20} style={{ color: '#FF6347' }} />
+                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#011E3A', margin: 0 }}>{col.title}</h3>
                 </div>
+                {col.items.map((item, j) => (
+                  <div key={j} style={{
+                    display: 'flex', alignItems: 'center', gap: '12px',
+                    padding: '10px 0', borderBottom: '1px solid #f5f5f5',
+                    fontSize: '0.93rem', color: '#333'
+                  }}>
+                    <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
+                    {item}
+                  </div>
+                ))}
               </motion.div>
             ))}
           </div>
@@ -594,94 +233,37 @@ export default function Digital() {
       </section>
 
       {/* ── CTA ── */}
-      <section
-        style={{
-          padding: '80px 24px',
-          background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden'
-        }}
-      >
-        <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '280px', height: '280px', borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
-        <div style={{ position: 'absolute', bottom: '-40px', left: '10%', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
-
-        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(1.9rem, 4vw, 2.8rem)',
-              fontWeight: 800,
-              color: '#fff',
-              marginBottom: '16px',
-              lineHeight: 1.2
-            }}
-          >
+      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Get Started</span>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Prepare Your Child for a Digital Future
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              color: 'rgba(255,255,255,0.85)',
-              fontSize: '1.05rem',
-              marginBottom: '36px',
-              lineHeight: 1.7
-            }}
-          >
+          </h2>
+          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Give your child access to world-class digital education and the skills they need to lead tomorrow.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}
-          >
-            <Link
-              to="/admissions"
-              style={{
-                background: '#fff',
-                color: '#C4391E',
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 700,
-                fontSize: '0.97rem',
-                padding: '14px 32px',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
+          </p>
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/admissions" style={{
+              background: '#FF6347', color: '#fff',
+              fontWeight: 700, fontSize: '0.97rem',
+              padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
+              display: 'inline-flex', alignItems: 'center', gap: '8px'
+            }}>
               Apply Now <ArrowRight size={17} />
             </Link>
-            <Link
-              to="/contact"
-              style={{
-                border: '2px solid rgba(255,255,255,0.8)',
-                color: '#fff',
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: '0.97rem',
-                padding: '14px 32px',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
+            <Link to="/contact" style={{
+              border: '1.5px solid #e0e0e0', color: '#011E3A',
+              fontWeight: 600, fontSize: '0.97rem',
+              padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
+              display: 'inline-flex', alignItems: 'center', gap: '8px'
+            }}>
               Schedule a Tour
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

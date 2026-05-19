@@ -17,31 +17,11 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <Section className="relative overflow-hidden" style={{ background: '#fff', padding: '80px 0' }}>
-
-      {/* Ambient background glows — matching other pink-themed sections */}
-      <div style={{
-        position: 'absolute', top: 0, right: 0,
-        width: 320, height: 320,
-        background: 'rgba(255,99,71,0.07)',
-        borderRadius: '50%',
-        transform: 'translate(100px, -100px)',
-        filter: 'blur(60px)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', bottom: 0, left: 0,
-        width: 260, height: 260,
-        background: 'rgba(249,115,22,0.05)',
-        borderRadius: '50%',
-        transform: 'translate(-80px, 80px)',
-        filter: 'blur(60px)',
-        pointerEvents: 'none',
-      }} />
+    <Section className="relative overflow-hidden" style={{ background: '#ffffff', padding: '80px 0' }}>
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
 
-        {/* Header — same pattern as other sections */}
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +32,7 @@ export default function Testimonials() {
           {/* Eyebrow */}
           <span style={{
             display: 'inline-block',
-            color: '#FF6347',
+            color: '#ec733a',
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 600,
             fontSize: 13,
@@ -88,25 +68,25 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Widget card — styled to match the site's card language */}
+        {/* Widget Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
           style={{
-            background: '#fff',
+            background: '#ffffff',
             borderRadius: 24,
-            border: '1px solid #FFD8CC',
-            boxShadow: '0 10px 40px rgba(255,99,71,0.08), 0 2px 12px rgba(0,0,0,0.04)',
+            border: '1px solid #eaeaea',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.04), 0 2px 12px rgba(0,0,0,0.02)',
             overflow: 'hidden',
             position: 'relative',
           }}
         >
-          {/* Top pink accent bar */}
+          {/* Top Brand Accent Bar */}
           <div style={{
             height: 3,
-            background: 'linear-gradient(90deg, #FF6347 0%, #f97316 50%, #FF6347 100%)',
+            background: 'linear-gradient(90deg, #ec733a 0%, #c9612c 50%, #ec733a 100%)',
           }} />
 
           <div style={{ padding: '24px', height: 480 }}>
@@ -117,7 +97,7 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        {/* Bottom trust badges */}
+        {/* Bottom Trust Badges */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,19 +111,19 @@ export default function Testimonials() {
             marginTop: 32,
           }}
         >
-          {['Verified Reviews', '⭐ Highly Rated', 'Parents\' Choice', 'Palamaner\'s Trusted School'].map((badge) => (
+          {['Verified Reviews', '⭐ Highly Rated', "Parents' Choice", "Palamaner's Trusted School"].map((badge) => (
             <span key={badge} style={{
               display: 'inline-block',
               padding: '8px 18px',
-              background: '#fff',
-              border: '1px solid #FFD8CC',
+              background: '#ffffff',
+              border: '1px solid #eaeaea',
               borderRadius: 50,
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 12,
               fontWeight: 600,
-              color: '#FF6347',
+              color: '#1a1a2e',
               letterSpacing: '0.5px',
-              boxShadow: '0 2px 10px rgba(255,99,71,0.07)',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.03)',
             }}>
               {badge}
             </span>

@@ -14,15 +14,15 @@ export default function Admissions() {
     <div
       className="min-h-screen"
       style={{
-        background: '#fff',
-        fontFamily: "'Playfair Display', 'Georgia', serif"
+        background: '#ffffff',
+        fontFamily: "'DM Sans', sans-serif"
       }}
     >
       <Helmet>
         <title>Admissions - Brindavan School | State Board Admissions 2026</title>
         <meta name="description" content="Apply for admission to Brindavan School, the leading State Board school in Palamaner. Admissions open for 2026-27 with modern facilities and holistic education." />
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         />
       </Helmet>
@@ -35,8 +35,8 @@ export default function Admissions() {
         backgroundImage="/images/gallery/HouseVisit/5.jpg"
       />
 
-      {/* ── Split Section: Image Left, Text Right ── */}
-      <section style={{ background: '#fff', padding: '80px 0' }}>
+      {/* ── Split Section ── */}
+      <section style={{ background: '#ffffff', padding: '80px 0' }}>
         <div
           style={{
             maxWidth: '1200px',
@@ -47,7 +47,18 @@ export default function Admissions() {
             gap: '60px',
             alignItems: 'center'
           }}
+          className="admissions-split-grid"
         >
+          <style>{`
+            @media(max-width:768px){
+              .admissions-split-grid { grid-template-columns: 1fr !important; }
+              .admissions-steps-grid { grid-template-columns: 1fr !important; }
+              .admissions-programs-grid { grid-template-columns: 1fr !important; }
+              .admissions-docs-grid { grid-template-columns: 1fr !important; }
+              .admissions-trust-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
+
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -59,12 +70,12 @@ export default function Admissions() {
             <div
               style={{
                 position: 'absolute',
-                top: '20px',
-                left: '20px',
+                top: '16px',
+                left: '16px',
                 width: '100%',
                 height: '100%',
                 borderRadius: '20px',
-                background: 'linear-gradient(135deg, #FF6347, #FFBDAA)',
+                background: '#FFE8E2',
                 zIndex: 0
               }}
             />
@@ -79,7 +90,7 @@ export default function Admissions() {
                 objectFit: 'cover',
                 borderRadius: '20px',
                 display: 'block',
-                boxShadow: '0 24px 60px rgba(255,99,71,0.2)'
+                boxShadow: '0 16px 48px rgba(0,0,0,0.08)'
               }}
             />
             <motion.div
@@ -92,17 +103,18 @@ export default function Admissions() {
                 bottom: '-20px',
                 right: '-20px',
                 zIndex: 2,
-                background: '#fff',
+                background: '#ffffff',
                 borderRadius: '16px',
                 padding: '16px 24px',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+                border: '1px solid #f0f0f0',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
                 fontFamily: "'DM Sans', sans-serif"
               }}
             >
               <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>
                 2026–27
               </div>
-              <div style={{ fontSize: '13px', color: '#6b5c6e', fontWeight: 500 }}>
+              <div style={{ fontSize: '13px', color: '#888', fontWeight: 500 }}>
                 Admissions Open
               </div>
             </motion.div>
@@ -115,41 +127,33 @@ export default function Admissions() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span
-              style={{
-                display: 'inline-block',
-                color: '#FF6347',
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: '13px',
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                marginBottom: '16px'
-              }}
-            >
-              Why Brindavan
-            </span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+              <span style={{ height: 1, width: 28, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>
+                Why Brindavan
+              </span>
+            </div>
 
             <h2
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
                 fontWeight: 700,
-                color: '#1a1a2e',
+                color: '#011E3A',
                 lineHeight: 1.2,
                 marginBottom: '20px'
               }}
             >
               A School That{' '}
-              <span style={{ color: '#FF6347' }}>Shapes Futures</span>
+              <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Shapes Futures</span>
             </h2>
 
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: '1rem',
-                color: '#6b5c6e',
-                lineHeight: 1.8,
+                color: '#444',
+                lineHeight: 1.85,
                 marginBottom: '28px'
               }}
             >
@@ -178,7 +182,7 @@ export default function Admissions() {
                   marginBottom: '14px',
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: '0.95rem',
-                  color: '#3d2c40'
+                  color: '#222'
                 }}
               >
                 <CheckCircle2 size={20} style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }} />
@@ -207,7 +211,7 @@ export default function Admissions() {
                   padding: '14px 28px',
                   borderRadius: '50px',
                   textDecoration: 'none',
-                  boxShadow: '0 6px 24px rgba(255,99,71,0.35)',
+                  boxShadow: '0 6px 24px rgba(255,99,71,0.25)',
                   transition: 'all 0.3s ease'
                 }}
               >
@@ -219,9 +223,12 @@ export default function Admissions() {
       </section>
 
       {/* ── Trust Stats ── */}
-      <section style={{ padding: '64px 0', background: '#fff'}}>
+      <section style={{ padding: '64px 0', background: '#ffffff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
+          <div
+            className="admissions-trust-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}
+          >
             {[
               { value: '4.9/5', label: 'Trusted by Parents', detail: 'Google review rating for school and admissions support' },
               { value: '24 hrs', label: 'Rapid Response', detail: 'Admission enquiries are answered quickly by our team' },
@@ -234,18 +241,18 @@ export default function Admissions() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 style={{
-                  background: '#fff',
-                  borderRadius: '20px',
+                  background: '#ffffff',
+                  borderRadius: '18px',
                   padding: '32px 28px',
-                  border: '1px solid #FFD8CC',
-                  boxShadow: '0 4px 24px rgba(255,99,71,0.08)',
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
               >
                 <div style={{
-                  position: 'absolute', top: 0, left: 0, right: 0, height: '4px',
-                  background: 'linear-gradient(90deg, #FF6347, #FFBDAA)'
+                  position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
+                  background: 'linear-gradient(90deg, #FF6347, #ffb347)'
                 }} />
                 <div style={{
                   fontFamily: "'Playfair Display', serif",
@@ -259,7 +266,7 @@ export default function Admissions() {
                 <div style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 600,
-                  color: '#1a1a2e',
+                  color: '#011E3A',
                   fontSize: '1rem',
                   marginBottom: '8px'
                 }}>
@@ -268,7 +275,7 @@ export default function Admissions() {
                 <p style={{
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: '0.88rem',
-                  color: '#6b5c6e',
+                  color: '#666',
                   lineHeight: 1.6,
                   margin: 0
                 }}>
@@ -281,7 +288,7 @@ export default function Admissions() {
       </section>
 
       {/* ── Admission Steps ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#ffffff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -289,26 +296,27 @@ export default function Admissions() {
             viewport={{ once: true }}
             style={{ textAlign: 'center', marginBottom: '52px' }}
           >
-            <span style={{
-              display: 'inline-block', color: '#FF6347',
-              fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
-              fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px'
-            }}>
-              How to Apply
-            </span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>How to Apply</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
             <h2 style={{
               fontFamily: "'Playfair Display', serif",
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-              fontWeight: 700, color: '#1a1a2e', marginBottom: '12px'
+              fontWeight: 700, color: '#011E3A', marginBottom: '12px'
             }}>
               Simple 4-Step Process
             </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem' }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#666', fontSize: '1.05rem' }}>
               From enquiry to enrolment — we've made it easy
             </p>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px', position: 'relative' }}>
+          <div
+            className="admissions-steps-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}
+          >
             {admissionSteps.map((step, i) => {
               const Icon = stepIcons[i] || FileText
               return (
@@ -319,19 +327,26 @@ export default function Admissions() {
                   transition={{ delay: i * 0.12 }}
                   viewport={{ once: true }}
                   style={{
-                    background: '#fff',
-                    borderRadius: '20px',
+                    background: '#ffffff',
+                    borderRadius: '18px',
                     padding: '32px 24px 28px',
-                    border: '1.5px solid #FFD8CC',
+                    border: '1px solid #f0f0f0',
+                    boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                     position: 'relative',
                     overflow: 'hidden'
                   }}
                 >
+                  {/* Top accent bar */}
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
+                    background: 'linear-gradient(90deg, #FF6347, #ffb347)'
+                  }} />
+
                   {/* Step number badge */}
                   <div style={{
                     position: 'absolute', top: '20px', right: '20px',
-                    width: '32px', height: '32px', borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #FF6347, #FF8C6B)',
+                    width: '30px', height: '30px', borderRadius: '50%',
+                    background: '#FF6347',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: '#fff', fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 700, fontSize: '0.85rem'
@@ -339,13 +354,15 @@ export default function Admissions() {
                     {step.step}
                   </div>
 
+                  {/* Icon container — white background matching overview */}
                   <div style={{
                     width: '52px', height: '52px',
-                    background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)',
+                    background: '#ffffff',
                     borderRadius: '14px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: '20px',
-                    border: '1.5px solid #FFBDAA'
+                    border: '1px solid #f0f0f0',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
                   }}>
                     <Icon size={24} style={{ color: '#FF6347' }} />
                   </div>
@@ -353,28 +370,16 @@ export default function Admissions() {
                   <h3 style={{
                     fontFamily: "'Playfair Display', serif",
                     fontSize: '1.15rem', fontWeight: 700,
-                    color: '#1a1a2e', marginBottom: '10px'
+                    color: '#011E3A', marginBottom: '10px'
                   }}>
                     {step.title}
                   </h3>
                   <p style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    color: '#6b5c6e', fontSize: '0.9rem', lineHeight: 1.7, margin: 0
+                    color: '#666', fontSize: '0.9rem', lineHeight: 1.7, margin: 0
                   }}>
                     {step.desc}
                   </p>
-
-                  {/* Connector arrow */}
-                  {i < admissionSteps.length - 1 && (
-                    <div style={{
-                      display: 'none',
-                      position: 'absolute', top: '50%', right: '-14px',
-                      transform: 'translateY(-50%)',
-                      color: '#FF6347', fontSize: '1.4rem', zIndex: 10
-                    }}
-                      className="lg-arrow"
-                    >→</div>
-                  )}
                 </motion.div>
               )
             })}
@@ -383,7 +388,7 @@ export default function Admissions() {
       </section>
 
       {/* ── Eligibility Criteria ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#ffffff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -391,23 +396,24 @@ export default function Admissions() {
             viewport={{ once: true }}
             style={{ textAlign: 'center', marginBottom: '52px' }}
           >
-            <span style={{
-              display: 'inline-block', color: '#FF6347',
-              fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
-              fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px'
-            }}>
-              Who Can Apply
-            </span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Who Can Apply</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
             <h2 style={{
               fontFamily: "'Playfair Display', serif",
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-              fontWeight: 700, color: '#1a1a2e'
+              fontWeight: 700, color: '#011E3A'
             }}>
               Eligibility Criteria
             </h2>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+          <div
+            className="admissions-programs-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '32px' }}
+          >
             {programs.map((prog, i) => (
               <motion.div
                 key={prog.level}
@@ -416,18 +422,23 @@ export default function Admissions() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 style={{
-                  background: '#fff',
+                  background: '#ffffff',
                   borderRadius: '16px',
                   padding: '20px 22px',
-                  border: '1px solid #FFD8CC',
-                  boxShadow: '0 4px 16px rgba(255,99,71,0.07)',
-                  display: 'flex', gap: '16px', alignItems: 'flex-start'
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                  display: 'flex', gap: '16px', alignItems: 'flex-start',
+                  position: 'relative', overflow: 'hidden'
                 }}
               >
                 <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
+                  background: 'linear-gradient(90deg, #FF6347, #ffb347)'
+                }} />
+                <div style={{
                   flexShrink: 0, width: '42px', height: '42px',
                   borderRadius: '12px',
-                  background: 'linear-gradient(135deg, #FF6347, #FF8C6B)',
+                  background: '#FF6347',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: '#fff', fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 700, fontSize: '0.9rem'
@@ -435,13 +446,13 @@ export default function Admissions() {
                   {i + 1}
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#1a1a2e', marginBottom: '4px' }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#011E3A', marginBottom: '4px' }}>
                     {prog.level}
                   </div>
                   <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#FF6347', fontWeight: 600, marginBottom: '6px' }}>
                     {prog.age}
                   </div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#6b5c6e', lineHeight: 1.5 }}>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#666', lineHeight: 1.5 }}>
                     Age proof, previous school records, parent ID required at registration.
                   </div>
                 </div>
@@ -455,24 +466,27 @@ export default function Admissions() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             style={{
-              background: '#fff',
+              background: '#ffffff',
               borderRadius: '20px',
               padding: '36px 32px',
-              border: '1.5px solid #FFD8CC',
-              boxShadow: '0 4px 24px rgba(255,99,71,0.08)'
+              border: '1px solid #f0f0f0',
+              boxShadow: '0 2px 16px rgba(0,0,0,0.05)'
             }}
           >
             <h4 style={{
               fontFamily: "'Playfair Display', serif",
               fontSize: '1.3rem', fontWeight: 700,
-              color: '#1a1a2e', marginBottom: '24px',
+              color: '#011E3A', marginBottom: '24px',
               paddingBottom: '14px',
               borderBottom: '2px solid #FF6347',
               display: 'inline-block'
             }}>
               Documents Required
             </h4>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '10px', marginTop: '8px' }}>
+            <div
+              className="admissions-docs-grid"
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0', marginTop: '8px' }}
+            >
               {[
                 'Birth Certificate',
                 "Child's Aadhaar Card",
@@ -489,9 +503,9 @@ export default function Admissions() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: '0.9rem', color: '#3d2c40',
-                    padding: '8px 0',
-                    borderBottom: '1px solid #FFD8CC'
+                    fontSize: '0.9rem', color: '#222',
+                    padding: '10px 0',
+                    borderBottom: '1px solid #f0f0f0'
                   }}
                 >
                   <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
@@ -504,81 +518,37 @@ export default function Admissions() {
       </section>
 
       {/* ── Apply Now CTA ── */}
-      <section
-        style={{
-          padding: '80px 24px',
-          background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden'
-        }}
-      >
-        <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '280px', height: '280px', borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
-        <div style={{ position: 'absolute', bottom: '-40px', left: '10%', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
-
-        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(1.9rem, 4vw, 2.8rem)',
-              fontWeight: 800, color: '#fff',
-              marginBottom: '16px', lineHeight: 1.2
-            }}
-          >
-            Ready to Begin Your Child's Journey?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              color: 'rgba(255,255,255,0.85)',
-              fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.7
-            }}
-          >
-            Start the admission process today. Fill our official online application form and secure your child's seat at Brindavan.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}
-          >
-            <Link
-              to="/admission-form"
-              style={{
-                background: '#fff', color: '#C4391E',
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 700, fontSize: '0.97rem',
-                padding: '14px 32px', borderRadius: '50px',
-                textDecoration: 'none',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
-                display: 'inline-flex', alignItems: 'center', gap: '8px'
-              }}
-            >
-              Apply Online <ArrowRight size={17} />
+<section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Get Started</span>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
+            Join Our Educational Mission
+          </h2>
+          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+            Become part of Brindavan School and help your child grow in an environment built on excellence, values, and holistic development.
+          </p>
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/admissions" style={{
+              background: '#FF6347', color: '#fff',
+              fontWeight: 700, fontSize: '0.97rem',
+              padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
+              display: 'inline-flex', alignItems: 'center', gap: '8px'
+            }}>
+              Apply Now <ArrowRight size={17} />
             </Link>
-            <Link
-              to="/contact"
-              style={{
-                border: '2px solid rgba(255,255,255,0.8)',
-                color: '#fff',
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600, fontSize: '0.97rem',
-                padding: '14px 32px', borderRadius: '50px',
-                textDecoration: 'none',
-                display: 'inline-flex', alignItems: 'center', gap: '8px'
-              }}
-            >
-              Contact Admissions
+            <Link to="/contact" style={{
+              border: '1.5px solid #e0e0e0', color: '#011E3A',
+              fontWeight: 600, fontSize: '0.97rem',
+              padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
+              display: 'inline-flex', alignItems: 'center', gap: '8px'
+            }}>
+              Contact Us
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

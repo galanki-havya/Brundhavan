@@ -1,391 +1,188 @@
-import { useState, useEffect } from "react";
-
-const THEME = {
-  colors: {
-    navy: "#071A2F",
-    gold: "#C9922A",
-    white: "#FFFFFF",
-    textMuted: "#334155",
-    borderLight: "#E2E8F0"
-  },
-  fonts: {
-    display: "'Playfair Display', serif",
-    body: "'DM Sans', sans-serif",
-  }
-};
-
-// ── FIXED: replaced all `var(--e-global-color-10113fb)` with `var(--ff-bg)`
-//    and declared it in :root so it works in plain React/Vite apps ──
-const GLOBAL_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
-
-:root { --ff-bg: #FFFFFF; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; background-color: var(--ff-bg) !important; }
-body { background: var(--ff-bg) !important; font-family: 'DM Sans', sans-serif; color: #071A2F; -webkit-font-smoothing: antialiased; }
-
-.ff-display { font-family: 'Playfair Display', serif; }
-.ff-body    { font-family: 'DM Sans', sans-serif; background: var(--ff-bg); }
-
-.ff-btn { border: none; outline: none; cursor: pointer; transition: all 0.2s ease-in-out; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; justify-content: center; }
-.ff-btn-primary { background: #C9922A; color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-.ff-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-.ff-btn-ghost { background: #fff; color: #071A2F; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid #071A2F; }
-.ff-btn-ghost:hover { background: #F8FAFC; }
-.ff-btn-back { background: #fff; color: #071A2F; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; border: 1px solid #E2E8F0; }
-.ff-btn-back:hover { background: #F8FAFC; }
-
-.ff-hero { width: 100%; padding: 5rem 3rem 3rem; background: var(--ff-bg) !important; border-bottom: 1px solid #E2E8F0; }
-.ff-hero-content { max-width: 680px; }
-.ff-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; color: #C9922A; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
-
-.ff-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; background: var(--ff-bg); }
-
-.ff-card { background: var(--ff-bg) !important; border-radius: 20px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; position: relative; border: 1px solid transparent; outline: 4px solid var(--card-accent-dark); box-shadow: 0 12px 24px rgba(7,26,47,0.06); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
-.ff-card:hover { transform: translateY(-8px); box-shadow: 0 20px 32px rgba(7,26,47,0.12); }
-
-.ff-card-img-wrap { position: relative; width: 100%; padding-top: 65%; overflow: hidden; background-color: #F1F5F9; }
-.ff-card-img-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
-.ff-card:hover .ff-card-img-wrap img { transform: scale(1.04); }
-
-.ff-badge-pill { position: absolute; top: 14px; left: 14px; background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); padding: 6px 14px; border-radius: 40px; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.05); z-index: 2; }
-
-.ff-card-footer { padding: 26px 24px; display: flex; flex-direction: column; flex-grow: 1; background-color: var(--card-bg-down) !important; position: relative; }
-
-.ff-accent-line { width: 40px; height: 3px; border-radius: 4px; background-color: var(--card-accent-dark); margin-top: auto; margin-bottom: 16px; transition: width 0.3s ease; }
-.ff-card:hover .ff-accent-line { width: 60px; }
-
-.ff-card-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--card-accent-dark); transition: gap 0.2s ease; }
-.ff-card:hover .ff-card-arrow { gap: 10px; }
-
-.ff-masonry { columns: 3 300px; column-gap: 1.5rem; }
-.ff-masonry-item { break-inside: avoid; margin-bottom: 1.5rem; border-radius: 12px; overflow: hidden; background: #F8FAFC; border: 1px solid #E2E8F0; cursor: pointer; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s cubic-bezier(0.16,1,0.3,1); }
-.ff-masonry-item:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(7,26,47,0.08); }
-.ff-masonry-item img { width: 100%; display: block; }
-
-.ff-lightbox { position: fixed; inset: 0; background: rgba(7,26,47,0.96); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 2rem; }
-.ff-lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.ff-lightbox-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: #fff; font-size: 36px; cursor: pointer; line-height: 1; }
-
-.ff-section-eyebrow { color: #C9922A; text-transform: uppercase; letter-spacing: 0.18em; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
-.ff-gallery-header { background: var(--ff-bg) !important; padding: 4rem 3rem 2rem; border-bottom: 1px solid #E2E8F0; }
-
-@media (max-width: 768px) {
-  .ff-hero, .ff-gallery-header { padding: 4rem 1.5rem 2rem; }
-  .ff-cards-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
-  .ff-masonry { columns: 2; }
-}
-@media (max-width: 480px) { .ff-masonry { columns: 1; } }
-`;
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import PageHero from '../../components/PageHero'
 
 const FESTIVALS = [
-  {
-    id: "krishnastami",
-    title: "Krishnashtami",
-    subtitle: "Joyful Celebration",
-    image: "/src/assets/krishnaastami/k1.png",
-    accentDark: "#1E40AF",
-    bgDown: "#EFF6FF",
-    description: "Celebrating the birth of Lord Krishna with devotion, dance, dahi-handi, and joyful festivities that unite the school community.",
-    gallery: [
-      "/src/assets/krishnaastami/k1.png",
-      "/src/assets/krishnaastami/k2.png",
-      "/src/assets/krishnaastami/k3.png",
-      "/src/assets/krishnaastami/k4.png",
-      "/src/assets/krishnaastami/k5.png",
-      "/src/assets/krishnaastami/k6.png",
-    ]
-  },
-  {
-    id: "ayudhapuja",
-    title: "Ayudha Puja",
-    subtitle: "Festive Worship",
-    image: "/src/assets/Ayudhapuja/a1.png",
-    accentDark: "#B45309",
-    bgDown: "#FEF3C7",
-    description: "Honouring tools, books, and instruments with reverence during Ayudha Puja — a celebration of knowledge, skill, and gratitude.",
-    gallery: [
-      "/src/assets/Ayudhapuja/a1.png",
-      "/src/assets/Ayudhapuja/a2.png",
-      "/src/assets/Ayudhapuja/a3.png",
-      "/src/assets/Ayudhapuja/a4.png",
-    ]
-  },
-  {
-    id: "diwali",
-    title: "Diwali",
-    subtitle: "Festival of Lights",
-    image: "/src/assets/Diwali/d1.png",
-    accentDark: "#C2410C",
-    bgDown: "#FFEDD5",
-    description: "The festival of lights celebrated with diyas, rangoli, sweets, and cultural performances that radiate warmth and togetherness.",
-    gallery: [
-      "/src/assets/Diwali/d1.png",
-      "/src/assets/Diwali/d2.png",
-      "/src/assets/Diwali/d3.png",
-      "/src/assets/Diwali/d4.png",
-    ]
-  },
-  {
-    id: "christmas",
-    title: "Christmas",
-    subtitle: "Season of Joy",
-    image: "/src/assets/Christmas/c1.png",
-    accentDark: "#065F46",
-    bgDown: "#E6F4EA",
-    description: "Spreading the spirit of Christmas with carol singing, Secret Santa, star-making, and heartfelt celebrations of love and giving.",
-    gallery: [
-      "/src/assets/Christmas/c1.png",
-      "/src/assets/Christmas/c2.png",
-      "/src/assets/Christmas/c3.png",
-      "/src/assets/Christmas/c4.png",
-    ]
-  },
-  {
-    id: "vasanthapanchami",
-    title: "Vasantha Panchami",
-    subtitle: "Spring Festival",
-    image: "/src/assets/Vasanthapanchami/v1.png",
-    accentDark: "#065F46",
-    bgDown: "#F0FDF4",
-    description: "Welcoming spring and honouring Goddess Saraswati — the deity of learning — with prayers, yellow attire, and cultural programmes.",
-    gallery: [
-      "/src/assets/Vasanthapanchami/v1.png",
-      "/src/assets/Vasanthapanchami/v2.png",
-      "/src/assets/Vasanthapanchami/v3.png",
-      "/src/assets/Vasanthapanchami/v4.png",
-    ]
-  },
-  {
-    id: "ugadi",
-    title: "Ugadi",
-    subtitle: "Telugu New Year",
-    image: "/src/assets/Ugadi/u1.png",
-    accentDark: "#065F46",
-    bgDown: "#ECFDF5",
-    description: "Ringing in the Telugu New Year with traditional Ugadi pachadi, cultural performances, and colourful decorations full of hope.",
-    gallery: [
-      "/src/assets/Ugadi/u1.png",
-      "/src/assets/Ugadi/u2.png",
-      "/src/assets/Ugadi/u3.png",
-      "/src/assets/Ugadi/u4.png",
-    ]
-  },
-  {
-    id: "ramzan",
-    title: "Ramzan",
-    subtitle: "Month of Blessings",
-    image: "/src/assets/Ramzan/r1.png",
-    accentDark: "#5B21B6",
-    bgDown: "#F3E8FF",
-    description: "Celebrating the spirit of Ramzan with shared iftars, prayers, and inclusive activities that foster respect and unity among students.",
-    gallery: [
-      "/src/assets/Ramzan/r1.png",
-      "/src/assets/Ramzan/r2.png",
-      "/src/assets/Ramzan/r3.png",
-    ]
-  },
-  {
-    id: "milad-un-nabi",
-    title: "Milad Un Nabi",
-    subtitle: "Prophet's Birthday",
-    image: "/src/assets/Milad un nabi/m1.png",
-    accentDark: "#0E7490",
-    bgDown: "#E0F2FE",
-    description: "Commemorating the birthday of Prophet Muhammad with prayers, poetry, and programmes that spread messages of peace and compassion.",
-    gallery: [
-      "/src/assets/Milad un nabi/m1.png",
-      "/src/assets/Milad un nabi/m2.png",
-      "/src/assets/Milad un nabi/m3.png",
-      "/src/assets/Milad un nabi/m4.png",
-      "/src/assets/Milad un nabi/m5.png",
-      "/src/assets/Milad un nabi/m6.png",
-      "/src/assets/Milad un nabi/m7.png",
-    ]
-  },
-];
+  { id: 'krishnastami', title: 'Krishnashtami', subtitle: 'Joyful Celebration', image: '/src/assets/krishnaastami/k1.png', accentDark: '#1E40AF', bgDown: '#EFF6FF', description: 'Celebrating the birth of Lord Krishna with devotion, dance, dahi-handi, and joyful festivities that unite the school community.', gallery: ['/src/assets/krishnaastami/k1.png', '/src/assets/krishnaastami/k2.png', '/src/assets/krishnaastami/k3.png', '/src/assets/krishnaastami/k4.png', '/src/assets/krishnaastami/k5.png', '/src/assets/krishnaastami/k6.png'] },
+  { id: 'ayudhapuja', title: 'Ayudha Puja', subtitle: 'Festive Worship', image: '/src/assets/Ayudhapuja/a1.png', accentDark: '#B45309', bgDown: '#FEF3C7', description: 'Honouring tools, books, and instruments with reverence during Ayudha Puja — a celebration of knowledge, skill, and gratitude.', gallery: ['/src/assets/Ayudhapuja/a1.png', '/src/assets/Ayudhapuja/a2.png', '/src/assets/Ayudhapuja/a3.png', '/src/assets/Ayudhapuja/a4.png'] },
+  { id: 'diwali', title: 'Diwali', subtitle: 'Festival of Lights', image: '/src/assets/Diwali/d1.png', accentDark: '#C2410C', bgDown: '#FFEDD5', description: 'The festival of lights celebrated with diyas, rangoli, sweets, and cultural performances that radiate warmth and togetherness.', gallery: ['/src/assets/Diwali/d1.png', '/src/assets/Diwali/d2.png', '/src/assets/Diwali/d3.png', '/src/assets/Diwali/d4.png'] },
+  { id: 'christmas', title: 'Christmas', subtitle: 'Season of Joy', image: '/src/assets/Christmas/c1.png', accentDark: '#065F46', bgDown: '#E6F4EA', description: 'Spreading the spirit of Christmas with carol singing, Secret Santa, star-making, and heartfelt celebrations of love and giving.', gallery: ['/src/assets/Christmas/c1.png', '/src/assets/Christmas/c2.png', '/src/assets/Christmas/c3.png', '/src/assets/Christmas/c4.png'] },
+  { id: 'vasanthapanchami', title: 'Vasantha Panchami', subtitle: 'Spring Festival', image: '/src/assets/Vasanthapanchami/v1.png', accentDark: '#065F46', bgDown: '#F0FDF4', description: 'Welcoming spring and honouring Goddess Saraswati — the deity of learning — with prayers, yellow attire, and cultural programmes.', gallery: ['/src/assets/Vasanthapanchami/v1.png', '/src/assets/Vasanthapanchami/v2.png', '/src/assets/Vasanthapanchami/v3.png', '/src/assets/Vasanthapanchami/v4.png'] },
+  { id: 'ugadi', title: 'Ugadi', subtitle: 'Telugu New Year', image: '/src/assets/Ugadi/u1.png', accentDark: '#15803D', bgDown: '#ECFDF5', description: 'Ringing in the Telugu New Year with traditional Ugadi pachadi, cultural performances, and colourful decorations full of hope.', gallery: ['/src/assets/Ugadi/u1.png', '/src/assets/Ugadi/u2.png', '/src/assets/Ugadi/u3.png', '/src/assets/Ugadi/u4.png'] },
+  { id: 'ramzan', title: 'Ramzan', subtitle: 'Month of Blessings', image: '/src/assets/Ramzan/r1.png', accentDark: '#5B21B6', bgDown: '#F3E8FF', description: 'Celebrating the spirit of Ramzan with shared iftars, prayers, and inclusive activities that foster respect and unity among students.', gallery: ['/src/assets/Ramzan/r1.png', '/src/assets/Ramzan/r2.png', '/src/assets/Ramzan/r3.png'] },
+  { id: 'milad-un-nabi', title: 'Milad Un Nabi', subtitle: "Prophet's Birthday", image: '/src/assets/Milad un nabi/m1.png', accentDark: '#0E7490', bgDown: '#E0F2FE', description: "Commemorating the birthday of Prophet Muhammad with prayers, poetry, and programmes that spread messages of peace and compassion.", gallery: ['/src/assets/Milad un nabi/m1.png', '/src/assets/Milad un nabi/m2.png', '/src/assets/Milad un nabi/m3.png', '/src/assets/Milad un nabi/m4.png', '/src/assets/Milad un nabi/m5.png', '/src/assets/Milad un nabi/m6.png', '/src/assets/Milad un nabi/m7.png'] },
+]
 
 function Lightbox({ image, onClose }) {
   useEffect(() => {
-    if (!image) return;
-    const handleKey = (e) => { if (e.key === "Escape") onClose(); };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, [image, onClose]);
-
-  if (!image) return null;
+    if (!image) return
+    const handleKey = (e) => { if (e.key === 'Escape') onClose() }
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKey)
+    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', handleKey) }
+  }, [image, onClose])
+  if (!image) return null
   return (
-    <div className="ff-lightbox" onClick={onClose} role="dialog" aria-modal="true">
-      <button className="ff-lightbox-close" onClick={onClose} aria-label="Close lightbox">×</button>
-      <img src={image} alt="Enlarged view" onClick={(e) => e.stopPropagation()} />
+    <div onClick={onClose} role="dialog" aria-modal="true" style={{ position: 'fixed', inset: 0, background: 'rgba(1,30,58,0.96)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999, padding: '2rem' }}>
+      <button onClick={onClose} aria-label="Close" style={{ position: 'absolute', top: 24, right: 24, background: 'none', border: 'none', color: '#fff', fontSize: 36, cursor: 'pointer', lineHeight: 1 }}>×</button>
+      <img src={image} alt="Enlarged view" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '90vw', maxHeight: '85vh', borderRadius: 12, boxShadow: '0 25px 60px rgba(0,0,0,0.4)' }} />
     </div>
-  );
+  )
 }
 
 function FestivalCard({ item, onClick }) {
   return (
-    <article
-      className="ff-card"
-      onClick={onClick}
-      style={{ "--card-accent-dark": item.accentDark, "--card-bg-down": item.bgDown }}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onClick(); }}
+    <motion.article
+      initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }}
+      onClick={onClick} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onClick() }}
+      role="button" tabIndex={0}
+      whileHover={{ y: -8, boxShadow: '0 16px 40px rgba(0,0,0,0.12)' }}
+      style={{ background: '#fff', borderRadius: 20, overflow: 'hidden', cursor: 'pointer', display: 'flex', flexDirection: 'column', border: '1px solid #f0f0f0', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', position: 'relative' }}
     >
-      <div className="ff-card-img-wrap">
-        <span className="ff-badge-pill" style={{ color: item.accentDark }}>{item.subtitle}</span>
-        <img
-          src={item.image}
-          alt={item.title}
-          loading="lazy"
-          onError={(e) => {
-            e.target.style.display = "none";
-            e.target.parentNode.style.background = "#e2e8f0";
-          }}
-        />
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${item.accentDark}, #FF6347)`, zIndex: 1 }} />
+      <div style={{ position: 'relative', width: '100%', paddingTop: '62%', overflow: 'hidden', background: item.bgDown }}>
+        <img src={item.image} alt={item.title} loading="lazy" onError={(e) => { e.target.style.display = 'none' }}
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        <span style={{ position: 'absolute', top: 14, left: 14, background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(4px)', padding: '5px 12px', borderRadius: 40, fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: item.accentDark, boxShadow: '0 2px 8px rgba(0,0,0,0.07)', zIndex: 2, fontFamily: "'DM Sans', sans-serif" }}>{item.subtitle}</span>
       </div>
-      <div className="ff-card-footer">
-        <h3
-          className="ff-display"
-          style={{ color: THEME.colors.navy, fontSize: 21, fontWeight: 700, marginBottom: 10, letterSpacing: "-0.01em" }}
-        >
-          {item.title}
-        </h3>
-        <p style={{ color: THEME.colors.textMuted, lineHeight: 1.6, fontSize: 13.5, marginBottom: 24, fontWeight: 500 }}>
-          {item.description}
-        </p>
-        <div className="ff-accent-line" />
-        <div className="ff-card-arrow">
-          <span>View Gallery</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-          </svg>
+      <div style={{ padding: '24px 22px', display: 'flex', flexDirection: 'column', flexGrow: 1, background: item.bgDown }}>
+        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: 8 }}>{item.title}</h3>
+        <p style={{ color: '#555', fontSize: '0.88rem', lineHeight: 1.65, flexGrow: 1, fontFamily: "'DM Sans', sans-serif" }}>{item.description}</p>
+        <div style={{ marginTop: 18, height: 2, width: 36, background: item.accentDark, borderRadius: 4 }} />
+        <div style={{ marginTop: 14, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: item.accentDark, fontFamily: "'DM Sans', sans-serif" }}>
+          View Gallery
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
         </div>
       </div>
-    </article>
-  );
+    </motion.article>
+  )
 }
 
 function GalleryView({ item, onBack, onLightbox }) {
-  useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, []);
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }, [])
   return (
-    <div style={{ background: "var(--ff-bg)" }}>
-      <div className="ff-gallery-header">
-        <button className="ff-btn ff-btn-back" onClick={onBack} style={{ marginBottom: "1.5rem" }}>
-          ← Back to Festivals
-        </button>
-        <div>
-          <div className="ff-section-eyebrow" style={{ color: item.accentDark }}>{item.subtitle}</div>
-          <h1
-            className="ff-display"
-            style={{ fontSize: "clamp(28px, 4vw, 40px)", color: THEME.colors.navy, fontWeight: 700 }}
-          >
-            {item.title} Gallery
-          </h1>
-          <p style={{ color: THEME.colors.textMuted, fontSize: 14, marginTop: 4 }}>
-            Showing {item.gallery.length} collection image{item.gallery.length !== 1 ? "s" : ""}
-          </p>
+    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+      <div style={{ padding: '56px 24px 32px', borderBottom: '1px solid #f0f0f0', maxWidth: 1200, margin: '0 auto' }}>
+        <button onClick={onBack} style={{ background: '#fff', border: '1.5px solid #e0e0e0', color: '#011E3A', padding: '10px 22px', borderRadius: 50, fontSize: 13, fontWeight: 600, cursor: 'pointer', marginBottom: 24, fontFamily: "'DM Sans', sans-serif" }}>← Back to Festivals</button>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+          <span style={{ height: 1, width: 24, background: item.accentDark, display: 'inline-block' }} />
+          <span style={{ color: item.accentDark, fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>{item.subtitle}</span>
         </div>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(26px, 4vw, 38px)', color: '#011E3A', fontWeight: 700 }}>{item.title} Gallery</h1>
+        <p style={{ color: '#666', fontSize: 14, marginTop: 4 }}>{item.gallery.length} images in this collection</p>
       </div>
-      <div style={{ maxWidth: 1350, margin: "0 auto", padding: "3rem 2rem 6rem", background: "var(--ff-bg)" }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px 80px' }}>
         {item.gallery.length > 0 ? (
-          <div className="ff-masonry">
+          <div style={{ columns: '3 280px', columnGap: '1.5rem' }}>
             {item.gallery.map((src, i) => (
-              <div
-                className="ff-masonry-item"
-                key={i}
-                onClick={() => onLightbox(src)}
-                style={{ border: `2px solid ${item.bgDown}` }}
-                role="button"
-                tabIndex={0}
-                aria-label={`Open ${item.title} image ${i + 1}`}
-                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onLightbox(src); }}
-              >
-                <img
-                  src={src}
-                  alt={`${item.title} ${i + 1}`}
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                    e.target.parentNode.style.minHeight = "120px";
-                    e.target.parentNode.style.background = "#e2e8f0";
-                  }}
-                />
+              <div key={i} onClick={() => onLightbox(src)} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLightbox(src) }}
+                style={{ breakInside: 'avoid', marginBottom: '1.5rem', borderRadius: 14, overflow: 'hidden', border: `1.5px solid ${item.bgDown}`, cursor: 'pointer', boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
+                <img src={src} alt={`${item.title} ${i + 1}`} loading="lazy" onError={(e) => { e.target.style.display = 'none' }} style={{ width: '100%', display: 'block' }} />
               </div>
             ))}
           </div>
         ) : (
-          <div style={{ textAlign: "center", padding: "5rem 0", color: THEME.colors.textMuted }}>
-            <p style={{ fontSize: 15 }}>Gallery images are currently being compiled.</p>
-          </div>
+          <div style={{ textAlign: 'center', padding: '5rem 0', color: '#888' }}><p>Gallery images are currently being compiled.</p></div>
         )}
       </div>
     </div>
-  );
+  )
 }
 
 export default function FestivalFun() {
-  const [selected, setSelected] = useState(null);
-  const [lightbox, setLightbox] = useState(null);
+  const [selected, setSelected] = useState(null)
+  const [lightbox, setLightbox] = useState(null)
 
   return (
-    <>
-      <style>{GLOBAL_CSS}</style>
-      <div className="ff-body" style={{ background: "var(--ff-bg)" }}>
-        {selected ? (
-          <GalleryView item={selected} onBack={() => setSelected(null)} onLightbox={setLightbox} />
-        ) : (
-          <div style={{ background: "var(--ff-bg)" }}>
-            <section className="ff-hero">
-              <div className="ff-hero-content">
-                <div className="ff-hero-eyebrow">
-                  <span>Brindavan School</span>
-                </div>
-                <h1
-                  className="ff-display"
-                  style={{ fontSize: "clamp(34px, 5vw, 54px)", color: THEME.colors.navy, fontWeight: 700, lineHeight: 1.15, marginBottom: 16 }}
-                >
-                  Festival Fun
-                </h1>
-                <p style={{ color: THEME.colors.textMuted, fontSize: 15, lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}>
-                  Celebrating every festival with colour, culture, and community — because every tradition deserves to be honoured and shared.
-                </p>
-                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                  <button
-                    className="ff-btn ff-btn-primary"
-                    onClick={() => window.scrollTo({ top: window.innerHeight * 0.4, behavior: "smooth" })}
-                  >
-                    Explore All
-                  </button>
-                  <button className="ff-btn ff-btn-ghost">Learn More</button>
-                </div>
-              </div>
-            </section>
+    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
-            <div style={{ maxWidth: 1350, margin: "0 auto", padding: "4rem 2rem 7rem", background: "var(--ff-bg)" }}>
-              <div style={{ marginBottom: "2.5rem" }}>
-                <p className="ff-section-eyebrow">Celebrating Together</p>
-                <h2
-                  className="ff-display"
-                  style={{ fontSize: "clamp(26px, 3.5vw, 34px)", color: THEME.colors.navy, fontWeight: 700 }}
-                >
-                  Our Festival Celebrations
+      {selected ? (
+        <GalleryView item={selected} onBack={() => setSelected(null)} onLightbox={setLightbox} />
+      ) : (
+        <>
+          <PageHero title="Festival Fun" subtitle="Celebrating every festival with colour, culture, and community — because every tradition deserves to be honoured and shared." variant="pink" backgroundImage="/images/gallery/overview.png" />
+
+          {/* Split intro */}
+          <section style={{ background: '#fff', padding: '80px 0' }}>
+            <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }} className="ff-split">
+              <style>{`@media(max-width:768px){.ff-split{grid-template-columns:1fr!important;}}`}</style>
+              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ position: 'relative' }}>
+                <img src="/src/assets/Diwali/d1.png" alt="Festivals at Brindavan" onError={e => { e.currentTarget.src = '/images/gallery/overview.png' }}
+                  style={{ width: '100%', height: 400, objectFit: 'cover', borderRadius: 20, display: 'block', border: '1px solid #f0f0f0', boxShadow: '0 16px 48px rgba(0,0,0,0.08)' }} />
+                <div style={{ position: 'absolute', bottom: -20, right: -20, zIndex: 2, background: '#fff', borderRadius: 16, padding: '16px 24px', border: '1px solid #f0f0f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+                  <div style={{ fontSize: 28, fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>8+</div>
+                  <div style={{ fontSize: 13, color: '#555', fontWeight: 500 }}>Festivals Celebrated</div>
+                </div>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+                  <span style={{ height: 1, width: 28, background: '#FF6347', display: 'inline-block' }} />
+                  <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Celebrating Together</span>
+                </div>
+                <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#011E3A', lineHeight: 1.2, marginBottom: 20 }}>
+                  Every Culture,{' '}
+                  <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Every Tradition</span>
                 </h2>
-              </div>
-              <div className="ff-cards-grid">
-                {FESTIVALS.map((item) => (
-                  <FestivalCard key={item.id} item={item} onClick={() => setSelected(item)} />
+                <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: 12 }}>
+                  At Brindavan, we celebrate all festivals with equal enthusiasm, fostering a deep sense of inclusivity and cultural appreciation among our students.
+                </p>
+                <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: 28 }}>
+                  From Diwali diyas to Christmas carols, from Krishnashtami dahi-handi to Ugadi pachadi — every celebration is a learning experience.
+                </p>
+                {['Hindu, Islamic, and Christian festivals celebrated together', 'Cultural performances and traditional dress days', 'Craft activities tied to each festival theme', 'Community sharing and peer learning', 'Building respect for all religions and traditions'].map((point, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 14, fontSize: '0.95rem', color: '#222' }}>
+                    <CheckCircle2 size={19} style={{ color: '#FF6347', flexShrink: 0, marginTop: 2 }} />
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Cards */}
+          <section style={{ padding: '0 0 80px' }}>
+            <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: 52 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                  <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+                  <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>All Celebrations</span>
+                  <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+                </div>
+                <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: 10 }}>Our Festival Celebrations</h2>
+                <p style={{ color: '#666', fontSize: '1rem' }}>Click any festival to explore the full gallery</p>
+              </motion.div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+                {FESTIVALS.map((item, i) => (
+                  <motion.div key={item.id} initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.06 }} viewport={{ once: true }}>
+                    <FestivalCard item={item} onClick={() => setSelected(item)} />
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </div>
-        )}
-        <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
-      </div>
-    </>
-  );
+          </section>
+
+          {/* CTA */}
+          <section style={{ padding: '0 24px 80px', textAlign: 'center' }}>
+            <div style={{ maxWidth: 680, margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: 24 }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+                <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+                <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Get Started</span>
+                <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              </div>
+              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: 14, lineHeight: 1.25 }}>Be Part of Our Vibrant Community</h2>
+              <p style={{ color: '#555', fontSize: '1rem', marginBottom: 36, lineHeight: 1.75 }}>Join Brindavan School and let your child experience a rich, inclusive cultural life where every tradition is celebrated with joy.</p>
+              <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link to="/admissions" style={{ background: '#FF6347', color: '#fff', fontWeight: 700, fontSize: '0.97rem', padding: '13px 32px', borderRadius: 50, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>Apply Now <ArrowRight size={17} /></Link>
+                <Link to="/contact" style={{ border: '1.5px solid #e0e0e0', color: '#011E3A', fontWeight: 600, fontSize: '0.97rem', padding: '13px 32px', borderRadius: 50, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>Contact Us</Link>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+      <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
+    </div>
+  )
 }

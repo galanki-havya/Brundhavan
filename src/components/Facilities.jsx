@@ -4,208 +4,86 @@ import Section from './Section'
 import { siteData } from '../data/site'
 
 const { facilities } = siteData
-
 const icons = [BookOpen, Users, Trophy, Microscope, Music, Gamepad2]
-
-// Pink-family card gradients — consistent with site's pink theme
-const cardGradients = [
-  { from: '#fff0f7', to: '#ffe4f2' },  // deep pink
-  { from: '#FFFFFF', to: '#FFD8CC' },  // soft pink
-  { from: '#fff4ed', to: '#ffe8d6' },  // peach/orange
-  { from: '#fff0f7', to: '#ffd6eb' },  // hot pink
-  { from: '#FFFFFF', to: '#FFD8CC' },  // soft pink
-  { from: '#fff4ed', to: '#ffe0cc' },  // warm peach
-]
 
 export default function Facilities() {
   return (
-    <Section style={{
-      background: 'linear-gradient(135deg, #FFFFFF 0%, #fff 50%, #FFFFFF 100%)',
-      position: 'relative',
-      overflow: 'hidden',
-    }}>
-      {/* Ambient glows */}
-      <div style={{
-        position: 'absolute', top: 0, right: 0,
-        width: 384, height: 384,
-        background: 'rgba(255,99,71,0.07)',
-        borderRadius: '50%',
-        transform: 'translate(128px, -128px)',
-        filter: 'blur(70px)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', bottom: 0, left: 0,
-        width: 320, height: 320,
-        background: 'rgba(249,115,22,0.05)',
-        borderRadius: '50%',
-        transform: 'translate(-96px, 96px)',
-        filter: 'blur(60px)',
-        pointerEvents: 'none',
-      }} />
+    <Section className="relative py-24 bg-slate-50/50 overflow-hidden font-sans">
+      
+      {/* Brand Subtle Architectural Glow Background overlays */}
+      <div 
+        className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#011E3A]/[0.04] rounded-full translate-x-1/4 -translate-y-1/4 blur-[120px] pointer-events-none" 
+      />
+      <div 
+        className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-[#ea580c]/[0.04] rounded-full -translate-x-1/4 translate-y-1/4 blur-[100px] pointer-events-none" 
+      />
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap');
-        .fac-card {
-          position: relative;
-          overflow: hidden;
-          border-radius: 28px;
-          border: 1px solid rgba(255,255,255,0.6);
-          padding: 32px;
-          transition: box-shadow 0.4s, transform 0.4s;
-          box-shadow: 0 10px 40px rgba(255,99,71,0.07);
-        }
-        .fac-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 52px rgba(255,99,71,0.14);
-        }
-        .fac-card-icon {
-          position: relative;
-          z-index: 1;
-          width: 64px; height: 64px;
-          border-radius: 18px;
-          background: rgba(255,255,255,0.8);
-          backdrop-filter: blur(8px);
-          display: flex; align-items: center; justify-content: center;
-          box-shadow: 0 4px 16px rgba(255,99,71,0.15);
-          margin-bottom: 24px;
-          transition: transform 0.3s;
-        }
-        .fac-card:hover .fac-card-icon { transform: scale(1.1); }
-      `}</style>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
-      <div style={{ maxWidth: 1152, margin: '0 auto', padding: '0 16px', position: 'relative', zIndex: 1 }}>
-
-        {/* Heading */}
+        {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: 56 }}
+          className="text-center mb-16"
         >
-          <span style={{
-            display: 'inline-block',
-            color: '#FF6347',
-            fontFamily: "'DM Sans', sans-serif",
-            fontWeight: 600,
-            fontSize: 12,
-            letterSpacing: '2px',
-            textTransform: 'uppercase',
-            marginBottom: 12,
-          }}>
-            Our Campus
+          <span className="inline-block text-[#ea580c] font-bold text-xs sm:text-sm tracking-[2px] uppercase mb-3">
+            Our Campus Infrastructure
           </span>
 
-          <h2 style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
-            fontWeight: 700,
-            color: '#1a1a2e',
-            marginBottom: 12,
-            lineHeight: 1.2,
-          }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#011E3A] tracking-tight mb-4">
             World-Class Facilities
           </h2>
 
-          <p style={{
-            fontFamily: "'DM Sans', sans-serif",
-            color: '#6b5c6e',
-            fontSize: '1rem',
-            maxWidth: 520,
-            margin: '0 auto',
-            lineHeight: 1.7,
-          }}>
-            Every space on our campus is thoughtfully designed to inspire learning, creativity, and healthy growth.
+          <div className="w-12 h-1 bg-[#ea580c] mx-auto mb-5 rounded-full" />
+
+          <p className="text-slate-700 text-base max-w-2xl mx-auto leading-relaxed font-semibold">
+            Every space on our campus is thoughtfully designed to inspire premium learning, creativity, and structural growth.
           </p>
         </motion.div>
 
-        {/* Cards grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: 28,
-        }}>
+        {/* Glassmorphism Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {facilities.map((f, i) => {
             const Icon = icons[i] || BookOpen
-            const grad = cardGradients[i % cardGradients.length]
 
             return (
               <motion.div
                 key={f.title}
-                className="fac-card"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ delay: i * 0.05, duration: 0.5 }}
+                className="group relative backdrop-blur-md bg-white/75 rounded-2xl border border-white/60 p-8 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-[#ea580c]/40 hover:bg-white/90 hover:shadow-xl hover:shadow-[#011E3A]/5"
                 style={{
-                  background: `linear-gradient(135deg, ${grad.from} 0%, ${grad.to} 100%)`,
+                  boxShadow: '0 8px 32px 0 rgba(1, 30, 58, 0.03)',
                 }}
               >
-                {/* Shine orb */}
-                <div style={{
-                  position: 'absolute',
-                  top: -40, right: -40,
-                  width: 128, height: 128,
-                  background: 'rgba(255,255,255,0.35)',
-                  borderRadius: '50%',
-                  filter: 'blur(24px)',
-                  pointerEvents: 'none',
-                }} />
-
-                {/* Top accent line */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0, left: 0, right: 0,
-                  height: 3,
-                  background: 'linear-gradient(90deg, #FF6347, #f97316)',
-                  opacity: 0,
-                  transition: 'opacity 0.3s',
-                }}
-                  className="fac-top-line"
+                {/* Micro-interaction top line focus border */}
+                <div 
+                  className="absolute top-0 left-0 h-[3px] w-0 bg-[#ea580c] transition-all duration-300 ease-in-out group-hover:w-full rounded-t-2xl" 
                 />
-                <style>{`.fac-card:hover .fac-top-line { opacity: 1 !important; }`}</style>
 
-                <div className="fac-card-icon">
-                  <Icon style={{ width: 28, height: 28, color: '#FF6347' }} />
+                {/* Glass Inner Icon Container */}
+                <div className="w-12 h-12 rounded-xl bg-[#011E3A]/[0.06] backdrop-blur-sm flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[#011E3A] group-hover:scale-105">
+                  <Icon className="w-5 h-5 text-[#011E3A] transition-colors duration-300 group-hover:text-white" />
                 </div>
 
-                <h3 style={{
-                  position: 'relative',
-                  zIndex: 1,
-                  fontFamily: "'Playfair Display', serif",
-                  fontWeight: 700,
-                  fontSize: '1.3rem',
-                  color: '#1a1a2e',
-                  marginBottom: 10,
-                  letterSpacing: '-0.01em',
-                }}>
+                {/* Brighter, Highly Visible Headers */}
+                <h3 className="font-bold text-lg xl:text-xl text-[#011E3A] tracking-tight mb-3">
                   {f.title}
                 </h3>
 
-                <p style={{
-                  position: 'relative',
-                  zIndex: 1,
-                  fontFamily: "'DM Sans', sans-serif",
-                  color: '#6b5c6e',
-                  fontSize: 15,
-                  lineHeight: 1.7,
-                }}>
+                {/* Deepened Slate Text for Crisp Contrast */}
+                <p className="text-slate-600 text-[14.5px] leading-relaxed font-medium transition-colors duration-300 group-hover:text-slate-700">
                   {f.desc}
                 </p>
-
-                {/* Bottom shine */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: 0, left: 0, right: 0,
-                  height: 2,
-                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)',
-                  pointerEvents: 'none',
-                }} />
               </motion.div>
             )
           })}
         </div>
+        
       </div>
     </Section>
   )

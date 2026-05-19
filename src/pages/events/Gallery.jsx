@@ -1,120 +1,37 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { Users, Award, Calendar, Camera, ArrowRight } from 'lucide-react'
 import PageHero from '../../components/PageHero'
-import { Users, Award, Calendar, Camera } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-
-const asset = (path) => path
 
 const galleryData = [
-  {
-    title: 'Annual Day',
-    folder: 'AnnualDay',
-    cover: asset('/images/gallery/AnnualDay/1.jpg'),
-    images: [
-      asset('/images/gallery/AnnualDay/1.jpg'),
-      asset('/images/gallery/AnnualDay/2.jpg'),
-      asset('/images/gallery/AnnualDay/3.jpg'),
-      asset('/images/gallery/AnnualDay/5.jpg'),
-      asset('/images/gallery/AnnualDay/7.jpg'),
-      asset('/images/gallery/AnnualDay/10.jpg'),
-      asset('/images/gallery/AnnualDay/11.jpg'),
-      asset('/images/gallery/AnnualDay/12.jpg'),
-      asset('/images/gallery/AnnualDay/14.jpg'),
-      asset('/images/gallery/AnnualDay/16.jpg'),
-      asset('/images/gallery/AnnualDay/17.jpg'),
-      asset('/images/gallery/AnnualDay/18.jpg'),
-      asset('/images/gallery/AnnualDay/19.jpg'),
-      asset('/images/gallery/AnnualDay/22.jpg'),
-      asset('/images/gallery/AnnualDay/24.jpg'),
-      asset('/images/gallery/AnnualDay/26.jpg'),
-      asset('/images/gallery/AnnualDay/27.jpg'),
-      asset('/images/gallery/AnnualDay/28.jpg'),
-      asset('/images/gallery/AnnualDay/29.jpg'),
-    ]
-  },
-  {
-    title: 'Science Day',
-    folder: 'ScienceDay',
-    cover: asset('/images/gallery/ScienceDay/1.jpg'),
-    images: [
-      asset('/images/gallery/ScienceDay/1.jpg'),
-      asset('/images/gallery/ScienceDay/2.jpg')
-    ]
-  },
-  {
-    title: 'Academic Achievers',
-    folder: 'AcademicAchivers',
-    cover: asset('/images/gallery/AcademicAchivers/1.jpg'),
-    images: [
-      asset('/images/gallery/AcademicAchivers/1.jpg'),
-      asset('/images/gallery/AcademicAchivers/2.jpg')
-    ]
-  },
-  {
-    title: "Children's Day",
-    folder: 'ChildrensDay',
-    cover: asset('/images/gallery/ChildrensDay/1.jpg'),
-    images: [
-      asset('/images/gallery/ChildrensDay/1.jpg'),
-      asset('/images/gallery/ChildrensDay/2.jpg')
-    ]
-  },
-  {
-    title: 'Graduation Day',
-    folder: 'GraduationDay',
-    cover: asset('/images/gallery/GraduationDay/1.jpg'),
-    images: [
-      asset('/images/gallery/GraduationDay/1.jpg'),
-      asset('/images/gallery/GraduationDay/2.jpg')
-    ]
-  },
-  {
-    title: 'House Visit',
-    folder: 'HouseVisit',
-    cover: asset('/images/gallery/HouseVisit/1.jpg'),
-    images: [
-      asset('/images/gallery/HouseVisit/1.jpg'),
-      asset('/images/gallery/HouseVisit/2.jpg')
-    ]
-  },
-  {
-    title: 'Infrastructure',
-    folder: 'Infrastructure',
-    cover: asset('/images/gallery/Infrastructure/1.jpg'),
-    images: [
-      asset('/images/gallery/Infrastructure/1.jpg'),
-      asset('/images/gallery/Infrastructure/2.jpg')
-    ]
-  },
-  {
-    title: 'Campus Activities',
-    folder: 'campus-activities',
-    cover: asset('/images/gallery/campus-activities/1.jpg'),
-    images: [
-      asset('/images/gallery/campus-activities/2.jpg'),
-      asset('/images/gallery/campus-activities/3.jpg'),
-      asset('/images/gallery/campus-activities/4.jpg'),
-      asset('/images/gallery/campus-activities/5.jpg'),
-      asset('/images/gallery/campus-activities/6.jpg'),
-      asset('/images/gallery/campus-activities/7.jpg'),
-    ]
-  }
+  { title: 'Annual Day', folder: 'AnnualDay', cover: '/images/gallery/AnnualDay/1.jpg', images: ['/images/gallery/AnnualDay/1.jpg', '/images/gallery/AnnualDay/2.jpg', '/images/gallery/AnnualDay/3.jpg', '/images/gallery/AnnualDay/5.jpg', '/images/gallery/AnnualDay/7.jpg', '/images/gallery/AnnualDay/10.jpg', '/images/gallery/AnnualDay/11.jpg', '/images/gallery/AnnualDay/12.jpg', '/images/gallery/AnnualDay/14.jpg', '/images/gallery/AnnualDay/16.jpg', '/images/gallery/AnnualDay/17.jpg', '/images/gallery/AnnualDay/18.jpg', '/images/gallery/AnnualDay/19.jpg', '/images/gallery/AnnualDay/22.jpg', '/images/gallery/AnnualDay/24.jpg', '/images/gallery/AnnualDay/26.jpg', '/images/gallery/AnnualDay/27.jpg', '/images/gallery/AnnualDay/28.jpg', '/images/gallery/AnnualDay/29.jpg'] },
+  { title: 'Science Day', folder: 'ScienceDay', cover: '/images/gallery/ScienceDay/1.jpg', images: ['/images/gallery/ScienceDay/1.jpg', '/images/gallery/ScienceDay/2.jpg'] },
+  { title: 'Academic Achievers', folder: 'AcademicAchivers', cover: '/images/gallery/AcademicAchivers/1.jpg', images: ['/images/gallery/AcademicAchivers/1.jpg', '/images/gallery/AcademicAchivers/2.jpg'] },
+  { title: "Children's Day", folder: 'ChildrensDay', cover: '/images/gallery/ChildrensDay/1.jpg', images: ['/images/gallery/ChildrensDay/1.jpg', '/images/gallery/ChildrensDay/2.jpg'] },
+  { title: 'Graduation Day', folder: 'GraduationDay', cover: '/images/gallery/GraduationDay/1.jpg', images: ['/images/gallery/GraduationDay/1.jpg', '/images/gallery/GraduationDay/2.jpg'] },
+  { title: 'House Visit', folder: 'HouseVisit', cover: '/images/gallery/HouseVisit/1.jpg', images: ['/images/gallery/HouseVisit/1.jpg', '/images/gallery/HouseVisit/2.jpg'] },
+  { title: 'Infrastructure', folder: 'Infrastructure', cover: '/images/gallery/Infrastructure/1.jpg', images: ['/images/gallery/Infrastructure/1.jpg', '/images/gallery/Infrastructure/2.jpg'] },
+  { title: 'Campus Activities', folder: 'campus-activities', cover: '/images/gallery/campus-activities/1.jpg', images: ['/images/gallery/campus-activities/2.jpg', '/images/gallery/campus-activities/3.jpg', '/images/gallery/campus-activities/4.jpg', '/images/gallery/campus-activities/5.jpg', '/images/gallery/campus-activities/6.jpg', '/images/gallery/campus-activities/7.jpg'] },
+]
+
+const categories = [
+  { icon: Users, label: 'School Events', desc: 'Celebrations, festivals, and special school programs' },
+  { icon: Award, label: 'Achievements', desc: 'Academic excellence, sports victories, and competitions' },
+  { icon: Calendar, label: 'Annual Functions', desc: 'Cultural programs, annual days, and graduation ceremonies' },
+  { icon: Camera, label: 'Campus Life', desc: 'Daily activities, classroom moments, and student interactions' },
 ]
 
 export default function Gallery() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFF7FB] via-[#FFFDFD] to-[#FFF4F8]">
+    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <Helmet>
-        <title>Brindavan School Palamaner | Photo Gallery & Campus Life</title>
-        <meta
-          name="description"
-          content="Explore real moments from Brindavan School Palamaner including annual day celebrations, sports events, science exhibitions, classroom activities, and student achievements."
-        />
+        <title>Photo Gallery | Brindavan School Palamaner</title>
+        <meta name="description" content="Explore real moments from Brindavan School Palamaner including annual day celebrations, sports events, science exhibitions, classroom activities, and student achievements." />
       </Helmet>
 
       <PageHero
@@ -124,170 +41,92 @@ export default function Gallery() {
         backgroundImage="/images/gallery/AnnualDay/1.jpg"
       />
 
-      {/* ── GALLERY CATEGORIES ── */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Users,
-                title: 'School Events',
-                description: 'Celebrations, festivals, and special school programs',
-              },
-              {
-                icon: Award,
-                title: 'Achievements',
-                description: 'Academic excellence, sports victories, and competitions',
-              },
-              {
-                icon: Calendar,
-                title: 'Annual Functions',
-                description: 'Cultural programs, annual days, and graduation ceremonies',
-              },
-              {
-                icon: Camera,
-                title: 'Campus Life',
-                description: 'Daily activities, classroom moments, and student interactions',
-              },
-              {
-                icon: Camera,
-                title: 'Digital Media Archive',
-                description: 'External Google Drive photo collection and school media archive',
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="
-                  group relative overflow-hidden
-                  bg-white/80 backdrop-blur-xl
-                  border border-[#F6D6E6]
-                  rounded-[32px]
-                  p-7
-                  shadow-[0_10px_40px_rgba(255,99,71,0.08)]
-                  hover:shadow-[0_18px_50px_rgba(255,99,71,0.18)]
-                  hover:-translate-y-2
-                  transition-all duration-500
-                "
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-[#FFE4EF] to-[#FFD3E2] rounded-2xl flex items-center justify-center mb-5 shadow-sm">
-                  <item.icon className="w-7 h-7 text-[#D94680]" />
+      {/* Category cards */}
+      <section style={{ padding: '80px 0', background: '#fff' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: 52 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Our Archive</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: 10 }}>What You'll Find Here</h2>
+            <p style={{ color: '#666', fontSize: '1rem' }}>Explore curated collections from every corner of school life</p>
+          </motion.div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
+            {categories.map((item, i) => (
+              <motion.div key={i} initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.08 }} viewport={{ once: true }}
+                style={{ background: '#fff', borderRadius: 18, padding: '32px 24px', border: '1px solid #f0f0f0', boxShadow: '0 2px 16px rgba(0,0,0,0.05)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
+                <div style={{ width: 52, height: 52, background: '#FFF3F0', borderRadius: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: '1px solid #FFD8CC' }}>
+                  <item.icon size={22} style={{ color: '#FF6347' }} />
                 </div>
-                <h3 className="text-xl font-display font-bold text-[#7A284B] mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-[#7C6A74] leading-relaxed">
-                  {item.description}
-                </p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontWeight: 700, color: '#011E3A', marginBottom: 8 }}>{item.label}</h3>
+                <p style={{ color: '#666', fontSize: '0.88rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FEATURED PHOTOS ── */}
-      <section className="py-24 bg-gradient-to-b from-[#FFF8FC] via-[#FFFDFE] to-[#FFF1F7] relative overflow-hidden">
+      {/* Stats strip */}
+      <section style={{ padding: '48px 0', background: '#fff', borderTop: '1px solid #f5f5f5', borderBottom: '1px solid #f5f5f5' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 20 }}>
+          {[{ num: '500+', label: 'Photos' }, { num: '25+', label: 'Events Covered' }, { num: '8', label: 'Collections' }, { num: '100%', label: 'Digital Archive' }].map((s, i) => (
+            <motion.div key={i} initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.07 }} viewport={{ once: true }}
+              style={{ textAlign: 'center', padding: '24px 16px', background: '#fff', borderRadius: 16, border: '1px solid #f0f0f0', boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+              <div style={{ fontSize: 28, fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>{s.num}</div>
+              <div style={{ fontSize: 13, color: '#555', fontWeight: 500 }}>{s.label}</div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-        {/* Decorative background blobs */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#FFBDAA]/30 blur-3xl rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-rose-200/20 blur-3xl rounded-full pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="text-[#D94680] uppercase tracking-[0.25em] text-xs font-semibold">
-              School Life
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#7A284B] mt-3">
-              Moments That Define Us
-            </h2>
-            <p className="text-[#7C6A74] text-lg mt-4 max-w-2xl mx-auto">
-              Explore curated collections of events, achievements, and campus life captured over time.
-            </p>
+      {/* Gallery grid */}
+      <section style={{ padding: '80px 0', background: '#fff' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: 52 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>School Life</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: 10 }}>Moments That Define Us</h2>
+            <p style={{ color: '#666', fontSize: '1rem' }}>Click any collection to explore in full</p>
           </motion.div>
 
-          {/* Gallery Grid */}
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 relative z-10">
-            {galleryData.map((gallery, index) => (
-              <motion.div
-                key={gallery.title}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                onClick={() => {
-                  if (gallery.external) {
-                    window.open(gallery.link, '_blank')
-                  } else {
-                    navigate(`/gallery/${gallery.folder}`)
-                  }
-                }}
-                className="
-                  group cursor-pointer
-                  relative overflow-hidden
-                  rounded-[34px]
-                  bg-white/70 backdrop-blur-xl
-                  border border-[#F7D9E6]
-                  shadow-[0_10px_35px_rgba(255,99,71,0.08)]
-                  hover:shadow-[0_20px_60px_rgba(255,99,71,0.18)]
-                  transition-all duration-500
-                  hover:-translate-y-3
-                "
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            {galleryData.map((gallery, i) => (
+              <motion.div key={gallery.title} initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.06 }} viewport={{ once: true }}
+                onClick={() => { if (gallery.external) { window.open(gallery.link, '_blank') } else { navigate(`/gallery/${gallery.folder}`) } }}
+                style={{ background: '#fff', borderRadius: 20, overflow: 'hidden', cursor: 'pointer', border: '1px solid #f0f0f0', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', transition: 'transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease', position: 'relative' }}
+                whileHover={{ y: -8, boxShadow: '0 16px 40px rgba(0,0,0,0.12)' }}
               >
+                {/* Top accent */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #FF6347, #ffb347)', zIndex: 1 }} />
+
                 {/* Image */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={gallery.cover}
-                    alt={gallery.title}
-                    loading="lazy"
-                    className="
-                      w-full h-72 object-cover
-                      group-hover:scale-110
-                      transition duration-700
-                    "
+                <div style={{ position: 'relative', overflow: 'hidden', paddingTop: '62%', background: '#f5f5f5' }}>
+                  <img src={gallery.cover} alt={gallery.title} loading="lazy"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
                   />
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3D0F24]/70 via-transparent to-transparent opacity-80" />
-
+                  {/* Overlay */}
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(1,30,58,0.55) 0%, transparent 60%)' }} />
                   {/* Photo count badge */}
-                  <div className="absolute top-5 right-5 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-[#C2417A] text-xs font-bold shadow-lg">
+                  <span style={{ position: 'absolute', top: 14, right: 14, background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(4px)', padding: '5px 12px', borderRadius: 40, fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#FF6347', boxShadow: '0 2px 8px rgba(0,0,0,0.07)', zIndex: 2, fontFamily: "'DM Sans', sans-serif" }}>
                     {gallery.images.length} Photos
-                  </div>
+                  </span>
                 </div>
 
-                {/* Card content */}
-                <div className="p-7">
-                  <div className="flex items-center justify-between gap-3 mb-1">
-                    <h3 className="text-2xl font-display font-bold text-[#7A284B] group-hover:text-[#D94680] transition-colors duration-300">
-                      {gallery.title}
-                    </h3>
-                    {gallery.external && (
-                      <span className="text-xs bg-[#E8A0B0] text-white px-2 py-1 rounded-full">
-                        External
-                      </span>
-                    )}
-                  </div>
-
-                  <p className="text-[#7C6A74] mt-3 leading-relaxed">
-                    Explore memorable moments from {gallery.title.toLowerCase()}.
-                  </p>
-
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-[#D94680] tracking-wide">
-                      View Collection
-                    </span>
-                    <div className="w-10 h-10 rounded-full bg-[#FFE4EF] flex items-center justify-center group-hover:bg-[#D94680] transition-all duration-300">
-                      <span className="text-[#D94680] group-hover:text-white text-lg leading-none">
-                        →
-                      </span>
-                    </div>
+                {/* Card footer */}
+                <div style={{ padding: '22px 22px 24px', background: '#fff' }}>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: 6 }}>{gallery.title}</h3>
+                  <p style={{ color: '#666', fontSize: '0.88rem', lineHeight: 1.6, marginBottom: 14 }}>Explore memorable moments from {gallery.title.toLowerCase()}.</p>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#FF6347', fontFamily: "'DM Sans', sans-serif" }}>
+                    View Collection
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
                   </div>
                 </div>
               </motion.div>
@@ -296,136 +135,22 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ── GALLERY STATS ── */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="text-[#D94680] uppercase tracking-[0.25em] text-xs font-semibold">
-              Insights
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#7A284B] mt-3">
-              Visual Archive Overview
-            </h2>
-            <p className="text-[#7C6A74] text-lg mt-4">
-              A snapshot of our growing digital memory collection
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { number: '500+', label: 'Photos',             suffix: '' },
-              { number: '25+',  label: 'Events Covered',     suffix: '' },
-              { number: '1+',   label: 'Year of Memories',   suffix: 'year' },
-              { number: '100%', label: 'Digital Archive',    suffix: '' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="
-                  bg-white/80 backdrop-blur-xl
-                  border border-[#F6D6E6]
-                  rounded-[30px]
-                  p-8
-                  shadow-[0_10px_35px_rgba(255,99,71,0.08)]
-                  hover:shadow-[0_18px_45px_rgba(255,99,71,0.15)]
-                  transition-all duration-500
-                  hover:-translate-y-2
-                  text-center
-                "
-              >
-                <div className="text-3xl md:text-4xl font-display font-bold text-[#D94680] mb-2">
-                  {stat.number}
-                  {stat.suffix && (
-                    <span className="text-lg text-[#7A284B]">{stat.suffix}</span>
-                  )}
-                </div>
-                <div className="text-[#7C6A74] font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
+      {/* CTA */}
+      <section style={{ padding: '0 24px 80px', textAlign: 'center' }}>
+        <div style={{ maxWidth: 680, margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: 24 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Admissions</span>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+          </div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: 14, lineHeight: 1.25 }}>Join Our Learning Journey</h2>
+          <p style={{ color: '#555', fontSize: '1rem', marginBottom: 36, lineHeight: 1.75 }}>Discover our vibrant school community through memorable moments and celebrations. Your child's story starts here.</p>
+          <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/admissions" style={{ background: '#FF6347', color: '#fff', fontWeight: 700, fontSize: '0.97rem', padding: '13px 32px', borderRadius: 50, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>Apply Now <ArrowRight size={17} /></Link>
+            <Link to="/contact" style={{ border: '1.5px solid #e0e0e0', color: '#011E3A', fontWeight: 600, fontSize: '0.97rem', padding: '13px 32px', borderRadius: 50, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>Schedule Visit</Link>
           </div>
         </div>
       </section>
-
-      {/* ── CTA SECTION ── */}
-      <section className="relative overflow-hidden py-24 bg-gradient-to-r from-[#7A284B] via-[#A3376B] to-[#D94680] text-white">
-
-        <div className="absolute top-0 left-0 w-[32rem] h-[32rem] bg-pink-300/20 blur-3xl rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-rose-200/20 blur-3xl rounded-full pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:22px_22px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <span className="text-white/80 uppercase tracking-[0.25em] text-xs font-semibold">
-            Admissions
-          </span>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-display font-bold mt-3 mb-4"
-          >
-            Join Our Learning Journey
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 text-white/80 text-lg"
-          >
-            Discover our vibrant school community through memorable moments and celebrations.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link
-              to="/admissions"
-              className="
-                bg-white text-[#C2417A]
-                hover:bg-[#FFF1F7]
-                font-semibold
-                px-10 py-4
-                rounded-full
-                transition-all duration-300
-                shadow-[0_10px_30px_rgba(255,255,255,0.18)]
-                hover:scale-105
-              "
-            >
-              Apply Now
-            </Link>
-            <Link
-              to="/contact"
-              className="
-                border border-white/40
-                bg-white/10 backdrop-blur-xl
-                px-10 py-4
-                rounded-full
-                hover:bg-white
-                hover:text-[#C2417A]
-                font-semibold
-                transition-all duration-300
-              "
-            >
-              Schedule Visit
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
     </div>
   )
 }

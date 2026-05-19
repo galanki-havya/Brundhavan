@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom' // <-- Added this missing import
 import PageHero from '../components/PageHero'
 import { MapPin, Phone, Mail, Clock, ArrowRight, Send } from 'lucide-react'
 import { siteData } from '../data/site'
@@ -36,11 +37,11 @@ export default function Contact() {
     width: '100%',
     padding: '14px 18px',
     borderRadius: '12px',
-    border: '1.5px solid #FFD8CC',
-    background: '#fff',
+    border: '1px solid #e8e8e8',
+    background: '#ffffff',
     fontFamily: "'DM Sans', sans-serif",
     fontSize: '0.95rem',
-    color: '#3d2c40',
+    color: '#222',
     outline: 'none',
     boxSizing: 'border-box',
     transition: 'border-color 0.2s',
@@ -49,41 +50,108 @@ export default function Contact() {
   return (
     <div
       className="min-h-screen"
-      style={{ background: '#fff', fontFamily: "'Playfair Display', 'Georgia', serif" }}
+      style={{ background: '#ffffff', fontFamily: "'DM Sans', sans-serif" }}
     >
       <Helmet>
         <title>Contact Us - Brindavan Schools</title>
         <meta name="description" content="Get in touch with Brindavan School. We're here to answer your questions." />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Helmet>
 
+      <style>{`
+        @media(max-width:768px){
+          .contact-info-grid { grid-template-columns: 1fr !important; }
+          .contact-form-map-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+
       <PageHero
-        title="Get In Touch"
-        subtitle="We're here to answer your questions and help you connect with our community."
-        variant="pink"
+
+        backgroundImage="/images/gallery/contact2.jpg"
       />
 
       {/* ── Contact Info Cards ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#ffffff' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
-            <span style={{ display: 'inline-block', color: '#FF6347', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Reach Us</span>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#1a1a2e', marginBottom: '12px' }}>Contact Information</h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '1.05rem', maxWidth: '450px', margin: '0 auto' }}>Reach out to us through any of these channels — we respond quickly.</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: '52px' }}
+          >
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Reach Us</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
+              fontWeight: 700, color: '#011E3A', marginBottom: '12px'
+            }}>
+              Contact Information
+            </h2>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
+          <div
+            className="contact-info-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}
+          >
             {contactItems.map((item, index) => (
-              <motion.div key={item.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} style={{ background: '#fff', borderRadius: '20px', padding: '28px 24px', border: '1px solid #FFD8CC', boxShadow: '0 4px 24px rgba(255,99,71,0.07)', position: 'relative', overflow: 'hidden' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(90deg, #FF6347, #FFBDAA)' }} />
-                <div style={{ width: '44px', height: '44px', background: 'linear-gradient(135deg, #FFD8CC, #FFF3F0)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', border: '1.5px solid #FFBDAA' }}>
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                style={{
+                  background: '#ffffff',
+                  borderRadius: '18px',
+                  padding: '28px 24px',
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
+                  background: 'linear-gradient(90deg, #FF6347, #ffb347)'
+                }} />
+                <div style={{
+                  width: '44px', height: '44px',
+                  background: '#ffffff',
+                  borderRadius: '12px',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: '16px',
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                }}>
                   <item.icon size={20} style={{ color: '#FF6347' }} />
                 </div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#1a1a2e', fontSize: '1rem', marginBottom: '8px' }}>{item.label}</div>
+                <div style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 700, color: '#011E3A',
+                  fontSize: '1rem', marginBottom: '8px'
+                }}>
+                  {item.label}
+                </div>
                 {item.link ? (
-                  <a href={item.link} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#FF6347', textDecoration: 'none', fontWeight: 500 }}>{item.value}</a>
+                  <a href={item.link} style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: '0.9rem', color: '#FF6347',
+                    textDecoration: 'none', fontWeight: 500
+                  }}>
+                    {item.value}
+                  </a>
                 ) : (
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#6b5c6e', margin: 0, lineHeight: 1.5 }}>{item.value}</p>
+                  <p style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: '0.9rem', color: '#666',
+                    margin: 0, lineHeight: 1.5
+                  }}>
+                    {item.value}
+                  </p>
                 )}
               </motion.div>
             ))}
@@ -92,19 +160,49 @@ export default function Contact() {
       </section>
 
       {/* ── Form + Map ── */}
-      <section style={{ padding: '80px 0', background: '#fff'}}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }}>
-
+      <section style={{ padding: '80px 0', background: '#ffffff' }}>
+        <div
+          className="contact-form-map-grid"
+          style={{
+            maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
+            display: 'grid', gridTemplateColumns: '1fr 1fr',
+            gap: '48px', alignItems: 'start'
+          }}
+        >
           {/* Form */}
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <span style={{ display: 'inline-block', color: '#FF6347', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Send a Message</span>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '32px' }}>We'd Love to Hear from You</h2>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: '2rem', fontWeight: 700,
+              color: '#011E3A', marginBottom: '32px'
+            }}>
+              We'd Love to <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Hear from You</span>
+            </h2>
 
             {submitted ? (
-              <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ background: '#fff', borderRadius: '20px', padding: '48px 32px', textAlign: 'center', border: '1.5px solid #FFD8CC', boxShadow: '0 4px 24px rgba(255,99,71,0.08)' }}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                style={{
+                  background: '#ffffff', borderRadius: '20px',
+                  padding: '48px 32px', textAlign: 'center',
+                  border: '1px solid #f0f0f0',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)'
+                }}
+              >
                 <div style={{ fontSize: '3rem', marginBottom: '16px' }}>✅</div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '8px' }}>Message Sent!</h3>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e', fontSize: '0.95rem' }}>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <h3 style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: '1.4rem', fontWeight: 700,
+                  color: '#011E3A', marginBottom: '8px'
+                }}>
+                  Message Sent!
+                </h3>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -122,8 +220,6 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder={field.placeholder}
                     style={inputStyle}
-                    onFocus={e => e.target.style.borderColor = '#FF6347'}
-                    onBlur={e => e.target.style.borderColor = '#FFD8CC'}
                   />
                 ))}
                 <textarea
@@ -133,12 +229,14 @@ export default function Contact() {
                   rows={5}
                   placeholder="Your Message *"
                   style={{ ...inputStyle, resize: 'vertical' }}
-                  onFocus={e => e.target.style.borderColor = '#FF6347'}
-                  onBlur={e => e.target.style.borderColor = '#FFD8CC'}
                 />
                 <button
                   type="submit"
-                  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: '#FF6347', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '1rem', padding: '16px 32px', borderRadius: '50px', border: 'none', cursor: 'pointer', boxShadow: '0 6px 24px rgba(255,99,71,0.35)', marginTop: '8px' }}
+                  style={{
+                    background: '#FF6347', color: '#fff',
+                    fontWeight: 700, padding: '16px 32px', borderRadius: '50px',
+                    border: 'none', cursor: 'pointer',
+                  }}
                 >
                   Send Message <Send size={18} />
                 </button>
@@ -147,55 +245,54 @@ export default function Contact() {
           </motion.div>
 
           {/* Map */}
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <span style={{ display: 'inline-block', color: '#FF6347', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Find Us</span>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem', fontWeight: 700, color: '#1a1a2e', marginBottom: '32px' }}>Visit Our Campus</h2>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: '2rem', fontWeight: 700,
+              color: '#011E3A', marginBottom: '32px'
+            }}>
+              Visit Our <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Campus</span>
+            </h2>
 
-            <div style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 8px 32px rgba(255,99,71,0.12)', border: '1.5px solid #FFD8CC', marginBottom: '24px' }}>
-              {school?.mapSrc ? (
-                <iframe src={school.mapSrc} width="100%" height="380" style={{ border: 0, display: 'block' }} loading="lazy" />
-              ) : (
-                <div style={{ height: '380px', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'DM Sans', sans-serif", color: '#6b5c6e' }}>No map configured</div>
+            <div style={{
+              borderRadius: '20px', overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.07)',
+              border: '1px solid #f0f0f0', marginBottom: '24px'
+            }}>
+              {school?.mapSrc && (
+                <iframe
+                  src={school.mapSrc}
+                  width="100%" height="380"
+                  style={{ border: 0, display: 'block' }}
+                  loading="lazy"
+                />
               )}
-            </div>
-
-            <div style={{ background: '#fff', borderRadius: '16px', padding: '24px', border: '1px solid #FFD8CC', boxShadow: '0 4px 16px rgba(255,99,71,0.06)' }}>
-              {[
-                { label: 'By Road', value: 'NH 42' },
-                { label: 'By Train', value: 'Palamaner Junction' },
-                { label: 'By Air', value: 'Tirupati Airport' },
-              ].map(item => (
-                <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #FFD8CC', fontFamily: "'DM Sans', sans-serif", fontSize: '0.9rem', color: '#3d2c40' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
-                  <strong style={{ color: '#1a1a2e', minWidth: '80px' }}>{item.label}:</strong>
-                  <span style={{ color: '#6b5c6e' }}>{item.value}</span>
-                </div>
-              ))}
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #C4391E 0%, #FF6347 50%, #FF8C6B 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '280px', height: '280px', borderRadius: '50%', background: 'rgba(255,255,255,0.07)' }} />
-        <div style={{ position: 'absolute', bottom: '-40px', left: '10%', width: '200px', height: '200px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
-        <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.9rem, 4vw, 2.8rem)', fontWeight: 800, color: '#fff', marginBottom: '16px', lineHeight: 1.2 }}>Ready to Take the Next Step?</motion.h2>
-          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} style={{ fontFamily: "'DM Sans', sans-serif", color: 'rgba(255,255,255,0.85)', fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.7 }}>Schedule a campus visit or start your admission enquiry today.</motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href={`tel:${school.phone}`} style={{ background: '#fff', color: '#C4391E', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 8px 30px rgba(0,0,0,0.15)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Call Now <ArrowRight size={17} /></a>
-            <a href={`mailto:${school.email}`} style={{ border: '2px solid rgba(255,255,255,0.8)', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '0.97rem', padding: '14px 32px', borderRadius: '50px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Send an Email</a>
-          </motion.div>
+      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2rem', fontWeight: 700, color: '#011E3A', marginBottom: '20px' }}>
+            Join Our Educational Mission
+          </h2>
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/admissions" style={{
+              background: '#FF6347', color: '#fff',
+              fontWeight: 700, padding: '13px 32px', borderRadius: '50px', textDecoration: 'none'
+            }}>
+              Apply Now
+            </Link>
+          </div>
         </div>
       </section>
-
-      {/* Floating Call Button */}
-      <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 50 }}>
-        <a href={`tel:${school.phone}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(135deg, #FF6347, #C4391E)', color: '#fff', fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: '0.95rem', padding: '14px 24px', borderRadius: '50px', textDecoration: 'none', boxShadow: '0 8px 30px rgba(255,99,71,0.4)' }}>
-          <Phone size={18} /> Call Now
-        </a>
-      </div>
     </div>
   )
 }

@@ -1,24 +1,27 @@
 import { motion } from 'framer-motion'
 
+// Update this to your local or absolute logo path
 const logo = '/logo.png'
 
 const features = [
-  { lines: ['Academic', 'Excellence'], icon: '🎓', arcColor: '#47c8ff9e' },
-  { lines: ['Pastoral', 'Care'], icon: '💛', arcColor: '#f97316' },
-  { lines: ['International', 'Standard Sports'], icon: '⚽', arcColor: '#FF6347' },
-  { lines: ['Career', 'Readiness'], icon: '🚀', arcColor: '#f97316' },
-  { lines: ['Quest for', 'Excellence'], icon: '🏆', arcColor: '#FF6347' },
-  { lines: ['Value', 'System'], icon: '🌱', arcColor: '#f97316' },
-  { lines: ['Benchmarked', 'Curriculum'], icon: '📚', arcColor: '#FF6347' },
-  { lines: ['Shaping the', 'Personality'], icon: '🌟', arcColor: '#f97316' },
+  { lines: ['360 Degree', 'Teachers', 'Enrichment', 'Program'], icon: '🛡️', arcColor: '#E91E63', rotation: 0,   isLongSpoke: true,  arcTransform: 'rotate(180)' },    // Top
+  { lines: ['Pastoral', 'Care'],                                icon: '🌱', arcColor: '#4CAF50', rotation: 45,  isLongSpoke: false, arcTransform: 'rotate(-45)' },   // Top-Right
+  { lines: ['International', 'Standard Sports', 'Infrastructure'], icon: '🌐', arcColor: '#00BCD4', rotation: 90,  isLongSpoke: true,  arcTransform: 'rotate(-90)' },   // Right
+  { lines: ['Career', 'Readiness'],                             icon: '🗼', arcColor: '#9C27B0', rotation: 135, isLongSpoke: false, arcTransform: 'rotate(135)' },  // Bottom-Right
+  { lines: ['Quest for', 'Excellence'],                         icon: '🏆', arcColor: '#E91E63', rotation: 180, isLongSpoke: true,  arcTransform: 'rotate(0)' },      // Bottom
+  { lines: ['Value', 'System'],                                 icon: '🤝', arcColor: '#4CAF50', rotation: 225, isLongSpoke: false, arcTransform: 'rotate(45)' },   // Bottom-Left
+  { lines: ['Shaping the', 'Personality'],                      icon: '🎭', arcColor: '#00BCD4', rotation: 270, isLongSpoke: true,  arcTransform: 'rotate(90)' },    // Left
+  { lines: ['Benchmarked', 'Curriculum'],                       icon: '📄', arcColor: '#9C27B0', rotation: 315, isLongSpoke: false, arcTransform: 'rotate(-135)' }, // Top-Left
 ]
 
-const CX = 360
-const CY = 350
-const ORBIT_R = 220
-const NODE_R = 58
-const ICON_R = 14
-const LOGO_R = 76
+const CX = 400
+const CY = 400
+const NODE_R = 56
+const ICON_R = 15
+const LOGO_R = 62
+
+const SHORT_ORBIT_R = 145  
+const LONG_ORBIT_R = 215
 
 function polar(angleDeg, r, cx = CX, cy = CY) {
   const rad = ((angleDeg - 90) * Math.PI) / 180
@@ -28,292 +31,191 @@ function polar(angleDeg, r, cx = CX, cy = CY) {
   }
 }
 
-function arcPath(cx, cy, r, startDeg, endDeg) {
-  const s = polar(startDeg, r, cx, cy)
-  const e = polar(endDeg, r, cx, cy)
-  const large = endDeg - startDeg > 180 ? 1 : 0
-
-  return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y}`
-}
-
 export default function WhyBrindavan() {
-  const angleStep = 360 / features.length
-
   return (
     <section
       style={{
-        background: '#fff',
-        padding: '60px 16px 20px',
+        background: '#ffffff',
+        padding: '40px 16px',
         overflow: 'hidden',
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      {/* Ambient Glows */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 320,
-          height: 320,
-          background: 'rgba(255,99,71,0.07)',
-          borderRadius: '50%',
-          transform: 'translate(100px, -80px)',
-          filter: 'blur(70px)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: 260,
-          height: 260,
-          background: 'rgba(249,115,22,0.05)',
-          borderRadius: '50%',
-          transform: 'translate(-80px, 80px)',
-          filter: 'blur(60px)',
-          pointerEvents: 'none',
-        }}
-      />
-
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600;700&display=swap');
-
-        .wb {
-          font-family: 'DM Sans', sans-serif;
-        }
-
+        .wb { font-family: 'DM Sans', sans-serif; }
         .wb-orbital {
           display: flex;
           justify-content: center;
-          overflow: hidden;
-        }
-
-        .wb-orbital svg {
-          display: block;
-          max-width: 100%;
-          height: auto;
-        }
-
-        .wb-grid {
-          display: none;
-          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-          gap: 12px;
-          max-width: 720px;
+          align-items: center;
+          width: 100%;
+          max-width: 600px;
           margin: 0 auto;
         }
-
+        .wb-orbital svg {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .wb-grid {
+          display: none;
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          gap: 16px;
+          width: 100%;
+          max-width: 720px;
+          margin: 12px auto 0;
+        }
         .wb-card {
           background: #fff;
           border-radius: 16px;
-          padding: 18px;
-          box-shadow: 0 2px 12px rgba(255,99,71,0.08);
-          border: 1px solid #FFBDAA;
-          transition: box-shadow .25s, transform .25s;
+          padding: 20px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+          border: 1px solid #eaeaea;
+          text-align: center;
         }
-
-        .wb-card:hover {
-          box-shadow: 0 8px 24px rgba(255,99,71,0.16);
-          transform: translateY(-3px);
-        }
-
         .wb-icon-box {
-          width: 44px;
-          height: 44px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          margin-bottom: 8px;
+          width: 44px; height: 44px;
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 20px; margin: 0 auto 12px;
         }
-
         .wb-card-title {
-          font-weight: 700;
-          font-size: 13px;
-          color: #1a1a2e;
-          line-height: 1.4;
+          font-weight: 700; font-size: 13px;
+          color: #111111; line-height: 1.4;
         }
-
         @media (max-width: 820px) {
-          .wb-orbital {
-            display: none;
-          }
-
-          .wb-grid {
-            display: grid;
-          }
+          .wb-orbital { display: none; }
+          .wb-grid { display: grid; }
         }
       `}</style>
 
-      <div className="wb" style={{ position: 'relative', zIndex: 1 }}>
-        {/* Heading */}
+      <div className="wb" style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+        
+        {/* ── HEADER CONTENT SECTION ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{
-            textAlign: 'center',
-            marginBottom: 8,
-          }}
+          style={{ textAlign: 'center', marginBottom: 0 }}
         >
-          <span
-            style={{
-              display: 'inline-block',
-              color: '#FF6347',
-              fontWeight: 600,
-              fontSize: 12,
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
-              marginBottom: 10,
-            }}
-          >
+          <span style={{
+            display: 'inline-block', color: '#e16e3d', fontWeight: 600,
+            fontSize: 12, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: 8,
+          }}>
             Our Pillars
           </span>
-
-          <h2
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(26px, 3.5vw, 38px)',
-              fontWeight: 700,
-              color: '#1a1a2e',
-              marginBottom: 8,
-              lineHeight: 1.2,
-            }}
-          >
+          <h2 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: 'clamp(26px, 3.5vw, 36px)', fontWeight: 700,
+            color: '#1a1a2e', marginBottom: 6, lineHeight: 1.2,
+          }}>
             Why{' '}
-            <span
-              style={{
-                background:
-                  'linear-gradient(135deg, #FF6347, #f97316)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span style={{
+              background: 'linear-gradient(135deg, #ec733a, #c9612c)',
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+            }}>
               Brindavan School?
             </span>
           </h2>
-
-          <p
-            style={{
-              color: '#6b5c6e',
-              fontSize: 14,
-              maxWidth: 480,
-              margin: '0 auto',
-              lineHeight: 1.7,
-            }}
-          >
-            Everything parents expect from a modern,
-            values-driven school.
+          <p style={{ color: '#6b5c6e', fontSize: 14, maxWidth: 480, margin: '0 auto 8px', lineHeight: 1.6 }}>
+            Everything parents expect from a modern, values-driven school.
           </p>
         </motion.div>
 
-        {/* Orbital SVG */}
+        {/* ── DIAGRAM ORBITAL AREA ── */}
         <div className="wb-orbital">
-          <motion.svg
-            viewBox="0 70 720 580"
-            width="720"
-            height="580"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{
-              maxWidth: '100%',
-              height: 'auto',
-            }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65 }}
-          >
+          {/* Adjusted viewBox to tightly crop out empty padding around the circle coordinates */}
+          <svg viewBox="120 120 560 560" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <clipPath id="logoClip">
-                <circle
-                  cx={CX}
-                  cy={CY}
-                  r={LOGO_R}
-                />
+                <circle cx={CX} cy={CY} r={LOGO_R} />
               </clipPath>
-
-              <radialGradient
-                id="centerGlow"
-                cx="50%"
-                cy="50%"
-                r="50%"
-              >
-                <stop
-                  offset="0%"
-                  stopColor="#FF6347"
-                  stopOpacity="0.12"
-                />
-
-                <stop
-                  offset="100%"
-                  stopColor="#FF6347"
-                  stopOpacity="0"
-                />
-              </radialGradient>
+              <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#000000" floodOpacity="0.06" />
+              </filter>
             </defs>
 
-            {/* Center Glow */}
-            <circle
-              cx={CX}
-              cy={CY}
-              r={LOGO_R + 48}
-              fill="url(#centerGlow)"
-            />
-
-            {/* Orbit Ring */}
-            <circle
-              cx={CX}
-              cy={CY}
-              r={ORBIT_R}
-              stroke="#C4391E"
-              strokeWidth="2"
-              strokeDasharray="5 6"
-              fill="none"
-              opacity="0.65"
-            />
-
-            {/* Spoke Lines */}
-            {features.map((_, i) => {
-              const angle = i * angleStep
-              const tip = polar(angle, ORBIT_R - NODE_R - 3)
-
+            {/* ── CENTRAL CONNECTING LINES ── */}
+            {features.map((feat, i) => {
+              const currentRadius = feat.isLongSpoke ? LONG_ORBIT_R : SHORT_ORBIT_R
+              const pStart = polar(feat.rotation, LOGO_R + 10)
+              const pEnd = polar(feat.rotation, currentRadius)
               return (
                 <line
-                  key={i}
-                  x1={CX}
-                  y1={CY}
-                  x2={tip.x}
-                  y2={tip.y}
-                  stroke="#9C2D15"
-                  strokeWidth="1.8"
-                  strokeDasharray="4 5"
-                  opacity="0.55"
+                  key={`line-${i}`}
+                  x1={pStart.x} y1={pStart.y}
+                  x2={pEnd.x} y2={pEnd.y}
+                  stroke="#1c244b"
+                  strokeWidth="1.5"
                 />
               )
             })}
 
-            {/* Center Logo */}
-            <circle
-              cx={CX}
-              cy={CY}
-              r={LOGO_R + 3}
-              fill="white"
-            />
+            {/* ── SATELLITE NODES ── */}
+            {features.map((feat, i) => {
+              const currentRadius = feat.isLongSpoke ? LONG_ORBIT_R : SHORT_ORBIT_R
+              const { x: nx, y: ny } = polar(feat.rotation, currentRadius)
+              
+              const iconPos = polar(feat.rotation, currentRadius + NODE_R) 
+              const dotPos = polar(feat.rotation, currentRadius - NODE_R)
 
-            <circle
-              cx={CX}
-              cy={CY}
-              r={LOGO_R + 3}
-              fill="none"
-              stroke="#FF6347"
-              strokeWidth="3"
-              opacity="0.7"
-            />
+              const lineH = 14
+              const totalH = (feat.lines.length - 1) * lineH
+              const textStartY = ny - totalH / 2
 
+              return (
+                <g key={`node-${i}`}>
+                  <g transform={`translate(${nx}, ${ny})`}>
+                    <circle cx="0" cy="0" r={NODE_R} fill="#ffffff" stroke="#1c244b" strokeWidth="2" filter="url(#shadow)" />
+                    <path
+                      d={`M ${-NODE_R} 0 A ${NODE_R} ${NODE_R} 0 0 1 ${NODE_R} 0`}
+                      stroke={feat.arcColor}
+                      strokeWidth="6"
+                      fill="none"
+                      strokeLinecap="round"
+                      transform={feat.arcTransform} 
+                    />
+                  </g>
+
+                  <circle cx={dotPos.x} cy={dotPos.y} r="4.5" fill={feat.arcColor} />
+
+                  {feat.lines.map((line, li) => (
+                    <text
+                      key={li}
+                      x={nx}
+                      y={textStartY + li * lineH}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      fontSize="11.5"
+                      fontWeight="700"
+                      fontFamily="'DM Sans', sans-serif"
+                      fill="#111111"
+                    >
+                      {line}
+                    </text>
+                  ))}
+
+                  <circle cx={iconPos.x} cy={iconPos.y} r={ICON_R} fill={feat.arcColor} filter="url(#shadow)" />
+                  <text
+                    x={iconPos.x}
+                    y={iconPos.y}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontSize="13"
+                  >
+                    {feat.icon}
+                  </text>
+                </g>
+              )
+            })}
+
+            {/* ── HUB MATRIX CENTERPIECE ── */}
+            <circle cx={CX} cy={CY} r={LOGO_R + 14} fill="none" stroke="#d0d4dc" strokeWidth="1.5" strokeDasharray="3 3" />
+            <circle cx={CX} cy={CY} r={LOGO_R + 6} fill="#ffffff" stroke="#1c244b" strokeWidth="2.5" filter="url(#shadow)" />
             <image
               href={logo}
               x={CX - LOGO_R}
@@ -323,176 +225,30 @@ export default function WhyBrindavan() {
               clipPath="url(#logoClip)"
               preserveAspectRatio="xMidYMid meet"
             />
-
-            {/* Feature Nodes */}
-            {features.map((feat, i) => {
-              const angle = i * angleStep
-
-              const { x: nx, y: ny } = polar(
-                angle,
-                ORBIT_R
-              )
-
-              const arcStart = angle - 60
-              const arcEnd = angle + 60
-
-              const iconPos = polar(
-                angle,
-                ORBIT_R + NODE_R - 3
-              )
-
-              const dotPos = polar(
-                angle,
-                ORBIT_R - NODE_R
-              )
-
-              const lineH = 12
-              const totalH =
-                (feat.lines.length - 1) * lineH
-
-              const textStartY =
-                ny - totalH / 2
-
-              return (
-                <g key={i}>
-                  {/* Inner Dot */}
-                  <circle
-                    cx={dotPos.x}
-                    cy={dotPos.y}
-                    r="4"
-                    fill={feat.arcColor}
-                  />
-
-                  {/* Node Circle */}
-                  <circle
-                    cx={nx}
-                    cy={ny}
-                    r={NODE_R}
-                    fill="white"
-                    stroke="#FFBDAA"
-                    strokeWidth="2.5"
-                  />
-
-                  {/* Main Arc */}
-                  <path
-                    d={arcPath(
-                      nx,
-                      ny,
-                      NODE_R,
-                      arcStart,
-                      arcEnd
-                    )}
-                    stroke={feat.arcColor}
-                    strokeWidth="6"
-                    fill="none"
-                    strokeLinecap="round"
-                    opacity="0.95"
-                  />
-
-                  {/* Fade Arc Right */}
-                  <path
-                    d={arcPath(
-                      nx,
-                      ny,
-                      NODE_R,
-                      arcEnd + 18,
-                      arcEnd + 52
-                    )}
-                    stroke={feat.arcColor}
-                    strokeWidth="4"
-                    opacity="0.4"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Fade Arc Left */}
-                  <path
-                    d={arcPath(
-                      nx,
-                      ny,
-                      NODE_R,
-                      arcStart - 52,
-                      arcStart - 18
-                    )}
-                    stroke={feat.arcColor}
-                    strokeWidth="4"
-                    opacity="0.4"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-
-                  {/* Text */}
-                  {feat.lines.map((line, li) => (
-                    <text
-                      key={li}
-                      x={nx}
-                      y={textStartY + li * lineH}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      fontSize="9.5"
-                      fontWeight="600"
-                      fontFamily="'DM Sans', sans-serif"
-                      fill="#1a1a2e"
-                    >
-                      {line}
-                    </text>
-                  ))}
-
-                  {/* Icon Circle */}
-                  <circle
-                    cx={iconPos.x}
-                    cy={iconPos.y}
-                    r={ICON_R}
-                    fill={feat.arcColor}
-                  />
-
-                  <text
-                    x={iconPos.x}
-                    y={iconPos.y}
-                    textAnchor="middle"
-                    dominantBaseline="central"
-                    fontSize="12"
-                  >
-                    {feat.icon}
-                  </text>
-                </g>
-              )
-            })}
-          </motion.svg>
+          </svg>
         </div>
 
-        {/* Mobile Grid */}
+        {/* ── RESPONSIVE MOBILE GRID FALLBACK LAYOUT ── */}
         <div className="wb-grid">
           {features.map((feat, i) => (
-            <motion.div
-              key={i}
+            <motion.div 
+              key={i} 
               className="wb-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                delay: i * 0.06,
-              }}
+              transition={{ delay: i * 0.04 }}
             >
-              <div
-                className="wb-icon-box"
-                style={{
-                  background:
-                    feat.arcColor + '18',
-                }}
-              >
+              <div className="wb-icon-box" style={{ background: feat.arcColor + '20', color: feat.arcColor }}>
                 {feat.icon}
               </div>
-
               <div className="wb-card-title">
                 {feat.lines.join(' ')}
               </div>
             </motion.div>
           ))}
         </div>
+        
       </div>
     </section>
   )
