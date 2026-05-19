@@ -5,74 +5,106 @@ export default function PageHero({
   subtitle,
   variant = 'blue',
   backgroundImage,
+  fullOpacity = false,
+  objectPosition = 'object-center',
+  showOverlay = true,
 }) {
   const isPink = variant === 'pink'
+  const overlayOpacity = fullOpacity ? 'bg-black/1' : 'bg-black/2'
 
   return (
     <section
-      className={`relative overflow-hidden pt-28 pb-16 md:pt-32 md:pb-20
-      ${isPink ? 'bg-[#7A284B]' : 'bg-primary-900'}`}
+      className={`
+        relative overflow-hidden
+        min-h-[85vh]
+        flex items-center
+        pt-36 md:pt-44
+        pb-20
+        ${isPink ? 'bg-[#7A284B]' : 'bg-primary-900'}
+      `}
     >
-      {/* ── IMAGE BACKGROUND LAYER ── */}
+      {/* Background Image */}
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
           <img
             src={backgroundImage}
             alt={title}
-            className="w-full h-full object-cover opacity-100"
+            className={`w-full h-full object-cover ${objectPosition}`}
           />
+
+          {/* Dark Overlay */}
+          {showOverlay && (
+            <div className={`absolute inset-0 ${overlayOpacity}`} />
+          )}
         </div>
       )}
 
-      {/* Decorative Glow Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 z-1">
+      {/* Glow Effects */}
+      <div className="absolute inset-0 pointer-events-none z-[1] overflow-hidden">
         <div
-          className={`absolute top-[-80px] left-[10%] w-[26rem] h-[26rem] blur-3xl rounded-full
-          ${isPink ? 'bg-[#F8B8D0]' : 'bg-secondary-500'}`}
+          className={`
+            absolute top-[-120px] left-[8%]
+            w-[28rem] h-[28rem]
+            rounded-full blur-3xl opacity-20
+            ${isPink ? 'bg-pink-300' : 'bg-secondary-400'}
+          `}
         />
+
         <div
-          className={`absolute bottom-[-120px] right-[5%] w-[30rem] h-[30rem] blur-3xl rounded-full
-          ${isPink ? 'bg-[#F4A7BB]' : 'bg-primary-400'}`}
+          className={`
+            absolute bottom-[-150px] right-[5%]
+            w-[30rem] h-[30rem]
+            rounded-full blur-3xl opacity-20
+            ${isPink ? 'bg-rose-300' : 'bg-primary-400'}
+          `}
         />
       </div>
 
       {/* Grid Texture */}
-      <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:24px_24px] z-1" />
+      <div className="absolute inset-0 z-[1] opacity-[0.05] bg-[radial-gradient(circle_at_center,white_1px,transparent_1px)] bg-[size:24px_24px]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
 
-          {/* Left Content */}
+          {/* Left Side */}
           <div className="max-w-3xl">
-            <div
-              className={`
-                inline-flex items-center gap-2
-                px-4 py-1.5 rounded-full
-                text-xs uppercase tracking-[0.25em]
-                font-semibold mb-5
-                backdrop-blur-md border
-                ${isPink
-                  ? 'bg-black/40 border-white/20 text-white'
-                  : 'bg-black/40 border-white/20 text-white'
-                }
-              `}
-            >
+
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs uppercase tracking-[0.3em] font-semibold mb-6 shadow-lg">
               Brindavan School
             </div>
 
+            {/* Title */}
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight"
-              style={{ textShadow: '2px 2px 12px rgba(0,0,0,0.95), 0px 0px 30px rgba(0,0,0,0.8)' }}
+              className="
+                text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
+                font-bold
+                leading-tight
+                text-white
+              "
+              style={{
+                textShadow:
+                  '0 4px 20px rgba(0,0,0,0.9)',
+              }}
             >
               {title}
             </h1>
 
+            {/* Subtitle */}
             {subtitle && (
               <p
-                className={`mt-5 text-lg md:text-xl leading-relaxed max-w-2xl font-medium
-                ${isPink ? 'text-white' : 'text-white'}`}
-                style={{ textShadow: '1px 1px 8px rgba(0,0,0,0.95), 0px 0px 20px rgba(0,0,0,0.8)' }}
+                className="
+                  mt-6
+                  text-lg md:text-xl
+                  text-gray-200
+                  leading-relaxed
+                  max-w-2xl
+                "
+                style={{
+                  textShadow:
+                    '0 2px 12px rgba(0,0,0,0.9)',
+                }}
               >
                 {subtitle}
               </p>
@@ -84,24 +116,35 @@ export default function PageHero({
             <Link
               to="/admission-form"
               className={`
-                inline-flex items-center gap-3
-                px-7 py-4 rounded-full
+                group inline-flex items-center gap-3
+                px-8 py-4
+                rounded-full
                 font-semibold tracking-wide
+                border border-white/20
+                backdrop-blur-xl
                 transition-all duration-300
-                shadow-2xl hover:scale-105
-                backdrop-blur-xl border
-                ${isPink
-                  ? 'bg-white/15 border-white/20 text-white hover:bg-white hover:text-[#C2417A]'
-                  : 'bg-white/10 border-white/20 text-white hover:bg-white hover:text-primary-800'
+                shadow-2xl
+                hover:scale-105
+                hover:shadow-white/20
+                ${
+                  isPink
+                    ? 'bg-white text-[#C2417A] hover:bg-pink-50'
+                    : 'bg-white text-primary-900 hover:bg-gray-100'
                 }
               `}
             >
               Apply Now
-              <span className="text-lg">→</span>
+
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/30 to-transparent z-[2]" />
     </section>
   )
 }

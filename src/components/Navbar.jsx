@@ -21,7 +21,7 @@ const mainLinks = [
       { to: '/academic-approaches', label: 'Academic Approaches' },
       { to: '/events/gallery', label: 'Co-Curricular' },
       { to: '/events/annual', label: 'Communication & Public Speaking' },
-      { to: '/events/sports', label: 'Festival Fun' },
+      { to: '/events/annual', label: 'Festival Fun' },
     ],
   },
   {

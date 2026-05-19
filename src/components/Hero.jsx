@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-slate-950 -mt-24 md:-mt-28">
+    <section className="relative w-full h-screen overflow-hidden">
 
       {/* RAW HD VIDEO */}
-      <div className="absolute inset-0 w-full h-full select-none pointer-events-none">
+      <div className="absolute inset-0 z-0 w-full h-full select-none pointer-events-none">
         <video
           autoPlay
           muted

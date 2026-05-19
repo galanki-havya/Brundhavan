@@ -21,8 +21,8 @@
     --shadow: 0 10px 30px rgba(0, 43, 92, 0.08);
     
     --top-banner: 40px;
-    --top-navbar-mobile: 64px;
-    --top-navbar-desktop: 72px;
+    --top-navbar-mobile: 80px;
+    --top-navbar-desktop: 88px;
     --page-offset: calc(var(--top-banner) + var(--top-navbar-mobile));
     --page-offset-desktop: calc(var(--top-banner) + var(--top-navbar-desktop));
   }
@@ -49,7 +49,7 @@
     font-family: 'DM Sans', sans-serif;
     /* Primary body text color */
     @apply text-slate-700;
-    background-color: var(--brand-light);
+    background-color: #ffffff;
     overflow-x: hidden;
   }
 
@@ -87,6 +87,8 @@
   }
 
   .page-offset {
+    position: relative;
+    z-index: 0;
     padding-top: var(--page-offset);
   }
 
