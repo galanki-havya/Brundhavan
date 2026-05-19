@@ -32,17 +32,20 @@ import Testimonials from '../components/Testimonials'
 import Section from '../components/Section'
 import GlobalBackground from '../components/GlobalBackground'
 
-// ── Elegant Light Orange Divider ─────────────────────────────
+// ── Thick Bold Divider ───────────────────────────────────────
 function ClearDivider() {
   return (
-    <div className="w-full flex justify-center bg-[#F9FAFB]">
-      <div
-        className="h-[1px] w-full max-w-7xl"
-        style={{
-          background:
-            'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.18) 20%, rgba(236,115,58,0.35) 50%, rgba(236,115,58,0.18) 80%, transparent 100%)',
-        }}
-      />
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
     </div>
   )
 }
@@ -133,7 +136,7 @@ export default function Home() {
 
       <Hero />
 
-      <section className="relative py-14 bg-[#F9FAFB]">
+      <section className="relative py-14 bg-[#FFFFFF]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {statsData.map((s, i) => <StatCard key={s.label} {...s} delay={i * 0.1} />)}
@@ -171,7 +174,7 @@ export default function Home() {
 
       <ClearDivider />
 
-      <Section className="py-24 bg-[#F9FAFB]">
+      <Section className="py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-14">
             <SectionLabel color="#ec733a">Beyond the Classroom</SectionLabel>
@@ -179,7 +182,18 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
             {featuredActivities.map((activity, i) => (
-              <motion.div key={activity.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ y: -10 }} className="group relative overflow-hidden rounded-[32px] bg-[#F9FAFB] border border-gray-200 shadow-sm">
+              <motion.div
+                key={activity.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -10 }}
+                className="group relative overflow-hidden rounded-[32px] bg-[#F9FAFB] shadow-sm transition-all duration-300"
+                style={{
+                  border: '1px solid rgba(236, 115, 58, 0.35)',
+                }}
+                onMouseEnter={e => e.currentTarget.style.border = '1px solid rgba(236, 115, 58, 0.75)'}
+                onMouseLeave={e => e.currentTarget.style.border = '1px solid rgba(236, 115, 58, 0.35)'}
+              >
                 <div className="relative h-56 overflow-hidden">
                   <img src={activity.image} alt={activity.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-4 left-4">

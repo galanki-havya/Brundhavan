@@ -38,6 +38,22 @@ const getSmartItemIcon = (name) => {
   return Monitor
 }
 
+function ClearDivider() {
+  return (
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
+    </div>
+  )
+}
 export default function SmartClassrooms() {
   return (
     <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
@@ -153,6 +169,8 @@ export default function SmartClassrooms() {
         </div>
       </section>
 
+        <ClearDivider />
+
       {/* ── Feature Cards ── */}
       <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
@@ -198,6 +216,8 @@ export default function SmartClassrooms() {
           </div>
         </div>
       </section>
+
+      <ClearDivider />
 
       {/* ── Hardware & Software Two-Col ── */}
       <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
@@ -261,6 +281,8 @@ export default function SmartClassrooms() {
           </div>
         </div>
       </section>
+
+      <ClearDivider />
 
       {/* ── CTA ── */}
       <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>

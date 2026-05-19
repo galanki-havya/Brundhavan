@@ -1,83 +1,72 @@
 import { motion } from 'framer-motion'
-import Section from '../components/Section'
-import PageHero from '../components/PageHero'
+import { BookOpen, Users, Trophy, Microscope, Music, Gamepad2 } from 'lucide-react'
 import { siteData } from '../data/site'
-import { Link } from 'react-router-dom'
-import { Beaker, Monitor, BookOpen, Waves, Palette, Trophy, Shield, Leaf, Bus } from 'lucide-react'
 
 const { facilities } = siteData
-
-// Updated modern theme palette
-const themes = [
-  { accent: '#FF6347', bgColor: '#fff5f3', border: '1px solid #fce8e6' },
-  { accent: '#011E3A', bgColor: '#f0f3f7', border: '1px solid #e1e8f0' },
-  { accent: '#FF6347', bgColor: '#fff5f3', border: '1px solid #fce8e6' },
-  { accent: '#011E3A', bgColor: '#f0f3f7', border: '1px solid #e1e8f0' },
-  { accent: '#FF6347', bgColor: '#fff5f3', border: '1px solid #fce8e6' },
-  { accent: '#011E3A', bgColor: '#f0f3f7', border: '1px solid #e1e8f0' }
-]
-
-const facilityIcons = [Beaker, Monitor, BookOpen, Waves, Palette, Trophy]
-const highlights = [
-  { icon: Shield, title: 'Safe & Secure', desc: 'CCTV surveillance, trained staff, and emergency protocols' },
-  { icon: Monitor, title: 'Digital Campus', desc: 'Smart classrooms with interactive boards and modern tools' },
-  { icon: Leaf, title: 'Green Environment', desc: 'Spacious grounds with eco-friendly learning spaces' },
-  { icon: Bus, title: 'Transport Fleet', desc: 'GPS-tracked buses covering all local routes' }
-]
+const icons = [BookOpen, Users, Trophy, Microscope, Music, Gamepad2]
 
 export default function Facilities() {
   return (
-    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
-      <PageHero
-        title="Facilities"
-        subtitle="World-class infrastructure designed for holistic development."
-        backgroundImage="/images/gallery/overview.png"
-        variant="gold"
-      />
+    <section className="relative py-24 bg-slate-50/50 overflow-hidden font-sans">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#011E3A]/[0.04] rounded-full translate-x-1/4 -translate-y-1/4 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-[#ea580c]/[0.04] rounded-full -translate-x-1/4 translate-y-1/4 blur-[100px] pointer-events-none" />
 
-      <Section style={{ padding: '80px 0' }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-            <span style={{ color: '#FF6347', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '2px', textTransform: 'uppercase' }}>Infrastructure</span>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.8rem', color: '#011E3A', marginTop: '10px' }}>Designed for Excellence</h2>
-          </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block text-[#ea580c] font-bold text-xs sm:text-sm tracking-[2px] uppercase mb-3">
+            Our Campus Infrastructure
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#011E3A] tracking-tight mb-4">
+            World-Class Facilities
+          </h2>
+          <div className="w-12 h-1 bg-[#ea580c] mx-auto mb-5 rounded-full" />
+          <p className="text-slate-700 text-base max-w-2xl mx-auto leading-relaxed font-semibold">
+            Every space on our campus is thoughtfully designed to inspire premium learning, creativity, and structural growth.
+          </p>
+        </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {facilities.map((facility, i) => {
-              const theme = themes[i % themes.length]
-              const IconComponent = facilityIcons[i % facilityIcons.length]
-              return (
-                <motion.div key={i} whileHover={{ y: -5 }} style={{ background: theme.bgColor, borderRadius: '20px', border: theme.border, padding: '32px' }}>
-                  <div style={{ width: '50px', height: '50px', background: theme.accent, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                    <IconComponent size={24} style={{ color: '#fff' }} />
-                  </div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.25rem', color: '#011E3A', marginBottom: '10px' }}>{facility.title}</h3>
-                  <p style={{ color: '#555', fontSize: '0.95rem', lineHeight: 1.6 }}>{facility.desc}</p>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {facilities.map((f, i) => {
+            const Icon = icons[i] || BookOpen
 
-      {/* Highlights */}
-      <Section style={{ background: '#F9FAFB', padding: '80px 0' }}>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} src="/images/gallery/Infrastructure/3.jpg" alt="Campus" style={{ borderRadius: '24px', width: '100%', height: '450px', objectFit: 'cover' }} />
-          <div className="space-y-6">
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', color: '#011E3A' }}>Campus Highlights</h2>
-            {highlights.map((item, i) => (
-              <div key={i} style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                <div style={{ background: '#fff', padding: '12px', borderRadius: '12px', border: '1px solid #eee' }}><item.icon size={24} color="#FF6347" /></div>
-                <div>
-                  <h4 style={{ fontWeight: 700, color: '#011E3A', marginBottom: '4px' }}>{item.title}</h4>
-                  <p style={{ color: '#666', fontSize: '0.9rem' }}>{item.desc}</p>
+            return (
+              <motion.div
+                key={f.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.5 }}
+                // Border is now a permanent Tailwind class
+                className="relative bg-white rounded-2xl p-8 border-2 border-[#ea580c]"
+              >
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 h-[3px] w-full bg-[#ea580c] rounded-t-2xl" />
+
+                {/* Icon Container */}
+                <div className="w-12 h-12 rounded-xl bg-[#011E3A]/[0.06] flex items-center justify-center mb-6">
+                  <Icon className="w-5 h-5 text-[#011E3A]" />
                 </div>
-              </div>
-            ))}
-          </div>
+
+                <h3 className="font-bold text-lg xl:text-xl text-[#011E3A] tracking-tight mb-3">
+                  {f.title}
+                </h3>
+
+                <p className="text-slate-600 text-[14.5px] leading-relaxed font-medium">
+                  {f.desc}
+                </p>
+              </motion.div>
+            )
+          })}
         </div>
-      </Section>
-    </div>
+      </div>
+    </section>
   )
 }

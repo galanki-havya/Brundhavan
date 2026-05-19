@@ -58,7 +58,7 @@ export default function Testimonials() {
           {/* Subtext */}
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
-            color: '#6b5c6e',
+            color: '#040404',
             fontSize: '1.05rem',
             maxWidth: 480,
             margin: '0 auto',

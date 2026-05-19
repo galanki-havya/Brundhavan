@@ -8,13 +8,22 @@ import { siteData } from '../data/site'
 
 const { school } = siteData
 
-const BrandedDivider = () => (
-  <div className="w-full flex justify-center py-8">
-    <div className="h-[1px] w-full max-w-7xl" style={{
-      background: 'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.18) 20%, rgba(236,115,58,0.35) 50%, rgba(236,115,58,0.18) 80%, transparent 100%)',
-    }} />
-  </div>
-)
+function ClearDivider() {
+  return (
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
+    </div>
+  )
+}
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
@@ -83,7 +92,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <BrandedDivider />
+      <ClearDivider />
 
       {/* ── Form Section ── */}
       <section className="py-20 px-4">

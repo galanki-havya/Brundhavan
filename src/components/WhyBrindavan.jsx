@@ -121,7 +121,7 @@ export default function WhyBrindavan() {
               Brindavan School?
             </span>
           </h2>
-          <p style={{ color: '#6b5c6e', fontSize: 14, maxWidth: 480, margin: '0 auto 8px', lineHeight: 1.6 }}>
+          <p style={{ color: '#000000', fontSize: 14, maxWidth: 480, margin: '0 auto 8px', lineHeight: 1.6 }}>
             Everything parents expect from a modern, values-driven school.
           </p>
         </motion.div>

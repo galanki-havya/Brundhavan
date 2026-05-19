@@ -9,6 +9,23 @@ const { admissionSteps, programs, school } = siteData
 
 const stepIcons = [FileText, ClipboardList, UserCheck, GraduationCap]
 
+function ClearDivider() {
+  return (
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
+    </div>
+  )
+}
+
 export default function Admissions() {
   return (
     <div
@@ -221,9 +238,11 @@ export default function Admissions() {
           </motion.div>
         </div>
       </section>
+      
+      <ClearDivider />
 
       {/* ── Trust Stats ── */}
-      <section style={{ padding: '64px 0', background: '#F9FAFB' }}>
+      <section style={{ padding: '64px 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div
             className="admissions-trust-grid"
@@ -286,6 +305,8 @@ export default function Admissions() {
           </div>
         </div>
       </section>
+
+      <ClearDivider />
 
       {/* ── Admission Steps ── */}
       <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
@@ -387,8 +408,10 @@ export default function Admissions() {
         </div>
       </section>
 
+      <ClearDivider />
+
       {/* ── Eligibility Criteria ── */}
-      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
+      <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -516,6 +539,8 @@ export default function Admissions() {
           </motion.div>
         </div>
       </section>
+
+      <ClearDivider />
 
       {/* ── Apply Now CTA ── */}
 <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
