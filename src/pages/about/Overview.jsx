@@ -18,7 +18,6 @@ export default function AboutOverview() {
         title="About Brindavan School"
         subtitle="Discover our rich heritage, values, and commitment to educational excellence."
         backgroundImage="/images/gallery/overview.png"
-        variant="pink"
       />
 
       {/* ── Split Section ── */}
@@ -116,7 +115,7 @@ export default function AboutOverview() {
       </section>
 
       {/* ── Why Parents Choose Us ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#fcfaf6' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
 
           <motion.div
