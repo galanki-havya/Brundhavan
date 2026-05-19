@@ -155,7 +155,7 @@ export default function Digital() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>
               Digital Capabilities
             </h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Every tool built to empower the next generation of leaders</p>
+            <p style={{ color: '#111010', fontSize: '1rem' }}>Every tool built to empower the next generation of leaders</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -179,7 +179,7 @@ export default function Digital() {
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
                 <div style={{ fontSize: '2.4rem', marginBottom: '14px' }}>{item.emoji}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#666', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#1a1a1a', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>

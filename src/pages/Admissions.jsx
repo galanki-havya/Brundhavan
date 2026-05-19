@@ -475,7 +475,7 @@ export default function Admissions() {
                   <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#FF6347', fontWeight: 600, marginBottom: '6px' }}>
                     {prog.age}
                   </div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#666', lineHeight: 1.5 }}>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.95rem', color: '#1a1a1a', lineHeight: 1.5 }}>
                     Age proof, previous school records, parent ID required at registration.
                   </div>
                 </div>
@@ -526,7 +526,7 @@ export default function Admissions() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: '0.9rem', color: '#222',
+                    fontSize: '1rem', color: '#222',
                     padding: '10px 0',
                     borderBottom: '1px solid #f0f0f0'
                   }}
