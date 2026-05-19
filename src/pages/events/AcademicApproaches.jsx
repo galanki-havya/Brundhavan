@@ -190,7 +190,6 @@ const ACADEMICS = [
       "/src/assets/Languagelab/L3.png",
       "/src/assets/Languagelab/L4.png",
       "/src/assets/Languagelab/L5.png",
-      "/src/assets/Languagelab/L6.png",
     ]
   },
   {
@@ -207,7 +206,7 @@ const ACADEMICS = [
       "/src/assets/computerlab/c3.png",
       "/src/assets/computerlab/c4.png",
       "/src/assets/computerlab/c5.png",
-      "/src/assets/computerlab/c6.png",
+
     ]
   },
   {
@@ -219,12 +218,12 @@ const ACADEMICS = [
     bgDown: "#FCE7F3",
     description: "Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.",
     gallery: [
-      "/src/assets/CSP/CSp1.png",
+      "/src/assets/CSP/CSP1.png",
       "/src/assets/CSP/CSP2.png",
       "/src/assets/CSP/CSP3.png",
       "/src/assets/CSP/CSP4.png",
       "/src/assets/CSP/CSP5.png",
-      "/src/assets/CSP/CSP6.png",
+  
     ]
   },
   {

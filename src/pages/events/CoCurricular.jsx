@@ -30,12 +30,12 @@ body { background: var(--cc-bg) !important; font-family: 'DM Sans', sans-serif; 
 .cc-btn { border: none; outline: none; cursor: pointer; transition: all 0.2s ease-in-out; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; justify-content: center; }
 .cc-btn-primary { background: #C9922A; color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 .cc-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-.cc-btn-ghost { background: #fff; color: #071A2F; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid #071A2F; }
-.cc-btn-ghost:hover { background: #F8FAFC; }
+.cc-btn-ghost { background: transparent; color: #fff; padding: 12px 26px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid #fff; }
+.cc-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
 .cc-btn-back { background: #fff; color: #071A2F; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; border: 1px solid #E2E8F0; }
 .cc-btn-back:hover { background: #F8FAFC; }
 
-.cc-hero { width: 100%; padding: 5rem 3rem 3rem; background: var(--cc-bg) !important; border-bottom: 1px solid #E2E8F0; }
+.cc-hero { width: 100%; padding: 8rem 3rem 8rem; background: url('/src/assets/heroforschoollife/Co-cirrcular.png') no-repeat center center / cover !important; border-bottom: 1px solid #E2E8F0; }
 .cc-hero-content { max-width: 680px; }
 .cc-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; color: #C9922A; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
@@ -93,8 +93,7 @@ const CO_CURRICULAR = [
       "/src/assets/indoor/i3.png",
       "/src/assets/indoor/i4.png",
       "/src/assets/indoor/i5.png",
-      "/src/assets/indoor/i6.png",
-      "/src/assets/indoor/i7.png",
+
     ]
   },
   {
@@ -112,7 +111,7 @@ const CO_CURRICULAR = [
       "/src/assets/Outdoor/o4.png",
       "/src/assets/Outdoor/o5.png",
       "/src/assets/Outdoor/o6.png",
-      "/src/assets/Outdoor/o7.png",
+
     ]
   },
   {
@@ -129,6 +128,7 @@ const CO_CURRICULAR = [
       "/src/assets/Clayactivities/Cl3.png",
       "/src/assets/Clayactivities/CL4.png",
       "/src/assets/Clayactivities/Cl5.png",
+      "/src/assets/Clayactivities/Cl6.png",
     ]
   },
   {
@@ -323,11 +323,11 @@ export default function CoCurricular() {
                 </div>
                 <h1
                   className="cc-display"
-                  style={{ fontSize: "clamp(34px, 5vw, 54px)", color: THEME.colors.navy, fontWeight: 700, lineHeight: 1.15, marginBottom: 16 }}
+                  style={{ fontSize: "clamp(34px, 5vw, 54px)", color: "#FFFFFF", fontWeight: 700, lineHeight: 1.15, marginBottom: 16 }}
                 >
                   Co-Curricular Activities
                 </h1>
-                <p style={{ color: THEME.colors.textMuted, fontSize: 15, lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}>
+                <p style={{ color: "#E2E8F0", fontSize: 15, lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}>
                   Beyond the classroom — discover sports, arts, crafts, and creative endeavours that shape well-rounded individuals.
                 </p>
                 <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
