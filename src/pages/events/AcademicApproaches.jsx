@@ -5,18 +5,168 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import PageHero from '../../components/PageHero'
 
 const ACADEMICS = [
-  { id: 'abacus', title: 'Abacus', subtitle: 'Mental Mathematics', image: '/src/assets/ABACUS/AB1.png', accentDark: '#1E40AF', bgDown: '#EFF6FF', description: 'Enhancing concentration, spatial memory, and lightning-fast arithmetic through structured bead-counting systems.', gallery: ['/src/assets/ABACUS/AB1.png', '/src/assets/ABACUS/AB2.png', '/src/assets/ABACUS/AB3.png', '/src/assets/ABACUS/AB4.png', '/src/assets/ABACUS/AB5.png'] },
-  { id: 'dpt', title: 'DPT', subtitle: 'Development Programme', image: '/src/assets/DPT.jpeg', accentDark: '#065F46', bgDown: '#E6F4EA', description: 'Building cognitive abilities, logical analysis, personality development, and public confidence frameworks.', gallery: [] },
-  { id: 'iit-neet', title: 'IIT – NEET', subtitle: 'Competitive Foundation', image: '/src/assets/IIT NEET/IITHERO.png', accentDark: '#991B1B', bgDown: '#FCE8E6', description: 'Advanced concept frameworks targeting Olympiads, foundational engineering, and medical track preparation.', gallery: ['/src/assets/IIT NEET/IIT1.png', '/src/assets/IIT NEET/IIT2.png', '/src/assets/IIT NEET/IIT3.png', '/src/assets/IIT NEET/IIT4.png'] },
-  { id: 'science-lab', title: 'Science Lab', subtitle: 'Practical Experiments', image: '/src/assets/Sciencelab/S1.png', accentDark: '#5B21B6', bgDown: '#F3E8FF', description: 'Hands-on chemical, physical, and bio experiments transforming dry theory into physical realizations.', gallery: ['/src/assets/Sciencelab/S1.png', '/src/assets/Sciencelab/S2.png', '/src/assets/Sciencelab/S3.png', '/src/assets/Sciencelab/S4.png', '/src/assets/Sciencelab/S5.png'] },
-  { id: 'biological-trips', title: 'Biological Trips', subtitle: 'Nature Study', image: '/src/assets/Biologicaltrips/B1.png', accentDark: '#10B981', bgDown: '#D1FAE5', description: 'Exploration of local ecosystems and biological diversity in natural habitats.', gallery: ['/src/assets/Biologicaltrips/B1.png', '/src/assets/Biologicaltrips/B2.png', '/src/assets/Biologicaltrips/B3.png', '/src/assets/Biologicaltrips/B4.png', '/src/assets/Biologicaltrips/B5.png', '/src/assets/Biologicaltrips/B6.png', '/src/assets/Biologicaltrips/B7.png'] },
-  { id: 'omr', title: 'OMR Evaluation', subtitle: 'Assessment Systems', image: '/src/assets/OMR/M1.png', accentDark: '#92400E', bgDown: '#FEF3C7', description: 'Familiarising pupils with modern competitive testing via automated diagnostic examinations.', gallery: ['/src/assets/OMR/M1.png', '/src/assets/OMR/M2.png', '/src/assets/OMR/M3.png', '/src/assets/OMR/M4.png', '/src/assets/OMR/M5.png'] },
-  { id: 'language-lab', title: 'Language Lab', subtitle: 'Communication Skills', image: '/src/assets/Languagelab/L1.png', accentDark: '#0369A1', bgDown: '#E0F2FE', description: 'Digital audio-linguistic tools to perfect phonetics, conversational fluency, and speech clarity.', gallery: ['/src/assets/Languagelab/L1.png', '/src/assets/Languagelab/L2.png', '/src/assets/Languagelab/L3.png', '/src/assets/Languagelab/L4.png', '/src/assets/Languagelab/L5.png', '/src/assets/Languagelab/L6.png'] },
-  { id: 'computer-lab', title: 'Computer Lab', subtitle: 'Digital Literacy', image: '/src/assets/computerlab/c1.png', accentDark: '#374151', bgDown: '#F1F5F9', description: 'Programming fundamentals, AI applications, web logic, and technology-driven learning models.', gallery: ['/src/assets/computerlab/c1.png', '/src/assets/computerlab/c2.png', '/src/assets/computerlab/c3.png', '/src/assets/computerlab/c4.png', '/src/assets/computerlab/c5.png', '/src/assets/computerlab/c6.png'] },
-  { id: 'csp', title: 'CSP', subtitle: 'Community Activity', image: '/src/assets/CSP/CSp1.png', accentDark: '#9D174D', bgDown: '#FCE7F3', description: 'Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.', gallery: ['/src/assets/CSP/CSp1.png', '/src/assets/CSP/CSP2.png', '/src/assets/CSP/CSP3.png', '/src/assets/CSP/CSP4.png', '/src/assets/CSP/CSP5.png', '/src/assets/CSP/CSP6.png'] },
-  { id: 'field-trip', title: 'Field Trips', subtitle: 'Experiential Outings', image: '/src/assets/Field trips/F1.png', accentDark: '#C2410C', bgDown: '#FFEDD5', description: 'Guided environmental and factory tours bridging indoor curriculum with real-world execution.', gallery: ['/src/assets/Field trips/F1.png', '/src/assets/Field trips/F2.png', '/src/assets/Field trips/f3.png', '/src/assets/Field trips/f4.png', '/src/assets/Field trips/f5.png', '/src/assets/Field trips/f6.png', '/src/assets/Field trips/f7.png'] },
-]
+  {
+    id: "abacus",
+    title: "Abacus",
+    subtitle: "Mental Mathematics",
+    image: "/src/assets/ABACUS/AB1.png",
+    accentDark: "#1E40AF",
+    bgDown: "#EFF6FF",
+    description: "Enhancing concentration, spatial memory, and lightning-fast arithmetic through structured bead-counting systems.",
+    gallery: [
+      "/src/assets/ABACUS/AB1.png",
+      "/src/assets/ABACUS/AB2.png",
+      "/src/assets/ABACUS/AB3.png",
+      "/src/assets/ABACUS/AB4.png",
+      "/src/assets/ABACUS/AB5.png",
+    ]
+  },
+  {
+    id: "dpt",
+    title: "DPT",
+    subtitle: "Development Programme",
+    image: "/src/assets/DPT.jpeg",
+    accentDark: "#065F46",
+    bgDown: "#E6F4EA",
+    description: "Building cognitive abilities, logical analysis, personality development, and public confidence frameworks.",
+    gallery: []
+  },
+  {
+    id: "iit-neet",
+    title: "IIT – NEET",
+    subtitle: "Competitive Foundation",
+    image: "/src/assets/IIT NEET/IITHERO.png",
+    accentDark: "#991B1B",
+    bgDown: "#FCE8E6",
+    description: "Advanced concept frameworks targeting Olympiads, foundational engineering, and medical track preparation.",
+    gallery: [
+      "/src/assets/IIT NEET/IIT1.png",
+      "/src/assets/IIT NEET/IIT2.png",
+      "/src/assets/IIT NEET/IIT3.png",
+      "/src/assets/IIT NEET/IIT4.png",
+    ]
+  },
+  {
+    id: "science-lab",
+    title: "Science Lab",
+    subtitle: "Practical Experiments",
+    image: "/src/assets/Sciencelab/S1.png",
+    accentDark: "#5B21B6",
+    bgDown: "#F3E8FF",
+    description: "Hands-on chemical, physical, and bio experiments transforming dry theory into physical realizations.",
+    gallery: [
+      "/src/assets/Sciencelab/S1.png",
+      "/src/assets/Sciencelab/S2.png",
+      "/src/assets/Sciencelab/S3.png",
+      "/src/assets/Sciencelab/S4.png",
+      "/src/assets/Sciencelab/S5.png",
+    ]
+  },
+  {
+    id: "biological-trips",
+    title: "Biological Trips",
+    subtitle: "Nature Study",
+    image: "/src/assets/Biologicaltrips/B1.png",
+    accentDark: "#10B981",
+    bgDown: "#D1FAE5",
+    description: "Exploration of local ecosystems and biological diversity in natural habitats.",
+    gallery: [
+      "/src/assets/Biologicaltrips/B1.png",
+      "/src/assets/Biologicaltrips/B2.png",
+      "/src/assets/Biologicaltrips/B3.png",
+      "/src/assets/Biologicaltrips/B4.png",
+      "/src/assets/Biologicaltrips/B5.png",
+      "/src/assets/Biologicaltrips/B6.png",
+      "/src/assets/Biologicaltrips/B7.png",
+    ]
+  },
+  {
+    id: "omr",
+    title: "OMR Evaluation",
+    subtitle: "Assessment Systems",
+    image: "/src/assets/OMR/M1.png",
+    accentDark: "#92400E",
+    bgDown: "#FEF3C7",
+    description: "Familiarising pupils with modern competitive testing via automated diagnostic examinations.",
+    gallery: [
+      "/src/assets/OMR/M1.png",
+      "/src/assets/OMR/M2.png",
+      "/src/assets/OMR/M3.png",
+      "/src/assets/OMR/M4.png",
+      "/src/assets/OMR/M5.png",
+    ]
+  },
+  {
+    id: "language-lab",
+    title: "Language Lab",
+    subtitle: "Communication Skills",
+    image: "/src/assets/Languagelab/L1.png",
+    accentDark: "#0369A1",
+    bgDown: "#E0F2FE",
+    description: "Digital audio-linguistic tools to perfect phonetics, conversational fluency, and speech clarity.",
+    gallery: [
+      "/src/assets/Languagelab/L1.png",
+      "/src/assets/Languagelab/L2.png",
+      "/src/assets/Languagelab/L3.png",
+      "/src/assets/Languagelab/L4.png",
+      "/src/assets/Languagelab/L5.png",
+    ]
+  },
+  {
+    id: "computer-lab",
+    title: "Computer Lab",
+    subtitle: "Digital Literacy",
+    image: "/src/assets/computerlab/c1.png",
+    accentDark: "#374151",
+    bgDown: "#F1F5F9",
+    description: "Programming fundamentals, AI applications, web logic, and technology-driven learning models.",
+    gallery: [
+      "/src/assets/computerlab/c1.png",
+      "/src/assets/computerlab/c2.png",
+      "/src/assets/computerlab/c3.png",
+      "/src/assets/computerlab/c4.png",
+      "/src/assets/computerlab/c5.png",
 
+    ]
+  },
+  {
+    id: "csp",
+    title: "CSP",
+    subtitle: "Community Activity",
+    image: "/src/assets/CSP/CSp1.png",
+    accentDark: "#9D174D",
+    bgDown: "#FCE7F3",
+    description: "Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.",
+    gallery: [
+      "/src/assets/CSP/CSP1.png",
+      "/src/assets/CSP/CSP2.png",
+      "/src/assets/CSP/CSP3.png",
+      "/src/assets/CSP/CSP4.png",
+      "/src/assets/CSP/CSP5.png",
+  
+    ]
+  },
+  {
+    id: "field-trip",
+    title: "Field Trips",
+    subtitle: "Experiential Outings",
+    image: "/src/assets/Field trips/F1.png",
+    accentDark: "#C2410C",
+    bgDown: "#FFEDD5",
+    description: "Guided environmental and factory tours bridging indoor curriculum with real-world execution.",
+    gallery: [
+      "/src/assets/Field trips/F1.png",
+      "/src/assets/Field trips/F2.png",
+      "/src/assets/Field trips/f3.png",
+      "/src/assets/Field trips/f4.png",
+      "/src/assets/Field trips/f5.png",
+      "/src/assets/Field trips/f6.png",
+      "/src/assets/Field trips/f7.png",
+    ]
+  },
+];
+
+// ── FIXED: added keyboard trap (Escape key) and click-outside close ──
 function Lightbox({ image, onClose }) {
   useEffect(() => {
     if (!image) return
