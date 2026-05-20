@@ -32,7 +32,7 @@ export default function ManagementMessage() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#011E3A] tracking-tight">
             Message from Our{' '}
-            <span className="italic font-serif font-normal text-[#FF6347]">Correspondent</span>
+            <span className="italic font-serif font-normal text-[#FF6347]">CEO & Correspondent</span>
           </h2>
         </motion.div>
 
