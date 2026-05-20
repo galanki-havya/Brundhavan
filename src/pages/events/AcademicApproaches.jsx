@@ -472,10 +472,10 @@ export default function AcademicApproach() {
                   Beyond Textbooks,{' '}
                   <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Beyond Boundaries</span>
                 </h2>
-                <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: 12 }}>
+                <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: 12 }}>
                   At Brindavan, academic excellence extends well beyond the classroom. Every programme is designed to build real-world skills alongside strong theoretical foundations.
                 </p>
-                <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: 28 }}>
+                <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: 28 }}>
                   From Abacus to IIT-NEET preparation, our structured approach prepares students for life's challenges with confidence.
                 </p>
                 {[
@@ -538,7 +538,7 @@ export default function AcademicApproach() {
                   fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
                   fontWeight: 700, color: '#011E3A', marginBottom: 10,
                 }}>Academic Framework & Curriculum</h2>
-                <p style={{ color: '#666', fontSize: '1rem' }}>Click any programme to explore the full gallery</p>
+                <p style={{ color: '#666', fontSize: '1.2rem' }}>Click any programme to explore the full gallery</p>
               </motion.div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
@@ -584,7 +584,7 @@ export default function AcademicApproach() {
               }}>
                 Enrol in a Future-Ready Curriculum
               </h2>
-              <p style={{ color: '#555', fontSize: '1rem', marginBottom: 36, lineHeight: 1.75 }}>
+              <p style={{ color: '#555', fontSize: '1.2rem', marginBottom: 36, lineHeight: 1.75 }}>
                 Give your child access to structured, innovative academic frameworks that go far beyond conventional schooling.
               </p>
               <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>

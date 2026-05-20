@@ -76,12 +76,12 @@ export default function Admissions() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#011E3A', lineHeight: 1.2, marginBottom: '20px' }}>
               A School That{' '}<span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Shapes Futures</span>
             </h2>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#302f2f', lineHeight: 1.85, marginBottom: '28px' }}>
               Brindavan School blends academic rigour with holistic development — nurturing curious, confident, and compassionate young minds. Our State Board curriculum is enriched with modern facilities, experienced faculty, and a culture of values.
             </p>
             {['State Board curriculum with holistic enrichment', 'Experienced and caring teaching faculty', 'Smart classrooms & modern infrastructure', 'Strong focus on sports, arts & life skills', 'Safe, inclusive, and nurturing campus environment'].map((point, i) => (
               <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 + 0.2 }}
-                style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontSize: '0.95rem', color: '#222' }}>
+                style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontSize: '0.95rem', color: '#302f2f' }}>
                 <CheckCircle2 size={20} style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }} />
                 <span>{point}</span>
               </motion.div>
@@ -105,8 +105,8 @@ export default function Admissions() {
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 style={{ background: item.bg, borderRadius: '18px', padding: '32px 28px', border: `1.5px solid ${item.border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.05)' }}>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.2rem', fontWeight: 700, color: item.valueColor, marginBottom: '6px' }}>{item.value}</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#011E3A', fontSize: '1rem', marginBottom: '8px' }}>{item.label}</div>
-                <p style={{ fontSize: '0.88rem', color: '#666', lineHeight: 1.6, margin: 0 }}>{item.detail}</p>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#011E3A', fontSize: '1.2rem', marginBottom: '8px' }}>{item.label}</div>
+                <p style={{ fontSize: '0.88rem', color: '#302f2f', lineHeight: 1.6, margin: 0 }}>{item.detail}</p>
               </motion.div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function Admissions() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#011E3A', marginBottom: '12px' }}>Simple 4-Step Process</h2>
-            <p style={{ color: '#666', fontSize: '1.05rem' }}>From enquiry to enrolment — we've made it easy</p>
+            <p style={{ color: '#302f2f', fontSize: '1.05rem' }}>From enquiry to enrolment — we've made it easy</p>
           </motion.div>
 
           <div className="admissions-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
@@ -142,7 +142,7 @@ export default function Admissions() {
                     <Icon size={24} style={{ color: c.iconColor }} />
                   </div>
                   <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>{step.title}</h3>
-                  <p style={{ color: '#666', fontSize: '0.9rem', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
+                  <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
                 </motion.div>
               )
             })}
@@ -170,13 +170,13 @@ export default function Admissions() {
               return (
                 <motion.div key={prog.level} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                   style={{ background: c.bg, borderRadius: '16px', padding: '20px 22px', border: `1.5px solid ${c.border}`, boxShadow: '0 2px 12px rgba(0,0,0,0.05)', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ flexShrink: 0, width: '42px', height: '42px', borderRadius: '12px', background: c.badgeBg, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '0.9rem' }}>
+                  <div style={{ flexShrink: 0, width: '42px', height: '42px', borderRadius: '12px', background: c.badgeBg, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
                     {i + 1}
                   </div>
                   <div>
                     <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#011E3A', marginBottom: '4px' }}>{prog.level}</div>
                     <div style={{ fontSize: '0.82rem', color: c.badgeBg, fontWeight: 600, marginBottom: '6px' }}>{prog.age}</div>
-                    <div style={{ fontSize: '0.95rem', color: '#333', lineHeight: 1.5 }}>Age proof, previous school records, parent ID required at registration.</div>
+                    <div style={{ fontSize: '0.95rem', color: '#302f2f', lineHeight: 1.5 }}>Age proof, previous school records, parent ID required at registration.</div>
                   </div>
                 </motion.div>
               )
@@ -191,7 +191,7 @@ export default function Admissions() {
             </h4>
             <div className="admissions-docs-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0', marginTop: '8px' }}>
               {['Birth Certificate', "Child's Aadhaar Card", 'Previous Academic Records', 'Transfer Certificate', 'Parent/Guardian ID Proof', 'Passport Size Photographs (4)', 'Residential Address Proof', 'Medical Fitness Certificate', 'Caste Certificate (if applicable)'].map(doc => (
-                <div key={doc} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1rem', color: '#222', padding: '10px 0', borderBottom: '1px solid #FFCFC4' }}>
+                <div key={doc} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.2rem', color: '#302f2f', padding: '10px 0', borderBottom: '1px solid #FFCFC4' }}>
                   <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
                   {doc}
                 </div>
@@ -214,7 +214,7 @@ export default function Admissions() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Join Our Educational Mission
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Become part of Brindavan School and help your child grow in an environment built on excellence, values, and holistic development.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -51,7 +51,7 @@ export default function Gallery() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: 10 }}>What You'll Find Here</h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Explore curated collections from every corner of school life</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Explore curated collections from every corner of school life</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
@@ -62,7 +62,7 @@ export default function Gallery() {
                 <div style={{ width: 52, height: 52, background: '#FFF3F0', borderRadius: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: '1px solid #FFD8CC' }}>
                   <item.icon size={22} style={{ color: '#FF6347' }} />
                 </div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontWeight: 700, color: '#011E3A', marginBottom: 8 }}>{item.label}</h3>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1.2rem', fontWeight: 700, color: '#011E3A', marginBottom: 8 }}>{item.label}</h3>
                 <p style={{ color: '#666', fontSize: '0.88rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
@@ -93,7 +93,7 @@ export default function Gallery() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: 10 }}>Moments That Define Us</h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Click any collection to explore in full</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Click any collection to explore in full</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
@@ -144,7 +144,7 @@ export default function Gallery() {
             <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
           </div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: 14, lineHeight: 1.25 }}>Join Our Learning Journey</h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: 36, lineHeight: 1.75 }}>Discover our vibrant school community through memorable moments and celebrations. Your child's story starts here.</p>
+          <p style={{ color: '#555', fontSize: '1.2rem', marginBottom: 36, lineHeight: 1.75 }}>Discover our vibrant school community through memorable moments and celebrations. Your child's story starts here.</p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/admissions" style={{ background: '#FF6347', color: '#fff', fontWeight: 700, fontSize: '0.97rem', padding: '13px 32px', borderRadius: 50, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>Apply Now <ArrowRight size={17} /></Link>
             <Link to="/contact" style={{ border: '1.5px solid #e0e0e0', color: '#011E3A', fontWeight: 600, fontSize: '0.97rem', padding: '13px 32px', borderRadius: 50, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>Schedule Visit</Link>

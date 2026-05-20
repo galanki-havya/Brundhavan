@@ -157,10 +157,10 @@ export default function AboutOverview() {
               <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Future Leaders</span>
             </h2>
 
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
               Brindavan School was founded with a vision to redefine quality education in Palamaner. Built with modern infrastructure and a commitment to innovation, we create a safe, disciplined, and nurturing environment.
             </p>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
               We focus on building strong academic foundations while developing character, communication skills, and self-confidence through activity-based learning.
             </p>
 
@@ -211,7 +211,7 @@ export default function AboutOverview() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>
               Why Parents Choose Brindavan
             </h2>
-            <p style={{ color: '#040404', fontSize: '1rem' }}>Trusted by families across Palamaner for quality education</p>
+            <p style={{ color: '#040404', fontSize: '1.2rem' }}>Trusted by families across Palamaner for quality education</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -233,7 +233,7 @@ export default function AboutOverview() {
               >
                 <div style={{ fontSize: '2.4rem', marginBottom: '14px' }}>{item.emoji}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -277,7 +277,7 @@ export default function AboutOverview() {
               >
                 <value.icon size={32} style={{ color: value.iconColor, marginBottom: '18px' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>{value.title}</h3>
-                <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.75, margin: 0 }}>{value.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.75, margin: 0 }}>{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -303,7 +303,7 @@ export default function AboutOverview() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Join Our Educational Mission
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Become part of Brindavan School and help your child grow in an environment built on excellence, values, and holistic development.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
