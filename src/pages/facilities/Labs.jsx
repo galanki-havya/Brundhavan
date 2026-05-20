@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
-import { 
-  Beaker, 
-  Shield, 
-  Compass, 
-  Lightbulb, 
-  CheckCircle2, 
+import {
+  Beaker,
+  Shield,
+  Compass,
+  Lightbulb,
+  CheckCircle2,
   ArrowRight,
   Microscope,
   FlaskConical,
