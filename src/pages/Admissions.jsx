@@ -9,8 +9,8 @@ const { admissionSteps, programs, school } = siteData
 const stepIcons = [FileText, ClipboardList, UserCheck, GraduationCap]
 
 const trustCards = [
-  { value: '4.9/5',    label: 'Trusted by Parents', detail: 'Google review rating for school and admissions support',    bg: '#FFF8F6', border: '#FFCFC4', valueColor: '#FF6347'  },
-  { value: '24 hrs',   label: 'Rapid Response',     detail: 'Admission enquiries are answered quickly by our team',      bg: '#EEF3FB', border: '#B8CFF0', valueColor: '#1a3a6b' },
+  { value: '4.9/5',    label: 'Trusted by Parents', detail: 'Google review rating for school and admissions support',        bg: '#FFF8F6', border: '#FFCFC4', valueColor: '#FF6347'  },
+  { value: '24 hrs',   label: 'Rapid Response',     detail: 'Admission enquiries are answered quickly by our team',          bg: '#EEF3FB', border: '#B8CFF0', valueColor: '#1a3a6b' },
   { value: 'Values +', label: 'Academics',           detail: 'Balanced education with discipline, sports & extracurriculars', bg: '#FFFBEE', border: '#F5DFA0', valueColor: '#B8860B' },
 ]
 
@@ -22,10 +22,22 @@ const stepColors = [
 ]
 
 const programColors = [
-  { bg: '#FFF8F6', border: '#FFCFC4', badgeBg: '#FF6347', dotColor: '#FF6347', dividerColor: '#FFCFC4' },
-  { bg: '#EEF3FB', border: '#B8CFF0', badgeBg: '#1a3a6b', dotColor: '#1a3a6b', dividerColor: '#B8CFF0' },
-  { bg: '#FFFBEE', border: '#F5DFA0', badgeBg: '#B8860B', dotColor: '#B8860B', dividerColor: '#F5DFA0' },
-  { bg: '#F0FAF4', border: '#A8DDB8', badgeBg: '#2E7D4F', dotColor: '#2E7D4F', dividerColor: '#A8DDB8' },
+  { bg: '#FFF8F6', border: '#FFCFC4', badgeBg: '#FF6347', dotColor: '#FF6347' },
+  { bg: '#EEF3FB', border: '#B8CFF0', badgeBg: '#1a3a6b', dotColor: '#1a3a6b' },
+  { bg: '#FFFBEE', border: '#F5DFA0', badgeBg: '#B8860B', dotColor: '#B8860B' },
+  { bg: '#F0FAF4', border: '#A8DDB8', badgeBg: '#2E7D4F', dotColor: '#2E7D4F' },
+]
+
+const documents = [
+  'Birth Certificate',
+  "Child's Aadhaar Card",
+  'Previous Academic Records',
+  'Transfer Certificate',
+  'Parent/Guardian ID Proof',
+  'Passport Size Photographs (4)',
+  'Residential Address Proof',
+  'Medical Fitness Certificate',
+  'Caste Certificate (if applicable)',
 ]
 
 function ClearDivider() {
@@ -54,7 +66,14 @@ export default function Admissions() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }} className="admissions-split-grid">
           <style>{`
             @media(max-width:768px){
-              .admissions-split-grid,.admissions-steps-grid,.admissions-programs-grid,.admissions-docs-grid,.admissions-trust-grid{grid-template-columns:1fr!important;}
+              .admissions-split-grid,
+              .admissions-steps-grid,
+              .admissions-trust-grid { grid-template-columns: 1fr !important; }
+              .programs-grid         { grid-template-columns: 1fr !important; }
+              .docs-grid             { grid-template-columns: 1fr 1fr !important; }
+            }
+            @media(max-width:480px){
+              .docs-grid             { grid-template-columns: 1fr !important; }
             }
           `}</style>
 
@@ -100,7 +119,7 @@ export default function Admissions() {
       {/* ── Trust Stats ── */}
       <section style={{ padding: '64px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <div className="admissions-trust-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
+          <div className="admissions-trust-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {trustCards.map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 style={{ background: item.bg, borderRadius: '18px', padding: '32px 28px', border: `1.5px solid ${item.border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.05)' }}>
@@ -128,7 +147,7 @@ export default function Admissions() {
             <p style={{ color: '#302f2f', fontSize: '1.05rem' }}>From enquiry to enrolment — we've made it easy</p>
           </motion.div>
 
-          <div className="admissions-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '24px' }}>
+          <div className="admissions-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
             {admissionSteps.map((step, i) => {
               const Icon = stepIcons[i] || FileText
               const c = stepColors[i] || stepColors[0]
@@ -155,6 +174,8 @@ export default function Admissions() {
       {/* ── Eligibility Criteria ── */}
       <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+
+          {/* Section heading */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '52px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
@@ -164,40 +185,84 @@ export default function Admissions() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#011E3A' }}>Eligibility Criteria</h2>
           </motion.div>
 
-          <div className="admissions-programs-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+          {/* ── 4 program cards in one row ── */}
+          <div
+            className="programs-grid"
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '48px' }}
+          >
             {programs.map((prog, i) => {
               const c = programColors[i % programColors.length]
               return (
-                <motion.div key={prog.level} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  style={{ background: c.bg, borderRadius: '16px', padding: '20px 22px', border: `1.5px solid ${c.border}`, boxShadow: '0 2px 12px rgba(0,0,0,0.05)', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                  <div style={{ flexShrink: 0, width: '42px', height: '42px', borderRadius: '12px', background: c.badgeBg, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>
+                <motion.div
+                  key={prog.level}
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                  style={{
+                    background: c.bg, borderRadius: '16px', padding: '24px 20px',
+                    border: `1.5px solid ${c.border}`,
+                    boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+                    display: 'flex', flexDirection: 'column', gap: '10px',
+                  }}
+                >
+                  {/* Number badge */}
+                  <div style={{
+                    width: '40px', height: '40px', borderRadius: '12px',
+                    background: c.badgeBg, display: 'flex', alignItems: 'center',
+                    justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '1rem', marginBottom: '4px',
+                  }}>
                     {i + 1}
                   </div>
-                  <div>
-                    <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600, color: '#011E3A', marginBottom: '4px' }}>{prog.level}</div>
-                    <div style={{ fontSize: '0.82rem', color: c.badgeBg, fontWeight: 600, marginBottom: '6px' }}>{prog.age}</div>
-                    <div style={{ fontSize: '0.95rem', color: '#302f2f', lineHeight: 1.5 }}>Age proof, previous school records, parent ID required at registration.</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '1rem' }}>{prog.level}</div>
+                  <div style={{ fontSize: '0.82rem', color: c.badgeBg, fontWeight: 600 }}>{prog.age}</div>
+                  <div style={{ height: '1px', background: c.border }} />
+                  <div style={{ fontSize: '0.92rem', color: '#302f2f', lineHeight: 1.6 }}>
+                    Age proof, previous school records, and parent ID required at registration.
                   </div>
                 </motion.div>
               )
             })}
           </div>
 
-          {/* Documents Required */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            style={{ background: '#FFF8F6', borderRadius: '20px', padding: '36px 32px', border: '1.5px solid #FFCFC4', boxShadow: '0 2px 16px rgba(255,99,71,0.06)' }}>
-            <h4 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#011E3A', marginBottom: '24px', paddingBottom: '14px', borderBottom: '2px solid #FF6347', display: 'inline-block' }}>
-              Documents Required
-            </h4>
-            <div className="admissions-docs-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0', marginTop: '8px' }}>
-              {['Birth Certificate', "Child's Aadhaar Card", 'Previous Academic Records', 'Transfer Certificate', 'Parent/Guardian ID Proof', 'Passport Size Photographs (4)', 'Residential Address Proof', 'Medical Fitness Certificate', 'Caste Certificate (if applicable)'].map(doc => (
-                <div key={doc} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.2rem', color: '#302f2f', padding: '10px 0', borderBottom: '1px solid #FFCFC4' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
+          {/* ── Documents Required ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            style={{
+              background: '#FFF8F6', borderRadius: '20px', padding: '36px 36px 32px',
+              border: '1.5px solid #FFCFC4', boxShadow: '0 2px 16px rgba(255,99,71,0.06)',
+            }}
+          >
+            {/* Header */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
+              <div style={{ width: '3px', height: '28px', background: '#FF6347', borderRadius: '4px' }} />
+              <h4 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#011E3A', margin: 0 }}>
+                Documents Required
+              </h4>
+            </div>
+
+            {/* 3-column flat list inside the outer card */}
+            <div
+              className="docs-grid"
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0' }}
+            >
+              {documents.map((doc, i) => (
+                <motion.div
+                  key={doc}
+                  initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }} transition={{ delay: i * 0.05 }}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    padding: '12px 8px',
+                    borderBottom: '1px solid #FFCFC4',
+                    fontSize: '1.2rem', color: '#302f2f', fontWeight: 500,
+                  }}
+                >
+                  <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
                   {doc}
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
+
         </div>
       </section>
 

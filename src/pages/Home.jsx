@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       <ClearDivider />
-      <WhyBrindavan />
+      <ManagementMessage />
       <ClearDivider />
       <SubjectAreas />
       <ClearDivider />
@@ -259,7 +259,7 @@ export default function Home() {
       <ClearDivider />
       <LogoMeaning />
       <ClearDivider />
-      <ManagementMessage />
+      <WhyBrindavan />
       <ClearDivider />
       <Facilities />
       <ClearDivider />

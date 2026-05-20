@@ -206,7 +206,7 @@ export const siteData = {
   // ... inside siteData
   Correspondent: {
     name: "M Mahesh Babu",
-    title: "Correspondent, Brindavan School",
+    title: "CEO & Correspondent, Brindavan School",
     image: "/images/gallery/founder.png", // Ensure this path exists or update it
     message:
       "Education is not merely the accumulation of knowledge — it is the kindling of a flame that illuminates the world. At Brindavan School, founded in 2025, we are building a modern educational institution focused on academic excellence, innovation, and holistic development. Our commitment to quality education, rooted in Indian values and global perspectives, will shape future generations. I invite you to be part of this extraordinary journey.",
