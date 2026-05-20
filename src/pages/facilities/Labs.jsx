@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../../components/PageHero'
-import { 
-  Beaker, 
-  Shield, 
-  Compass, 
-  Lightbulb, 
-  CheckCircle2, 
+import {
+  Beaker,
+  Shield,
+  Compass,
+  Lightbulb,
+  CheckCircle2,
   ArrowRight,
   Microscope,
   FlaskConical,
@@ -33,7 +33,7 @@ const getLabItemIcon = (name) => {
   if (n.includes('physics') || n.includes('optics') || n.includes('electric')) return Atom
   if (n.includes('scale') || n.includes('weighing') || n.includes('measure')) return Scale
   if (n.includes('assistant') || n.includes('staff')) return UserCheck
-  
+
   if (n.includes('internet') || n.includes('network')) return Wifi
   if (n.includes('operating') || n.includes('software')) return Cpu
   if (n.includes('language')) return Languages
