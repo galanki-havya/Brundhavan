@@ -15,11 +15,71 @@ function ClearDivider() {
               'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
           }}
         />
-        
       </div>
     </div>
   )
 }
+
+// Brand palette pulled from logo
+const whyCards = [
+  {
+    emoji: '🔒',
+    label: 'Safe Campus',
+    desc: 'Full CCTV coverage across the entire school campus.',
+    bg: '#FFF8F6', border: '#FFCFC4', iconColor: '#FF6347',   // orange
+  },
+  {
+    emoji: '🎓',
+    label: 'Expert Faculty',
+    desc: 'Qualified, caring teachers dedicated to every student.',
+    bg: '#EEF3FB', border: '#B8CFF0', iconColor: '#1a3a6b',   // royal blue
+  },
+  {
+    emoji: '🧩',
+    label: 'Modern Labs',
+    desc: 'Activity-based and hands-on experiential learning.',
+    bg: '#FFFBEE', border: '#F5DFA0', iconColor: '#B8860B',   // gold/amber
+  },
+  {
+    emoji: '⭐',
+    label: 'Excellence',
+    desc: 'Strong academic foundation with consistent results.',
+    bg: '#F0FAF4', border: '#A8DDB8', iconColor: '#2E7D4F',   // green from logo
+  },
+]
+
+const valueCards = [
+  {
+    title: 'Excellence', icon: Target,
+    desc: 'Striving for the highest standards in every student, every day.',
+    bg: '#FFF8F6', border: '#FFCFC4', iconColor: '#FF6347',
+  },
+  {
+    title: 'Integrity', icon: ShieldCheck,
+    desc: 'Building ethical character and moral strength in young minds.',
+    bg: '#EEF3FB', border: '#B8CFF0', iconColor: '#1a3a6b',
+  },
+  {
+    title: 'Innovation', icon: Lightbulb,
+    desc: 'Modern methodologies and smart classrooms for a modern world.',
+    bg: '#FFFBEE', border: '#F5DFA0', iconColor: '#B8860B',
+  },
+  {
+    title: 'Community', icon: Users,
+    desc: 'A united family of parents, staff, and students working together.',
+    bg: '#F0FAF4', border: '#A8DDB8', iconColor: '#2E7D4F',
+  },
+  {
+    title: 'Respect', icon: Heart,
+    desc: 'Respect for self, others, and the world around us.',
+    bg: '#FEF0F5', border: '#F5B8D0', iconColor: '#C0396A',   // pink from logo petal
+  },
+  {
+    title: 'Growth', icon: Sprout,
+    desc: 'Fostering lifelong learners, thinkers, and achievers.',
+    bg: '#F3EEFF', border: '#C9B3F5', iconColor: '#6B3FA0',   // purple from logo petal
+  },
+]
 
 export default function AboutOverview() {
   return (
@@ -39,10 +99,11 @@ export default function AboutOverview() {
 
       {/* ── Split Section ── */}
       <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
-        <div style={{
-          maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
-          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center'
-        }}
+        <div
+          style={{
+            maxWidth: '1200px', margin: '0 auto', padding: '0 24px',
+            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center'
+          }}
           className="about-grid"
         >
           <style>{`@media(max-width:768px){.about-grid{grid-template-columns:1fr!important;}}`}</style>
@@ -60,14 +121,15 @@ export default function AboutOverview() {
               style={{
                 width: '100%', height: '420px', objectFit: 'cover',
                 borderRadius: '20px', display: 'block',
-                border: '1px solid #f0f0f0',
-                boxShadow: '0 16px 48px rgba(0,0,0,0.08)'
+                border: '1.5px solid #FFCFC4',
+                boxShadow: '0 16px 48px rgba(255,99,71,0.10)'
               }}
             />
             <div style={{
               position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2,
-              background: '#fff', borderRadius: '16px', padding: '16px 24px',
-              border: '1px solid #f0f0f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+              background: '#FFF8F6', borderRadius: '16px', padding: '16px 24px',
+              border: '1.5px solid #FFCFC4',
+              boxShadow: '0 8px 32px rgba(255,99,71,0.10)',
             }}>
               <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>250+</div>
               <div style={{ fontSize: '13px', color: '#555', fontWeight: 500 }}>Students Enrolled</div>
@@ -130,6 +192,7 @@ export default function AboutOverview() {
           </motion.div>
         </div>
       </section>
+
       <ClearDivider />
 
       {/* ── Why Parents Choose Us ── */}
@@ -152,27 +215,25 @@ export default function AboutOverview() {
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
-            {[
-              { emoji: '🔒', label: 'Safe Campus', desc: 'Full CCTV coverage across the entire school campus.' },
-              { emoji: '🎓', label: 'Expert Faculty', desc: 'Qualified, caring teachers dedicated to every student.' },
-              { emoji: '🧩', label: 'Modern Labs', desc: 'Activity-based and hands-on experiential learning.' },
-              { emoji: '⭐', label: 'Excellence', desc: 'Strong academic foundation with consistent results.' },
-            ].map((item, i) => (
+            {whyCards.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 24px',
-                  border: '1px solid #f0f0f0',
+                  background: item.bg,
+                  borderRadius: '18px',
+                  border: `1.5px solid ${item.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
-                  textAlign: 'center', position: 'relative', overflow: 'hidden'
+                  padding: '32px 24px',
+                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
                 <div style={{ fontSize: '2.4rem', marginBottom: '14px' }}>{item.emoji}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#272626', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -200,27 +261,21 @@ export default function AboutOverview() {
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-            {[
-              { title: 'Excellence', icon: Target,      desc: 'Striving for the highest standards in every student, every day.' },
-              { title: 'Integrity',  icon: ShieldCheck, desc: 'Building ethical character and moral strength in young minds.' },
-              { title: 'Innovation', icon: Lightbulb,   desc: 'Modern methodologies and smart classrooms for a modern world.' },
-              { title: 'Community', icon: Users,        desc: 'A united family of parents, staff, and students working together.' },
-              { title: 'Respect',   icon: Heart,        desc: 'Respect for self, others, and the world around us.' },
-              { title: 'Growth',    icon: Sprout,       desc: 'Fostering lifelong learners, thinkers, and achievers.' },
-            ].map((value, i) => (
+            {valueCards.map((value, i) => (
               <motion.div
                 key={i}
                 initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 28px',
-                  border: '1px solid #f0f0f0',
+                  background: value.bg,
+                  borderRadius: '18px',
+                  border: `1.5px solid ${value.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+                  padding: '32px 28px',
                   display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'
                 }}
               >
-                {/* Plain icon — no background, just orange icon on white */}
-                <value.icon size={30} style={{ color: '#FF6347', marginBottom: '18px' }} />
+                <value.icon size={32} style={{ color: value.iconColor, marginBottom: '18px' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>{value.title}</h3>
                 <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.75, margin: 0 }}>{value.desc}</p>
               </motion.div>
@@ -233,7 +288,13 @@ export default function AboutOverview() {
 
       {/* ── CTA ── */}
       <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
-        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
+        <div style={{
+          maxWidth: '680px', margin: '0 auto',
+          background: '#FFF8F6',
+          border: '1.5px solid #FFCFC4',
+          boxShadow: '0 4px 32px rgba(255,99,71,0.08)',
+          padding: '60px 40px', borderRadius: '24px'
+        }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
             <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Get Started</span>
@@ -255,7 +316,8 @@ export default function AboutOverview() {
               Apply Now <ArrowRight size={17} />
             </Link>
             <Link to="/contact" style={{
-              border: '1.5px solid #e0e0e0', color: '#011E3A',
+              border: '1.5px solid #FFCFC4', color: '#011E3A',
+              background: '#fff',
               fontWeight: 600, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
               display: 'inline-flex', alignItems: 'center', gap: '8px'

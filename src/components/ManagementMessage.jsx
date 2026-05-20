@@ -123,7 +123,7 @@ export default function ManagementMessage() {
                   {['Academic Excellence', 'Innovation', 'Holistic Growth'].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3.5 py-1.5 bg-black-50 border border-black-200 rounded-full text-[11px] font-semibold text-slate-500 tracking-wide uppercase hover:border-[#FF6347]/30 hover:text-[#FF6347] transition-colors duration-200"
+                      className="px-3.5 py-1.5 bg-[#EEF2F7] border border-[#011E3A] rounded-full text-[11px] font-semibold text-[#011E3A] tracking-wide uppercase"
                     >
                       {tag}
                     </span>
