@@ -3,18 +3,53 @@ import { Link } from 'react-router-dom'
 import PageHero from '../../components/PageHero'
 import { Trophy, Award, Medal, Star, ArrowRight } from 'lucide-react'
 
-const achievements = [
-  { year: '2025', title: 'Foundation Year Excellence Setup',  category: 'Institution Building',     description: 'Established modern infrastructure, State Board alignment, and digital classrooms.', icon: Trophy },
-  { year: '2025', title: 'Modern Learning Environment',       category: 'Educational Innovation',   description: 'Created smart classrooms with advanced teaching methodologies.',                  icon: Award  },
-  { year: '2025', title: 'Community Engagement Initiative',   category: 'Social Impact',            description: 'Built strong parent-school partnerships and outreach programs.',                  icon: Medal  },
-  { year: '2025', title: 'Digital Infrastructure Setup',      category: 'Technology Integration',   description: 'Implemented modern learning platforms and digital systems.',                      icon: Star   },
+// Brand palette from logo — same as AboutOverview
+const achievementCards = [
+  {
+    year: '2025', title: 'Foundation Year Excellence Setup', category: 'Institution Building',
+    description: 'Established modern infrastructure, State Board alignment, and digital classrooms.',
+    icon: Trophy, bg: '#FFF8F6', border: '#FFCFC4', iconBg: '#FFF8F6', iconBorder: '#FFCFC4', iconColor: '#FF6347',
+  },
+  {
+    year: '2025', title: 'Modern Learning Environment', category: 'Educational Innovation',
+    description: 'Created smart classrooms with advanced teaching methodologies.',
+    icon: Award, bg: '#EEF3FB', border: '#B8CFF0', iconBg: '#EEF3FB', iconBorder: '#B8CFF0', iconColor: '#1a3a6b',
+  },
+  {
+    year: '2025', title: 'Community Engagement Initiative', category: 'Social Impact',
+    description: 'Built strong parent-school partnerships and outreach programs.',
+    icon: Medal, bg: '#FFFBEE', border: '#F5DFA0', iconBg: '#FFFBEE', iconBorder: '#F5DFA0', iconColor: '#B8860B',
+  },
+  {
+    year: '2025', title: 'Digital Infrastructure Setup', category: 'Technology Integration',
+    description: 'Implemented modern learning platforms and digital systems.',
+    icon: Star, bg: '#F0FAF4', border: '#A8DDB8', iconBg: '#F0FAF4', iconBorder: '#A8DDB8', iconColor: '#2E7D4F',
+  },
 ]
 
-const stats = [
-  { label: 'Foundation Year', value: '2025',   emoji: '🏆' },
-  { label: 'Infrastructure',  value: 'Modern', emoji: '🏫' },
-  { label: 'Learning System', value: 'Smart',  emoji: '📘' },
-  { label: 'Programs',        value: 'Active', emoji: '🤝' },
+const statsCards = [
+  { label: 'Foundation Year', value: '2025',   emoji: '🏆', bg: '#FFF8F6', border: '#FFCFC4', valueColor: '#FF6347'  },
+  { label: 'Infrastructure',  value: 'Modern', emoji: '🏫', bg: '#EEF3FB', border: '#B8CFF0', valueColor: '#1a3a6b' },
+  { label: 'Learning System', value: 'Smart',  emoji: '📘', bg: '#FFFBEE', border: '#F5DFA0', valueColor: '#B8860B' },
+  { label: 'Programs',        value: 'Active', emoji: '🤝', bg: '#F0FAF4', border: '#A8DDB8', valueColor: '#2E7D4F' },
+]
+
+const futureCards = [
+  {
+    title: 'Academic Excellence',
+    items: ['State Board top results', 'Competitive exam preparation', 'Olympiad participation', 'Scholarship programs'],
+    bg: '#FFF8F6', border: '#FFCFC4', dotColor: '#FF6347', dividerColor: '#FFCFC4',
+  },
+  {
+    title: 'Infrastructure Growth',
+    items: ['Expanded digital classrooms', 'New sports facilities', 'Enhanced science labs', 'Library expansion'],
+    bg: '#EEF3FB', border: '#B8CFF0', dotColor: '#1a3a6b', dividerColor: '#B8CFF0',
+  },
+  {
+    title: 'Community Impact',
+    items: ['Parent engagement programs', 'Alumni network', 'Community outreach', 'Teacher development'],
+    bg: '#FFFBEE', border: '#F5DFA0', dotColor: '#B8860B', dividerColor: '#F5DFA0',
+  },
 ]
 
 function ClearDivider() {
@@ -28,7 +63,6 @@ function ClearDivider() {
               'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
           }}
         />
-        
       </div>
     </div>
   )
@@ -70,21 +104,21 @@ export default function Achievements() {
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
-            {stats.map((item, i) => (
+            {statsCards.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 24px',
-                  border: '1px solid #f0f0f0',
+                  background: item.bg,
+                  borderRadius: '18px', padding: '32px 24px',
+                  border: `1.5px solid ${item.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                   textAlign: 'center', position: 'relative', overflow: 'hidden'
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
                 <div style={{ fontSize: '2.2rem', marginBottom: '12px' }}>{item.emoji}</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: 700, color: '#FF6347', marginBottom: '6px' }}>{item.value}</div>
+                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: 700, color: item.valueColor, marginBottom: '6px' }}>{item.value}</div>
                 <div style={{ fontSize: '0.88rem', color: '#666', fontWeight: 500 }}>{item.label}</div>
               </motion.div>
             ))}
@@ -109,7 +143,7 @@ export default function Achievements() {
           </motion.div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {achievements.map((a, index) => (
+            {achievementCards.map((a, index) => (
               <motion.div
                 key={a.title}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -32 : 32 }}
@@ -118,28 +152,29 @@ export default function Achievements() {
                 transition={{ delay: index * 0.08 }}
                 style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '20px', alignItems: 'flex-start' }}
               >
-                {/* Icon — plain white box, just orange icon */}
+                {/* Icon box — colored per card */}
                 <div style={{
                   width: '56px', height: '56px', borderRadius: '14px',
-                  background: '#fff', border: '1px solid #f0f0f0',
+                  background: a.iconBg,
+                  border: `1.5px solid ${a.iconBorder}`,
                   boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
                 }}>
-                  <a.icon size={24} style={{ color: '#FF6347' }} />
+                  <a.icon size={24} style={{ color: a.iconColor }} />
                 </div>
 
-                {/* Card */}
+                {/* Card — colored per entry */}
                 <div style={{
-                  background: '#fff', borderRadius: '16px', padding: '24px 28px',
-                  border: '1px solid #f0f0f0',
+                  background: a.bg,
+                  borderRadius: '16px', padding: '24px 28px',
+                  border: `1.5px solid ${a.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                   position: 'relative', overflow: 'hidden'
                 }}>
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <span style={{
-                      background: '#fff', color: '#FF6347',
-                      border: '1px solid #FF6347',
+                      background: '#fff', color: a.iconColor,
+                      border: `1px solid ${a.border}`,
                       padding: '3px 12px', borderRadius: '50px',
                       fontSize: '0.78rem', fontWeight: 700
                     }}>{a.year}</span>
@@ -171,31 +206,27 @@ export default function Achievements() {
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-            {[
-              { title: 'Academic Excellence',  items: ['State Board top results', 'Competitive exam preparation', 'Olympiad participation', 'Scholarship programs'] },
-              { title: 'Infrastructure Growth', items: ['Expanded digital classrooms', 'New sports facilities', 'Enhanced science labs', 'Library expansion'] },
-              { title: 'Community Impact',      items: ['Parent engagement programs', 'Alumni network', 'Community outreach', 'Teacher development'] },
-            ].map((cat, i) => (
+            {futureCards.map((cat, i) => (
               <motion.div
                 key={cat.title}
                 initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.1 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 28px',
-                  border: '1px solid #f0f0f0',
+                  background: cat.bg,
+                  borderRadius: '18px', padding: '32px 28px',
+                  border: `1.5px solid ${cat.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                   position: 'relative', overflow: 'hidden'
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '18px' }}>{cat.title}</h3>
                 {cat.items.map(item => (
                   <div key={item} style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
-                    padding: '9px 0', borderBottom: '1px solid #f5f5f5',
+                    padding: '9px 0', borderBottom: `1px solid ${cat.dividerColor}`,
                     fontSize: '0.9rem', color: '#333'
                   }}>
-                    <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#FF6347', flexShrink: 0 }} />
+                    <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: cat.dotColor, flexShrink: 0 }} />
                     {item}
                   </div>
                 ))}
@@ -209,7 +240,13 @@ export default function Achievements() {
 
       {/* ── CTA ── */}
       <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
-        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
+        <div style={{
+          maxWidth: '680px', margin: '0 auto',
+          background: '#FFF8F6',
+          border: '1.5px solid #FFCFC4',
+          boxShadow: '0 4px 32px rgba(255,99,71,0.08)',
+          padding: '60px 40px', borderRadius: '24px'
+        }}>
           <SectionLabel>Get Started</SectionLabel>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Be Part of Our Journey
@@ -227,7 +264,8 @@ export default function Achievements() {
               Join Now <ArrowRight size={17} />
             </Link>
             <Link to="/about/overview" style={{
-              border: '1.5px solid #e0e0e0', color: '#011E3A',
+              border: '1.5px solid #FFCFC4', color: '#011E3A',
+              background: '#fff',
               fontWeight: 600, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
               display: 'inline-flex', alignItems: 'center', gap: '8px'

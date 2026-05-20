@@ -5,43 +5,31 @@ export default function PageHero({
   subtitle,
   variant = 'blue',
   backgroundImage,
-  fullOpacity = false,
   objectPosition = 'object-center',
-  showOverlay = true,
   imageStyle = {},
   zoomOut = false,
 }) {
-  const isPink = variant === 'pink'
-  const isGold = variant === 'gold'
-  const overlayOpacity = fullOpacity ? 'bg-black/1' : 'bg-black/2'
-
-  let bgColor = 'bg-primary-900'
-  if (isPink) bgColor = 'bg-[#7A284B]'
-  if (isGold) bgColor = 'bg-[#7C6218]' // Rich Deep Gold
 
   return (
     <section
-      className={`
+      className="
         relative overflow-hidden
-        min-h-[38vh]
+        h-[48vh] md:h-[54vh]
         flex items-center
-        pt-36 md:pt-44
-        pb-20
-        ${bgColor}
-      `}
+      "
     >
+
       {/* Background Image */}
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
           {zoomOut ? (
             <>
-              {/* Blurred background backdrop */}
               <img
                 src={backgroundImage}
                 alt=""
-                className="absolute inset-0 w-full h-full object-cover blur-md scale-105 opacity-40"
+                className="absolute inset-0 w-full h-full object-cover blur-sm scale-105 opacity-30"
               />
-              {/* Fully zoomed-out uncropped main image */}
+
               <img
                 src={backgroundImage}
                 alt={title}
@@ -57,23 +45,43 @@ export default function PageHero({
               style={imageStyle}
             />
           )}
-
-          {/* Dark Overlay */}
-          {showOverlay && (
-            <div className={`absolute inset-0 ${overlayOpacity}`} />
-          )}
         </div>
       )}
 
+      {/* Soft Gradient for readability */}
+      <div
+        className="
+          absolute inset-0 z-[1]
+          bg-gradient-to-r
+          from-black/45
+          via-black/15
+          to-transparent
+        "
+      />
+
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
 
-          {/* Left Side */}
+          {/* Left Content */}
           <div className="max-w-3xl">
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs uppercase tracking-[0.3em] font-semibold mb-6 shadow-lg">
+            <div
+              className="
+                inline-flex items-center gap-2
+                px-5 py-2
+                rounded-full
+                bg-[#ec733a]/90
+                text-white
+                text-xs
+                uppercase
+                tracking-[0.28em]
+                font-semibold
+                mb-6
+                shadow-xl
+              "
+            >
               Brindavan School
             </div>
 
@@ -82,12 +90,16 @@ export default function PageHero({
               className="
                 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
                 font-bold
-                leading-tight
+                leading-[1.05]
                 text-white
+                drop-shadow-[0_6px_25px_rgba(0,0,0,0.7)]
               "
             >
               {title}
             </h1>
+
+            {/* Orange Accent Line */}
+            <div className="mt-5 h-[4px] w-28 rounded-full bg-[#ec733a]" />
 
             {/* Subtitle */}
             {subtitle && (
@@ -95,11 +107,12 @@ export default function PageHero({
                 className="
                   mt-6
                   text-lg md:text-xl
-                  text-white
                   leading-relaxed
                   max-w-2xl
+                  font-medium
+                  text-gray-100
+                  drop-shadow-[0_4px_18px_rgba(0,0,0,0.55)]
                 "
-                style={{ opacity: 0.8 }}
               >
                 {subtitle}
               </p>
@@ -110,24 +123,19 @@ export default function PageHero({
           <div className="flex-shrink-0">
             <Link
               to="/admission-form"
-              className={`
+              className="
                 group inline-flex items-center gap-3
                 px-8 py-4
                 rounded-full
-                font-semibold tracking-wide
-                border border-white/20
-                backdrop-blur-xl
+                font-semibold
+                tracking-wide
+                bg-[#ec733a]
+                text-white
                 transition-all duration-300
                 shadow-2xl
                 hover:scale-105
-                hover:shadow-white/20
-                ${isPink
-                  ? 'bg-white text-[#C2417A] hover:bg-pink-50'
-                  : isGold
-                  ? 'bg-white text-[#7C6218] hover:bg-amber-50'
-                  : 'bg-white text-primary-900 hover:bg-gray-100'
-                }
-              `}
+                hover:bg-[#d9652d]
+              "
             >
               Apply Now
 
@@ -138,7 +146,6 @@ export default function PageHero({
           </div>
         </div>
       </div>
-
     </section>
   )
 }

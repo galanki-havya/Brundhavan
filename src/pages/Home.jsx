@@ -98,6 +98,13 @@ const statsData = [
   { raw: 12, suffix: '+', label: 'Modern Facilities', icon: BookOpen },
 ]
 
+const PALETTE = [
+  { bg: '#FFF8F6', border: '#FFCFC4', accentColor: '#FF6347', iconBg: '#FFF0EC' },
+  { bg: '#EEF3FB', border: '#B8CFF0', accentColor: '#1a3a6b', iconBg: '#E4EDFA' },
+  { bg: '#FFFBEE', border: '#F5DFA0', accentColor: '#B8860B', iconBg: '#FFF5D6' },
+  { bg: '#F0FAF4', border: '#A8DDB8', accentColor: '#2E7D4F', iconBg: '#E2F5EA' },
+]
+
 // ── Sub-Components ────────────────────────────────────────────────────────
 function StatCard({ raw, suffix, label, icon: Icon, delay }) {
   const ref = useRef(null)
@@ -157,7 +164,17 @@ export default function Home() {
               <SectionLabel color="#ec733a">Watch Us In Action</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0F172A]">Life at Brindavan</h2>
             </div>
-            <a href="https://www.youtube.com/@brindavanschool-p7m" target="_blank" rel="noopener noreferrer" className="text-white px-7 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-md flex items-center gap-3" style={{ background: 'linear-gradient(135deg, #ec733a 0%, #F97316 100%)' }}>
+            <a
+              href="https://www.youtube.com/@brindavanschool-p7m?si=qTI0VlwfEjU79hoy"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation()
+                window.open(
+                  'https://www.youtube.com/@brindavanschool-p7m?si=qTI0VlwfEjU79hoy',
+                  '_blank'
+                )
+              }} className="text-white px-7 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-md flex items-center gap-3" style={{ background: 'linear-gradient(135deg, #ec733a 0%, #F97316 100%)' }}>
               <Play size={16} /> Subscribe
             </a>
           </div>
@@ -174,45 +191,71 @@ export default function Home() {
 
       <ClearDivider />
 
-      <Section className="py-24 bg-[#FFFFFF]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-14">
-            <SectionLabel color="#ec733a">Beyond the Classroom</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0F172A]">Celebrating Learning & Growth</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-            {featuredActivities.map((activity, i) => (
-              <motion.div
-                key={activity.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -10 }}
-                className="group relative overflow-hidden rounded-[32px] bg-[#F9FAFB] shadow-sm transition-all duration-300"
-                style={{
-                  border: '1px solid rgba(236, 115, 58, 0.35)',
-                }}
-                onMouseEnter={e => e.currentTarget.style.border = '1px solid rgba(236, 115, 58, 0.75)'}
-                onMouseLeave={e => e.currentTarget.style.border = '1px solid rgba(236, 115, 58, 0.35)'}
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img src={activity.image} alt={activity.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full ${activity.tagBg} text-white text-[10px] font-bold uppercase tracking-[0.2em] shadow-md`}>{activity.tag}</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center border border-gray-100 shadow-sm mb-5 bg-[#F9FAFB]">
-                    <activity.icon size={26} style={{ color: activity.iconColor }} />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">{activity.label}</h3>
-                  <p className="text-[#475569] text-[14px] leading-relaxed">{activity.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
 
+<Section className="py-24 bg-[#FFFFFF]">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="mb-14">
+      <SectionLabel color="#ec733a">Beyond the Classroom</SectionLabel>
+      <h2 className="text-4xl md:text-5xl font-display font-bold text-[#0F172A]">
+        Celebrating Learning & Growth
+      </h2>
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+      {featuredActivities.map((activity, i) => {
+        const palette = PALETTE[i % PALETTE.length]
+        return (
+          <motion.div
+            key={activity.label}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -6 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05, duration: 0.5 }}
+            className="group relative overflow-hidden flex flex-col rounded-[18px] transition-all duration-300"
+            style={{
+              background: palette.bg,
+              border: `1px solid ${palette.border}`,
+              boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+            }}
+          >
+            <div className="relative h-56 overflow-hidden" style={{ background: palette.iconBg }}>
+              <img
+                src={activity.image}
+                alt={activity.label}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute top-4 left-4">
+                <span style={{
+                  background: palette.bg,
+                  padding: '4px 12px', borderRadius: 40,
+                  fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase',
+                  color: palette.accentColor,
+                  border: `1px solid ${palette.border}`,
+                }}>
+                  {activity.tag}
+                </span>
+              </div>
+            </div>
+            <div className="p-6 flex flex-col flex-grow">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-105"
+                style={{ background: palette.iconBg }}
+              >
+                <activity.icon size={26} style={{ color: palette.accentColor }} />
+              </div>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-3">{activity.label}</h3>
+              <p className="text-[#475569] text-[14px] leading-relaxed flex-grow">{activity.desc}</p>
+              <div
+                className="mt-5 rounded-full"
+                style={{ height: 2, width: 28, background: palette.accentColor }}
+              />
+            </div>
+          </motion.div>
+        )
+      })}
+    </div>
+  </div>
+</Section>
       <ClearDivider />
       <LogoMeaning />
       <ClearDivider />

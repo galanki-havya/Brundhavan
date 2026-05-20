@@ -3,20 +3,31 @@ import { Link } from 'react-router-dom'
 import PageHero from '../../components/PageHero'
 import { Heart, Globe, ShieldCheck, Lightbulb, ArrowRight } from 'lucide-react'
 
+// Brand palette from logo
 const missionCards = [
-  { icon: '📚', title: 'Academic Excellence',     desc: 'Strong conceptual learning with modern teaching methodologies and practical understanding.' },
-  { icon: '💪', title: 'Character Building',      desc: 'Instilling discipline, responsibility, leadership, and moral values in every student.' },
-  { icon: '🎯', title: 'Holistic Development',    desc: 'Encouraging excellence in academics, sports, arts, communication, and creativity.' },
-  { icon: '🤝', title: 'Inclusive Learning',      desc: 'Creating equal opportunities and a supportive learning environment for all students.' },
-  { icon: '🔬', title: 'Innovation & Technology', desc: 'Smart classrooms and future-ready learning experiences for modern education.' },
-  { icon: '🌍', title: 'Global Perspective',      desc: 'Preparing students to become confident and responsible global citizens.' },
+  { icon: '📚', title: 'Academic Excellence',     desc: 'Strong conceptual learning with modern teaching methodologies and practical understanding.',
+    bg: '#FFF8F6', border: '#FFCFC4' },
+  { icon: '💪', title: 'Character Building',      desc: 'Instilling discipline, responsibility, leadership, and moral values in every student.',
+    bg: '#EEF3FB', border: '#B8CFF0' },
+  { icon: '🎯', title: 'Holistic Development',    desc: 'Encouraging excellence in academics, sports, arts, communication, and creativity.',
+    bg: '#FFFBEE', border: '#F5DFA0' },
+  { icon: '🤝', title: 'Inclusive Learning',      desc: 'Creating equal opportunities and a supportive learning environment for all students.',
+    bg: '#F0FAF4', border: '#A8DDB8' },
+  { icon: '🔬', title: 'Innovation & Technology', desc: 'Smart classrooms and future-ready learning experiences for modern education.',
+    bg: '#FEF0F5', border: '#F5B8D0' },
+  { icon: '🌍', title: 'Global Perspective',      desc: 'Preparing students to become confident and responsible global citizens.',
+    bg: '#F3EEFF', border: '#C9B3F5' },
 ]
 
 const principles = [
-  { icon: Heart,       title: 'Student First',          desc: 'Every decision at Brindavan is centered around the growth, happiness, and success of our students.' },
-  { icon: ShieldCheck, title: 'Safe Environment',       desc: 'A secure and disciplined campus that gives students the confidence to learn and grow freely.' },
-  { icon: Globe,       title: 'Future Readiness',       desc: 'Helping students adapt to the changing world with creativity, confidence, and communication skills.' },
-  { icon: Lightbulb,  title: 'Continuous Innovation',  desc: 'Enhancing learning experiences with creative teaching methods and technology integration.' },
+  { icon: Heart,       title: 'Student First',         desc: 'Every decision at Brindavan is centered around the growth, happiness, and success of our students.',
+    bg: '#FFF8F6', border: '#FFCFC4', iconColor: '#FF6347' },
+  { icon: ShieldCheck, title: 'Safe Environment',      desc: 'A secure and disciplined campus that gives students the confidence to learn and grow freely.',
+    bg: '#EEF3FB', border: '#B8CFF0', iconColor: '#1a3a6b' },
+  { icon: Globe,       title: 'Future Readiness',      desc: 'Helping students adapt to the changing world with creativity, confidence, and communication skills.',
+    bg: '#FFFBEE', border: '#F5DFA0', iconColor: '#B8860B' },
+  { icon: Lightbulb,  title: 'Continuous Innovation', desc: 'Enhancing learning experiences with creative teaching methods and technology integration.',
+    bg: '#F0FAF4', border: '#A8DDB8', iconColor: '#2E7D4F' },
 ]
 
 function SectionLabel({ children }) {
@@ -40,7 +51,6 @@ function ClearDivider() {
               'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
           }}
         />
-        
       </div>
     </div>
   )
@@ -78,14 +88,15 @@ export default function VisionMission() {
               style={{
                 width: '100%', height: '420px', objectFit: 'cover',
                 borderRadius: '20px', display: 'block',
-                border: '1px solid #f0f0f0',
-                boxShadow: '0 16px 48px rgba(0,0,0,0.08)'
+                border: '1.5px solid #FFCFC4',
+                boxShadow: '0 16px 48px rgba(255,99,71,0.10)'
               }}
             />
             <div style={{
               position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2,
-              background: '#fff', borderRadius: '16px', padding: '16px 24px',
-              border: '1px solid #f0f0f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+              background: '#FFF8F6', borderRadius: '16px', padding: '16px 24px',
+              border: '1.5px solid #FFCFC4',
+              boxShadow: '0 8px 32px rgba(255,99,71,0.10)',
             }}>
               <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>2025</div>
               <div style={{ fontSize: '13px', color: '#555', fontWeight: 500 }}>Founded</div>
@@ -114,14 +125,14 @@ export default function VisionMission() {
               We aim to create an inspiring educational environment where students discover their true potential through innovation, creativity, discipline, and holistic development.
             </p>
 
-            {/* Highlight card — white with orange left border */}
+            {/* Highlight card */}
             <motion.div
               initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: 0.4 }}
               style={{
-                background: '#fff', borderRadius: '14px', padding: '22px 24px',
-                border: '1px solid #f0f0f0', borderLeft: '3px solid #FF6347',
-                marginBottom: '28px', boxShadow: '0 2px 16px rgba(0,0,0,0.04)'
+                background: '#FFF8F6', borderRadius: '14px', padding: '22px 24px',
+                border: '1.5px solid #FFCFC4',
+                marginBottom: '28px', boxShadow: '0 2px 16px rgba(255,99,71,0.07)'
               }}
             >
               <h4 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '1rem', marginBottom: '8px' }}>Our Long-Term Goal</h4>
@@ -165,13 +176,15 @@ export default function VisionMission() {
                 initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 28px',
-                  border: '1px solid #f0f0f0',
+                  background: item.bg,
+                  borderRadius: '18px',
+                  padding: '32px 28px',
+                  border: `1.5px solid ${item.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
-                  position: 'relative', overflow: 'hidden'
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6347, #ffb347)' }} />
                 <div style={{ fontSize: '2.2rem', marginBottom: '14px' }}>{item.icon}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.title}</h3>
                 <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
@@ -206,13 +219,14 @@ export default function VisionMission() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                 style={{
-                  background: '#fff', borderRadius: '18px', padding: '32px 28px',
-                  border: '1px solid #f0f0f0',
+                  background: item.bg,
+                  borderRadius: '18px',
+                  padding: '32px 28px',
+                  border: `1.5px solid ${item.border}`,
                   boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
                 }}
               >
-                {/* Plain icon on white — no box background */}
-                <item.icon size={28} style={{ color: '#FF6347', marginBottom: '18px', display: 'block' }} />
+                <item.icon size={28} style={{ color: item.iconColor, marginBottom: '18px', display: 'block' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>{item.title}</h3>
                 <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
               </motion.div>
@@ -225,7 +239,13 @@ export default function VisionMission() {
 
       {/* ── CTA ── */}
       <section style={{ padding: '80px 24px', background: '#FFFFFF', textAlign: 'center' }}>
-        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
+        <div style={{
+          maxWidth: '680px', margin: '0 auto',
+          background: '#FFF8F6',
+          border: '1.5px solid #FFCFC4',
+          boxShadow: '0 4px 32px rgba(255,99,71,0.08)',
+          padding: '60px 40px', borderRadius: '24px'
+        }}>
           <SectionLabel>Get Started</SectionLabel>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Join Our Educational Mission
@@ -243,7 +263,8 @@ export default function VisionMission() {
               Apply Now <ArrowRight size={17} />
             </Link>
             <Link to="/contact" style={{
-              border: '1.5px solid #e0e0e0', color: '#011E3A',
+              border: '1.5px solid #FFCFC4', color: '#011E3A',
+              background: '#fff',
               fontWeight: 600, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
               display: 'inline-flex', alignItems: 'center', gap: '8px'
