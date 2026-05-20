@@ -17,51 +17,51 @@ const FESTIVALS = [
     id: 'krishnastami',
     title: 'Krishnashtami',
     subtitle: 'Joyful Celebration',
-    image: '/src/assets/krishnaastami/k1.png',
+    image: '/images/gallery/krishnaastami/k1.png',
     description: 'Celebrating the birth of Lord Krishna with devotion, dance, dahi-handi, and vibrant festive activities that bring the entire school together.',
     gallery: [
-      '/src/assets/krishnaastami/k1.png',
-      '/src/assets/krishnaastami/k2.png',
-      '/src/assets/krishnaastami/k3.png',
-      '/src/assets/krishnaastami/k4.png',
-      '/src/assets/krishnaastami/k5.png',
+      '/images/gallery/krishnaastami/k1.png',
+      '/images/gallery/krishnaastami/k2.png',
+      '/images/gallery/krishnaastami/k3.png',
+      '/images/gallery/krishnaastami/k4.png',
+      '/images/gallery/krishnaastami/k5.png',
     ],
   },
   {
     id: 'ayudhapuja',
     title: 'Ayudha Puja',
     subtitle: 'Festive Worship',
-    image: '/src/assets/Ayudhapuja/a1.png',
+    image: '/images/gallery/Ayudhapuja/a1.png',
     description: 'Honouring tools, books, and instruments with reverence during Ayudha Puja — instilling gratitude and respect for knowledge in every student.',
     gallery: [
-      '/src/assets/Ayudhapuja/a1.png',
-      '/src/assets/Ayudhapuja/a2.png',
-      '/src/assets/Ayudhapuja/a3.png',
-      '/src/assets/Ayudhapuja/a4.png',
+      '/images/gallery/Ayudhapuja/a1.png',
+      '/images/gallery/Ayudhapuja/a2.png',
+      '/images/gallery/Ayudhapuja/a3.png',
+      '/images/gallery/Ayudhapuja/a4.png',
     ],
   },
   {
     id: 'diwali',
     title: 'Diwali',
     subtitle: 'Festival of Lights',
-    image: '/src/assets/Diwali/d1.png',
+    image: '/images/gallery/Diwali/d1.png',
     description: 'The festival of lights celebrated with diyas, rangoli, sweets, and cultural performances that fill the campus with warmth and colour.',
     gallery: [
-      '/src/assets/Diwali/d1.png',
-      '/src/assets/Diwali/d2.png',
-      '/src/assets/Diwali/d3.png',
-      '/src/assets/Diwali/d4.png',
+      '/images/gallery/Diwali/d1.png',
+      '/images/gallery/Diwali/d2.png',
+      '/images/gallery/Diwali/d3.png',
+      '/images/gallery/Diwali/d4.png',
     ],
   },
   {
     id: 'christmas',
     title: 'Christmas',
     subtitle: 'Season of Joy',
-    image: '/src/assets/Christmas/c1.png',
+    image: '/images/gallery/Christmas/c1.png',
     description: 'Spreading the spirit of Christmas with carol singing, gift exchanges, and joyful celebrations that embrace unity across cultures.',
     gallery: [
-      '/src/assets/Christmas/c1.png',
-      '/src/assets/Christmas/c2.png',
+      '/images/gallery/Christmas/c1.png',
+      '/images/gallery/Christmas/c2.png',
     ],
   },
 ]
@@ -228,7 +228,7 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
           <div style={{
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-  gap: '1.1.2rem'
+  gap: '1.2rem'
 }}>
             {item.gallery.map((src, i) => (
               <div
@@ -302,7 +302,7 @@ export default function FestivalFun() {
             title="Festival Fun"
             subtitle="Celebrating every festival with colour, culture, and community togetherness."
             variant="pink"
-            backgroundImage="/src/assets/heroforschoollife/feasthero.png"
+            backgroundImage="/images/gallery/heroforschoollife/feasthero.png"
           />
 
           <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
@@ -318,7 +318,7 @@ export default function FestivalFun() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/src/assets/Diwali/d1.png"
+                  src="/images/gallery/Diwali/d1.png"
                   alt="Festival Fun"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{

@@ -16,11 +16,11 @@ const ACADEMICS = [
     id: 'abacus',
     title: 'Abacus',
     subtitle: 'Mental Mathematics',
-    image: '/src/assets/gallery/Infrastructure/7.jpg',
+    image: '/images/gallery/Infrastructure/7.jpg',
     description: 'Enhancing concentration, spatial memory, and lightning-fast arithmetic through structured bead-counting systems.',
     gallery: [
-      '/src/assets/ABACUS/AB4.png',
-      '/src/assets/ABACUS/AB6.png',
+      '/images/gallery/ABACUS/AB4.png',
+      '/images/gallery/ABACUS/AB6.png',
     ],
   },
   
@@ -28,41 +28,41 @@ const ACADEMICS = [
     id: 'iit-neet',
     title: 'IIT - NEET',
     subtitle: 'Competitive Foundation',
-    image: '/src/assets/IIT NEET/IIT2.png',
+    image: '/images/gallery/IIT NEET/IIT2.png',
     description: 'Advanced concept frameworks targeting Olympiads, foundational engineering, and medical track preparation.',
     gallery: [
-      '/src/assets/IIT NEET/IIT1.png',
-      '/src/assets/IIT NEET/IIT3.png',
-      '/src/assets/IIT NEET/IIT4.png',
-      '/src/assets/IIT NEET/IIT5.png',
+      '/images/gallery/IIT NEET/IIT1.png',
+      '/images/gallery/IIT NEET/IIT3.png',
+      '/images/gallery/IIT NEET/IIT4.png',
+      '/images/gallery/IIT NEET/IIT5.png',
     ],
   },
   {
     id: 'science-lab',
     title: 'Science Lab',
     subtitle: 'Practical Experiments',
-    image: '/src/assets/Sciencelab/S1.png',
+    image: '/images/gallery/Sciencelab/S1.png',
     description: 'Hands-on chemical, physical, and bio experiments transforming dry theory into physical realizations.',
     gallery: [
-      '/src/assets/Sciencelab/S1.png',
-      '/src/assets/Sciencelab/S2.png',
-      '/src/assets/Sciencelab/S3.png',
-      '/src/assets/Sciencelab/S4.png',
-      '/src/assets/Sciencelab/S5.png',
+      '/images/gallery/Sciencelab/S1.png',
+      '/images/gallery/Sciencelab/S2.png',
+      '/images/gallery/Sciencelab/S3.png',
+      '/images/gallery/Sciencelab/S4.png',
+      '/images/gallery/Sciencelab/S5.png',
     ],
   },
   {
     id: 'biological-trips',
     title: 'Biological Trips',
     subtitle: 'Nature Study',
-    image: '/src/assets/Biologicaltrips/B1.png',
+    image: '/images/gallery/Biologicaltrips/B1.png',
     description: 'Exploration of local ecosystems and biological diversity in natural habitats.',
     gallery: [
-      '/src/assets/Biologicaltrips/B1.png',
-      '/src/assets/Biologicaltrips/B2.png',
-      '/src/assets/Biologicaltrips/B3.png',
-      '/src/assets/Biologicaltrips/B4.png',
-      '/src/assets/Biologicaltrips/B5.png',
+      '/images/gallery/Biologicaltrips/B1.png',
+      '/images/gallery/Biologicaltrips/B2.png',
+      '/images/gallery/Biologicaltrips/B3.png',
+      '/images/gallery/Biologicaltrips/B4.png',
+      '/images/gallery/Biologicaltrips/B5.png',
 
     ],
   },
@@ -70,12 +70,12 @@ const ACADEMICS = [
     id: 'omr',
     title: 'OMR Evaluation',
     subtitle: 'Assessment Systems',
-    image: '/src/assets/OMR/M1.png',
+    image: '/images/gallery/omr/M1.png',
     description: 'Familiarising pupils with modern competitive testing via automated diagnostic examinations.',
     gallery: [
-      '/src/assets/OMR/M1.png',
-      '/src/assets/OMR/M2.png',
-      '/src/assets/OMR/M3.png',
+      '/images/gallery/omr/M1.png',
+      '/images/gallery/omr/M2.png',
+      '/images/gallery/omr/M3.png',
 
     ],
   },
@@ -83,40 +83,40 @@ const ACADEMICS = [
     id: 'language-lab',
     title: 'Language Lab',
     subtitle: 'Communication Skills',
-    image: '/src/assets/Languagelab/L1.png',
+    image: '/images/gallery/Languagelab/L1.png',
     description: 'Digital audio-linguistic tools to perfect phonetics, conversational fluency, and speech clarity.',
     gallery: [
-      '/src/assets/Languagelab/L1.png',
-      '/src/assets/Languagelab/L2.png',
-      '/src/assets/Languagelab/L3.png',
-      '/src/assets/Languagelab/L4.png',
-      '/src/assets/Languagelab/L5.png',
+      '/images/gallery/Languagelab/L1.png',
+      '/images/gallery/Languagelab/L2.png',
+      '/images/gallery/Languagelab/L3.png',
+      '/images/gallery/Languagelab/L4.png',
+      '/images/gallery/Languagelab/L5.png',
     ],
   },
   {
     id: 'computer-lab',
     title: 'Computer Lab',
     subtitle: 'Digital Literacy',
-    image: '/src/assets/computerlab/c1.png',
+    image: '/images/gallery/computerlab/c1.png',
     description: 'Programming fundamentals, AI applications, web logic, and technology-driven learning models.',
     gallery: [
-      '/src/assets/computerlab/c1.png',
-      '/src/assets/computerlab/c2.png',
-      '/src/assets/computerlab/c3.png',
-      '/src/assets/computerlab/c4.png',
-      '/src/assets/computerlab/c5.png',
+      '/images/gallery/computerlab/c1.png',
+      '/images/gallery/computerlab/c2.png',
+      '/images/gallery/computerlab/c3.png',
+      '/images/gallery/computerlab/c4.png',
+      '/images/gallery/computerlab/c5.png',
     ],
   },
   {
     id: 'csp',
     title: 'CSP',
     subtitle: 'Community Activity',
-    image: '/src/assets/CSP/CSp1.png',
+    image: '/images/gallery/CSP/CSP1.png',
     description: 'Community Service Projects moulding societal empathy, civic awareness, and cooperative peer responsibility.',
     gallery: [
-      '/src/assets/CSP/CSp1.png',
-      '/src/assets/CSP/CSP3.png',
-      '/src/assets/CSP/CSP4.png',
+      '/images/gallery/CSP/CSP1.png',
+      '/images/gallery/CSP/CSP3.png',
+      '/images/gallery/CSP/CSP4.png',
 
     ],
   },
@@ -124,16 +124,16 @@ const ACADEMICS = [
     id: 'field-trip',
     title: 'Field Trips',
     subtitle: 'Experiential Outings',
-    image: '/src/assets/Field trips/F1.png',
+    image: '/images/gallery/Field trips/F1.png',
     description: 'Guided environmental and factory tours bridging indoor curriculum with real-world execution.',
     gallery: [
-      '/src/assets/Field trips/F1.png',
-      '/src/assets/Field trips/F2.png',
-      '/src/assets/Field trips/f3.png',
-      '/src/assets/Field trips/f4.png',
-      '/src/assets/Field trips/f5.png',
-      '/src/assets/Field trips/f6.png',
-      '/src/assets/Field trips/f7.png',
+      '/images/gallery/Field trips/F1.png',
+      '/images/gallery/Field trips/F2.png',
+      '/images/gallery/Field trips/f3.png',
+      '/images/gallery/Field trips/f4.png',
+      '/images/gallery/Field trips/f5.png',
+      '/images/gallery/Field trips/f6.png',
+      '/images/gallery/Field trips/f7.png',
     ],
   },
 ]
@@ -300,7 +300,7 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1.1.2rem'
+            gap: '1.2rem'
           }}>
             {item.gallery.map((src, i) => (
               <div
@@ -374,7 +374,7 @@ export default function AcademicApproach() {
             title="Academic Frameworks"
             subtitle="Explore student life tracks, practical labs, learning programmes, and structured evaluations."
             variant="pink"
-            backgroundImage="/src/assets/heroforschoollife/academicshero.png"
+            backgroundImage="/images/gallery/heroforschoollife/academicshero.png"
           />
 
           <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
@@ -390,7 +390,7 @@ export default function AcademicApproach() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/src/assets/Biologicaltrips/B1.png"
+                  src="/images/gallery/Biologicaltrips/B1.png"
                   alt="Academic Approach"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{

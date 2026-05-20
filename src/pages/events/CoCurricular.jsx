@@ -17,44 +17,44 @@ const CO_CURRICULAR = [
     id: 'indoor',
     title: 'Indoor Activities',
     subtitle: 'Indoor Games',
-    image: '/src/assets/indoor/i1.png',
+    image: '/images/gallery/indoor/i1.png',
     description: 'Chess, carrom, table tennis, and brain-stimulating games that develop strategic thinking, focus, and healthy competitive spirit.',
     gallery: [
-      '/src/assets/indoor/i1.png',
-      '/src/assets/indoor/i2.png',
-      '/src/assets/indoor/i3.png',
-      '/src/assets/indoor/i4.png',
-      '/src/assets/indoor/i5.png',
+      '/images/gallery/indoor/i1.png',
+      '/images/gallery/indoor/i2.png',
+      '/images/gallery/indoor/i3.png',
+      '/images/gallery/indoor/i4.png',
+      '/images/gallery/indoor/i5.png',
     ],
   },
   {
     id: 'outdoor',
     title: 'Outdoor Activities',
     subtitle: 'Outdoor Sports',
-    image: '/src/assets/Outdoor/o1.png',
+    image: '/images/gallery/Outdoor/o1.png',
     description: 'Cricket, football, athletics, and team sports developing physical fitness, teamwork, discipline, and leadership on the field.',
     gallery: [
-      '/src/assets/Outdoor/o1.png',
-      '/src/assets/Outdoor/o2.png',
-      '/src/assets/Outdoor/o3.png',
-      '/src/assets/Outdoor/o4.png',
-      '/src/assets/Outdoor/o5.png',
-      '/src/assets/Outdoor/o6.png',
+      '/images/gallery/Outdoor/o1.png',
+      '/images/gallery/Outdoor/o2.png',
+      '/images/gallery/Outdoor/o3.png',
+      '/images/gallery/Outdoor/o4.png',
+      '/images/gallery/Outdoor/o5.png',
+      '/images/gallery/Outdoor/o6.png',
     ],
   },
   {
     id: 'clay',
     title: 'Clay Activities',
     subtitle: 'Creative Sculpting',
-    image: '/src/assets/Clayactivities/Cl1.png',
+    image: '/images/gallery/Clayactivities/Cl1.png',
     description: 'Creative clay modelling sessions that nurture fine motor skills, artistic expression, patience, and three-dimensional thinking.',
     gallery: [
-      '/src/assets/Clayactivities/Cl1.png',
-      '/src/assets/Clayactivities/Cl2.png',
-      '/src/assets/Clayactivities/Cl3.png',
-      '/src/assets/Clayactivities/CL4.png',
-      '/src/assets/Clayactivities/Cl5.png',
-      '/src/assets/Clayactivities/Cl6.png',
+      '/images/gallery/Clayactivities/Cl1.png',
+      '/images/gallery/Clayactivities/Cl2.png',
+      '/images/gallery/Clayactivities/Cl3.png',
+      '/images/gallery/Clayactivities/Cl4.png',
+      '/images/gallery/Clayactivities/Cl5.png',
+      '/images/gallery/Clayactivities/Cl6.png',
     ],
   },
 ]
@@ -221,7 +221,7 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
           <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '1.1.2rem'
+              gap: '1.2rem'
             }}>
             {item.gallery.map((src, i) => (
               <div
@@ -295,7 +295,7 @@ export default function CoCurricular() {
             title="Co-Curricular Activities"
             subtitle="Beyond the classroom — discover sports, arts, crafts, and creativity."
             variant="pink"
-            backgroundImage="/src/assets/Outdoor/o5.png"
+            backgroundImage="/images/gallery/Outdoor/o5.png"
           />
 
           <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
@@ -311,7 +311,7 @@ export default function CoCurricular() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/src/assets/Outdoor/o1.png"
+                  src="/images/gallery/Outdoor/o1.png"
                   alt="Co-Curricular Activities"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{

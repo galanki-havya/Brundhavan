@@ -17,24 +17,24 @@ const COMMUNICATION = [
     id: 'assembly',
     title: 'Morning Assembly',
     subtitle: 'Daily Speaking',
-    image: '/src/assets/ASSEMBLY/AS1.png',
+    image: '/images/gallery/ASSEMBLY/AS1.png',
     description: 'Students build daily confidence and public presence through structured assembly presentations, announcements, and thought-for-the-day sessions.',
     gallery: [
-      '/src/assets/ASSEMBLY/AS1.png',
-      '/src/assets/ASSEMBLY/AS2.png',
-      '/src/assets/ASSEMBLY/AS3.png',
+      '/images/gallery/ASSEMBLY/AS1.png',
+      '/images/gallery/ASSEMBLY/AS2.png',
+      '/images/gallery/ASSEMBLY/AS3.png',
     ],
   },
   {
     id: 'seminar',
     title: 'Speaker Seminar Series',
     subtitle: 'Weekly Expert Talks',
-    image: '/src/assets/SEMINARS/S1.png',
+    image: '/images/gallery/SEMINARS/S1.png',
     description: 'Weekly seminars with industry leaders, academics, and alumni sharing insights on communication, leadership, and real-world applications.',
     gallery: [
-      '/src/assets/SEMINARS/S2.png',
-      '/src/assets/SEMINARS/S3.png',
-      '/src/assets/SEMINARS/S4.png',
+      '/images/gallery/SEMINARS/S2.png',
+      '/images/gallery/SEMINARS/S3.png',
+      '/images/gallery/SEMINARS/S4.png',
     ],
   }
 ]
@@ -201,7 +201,7 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '1.1.2rem'
+            gap: '1.2rem'
           }}>
             {item.gallery.map((src, i) => (
               <div
@@ -275,7 +275,7 @@ export default function CommunicationPublicSpeaking() {
             title="Communication & Public Speaking"
             subtitle="Empowering every student with the voice, confidence, and clarity to lead and inspire."
             variant="pink"
-            backgroundImage="/src/assets/heroforschoollife/communicationhero.png"
+            backgroundImage="/images/gallery/heroforschoollife/communicationhero.png"
           />
 
           <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
@@ -291,7 +291,7 @@ export default function CommunicationPublicSpeaking() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/src/assets/ASSEMBLY/AS1.png"
+                  src="/images/gallery/ASSEMBLY/AS1.png"
                   alt="Communication & Public Speaking"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{
