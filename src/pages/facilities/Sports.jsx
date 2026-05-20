@@ -40,7 +40,7 @@ export default function Sports() {
             <img src={sportsRightImg} alt="Sports" style={{ width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', border: '1.5px solid #FFCFC4', boxShadow: '0 16px 48px rgba(255,99,71,0.10)' }} />
             <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', background: '#FFF8F6', borderRadius: '16px', padding: '16px 24px', border: '1.5px solid #FFCFC4', boxShadow: '0 8px 32px rgba(255,99,71,0.10)' }}>
               <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>100%</div>
-              <div style={{ fontSize: '13px', color: '#555', fontWeight: 500 }}>Active Lifestyle</div>
+              <div style={{ fontSize: '13px', color: '#302f2f', fontWeight: 500 }}>Active Lifestyle</div>
             </div>
           </motion.div>
 
@@ -53,7 +53,7 @@ export default function Sports() {
               Building Character{' '}<span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Through Sports</span>
             </h2>
             {['Large outdoor playground and physical training fields', 'Dedicated courts for volleyball, kabaddi, and badminton', 'Indoor games section (chess, carrom, table tennis)', 'Professional physical education (PE) instructors', 'Regular sports events and inter-school team preparation'].map((point, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontSize: '0.95rem', color: '#222' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px', fontSize: '0.95rem', color: '#302f2f' }}>
                 <CheckCircle2 size={19} style={{ color: '#FF6347', flexShrink: 0, marginTop: '2px' }} />
                 <span>{point}</span>
               </div>
@@ -82,7 +82,7 @@ export default function Sports() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>Our Sports Programme</h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Developing teamwork, resilience, and physical fitness in every student</p>
+            <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Developing teamwork, resilience, and physical fitness in every student</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -90,7 +90,7 @@ export default function Sports() {
               <motion.div key={i} initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{ background: item.bg, borderRadius: '18px', padding: '32px 24px', border: `1.5px solid ${item.border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -110,7 +110,7 @@ export default function Sports() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Champion Your Child's Potential
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Enrol your child in a school that values physical development as much as academic excellence.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

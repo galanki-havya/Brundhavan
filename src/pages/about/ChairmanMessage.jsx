@@ -112,7 +112,7 @@ export default function ChairmanMessage() {
                   {/* Plain icon — no box background */}
                   <item.icon size={18} style={{ color: '#FF6347', flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '0.9rem' }}>{item.value}</div>
+                    <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '0.95rem' }}>{item.value}</div>
                     <div style={{ fontSize: '0.78rem', color: '#666' }}>{item.label}</div>
                   </div>
                 </motion.div>
@@ -151,7 +151,7 @@ export default function ChairmanMessage() {
                   key={i}
                   initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                  style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, margin: 0 }}
+                  style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, margin: 0 }}
                 >
                   {para}
                 </motion.p>
@@ -179,7 +179,7 @@ export default function ChairmanMessage() {
             "Cultivating both intellectual growth and personal character."
           </motion.h2>
           <div style={{ width: '48px', height: '2.5px', background: '#FF6347', borderRadius: '4px', margin: '0 auto 20px' }} />
-          <p style={{ color: '#0b0a0a', fontSize: '1rem', lineHeight: 1.75 }}>
+          <p style={{ color: '#0b0a0a', fontSize: '1.2rem', lineHeight: 1.75 }}>
             Under the leadership of {chairman.name}, we are committed to innovative teaching methods and excellence in education.
           </p>
         </div>
@@ -194,7 +194,7 @@ export default function ChairmanMessage() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Join the Brindavan Legacy
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#555', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Start your child's journey in an institution built on vision, values, and a commitment to excellence.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -228,7 +228,7 @@ export default function Home() {
                 <span style={{
                   background: palette.bg,
                   padding: '4px 12px', borderRadius: 40,
-                  fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase',
+                  fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase',
                   color: palette.accentColor,
                   border: `1px solid ${palette.border}`,
                 }}>
@@ -244,7 +244,7 @@ export default function Home() {
                 <activity.icon size={26} style={{ color: palette.accentColor }} />
               </div>
               <h3 className="text-xl font-bold text-[#0F172A] mb-3">{activity.label}</h3>
-              <p className="text-[#475569] text-[14px] leading-relaxed flex-grow">{activity.desc}</p>
+              <p className="text-[#302f2f] text-[14px] leading-relaxed flex-grow">{activity.desc}</p>
               <div
                 className="mt-5 rounded-full"
                 style={{ height: 2, width: 28, background: palette.accentColor }}

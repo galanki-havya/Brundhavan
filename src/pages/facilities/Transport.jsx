@@ -85,7 +85,7 @@ export default function Transport() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>Why Our Transport Stands Out</h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Safety, reliability, and comfort on every route, every day</p>
+            <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Safety, reliability, and comfort on every route, every day</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -93,7 +93,7 @@ export default function Transport() {
               <motion.div key={i} initial={{ y: 24, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.08 }} viewport={{ once: true }}
                 style={{ background: item.bg, borderRadius: '18px', padding: '32px 24px', border: `1.5px solid ${item.border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -113,7 +113,7 @@ export default function Transport() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Safe Journeys, Every Day
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Give your child the comfort of a safe, reliable commute so they arrive at school ready to learn.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

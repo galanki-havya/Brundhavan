@@ -100,7 +100,7 @@ export default function Achievements() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>
               Achievement Highlights
             </h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Key milestones that define our journey of excellence</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Key milestones that define our journey of excellence</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
@@ -119,7 +119,7 @@ export default function Achievements() {
               >
                 <div style={{ fontSize: '2.2rem', marginBottom: '12px' }}>{item.emoji}</div>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: 700, color: item.valueColor, marginBottom: '6px' }}>{item.value}</div>
-                <div style={{ fontSize: '0.88rem', color: '#666', fontWeight: 500 }}>{item.label}</div>
+                <div style={{ fontSize: '0.95rem', color: '#302f2f', fontWeight: 500 }}>{item.label}</div>
               </motion.div>
             ))}
           </div>
@@ -139,7 +139,7 @@ export default function Achievements() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>
               Our Milestones
             </h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Growth through continuous improvement and commitment</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Growth through continuous improvement and commitment</p>
           </motion.div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -176,12 +176,12 @@ export default function Achievements() {
                       background: '#fff', color: a.iconColor,
                       border: `1px solid ${a.border}`,
                       padding: '3px 12px', borderRadius: '50px',
-                      fontSize: '0.78rem', fontWeight: 700
+                      fontSize: '0.85rem', fontWeight: 700
                     }}>{a.year}</span>
-                    <span style={{ fontSize: '0.82rem', color: '#888', fontWeight: 500 }}>{a.category}</span>
+                    <span style={{ fontSize: '0.82rem', color: '#575656', fontWeight: 500 }}>{a.category}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{a.title}</h3>
-                  <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>{a.description}</p>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1.2rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{a.title}</h3>
+                  <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.7, margin: 0 }}>{a.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -202,7 +202,7 @@ export default function Achievements() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>
               Looking Ahead
             </h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Our vision for the future of Brindavan School</p>
+            <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Our vision for the future of Brindavan School</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
@@ -224,7 +224,7 @@ export default function Achievements() {
                   <div key={item} style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     padding: '9px 0', borderBottom: `1px solid ${cat.dividerColor}`,
-                    fontSize: '0.9rem', color: '#333'
+                    fontSize: '0.95rem', color: '#302f2f'
                   }}>
                     <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: cat.dotColor, flexShrink: 0 }} />
                     {item}
@@ -251,7 +251,7 @@ export default function Achievements() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Be Part of Our Journey
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Every achievement starts with a single step. Join Brindavan School and be part of a growing legacy of excellence.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

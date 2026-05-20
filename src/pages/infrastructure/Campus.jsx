@@ -161,7 +161,7 @@ export default function Campus() {
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: '1rem',
+                fontSize: '1.2rem',
                 color: '#6b5c6e',
                 lineHeight: 1.8,
                 marginBottom: '28px'
@@ -409,7 +409,7 @@ export default function Campus() {
                     fontFamily: "'DM Sans', sans-serif",
                     color: '#6b5c6e',
                     fontWeight: 500,
-                    fontSize: '0.9rem'
+                    fontSize: '0.95rem'
                   }}
                 >
                   {stat.label}

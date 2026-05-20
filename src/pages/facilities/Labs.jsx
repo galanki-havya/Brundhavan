@@ -77,10 +77,10 @@ export default function Labs() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#011E3A', lineHeight: 1.2, marginBottom: '20px' }}>
               Where Scientific Inquiry{' '}<span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Comes to Life</span>
             </h2>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
               At Brindavan School, we believe that science is best learned by doing. Our spacious and fully equipped laboratories provide students with the perfect space to test hypotheses, conduct research, and explore the natural world.
             </p>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
               With dedicated stations for Physics, Chemistry, and Biology, alongside a state-of-the-art Computer Lab, we integrate theory with practice to foster critical thinking and mathematical precision.
             </p>
             {['Fully equipped Physics, Chemistry, and Biology sections', 'Individual workbenches with modern instruments', 'Strict safety protocols and dedicated assistants', 'Computer lab with high-speed internet access', 'Aligned with State Board and competitive exam studies'].map((point, i) => (
@@ -113,7 +113,7 @@ export default function Labs() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>Laboratory Features</h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Fostering academic excellence through rigorous investigation</p>
+            <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Fostering academic excellence through rigorous investigation</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -122,7 +122,7 @@ export default function Labs() {
                 style={{ background: item.bg, borderRadius: '18px', padding: '32px 24px', border: `1.5px solid ${item.border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                 <div style={{ fontSize: '2.4rem', marginBottom: '14px' }}>{item.emoji}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -176,7 +176,7 @@ export default function Labs() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Encouraging the Scientists of Tomorrow
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Give your child access to spacious, safe, and modern laboratory resources that turn questions into direct understanding.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

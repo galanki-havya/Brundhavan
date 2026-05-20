@@ -103,7 +103,7 @@
     background-color: var(--brand-gold);
     color: #002b5c; /* Dark navy text on gold background */
     font-weight: 700;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     border-radius: 9999px;
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
     transition: all 0.3s ease;
@@ -118,7 +118,7 @@
   .btn-outline {
     border: 2px solid var(--brand-gold);
     color: var(--brand-dark);
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     border-radius: 9999px;
     transition: all 0.3s ease;
   }
@@ -156,7 +156,7 @@
 
 /* Custom Navy scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--brand-light); }
+::-webkit-scrollbar-track { background: #ffffff; }
 ::-webkit-scrollbar-thumb { 
   background: var(--brand-dark); 
   border-radius: 3px; 

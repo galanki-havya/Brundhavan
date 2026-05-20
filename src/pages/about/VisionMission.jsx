@@ -118,10 +118,10 @@ export default function VisionMission() {
               <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Future Leaders</span>
             </h2>
 
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
               At Brindavan School, our vision is to nurture confident, compassionate, and capable learners who excel academically, embrace strong values, and contribute positively to society.
             </p>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
               We aim to create an inspiring educational environment where students discover their true potential through innovation, creativity, discipline, and holistic development.
             </p>
 
@@ -135,8 +135,8 @@ export default function VisionMission() {
                 marginBottom: '28px', boxShadow: '0 2px 16px rgba(255,99,71,0.07)'
               }}
             >
-              <h4 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '1rem', marginBottom: '8px' }}>Our Long-Term Goal</h4>
-              <p style={{ fontSize: '0.9rem', color: '#555', lineHeight: 1.7, margin: 0 }}>To build a generation of knowledgeable, ethical, innovative, and socially responsible individuals ready to thrive in a rapidly evolving world.</p>
+              <h4 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '1.2rem', marginBottom: '8px' }}>Our Long-Term Goal</h4>
+              <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: 1.7, margin: 0 }}>To build a generation of knowledgeable, ethical, innovative, and socially responsible individuals ready to thrive in a rapidly evolving world.</p>
             </motion.div>
 
             <Link to="/admissions" style={{
@@ -164,7 +164,7 @@ export default function VisionMission() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '12px' }}>
               Empowering Every Child to Succeed
             </h2>
-            <p style={{ color: '#666', fontSize: '1rem', maxWidth: '580px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ color: '#666', fontSize: '1.2rem', maxWidth: '580px', margin: '0 auto', lineHeight: 1.7 }}>
               We strive to provide a nurturing and innovative environment where every student develops academically, emotionally, socially, and ethically.
             </p>
           </motion.div>
@@ -186,8 +186,8 @@ export default function VisionMission() {
                 }}
               >
                 <div style={{ fontSize: '2.2rem', marginBottom: '14px' }}>{item.icon}</div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1.2rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default function VisionMission() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '12px' }}>
               Core Principles
             </h2>
-            <p style={{ color: '#666', fontSize: '1rem', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ color: '#666', fontSize: '1.2rem', maxWidth: '480px', margin: '0 auto', lineHeight: 1.7 }}>
               The values that shape our educational culture and guide every learning experience.
             </p>
           </motion.div>
@@ -228,7 +228,7 @@ export default function VisionMission() {
               >
                 <item.icon size={28} style={{ color: item.iconColor, marginBottom: '18px', display: 'block' }} />
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>{item.title}</h3>
-                <p style={{ color: '#666', fontSize: '0.92rem', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.75, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -250,7 +250,7 @@ export default function VisionMission() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Join Our Educational Mission
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Become part of Brindavan School and help your child grow in an environment built on excellence, values, innovation, and holistic learning.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>

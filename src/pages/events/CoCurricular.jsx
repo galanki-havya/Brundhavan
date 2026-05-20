@@ -160,10 +160,10 @@ function ActivityCard({ item, palette, index, onClick }) {
       </div>
 
       <div style={{ padding: '22px 20px 20px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', fontWeight: 700, color: '#011E3A', marginBottom: 8 }}>
+        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1.2rem', fontWeight: 700, color: '#011E3A', marginBottom: 8 }}>
           {item.title}
         </h3>
-        <p style={{ color: '#555', fontSize: '0.87rem', lineHeight: 1.65, flexGrow: 1, fontFamily: "'DM Sans', sans-serif", margin: 0 }}>
+        <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.65, flexGrow: 1, fontFamily: "'DM Sans', sans-serif", margin: 0 }}>
           {item.description}
         </p>
         <div style={{ marginTop: 16, height: 2, width: 28, background: palette.accentColor, borderRadius: 4 }} />
@@ -210,7 +210,7 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(24px, 4vw, 36px)', color: '#011E3A', fontWeight: 700, marginBottom: 4 }}>
             {item.title}
           </h1>
-          <p style={{ color: '#666', fontSize: 13 }}>{item.gallery.length} images in this collection</p>
+          <p style={{ color: '#302f2f', fontSize: 15 }}>{item.gallery.length} images in this collection</p>
         </div>
       </div>
 
@@ -219,10 +219,10 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '36px 24px 80px' }}>
         {item.gallery.length > 0 ? (
           <div style={{
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-  gap: '1.1rem'
-}}>
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '1.1.2rem'
+            }}>
             {item.gallery.map((src, i) => (
               <div
                 key={i}
@@ -232,7 +232,7 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLightbox(src) }}
                 aria-label={`Open ${item.title} image ${i + 1}`}
                 style={{
-                  breakInside: 'avoid', marginBottom: '1.1rem',
+                  breakInside: 'avoid', marginBottom: '1.1.2rem',
                   borderRadius: 12, overflow: 'hidden',
                   border: `1px solid ${palette.border}`,
                   cursor: 'pointer',
@@ -248,11 +248,11 @@ function GalleryView({ item, palette, onBack, onLightbox }) {
                   loading="lazy"
                   onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.style.minHeight = '100px'; e.target.parentNode.style.background = '#f0f0f0' }}
                   style={{
-  width: '100%',
-  height: '260px',
-  objectFit: 'cover',
-  display: 'block'
-}}
+                    width: '100%',
+                    height: '260px',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
                 />
               </div>
             ))}
@@ -343,10 +343,10 @@ export default function CoCurricular() {
                   Growing Minds,{' '}
                   <span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Growing Bodies</span>
                 </h2>
-                <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: 12 }}>
+                <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: 12 }}>
                   At Brindavan, co-curricular activities are integral to holistic development. Every child has a unique strength — and we create the space to discover it.
                 </p>
-                <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: 28 }}>
+                <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: 28 }}>
                   From indoor strategy games to outdoor team sports and creative clay work, every activity is purposefully designed to build real-world skills.
                 </p>
                 {[
@@ -390,7 +390,7 @@ export default function CoCurricular() {
                 <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: 10 }}>
                   Co-Curricular Activities
                 </h2>
-                <p style={{ color: '#666', fontSize: '1rem' }}>Click any activity to explore the full gallery</p>
+                <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Click any activity to explore the full gallery</p>
               </motion.div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: '20px' }}>
@@ -424,7 +424,7 @@ export default function CoCurricular() {
               <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: 14, lineHeight: 1.25 }}>
                 Let Your Child Discover Their Passion
               </h2>
-              <p style={{ color: '#555', fontSize: '1rem', marginBottom: 36, lineHeight: 1.75 }}>
+              <p style={{ color: '#302f2f', fontSize: '1.2rem', marginBottom: 36, lineHeight: 1.75 }}>
                 Give your child opportunities to explore creativity, sports, leadership, and personal growth in a nurturing environment.
               </p>
               <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -60,13 +60,13 @@ export default function Contact() {
                 <div style={{ width: '48px', height: '48px', background: card.iconBg, borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: `1px solid ${card.border}` }}>
                   <card.icon size={22} style={{ color: card.iconColor }} />
                 </div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', marginBottom: '8px', fontSize: '1rem' }}>{card.label}</h3>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', marginBottom: '8px', fontSize: '1.2rem' }}>{card.label}</h3>
                 {contactData[i].link ? (
-                  <a href={contactData[i].link} title={contactData[i].val} className={contactData[i].customClass || ''} style={{ color: card.iconColor, fontSize: '0.9rem', textDecoration: 'none' }}>
+                  <a href={contactData[i].link} title={contactData[i].val} className={contactData[i].customClass || ''} style={{ color: card.iconColor, fontSize: '0.95rem', textDecoration: 'none' }}>
                     {contactData[i].val}
                   </a>
                 ) : (
-                  <p style={{ color: '#475569', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>{contactData[i].val}</p>
+                  <p style={{ color: '#302f2f', fontSize: '0.92rem', lineHeight: 1.6, margin: 0 }}>{contactData[i].val}</p>
                 )}
               </motion.div>
             ))}
@@ -81,13 +81,13 @@ export default function Contact() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
           <div style={{ background: '#FFF8F6', padding: '40px', borderRadius: '32px', border: '1.5px solid #FFCFC4', boxShadow: '0 4px 32px rgba(255,99,71,0.06)' }}>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>Send us a message</h2>
-            <p style={{ color: '#666', marginBottom: '28px', fontSize: '0.95rem' }}>We usually respond within 24 hours.</p>
+            <p style={{ color: '#302f2f', marginBottom: '28px', fontSize: '0.95rem' }}>We usually respond within 24 hours.</p>
 
             {status === 'success' ? (
               <div style={{ height: '360px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                 <div style={{ width: '64px', height: '64px', background: '#F0FAF4', color: '#2E7D4F', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', fontSize: '1.5rem' }}>✓</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#011E3A' }}>Message Received!</h3>
-                <p style={{ color: '#666' }}>Thank you for reaching out.</p>
+                <p style={{ color: '#302f2f' }}>Thank you for reaching out.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -97,7 +97,7 @@ export default function Contact() {
                   <input required name="email" type="email" placeholder="Email" style={{ padding: '14px 16px', borderRadius: '12px', background: '#fff', border: '1.5px solid #FFCFC4', outline: 'none', fontSize: '0.95rem' }} />
                 </div>
                 <textarea required name="message" rows={4} placeholder="Your message..." style={{ padding: '14px 16px', borderRadius: '12px', background: '#fff', border: '1.5px solid #FFCFC4', outline: 'none', fontSize: '0.95rem', resize: 'vertical' }} />
-                <button type="submit" disabled={status === 'submitting'} style={{ background: '#FF6347', color: '#fff', padding: '14px', borderRadius: '12px', fontWeight: 700, fontSize: '1rem', border: 'none', cursor: 'pointer' }}>
+                <button type="submit" disabled={status === 'submitting'} style={{ background: '#FF6347', color: '#fff', padding: '14px', borderRadius: '12px', fontWeight: 700, fontSize: '1.2rem', border: 'none', cursor: 'pointer' }}>
                   {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>

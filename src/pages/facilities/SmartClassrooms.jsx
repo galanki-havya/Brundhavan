@@ -72,10 +72,10 @@ export default function SmartClassrooms() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, color: '#011E3A', lineHeight: 1.2, marginBottom: '20px' }}>
               Future-Ready{' '}<span style={{ color: '#FF6347', fontStyle: 'italic', fontWeight: 400 }}>Smart Classrooms</span>
             </h2>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '12px' }}>
               Brindavan School integrates cutting-edge technology directly into the core learning experience. Our interactive classrooms replace traditional blackboards with dynamic digital displays that bring complex concepts to life.
             </p>
-            <p style={{ fontSize: '1rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
+            <p style={{ fontSize: '1.2rem', color: '#444', lineHeight: 1.85, marginBottom: '28px' }}>
               By combining video animations, audio tutorials, and real-time interactive exercises, students learn actively, absorb information faster, and participate in an engaging collaborative environment.
             </p>
             {['Smart interactive whiteboards in every classroom', 'Video animations & audio-visual tutorials', 'Real-time student engagement tools', 'Digital assessments & instant feedback', 'Seamlessly integrated with the curriculum'].map((point, i) => (
@@ -108,7 +108,7 @@ export default function SmartClassrooms() {
               <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 700, color: '#011E3A', marginBottom: '10px' }}>Classroom Features</h2>
-            <p style={{ color: '#666', fontSize: '1rem' }}>Every tool built to make learning engaging and effective</p>
+            <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Every tool built to make learning engaging and effective</p>
           </motion.div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -117,7 +117,7 @@ export default function SmartClassrooms() {
                 style={{ background: item.bg, borderRadius: '18px', padding: '32px 24px', border: `1.5px solid ${item.border}`, boxShadow: '0 2px 16px rgba(0,0,0,0.05)', textAlign: 'center' }}>
                 <div style={{ fontSize: '2.4rem', marginBottom: '14px' }}>{item.emoji}</div>
                 <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.15rem', fontWeight: 700, color: '#011E3A', marginBottom: '8px' }}>{item.label}</h3>
-                <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                <p style={{ color: '#302f2f', fontSize: '0.95rem', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -147,7 +147,7 @@ export default function SmartClassrooms() {
                   <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', fontWeight: 700, color: '#011E3A', margin: 0 }}>{col.title}</h3>
                 </div>
                 {col.items.map((item, j) => (
-                  <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 0', borderBottom: `1px solid ${col.dividerColor}`, fontSize: '0.93rem', color: '#333' }}>
+                  <div key={j} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 0', borderBottom: `1px solid ${col.dividerColor}`, fontSize: '0.95rem', color: '#302f2f' }}>
                     <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: col.dotColor, flexShrink: 0 }} />
                     {item}
                   </div>
@@ -171,7 +171,7 @@ export default function SmartClassrooms() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
             Step Into the Classroom of Tomorrow
           </h2>
-          <p style={{ color: '#555', fontSize: '1rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#555', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Give your child access to smart, interactive classrooms that make learning exciting and effective.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
