@@ -106,7 +106,7 @@ const customStyles = `
     font-family: 'DM Sans', sans-serif;
     font-size: 13.5px;
     font-weight: 400;
-    color: #D1D5DB;
+    color: #374151;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.18s ease;
@@ -329,8 +329,9 @@ export default function Navbar() {
                             top: 'calc(100% + 4px)',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            background: DARK_SURFACE,
+                            background: '#ffffff',
                             borderRadius: 6,
+                            border: '1px solid rgba(0,0,0,0.08)',
                             boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.07)',
                             padding: '6px',
                             minWidth: 240,
