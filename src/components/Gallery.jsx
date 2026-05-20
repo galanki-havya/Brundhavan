@@ -24,7 +24,7 @@ export default function Gallery() {
   }
 
   return (
-    <Section style={{ background: '#fff', position: 'relative', overflow: 'hidden' }}>
+    <Section style={{ background: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap');
       `}</style>

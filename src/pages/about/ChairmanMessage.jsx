@@ -14,11 +14,28 @@ function SectionLabel({ children }) {
   )
 }
 
+function ClearDivider() {
+  return (
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
+    </div>
+  )
+}
+
 export default function ChairmanMessage() {
   const { chairman } = siteData
 
   return (
-    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <PageHero
@@ -29,7 +46,7 @@ export default function ChairmanMessage() {
       />
 
       {/* ── Main Section ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
         <div
           style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '48px', alignItems: 'start' }}
           className="chair-grid"
@@ -116,7 +133,7 @@ export default function ChairmanMessage() {
 
             {/* Quote card */}
             <div style={{
-              background: '#fff', borderRadius: '14px', padding: '22px 26px',
+              background: '#F9FAFB', borderRadius: '14px', padding: '22px 26px',
               border: '1px solid #f0f0f0', borderLeft: '3px solid #FF6347',
               marginBottom: '28px',
               boxShadow: '0 2px 16px rgba(0,0,0,0.04)'
@@ -150,8 +167,9 @@ export default function ChairmanMessage() {
         </div>
       </section>
 
+      <ClearDivider />
       {/* ── Vision Quote ── */}
-      <section style={{ padding: '60px 24px', background: '#fff', textAlign: 'center' }}>
+      <section style={{ padding: '60px 24px', background: '#F9FAFB', textAlign: 'center' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <motion.h2
             initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }}
@@ -161,14 +179,16 @@ export default function ChairmanMessage() {
             "Cultivating both intellectual growth and personal character."
           </motion.h2>
           <div style={{ width: '48px', height: '2.5px', background: '#FF6347', borderRadius: '4px', margin: '0 auto 20px' }} />
-          <p style={{ color: '#666', fontSize: '1rem', lineHeight: 1.75 }}>
+          <p style={{ color: '#0b0a0a', fontSize: '1rem', lineHeight: 1.75 }}>
             Under the leadership of {chairman.name}, we are committed to innovative teaching methods and excellence in education.
           </p>
         </div>
       </section>
 
+        <ClearDivider />
+
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+      <section style={{ padding: '80px 24px', background: '#FFFFFF', textAlign: 'center' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
           <SectionLabel>Get Started</SectionLabel>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>

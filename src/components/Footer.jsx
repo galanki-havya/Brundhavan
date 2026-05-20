@@ -1,117 +1,71 @@
 import { NavLink } from 'react-router-dom'
-import { MapPin, Phone, Mail, ArrowRight, School } from 'lucide-react'
+import { MapPin, Phone, Mail, ChevronRight } from 'lucide-react'
 import { FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa'
 import { siteData } from '../data/site'
+import logo from '../assets/logo.jpg' 
 
 const { school } = siteData
 
 export default function Footer() {
   const quickLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
+    { name: 'About Us', path: '/about/overview' },
     { name: 'Admissions', path: '/admissions' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ]
 
-  const programmes = [
-    { name: 'Pre-Primary', path: '/academics/pre-primary' },
-    { name: 'Primary School', path: '/academics/primary' },
-    { name: 'Middle School', path: '/academics/middle' },
-    { name: 'High School', path: '/academics/high' },
-    { name: 'Activities', path: '/activities' },
-  ]
-
+  // Updated WhatsApp URL to use the specific number
+  const whatsappNumber = "919121914631"; 
   const socials = [
     { href: school.socials.instagram, Icon: FaInstagram, label: 'Instagram' },
     { href: school.socials.youtube, Icon: FaYoutube, label: 'YouTube' },
-    { href: school.socials.whatsapp ?? '#', Icon: FaWhatsapp, label: 'WhatsApp' },
+    { href: `https://wa.me/${whatsappNumber}`, Icon: FaWhatsapp, label: 'WhatsApp' },
   ]
 
   return (
-    <footer style={{ background: '#0d1117', color: '#e2e8f0', fontFamily: "'DM Sans', sans-serif" }}>
+    <footer style={{ background: 'rgb(1, 30, 58)', color: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+      {/* ── ORANGE ACCENT BAR ── */}
+      <div style={{ height: '4px', background: '#ec733a' }} />
 
-      {/* ── ACCENT BAR ── */}
-      <div style={{ height: '3px', background: 'linear-gradient(90deg, #7C6218, #A28225, #d4af37)' }} />
-
-      {/* ── NEWSLETTER BAND ── */}
-      <div style={{ background: '#111827', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '16px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
-        <p style={{ fontSize: '13px', color: '#94a3b8' }}>📬 Stay updated — admissions, events &amp; school news</p>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <input
-            placeholder="Enter your email"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: '#e2e8f0', borderRadius: '8px', padding: '8px 14px', fontSize: '12px', outline: 'none', width: '200px' }}
-          />
-          <button
-            style={{ background: '#7C6218', color: '#fff', border: 'none', borderRadius: '8px', padding: '8px 18px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', transition: 'background 0.2s' }}
-            onMouseEnter={e => e.currentTarget.style.background = '#d4af37'}
-            onMouseLeave={e => e.currentTarget.style.background = '#7C6218'}
-          >
-            Subscribe
-          </button>
-        </div>
-      </div>
-
-      {/* ── MAIN GRID ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1.3fr', gap: '40px', padding: '48px 40px 36px', maxWidth: '1200px', margin: '0 auto' }}>
-
-        {/* BRAND */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 40px', display: 'grid', gridTemplateColumns: '1.5fr 1fr 1.5fr', gap: '60px' }}>
+        
+        {/* BRAND & LOGO */}
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-            <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'rgba(124, 98, 24, 0.15)', border: '1px solid rgba(124, 98, 24, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <School size={18} style={{ color: '#7C6218' }} />
-            </div>
-            <div>
-              <div style={{ fontSize: '17px', fontWeight: 700, color: '#fff', letterSpacing: '-0.01em' }}>{school.name}</div>
-              <div style={{ fontSize: '10px', color: '#d4af37', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 600 }}>{school.affiliation}</div>
-            </div>
+          <div style={{ height: '60px', display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+            <img 
+              src={logo} 
+              alt="School Logo" 
+              style={{ maxHeight: '100%', width: 'auto', display: 'block' }} 
+            />
           </div>
-          <p style={{ fontSize: '13px', color: '#f1f3f6ff', lineHeight: 1.75, margin: '14px 0 20px', maxWidth: '240px' }}>
-            A modern, values-driven institution committed to nurturing curious, confident, and compassionate learners since 2025.
+          <p style={{ fontSize: '14px', color: '#cbd5e1', lineHeight: 1.8, marginBottom: '24px', maxWidth: '300px' }}>
+            {school.name} is a modern, values-driven institution committed to nurturing curious, confident, and compassionate learners.
           </p>
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div style={{ display: 'flex', gap: '15px' }}>
             {socials.map(({ href, Icon, label }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}
-                style={{ width: '34px', height: '34px', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94a3b8', textDecoration: 'none', transition: 'all 0.2s' }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#7C6218'; e.currentTarget.style.borderColor = '#7C6218'; e.currentTarget.style.color = '#fff' }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(243, 237, 237, 0.05)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#94a3b8' }}
+              <a key={label} href={href} target="_blank" rel="noreferrer" 
+                style={{ color: '#fff', opacity: 0.7, transition: '0.3s' }}
+                onMouseEnter={e => e.currentTarget.style.opacity = '1'}
+                onMouseLeave={e => e.currentTarget.style.opacity = '0.7'}
               >
-                <Icon size={14} />
+                <Icon size={20} />
               </a>
             ))}
           </div>
         </div>
 
-        {/* QUICK LINKS */}
+        {/* NAVIGATION */}
         <div>
-          <h4 style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#d4af37', marginBottom: '18px' }}>Quick Links</h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <h4 style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '25px', color: '#ec733a', letterSpacing: '1px' }}>Quick Links</h4>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
             {quickLinks.map(link => (
               <li key={link.name}>
-                <NavLink to={link.path}
-                  style={({ isActive }) => ({ fontSize: '13px', color: '#ffffff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s' })}
-                  onMouseEnter={e => e.currentTarget.style.color = '#d4af37'}
-                  onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}
+                <NavLink to={link.path} style={{ fontSize: '14px', color: '#fff', textDecoration: 'none', display: 'flex', alignItems: 'center', opacity: 0.8, transition: '0.2s' }}
+                  onMouseEnter={e => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.color = '#ec733a' }}
+                  onMouseLeave={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.color = '#fff' }}
                 >
-                  <ArrowRight size={11} style={{ opacity: 0.5 }} />{link.name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* PROGRAMMES */}
-        <div>
-          <h4 style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#d4af37', marginBottom: '18px' }}>Programmes</h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {programmes.map(link => (
-              <li key={link.name}>
-                <NavLink to={link.path}
-                  style={({ isActive }) => ({ fontSize: '13px', color: '#ffffff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', transition: 'color 0.2s' })}
-                  onMouseEnter={e => e.currentTarget.style.color = '#d4af37'}
-                  onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}
-                >
-                  <ArrowRight size={11} style={{ opacity: 0.5 }} />{link.name}
+                  <ChevronRight size={16} style={{ marginRight: '8px' }} /> {link.name}
                 </NavLink>
               </li>
             ))}
@@ -120,34 +74,27 @@ export default function Footer() {
 
         {/* CONTACT */}
         <div>
-          <h4 style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#d4af37', marginBottom: '18px' }}>Contact Us</h4>
-          {[
-            { Icon: MapPin, content: school.address },
-            { Icon: Phone, content: <a href={`tel:${school.phone}`} style={{ color: '#ffffff', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#d4af37'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}>{school.phone}</a> },
-            { Icon: Mail, content: <a href={`mailto:${school.email}`} style={{ color: '#ffffff', textDecoration: 'none', wordBreak: 'break-all', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#d4af37'} onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}>{school.email}</a> },
-          ].map(({ Icon, content }, i) => (
-            <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '14px' }}>
-              <div style={{ width: '32px', height: '32px', background: 'rgba(124, 98, 24, 0.12)', border: '1px solid rgba(124, 98, 24, 0.25)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Icon size={14} style={{ color: '#d4af37' }} />
-              </div>
-              <div style={{ fontSize: '12.5px', color: '#ffffff', lineHeight: 1.6 }}>{content}</div>
+          <h4 style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', marginBottom: '25px', color: '#ec733a', letterSpacing: '1px' }}>Contact Us</h4>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px', fontSize: '14px', opacity: 0.9 }}>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <MapPin size={20} style={{ color: '#ec733a', flexShrink: 0 }} />
+              <span>{school.address}</span>
             </div>
-          ))}
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <Phone size={20} style={{ color: '#ec733a', flexShrink: 0 }} />
+              <a href={`tel:${school.phone}`} style={{ color: '#fff', textDecoration: 'none' }}>{school.phone}</a>
+            </div>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <Mail size={20} style={{ color: '#ec733a', flexShrink: 0 }} />
+              <a href={`mailto:${school.email}`} style={{ color: '#fff', textDecoration: 'none' }}>{school.email}</a>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* ── BOTTOM BAR ── */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', margin: '0 40px' }} />
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 40px', flexWrap: 'wrap', gap: '8px', maxWidth: '1200px', margin: '0 auto' }}>
-        <span style={{ fontSize: '12px', color: '#94a3b8' }}>© {new Date().getFullYear()} {school.name}. All rights reserved.</span>
-        <div style={{ display: 'flex', gap: '20px' }}>
-          {['Privacy Policy', 'Terms of Use', 'Sitemap'].map(t => (
-            <a key={t} href="#" style={{ fontSize: '12px', color: '#ffffff', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => e.currentTarget.style.color = '#d4af37'}
-              onMouseLeave={e => e.currentTarget.style.color = '#ffffff'}
-            >{t}</a>
-          ))}
-        </div>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 40px', textAlign: 'center', fontSize: '12px', color: '#94a3b8' }}>
+        © {new Date().getFullYear()} {school.name}. All rights reserved.
       </div>
     </footer>
   )

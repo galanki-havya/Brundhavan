@@ -7,11 +7,11 @@ export default function ManagementMessage() {
   const fallbackPhoto = '/images/gallery/founder.png'
 
   return (
-    <section className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
+    <section className="relative bg-[#FFFFFF] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
 
       {/* Soft ambient glows */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-[#FF6347]/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#C9A84C]/5 rounded-full translate-x-1/3 translate-y-1/3 blur-[70px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#ee530b]/5 rounded-full translate-x-1/3 translate-y-1/3 blur-[70px] pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
 
@@ -50,7 +50,7 @@ export default function ManagementMessage() {
             <div className="lg:col-span-2 relative bg-gradient-to-br from-[#FFF4F2] to-[#FFF8F0] flex items-center justify-center p-8 lg:p-10">
 
               {/* Decorative top bar */}
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FF6347] via-[#C9A84C] to-[#011E3A]" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FF6347] via-[#ee530b] to-[#011E3A]" />
 
               <div className="relative w-full max-w-[260px]">
                 {/* Offset decorative border */}
@@ -69,7 +69,7 @@ export default function ManagementMessage() {
                 {/* Name badge */}
                 <div className="absolute -bottom-4 -right-4 z-20 bg-[#011E3A] text-white px-4 py-2.5 rounded-xl shadow-lg shadow-[#011E3A]/20">
                   <p className="font-semibold text-[13px] text-white leading-tight">{Correspondent.name}</p>
-                  <p className="text-[#C9A84C] text-[10px] font-medium tracking-wider uppercase mt-0.5">
+                  <p className="text-[#ee530b] text-[10px] font-medium tracking-wider uppercase mt-0.5">
                     {Correspondent.title}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default function ManagementMessage() {
                   {['Academic Excellence', 'Innovation', 'Holistic Growth'].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3.5 py-1.5 bg-slate-50 border border-slate-200 rounded-full text-[11px] font-semibold text-slate-500 tracking-wide uppercase hover:border-[#FF6347]/30 hover:text-[#FF6347] transition-colors duration-200"
+                      className="px-3.5 py-1.5 bg-black-50 border border-black-200 rounded-full text-[11px] font-semibold text-slate-500 tracking-wide uppercase hover:border-[#FF6347]/30 hover:text-[#FF6347] transition-colors duration-200"
                     >
                       {tag}
                     </span>
@@ -132,7 +132,7 @@ export default function ManagementMessage() {
               </div>
 
               {/* Bottom accent line */}
-              <div className="mt-7 h-0.5 w-16 bg-gradient-to-r from-[#FF6347] to-[#C9A84C] rounded-full" />
+              <div className="mt-7 h-0.5 w-16 bg-gradient-to-r from-[#FF6347] to-[#ee530b] rounded-full" />
             </motion.div>
 
           </div>

@@ -17,7 +17,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <Section className="relative overflow-hidden" style={{ background: '#ffffff', padding: '80px 0' }}>
+    <Section className="relative overflow-hidden" style={{ background: '#F9FAFB', padding: '80px 0' }}>
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
 
@@ -58,7 +58,7 @@ export default function Testimonials() {
           {/* Subtext */}
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
-            color: '#6b5c6e',
+            color: '#040404',
             fontSize: '1.05rem',
             maxWidth: 480,
             margin: '0 auto',

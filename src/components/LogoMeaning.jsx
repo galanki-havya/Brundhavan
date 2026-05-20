@@ -5,7 +5,7 @@ const logo = '/logo.png'
 // ── DATA ─────────────────────────────────────────────────────────────────────
 
 const intelligences = [
-  { short: 'Words & Language',   icon: '📚', color: '#C9A84C' },
+  { short: 'Words & Language',   icon: '📚', color: '#ee530b' },
   { short: 'Numbers & Logic',    icon: '🔢', color: '#3B82F6' },
   { short: 'Space & Sight',      icon: '🧭', color: '#22C55E' },
   { short: 'Body & Movement',    icon: '🤸', color: '#FF6347' },
@@ -19,19 +19,19 @@ const intelligences = [
 const logoElements = [
   { color: '#E63946', icon: '🔥', label: 'The Flame',
     desc: 'Symbolises the eternal pursuit of knowledge and the burning spirit of inquiry — igniting curiosity in every child.' },
-  { color: '#C9A84C', icon: '📖', label: 'The Open Book',
+  { color: '#ee530b', icon: '📖', label: 'The Open Book',
     desc: 'Represents academic excellence, intellectual curiosity, and a lifelong love of learning beyond the classroom.' },
   { color: '#22C55E', icon: '🌳', label: 'The Banyan Tree',
     desc: 'Rooted in rich Indian heritage, it stands for enduring strength, shelter, and a deeply nurturing school community.' },
   { color: '#FF6347', icon: '🌸', label: 'The Nine Petals',
     desc: "Nine petals mirror Howard Gardner's nine intelligences — every child's unique genius recognised and celebrated." },
-  { color: '#C9A84C', icon: '⭕', label: 'The Gold Ring',
+  { color: '#ee530b', icon: '⭕', label: 'The Gold Ring',
     desc: 'A circle of unity, wholeness, and the unbreakable bond between school, student, family, and community.' },
 ]
 
 const coreValues = [
   { color: '#E63946', text: 'Discipline with compassion' },
-  { color: '#C9A84C', text: 'Academic rigour with creativity' },
+  { color: '#ee530b', text: 'Academic rigour with creativity' },
   { color: '#FF6347', text: 'Community, character, and confidence' },
 ]
 
@@ -54,10 +54,10 @@ const itemVariants = {
 
 export default function LogoMeaning() {
   return (
-    <section className="relative bg-slate-50/40 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
+    <section className="relative bg-[#F9FAFB] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
 
       {/* Soft ambient orbs */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#C9A84C]/[0.025] rounded-full -translate-x-1/2 -translate-y-1/2 blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#ee530b]/[0.025] rounded-full -translate-x-1/2 -translate-y-1/2 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-[#FF6347]/[0.03] rounded-full translate-x-1/4 translate-y-1/4 blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -72,7 +72,7 @@ export default function LogoMeaning() {
         >
           <div className="inline-flex items-center gap-2.5 mb-3">
             <span className="h-px w-7 bg-[#FF6347]" />
-            <span className="text-[#FF6347] font-semibold text-[11px] tracking-[3px] uppercase">
+            <span className="text-[#FF6347] font-semibold text-[13px] tracking-[3px] uppercase">
               Our Identity
             </span>
             <span className="h-px w-7 bg-[#FF6347]" />
@@ -80,12 +80,12 @@ export default function LogoMeaning() {
 
           <h2 className="text-3xl sm:text-4xl font-bold text-[#011E3A] tracking-tight mb-3">
             Meaning Behind the{' '}
-            <span className="italic font-serif font-normal text-[#C9A84C]">
+            <span className="italic font-serif font-normal text-[#ee530b]">
               Logo
             </span>
           </h2>
 
-          <p className="text-slate-500 text-[15px] leading-relaxed font-normal max-w-xl mx-auto">
+          <p className="text-black text-[16px] leading-relaxed font-normal max-w-xl mx-auto">
             Every element in the Brindavan School logo tells a story — of values, vision,
             and the future we shape for each extraordinary child.
           </p>
@@ -102,18 +102,18 @@ export default function LogoMeaning() {
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative bg-white border border-slate-100 rounded-2xl p-7 shadow-lg shadow-slate-200/40 flex flex-col items-center overflow-hidden"
+              className="relative bg-white border border-black/10 rounded-2xl p-7 shadow-lg shadow-black/10 flex flex-col items-center overflow-hidden"
             >
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FF6347] via-[#C9A84C] to-[#011E3A]" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#FF6347] via-[#ee530b] to-[#011E3A]" />
 
               <div className="relative w-44 h-44 my-3 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#C9A84C]/25 animate-[spin_40s_linear_infinite]" />
-                <div className="absolute inset-3 rounded-full border border-slate-100 bg-slate-50/40" />
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#ee530b]/25 animate-[spin_40s_linear_infinite]" />
+                <div className="absolute inset-3 rounded-full border border-black/10 bg-black/5" />
 
                 <motion.div
                   animate={{ y: [0, -7, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  className="relative w-32 h-32 rounded-full bg-white border border-slate-100 shadow-lg flex items-center justify-center p-3 z-10"
+                  className="relative w-32 h-32 rounded-full bg-white border border-black/10 shadow-lg flex items-center justify-center p-3 z-10"
                 >
                   <img
                     src={logo}
@@ -125,7 +125,7 @@ export default function LogoMeaning() {
 
               <div className="text-center mt-2 mb-1">
                 <h3 className="text-xl font-bold text-[#011E3A] tracking-tight">Brindavan School</h3>
-                <p className="text-[#C9A84C] font-medium text-[10px] tracking-[3.5px] uppercase mt-1">Est. in Excellence</p>
+                <p className="text-[#ee530b] font-medium text-[11px] tracking-[3.5px] uppercase mt-1">Est. in Excellence</p>
               </div>
             </motion.div>
 
@@ -134,13 +134,13 @@ export default function LogoMeaning() {
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white border border-slate-100 rounded-2xl p-6 shadow-lg shadow-slate-200/30"
+              className="bg-white border border-black/10 rounded-2xl p-6 shadow-lg shadow-black/10"
             >
               <div className="text-center mb-5">
-                <span className="inline-block bg-[#FF6347]/8 text-[#FF6347] border border-[#FF6347]/15 rounded-full text-[10px] font-semibold tracking-wider uppercase px-3 py-1 mb-2">
+                <span className="inline-block bg-[#FF6347]/8 text-[#FF6347] border border-[#FF6347]/15 rounded-full text-[11px] font-semibold tracking-wider uppercase px-3 py-1 mb-2">
                   Howard Gardner's Framework
                 </span>
-                <h4 className="text-lg font-bold text-[#011E3A]">Nine Intelligences We Nurture</h4>
+                <h4 className="text-2xl font-bold text-[#011E3A]">Nine Intelligences We Nurture</h4>
               </div>
 
               <motion.div
@@ -155,18 +155,17 @@ export default function LogoMeaning() {
                     key={i}
                     variants={itemVariants}
                     whileHover={{ y: -3, scale: 1.02 }}
-                    className="group bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 rounded-xl p-2.5 flex flex-col items-center justify-center min-h-[88px] text-center transition-all duration-200 cursor-pointer hover:shadow-sm"
+                    className="group bg-black/[0.03] hover:bg-white border border-black/10 hover:border-black/20 rounded-xl p-2.5 flex flex-col items-center justify-center min-h-[88px] text-center transition-all duration-200 cursor-pointer hover:shadow-sm"
                   >
                     <div className="text-xl mb-1 group-hover:scale-110 transition-transform duration-200">{item.icon}</div>
-                    <span className="text-[9px] font-medium tracking-wider text-slate-400 block mb-0.5">0{i + 1}</span>
-                    <span className="text-[10.5px] font-semibold text-[#011E3A] leading-tight group-hover:text-[#C9A84C] transition-colors duration-200">
+                    <span className="text-xs font-medium tracking-wider text-black/40 block mb-0.5">0{i + 1}</span>
+                    <span className="text-[13px] font-semibold text-[#011E3A] leading-tight group-hover:text-[#ee530b] transition-colors duration-200">
                       {item.short}
                     </span>
                   </motion.div>
                 ))}
               </motion.div>
 
-              
             </motion.div>
 
           </div>
@@ -175,17 +174,17 @@ export default function LogoMeaning() {
           <div className="lg:col-span-7 space-y-5">
 
             {/* Context header card */}
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-lg shadow-slate-200/30">
+            <div className="bg-white border border-black/10 rounded-2xl p-6 shadow-lg shadow-black/10">
               <div className="inline-flex items-center gap-2 bg-[#011E3A]/5 text-[#011E3A] rounded-xl px-3 py-1.5 mb-4 border border-[#011E3A]/8">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FF6347]" />
-                <span className="text-[11px] font-semibold tracking-widest uppercase">Symbol Decoded</span>
+                <span className="text-[12px] font-semibold tracking-widest uppercase">Symbol Decoded</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl font-bold text-[#011E3A] tracking-tight mb-2">
                 What Every Element{' '}
-                <span className="italic font-serif font-normal text-[#C9A84C]">Truly Means</span>
+                <span className="italic font-serif font-normal text-[#ee530b]">Truly Means</span>
               </h3>
-              <p className="text-slate-500 text-[14px] leading-relaxed font-normal max-w-xl">
+              <p className="text-black text-[15px] leading-relaxed font-normal max-w-xl">
                 Five deliberate symbols chosen to reflect the school's deepest commitments to global knowledge, rich Indian heritage, and unlocking individual creative potential.
               </p>
             </div>
@@ -200,7 +199,7 @@ export default function LogoMeaning() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05, type: 'spring', stiffness: 80 }}
                   whileHover={{ x: 5 }}
-                  className="group bg-white border border-slate-100 rounded-xl p-4 flex gap-4 items-start transition-all duration-300 hover:shadow-md shadow-sm"
+                  className="group bg-white border border-black/10 rounded-xl p-4 flex gap-4 items-start transition-all duration-300 hover:shadow-md shadow-sm"
                   style={{ borderLeft: `3px solid ${el.color}` }}
                 >
                   <div
@@ -211,10 +210,10 @@ export default function LogoMeaning() {
                   </div>
 
                   <div className="flex-1">
-                    <h4 className="text-[15px] font-semibold text-[#011E3A] tracking-tight mb-1 group-hover:text-[#C9A84C] transition-colors duration-200">
+                    <h4 className="text-[16px] font-semibold text-[#011E3A] tracking-tight mb-1 group-hover:text-[#ee530b] transition-colors duration-200">
                       {el.label}
                     </h4>
-                    <p className="text-slate-500 text-[13.5px] leading-relaxed font-normal">
+                    <p className="text-black text-[14.5px] leading-relaxed font-normal">
                       {el.desc}
                     </p>
                   </div>

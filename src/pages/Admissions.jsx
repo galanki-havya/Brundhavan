@@ -9,12 +9,29 @@ const { admissionSteps, programs, school } = siteData
 
 const stepIcons = [FileText, ClipboardList, UserCheck, GraduationCap]
 
+function ClearDivider() {
+  return (
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
+    </div>
+  )
+}
+
 export default function Admissions() {
   return (
     <div
       className="min-h-screen"
       style={{
-        background: '#ffffff',
+        background: '#F9FAFB',
         fontFamily: "'DM Sans', sans-serif"
       }}
     >
@@ -36,7 +53,7 @@ export default function Admissions() {
       />
 
       {/* ── Split Section ── */}
-      <section style={{ background: '#ffffff', padding: '80px 0' }}>
+      <section style={{ background: '#F9FAFB', padding: '80px 0' }}>
         <div
           style={{
             maxWidth: '1200px',
@@ -103,7 +120,7 @@ export default function Admissions() {
                 bottom: '-20px',
                 right: '-20px',
                 zIndex: 2,
-                background: '#ffffff',
+                background: '#F9FAFB',
                 borderRadius: '16px',
                 padding: '16px 24px',
                 border: '1px solid #f0f0f0',
@@ -221,9 +238,11 @@ export default function Admissions() {
           </motion.div>
         </div>
       </section>
+      
+      <ClearDivider />
 
       {/* ── Trust Stats ── */}
-      <section style={{ padding: '64px 0', background: '#ffffff' }}>
+      <section style={{ padding: '64px 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div
             className="admissions-trust-grid"
@@ -287,8 +306,10 @@ export default function Admissions() {
         </div>
       </section>
 
+      <ClearDivider />
+
       {/* ── Admission Steps ── */}
-      <section style={{ padding: '80px 0', background: '#ffffff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -357,7 +378,7 @@ export default function Admissions() {
                   {/* Icon container — white background matching overview */}
                   <div style={{
                     width: '52px', height: '52px',
-                    background: '#ffffff',
+                    background: '#F9FAFB',
                     borderRadius: '14px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     marginBottom: '20px',
@@ -387,8 +408,10 @@ export default function Admissions() {
         </div>
       </section>
 
+      <ClearDivider />
+
       {/* ── Eligibility Criteria ── */}
-      <section style={{ padding: '80px 0', background: '#ffffff' }}>
+      <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -422,7 +445,7 @@ export default function Admissions() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 style={{
-                  background: '#ffffff',
+                  background: '#F9FAFB',
                   borderRadius: '16px',
                   padding: '20px 22px',
                   border: '1px solid #f0f0f0',
@@ -452,7 +475,7 @@ export default function Admissions() {
                   <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#FF6347', fontWeight: 600, marginBottom: '6px' }}>
                     {prog.age}
                   </div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.82rem', color: '#666', lineHeight: 1.5 }}>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.95rem', color: '#1a1a1a', lineHeight: 1.5 }}>
                     Age proof, previous school records, parent ID required at registration.
                   </div>
                 </div>
@@ -466,7 +489,7 @@ export default function Admissions() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             style={{
-              background: '#ffffff',
+              background: '#F9FAFB',
               borderRadius: '20px',
               padding: '36px 32px',
               border: '1px solid #f0f0f0',
@@ -503,7 +526,7 @@ export default function Admissions() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: '0.9rem', color: '#222',
+                    fontSize: '1rem', color: '#222',
                     padding: '10px 0',
                     borderBottom: '1px solid #f0f0f0'
                   }}
@@ -517,8 +540,10 @@ export default function Admissions() {
         </div>
       </section>
 
+      <ClearDivider />
+
       {/* ── Apply Now CTA ── */}
-<section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
+<section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
             <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
@@ -532,7 +557,7 @@ export default function Admissions() {
             Become part of Brindavan School and help your child grow in an environment built on excellence, values, and holistic development.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/admissions" style={{
+            <Link to="/admission-form" style={{
               background: '#FF6347', color: '#fff',
               fontWeight: 700, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',

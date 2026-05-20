@@ -17,6 +17,23 @@ const stats = [
   { label: 'Programs',        value: 'Active', emoji: '🤝' },
 ]
 
+function ClearDivider() {
+  return (
+    <div className="w-full flex justify-center bg-[#F9FAFB] py-1">
+      <div className="w-full max-w-9xl px-4 flex flex-col gap-[5px]">
+        <div
+          className="h-[3px] w-full rounded-full"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent 0%, rgba(236,115,58,0.25) 10%, rgba(236,115,58,0.85) 40%, #ec733a 50%, rgba(236,115,58,0.85) 60%, rgba(236,115,58,0.25) 90%, transparent 100%)',
+          }}
+        />
+        
+      </div>
+    </div>
+  )
+}
+
 function SectionLabel({ children }) {
   return (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
@@ -29,7 +46,7 @@ function SectionLabel({ children }) {
 
 export default function Achievements() {
   return (
-    <div style={{ background: '#fff', fontFamily: "'DM Sans', sans-serif" }}>
+    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
 
       <PageHero
@@ -39,7 +56,7 @@ export default function Achievements() {
       />
 
       {/* ── Stats ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -75,8 +92,10 @@ export default function Achievements() {
         </div>
       </section>
 
+      <ClearDivider />
+
       {/* ── Timeline Milestones ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -135,8 +154,10 @@ export default function Achievements() {
         </div>
       </section>
 
+      <ClearDivider />
+
       {/* ── Future Outlook ── */}
-      <section style={{ padding: '80px 0', background: '#fff' }}>
+      <section style={{ padding: '80px 0', background: '#F9FAFB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -183,6 +204,8 @@ export default function Achievements() {
           </div>
         </div>
       </section>
+
+      <ClearDivider />
 
       {/* ── CTA ── */}
       <section style={{ padding: '80px 24px', background: '#fff', textAlign: 'center' }}>
