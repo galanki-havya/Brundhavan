@@ -1,18 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageHero from '../../components/PageHero'
-import { siteData } from '../../data/site'
-import { Award, Users, BookOpen, GraduationCap, ArrowRight, Quote } from 'lucide-react'
-
-function SectionLabel({ children }) {
-  return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-      <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
-      <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase', fontFamily: "'DM Sans', sans-serif" }}>{children}</span>
-      <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
-    </div>
-  )
-}
+import { ArrowRight, Quote, GraduationCap, Award } from 'lucide-react'
 
 function ClearDivider() {
   return (
@@ -30,143 +19,60 @@ function ClearDivider() {
   )
 }
 
-function FullMessageSection({ image, name, title, role, quote, credentials, stats, messageParagraphs, accentColor = '#FF6347', flip = false }) {
-  return (
-    <section style={{ padding: '80px 0', background: flip ? '#F9FAFB' : '#FFFFFF' }}>
-      <div
-        style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          padding: '0 24px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 2fr',
-          gap: '48px',
-          alignItems: 'start',
-        }}
-        className="leader-grid"
-      >
-        <style>{`@media(max-width:768px){.leader-grid{grid-template-columns:1fr!important;}}`}</style>
-
-        {/* Profile Card */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.7 }}
-          style={{ position: 'sticky', top: '32px' }}
-        >
-          <div style={{
-            background: '#fff', borderRadius: '20px', padding: '32px 24px',
-            textAlign: 'center', border: '1px solid #f0f0f0',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.06)', position: 'relative', overflow: 'hidden'
-          }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: `linear-gradient(90deg, ${accentColor}, #ffb347)` }} />
-
-            <div style={{
-              width: '160px', height: '160px', borderRadius: '18px',
-              overflow: 'hidden', margin: '0 auto 20px',
-              border: '2px solid #f0f0f0',
-              boxShadow: '0 6px 20px rgba(0,0,0,0.08)'
-            }}>
-              <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            </div>
-
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.25rem', color: '#011E3A', marginBottom: '6px' }}>{name}</h3>
-            <p style={{ fontSize: '0.85rem', color: accentColor, fontWeight: 600, marginBottom: '20px', fontStyle: 'italic' }}>{title}</p>
-
-            <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {credentials.map((item, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', fontSize: '0.85rem', color: '#444' }}>
-                  <item.icon size={15} style={{ color: accentColor, flexShrink: 0 }} />
-                  <span>{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '16px' }}>
-            {stats.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.1 }}
-                style={{
-                  background: '#fff', borderRadius: '12px', padding: '14px 18px',
-                  border: '1px solid #f0f0f0',
-                  boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
-                  display: 'flex', alignItems: 'center', gap: '12px'
-                }}
-              >
-                <item.icon size={18} style={{ color: accentColor, flexShrink: 0 }} />
-                <div>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, color: '#011E3A', fontSize: '0.95rem' }}>{item.value}</div>
-                  <div style={{ fontSize: '0.78rem', color: '#666' }}>{item.label}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Message */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.7 }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '28px' }}>
-            <div style={{ width: '3px', height: '44px', background: accentColor, borderRadius: '4px', flexShrink: 0 }} />
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.9rem', fontWeight: 700, color: '#011E3A', margin: 0 }}>
-              About the {role}
-            </h2>
-          </div>
-
-          <div style={{
-            background: '#F9FAFB', borderRadius: '14px', padding: '22px 26px',
-            border: '1px solid #f0f0f0', borderLeft: `3px solid ${accentColor}`,
-            marginBottom: '28px',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.04)'
-          }}>
-            <Quote size={28} style={{ color: accentColor, opacity: 0.25, marginBottom: '10px' }} />
-            <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.05rem', fontStyle: 'italic', color: '#222', lineHeight: 1.7, margin: 0 }}>
-              "{quote}"
-            </p>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px', marginBottom: '40px' }}>
-            {messageParagraphs.map((para, i) => (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                style={{ fontSize: '1.05rem', color: '#444', lineHeight: 1.85, margin: 0 }}
-              >
-                {para}
-              </motion.p>
-            ))}
-          </div>
-
-          <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: '24px' }}>
-            <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.25rem', fontWeight: 700, color: '#011E3A', marginBottom: '4px' }}>{name}</p>
-            <p style={{ fontSize: '0.8rem', fontWeight: 600, color: accentColor, letterSpacing: '2px', textTransform: 'uppercase', margin: 0 }}>{title}</p>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
-const correspondentParagraphs = [
-  "Mr. M. Mahesh Babu, M.Sc.Ed (Physics), B.Ed, is a passionate educationist, visionary leader, and dedicated academic administrator with rich experience in teaching, school leadership, curriculum planning, and institutional development. He completed his integrated M.Sc.Ed in Physics from the Regional Institute of Education (NCERT), Mysore, securing a CGPA of 8.2.",
-  "With a strong commitment towards academic excellence and holistic education, Mr. Mahesh Babu has been serving in the field of education since 2019. He began his professional journey as a PGT Physics Faculty at SR Vidyanikethan International School, Gadwal, inspiring students through innovative teaching methods, conceptual learning, and academic guidance.",
-  "His leadership led him to serve as Vice Principal (2022–2024) and Principal (2024 onwards) at SR Vidyanikethan International School. As an administrator, he promoted positive learning environments, strengthened academic standards, and built strong relationships with students, parents, and teachers.",
-  "He has actively contributed to CBSE examination management, serving as Deputy Chief Superintendent for CBSE Grade X Examinations in 2021, 2023–24, and 2024–25. He organized nearly 50 In-Service Teacher Training Programmes between 2022 and 2025 and acted as resource person in more than 25 workshops.",
-  "Known for strong communication skills, motivational leadership, and a student-friendly approach, Mr. Mahesh Babu firmly believes that education should nurture not only academic excellence but also character, confidence, creativity, and leadership qualities. Fluent in English, Hindi, Telugu, and Kannada, he continues to inspire through his vision and commitment to quality education.",
+const leaders = [
+  {
+    image: '/images/gallery/Chairman.png',
+    name: 'S. Chandra Sekhar',
+    title: 'Chairman, Brindavan School',
+    credentials: [
+      { icon: GraduationCap, text: 'M.Sc. Physics, S.V. University' },
+      { icon: Award,         text: '8+ Years in Education' },
+    ],
+    message: "S. Chandra Sekhar is the Chairman of Brindavan School, bringing over eight years of extensive experience in the education sector. He holds an M.Sc. in Physics from S.V. University and has served in a variety of educational roles, including Physical Science Teacher, IIT Physics Faculty, High School In-Charge, and Vice Principal. Throughout his career, Mr. Sekhar has demonstrated a commitment to academic excellence, innovative teaching methods, and holistic student development. His leadership at Brindavan School is driven by a vision to cultivate both intellectual growth and personal character in students.",
+    accentColor: '#FF6347',
+    iconColor: '#FF6347',
+    cardBg: '#FFF8F6',
+    cardBorder: '#FFCFC4',
+  },
+  {
+    image: '/images/gallery/founder.png',
+    name: 'Mr. M. Mahesh Babu',
+    title: 'Correspondent, Brindavan School',
+    credentials: [
+      { icon: GraduationCap, text: 'M.Sc.Ed Physics — Integrated Dual Degree Program' },
+      { icon: Award,         text: 'RIE (NCERT), Mysore · Since 2019' },
+    ],
+    message: "Mr. M. Mahesh Babu, M.Sc.Ed (Physics), B.Ed, is a passionate educationist and dynamic academic leader with extensive experience in teaching, school administration, and curriculum planning. A graduate of the Regional Institute of Education (NCERT), Mysore, he has been serving in the field of education since 2019. He worked as PGT Physics Faculty, Vice Principal, and presently serves as Principal at SR Vidyanikethan International School, Gadwal. Known for his innovative teaching methods, leadership skills, and student-friendly approach, he has organized numerous teacher training programmes, workshops, and academic development activities. He has also served as Deputy Chief Superintendent for CBSE Grade X Examinations and contributed actively to school development, curriculum implementation, and student mentoring. Fluent in English, Hindi, Telugu, and Kannada, Mr. Mahesh Babu strongly believes in holistic education that nurtures academic excellence, character, confidence, and leadership among students.",
+    accentColor: '#1a3a6b',
+    iconColor: '#1a3a6b',
+    cardBg: '#EEF3FB',
+    cardBorder: '#B8CFF0',
+  },
 ]
 
 export default function ChairmanMessage() {
-  const { chairman } = siteData
-
   return (
-    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif" }}>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
+    <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif", minHeight: '100vh' }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+        .leader-cards-row {
+          display: flex;
+          gap: 28px;
+          align-items: stretch;
+        }
+        .leader-card {
+          flex: 1;
+          min-width: 0;
+          border-radius: 18px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        @media (max-width: 768px) {
+          .leader-cards-row { flex-direction: column; }
+        }
+      `}</style>
 
       <PageHero
         title="Leadership Messages"
@@ -175,92 +81,184 @@ export default function ChairmanMessage() {
         variant="pink"
       />
 
-      {/* ── Chairman full message ── */}
-      <FullMessageSection
-        image={chairman.image}
-        name={chairman.name}
-        title={chairman.title}
-        role="Chairman"
-        quote="Cultivating both intellectual growth and personal character."
-        accentColor="#FF6347"
-        credentials={[
-          { icon: GraduationCap, text: chairman.credentials },
-          { icon: Award,         text: '8+ Years Excellence' },
-        ]}
-        stats={[
-          { icon: BookOpen,      value: 'Physics Expert',  label: 'Specialized IIT Coaching' },
-          { icon: Users,         value: 'Vice Principal',  label: 'Former High School In-Charge' },
-          { icon: GraduationCap, value: 'Holistic Dev.',   label: 'Character & Intellect' },
-        ]}
-        messageParagraphs={chairman.message.split('\n\n')}
-        flip={false}
-      />
+      {/* ── Side-by-Side Cards ── */}
+      <section style={{ padding: '60px 24px 80px', background: '#F9FAFB' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
-      <ClearDivider />
-
-      {/* ── Correspondent full message ── */}
-      <FullMessageSection
-        image="/images/gallery/founder.png"
-        name="Mr. M. Mahesh Babu"
-        title="Correspondent, Brindavan School"
-        role="Correspondent"
-        quote="Education should nurture not only academic excellence but also character, confidence, creativity, and leadership qualities among students."
-        accentColor="#ec733a"
-        credentials={[
-          { icon: GraduationCap, text: 'M.Sc.Ed Physics, NCERT Mysore' },
-          { icon: Award,         text: 'CGPA 8.2 · CTET Cleared' },
-        ]}
-        stats={[
-          { icon: BookOpen,      value: '50+ Workshops',   label: 'Teacher Training 2022–25' },
-          { icon: Users,         value: 'Principal',       label: 'SR Vidyanikethan, Gadwal' },
-          { icon: GraduationCap, value: 'Since 2019',      label: 'Education Leadership' },
-        ]}
-        messageParagraphs={correspondentParagraphs}
-        flip={true}
-      />
-
-      <ClearDivider />
-
-      {/* ── Vision Quote ── */}
-      <section style={{ padding: '60px 24px', background: '#F9FAFB', textAlign: 'center' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }}
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontStyle: 'italic', color: '#011E3A', lineHeight: 1.45, marginBottom: '20px' }}
+            style={{ textAlign: 'center', marginBottom: '48px' }}
           >
-            "Cultivating both intellectual growth and personal character."
-          </motion.h2>
-          <div style={{ width: '48px', height: '2.5px', background: '#FF6347', borderRadius: '4px', margin: '0 auto 20px' }} />
-          <p style={{ color: '#0b0a0a', fontSize: '1.2rem', lineHeight: 1.75 }}>
-            Under the leadership of {chairman.name} and Mr. M. Mahesh Babu, we are committed to innovative teaching methods and excellence in education.
-          </p>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>From Our Leaders</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
+              fontWeight: 700, color: '#011E3A', margin: 0
+            }}>Words of Wisdom</h2>
+          </motion.div>
+
+          {/* Cards */}
+          <div className="leader-cards-row">
+            {leaders.map((leader, idx) => (
+              <motion.div
+                key={idx}
+                className="leader-card"
+                style={{
+                  background: leader.cardBg,
+                  border: `1.5px solid ${leader.cardBorder}`,
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
+                }}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: idx * 0.15 }}
+              >
+                {/* ── Photo grid top — centered portrait ── */}
+                <div style={{
+                  background: leader.cardBg,
+                  padding: '40px 24px 28px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  borderBottom: `1px solid ${leader.cardBorder}`,
+                }}>
+                  {/* Photo */}
+                  <div style={{
+                    width: '220px',
+                    height: '220px',
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                    marginBottom: '20px',
+                    boxShadow: '0 6px 24px rgba(0,0,0,0.1)',
+                    border: `2px solid ${leader.cardBorder}`,
+                  }}>
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <h3 style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: '1.45rem', fontWeight: 700,
+                    color: '#011E3A', margin: '0 0 5px'
+                  }}>{leader.name}</h3>
+
+                  {/* Role */}
+                  <p style={{
+                    fontSize: '0.95rem', color: leader.accentColor,
+                    fontStyle: 'italic', fontWeight: 500,
+                    margin: '0 0 20px'
+                  }}>{leader.title}</p>
+
+                  {/* Divider */}
+                  <div style={{ width: '100%', height: '1px', background: leader.cardBorder, marginBottom: '18px' }} />
+
+                  {/* Credentials */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
+                    {leader.credentials.map((cred, i) => (
+                      <div key={i} style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        gap: '9px', fontSize: '0.88rem', color: '#302f2f', fontWeight: 400
+                      }}>
+                        <cred.icon size={16} style={{ color: leader.iconColor, flexShrink: 0 }} />
+                        <span>{cred.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ── Message ── */}
+                <div style={{ padding: '28px 30px 34px', flex: 1 }}>
+                  <p style={{
+                    fontSize: '0.96rem', color: '#302f2f',
+                    lineHeight: 1.85, margin: 0, textAlign: 'justify'
+                  }}>
+                    {leader.message}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ClearDivider />
+
+      {/* ── Quote ── */}
+      <section style={{ padding: '72px 24px', background: '#FFFFFF', textAlign: 'center' }}>
+        <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Our Vision</span>
+              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            </div>
+            <Quote size={36} style={{ color: '#FF6347', opacity: 0.3, margin: '0 auto 14px', display: 'block' }} />
+            <p style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 'clamp(1.35rem, 3vw, 1.9rem)',
+              fontStyle: 'italic', color: '#011E3A',
+              lineHeight: 1.65, margin: '0 0 22px'
+            }}>
+              "Cultivating both intellectual growth and personal character — this is the promise we make to every child who walks through our doors."
+            </p>
+            <div style={{ width: '36px', height: '2px', background: '#FF6347', borderRadius: '2px', margin: '0 auto 16px' }} />
+            <p style={{ color: '#555', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 500 }}>
+              S. Chandra Sekhar &amp; Mr. M. Mahesh Babu
+            </p>
+          </motion.div>
         </div>
       </section>
 
       <ClearDivider />
 
       {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: '#FFFFFF', textAlign: 'center' }}>
-        <div style={{ maxWidth: '680px', margin: '0 auto', border: '1.5px solid #FF6347', padding: '60px 40px', borderRadius: '24px' }}>
-          <SectionLabel>Get Started</SectionLabel>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.7rem, 3vw, 2.2rem)', fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25 }}>
-            Join the Brindavan Legacy
-          </h2>
-          <p style={{ color: '#555', fontSize: '1.2rem', marginBottom: '36px', lineHeight: 1.75 }}>
+      <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
+        <div style={{
+          maxWidth: '680px', margin: '0 auto',
+          background: '#FFF8F6',
+          border: '1.5px solid #FFCFC4',
+          boxShadow: '0 4px 32px rgba(255,99,71,0.08)',
+          padding: '60px 40px', borderRadius: '24px'
+        }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Get Started</span>
+            <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+          </div>
+          <h2 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: 'clamp(1.7rem, 3vw, 2.2rem)',
+            fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25
+          }}>Join the Brindavan Legacy</h2>
+          <p style={{ color: '#302f2f', fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.75 }}>
             Start your child's journey in an institution built on vision, values, and a commitment to excellence.
           </p>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/admissions" style={{
-              background: '#FF6347', color: '#fff',
-              fontWeight: 700, fontSize: '0.97rem',
+              background: '#FF6347', color: '#fff', fontWeight: 700, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
               display: 'inline-flex', alignItems: 'center', gap: '8px'
             }}>
               Start Your Child's Journey <ArrowRight size={17} />
             </Link>
             <Link to="/contact" style={{
-              border: '1.5px solid #e0e0e0', color: '#011E3A',
+              border: '1.5px solid #FFCFC4', color: '#011E3A', background: '#fff',
               fontWeight: 600, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
               display: 'inline-flex', alignItems: 'center', gap: '8px'

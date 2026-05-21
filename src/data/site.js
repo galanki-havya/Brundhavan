@@ -12,7 +12,7 @@ export const siteData = {
     rating: "4.9",
     phone: "+91 91219 14631",
     email: "brindavanschool334@gmail.com",
-    address: "Bazaar Street, Palamaner, Chittoor, Andhra Pradesh – 517004, India",
+    address: "Bazaar Street, Palamaner, Chittoor, Andhra Pradesh – 517408, India",
     website: "www.brindavanschool.in",
     mapSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.3359976910588!2d78.74428257508045!3d13.204209387132927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad7f81bf56ee5b%3A0x93ac61c39a3723fb!2sBrindavan%20School!5e0!3m2!1sen!2sin!4v1778757678740!5m2!1sen!2sin",
