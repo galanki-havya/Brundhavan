@@ -115,7 +115,7 @@ export default function AboutOverview() {
             style={{ position: 'relative' }}
           >
             <img
-              src="/images/gallery/Infrastructure/4.jpg"
+              src="/images/gallery/overview1.png"
               alt="Brindavan School Campus"
               onError={e => { e.currentTarget.src = '/images/gallery/Infrastructure/8.jpg' }}
               style={{

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageHero from '../../components/PageHero'
-import { ArrowRight, Quote, GraduationCap, Award } from 'lucide-react'
+import { ArrowRight, Quote, GraduationCap } from 'lucide-react'
 
 function ClearDivider() {
   return (
@@ -19,183 +19,211 @@ function ClearDivider() {
   )
 }
 
-const leaders = [
-  {
-    image: '/images/gallery/Chairman.png',
-    name: 'S. Chandra Sekhar',
-    title: 'Chairman, Brindavan School',
-    credentials: [
-      { icon: GraduationCap, text: 'M.Sc. Physics, S.V. University' },
-      { icon: Award,         text: '8+ Years in Education' },
-    ],
-    message: "S. Chandra Sekhar is the Chairman of Brindavan School, bringing over eight years of extensive experience in the education sector. He holds an M.Sc. in Physics from S.V. University and has served in a variety of educational roles, including Physical Science Teacher, IIT Physics Faculty, High School In-Charge, and Vice Principal. Throughout his career, Mr. Sekhar has demonstrated a commitment to academic excellence, innovative teaching methods, and holistic student development. His leadership at Brindavan School is driven by a vision to cultivate both intellectual growth and personal character in students.",
-    accentColor: '#FF6347',
-    iconColor: '#FF6347',
-    cardBg: '#FFF8F6',
-    cardBorder: '#FFCFC4',
-  },
-  {
-    image: '/images/gallery/founder.png',
-    name: 'Mr. M. Mahesh Babu',
-    title: 'Correspondent, Brindavan School',
-    credentials: [
-      { icon: GraduationCap, text: 'M.Sc.Ed Physics — Integrated Dual Degree Program' },
-      { icon: Award,         text: 'RIE (NCERT), Mysore · Since 2019' },
-    ],
-    message: "Mr. M. Mahesh Babu, M.Sc.Ed (Physics), B.Ed, is a passionate educationist and dynamic academic leader with extensive experience in teaching, school administration, and curriculum planning. A graduate of the Regional Institute of Education (NCERT), Mysore, he has been serving in the field of education since 2019. He worked as PGT Physics Faculty, Vice Principal, and presently serves as Principal at SR Vidyanikethan International School, Gadwal. Known for his innovative teaching methods, leadership skills, and student-friendly approach, he has organized numerous teacher training programmes, workshops, and academic development activities. He has also served as Deputy Chief Superintendent for CBSE Grade X Examinations and contributed actively to school development, curriculum implementation, and student mentoring. Fluent in English, Hindi, Telugu, and Kannada, Mr. Mahesh Babu strongly believes in holistic education that nurtures academic excellence, character, confidence, and leadership among students.",
-    accentColor: '#1a3a6b',
-    iconColor: '#1a3a6b',
-    cardBg: '#EEF3FB',
-    cardBorder: '#B8CFF0',
-  },
-]
+const chairman = {
+  image: '/images/gallery/Chairman.png',
+  name: 'S. Chandra Sekhar',
+  title: 'Chairman, Brindavan School',
+  credentials: [
+    { icon: GraduationCap, text: 'M.Sc. Physics, S.V. University' },
+  ],
+  message: "S. Chandra Sekhar is the Chairman of Brindavan School, bringing over eight years of extensive experience in the education sector. He holds an M.Sc. in Physics from S.V. University and has served in a variety of educational roles, including Physical Science Teacher, IIT Physics Faculty, High School In-Charge, and Vice Principal. Throughout his career, Mr. Sekhar has demonstrated a commitment to academic excellence, innovative teaching methods, and holistic student development. His leadership at Brindavan School is driven by a vision to cultivate both intellectual growth and personal character in students.",
+  quote: "Cultivating both intellectual growth and personal character — this is the promise we make to every child who walks through our doors.",
+}
 
 export default function ChairmanMessage() {
   return (
     <div style={{ background: '#F9FAFB', fontFamily: "'DM Sans', sans-serif", minHeight: '100vh' }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-        .leader-cards-row {
-          display: flex;
-          gap: 28px;
-          align-items: stretch;
+        .chairman-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
         }
-        .leader-card {
-          flex: 1;
-          min-width: 0;
-          border-radius: 18px;
-          overflow: hidden;
+        .chairman-photo-col {
+          position: relative;
+          background: #011E3A;
+          min-height: 420px;
+        }
+        .chairman-msg-col {
+          padding: 36px 38px;
           display: flex;
           flex-direction: column;
         }
+        .cta-buttons {
+          display: flex;
+          gap: 14px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
         @media (max-width: 768px) {
-          .leader-cards-row { flex-direction: column; }
+          .chairman-grid {
+            grid-template-columns: 1fr;
+          }
+          .chairman-photo-col {
+            min-height: 320px;
+            max-height: 380px;
+          }
+          .chairman-msg-col {
+            padding: 24px 20px;
+          }
+          .cta-buttons {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .cta-buttons a {
+            justify-content: center !important;
+          }
+          .quote-section {
+            padding: 48px 20px !important;
+          }
+          .cta-section {
+            padding: 48px 16px !important;
+          }
+          .cta-inner {
+            padding: 40px 24px !important;
+          }
+          .section1 {
+            padding: 40px 16px 52px !important;
+          }
         }
       `}</style>
 
       <PageHero
-        title="Leadership Messages"
+        title="Chairman's Message"
         subtitle="Visionary guidance shaping the future of Brindavan School."
         backgroundImage="/images/gallery/faculty.png"
         variant="pink"
       />
 
-      {/* ── Side-by-Side Cards ── */}
-      <section style={{ padding: '60px 24px 80px', background: '#F9FAFB' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      {/* ── SECTION 1: Chairman Card ── */}
+      <section className="section1" style={{ padding: '64px 24px 72px', background: '#F9FAFB' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
           {/* Heading */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: '48px' }}
+            transition={{ duration: 0.5 }}
+            style={{ textAlign: 'center', marginBottom: '36px' }}
           >
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
-              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>From Our Leaders</span>
-              <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+              <span style={{ height: 1, width: 28, background: '#FF6347', display: 'inline-block' }} />
+              <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 10, letterSpacing: '3.5px', textTransform: 'uppercase' }}>From Our Leader</span>
+              <span style={{ height: 1, width: 28, background: '#FF6347', display: 'inline-block' }} />
             </div>
             <h2 style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
-              fontWeight: 700, color: '#011E3A', margin: 0
-            }}>Words of Wisdom</h2>
+              fontSize: 'clamp(1.6rem, 5vw, 2.5rem)',
+              fontWeight: 700, color: '#011E3A', margin: 0, lineHeight: 1.2,
+            }}>
+              Chairman's <span style={{ fontWeight: 400, fontStyle: 'italic', color: '#FF6347' }}>Message</span>
+            </h2>
           </motion.div>
 
-          {/* Cards */}
-          <div className="leader-cards-row">
-            {leaders.map((leader, idx) => (
-              <motion.div
-                key={idx}
-                className="leader-card"
-                style={{
-                  background: leader.cardBg,
-                  border: `1.5px solid ${leader.cardBorder}`,
-                  boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
-                }}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: idx * 0.15 }}
-              >
-                {/* ── Photo grid top — centered portrait ── */}
+          {/* Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E8EDF2',
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 32px rgba(1,30,58,0.08)',
+            }}
+          >
+            {/* Top accent bar */}
+            <div style={{ height: '3px', background: 'linear-gradient(90deg, #FF6347, #f5a623, #011E3A)' }} />
+
+            <div className="chairman-grid">
+
+              {/* LEFT: Full-bleed HD photo */}
+              <div className="chairman-photo-col">
+                <img
+                  src={chairman.image}
+                  alt={chairman.name}
+                  style={{
+                    position: 'absolute', inset: 0,
+                    width: '100%', height: '100%',
+                    objectFit: 'cover', objectPosition: 'top center',
+                  }}
+                />
+                {/* Subtle bottom fade only for name legibility */}
                 <div style={{
-                  background: leader.cardBg,
-                  padding: '40px 24px 28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  borderBottom: `1px solid ${leader.cardBorder}`,
-                }}>
-                  {/* Photo */}
-                  <div style={{
-                    width: '220px',
-                    height: '220px',
-                    borderRadius: '20px',
-                    overflow: 'hidden',
-                    marginBottom: '20px',
-                    boxShadow: '0 6px 24px rgba(0,0,0,0.1)',
-                    border: `2px solid ${leader.cardBorder}`,
-                  }}>
-                    <img
-                      src={leader.image}
-                      alt={leader.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-                    />
-                  </div>
+                  position: 'absolute', inset: 0,
+                  background: 'linear-gradient(to top, rgba(1,30,58,0.88) 0%, rgba(1,30,58,0.15) 40%, transparent 65%)',
+                }} />
 
-                  {/* Name */}
-                  <h3 style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: '1.45rem', fontWeight: 700,
-                    color: '#011E3A', margin: '0 0 5px'
-                  }}>{leader.name}</h3>
-
-                  {/* Role */}
-                  <p style={{
-                    fontSize: '0.95rem', color: leader.accentColor,
-                    fontStyle: 'italic', fontWeight: 500,
-                    margin: '0 0 20px'
-                  }}>{leader.title}</p>
-
-                  {/* Divider */}
-                  <div style={{ width: '100%', height: '1px', background: leader.cardBorder, marginBottom: '18px' }} />
-
-                  {/* Credentials */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
-                    {leader.credentials.map((cred, i) => (
-                      <div key={i} style={{
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        gap: '9px', fontSize: '0.88rem', color: '#302f2f', fontWeight: 400
-                      }}>
-                        <cred.icon size={16} style={{ color: leader.iconColor, flexShrink: 0 }} />
-                        <span>{cred.text}</span>
-                      </div>
-                    ))}
-                  </div>
+                {/* Credential pill — top */}
+                <div style={{ position: 'absolute', top: 14, left: 14, zIndex: 2 }}>
+                  {chairman.credentials.map((cred, i) => (
+                    <div key={i} style={{
+                      display: 'inline-flex', alignItems: 'center', gap: 7,
+                      background: 'rgba(1,30,58,0.68)',
+                      border: '1px solid rgba(255,99,71,0.4)',
+                      borderRadius: '7px',
+                      padding: '5px 11px',
+                      backdropFilter: 'blur(10px)',
+                    }}>
+                      <cred.icon size={12} style={{ color: '#FF9B85', flexShrink: 0 }} />
+                      <span style={{ color: '#FFD5C8', fontSize: '10px', fontWeight: 500 }}>{cred.text}</span>
+                    </div>
+                  ))}
                 </div>
 
-                {/* ── Message ── */}
-                <div style={{ padding: '28px 30px 34px', flex: 1 }}>
+                {/* Name plate — bottom */}
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px 22px', zIndex: 2 }}>
+                  <div style={{ width: 28, height: 2, background: '#FF6347', borderRadius: 2, marginBottom: 10 }} />
                   <p style={{
-                    fontSize: '0.96rem', color: '#302f2f',
-                    lineHeight: 1.85, margin: 0, textAlign: 'justify'
-                  }}>
-                    {leader.message}
+                    fontFamily: "'Playfair Display', serif",
+                    color: '#FFFFFF', fontSize: '1.2rem', fontWeight: 700,
+                    margin: '0 0 4px', lineHeight: 1.2,
+                  }}>{chairman.name}</p>
+                  <p style={{ color: '#FF9B85', fontSize: '10px', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', margin: 0 }}>
+                    {chairman.title}
                   </p>
                 </div>
+              </div>
+
+              {/* RIGHT: Message */}
+              <motion.div
+                className="chairman-msg-col"
+                initial={{ opacity: 0, x: 18 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <div style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: '80px', lineHeight: 1,
+                  color: 'rgba(255,99,71,0.1)',
+                  marginBottom: '-16px', marginLeft: '-4px',
+                  userSelect: 'none',
+                }}>"</div>
+
+                <p style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: 'clamp(0.9rem, 2vw, 0.97rem)',
+                  color: '#1C2B3A',
+                  lineHeight: 1.9, margin: 0, textAlign: 'justify',
+                }}>
+                  {chairman.message}
+                </p>
               </motion.div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       <ClearDivider />
 
-      {/* ── Quote ── */}
-      <section style={{ padding: '72px 24px', background: '#FFFFFF', textAlign: 'center' }}>
+      {/* ── SECTION 2: Quote ── */}
+      <section className="quote-section" style={{ padding: '72px 24px', background: '#FFFFFF', textAlign: 'center' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
@@ -211,15 +239,15 @@ export default function ChairmanMessage() {
             <Quote size={36} style={{ color: '#FF6347', opacity: 0.3, margin: '0 auto 14px', display: 'block' }} />
             <p style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: 'clamp(1.35rem, 3vw, 1.9rem)',
+              fontSize: 'clamp(1.15rem, 4vw, 1.9rem)',
               fontStyle: 'italic', color: '#011E3A',
-              lineHeight: 1.65, margin: '0 0 22px'
+              lineHeight: 1.65, margin: '0 0 22px',
             }}>
-              "Cultivating both intellectual growth and personal character — this is the promise we make to every child who walks through our doors."
+              "{chairman.quote}"
             </p>
             <div style={{ width: '36px', height: '2px', background: '#FF6347', borderRadius: '2px', margin: '0 auto 16px' }} />
-            <p style={{ color: '#555', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 500 }}>
-              S. Chandra Sekhar &amp; Mr. M. Mahesh Babu
+            <p style={{ color: '#555', fontSize: 'clamp(0.75rem, 2.5vw, 0.85rem)', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 500 }}>
+              S. Chandra Sekhar — Chairman, Brindavan School
             </p>
           </motion.div>
         </div>
@@ -227,15 +255,18 @@ export default function ChairmanMessage() {
 
       <ClearDivider />
 
-      {/* ── CTA ── */}
-      <section style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
-        <div style={{
-          maxWidth: '680px', margin: '0 auto',
-          background: '#FFF8F6',
-          border: '1.5px solid #FFCFC4',
-          boxShadow: '0 4px 32px rgba(255,99,71,0.08)',
-          padding: '60px 40px', borderRadius: '24px'
-        }}>
+      {/* ── SECTION 3: CTA ── */}
+      <section className="cta-section" style={{ padding: '80px 24px', background: '#F9FAFB', textAlign: 'center' }}>
+        <div
+          className="cta-inner"
+          style={{
+            maxWidth: '680px', margin: '0 auto',
+            background: '#FFF8F6',
+            border: '1.5px solid #FFCFC4',
+            boxShadow: '0 4px 32px rgba(255,99,71,0.08)',
+            padding: '60px 40px', borderRadius: '24px',
+          }}
+        >
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
             <span style={{ height: 1, width: 24, background: '#FF6347', display: 'inline-block' }} />
             <span style={{ color: '#FF6347', fontWeight: 600, fontSize: 11, letterSpacing: '3px', textTransform: 'uppercase' }}>Get Started</span>
@@ -243,17 +274,18 @@ export default function ChairmanMessage() {
           </div>
           <h2 style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: 'clamp(1.7rem, 3vw, 2.2rem)',
-            fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25
+            fontSize: 'clamp(1.5rem, 5vw, 2.2rem)',
+            fontWeight: 700, color: '#011E3A', marginBottom: '14px', lineHeight: 1.25,
           }}>Join the Brindavan Legacy</h2>
-          <p style={{ color: '#302f2f', fontSize: '1.05rem', marginBottom: '36px', lineHeight: 1.75 }}>
+          <p style={{ color: '#302f2f', fontSize: 'clamp(0.95rem, 3vw, 1.05rem)', marginBottom: '36px', lineHeight: 1.75 }}>
             Start your child's journey in an institution built on vision, values, and a commitment to excellence.
           </p>
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="cta-buttons">
             <Link to="/admissions" style={{
               background: '#FF6347', color: '#fff', fontWeight: 700, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
-              display: 'inline-flex', alignItems: 'center', gap: '8px'
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              boxShadow: '0 4px 16px rgba(255,99,71,0.28)',
             }}>
               Start Your Child's Journey <ArrowRight size={17} />
             </Link>
@@ -261,7 +293,7 @@ export default function ChairmanMessage() {
               border: '1.5px solid #FFCFC4', color: '#011E3A', background: '#fff',
               fontWeight: 600, fontSize: '0.97rem',
               padding: '13px 32px', borderRadius: '50px', textDecoration: 'none',
-              display: 'inline-flex', alignItems: 'center', gap: '8px'
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
             }}>
               Contact Us
             </Link>
