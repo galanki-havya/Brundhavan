@@ -4,22 +4,36 @@ export default function Hero() {
   return (
     <section className="relative w-full h-screen overflow-hidden">
 
-      {/* RAW HD VIDEO ONLY */}
-      <div className="absolute inset-0 z-0 w-full h-full select-none pointer-events-none">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          transform: 'translateZ(0)',          
+          willChange: 'transform',            
+          WebkitBackfaceVisibility: 'hidden',  
+          backfaceVisibility: 'hidden',
+          imageRendering: 'auto',
+          WebkitTransform: 'translate3d(0,0,0)', 
+        }}
+      >
+        <source src="/videos/hero.webm" type="video/webm" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
 
-      {/* LIGHT BOTTOM VIGNETTE FOR SUTBLE DEPTH */}
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+      <div
+        className="absolute inset-0 pointer-events-none z-10"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 40%), linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, transparent 30%)',
+        }}
+      />
+
+      <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4">
+      </div>
 
     </section>
   )
