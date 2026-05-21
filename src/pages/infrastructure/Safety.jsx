@@ -49,7 +49,7 @@ export default function Safety() {
         <meta name="description" content="Comprehensive safety measures ensuring a secure learning environment for all students at Brindavan School, Palamaner." />
       </Helmet>
 
-      <PageHero title="Safety & Security" subtitle="Comprehensive safety measures ensuring a secure learning environment for all students." variant="pink" backgroundImage="/images/gallery/HouseVisit/2.jpg" />
+      <PageHero title="Safety & Security" subtitle="Comprehensive safety measures ensuring a secure learning environment for all students." variant="pink" backgroundImage="/images/gallery/safety.png" />
 
       {/* ── Split Section ── */}
       <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
