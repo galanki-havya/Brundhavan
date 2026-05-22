@@ -57,7 +57,7 @@ export default function Safety() {
           <style>{`@media(max-width:768px){.safety-grid{grid-template-columns:1fr!important;}}`}</style>
 
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ position: 'relative' }}>
-            <img src="/images/gallery/Republic.jpg" alt="Safety & Security at Brindavan" style={{ width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block', border: '1.5px solid #FFCFC4', boxShadow: '0 16px 48px rgba(255,99,71,0.10)' }} />
+            <img src="/images/gallery/safety.jpg" alt="Safety & Security at Brindavan" style={{ width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block', border: '1.5px solid #FFCFC4', boxShadow: '0 16px 48px rgba(255,99,71,0.10)' }} />
             <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2, background: '#FFF8F6', borderRadius: '16px', padding: '16px 24px', border: '1.5px solid #FFCFC4', boxShadow: '0 8px 32px rgba(255,99,71,0.10)' }}>
               <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>24/7</div>
               <div style={{ fontSize: '13px', color: '#302f2f', fontWeight: 500 }}>Active Monitoring</div>

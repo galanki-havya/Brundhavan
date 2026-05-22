@@ -7,7 +7,6 @@ import {
   Microscope, FlaskConical, Dna, Atom, Scale, UserCheck,
   Wifi, Cpu, Languages, Code, BatteryCharging, Library
 } from 'lucide-react'
-import labsImg from '../../assets/Facilties/2.jpg'
 import labsRightImg from '../../assets/rightimages/2.jpg'
 
 const featureCards = [
@@ -53,7 +52,7 @@ export default function Labs() {
       <PageHero
         title="Laboratories"
         subtitle="Advanced Science and Computer labs designed to support hands-on experimentation, curiosity, and research."
-        backgroundImage={labsImg} variant="gold" fullOpacity={true} objectPosition="object-center" showOverlay={false}
+        backgroundImage="/images/gallery/Labs.png"
       />
 
       {/* ── Split Section ── */}

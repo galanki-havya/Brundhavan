@@ -16,9 +16,9 @@ import {
   BookOpen,
 } from 'lucide-react'
 
-import sportsImg from '/images/gallery/Sports.jpg'
+import sportsImg from '/images/gallery/cocircullar.png'
 import artsImg from '/images/gallery/Doctor.jpg'
-import musicImg from '/images/gallery/AnnualDay/1.jpg'
+import musicImg from '/images/gallery/AnnualDay/19.jpg'
 import ecoImg from '/images/gallery/ChildrensDay/1.jpg'
 
 import Hero from '../components/Hero'

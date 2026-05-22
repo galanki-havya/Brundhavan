@@ -59,7 +59,7 @@ export default function Admissions() {
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
       </Helmet>
 
-      <PageHero title="Join Brindavan School" subtitle="Admissions open for 2026–27. Begin your child's journey towards excellence today." variant="pink" backgroundImage="/images/gallery/HouseVisit/5.jpg" />
+      <PageHero title="Join Brindavan School" subtitle="Admissions open for 2026–27. Begin your child's journey towards excellence today." variant="pink" backgroundImage="/images/gallery/Admission.jpg" />
 
       {/* ── Split Section ── */}
       <section style={{ background: '#FFFFFF', padding: '80px 0' }}>
@@ -79,7 +79,7 @@ export default function Admissions() {
 
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{ position: 'relative' }}>
             <div style={{ position: 'absolute', top: '16px', left: '16px', width: '100%', height: '100%', borderRadius: '20px', background: '#FFE8E2', zIndex: 0 }} />
-            <img src="/images/gallery/HouseVisit/1.jpg" alt="Students at Brindavan School" style={{ position: 'relative', zIndex: 1, width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block', border: '1.5px solid #FFCFC4', boxShadow: '0 16px 48px rgba(255,99,71,0.10)' }} />
+            <img src="/images/gallery/Admission1.png" alt="Students at Brindavan School" style={{ position: 'relative', zIndex: 1, width: '100%', height: '420px', objectFit: 'cover', borderRadius: '20px', display: 'block', border: '1.5px solid #FFCFC4', boxShadow: '0 16px 48px rgba(255,99,71,0.10)' }} />
             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.5 }}
               style={{ position: 'absolute', bottom: '-20px', right: '-20px', zIndex: 2, background: '#FFF8F6', borderRadius: '16px', padding: '16px 24px', border: '1.5px solid #FFCFC4', boxShadow: '0 8px 32px rgba(255,99,71,0.10)' }}>
               <div style={{ fontSize: '28px', fontWeight: 700, color: '#FF6347', fontFamily: "'Playfair Display', serif" }}>2026–27</div>

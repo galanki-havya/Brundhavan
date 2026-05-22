@@ -3,15 +3,10 @@ import { motion } from 'framer-motion'
 
 const galleries = {
   AnnualDay: [
-    '/images/gallery/AnnualDay/1.jpg',
-    '/images/gallery/AnnualDay/2.jpg',
-    '/images/gallery/AnnualDay/3.jpg',
     '/images/gallery/AnnualDay/5.jpg',
     '/images/gallery/AnnualDay/7.jpg',
     '/images/gallery/AnnualDay/10.jpg',
     '/images/gallery/AnnualDay/11.jpg',
-    '/images/gallery/AnnualDay/12.jpg',
-    '/images/gallery/AnnualDay/14.jpg',
     '/images/gallery/AnnualDay/16.jpg',
     '/images/gallery/AnnualDay/17.jpg',
     '/images/gallery/AnnualDay/18.jpg',
@@ -20,7 +15,6 @@ const galleries = {
     '/images/gallery/AnnualDay/24.jpg',
     '/images/gallery/AnnualDay/26.jpg',
     '/images/gallery/AnnualDay/27.jpg',
-    '/images/gallery/AnnualDay/28.jpg',
   ],
 
   ScienceDay: [
@@ -53,26 +47,15 @@ const galleries = {
   ],
 
   GraduationDay: [
-    '/images/gallery/GraduationDay/1.jpg',
-    '/images/gallery/GraduationDay/2.jpg',
-    '/images/gallery/GraduationDay/3.jpg',
-    '/images/gallery/GraduationDay/4.jpg',
-    '/images/gallery/GraduationDay/5.jpg',
-    '/images/gallery/GraduationDay/6.jpg',
-    '/images/gallery/GraduationDay/7.jpg',
-    '/images/gallery/GraduationDay/8.jpg',
-    '/images/gallery/GraduationDay/9.jpg',
+
     '/images/gallery/GraduationDay/10.jpg',
     '/images/gallery/GraduationDay/11.jpg',
   ],
 
   HouseVisit: [
-    '/images/gallery/HouseVisit/1.jpg',
     '/images/gallery/HouseVisit/2.jpg',
-    '/images/gallery/HouseVisit/3.jpg',
     '/images/gallery/HouseVisit/4.jpg',
     '/images/gallery/HouseVisit/5.jpg',
-    '/images/gallery/HouseVisit/6.jpg',
     '/images/gallery/HouseVisit/7.jpg',
   ],
 
@@ -91,10 +74,9 @@ const galleries = {
     '/images/gallery/campus-activities/1.jpg',
     '/images/gallery/campus-activities/2.jpg',
     '/images/gallery/campus-activities/3.jpg',
-    '/images/gallery/campus-activities/4.jpg',
+
     '/images/gallery/campus-activities/5.jpg',
-    '/images/gallery/campus-activities/6.jpg',
-    '/images/gallery/campus-activities/7.jpg',
+
   ],
 }
 

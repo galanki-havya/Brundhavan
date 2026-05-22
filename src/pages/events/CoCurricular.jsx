@@ -31,13 +31,11 @@ const CO_CURRICULAR = [
     id: 'outdoor',
     title: 'Outdoor Activities',
     subtitle: 'Outdoor Sports',
-    image: '/images/gallery/Outdoor/o1.png',
+    image: '/images/gallery/Outdoor/o3.png',
     description: 'Cricket, football, athletics, and team sports developing physical fitness, teamwork, discipline, and leadership on the field.',
     gallery: [
-      '/images/gallery/Outdoor/o1.png',
       '/images/gallery/Outdoor/o2.png',
       '/images/gallery/Outdoor/o3.png',
-      '/images/gallery/Outdoor/o4.png',
       '/images/gallery/Outdoor/o5.png',
       '/images/gallery/Outdoor/o6.png',
     ],
@@ -311,7 +309,7 @@ export default function CoCurricular() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/images/gallery/Outdoor/o1.png"
+                  src="/images/gallery/cocircullar.png"
                   alt="Co-Curricular Activities"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{

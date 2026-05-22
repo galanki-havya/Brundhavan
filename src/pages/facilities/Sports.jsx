@@ -29,7 +29,9 @@ export default function Sports() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
       <Helmet><title>Sports & Physical Education - Brindavan Schools</title></Helmet>
 
-      <PageHero title="Sports" subtitle="Spacious playground, indoor & outdoor sports courts, and trained PE coaches supporting physical wellness." backgroundImage={sportsImg} variant="gold" fullOpacity={true} />
+      <PageHero title="Sports" subtitle="Spacious playground, indoor & outdoor sports courts, and trained PE coaches supporting physical wellness." 
+      backgroundImage="/images/gallery/cocircullar.jpg" 
+      />
 
       {/* ── Split Section ── */}
       <section style={{ padding: '80px 0', background: '#FFFFFF' }}>

@@ -63,7 +63,6 @@ const ACADEMICS = [
       '/images/gallery/Biologicaltrips/B3.png',
       '/images/gallery/Biologicaltrips/B4.png',
       '/images/gallery/Biologicaltrips/B5.png',
-
     ],
   },
   {
@@ -80,20 +79,6 @@ const ACADEMICS = [
     ],
   },
   {
-    id: 'language-lab',
-    title: 'Language Lab',
-    subtitle: 'Communication Skills',
-    image: '/images/gallery/Languagelab/L1.png',
-    description: 'Digital audio-linguistic tools to perfect phonetics, conversational fluency, and speech clarity.',
-    gallery: [
-      '/images/gallery/Languagelab/L1.png',
-      '/images/gallery/Languagelab/L2.png',
-      '/images/gallery/Languagelab/L3.png',
-      '/images/gallery/Languagelab/L4.png',
-      '/images/gallery/Languagelab/L5.png',
-    ],
-  },
-  {
     id: 'computer-lab',
     title: 'Computer Lab',
     subtitle: 'Digital Literacy',
@@ -105,6 +90,8 @@ const ACADEMICS = [
       '/images/gallery/computerlab/c3.png',
       '/images/gallery/computerlab/c4.png',
       '/images/gallery/computerlab/c5.png',
+      '/images/gallery/Languagelab/L2.png',
+      '/images/gallery/Languagelab/L3.png',
     ],
   },
   {
@@ -129,11 +116,9 @@ const ACADEMICS = [
     gallery: [
       '/images/gallery/Field trips/F1.png',
       '/images/gallery/Field trips/F2.png',
-      '/images/gallery/Field trips/f3.png',
-      '/images/gallery/Field trips/f4.png',
-      '/images/gallery/Field trips/f5.png',
-      '/images/gallery/Field trips/f6.png',
-      '/images/gallery/Field trips/f7.png',
+      '/images/gallery/Field trips/F5.png',
+      '/images/gallery/Field trips/F6.png',
+      '/images/gallery/Field trips/F7.png',
     ],
   },
 ]

@@ -157,7 +157,7 @@ export const siteData = {
       category: 'Labs',
     },
     {
-      src: '/images/gallery/Sports/1.jpg',
+      src: '/images/gallery/Outdoor/o5.png',
       alt: 'School sports day activities',
       category: 'Sports',
     },

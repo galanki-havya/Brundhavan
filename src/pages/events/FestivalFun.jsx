@@ -36,18 +36,16 @@ const FESTIVALS = [
     gallery: [
       '/images/gallery/Ayudhapuja/a1.png',
       '/images/gallery/Ayudhapuja/a2.png',
-      '/images/gallery/Ayudhapuja/a3.png',
-      '/images/gallery/Ayudhapuja/a4.png',
+
     ],
   },
   {
     id: 'diwali',
     title: 'Diwali',
     subtitle: 'Festival of Lights',
-    image: '/images/gallery/Diwali/d1.png',
+    image: '/images/gallery/Diwali/d4.png',
     description: 'The festival of lights celebrated with diyas, rangoli, sweets, and cultural performances that fill the campus with warmth and colour.',
     gallery: [
-      '/images/gallery/Diwali/d1.png',
       '/images/gallery/Diwali/d2.png',
       '/images/gallery/Diwali/d3.png',
       '/images/gallery/Diwali/d4.png',
@@ -318,7 +316,7 @@ export default function FestivalFun() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/images/gallery/Diwali/d1.png"
+                  src="/images/gallery/festivalfun.png"
                   alt="Festival Fun"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{

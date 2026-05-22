@@ -63,33 +63,6 @@ export default function WhyBrindavan() {
         }
         .wb-grid {
           display: none;
-          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-          gap: 16px;
-          width: 100%;
-          max-width: 720px;
-          margin: 12px auto 0;
-        }
-        .wb-card {
-          background: #fff;
-          border-radius: 16px;
-          padding: 20px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-          border: 1px solid #eaeaea;
-          text-align: center;
-        }
-        .wb-icon-box {
-          width: 44px; height: 44px;
-          border-radius: 50%;
-          display: flex; align-items: center; justify-content: center;
-          font-size: 20px; margin: 0 auto 12px;
-        }
-        .wb-card-title {
-          font-weight: 700; font-size: 13px;
-          color: #111111; line-height: 1.4;
-        }
-        @media (max-width: 820px) {
-          .wb-orbital { display: none; }
-          .wb-grid { display: grid; }
         }
       `}</style>
 
@@ -126,9 +99,8 @@ export default function WhyBrindavan() {
           </p>
         </motion.div>
 
-        {/* ── DIAGRAM ORBITAL AREA ── */}
+        {/* ── DIAGRAM ORBITAL AREA — always visible on all screen sizes ── */}
         <div className="wb-orbital">
-          {/* Adjusted viewBox to tightly crop out empty padding around the circle coordinates */}
           <svg viewBox="120 120 560 560" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <clipPath id="logoClip">
@@ -228,7 +200,7 @@ export default function WhyBrindavan() {
           </svg>
         </div>
 
-        {/* ── RESPONSIVE MOBILE GRID FALLBACK LAYOUT ── */}
+        {/* ── MOBILE GRID — permanently hidden, SVG is used on all sizes ── */}
         <div className="wb-grid">
           {features.map((feat, i) => (
             <motion.div 

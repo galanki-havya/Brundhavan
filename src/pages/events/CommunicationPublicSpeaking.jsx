@@ -291,7 +291,7 @@ export default function CommunicationPublicSpeaking() {
                 style={{ position: 'relative' }}
               >
                 <img
-                  src="/images/gallery/ASSEMBLY/AS1.png"
+                  src="/images/gallery/c&s.jpg"
                   alt="Communication & Public Speaking"
                   onError={(e) => { e.currentTarget.src = '/images/gallery/overview.png' }}
                   style={{
