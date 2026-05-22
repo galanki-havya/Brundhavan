@@ -9,7 +9,7 @@ const galleryData = [
   { title: 'Science Day', folder: 'ScienceDay', cover: '/images/gallery/ScienceDay/1.jpg', images: ['/images/gallery/ScienceDay/1.jpg', '/images/gallery/ScienceDay/2.jpg'] },
   { title: 'Academic Achievers', folder: 'AcademicAchivers', cover: '/images/gallery/AcademicAchivers/1.jpg', images: ['/images/gallery/AcademicAchivers/1.jpg', '/images/gallery/AcademicAchivers/2.jpg'] },
   { title: "Children's Day", folder: 'ChildrensDay', cover: '/images/gallery/ChildrensDay/1.jpg', images: ['/images/gallery/ChildrensDay/1.jpg', '/images/gallery/ChildrensDay/2.jpg'] },
-  { title: 'Graduation Day', folder: 'GraduationDay', cover: '/images/gallery/GraduationDay/1.jpg', images: ['/images/gallery/GraduationDay/1.jpg', '/images/gallery/GraduationDay/2.jpg'] },
+  { title: 'Graduation Day', folder: 'GraduationDay', cover: '/images/gallery/GraduationDay/11.jpg', images: ['/images/gallery/GraduationDay/1.jpg', '/images/gallery/GraduationDay/2.jpg'] },
   { title: 'House Visit', folder: 'HouseVisit', cover: '/images/gallery/HouseVisit/2.jpg', images: ['/images/gallery/HouseVisit/1.jpg', '/images/gallery/HouseVisit/2.jpg'] },
   { title: 'Infrastructure', folder: 'Infrastructure', cover: '/images/gallery/Infrastructure/1.jpg', images: ['/images/gallery/Infrastructure/1.jpg', '/images/gallery/Infrastructure/2.jpg'] },
   { title: 'Campus Activities', folder: 'campus-activities', cover: '/images/gallery/campus-activities/1.jpg', images: ['/images/gallery/campus-activities/2.jpg', '/images/gallery/campus-activities/3.jpg', '/images/gallery/campus-activities/4.jpg', '/images/gallery/campus-activities/5.jpg', '/images/gallery/campus-activities/6.jpg', '/images/gallery/campus-activities/7.jpg'] },
