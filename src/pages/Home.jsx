@@ -151,6 +151,8 @@ export default function Home() {
       </section>
 
       <ClearDivider />
+      <WhyBrindavan />
+      <ClearDivider />
 
       <SubjectAreas />
       <ClearDivider />
@@ -256,8 +258,6 @@ export default function Home() {
 </Section>
       <ClearDivider />
       <LogoMeaning />
-      <ClearDivider />
-      <WhyBrindavan />
       <ClearDivider />
       <Facilities />
       <ClearDivider />
