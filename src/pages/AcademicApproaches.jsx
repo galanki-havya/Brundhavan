@@ -23,20 +23,7 @@ const ACADEMICS = [
       '/images/gallery/ABACUS/AB6.png',
     ],
   },
-  
-  {
-    id: 'iit-neet',
-    title: 'IIT - NEET',
-    subtitle: 'Competitive Foundation',
-    image: '/images/gallery/IIT NEET/IIT2.png',
-    description: 'Advanced concept frameworks targeting Olympiads, foundational engineering, and medical track preparation.',
-    gallery: [
-      '/images/gallery/IIT NEET/IIT1.png',
-      '/images/gallery/IIT NEET/IIT3.png',
-      '/images/gallery/IIT NEET/IIT4.png',
-      '/images/gallery/IIT NEET/IIT5.png',
-    ],
-  },
+
   {
     id: 'science-lab',
     title: 'Science Lab',

@@ -48,8 +48,11 @@ const galleries = {
 
   GraduationDay: [
 
-    '/images/gallery/GraduationDay/10.jpg',
-    '/images/gallery/GraduationDay/11.jpg',
+    '/images/gallery/GraduationDay/12.jpg',
+    '/images/gallery/GraduationDay/13.jpg',
+    '/images/gallery/GraduationDay/14.jpg',
+    '/images/gallery/GraduationDay/15.jpg',
+    '/images/gallery/GraduationDay/16.jpg',
   ],
 
   HouseVisit: [
