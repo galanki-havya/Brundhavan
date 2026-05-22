@@ -25,7 +25,6 @@ import Hero from '../components/Hero'
 import WhyBrindavan from '../components/WhyBrindavan'
 import SubjectAreas from '../components/SubjectAreas'
 import LogoMeaning from '../components/LogoMeaning'
-import ManagementMessage from '../components/ManagementMessage'
 import Facilities from '../components/Facilities'
 import Gallery from '../components/Gallery'
 import Testimonials from '../components/Testimonials'
@@ -152,8 +151,7 @@ export default function Home() {
       </section>
 
       <ClearDivider />
-      <ManagementMessage />
-      <ClearDivider />
+
       <SubjectAreas />
       <ClearDivider />
 
