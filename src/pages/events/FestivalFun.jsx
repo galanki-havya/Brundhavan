@@ -46,7 +46,6 @@ const FESTIVALS = [
     image: '/images/gallery/Diwali/d4.png',
     description: 'The festival of lights celebrated with diyas, rangoli, sweets, and cultural performances that fill the campus with warmth and colour.',
     gallery: [
-      '/images/gallery/Diwali/d2.png',
       '/images/gallery/Diwali/d3.png',
       '/images/gallery/Diwali/d4.png',
     ],
