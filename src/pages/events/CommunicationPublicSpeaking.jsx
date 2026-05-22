@@ -374,16 +374,29 @@ export default function CommunicationPublicSpeaking() {
                 <p style={{ color: '#302f2f', fontSize: '1.2rem' }}>Click any programme to explore the full gallery</p>
               </motion.div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: '20px' }}>
-                {COMMUNICATION.map((item, i) => (
-                  <ProgramCard
-                    key={item.id}
-                    item={item}
-                    palette={PALETTE[i % PALETTE.length]}
-                    index={i}
-                    onClick={() => setSelected(item)}
-                  />
-                ))}
+              <style>{`
+                @media (max-width: 640px) {
+                  .comm-grid { grid-template-columns: 1fr !important; }
+                }
+              `}</style>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div className="comm-grid" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, minmax(270px, 360px))',
+                  gap: '20px',
+                  width: '100%',
+                  maxWidth: '760px',
+                }}>
+                  {COMMUNICATION.map((item, i) => (
+                    <ProgramCard
+                      key={item.id}
+                      item={item}
+                      palette={PALETTE[i % PALETTE.length]}
+                      index={i}
+                      onClick={() => setSelected(item)}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </section>
