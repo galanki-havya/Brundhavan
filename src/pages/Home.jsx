@@ -28,6 +28,7 @@ import LogoMeaning from '../components/LogoMeaning'
 import Facilities from '../components/Facilities'
 import Gallery from '../components/Gallery'
 import Testimonials from '../components/Testimonials'
+import ManagementMessage from '../components/ManagementMessage'
 import Section from '../components/Section'
 import GlobalBackground from '../components/GlobalBackground'
 
@@ -151,7 +152,7 @@ export default function Home() {
       </section>
 
       <ClearDivider />
-      <WhyBrindavan />
+      <ManagementMessage />
       <ClearDivider />
 
       <SubjectAreas />
@@ -189,6 +190,8 @@ export default function Home() {
         </div>
       </Section>
 
+      <ClearDivider />
+      <WhyBrindavan />
       <ClearDivider />
 
 
